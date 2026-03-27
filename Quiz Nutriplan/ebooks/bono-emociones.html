@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Control Emocional y Equilibrio Hormonal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #EC4899;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #EC4899dd 0%, #EC4899 50%, #EC4899cc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🧘</span>
+    <h1>Control Emocional y Equilibrio Hormonal</h1>
+    <p class="hero-sub">Rompe el ciclo estrés-cortisol-insulina con técnicas prácticas para tu día a día</p>
+    <div class="hero-count">11 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Tus Emociones Afectan Tus Hormonas</h2>
+        <div class="intro-content"><p>Lo que sientes influye directamente en tu cuerpo. El estrés eleva el cortisol, el cortisol eleva la insulina, y la insulina desregulada genera ansiedad, antojos y fatiga. Es un ciclo que parece imposible de romper — pero sí se puede.</p><p>Esta guía te enseña a reconocer, manejar y transformar tus emociones para que dejen de sabotear tu equilibrio hormonal.</p><p>🧠 **Entiende la conexión** entre emociones y hormonas</p><p>🔍 **Identifica tus desencadenantes** emocionales y de estrés</p><p>🧘 **Practica técnicas** de relajación y mindfulness</p><p>🍽️ **Rompe el ciclo** de comer por ansiedad</p><p>💛 **Construye tu red** de apoyo emocional</p><p>⚠️ Esta guía complementa tu proceso de bienestar. Si sientes que necesitas apoyo profesional, buscar un terapeuta no es debilidad — es inteligencia emocional.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/emociones/cap1-conexion.jpg" alt="Tus Emociones y Tus Hormonas: La Conexión Invisible" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Tus Emociones y Tus Hormonas: La Conexión Invisible</h2>
+        <p class="chapter-desc">Entiende por qué lo que sientes afecta directamente tu metabolismo, tu peso y tu energía — y cómo romper el ciclo.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">El Triángulo Estrés-Cortisol-Insulina</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/triangulo.jpg" alt="El Triángulo Estrés-Cortisol-Insulina" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>😰 ESTRÉS → Tu cerebro percibe amenaza (trabajo, problemas, preocupaciones) y activa el modo supervivencia</li><li>⬆️ CORTISOL SUBE → La hormona del estrés se eleva, liberando azúcar almacenada en tu sangre para 'huir del peligro'</li><li>⬆️ INSULINA SUBE → Tu páncreas envía insulina para manejar esa azúcar extra… pero la insulina alta genera más antojos</li><li>🍫 ANTOJOS → Comes carbohidratos rápidos (pan, dulces) porque tu cuerpo pide energía instantánea</li><li>😔 CULPA → Te sientes mal por haber comido así, lo que genera más estrés… y el ciclo se repite</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>💡 El cortisol elevado de forma crónica causa: acumulación de grasa abdominal, resistencia a la insulina, insomnio y fatiga.</li><li>💡 Después de los 40, la caída de estrógeno amplifica la respuesta al estrés — por eso sientes que antes manejabas mejor la presión.</li><li>💡 El estrés crónico envejece las células y ralentiza el metabolismo.</li><li>💡 La buena noticia: este ciclo se puede interrumpir en cualquier punto con las técnicas correctas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🔑 Manejar tus emociones NO es un lujo ni una debilidad — es una estrategia metabólica. Bajar tu cortisol es tan importante como comer bien para mantener tu insulina en equilibrio.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Cómo Afectan Tus Emociones a Tu Cuerpo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/cuerpo-emociones.jpg" alt="Cómo Afectan Tus Emociones a Tu Cuerpo" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>😤 FRUSTRACIÓN / IRA → Tensión muscular, dolor de cabeza, mandíbula apretada, presión arterial elevada</li><li>😟 ANSIEDAD → Palpitaciones, sudoración, nudo en el estómago, respiración acelerada, insomnio</li><li>😢 TRISTEZA → Fatiga extrema, falta de motivación, dolores difusos, ganas de aislarse</li><li>😔 CULPA → Autocrítica constante, vergüenza al comer, ciclo de restricción-atracón</li><li>😰 MIEDO → Tensión permanente, hipervigilancia, dificultad para relajarse, bruxismo nocturno</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📝 Tu cuerpo siempre te avisa — aprende a leer sus señales:</li><li>🔸 Si aprietas la mandíbula o los puños → estás acumulando tensión (probablemente frustración).</li><li>🔸 Si tu estómago se cierra o sientes nudo → estás experimentando ansiedad.</li><li>🔸 Si sientes pesadez o quieres dormir todo el día → puede ser tristeza o agotamiento emocional.</li><li>🔸 Si comes sin hambre real → es hambre emocional, no física.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">✍️ Ejercicio: Durante 1 semana, anota cada noche en 3 líneas: ¿Qué emoción sentí hoy? ¿En qué parte de mi cuerpo la sentí? ¿Cómo afectó mi alimentación? Este simple diario te dará claridad sobre tus patrones.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/emociones/cap2-desencadenantes.jpg" alt="Identifica Tus Desencadenantes" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Identifica Tus Desencadenantes</h2>
+        <p class="chapter-desc">Reconoce las situaciones, pensamientos y personas que activan tu estrés — el primer paso para controlarlo.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Los 8 Desencadenantes Emocionales Más Comunes</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/desencadenantes.jpg" alt="Los 8 Desencadenantes Emocionales Más Comunes" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1️⃣ CAMBIOS HORMONALES — Menopausia, perimenopausia, ciclos irregulares alteran el ánimo sin causa aparente</li><li>2️⃣ FLUCTUACIONES DE INSULINA — Los picos y bajones de azúcar causan irritabilidad, ansiedad y niebla mental</li><li>3️⃣ PRESIÓN SOCIAL Y FAMILIAR — Comentarios sobre tu peso, tu comida o tu cuerpo que generan culpa</li><li>4️⃣ ESTRÉS LABORAL — Sobrecarga, presión de tiempo, ambiente tóxico que no puedes controlar</li><li>5️⃣ RESTRICCIONES ALIMENTARIAS — Sentir que 'no puedes comer nada' genera frustración y atracones</li><li>6️⃣ COMPARACIÓN CON OTRAS — Redes sociales, cuerpos 'perfectos', dietas imposibles que no funcionaron</li><li>7️⃣ PROBLEMAS DE SUEÑO — Dormir mal eleva cortisol hasta un 37% al día siguiente</li><li>8️⃣ FALTA DE TIEMPO PERSONAL — Cuidar a todos menos a ti misma genera resentimiento silencioso</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📝 EJERCICIO DE AUTO-REFLEXIÓN:</li><li>Paso 1: Lee la lista y marca cuáles te identifican (probablemente más de uno).</li><li>Paso 2: Elige los 2-3 que más te afectan HOY.</li><li>Paso 3: Para cada uno, escribe: ¿Cuándo fue la última vez que lo sentí? ¿Qué hice después?</li><li>Paso 4: Identifica tu patrón: ¿Comes? ¿Te aíslas? ¿Explotas con alguien? ¿No duermes?</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🔍 No necesitas eliminar todos tus desencadenantes — eso es imposible. El objetivo es RECONOCERLOS cuando aparecen para poder elegir cómo responder en lugar de reaccionar automáticamente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Diario Emocional: Tu Herramienta de Poder</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/diario.jpg" alt="Diario Emocional: Tu Herramienta de Poder" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>📓 NECESITAS: Un cuaderno o libreta pequeña que puedas llevar contigo</li><li>⏰ CUÁNDO: Cada noche antes de dormir, dedica 5 minutos</li><li>📝 FORMATO: Escribe la fecha y responde estas 4 preguntas:</li><li>1. ¿Qué situación me generó más estrés hoy?</li><li>2. ¿Qué emoción sentí? (ponle nombre: frustración, ansiedad, tristeza, ira, culpa)</li><li>3. ¿Cómo reaccionó mi cuerpo? (tensión, dolor, antojos, insomnio)</li><li>4. ¿Qué hice para manejarlo? (comí, grité, lloré, respiré, caminé, hablé con alguien)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>✅ Ejemplo de registro:</li><li>📅 Fecha: Lunes 15</li><li>😤 Situación: Mi jefa me presionó con un plazo imposible.</li><li>💢 Emoción: Frustración e impotencia.</li><li>🏋️ Cuerpo: Dolor de cuello, mandíbula apretada, antojo de pan dulce.</li><li>🍞 Reacción: Comí 3 panes en la tarde sin hambre real.</li><li>💡 Reflexión: La próxima vez, antes de comer, voy a hacer 5 respiraciones profundas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">📊 Después de 2 semanas, revisa tu diario y busca patrones. ¿Hay un día de la semana peor? ¿Una persona que siempre te activa? ¿Un horario donde siempre caes? Esos patrones son ORO para tu transformación.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/emociones/cap3-tecnicas.jpg" alt="Técnicas de Relajación y Mindfulness" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Técnicas de Relajación y Mindfulness</h2>
+        <p class="chapter-desc">Herramientas prácticas que puedes usar HOY para bajar tu cortisol, calmar tu mente y recuperar el control.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Respiración 4-7-8: Tu Botón de Calma</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/respiracion.jpg" alt="Respiración 4-7-8: Tu Botón de Calma" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🫁 TÉCNICA: La respiración 4-7-8 activa tu sistema nervioso parasimpático (el que te calma)</li><li>4️⃣ INHALA por la nariz contando mentalmente hasta 4</li><li>7️⃣ SOSTÉN el aire contando hasta 7</li><li>8️⃣ EXHALA por la boca lentamente contando hasta 8</li><li>🔄 Repite 4 veces. Toma menos de 2 minutos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📍 CUÁNDO USARLA:</li><li>🔸 Antes de comer (especialmente si sospechas que es hambre emocional).</li><li>🔸 Cuando sientas ansiedad o palpitaciones.</li><li>🔸 Antes de dormir si no puedes conciliar el sueño.</li><li>🔸 En medio de una discusión o momento de frustración.</li><li>🔸 Antes de una situación estresante (reunión, médico, etc.).</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🧪 Dato científico: La exhalación larga (el '8') activa el nervio vago, que envía una señal directa a tu cerebro de que estás segura. Tu cortisol puede bajar hasta un 23% con solo 3 minutos de respiración consciente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Relajación Muscular Progresiva (10 minutos)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/relajacion-muscular.jpg" alt="Relajación Muscular Progresiva (10 minutos)" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🛋️ POSICIÓN: Acuéstate o siéntate cómodamente. Cierra los ojos</li><li>🦶 PIES: Tensa los músculos de los pies 5 segundos → suelta y siente la relajación 10 segundos</li><li>🦵 PIERNAS: Tensa pantorrillas y muslos 5 segundos → suelta 10 segundos</li><li>🫄 ABDOMEN: Contrae el abdomen 5 segundos → suelta 10 segundos</li><li>✊ MANOS Y BRAZOS: Aprieta los puños y tensa brazos 5 segundos → suelta 10 segundos</li><li>🤷 HOMBROS Y CUELLO: Sube hombros hacia las orejas 5 segundos → suelta 10 segundos</li><li>😤 CARA: Arruga toda la cara 5 segundos → suelta 10 segundos y sonríe suavemente</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>💡 El principio es simple: al tensar y soltar, tu cuerpo aprende a distinguir entre tensión y relajación.</li><li>💡 Hazla antes de dormir para mejorar la calidad del sueño.</li><li>💡 Si no tienes 10 minutos, haz solo hombros-cuello-cara (los 3 puntos donde más acumulamos estrés).</li><li>💡 Puedes buscar en YouTube 'relajación muscular progresiva guiada' para que te acompañe una voz.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">😴 Esta técnica es especialmente poderosa antes de dormir. El sueño profundo es cuando tu cuerpo repara los daños del estrés, regula hormonas y reconstruye músculo. Dormir mejor = metabolismo más eficiente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Mindfulness para Principiantes (5 minutos diarios)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/mindfulness.jpg" alt="Mindfulness para Principiantes (5 minutos diarios)" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🧘 QUÉ ES: Prestar atención al momento presente sin juzgar. No es 'dejar la mente en blanco'</li><li>📍 PASO 1: Siéntate cómoda, pies en el suelo, manos en las rodillas, espalda recta pero relajada</li><li>👃 PASO 2: Cierra los ojos y presta atención a tu respiración natural (no la cambies)</li><li>🧠 PASO 3: Cuando tu mente se vaya a un pensamiento (y lo hará), simplemente nota que se fue y vuelve a la respiración</li><li>⏱️ PASO 4: Empieza con 3 minutos e incrementa a 5, luego 10. La constancia importa más que la duración</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🌅 RUTINA SUGERIDA:</li><li>Mañana (al despertar): 3-5 minutos de mindfulness + 3 respiraciones 4-7-8.</li><li>Mediodía (antes de almorzar): 1 minuto de atención plena — siente tus pies en el suelo, nota 3 cosas que puedes ver.</li><li>Noche (antes de dormir): Relajación muscular progresiva + 3 respiraciones 4-7-8.</li><li>💡 No necesitas hacerlo perfecto. No existe 'hacerlo mal'. El simple acto de intentar ya está bajando tu cortisol.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">📱 Apps gratuitas recomendadas: Insight Timer (español), Medita (en español), o simplemente pon un temporizador de 5 minutos en tu teléfono. No necesitas nada más que tu respiración.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/emociones/cap4-alimentacion.jpg" alt="Alimentación Emocional: Rompe el Ciclo" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Alimentación Emocional: Rompe el Ciclo</h2>
+        <p class="chapter-desc">Aprende a distinguir el hambre real del hambre emocional y desarrolla estrategias para no comer por ansiedad.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Hambre Real vs. Hambre Emocional</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/hambre-real-vs.jpg" alt="Hambre Real vs. Hambre Emocional" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🍽️ HAMBRE REAL: Aparece gradualmente, cualquier alimento satisface, puedes esperar, después de comer sientes satisfacción</li><li>💔 HAMBRE EMOCIONAL: Aparece de repente, solo quieres algo específico (dulce, pan, snack), es urgente, después de comer sientes culpa</li><li>🧠 PREGUNTA CLAVE: '¿Comería una manzana ahora mismo?' — Si la respuesta es SÍ → es hambre real. Si es NO → es emocional</li><li>⏱️ REGLA DE LOS 10 MINUTOS: Antes de comer por impulso, espera 10 minutos. Si después de 10 minutos sigues con hambre, come. Si se fue, era emocional</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🛑 QUÉ HACER CUANDO DETECTAS HAMBRE EMOCIONAL:</li><li>1. PARA. No abras la nevera. Pon tus manos sobre tu abdomen y respira 3 veces.</li><li>2. PREGUNTA. ¿Qué estoy sintiendo? Ponle nombre: ansiedad, aburrimiento, tristeza, frustración.</li><li>3. ELIGE. En vez de comer, prueba: caminar 5 minutos, llamar a alguien, tomar agua con limón, escribir en tu diario.</li><li>4. SI DECIDES COMER: Come algo con proteína y fibra (yogur griego, nueces, queso con vegetales) — no carbohidratos vacíos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">💛 No te culpes si comes por emoción — es una respuesta humana normal. El objetivo no es la perfección, sino la CONCIENCIA. Cada vez que te detienes a preguntarte '¿es hambre real?', estás ganando. Con el tiempo, esas pausas se vuelven automáticas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Alimentación Consciente: Come con los 5 Sentidos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/alimentacion-consciente.jpg" alt="Alimentación Consciente: Come con los 5 Sentidos" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>👀 VISTA: Antes de comer, observa tu plato. Nota los colores, las texturas, la presentación</li><li>👃 OLFATO: Acerca el plato y huele. El aroma activa la digestión antes del primer bocado</li><li>👅 GUSTO: El primer bocado es siempre el más intenso. Saboréalo lentamente — mastica 15-20 veces</li><li>✋ TACTO: Siente la temperatura, la textura en tu boca. ¿Es crujiente? ¿Suave? ¿Cremoso?</li><li>👂 ESCUCHA: Come sin televisión ni teléfono. El silencio te conecta con las señales de saciedad</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📏 REGLAS DE ORO DE LA ALIMENTACIÓN CONSCIENTE:</li><li>🔸 Siéntate siempre para comer — nunca de pie ni caminando.</li><li>🔸 Apaga pantallas durante la comida (TV, celular, computadora).</li><li>🔸 Pon el tenedor en la mesa entre cada bocado.</li><li>🔸 Toma un sorbo de agua después de cada 3-4 bocados.</li><li>🔸 A la mitad del plato, pregúntate: '¿Todavía tengo hambre o ya estoy satisfecha?'</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">📊 Las personas que comen conscientemente consumen un 25% menos de calorías naturalmente — sin contar nada, sin restricción, sin dieta. Solo prestando atención. Tu estómago tarda 20 minutos en enviar la señal de saciedad al cerebro. Comer despacio le da tiempo.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/emociones/cap5-sistema.jpg" alt="Construye Tu Sistema de Bienestar" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Construye Tu Sistema de Bienestar</h2>
+        <p class="chapter-desc">Hábitos diarios, red de apoyo y estrategias prácticas para mantener tu equilibrio emocional a largo plazo.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Tu Rutina Diaria Anti-Estrés</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/rutina-antiestres.jpg" alt="Tu Rutina Diaria Anti-Estrés" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🌅 MAÑANA (15 min): 5 min mindfulness + 3 respiraciones 4-7-8 + escribe 3 cosas por las que estás agradecida</li><li>☀️ MEDIODÍA (5 min): Pausa consciente antes de almorzar — 1 min de respiración + comer sin pantallas</li><li>🌆 TARDE (10 min): Caminata corta al aire libre o estiramientos suaves + vaso de agua con limón</li><li>🌙 NOCHE (15 min): Relajación muscular progresiva + diario emocional (4 preguntas) + apagar pantallas 30 min antes de dormir</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📅 IMPLEMENTACIÓN GRADUAL:</li><li>Semana 1: Solo implementa la rutina de MAÑANA.</li><li>Semana 2: Agrega la rutina de NOCHE.</li><li>Semana 3: Incorpora la pausa del MEDIODÍA.</li><li>Semana 4: Suma la rutina de TARDE.</li><li>💡 No intentes hacer todo de golpe. Un hábito a la vez se mantiene. Todos juntos se abandonan.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🏆 Después de 21 días, estas prácticas se vuelven automáticas. Después de 66 días, se convierten en hábitos arraigados. Tu cortisol bajará, tu sueño mejorará, tus antojos disminuirán y tu energía subirá. Todo está conectado.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Tu Red de Apoyo Emocional</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/emociones/red-apoyo.jpg" alt="Tu Red de Apoyo Emocional" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>👨‍👩‍👧 FAMILIA — Habla con tus seres queridos sobre cómo te sientes. Pide lo que necesitas con claridad: 'Necesito que no opines sobre mi comida'</li><li>👯 AMIGAS — Identifica 1-2 personas de confianza con quienes puedas ser honesta sobre tus emociones</li><li>👩‍⚕️ PROFESIONALES — Un terapeuta o psicólogo no es para 'locos' — es para personas inteligentes que quieren herramientas</li><li>🤝 GRUPOS DE APOYO — Comunidades de mujeres con experiencias similares (presencial o en línea) son poderosas</li><li>📱 COMUNIDAD — Si ya formas parte de nuestro grupo, allí seguimos compartiendo y apoyándonos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>💬 CÓMO PEDIR APOYO (porque a veces no sabemos cómo):</li><li>'Necesito hablar, solo necesito que me escuches sin dar consejos.'</li><li>'Estoy pasando por un momento difícil y me ayudaría que me acompañes.'</li><li>'Cuando haces comentarios sobre mi peso/comida, me siento mal. Te pido que no lo hagas.'</li><li>'No necesito que me soluciones nada, solo que estés aquí.'</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">💛 Pedir ayuda no es debilidad — es valentía. Las mujeres que tienen una red de apoyo sólida manejan mejor el estrés, tienen niveles más bajos de cortisol y mayor adherencia a sus hábitos saludables. No tienes que hacer esto sola. ¡Tú puedes, y mereces sentirte bien!</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Control Emocional y Equilibrio Hormonal</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

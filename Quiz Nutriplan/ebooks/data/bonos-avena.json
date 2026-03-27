@@ -1,0 +1,349 @@
+{
+  "archivo": "Bonos-Avena.pdf",
+  "tipo": "capitulos",
+  "intro": {
+    "titulo": "La Avena: Tu Cereal Estrella para el Equilibrio Hormonal",
+    "contenido": "La avena es uno de los alimentos más poderosos que existen para estabilizar tu insulina — y probablemente ya la tienes en tu cocina.\n\nSu secreto se llama betaglucano, un tipo de fibra soluble que forma un gel en tu intestino y frena la absorción de glucosa. Resultado: energía estable durante horas, sin picos ni bajadas.\n\nPero OJO — no cualquier avena funciona igual, y cómo la preparas cambia COMPLETAMENTE su efecto en tu glucosa.\n\n3 reglas de oro para que tu avena sea hormonal:\n\n• 🥣 USA AVENA TRADICIONAL (en hojuelas) — La instantánea tiene IG 79 vs IG 55 de la tradicional\n• 🥛 EVITA LECHE CON AZÚCAR — Usa leche vegetal sin azúcar (almendras, coco, soya) o agua\n• 🥜 SIEMPRE AGREGA PROTEÍNA + GRASA — Yogur griego, huevo, mantequilla de maní o nueces\n\nCon estas 3 reglas, cada receta de esta guía se convierte en un desayuno, snack o postre que alimenta tu equilibrio hormonal."
+  },
+  "capitulos": [
+    {
+      "nombre": "🌅 Desayunos con Avena — Energía Estable Toda la Mañana",
+      "descripcion": "El desayuno marca el tono hormonal de todo tu día. Estas recetas con avena te dan energía sostenida de 4+ horas sin picos de insulina.",
+      "imagen": "img/avena/desayunos.jpg",
+      "recetas": [
+        {
+          "nombre": "Parfait de Avena Nocturna con Yogur y Frutos Rojos",
+          "ingredientes": [
+            "3 cucharadas de avena en hojuelas (tradicional)",
+            "½ taza de yogur griego natural sin azúcar",
+            "¼ taza de frutos rojos (fresas, arándanos o frambuesas)",
+            "1 cucharadita de semillas de chía",
+            "1 pizca de canela en polvo"
+          ],
+          "preparacion": [
+            "En un frasco de vidrio con tapa, mezcla la avena con el yogur y la canela",
+            "Agrega las semillas de chía y mezcla bien",
+            "Coloca los frutos rojos por encima sin mezclar",
+            "Tapa y refrigera toda la noche — al día siguiente está listo para comer"
+          ],
+          "consejo": "La avena nocturna (overnight oats) desarrolla almidón resistente durante la noche, lo que BAJA su IG aún más. El yogur griego aporta proteína que frena la absorción y la chía forma un gel que duplica el efecto. Es la versión más hormonal-friendly de la avena."
+        },
+        {
+          "nombre": "Avena Cocida con Yogur Griego y Mantequilla de Maní",
+          "ingredientes": [
+            "3 cucharadas de avena integral en hojuelas",
+            "½ taza de agua",
+            "¼ taza de yogur griego natural sin azúcar",
+            "1 cucharadita de mantequilla de maní natural",
+            "1 cucharadita de semillas de chía",
+            "¼ taza de frutos rojos",
+            "Canela al gusto"
+          ],
+          "preparacion": [
+            "Cocina la avena con el agua a fuego medio hasta que espese (5-7 minutos)",
+            "Retira del fuego y deja reposar 2 minutos",
+            "Mezcla con el yogur griego hasta obtener textura cremosa",
+            "Corona con frutos rojos, semillas de chía y mantequilla de maní"
+          ],
+          "consejo": "La mantequilla de maní aporta grasa saludable + proteína vegetal que ralentizan la digestión de la avena. Una sola cucharadita transforma este desayuno de 'carbohidrato solo' a 'plato completo equilibrado'. Tu insulina nota la diferencia."
+        },
+        {
+          "nombre": "Smoothie Bowl de Avena, Yogur y Arándanos",
+          "ingredientes": [
+            "3 cucharadas de avena en hojuelas (remojadas la noche anterior)",
+            "½ taza de yogur griego natural",
+            "½ taza de arándanos (frescos o congelados)",
+            "1 cucharadita de semillas de chía",
+            "1 cucharadita de mantequilla de maní natural",
+            "5 almendras laminadas para decorar"
+          ],
+          "preparacion": [
+            "En la licuadora, mezcla el yogur, la avena remojada y la mitad de los arándanos",
+            "Licúa hasta obtener una textura cremosa y suave",
+            "Sirve en un bowl y decora con el resto de arándanos, chía y almendras",
+            "Agrega la mantequilla de maní en un hilito por encima — consume inmediatamente"
+          ],
+          "consejo": "Los arándanos son la fruta con mayor contenido de antocianinas — antioxidantes que mejoran directamente la sensibilidad a la insulina. Combinados con la avena y el yogur, este bowl es un cóctel de protección hormonal."
+        },
+        {
+          "nombre": "Panquecas de Avena y Huevo con Aguacate",
+          "ingredientes": [
+            "3 cucharadas de avena integral en hojuelas",
+            "1 huevo entero + 1 clara",
+            "1 cucharadita de aceite de coco",
+            "¼ de aguacate en láminas",
+            "Pizca de sal marina y orégano",
+            "Canela (opcional, para versión dulce)"
+          ],
+          "preparacion": [
+            "Mezcla la avena con los huevos hasta obtener una masa líquida homogénea",
+            "Calienta el aceite de coco en sartén antiadherente a fuego medio",
+            "Vierte la mezcla formando 2-3 panquecas y cocina 3 min por lado",
+            "Sirve con el aguacate encima y un toque de sal — versión dulce: con canela y frutos rojos"
+          ],
+          "consejo": "Estas panquecas NO tienen harina — la avena actúa como base. El huevo aporta proteína completa y el aguacate grasa monoinsaturada que estabiliza tu glucosa. Puedes hacerlas dulces (canela + fruta) o saladas (sal + orégano) según tu antojo."
+        },
+        {
+          "nombre": "Bowl de Avena Nocturna con Nueces y Canela",
+          "ingredientes": [
+            "3 cucharadas de avena integral en hojuelas",
+            "½ taza de yogur griego o kéfir",
+            "1 cucharadita de semillas de lino molido",
+            "3 nueces troceadas (o 6 almendras)",
+            "Canela al gusto",
+            "1 cucharadita de miel pura (opcional)"
+          ],
+          "preparacion": [
+            "Mezcla todos los ingredientes en un recipiente de vidrio con tapa",
+            "Refrigera toda la noche (mínimo 6 horas)",
+            "Al día siguiente, revuelve bien y disfruta frío o a temperatura ambiente",
+            "Si usas miel, agrégala al servir — no la refrigeres con la mezcla"
+          ],
+          "consejo": "Las nueces son ricas en omega-3 vegetal (ALA) y las semillas de lino aportan lignanos — compuestos que ayudan a modular el estrógeno. La canela no solo da sabor: estudios muestran que puede mejorar la sensibilidad a la insulina cuando se consume regularmente."
+        }
+      ]
+    },
+    {
+      "nombre": "🍪 Snacks y Meriendas con Avena — Anti-Antojos",
+      "descripcion": "Los antojos de las 3-4pm son señales de montaña rusa glucémica. Estos snacks con avena te mantienen estable entre comidas y evitan que recurras a galletas o dulces.",
+      "imagen": "img/avena/snacks.jpg",
+      "recetas": [
+        {
+          "nombre": "Mini Muffins de Avena y Fresa (Sin Horno)",
+          "ingredientes": [
+            "½ taza de avena molida (licúa hojuelas 10 segundos)",
+            "¼ taza de yogur griego natural sin azúcar",
+            "2 fresas maduras en cubitos pequeños",
+            "1 cucharadita de semillas de chía",
+            "1 cucharada de mantequilla de maní natural",
+            "Pizca de canela"
+          ],
+          "preparacion": [
+            "Mezcla todos los ingredientes hasta obtener una masa espesa manejable",
+            "Forma bolitas o mini muffins con las manos húmedas",
+            "Coloca en moldes de silicona o sobre papel encerado",
+            "Lleva al congelador 1 hora — luego conserva en refrigerador hasta 5 días"
+          ],
+          "consejo": "Estos mini muffins son tu seguro anti-antojos. Prepáralos el domingo y tendrás snacks saludables toda la semana. La combinación avena + mantequilla de maní + yogur te da los 3 macronutrientes (carb + grasa + proteína) en una sola mordida."
+        },
+        {
+          "nombre": "Bolitas Energéticas de Avena y Cacao",
+          "ingredientes": [
+            "1 taza de avena en hojuelas",
+            "2 cucharadas de cacao puro en polvo (sin azúcar)",
+            "2 cucharadas de mantequilla de maní natural",
+            "1 cucharada de miel pura",
+            "2 cucharadas de semillas de chía",
+            "1 cucharadita de extracto de vainilla",
+            "Coco rallado sin azúcar para cubrir (opcional)"
+          ],
+          "preparacion": [
+            "Mezcla la avena, cacao, chía y mantequilla de maní en un bowl grande",
+            "Agrega la miel y vainilla — amasa hasta que todo se integre",
+            "Si está muy seca, agrega 1 cucharadita de agua. Si muy húmeda, más avena",
+            "Forma bolitas del tamaño de una nuez, rueda en coco y refrigera 30 minutos"
+          ],
+          "consejo": "El cacao puro (no chocolate) es uno de los alimentos más ricos en magnesio que existen. El magnesio es esencial para la sensibilidad a la insulina y la producción de serotonina. Estas bolitas son tu antojo dulce sin culpa — y con beneficio hormonal real."
+        },
+        {
+          "nombre": "Barritas de Avena con Banana y Nueces",
+          "ingredientes": [
+            "1½ tazas de avena en hojuelas",
+            "1 banana madura machacada",
+            "¼ taza de nueces troceadas",
+            "2 cucharadas de semillas de girasol",
+            "1 cucharada de aceite de coco derretido",
+            "½ cucharadita de canela",
+            "Pizca de sal"
+          ],
+          "preparacion": [
+            "Precalienta el horno a 180°C y forra un molde rectangular con papel encerado",
+            "Machaca la banana y mezcla con todos los ingredientes hasta integrar",
+            "Presiona la mezcla firmemente en el molde — que quede compacta",
+            "Hornea 20-25 minutos hasta que se dore. Deja enfriar y corta en 8 barritas"
+          ],
+          "consejo": "La banana madura actúa como endulzante natural y aglutinante — no necesitas azúcar añadida. Estas barritas duran 5 días en refrigerador y son perfectas para llevar en tu bolso como snack de emergencia. Mucho mejor que cualquier barra comercial."
+        },
+        {
+          "nombre": "Galletas de Avena y Mantequilla de Almendras (3 Ingredientes)",
+          "ingredientes": [
+            "1 taza de avena en hojuelas",
+            "1 banana madura machacada",
+            "2 cucharadas de mantequilla de almendras (o maní)",
+            "Opcional: chips de chocolate oscuro 70%+ (1 cucharada)"
+          ],
+          "preparacion": [
+            "Machaca la banana con un tenedor, mezcla con la avena y la mantequilla",
+            "Forma galletas pequeñas (del tamaño de una cuchara) sobre bandeja con papel encerado",
+            "Hornea a 180°C por 12-15 minutos hasta que estén doradas",
+            "Deja enfriar 10 minutos — se firman al enfriarse"
+          ],
+          "consejo": "Solo 3 ingredientes, sin azúcar añadida, sin harina. La mantequilla de almendras aporta proteína y grasa que convierten estas galletas en un snack con impacto glucémico mínimo. Ideales para saciar el antojo dulce sin sabotear tu insulina."
+        }
+      ]
+    },
+    {
+      "nombre": "🥞 Avena Dulce y Postres — Placer sin Culpa",
+      "descripcion": "Sí, puedes comer postres con avena que sean deliciosos Y hormonalmente inteligentes. La avena como base reemplaza harinas refinadas y aporta la fibra que tu cuerpo necesita.",
+      "imagen": "img/avena/postres.jpg",
+      "recetas": [
+        {
+          "nombre": "Crumble de Avena con Manzana y Canela",
+          "ingredientes": [
+            "2 manzanas verdes peladas y cortadas en cubos",
+            "½ taza de avena en hojuelas",
+            "2 cucharadas de mantequilla (o aceite de coco)",
+            "1 cucharada de miel pura",
+            "½ cucharadita de canela",
+            "Pizca de nuez moscada",
+            "3 nueces troceadas"
+          ],
+          "preparacion": [
+            "Coloca las manzanas en un refractario pequeño y espolvorea con canela",
+            "Mezcla la avena con la mantequilla derretida, miel y nuez moscada",
+            "Cubre las manzanas con la mezcla de avena y agrega las nueces encima",
+            "Hornea a 180°C por 25 minutos hasta que la cobertura esté dorada y crujiente"
+          ],
+          "consejo": "La manzana verde tiene el IG más bajo de todas las manzanas y la canela potencia la sensibilidad a la insulina. Este crumble usa avena en vez de harina, eliminando los carbohidratos refinados. Postre caliente, reconfortante y hormonal-friendly."
+        },
+        {
+          "nombre": "Pudding de Avena y Cacao con Chía",
+          "ingredientes": [
+            "3 cucharadas de avena en hojuelas",
+            "1 cucharada de cacao puro en polvo",
+            "1 cucharada de semillas de chía",
+            "¾ taza de leche de almendras sin azúcar",
+            "1 cucharadita de miel o stevia al gusto",
+            "5 almendras laminadas para decorar"
+          ],
+          "preparacion": [
+            "Mezcla la avena, cacao, chía y leche de almendras en un frasco",
+            "Revuelve bien para que el cacao se disuelva completamente",
+            "Refrigera toda la noche (mínimo 6 horas)",
+            "Al día siguiente, decora con almendras y disfruta como postre o desayuno"
+          ],
+          "consejo": "Este pudding sabe a mousse de chocolate pero está hecho con ingredientes que protegen tu equilibrio hormonal. La chía absorbe líquido hasta 10 veces su peso, creando una textura cremosa que engaña al cerebro — piensa que estás comiendo un postre indulgente."
+        },
+        {
+          "nombre": "Pancakes de Avena con Frutos Rojos (Sin Harina)",
+          "ingredientes": [
+            "½ taza de avena en hojuelas (licuada en polvo fino)",
+            "1 huevo entero",
+            "¼ taza de leche de almendras sin azúcar",
+            "½ cucharadita de polvo de hornear",
+            "½ cucharadita de canela",
+            "¼ taza de frutos rojos para servir",
+            "1 cucharadita de mantequilla de maní"
+          ],
+          "preparacion": [
+            "Licúa la avena 10 segundos hasta que quede como harina gruesa",
+            "Mezcla con el huevo, leche, polvo de hornear y canela hasta integrar",
+            "En sartén antiadherente a fuego medio, vierte ¼ taza de mezcla por pancake",
+            "Cocina 2-3 min por lado. Sirve con frutos rojos y un toque de mantequilla de maní"
+          ],
+          "consejo": "Avena molida reemplaza la harina refinada eliminando el pico glucémico. El huevo agrega proteína completa y la leche de almendras tiene casi cero carbohidratos. Resultado: pancakes que saben a domingo de indulgencia pero que tu insulina puede manejar sin problemas."
+        },
+        {
+          "nombre": "Helado de Avena y Banana (2 Ingredientes Base)",
+          "ingredientes": [
+            "2 bananas maduras congeladas (cortadas en rodajas antes de congelar)",
+            "2 cucharadas de avena en hojuelas",
+            "1 cucharada de cacao puro (versión chocolate)",
+            "1 cucharada de mantequilla de maní (versión PB)",
+            "Toppings: nueces troceadas, coco rallado o chips de chocolate oscuro"
+          ],
+          "preparacion": [
+            "Congela las rodajas de banana al menos 4 horas (idealmente toda la noche)",
+            "En procesador de alimentos, licúa las bananas congeladas + avena hasta textura cremosa",
+            "Agrega cacao (versión chocolate) o mantequilla de maní (versión PB) y licúa 10 seg más",
+            "Sirve inmediatamente como soft serve o congela 30 min más para textura de helado firme"
+          ],
+          "consejo": "Este 'helado' no tiene azúcar añadida, ni crema, ni lácteos — solo banana y avena. La banana congelada crea una textura cremosa idéntica al helado real. La avena agrega fibra y volumen. Es el postre que puedes comer sin pensar dos veces."
+        }
+      ]
+    },
+    {
+      "nombre": "🧪 Avena Avanzada — Trucos de Experta",
+      "descripcion": "Domina el arte de la avena hormonal con estas técnicas y recetas que elevan tu nivel. Desde avena salada hasta agua de avena — estrategias que maximizan los beneficios.",
+      "imagen": "img/avena/ciencia.jpg",
+      "recetas": [
+        {
+          "nombre": "🔬 Avena Tradicional vs Instantánea — La Diferencia Hormonal",
+          "ingredientes": [
+            "── AVENA TRADICIONAL (hojuelas gruesas) ──",
+            "🟢 IG: 55 (bajo) — glucosa sube gradualmente",
+            "🟢 Fibra intacta — betaglucano completo",
+            "🟢 Cocción: 5-7 minutos (o remojo nocturno)",
+            "",
+            "── AVENA INSTANTÁNEA (polvo fino) ──",
+            "🔴 IG: 79 (alto) — glucosa sube rápido",
+            "🔴 Fibra fragmentada — betaglucano reducido",
+            "🔴 Cocción: 1-2 minutos (más procesada)"
+          ],
+          "preparacion": [
+            "REGLA DEFINITIVA: usa SIEMPRE avena en hojuelas gruesas (tradicional, rolled oats)",
+            "Si solo encuentras instantánea: remójala la noche anterior — baja un poco su IG",
+            "Lee la etiqueta: 'avena integral en hojuelas' es la correcta; 'avena instantánea' evítala",
+            "La avena cortada (steel-cut) tiene IG AÚN MÁS BAJO que la de hojuelas — es la opción premium"
+          ],
+          "consejo": "La diferencia de IG entre avena tradicional (55) e instantánea (79) es ENORME — es la diferencia entre un alimento estabilizador y uno que dispara tu insulina. El procesamiento rompe la fibra, facilitando que la glucosa se absorba rápido. Siempre elige la menos procesada."
+        },
+        {
+          "nombre": "Avena Salada con Huevo y Vegetales",
+          "ingredientes": [
+            "3 cucharadas de avena en hojuelas",
+            "½ taza de caldo de verduras (o agua con sal)",
+            "1 huevo (frito o poché)",
+            "¼ de aguacate en láminas",
+            "5 tomates cherry partidos",
+            "Sal, pimienta y un toque de aceite de oliva"
+          ],
+          "preparacion": [
+            "Cocina la avena con caldo de verduras en vez de agua (5-7 min) — le da sabor umami",
+            "Mientras se cocina, prepara el huevo como prefieras en otra sartén",
+            "Sirve la avena en un bowl y coloca el huevo, aguacate y tomates encima",
+            "Termina con un hilo de aceite de oliva, sal y pimienta — desayuno gourmet"
+          ],
+          "consejo": "La avena salada es el secreto mejor guardado de la cocina hormonal. Al reemplazar el dulce por umami (caldo) y agregar huevo + aguacate, obtienes un desayuno con los 3 macronutrientes perfectamente equilibrados. Muchas personas descubren que la versión salada las sacia MÁS que la dulce."
+        },
+        {
+          "nombre": "Agua de Avena — Bebida Estabilizadora",
+          "ingredientes": [
+            "½ taza de avena en hojuelas",
+            "1 litro de agua fría",
+            "1 rama de canela (o ½ cucharadita de canela en polvo)",
+            "Hielo al gusto",
+            "Stevia o 1 cucharadita de miel (opcional)"
+          ],
+          "preparacion": [
+            "Remoja la avena en el agua durante 30 minutos (o toda la noche para mejor resultado)",
+            "Licúa la avena CON el agua de remojo por 30 segundos",
+            "Cuela con un colador fino o tela de queso — exprime bien la pulpa",
+            "Agrega canela y hielo — consume durante el día, refrigera máximo 2 días"
+          ],
+          "consejo": "El agua de avena es una bebida tradicional latina que la ciencia respalda: los betaglucanos que se liberan en el agua pueden ayudar a modular la respuesta glucémica de tu siguiente comida. Tomarla 30 minutos antes de comer puede reducir el pico de insulina de esa comida."
+        },
+        {
+          "nombre": "Granola Casera Hormonal (Sin Azúcar Añadida)",
+          "ingredientes": [
+            "2 tazas de avena en hojuelas gruesas",
+            "½ taza de nueces y almendras troceadas",
+            "¼ taza de semillas mixtas (girasol, calabaza, linaza)",
+            "2 cucharadas de aceite de coco derretido",
+            "1 cucharadita de canela",
+            "½ cucharadita de extracto de vainilla",
+            "¼ taza de coco rallado sin azúcar",
+            "Pizca de sal marina"
+          ],
+          "preparacion": [
+            "Mezcla la avena, nueces, semillas, coco y canela en un bowl grande",
+            "Agrega el aceite de coco derretido y la vainilla — revuelve hasta cubrir todo",
+            "Distribuye en una bandeja para horno en capa fina y uniforme",
+            "Hornea a 160°C por 25-30 minutos, removiendo cada 10 min — hasta dorar parejo"
+          ],
+          "consejo": "La granola comercial tiene 15-25g de azúcar por porción — es un postre disfrazado de desayuno. Esta versión casera tiene CERO azúcar añadida y está llena de grasas saludables y proteína de las nueces y semillas. Controlas cada ingrediente. Dura 2 semanas en frasco hermético."
+        }
+      ]
+    }
+  ]
+}

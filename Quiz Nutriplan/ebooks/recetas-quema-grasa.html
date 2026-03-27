@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — 115 Recetas Quema Grasa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #E8445A;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #E8445Add 0%, #E8445A 50%, #E8445Acc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🔥</span>
+    <h1>115 Recetas Quema Grasa</h1>
+    <p class="hero-sub">Recetas diseñadas para activar tu metabolismo</p>
+    <div class="hero-count">115 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">¿Cómo estas recetas queman grasa?</h2>
+        <div class="intro-content"><p>Después de los 40, tu metabolismo cambia. La caída de estrógeno y progesterona hace que tu cuerpo almacene grasa con más facilidad — especialmente en el abdomen. Pero hay una forma natural de revertir esto: la alimentación termogénica.</p><p>Los alimentos termogénicos aumentan la temperatura interna de tu cuerpo, obligándolo a gastar más energía (calorías) para hacer la digestión. Esto acelera tu metabolismo de forma natural, sin pastillas ni dietas extremas.</p><p>Estas 100 recetas fueron diseñadas con los 10 ingredientes más poderosos para la quema de grasa hormonal:</p><p class="intro-bullet">• Jengibre — Acelera el metabolismo hasta un 20% y reduce la inflamación</p><p class="intro-bullet">• Cúrcuma — Anti-inflamatoria, protege contra la resistencia a la insulina</p><p class="intro-bullet">• Limón — Alcaliniza y estimula la función hepática para eliminar toxinas</p><p class="intro-bullet">• Chía y Linaza — Fibras que estabilizan la glucosa y dan saciedad por horas</p><p class="intro-bullet">• Vegetales verde-oscuros — Ricos en magnesio, mineral clave para la insulina</p><p class="intro-bullet">• Aguacate — Grasas saludables que nutren tus hormonas</p><p class="intro-bullet">• Aceite de coco — Ácido láurico que tu cuerpo convierte en energía, no en grasa</p><p class="intro-bullet">• Té verde — Catequinas que potencian la oxidación de grasa abdominal</p><p class="intro-bullet">• Canela — Mejora la sensibilidad a la insulina hasta en un 29%</p><p>Cada receta incluye un consejo hormonal que te explica exactamente cómo ese plato trabaja a favor de tu metabolismo. No estás solo comiendo rico — estás reprogramando tu cuerpo para quemar grasa las 24 horas.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/desayuno.jpg" alt="Desayunos Proteicos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Desayunos Proteicos</h2>
+        <p class="chapter-desc">Empieza el día activando tu metabolismo con proteína de calidad. Un desayuno proteico estabiliza tu glucosa hasta el almuerzo y evita los antojos de media mañana.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Smoothie Verde Detox Matinal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de col rizada o espinaca fresca</li><li>1/2 manzana verde con cáscara</li><li>Jugo de 1/2 limón</li><li>1 cucharada de jengibre rallado</li><li>1 cucharada de semillas de chía</li><li>200ml de agua de coco</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava bien la col rizada o espinaca y remueve los tallos gruesos.</li><li>Corta la manzana en pedazos, manteniendo la cáscara.</li><li>Coloca todos los ingredientes en la licuadora.</li><li>Bate por 1-2 minutos hasta quedar homogéneo.</li><li>Sirve inmediatamente para aprovechar todos los nutrientes.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los vegetales de hoja verde oscuro son ricos en magnesio — mineral esencial para que la insulina funcione correctamente. Tomar este smoothie en ayunas potencia la desintoxicación hepática.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Tortilla Turbinada con Vegetales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 huevos enteros orgánicos</li><li>1/2 taza de espinaca picada</li><li>1/4 taza de tomate picado</li><li>1/4 taza de champiñones fileteados</li><li>1 cucharadita de cúrcuma en polvo</li><li>Sal rosa y pimienta negra al gusto</li><li>1 cucharadita de aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate los huevos en un tazón con cúrcuma, sal y pimienta.</li><li>Calienta el aceite en una sartén antiadherente.</li><li>Saltea rápidamente los champiñones y espinaca.</li><li>Vierte los huevos batidos sobre los vegetales.</li><li>Agrega el tomate por encima.</li><li>Cocina a fuego medio-bajo hasta que los bordes se firmen.</li><li>Dobla a la mitad y sirve caliente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La cúrcuma contiene curcumina, un potente anti-inflamatorio que combate la inflamación silenciosa — principal causa de acumulación de grasa abdominal después de los 40.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Avena con Canela y Manzana</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de avena en hojuelas</li><li>1 taza de leche de almendras sin azúcar</li><li>1/2 manzana picada en cubos</li><li>1 cucharadita de canela en polvo</li><li>1 cucharada de pasta de maní natural</li><li>1 cucharadita de semillas de linaza</li><li>Stevia o xilitol al gusto (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta la leche de almendras en una olla.</li><li>Agrega la avena y revuelve constantemente.</li><li>Cocina por 5 minutos a fuego medio hasta espesar.</li><li>Agrega la canela y la manzana picada.</li><li>Apaga el fuego y mezcla la pasta de maní.</li><li>Sirve en un tazón y finaliza con linaza.</li><li>Endulza si es necesario.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La canela es uno de los reguladores naturales de glucosa más estudiados. Apenas 1/2 cucharadita al día puede mejorar la sensibilidad a la insulina hasta en un 29%.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Panqueque Fit de Banana y Avena</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 banana madura machacada</li><li>2 huevos enteros</li><li>1/3 taza de avena en hojuelas</li><li>1 cucharadita de polvo de hornear</li><li>1/2 cucharadita de canela</li><li>Pizca de sal</li><li>Aceite de coco para untar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Machaca bien la banana con un tenedor.</li><li>Agrega los huevos y mezcla completamente.</li><li>Junta la avena, polvo de hornear, canela y sal.</li><li>Deja la masa reposar por 2 minutos.</li><li>Calienta una sartén con aceite de coco.</li><li>Coloca porciones de la masa formando círculos.</li><li>Cocina 2 minutos de cada lado hasta dorar.</li><li>Sirve con frutas rojas o pasta de maní.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El aceite de coco contiene ácidos grasos de cadena media (MCT) que tu cuerpo convierte directamente en energía en vez de almacenarlos como grasa. Es termogénico natural.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Bowl de Yogur Griego con Frutas Rojas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de yogur griego natural desnatado</li><li>1/2 taza de mix de frutas rojas (fresa, arándano, frambuesa)</li><li>1 cucharada de granola low carb</li><li>1 cucharada de semillas de chía</li><li>1 cucharadita de miel cruda (opcional)</li><li>Menta fresca para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca el yogur griego en un tazón bonito.</li><li>Lava y seca las frutas rojas.</li><li>Distribuye las frutas sobre el yogur.</li><li>Espolvorea la chía y la granola por encima.</li><li>Rocía con miel si deseas endulzar.</li><li>Decora con hojitas de menta.</li><li>Sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las frutas rojas tienen el índice glucémico más bajo de todas las frutas y son riquísimas en antioxidantes que combaten el estrés oxidativo — un factor que acelera el envejecimiento hormonal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/jugo.jpg" alt="Smoothies y Batidos Termogénicos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Smoothies y Batidos Termogénicos</h2>
+        <p class="chapter-desc">Bebidas funcionales que aceleran tu metabolismo desde el primer sorbo. Cada smoothie combina ingredientes termogénicos con proteína para máxima quema de grasa.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Batido Proteico de Cacao</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 banana congelada</li><li>2 cucharadas de cacao 100% puro</li><li>1 scoop de whey protein de vainilla</li><li>1 taza de leche de almendras sin azúcar</li><li>1 cucharada de pasta de maní natural</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca la banana congelada en la licuadora.</li><li>Agrega el cacao, whey protein y leche de almendras.</li><li>Agrega la pasta de maní y el hielo.</li><li>Bate por 1-2 minutos hasta quedar cremoso como milkshake.</li><li>Sirve inmediatamente en un vaso alto.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El cacao puro es rico en teobromina, un compuesto que estimula la liberación de endorfinas y acelera el metabolismo. Además, su magnesio ayuda a regular la insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Smoothie de Proteína y Frutos Secos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 scoop de whey protein de vainilla</li><li>1 taza de leche de coco sin azúcar</li><li>1 cucharada de almendras picadas</li><li>1 cucharada de semillas de linaza</li><li>1/2 banana congelada</li><li>1 cucharadita de canela</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca todos los ingredientes en la licuadora.</li><li>Bate por 1 minuto hasta obtener textura cremosa.</li><li>Ajusta la consistencia con más leche si es necesario.</li><li>Sirve inmediatamente decorado con canela.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La linaza es rica en lignanos — fitoestrógenos que ayudan a equilibrar tus hormonas naturalmente, especialmente durante la perimenopausia.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Pudín de Chía Overnight</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de semillas de chía</li><li>1 taza de leche vegetal sin azúcar</li><li>1 cucharada de cacao en polvo puro</li><li>Stevia o xilitol al gusto</li><li>Frutas rojas para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la chía con la leche vegetal y el cacao en un frasco.</li><li>Endulza con stevia al gusto.</li><li>Revuelve bien y tapa el frasco.</li><li>Refrigera durante al menos 8 horas o toda la noche.</li><li>Por la mañana, revuelve y decora con frutas rojas.</li><li>Sirve frío directamente del frasco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La chía absorbe hasta 12 veces su peso en agua, creando un gel que retrasa la absorción de azúcares. Esto mantiene tu glucosa estable por horas y evita picos de insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Tostada de Batata con Aguacate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 batata mediana cortada en rebanadas de 1cm</li><li>1/2 aguacate maduro</li><li>1 huevo pochado</li><li>Sal rosa y pimienta</li><li>Semillas de sésamo</li><li>Pizca de pimentón ahumado</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta la batata en rebanadas de 1cm de espesor.</li><li>Tuesta en la air fryer a 180°C por 10 minutos o en tostadora (2 ciclos).</li><li>Machaca el aguacate con sal y limón.</li><li>Distribuye el aguacate sobre las tostadas de batata.</li><li>Coloca el huevo pochado encima.</li><li>Finaliza con semillas de sésamo y pimentón.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La batata tiene carbohidratos de liberación lenta que no disparan la insulina como el pan blanco. Es el carbohidrato inteligente por excelencia para mujeres después de los 40.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Crepioca Turbinada</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 cucharadas de almidón de yuca (tapioca)</li><li>1 huevo entero</li><li>150g de pollo deshilachado</li><li>2 cucharadas de queso cottage</li><li>Sal y orégano al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla el huevo con la tapioca hasta homogeneizar.</li><li>Calienta una sartén antiadherente a fuego medio.</li><li>Vierte la mezcla formando un disco fino.</li><li>Cocina 2 minutos hasta que la base se firme.</li><li>Rellena con pollo y cottage.</li><li>Dobla a la mitad y cocina 1 minuto más.</li><li>Sirve caliente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Empezar el día con proteína activa la termogénesis inducida por la dieta: tu cuerpo gasta hasta un 30% de las calorías de la proteína solo para digerirla.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Smoothie Rosa Anti-Inflamatorio</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de fresas congeladas</li><li>1/4 de remolacha cruda pequeña</li><li>1 cucharadita de jengibre rallado</li><li>1 taza de agua de coco</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Pela y pica la remolacha en cubos pequeños.</li><li>Coloca todos los ingredientes en la licuadora.</li><li>Bate por 2 minutos hasta quedar homogéneo.</li><li>Sirve inmediatamente para preservar nutrientes.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La remolacha es rica en nitratos naturales que mejoran la circulación sanguínea, y las fresas aportan vitamina C que potencia la absorción de hierro — mineral esencial para la energía.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">Smoothie Tropical Termogénico</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de mango congelado</li><li>1/4 taza de piña</li><li>1/2 cucharadita de cúrcuma en polvo</li><li>Pizca de pimienta cayena</li><li>1/2 taza de leche de coco</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca el mango y piña congelados en la licuadora.</li><li>Agrega cúrcuma, pimienta cayena y leche de coco.</li><li>Bate hasta obtener textura cremosa.</li><li>Sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La pimienta cayena contiene capsaicina, que puede aumentar tu tasa metabólica hasta un 25% durante las horas siguientes. La cúrcuma potencia su absorción.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">Smoothie Azul Cerebro Activo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de arándanos congelados</li><li>1 taza de espinaca fresca</li><li>1/4 de aguacate</li><li>1/2 cucharadita de spirulina en polvo</li><li>1 taza de agua filtrada</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca la espinaca y el agua en la licuadora primero.</li><li>Agrega los arándanos, aguacate y spirulina.</li><li>Bate por 2 minutos hasta quedar homogéneo.</li><li>Sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los arándanos son la fruta con más antioxidantes conocida. Protegen las células cerebrales y combaten la neuroinflamación que causa la niebla mental durante los cambios hormonales.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">Smoothie Chocolate Proteico</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 cucharadas de cacao puro</li><li>1 banana congelada</li><li>1 scoop de whey protein</li><li>1 cucharada de pasta de maní</li><li>1 taza de leche de almendras sin azúcar</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca todos los ingredientes en la licuadora.</li><li>Bate por 1-2 minutos hasta quedar cremoso.</li><li>Ajusta dulzor con stevia si es necesario.</li><li>Sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este smoothie satisface las ganas de dulce sin disparar la insulina. El cacao puro + proteína generan una saciedad que dura 4-5 horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">Coffee Smoothie Energético</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de café helado fuerte</li><li>1/2 banana congelada</li><li>2 cucharadas de avena</li><li>1/2 cucharadita de canela</li><li>1 taza de leche vegetal</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Prepara el café fuerte y déjalo enfriar completamente.</li><li>Coloca todos los ingredientes en la licuadora.</li><li>Bate hasta quedar cremoso y frío.</li><li>Sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La cafeína aumenta la tasa metabólica basal hasta un 11%. Combinada con la avena (carbohidrato de liberación lenta), obtienes energía sostenida sin el bajón de las 2 horas.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-rapidos.jpg" alt="Panes y Pasteles Low Carb" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Panes y Pasteles Low Carb</h2>
+        <p class="chapter-desc">¿Amas el pan pero quieres quemar grasa? Estas versiones inteligentes usan harinas alternativas que no disparan tu insulina. Listos en minutos.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">16</div>
+            <div class="recipe-name">Pan de Sartén de Coco</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de harina de coco</li><li>2 huevos enteros</li><li>1 cucharadita de polvo de hornear</li><li>Pizca de sal rosa</li><li>1 cucharadita de aceite de coco</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la harina de coco, huevos, polvo de hornear y sal en un tazón.</li><li>Deja reposar la masa 2 minutos para que la harina absorba.</li><li>Calienta el aceite de coco en una sartén antiadherente.</li><li>Vierte la masa y forma un disco.</li><li>Cocina 3 minutos de cada lado a fuego bajo.</li><li>Sirve caliente, perfecto para sándwiches saludables.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La harina de coco tiene 3 veces más fibra que la harina de trigo y un índice glucémico de apenas 35 (vs. 85 del pan blanco). Tu insulina apenas se mueve.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">17</div>
+            <div class="recipe-name">Pan Nube (Cloud Bread)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 huevos (claras y yemas separadas)</li><li>3 cucharadas de queso crema (cream cheese)</li><li>1/4 cucharadita de polvo de hornear</li><li>Pizca de sal</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 150°C.</li><li>Bate las claras a punto de nieve con sal.</li><li>En otro tazón, mezcla yemas con cream cheese y polvo de hornear.</li><li>Incorpora las claras a la mezcla de yemas con movimientos suaves.</li><li>Forma discos en bandeja forrada con papel manteca.</li><li>Hornea 25 minutos hasta dorar levemente.</li><li>Deja enfriar antes de retirar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Casi cero carbohidratos y rico en proteína del huevo. La textura aireada te da la satisfacción del pan sin ningún impacto en tu glucosa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">18</div>
+            <div class="recipe-name">Pastel de Banana Integral</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 bananas maduras</li><li>2 huevos enteros</li><li>1 taza de harina integral</li><li>1 cucharada de miel pura</li><li>1 cucharadita de canela</li><li>1 cucharadita de polvo de hornear</li><li>1 cucharada de aceite de coco</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C.</li><li>Machaca las bananas y mezcla con huevos y miel.</li><li>Agrega harina, canela, polvo de hornear y aceite.</li><li>Mezcla hasta obtener masa homogénea.</li><li>Vierte en molde engrasado.</li><li>Hornea por 35-40 minutos hasta que un palillo salga limpio.</li><li>Deja enfriar antes de desmoldar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La harina integral mantiene las fibras del grano completo, lo que desacelera la absorción de azúcar. Las bananas aportan potasio, que ayuda a regular la presión arterial.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">19</div>
+            <div class="recipe-name">Muffins de Avena y Manzana</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de avena en hojuelas</li><li>1 manzana rallada</li><li>2 huevos enteros</li><li>1 cucharadita de canela</li><li>1 cucharadita de polvo de hornear</li><li>2 cucharadas de miel o xilitol</li><li>Pizca de sal</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C.</li><li>Mezcla todos los ingredientes en un tazón.</li><li>Distribuye en moldes de muffin engrasados (rinde 6 unidades).</li><li>Hornea por 20-25 minutos hasta dorar.</li><li>Deja enfriar antes de desmoldar.</li><li>Congela los extras para la semana.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Prepara 6 muffins el domingo y tendrás desayuno listo toda la semana. La avena contiene beta-glucanos que reducen el colesterol y estabilizan la glucosa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">20</div>
+            <div class="recipe-name">Pan de Queso Fit</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de almidón de yuca</li><li>1/4 taza de queso cottage</li><li>1 huevo entero</li><li>1 cucharada de aceite de oliva</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C.</li><li>Mezcla todos los ingredientes hasta obtener masa pegajosa.</li><li>Forma bolitas pequeñas con las manos húmedas.</li><li>Coloca en bandeja forrada con papel manteca.</li><li>Hornea por 15-20 minutos hasta dorar.</li><li>Sirve caliente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El queso cottage aporta caseína — una proteína de absorción lenta que mantiene tus músculos nutridos y tu metabolismo activo por más tiempo.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/snack.jpg" alt="Snacks Matutinos Express" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Snacks Matutinos Express</h2>
+        <p class="chapter-desc">Opciones portátiles y rápidas para esas mañanas apuradas. Prepáralos el fin de semana y tendrás snacks saludables toda la semana.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">21</div>
+            <div class="recipe-name">Huevos Cocidos Condimentados</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>6 huevos enteros</li><li>Páprika ahumada</li><li>Sal rosa del Himalaya</li><li>Pimienta negra recién molida</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca los huevos en una olla con agua fría.</li><li>Lleva a ebullición y cocina exactamente 10 minutos.</li><li>Transfiere a un baño de agua con hielo por 5 minutos.</li><li>Pela y corta a la mitad.</li><li>Condimenta con páprika, sal rosa y pimienta.</li><li>Guarda en recipiente hermético en la nevera hasta 5 días.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los huevos son una de las fuentes más completas de proteína. Su contenido de colina es esencial para la salud hepática — tu hígado es responsable de metabolizar las hormonas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">22</div>
+            <div class="recipe-name">Mix de Nueces Energético</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/4 taza de almendras crudas</li><li>2 nueces de Brasil</li><li>1/4 taza de nueces</li><li>1 cucharada de semillas de calabaza</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todas las nueces y semillas en un recipiente.</li><li>Prepara porciones de 30g en bolsitas individuales.</li><li>Guarda en lugar seco y fresco.</li><li>Consume una porción como snack de media mañana.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Solo 2 nueces de Brasil al día aportan todo el selenio que tu tiroides necesita para producir T3 — la hormona que regula la velocidad de tu metabolismo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">23</div>
+            <div class="recipe-name">Manzana con Pasta de Maní</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 manzana verde mediana</li><li>1 cucharada de pasta de maní natural (sin azúcar)</li><li>Canela en polvo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava la manzana y córtala en rebanadas.</li><li>Coloca en un plato y espolvorea canela.</li><li>Sirve con la cucharada de pasta de maní al lado.</li><li>Unta cada rebanada antes de comer.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La combinación fibra (manzana) + grasa saludable (maní) + canela crea una respuesta glucémica ultra-baja. Tu insulina permanece estable durante horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">24</div>
+            <div class="recipe-name">Cottage con Frutas Rojas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de queso cottage</li><li>1/2 taza de frutas rojas frescas o congeladas</li><li>1/2 cucharadita de canela</li><li>Stevia al gusto (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca el cottage en un tazón.</li><li>Agrega las frutas rojas por encima.</li><li>Espolvorea canela.</li><li>Endulza con stevia si lo deseas.</li><li>Consume como snack de media mañana.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El cottage tiene alto contenido de proteína y bajo de grasa. Su caseína mantiene el aminoácido leucina elevado en sangre, lo que protege tu masa muscular mientras quemas grasa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">25</div>
+            <div class="recipe-name">Bolitas Energéticas de Cacao</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de dátiles sin hueso</li><li>1/2 taza de avena</li><li>2 cucharadas de cacao en polvo puro</li><li>2 cucharadas de coco rallado</li><li>1 cucharada de aceite de coco derretido</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Procesa los dátiles en el procesador hasta formar pasta.</li><li>Agrega avena, cacao y aceite de coco.</li><li>Procesa hasta que se forme una masa compacta.</li><li>Forma 15 bolitas con las manos húmedas.</li><li>Pasa cada bolita en coco rallado.</li><li>Refrigera por 30 minutos antes de consumir.</li><li>Guarda en recipiente hermético en la nevera hasta 2 semanas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Dulce saludable para emergencias. Los dátiles tienen un índice glucémico moderado y aportan potasio y fibra. Comer un dulce saludable evita que pierdas el control con golosinas ultraprocesadas.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/almuerzo.jpg" alt="Almuerzos Turbo con Pollo y Atún" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Almuerzos Turbo con Pollo y Atún</h2>
+        <p class="chapter-desc">La fórmula del plato perfecto: 50% vegetales, 25% proteína magra, 25% carbohidrato inteligente. Estas recetas te enseñan a montar almuerzos que queman grasa.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">26</div>
+            <div class="recipe-name">Bowl Buddha Completo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de quinoa cocida</li><li>150g de pechuga de pollo a la parrilla en tiras</li><li>1 taza de mix de hojas (lechuga, rúcula, espinaca)</li><li>1/2 taza de garbanzo horneado</li><li>1/2 zanahoria rallada</li><li>1/4 de aguacate fileteado</li><li>Salsa: tahini, limón, ajo, agua</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina la quinoa según las instrucciones del empaque.</li><li>Condimenta el pollo con sal, pimienta y ásalo a la parrilla.</li><li>Hornea el garbanzo con páprika por 20 min a 200°C.</li><li>Prepara la salsa batiendo tahini, limón, ajo y agua hasta cremoso.</li><li>Monta el bowl: base de hojas, quinoa a un lado.</li><li>Distribuye el pollo, garbanzo, zanahoria y aguacate.</li><li>Rocía con la salsa tahini y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La quinoa es el único grano que contiene los 9 aminoácidos esenciales. Su índice glucémico es 53, mucho más bajo que el arroz blanco (73). Perfecta para tu equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">27</div>
+            <div class="recipe-name">Ensalada Power de Atún</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 lata de atún en agua (escurrido)</li><li>2 tazas de mix de hojas verdes</li><li>1 tomate cortado en cubos</li><li>5 aceitunas negras fileteadas</li><li>1/4 de cebolla morada en rodajas finas</li><li>1 cucharada de aceite de oliva extra virgen</li><li>Jugo de 1/2 limón</li><li>Orégano seco al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava bien todas las hojas y sécalas.</li><li>Coloca las hojas como base en un tazón grande.</li><li>Distribuye el atún deshilachado sobre las hojas.</li><li>Agrega tomate, aceitunas y cebolla morada.</li><li>Mezcla aceite de oliva, limón y orégano como salsa.</li><li>Rocía la ensalada con la salsa.</li><li>Mezcla delicadamente y sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El atún es rico en omega-3, que reduce la inflamación sistémica. Las aceitunas aportan grasas monoinsaturadas que nutren la producción hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">28</div>
+            <div class="recipe-name">Tilapia al Limón con Vegetales al Horno</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 filetes de tilapia (300g)</li><li>Jugo de 1 limón</li><li>2 dientes de ajo machacados</li><li>1 calabacín en rodajas</li><li>1 pimiento rojo en tiras</li><li>1 tomate en rodajas</li><li>Sal rosa, pimienta y hierbas finas</li><li>Aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Condimenta los filetes con limón, ajo, sal y pimienta.</li><li>Deja marinar por 15 minutos.</li><li>Dispone las legumbres en una bandeja para hornear.</li><li>Rocía con aceite de oliva y condimenta con hierbas.</li><li>Coloca los filetes sobre las legumbres.</li><li>Hornea a 200°C por 20 minutos.</li><li>Sirve caliente con ensalada verde al lado.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El limón estimula la producción de bilis en el hígado, mejorando la digestión de grasas. Además, su vitamina C potencia la absorción de hierro de los vegetales.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">29</div>
+            <div class="recipe-name">Pollo a la Parrilla con Mostaza y Miel</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 pechugas de pollo</li><li>2 cucharadas de mostaza Dijon</li><li>1 cucharada de miel pura</li><li>2 dientes de ajo picados</li><li>Sal, pimienta y orégano</li><li>1 cucharada de aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla mostaza, miel, ajo y aceite de oliva en un tazón.</li><li>Marina las pechugas en esta salsa por al menos 30 minutos.</li><li>Calienta la parrilla o sartén grill a fuego alto.</li><li>Asa el pollo 5-6 minutos de cada lado hasta dorar.</li><li>Deja reposar 3 minutos antes de cortar.</li><li>Sirve con ensalada verde o vegetales al vapor.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La pechuga de pollo es una de las proteínas más magras que existen. 100g aportan 31g de proteína y apenas 3.6g de grasa — ideal para mantener la masa muscular mientras quemas grasa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">30</div>
+            <div class="recipe-name">Stir Fry de Pollo y Brócoli</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de pechuga de pollo en cubos</li><li>2 tazas de brócoli en floretes</li><li>1 cucharadita de jengibre rallado</li><li>2 dientes de ajo picados</li><li>2 cucharadas de salsa de soya light</li><li>1 cucharada de aceite de sésamo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta el aceite de sésamo en un wok a fuego alto.</li><li>Saltea el pollo hasta dorar por fuera (4 minutos).</li><li>Agrega ajo y jengibre, cocina 30 segundos.</li><li>Incorpora el brócoli y saltea 3 minutos.</li><li>Agrega la salsa de soya y mezcla bien.</li><li>Cocina 2 minutos más sin tapar.</li><li>Sirve caliente sobre arroz integral o cauliflower rice.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El brócoli contiene sulforafano — un compuesto que ayuda al hígado a procesar y eliminar el exceso de estrógeno. Esencial para el equilibrio hormonal femenino.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">31</div>
+            <div class="recipe-name">Curry de Pollo Ligero</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de pechuga de pollo en cubos</li><li>1/2 taza de leche de coco light</li><li>1 cucharada de curry en polvo</li><li>1 pimiento rojo en cubos</li><li>1 calabacín en medias lunas</li><li>1 cebolla picada</li><li>2 dientes de ajo</li><li>Cilantro fresco</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea cebolla y ajo en una olla con aceite de oliva.</li><li>Agrega el pollo y dora por 4 minutos.</li><li>Incorpora curry, pimiento y calabacín.</li><li>Vierte la leche de coco y mezcla bien.</li><li>Cocina a fuego medio por 15 minutos.</li><li>Finaliza con cilantro fresco picado.</li><li>Sirve con arroz integral.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El curry es una mezcla de especias termogénicas (cúrcuma, pimienta, jengibre, comino) que elevan la temperatura corporal y activan la quema de calorías por horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">32</div>
+            <div class="recipe-name">Ensalada Caesar Fit</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tazas de lechuga romana picada</li><li>150g de pollo a la parrilla en tiras</li><li>Crutones de batata (batata en cubos horneados)</li><li>Salsa: yogur griego, mostaza Dijon, limón, ajo</li><li>Queso parmesano rallado (1 cucharada)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta batata en cubitos y hornea a 200°C por 15 min.</li><li>Asa el pollo a la parrilla y córtalo en tiras.</li><li>Prepara la salsa mezclando yogur, mostaza, limón y ajo.</li><li>Coloca la lechuga como base.</li><li>Distribuye pollo, crutones de batata y parmesano.</li><li>Rocía con la salsa y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta versión reemplaza los crutones de pan blanco por batata horneada y la salsa cremosa por yogur griego. Mismo placer, menos impacto glucémico y más proteína.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">33</div>
+            <div class="recipe-name">Wrap de Pollo Integral</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 tortilla integral grande</li><li>150g de pollo deshilachado</li><li>1/2 zanahoria rallada</li><li>1/4 pepino en bastones</li><li>2 cucharadas de guacamole</li><li>Hojas de lechuga</li><li>Sal y limón al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta ligeramente la tortilla en sartén seca.</li><li>Unta el guacamole sobre toda la superficie.</li><li>Coloca las hojas de lechuga como base.</li><li>Distribuye el pollo, zanahoria y pepino.</li><li>Enrolla firmemente doblando los bordes.</li><li>Corta a la mitad en diagonal.</li><li>Envuelve en papel aluminio si es para llevar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Un almuerzo portátil perfecto. El aguacate del guacamole aporta grasas monoinsaturadas que ayudan a tu cuerpo a absorber las vitaminas liposolubles (A, D, E, K) de los vegetales.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/quema-grasa/carne-pescado.jpg" alt="Almuerzos con Carne Roja y Pescado" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Almuerzos con Carne Roja y Pescado</h2>
+        <p class="chapter-desc">Proteínas de alto valor biológico que nutren tus músculos y aceleran tu metabolismo. La carne roja magra y el pescado son aliados poderosos cuando se preparan bien.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">34</div>
+            <div class="recipe-name">Filete de Res a la Parrilla con Chimichurri</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de lomo de res magro</li><li>Chimichurri: perejil, ajo, orégano, aceite de oliva, vinagre</li><li>Sal rosa y pimienta</li><li>Ensalada verde para acompañar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Retira la carne de la nevera 20 minutos antes.</li><li>Condimenta con sal rosa y pimienta.</li><li>Prepara chimichurri picando perejil, ajo y orégano finamente, mezcla con aceite y vinagre.</li><li>Calienta la parrilla a fuego alto.</li><li>Asa el filete 4 minutos de cada lado (punto medio).</li><li>Deja reposar 3 minutos antes de cortar.</li><li>Sirve con chimichurri por encima y ensalada verde.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La carne roja magra es la mejor fuente de hierro hemo — el tipo que tu cuerpo absorbe más fácilmente. El hierro es esencial para transportar oxígeno y mantener tu energía.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">35</div>
+            <div class="recipe-name">Albóndigas de Carne en Salsa de Tomate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>300g de carne molida magra (95% magra)</li><li>1 huevo entero</li><li>2 cucharadas de avena</li><li>1 cebolla picada finamente</li><li>2 dientes de ajo</li><li>Salsa de tomate natural</li><li>Albahaca fresca</li><li>Sal y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla carne, huevo, avena, mitad de la cebolla, sal y pimienta.</li><li>Forma bolitas del tamaño de una nuez.</li><li>En una olla, saltea el resto de cebolla y ajo.</li><li>Agrega la salsa de tomate y cocina 5 min.</li><li>Coloca las albóndigas en la salsa.</li><li>Cocina tapado a fuego bajo por 20 minutos.</li><li>Finaliza con albahaca fresca.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La avena en las albóndigas reemplaza la miga de pan, aportando fibra y reduciendo el índice glucémico de la preparación. Cada albóndiga es una cápsula de proteína.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">36</div>
+            <div class="recipe-name">Tacos de Carne con Lechuga</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de carne molida magra</li><li>Hojas de lechuga americana (como tortilla)</li><li>1 tomate picado</li><li>1/4 cebolla morada picada</li><li>1/2 aguacate en cubos</li><li>Comino, páprika y chile en polvo</li><li>Limón y cilantro</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Condimenta la carne con comino, páprika y chile.</li><li>Cocina en sartén hasta dorar completamente.</li><li>Lava y seca las hojas de lechuga grandes.</li><li>Rellena cada hoja con carne, tomate, cebolla y aguacate.</li><li>Exprime limón por encima y agrega cilantro.</li><li>Sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Usar lechuga en vez de tortilla elimina hasta 25g de carbohidratos por taco. Tu glucosa permanece estable y la lechuga aporta agua y fibra para la saciedad.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">37</div>
+            <div class="recipe-name">Carne Asada con Legumbres al Horno</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de bife de lomo</li><li>1 batata mediana en cubos</li><li>1 calabacín en rodajas</li><li>1 pimiento en tiras</li><li>1 cebolla en gajos</li><li>Aceite de oliva, romero y tomillo</li><li>Sal rosa y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C.</li><li>Corta las legumbres y colócalas en bandeja.</li><li>Rocía con aceite de oliva y hierbas, hornea 25 min.</li><li>Condimenta la carne y ásala a la parrilla.</li><li>Deja reposar antes de cortar en tajadas.</li><li>Sirve la carne sobre las legumbres asadas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las legumbres asadas al horno concentran sus nutrientes y desarrollan sabores profundos. La batata aporta carbohidratos complejos que no generan picos de insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">38</div>
+            <div class="recipe-name">Hamburguesa Fit sin Pan</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de carne molida magra</li><li>Hojas de lechuga como envoltorio</li><li>1 rodaja de tomate</li><li>Cebolla caramelizada (en sartén con poquita miel)</li><li>1 cucharada de mostaza</li><li>Queso mozzarella light (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Forma un disco con la carne condimentada con sal y pimienta.</li><li>Cocina en sartén caliente 4 min de cada lado.</li><li>Coloca el queso encima para derretir los últimos 30 segundos.</li><li>Arma la hamburguesa usando hojas de lechuga como pan.</li><li>Agrega tomate, cebolla caramelizada y mostaza.</li><li>Sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Eliminar el pan reduce hasta 35g de carbohidratos simples. La lechuga te da el crujiente que amas sin ningún impacto en tu insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">39</div>
+            <div class="recipe-name">Salmón a la Parrilla con Espárragos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 filete de salmón (180g)</li><li>1 manojo de espárragos verdes</li><li>Jugo de 1 limón</li><li>2 dientes de ajo</li><li>Aceite de oliva</li><li>Sal rosa y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Condimenta el salmón con limón, ajo, sal y pimienta.</li><li>Deja marinar 10 minutos.</li><li>Recorta los tallos duros de los espárragos.</li><li>Asa el salmón con la piel hacia abajo 4-5 minutos.</li><li>Voltea y cocina 3 minutos más.</li><li>Asa los espárragos en la misma parrilla con aceite de oliva.</li><li>Sirve juntos con limón extra.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El salmón es la mejor fuente natural de omega-3 (EPA y DHA), grasas que reducen la inflamación y ayudan a tu cuerpo a responder mejor a la insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">40</div>
+            <div class="recipe-name">Pescado al Papillote con Hierbas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 filetes de pescado blanco (tilapia, merluza)</li><li>1 calabacín en rodajas finas</li><li>1 tomate en rodajas</li><li>Cebolla en aros finos</li><li>Hierbas frescas (albahaca, perejil)</li><li>Aceite de oliva, limón, sal y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C.</li><li>Corta 2 piezas grandes de papel aluminio.</li><li>Coloca las legumbres como base en cada papel.</li><li>Pon el filete de pescado encima.</li><li>Rocía con aceite de oliva, limón y hierbas.</li><li>Cierra el papillote sellando bien los bordes.</li><li>Hornea 15-18 minutos.</li><li>Abre en el plato para disfrutar el aroma.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cocinar al papillote preserva todos los nutrientes y jugos naturales sin necesidad de grasa extra. Es el método de cocción más amigable para tus hormonas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">41</div>
+            <div class="recipe-name">Ensalada Mediterránea de Camarón</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de camarones limpios</li><li>2 tazas de mix de hojas verdes</li><li>1/2 pepino en rodajas</li><li>Tomates cherry</li><li>Aceitunas negras</li><li>Queso feta light (opcional)</li><li>Vinagreta de limón y hierbas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea los camarones con ajo y aceite de oliva 3 min.</li><li>Deja enfriar ligeramente.</li><li>Monta la base con hojas verdes.</li><li>Distribuye pepino, tomates cherry y aceitunas.</li><li>Coloca los camarones por encima.</li><li>Agrega queso feta si lo deseas.</li><li>Rocía con vinagreta y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los camarones son bajísimos en calorías (99 cal/100g) pero ricos en yodo — mineral esencial para tu tiroides. Una tiroides saludable es la clave de un metabolismo activo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">42</div>
+            <div class="recipe-name">Ceviche Fresco de Pescado</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>300g de pescado blanco firme en cubos</li><li>Jugo de 4-5 limones</li><li>1/2 cebolla morada en plumas</li><li>1 ají picante (al gusto)</li><li>Cilantro fresco picado</li><li>Sal y pimienta</li><li>1 batata cocida como acompañamiento</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta el pescado en cubos de 2cm.</li><li>Cubre con jugo de limón en un tazón de vidrio.</li><li>Refrigera por 30-45 minutos, revolviendo cada 10 min.</li><li>Agrega cebolla, ají y cilantro.</li><li>Condimenta con sal y pimienta.</li><li>Sirve frío sobre hojas de lechuga.</li><li>Acompaña con rodajas de batata cocida.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El ceviche es cocción sin calor — el ácido del limón desnaturaliza las proteínas preservando todos los omega-3 y nutrientes que el calor destruiría.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">43</div>
+            <div class="recipe-name">Atún Sellado con Ajonjolí</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 filete de atún fresco (200g)</li><li>Semillas de ajonjolí (sésamo) blanco y negro</li><li>Salsa de soya light</li><li>Jengibre rallado</li><li>Aceite de sésamo</li><li>Ensalada de pepino y wakame</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Marina el atún en salsa de soya y jengibre por 15 min.</li><li>Cubre las superficies del filete con semillas de ajonjolí.</li><li>Calienta una sartén con aceite de sésamo a fuego muy alto.</li><li>Sella el atún 45 segundos de cada lado (dorado afuera, rosado adentro).</li><li>Corta en láminas con cuchillo afilado.</li><li>Sirve con ensalada de pepino y wakame.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El ajonjolí es rico en lignanos que apoyan el equilibrio estrogénico. El atún fresco aporta la mayor concentración de omega-3 en una porción pequeña.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/quema-grasa/vegetariano.jpg" alt="Almuerzos Vegetarianos y Sopas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Almuerzos Vegetarianos y Sopas</h2>
+        <p class="chapter-desc">Opciones 100% vegetales que prueban que puedes quemar grasa sin carne. Ricas en fibra, proteína vegetal y antioxidantes para tu equilibrio hormonal.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">44</div>
+            <div class="recipe-name">Quiche de Legumbres Sin Masa</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>6 huevos enteros</li><li>1 taza de espinaca picada</li><li>1 tomate picado</li><li>1/2 cebolla picada</li><li>1/4 taza de queso cottage</li><li>Sal, pimienta y nuez moscada</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C.</li><li>Saltea cebolla, espinaca y tomate por 3 minutos.</li><li>Bate los huevos con cottage, sal, pimienta y nuez moscada.</li><li>Coloca los vegetales salteados en un molde engrasado.</li><li>Vierte la mezcla de huevos por encima.</li><li>Hornea por 25-30 minutos hasta dorar.</li><li>Deja reposar 5 minutos, corta en rebanadas y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Sin masa = sin harina refinada. Esta quiche tiene toda la proteína del huevo y los antioxidantes de los vegetales, con mínimo impacto en tu glucosa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">45</div>
+            <div class="recipe-name">Berenjena Rellena Mediterránea</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 berenjenas grandes</li><li>1/2 taza de quinoa cocida</li><li>1/4 taza de tomate seco picado</li><li>Aceitunas negras picadas</li><li>2 cucharadas de queso cottage</li><li>Albahaca fresca</li><li>Aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta las berenjenas a la mitad a lo largo.</li><li>Hornea boca abajo a 200°C por 20 minutos.</li><li>Con una cuchara, retira parte de la pulpa.</li><li>Mezcla la pulpa con quinoa, tomate seco, aceitunas y cottage.</li><li>Rellena las berenjenas con la mezcla.</li><li>Hornea 10 minutos más hasta gratinar.</li><li>Finaliza con albahaca fresca y aceite de oliva.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La berenjena es rica en nasunina — un antioxidante que protege las membranas celulares. Además, su fibra ralentiza la digestión, manteniendo tu glucosa estable.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">46</div>
+            <div class="recipe-name">Curry de Garbanzo con Espinaca</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 lata de garbanzo cocido (escurrido)</li><li>2 tazas de espinaca fresca</li><li>1/2 taza de salsa de tomate natural</li><li>1/2 taza de leche de coco light</li><li>1 cucharada de curry en polvo</li><li>1 cebolla picada</li><li>2 dientes de ajo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea cebolla y ajo en aceite de oliva.</li><li>Agrega el curry y cocina 1 minuto para activar aromas.</li><li>Incorpora la salsa de tomate y leche de coco.</li><li>Agrega el garbanzo y cocina 10 minutos.</li><li>Junta la espinaca y cocina 2 minutos más hasta marchitar.</li><li>Sirve caliente con arroz integral o solo.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El garbanzo es proteína vegetal completa con fibra que alimenta tu microbiota intestinal. Un intestino saludable produce serotonina — la hormona del bienestar.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">47</div>
+            <div class="recipe-name">Ensalada Tibia de Lentejas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de lentejas cocidas</li><li>1 tomate picado</li><li>1/2 pepino en cubos</li><li>1/4 cebolla morada picada</li><li>Menta fresca picada</li><li>Jugo de 1 limón</li><li>2 cucharadas de aceite de oliva</li><li>Sal y comino</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina las lentejas hasta tiernas pero firmes.</li><li>Mezcla con tomate, pepino, cebolla y menta.</li><li>Prepara vinagreta con limón, aceite, sal y comino.</li><li>Rocía sobre la ensalada y mezcla bien.</li><li>Sirve tibia o a temperatura ambiente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las lentejas tienen un índice glucémico de apenas 29 — uno de los más bajos entre los alimentos. Su fibra soluble forma un gel que atrapa los azúcares, liberándolos lentamente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">48</div>
+            <div class="recipe-name">Tofu a la Parrilla Oriental</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>300g de tofu firme</li><li>2 cucharadas de salsa de soya</li><li>1 cucharadita de jengibre rallado</li><li>2 dientes de ajo picados</li><li>1 cucharadita de aceite de sésamo</li><li>Semillas de sésamo y cebollín</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Prensa el tofu para eliminar exceso de agua (20 min con peso).</li><li>Corta en rebanadas de 1cm.</li><li>Marina en salsa de soya, jengibre y ajo por 15 minutos.</li><li>Calienta la parrilla o sartén grill.</li><li>Asa 3-4 minutos de cada lado hasta dorar.</li><li>Finaliza con aceite de sésamo, semillas y cebollín.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El tofu contiene isoflavonas — fitoestrógenos que actúan como reguladores hormonales naturales. Especialmente beneficioso durante la perimenopausia y menopausia.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">49</div>
+            <div class="recipe-name">Sopa Detox de Legumbres</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 calabacín picado</li><li>2 zanahorias picadas</li><li>1 cebolla</li><li>2 dientes de ajo</li><li>1 tomate</li><li>2 tallos de apio</li><li>1 litro de caldo de legumbres casero</li><li>Hierbas frescas (perejil, cilantro)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea cebolla y ajo en una olla con aceite de oliva.</li><li>Agrega todas las legumbres picadas.</li><li>Cubre con el caldo de legumbres.</li><li>Cocina por 25 minutos hasta que todo ablande.</li><li>Condimenta con hierbas frescas.</li><li>Sirve caliente, puede batir la mitad para crema.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Una sopa detox en la cena le da descanso a tu sistema digestivo. Mientras duermes, tu cuerpo puede enfocarse en reparar y producir la hormona del crecimiento que quema grasa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">50</div>
+            <div class="recipe-name">Caldo Verde Proteico</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 tazas de col rizada fileteada</li><li>2 papas medianas</li><li>150g de salchicha de pollo light</li><li>1 cebolla picada</li><li>2 dientes de ajo</li><li>1 litro de caldo de pollo casero</li><li>Aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea cebolla y ajo en una olla honda.</li><li>Agrega las papas en cubos y cubre con caldo.</li><li>Cocina 15 minutos hasta ablandar.</li><li>Machaca algunas papas para espesar.</li><li>Agrega la salchicha fileteada y cocina 5 min.</li><li>Junta la col fileteada finamente.</li><li>Cocina apenas 3 minutos para mantener verde.</li><li>Finaliza con hilo de aceite de oliva.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La col rizada es el vegetal con mayor densidad nutricional del mundo. Rica en vitamina K, calcio y anti-inflamatorios naturales que protegen tus huesos durante los cambios hormonales.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/quema-grasa/postres.jpg" alt="Postres y Dulces con Cacao" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Postres y Dulces con Cacao</h2>
+        <p class="chapter-desc">¿Pensaste que quemar grasa significaba abandonar el chocolate? Estas recetas usan cacao puro — rico en antioxidantes y magnesio — para satisfacer tu antojo sin culpa.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">51</div>
+            <div class="recipe-name">Mousse Proteica de Chocolate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 aguacate maduro</li><li>2 cucharadas de cacao en polvo 100%</li><li>1 scoop de whey protein de chocolate</li><li>3 cucharadas de leche de almendras</li><li>Stevia o xilitol al gusto</li><li>1 cucharadita de esencia de vainilla</li><li>Pizca de sal</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta el aguacate y remueve el hueso.</li><li>Coloca la pulpa en el procesador.</li><li>Agrega cacao, whey, leche de almendras.</li><li>Bate hasta obtener consistencia cremosa y homogénea.</li><li>Agrega endulzante y vainilla, ajusta el sabor.</li><li>Distribuye en vasitos individuales.</li><li>Refrigera al menos 2 horas.</li><li>Sirve helado con raspas de chocolate 70%.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El aguacate es la grasa saludable que tu cuerpo necesita para producir progesterona y estrógeno. En esta mousse, aporta la cremosidad sin necesidad de crema ni azúcar.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">52</div>
+            <div class="recipe-name">Barrita Casera de Nueces y Cacao</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de dátiles sin hueso</li><li>1/2 taza de maní tostado</li><li>1/2 taza de nuez de cajú</li><li>1/4 taza de almendras</li><li>2 cucharadas de pasta de maní</li><li>1 cucharada de aceite de coco derretido</li><li>2 cucharadas de cacao en polvo</li><li>Pizca de sal marina</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Procesa los dátiles hasta formar una pasta.</li><li>Pica groseramente las nueces y maníes.</li><li>Mezcla todo con pasta de maní, aceite de coco y cacao.</li><li>Forra un molde pequeño con papel manteca.</li><li>Presiona bien la mezcla en el molde.</li><li>Refrigera 30 minutos hasta firmar.</li><li>Corta en 10 barritas rectangulares.</li><li>Guarda en recipiente hermético hasta 2 semanas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estas barritas reemplazan las barras procesadas del supermercado (llenas de azúcar oculto). Los dátiles endulzan naturalmente y aportan potasio para combatir la retención de líquidos.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">53</div>
+            <div class="recipe-name">Chips de Legumbres Horneados</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 batata mediana</li><li>1 remolacha mediana</li><li>1 calabacín grande</li><li>2 cucharadas de aceite de oliva</li><li>Sal rosa al gusto</li><li>Páprika ahumada</li><li>Romero seco</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C.</li><li>Lava y seca las legumbres, corta en rebanadas ultra-finas.</li><li>Rocía con aceite de oliva en un tazón.</li><li>Condimenta con sal, páprika y romero.</li><li>Dispone en bandejas forradas sin sobreponer.</li><li>Hornea 25-30 minutos, volteando a la mitad.</li><li>Retira cuando estén crujientes y dorados.</li><li>Deja enfriar completamente antes de guardar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Hornear las legumbres en lugar de freírlas reduce las calorías un 75%. La remolacha aporta nitratos que mejoran el flujo sanguíneo y la entrega de oxígeno a tus células.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">54</div>
+            <div class="recipe-name">Brigadeiro Fit</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de cacao 70% en polvo</li><li>3 cucharadas de crema de leche light</li><li>1 cucharada de pasta de maní natural</li><li>Endulzante al gusto (xilitol o stevia)</li><li>Cacao en polvo para enrollar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla cacao, crema de leche y endulzante en una olla.</li><li>Cocina a fuego bajo revolviendo constantemente.</li><li>Agrega la pasta de maní y sigue revolviendo.</li><li>Cocina hasta que la masa se despegue del fondo.</li><li>Deja enfriar completamente.</li><li>Forma bolitas con las manos untadas en aceite de coco.</li><li>Enrolla cada bolita en cacao en polvo.</li><li>Refrigera 1 hora antes de consumir.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El cacao puro (sin azúcar) contiene flavonoides que mejoran la sensibilidad a la insulina. Es un superalimento disfrazado de dulce.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">55</div>
+            <div class="recipe-name">Brownie de Frijol Negro</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 lata de frijoles negros (escurridos y lavados)</li><li>3 cucharadas de cacao en polvo puro</li><li>2 huevos enteros</li><li>2 cucharadas de miel pura</li><li>1 cucharadita de polvo de hornear</li><li>Pizca de sal</li><li>Nueces picadas para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C.</li><li>Coloca frijoles, cacao, huevos, miel y sal en la licuadora.</li><li>Bate hasta obtener masa homogénea.</li><li>Agrega polvo de hornear y mezcla rápidamente.</li><li>Vierte en molde engrasado.</li><li>Esparce nueces picadas por encima.</li><li>Hornea 25-30 minutos hasta firmar.</li><li>Deja enfriar antes de cortar en cuadrados.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Suena loco, pero los frijoles negros crean un brownie húmedo y fudgy con 3 veces más proteína y fibra que la versión tradicional. Tu glucosa te lo va a agradecer.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">56</div>
+            <div class="recipe-name">Trufas de Cacao y Coco</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de dátiles sin hueso</li><li>3 cucharadas de cacao en polvo puro</li><li>1/4 taza de coco rallado</li><li>1 cucharada de aceite de coco derretido</li><li>Cacao extra para rebozar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Procesa los dátiles hasta formar pasta.</li><li>Agrega cacao, coco rallado y aceite de coco.</li><li>Procesa hasta mezclar bien.</li><li>Forma bolitas del tamaño de una nuez.</li><li>Reboza en cacao en polvo.</li><li>Refrigera 30 minutos antes de consumir.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los dátiles son el endulzante natural con más minerales: potasio, magnesio y hierro. Un dulce que nutre en vez de inflamar.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">57</div>
+            <div class="recipe-name">Panqueque de Cacao Relleno</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 banana madura</li><li>1 huevo entero</li><li>2 cucharadas de avena</li><li>1 cucharada de cacao en polvo</li><li>1 cucharada de pasta de maní</li><li>Frutas rojas para rellenar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Machaca la banana y mezcla con huevo, avena y cacao.</li><li>Calienta sartén antiadherente con aceite de coco.</li><li>Vierte la masa formando un disco.</li><li>Cocina 2 minutos de cada lado.</li><li>Rellena con pasta de maní y frutas rojas.</li><li>Dobla y sirve caliente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Reemplaza el pancake tradicional de harina refinada. La avena + huevo + banana = carbohidrato inteligente con proteína que te mantiene satisfecha toda la mañana.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">58</div>
+            <div class="recipe-name">Nice Cream de Chocolate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 bananas maduras congeladas en rodajas</li><li>2 cucharadas de cacao en polvo puro</li><li>2-3 cucharadas de leche vegetal</li><li>Toppings: nueces, coco rallado, frutas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta las bananas en rodajas y congélalas por al menos 4 horas.</li><li>Coloca las rodajas congeladas en el procesador.</li><li>Agrega cacao y leche vegetal.</li><li>Procesa, parando para raspar los laterales.</li><li>Continúa hasta obtener textura cremosa como helado.</li><li>Sirve inmediatamente con tus toppings favoritos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Helado con un solo ingrediente base. La banana congelada crea una textura cremosa idéntica al helado, pero con potasio, fibra y sin azúcar añadido ni grasas saturadas.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/quema-grasa/frutas.jpg" alt="Postres con Frutas y Snacks Portátiles" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Postres con Frutas y Snacks Portátiles</h2>
+        <p class="chapter-desc">Las frutas son el dulce de la naturaleza. Estas recetas transforman frutas simples en postres espectaculares, y los snacks portátiles te acompañan a donde vayas.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">59</div>
+            <div class="recipe-name">Brocheta de Frutas con Chocolate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>6 fresas grandes</li><li>1 banana en rodajas gruesas</li><li>1/2 taza de uvas</li><li>30g de chocolate 70% cacao</li><li>Palitos de brocheta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Monta las frutas intercalando en palitos de brocheta.</li><li>Derrite el chocolate en baño María o microondas.</li><li>Rocía el chocolate derretido sobre las brochetas.</li><li>Coloca en bandeja forrada con papel manteca.</li><li>Congela por 20 minutos hasta que el chocolate endurezca.</li><li>Sirve como postre o snack.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El chocolate 70% cacao tiene menos azúcar y más flavonoides que mejoran la circulación. Las fresas son ricas en vitamina C que potencia la producción de colágeno.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">60</div>
+            <div class="recipe-name">Manzana Horneada con Canela</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 manzanas rojas grandes</li><li>2 cucharadas de avena</li><li>1 cucharadita de canela</li><li>1 cucharada de miel pura</li><li>1 cucharada de nueces picadas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C.</li><li>Remueve el centro de las manzanas con un cuchillo.</li><li>Mezcla avena, canela, miel y nueces.</li><li>Rellena las manzanas con la mezcla.</li><li>Coloca en bandeja para hornear con un poco de agua.</li><li>Hornea 30 minutos hasta que ablanden.</li><li>Sirve caliente — el aroma es irresistible.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La manzana horneada libera pectina — una fibra soluble que alimenta las bacterias beneficiosas de tu intestino. Un microbioma saludable regula tus hormonas del hambre.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">61</div>
+            <div class="recipe-name">Gelatina Natural de Frutas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 sobres de gelatina sin sabor</li><li>2 tazas de jugo natural de frutas (sin azúcar)</li><li>1 taza de frutas frescas picadas</li><li>Stevia al gusto (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hidrata la gelatina en 1/2 taza de agua fría por 5 min.</li><li>Calienta el jugo de frutas sin dejar hervir.</li><li>Disuelve la gelatina en el jugo caliente.</li><li>Endulza con stevia si es necesario.</li><li>Distribuye las frutas picadas en vasitos.</li><li>Vierte la mezcla de gelatina sobre las frutas.</li><li>Refrigera por al menos 4 horas hasta cuajar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La gelatina sin sabor es colágeno puro — la proteína que mantiene tu piel firme y tus articulaciones saludables. Cero azúcar y llena de beneficios anti-envejecimiento.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">62</div>
+            <div class="recipe-name">Ensalada de Frutas Tropical</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de piña en cubos</li><li>1/2 mango en cubos</li><li>1/2 papaya en cubos</li><li>Pulpa de 1 maracuyá</li><li>Jugo de 1 naranja</li><li>Menta fresca picada</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta todas las frutas en cubos del mismo tamaño.</li><li>Mezcla en un tazón grande.</li><li>Exprime el jugo de naranja sobre las frutas.</li><li>Agrega la pulpa de maracuyá con sus semillas.</li><li>Espolvorea menta fresca picada.</li><li>Refrigera 15 minutos antes de servir.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La piña contiene bromelina — una enzima que mejora la digestión de proteínas y reduce la inflamación. El maracuyá aporta fibra soluble que regula el tránsito intestinal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">63</div>
+            <div class="recipe-name">Banana a la Parrilla con Yogur</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 bananas maduras (con cáscara)</li><li>1/2 cucharadita de canela</li><li>1/2 taza de yogur griego natural</li><li>1 cucharada de miel (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta las bananas a la mitad a lo largo (sin pelar).</li><li>Asa en la parrilla o sartén grill 3 min de cada lado.</li><li>Retira la cáscara y coloca en el plato.</li><li>Espolvorea canela por encima.</li><li>Sirve con yogur griego al lado.</li><li>Rocía miel si lo deseas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Asar la banana aumenta su contenido de fructooligosacáridos — prebióticos que alimentan las bacterias buenas de tu intestino. Dulce sin azúcar añadido.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">64</div>
+            <div class="recipe-name">Bolitas de Avena y Coco</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de avena en hojuelas</li><li>1/2 taza de coco rallado</li><li>2 cucharadas de miel o xilitol</li><li>2 cucharadas de pasta de maní</li><li>1 cucharada de semillas de chía</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todos los ingredientes en un tazón.</li><li>Amasa con las manos hasta que se compacte.</li><li>Forma bolitas del tamaño de una nuez.</li><li>Reboza en coco rallado extra.</li><li>Refrigera 30 minutos.</li><li>Guarda en recipiente hermético hasta 10 días.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Snack perfecto para llevar al trabajo. La combinación avena + maní + chía aporta fibra, proteína y omega-3 — tres nutrientes que combaten los picos de insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">65</div>
+            <div class="recipe-name">Palitos de Pepino con Hummus</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 pepinos grandes</li><li>1/2 taza de hummus casero o comprado</li><li>Páprika ahumada para decorar</li><li>Semillas de sésamo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava los pepinos y córtalos en bastones.</li><li>Coloca el hummus en un tazón central.</li><li>Espolvorea páprika y sésamo sobre el hummus.</li><li>Sirve los bastones alrededor para dippear.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pepino es 96% agua — hidrata mientras llena. El garbanzo del hummus aporta proteína vegetal y fibra que mantienen tu glucosa estable por horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">66</div>
+            <div class="recipe-name">Rollitos de Pavo y Aguacate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 rebanadas de pechuga de pavo ahumada</li><li>1/2 aguacate en tiras</li><li>Hojas de rúcula</li><li>Queso crema light</li><li>Pimienta negra</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Extiende cada rebanada de pavo.</li><li>Unta una capa fina de queso crema.</li><li>Coloca rúcula y una tira de aguacate.</li><li>Enrolla firmemente.</li><li>Asegura con un palillo si es necesario.</li><li>Sirve como snack o aperitivo.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pavo es una de las proteínas más magras y ricas en triptófano — precursor de la serotonina. Ideal para combatir la ansiedad por dulce de la tarde.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">67</div>
+            <div class="recipe-name">Edamame con Sal de Mar</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tazas de edamame congelado (con vaina)</li><li>Sal de mar gruesa</li><li>1 cucharadita de aceite de sésamo (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hierve agua con sal en una olla.</li><li>Agrega el edamame y cocina 4 minutos.</li><li>Escurre y transfiere a un tazón.</li><li>Rocía con aceite de sésamo si lo deseas.</li><li>Espolvorea sal de mar gruesa.</li><li>Come presionando la vaina para extraer los granos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El edamame es soja joven rica en isoflavonas — fitoestrógenos que ayudan a regular el equilibrio hormonal. Una taza aporta 17g de proteína vegetal completa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">68</div>
+            <div class="recipe-name">Tostadas de Arroz con Aguacate y Tomate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tostadas de arroz integral</li><li>1/2 aguacate maduro</li><li>1 tomate pequeño en rodajas</li><li>Sal rosa y pimienta</li><li>Semillas de sésamo</li><li>Limón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Machaca el aguacate con limón, sal y pimienta.</li><li>Distribuye sobre las tostadas de arroz.</li><li>Coloca rodajas de tomate por encima.</li><li>Espolvorea semillas de sésamo.</li><li>Sirve como snack de media tarde.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las tostadas de arroz tienen bajo índice glucémico y son libres de gluten. El aguacate aporta ácido oleico que reduce la inflamación abdominal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/jugo.jpg" alt="Bebidas Funcionales y Postres Helados" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Bebidas Funcionales y Postres Helados</h2>
+        <p class="chapter-desc">Bebidas que trabajan mientras las disfrutas: proteicas, termogénicas, antioxidantes. Y dos postres helados que demuestran que comer sano puede ser delicioso.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">69</div>
+            <div class="recipe-name">Batido de Fresa Proteico</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de fresas congeladas</li><li>1 scoop de whey protein de vainilla</li><li>1 taza de leche de almendras sin azúcar</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca fresas, whey y leche en la licuadora.</li><li>Agrega hielo al gusto.</li><li>Bate 1-2 minutos hasta quedar cremoso.</li><li>Sirve inmediatamente en vaso alto.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las fresas aportan vitamina C que potencia la producción de colágeno y ayuda a la absorción de hierro. Combinadas con whey, tienes el snack post-ejercicio perfecto.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">70</div>
+            <div class="recipe-name">Café Helado Proteico</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de café fuerte frío</li><li>1 scoop de whey protein de vainilla</li><li>1/2 taza de leche vegetal</li><li>Hielo abundante</li><li>Canela al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Prepara el café y déjalo enfriar completamente.</li><li>Coloca café, whey, leche y hielo en la licuadora.</li><li>Bate hasta quedar espumoso.</li><li>Sirve con canela espolvoreada.</li><li>Consume como snack de media tarde.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cafeína + proteína = combo termogénico. La cafeína libera ácidos grasos del tejido adiposo y la proteína mantiene tu metabolismo activo. Energía sin crash.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">71</div>
+            <div class="recipe-name">Batido Verde de Aguacate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/4 de aguacate maduro</li><li>1/2 taza de leche de coco sin azúcar</li><li>Jugo de 1/2 limón</li><li>Hojas de menta fresca</li><li>Hielo al gusto</li><li>Stevia al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca todos los ingredientes en la licuadora.</li><li>Bate hasta quedar cremoso y homogéneo.</li><li>Ajusta dulzor con stevia.</li><li>Sirve inmediatamente bien frío.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El aguacate aporta potasio (más que el plátano) — mineral que combate la retención de líquidos y la hinchazón. El limón alcaliniza y estimula tu hígado.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">72</div>
+            <div class="recipe-name">Batido de Banana y Canela</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 banana congelada</li><li>1 cucharadita de canela en polvo</li><li>1 taza de leche de almendras sin azúcar</li><li>1 cucharada de pasta de maní natural</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca banana, canela, leche y pasta de maní en la licuadora.</li><li>Agrega hielo al gusto.</li><li>Bate hasta quedar cremoso.</li><li>Sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La canela regula los niveles de glucosa e insulina de forma natural. Combinada con la pasta de maní (proteína + grasa), te da saciedad que dura horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">73</div>
+            <div class="recipe-name">Smoothie Rojo Antioxidante</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de frutas rojas congeladas</li><li>1/4 de remolacha cruda pequeña</li><li>1 cucharadita de jengibre rallado</li><li>1 taza de agua de coco</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Pela y pica la remolacha.</li><li>Coloca todos los ingredientes en la licuadora.</li><li>Bate por 2 minutos hasta homogeneizar.</li><li>Cuela si prefieres textura más lisa.</li><li>Sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las frutas rojas + remolacha + jengibre = triple poder antioxidante y anti-inflamatorio. Combaten los radicales libres que aceleran el envejecimiento celular y hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">74</div>
+            <div class="recipe-name">Paleta de Yogur y Frutas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de yogur griego natural</li><li>1/2 taza de frutas picadas (fresa, kiwi, mango)</li><li>1 cucharadita de miel (opcional)</li><li>Moldes de paleta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla yogur con miel si lo deseas.</li><li>Agrega las frutas picadas.</li><li>Vierte en moldes de paleta.</li><li>Inserta los palitos.</li><li>Congela por al menos 6 horas.</li><li>Para desmoldar, pasa el molde bajo agua tibia.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estas paletas tienen proteína del yogur griego y vitaminas de las frutas. Perfectas para días calientes — satisfacen sin azúcar refinado ni colorantes artificiales.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">75</div>
+            <div class="recipe-name">Helado de Banana (1 Solo Ingrediente)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 bananas maduras congeladas en rodajas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta las bananas en rodajas y congélalas al menos 4 horas.</li><li>Coloca las rodajas congeladas en el procesador.</li><li>Procesa parando para raspar los laterales.</li><li>Continúa batiendo hasta obtener textura cremosa como helado.</li><li>Sirve inmediatamente o congela 30 min para más firmeza.</li><li>Variaciones: agrega cacao, pasta de maní o frutas rojas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Helado cremoso sin crema, sin azúcar, sin conservantes. Solo banana. Tu cuerpo lo reconoce como alimento real y lo procesa sin inflamación ni picos de insulina.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/cena.jpg" alt="Cenas: Caldos, Sopas y Ensaladas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Cenas: Caldos, Sopas y Ensaladas</h2>
+        <p class="chapter-desc">La cena influencia directamente tu quema de grasa nocturna. Cenar ligero entre las 18h-20h permite que tu cuerpo entre en modo reparación y quema de grasa mientras duermes.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">76</div>
+            <div class="recipe-name">Sopa Detox de Col Rizada y Ñame</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tazas de col rizada picada</li><li>1 ñame mediano pelado y picado</li><li>1 cebolla picada</li><li>2 dientes de ajo</li><li>1 litro de caldo de legumbres casero</li><li>Jengibre rallado (1 cucharadita)</li><li>Jugo de 1/2 limón</li><li>Sal rosa, pimienta y aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea cebolla y ajo en una olla con aceite de oliva.</li><li>Agrega el ñame y el caldo de legumbres.</li><li>Cocina por 20 minutos hasta ablandar.</li><li>Agrega col rizada y jengibre.</li><li>Cocina 5 minutos más.</li><li>Bate la mitad para crear cremosidad.</li><li>Vuelve a la olla y ajusta condimentos.</li><li>Finaliza con limón y hilo de aceite de oliva.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El ñame contiene diosgenina — un precursor natural de la progesterona. Esta sopa es especialmente beneficiosa para mujeres con síntomas de dominancia estrogénica.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">77</div>
+            <div class="recipe-name">Caldo Verde Light</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 tazas de col rizada fileteada finamente</li><li>2 papas medianas peladas</li><li>150g de salchicha de pollo light</li><li>1 cebolla picada</li><li>2 dientes de ajo machacados</li><li>1 litro de caldo de pollo casero</li><li>Sal, pimienta y aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea cebolla y ajo en una olla honda.</li><li>Agrega las papas en cubos y cubre con caldo.</li><li>Cocina 15 minutos hasta ablandar.</li><li>Machaca algunas papas para espesar.</li><li>Agrega salchicha fileteada y cocina 5 min.</li><li>Junta la col fileteada finamente.</li><li>Cocina apenas 3 minutos para mantener verde.</li><li>Finaliza con hilo de aceite de oliva.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Versión ligera del clásico portugués. Al usar salchicha de pollo light reduces la grasa saturada, y la col aporta calcio biodisponible para tus huesos.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">78</div>
+            <div class="recipe-name">Tortilla de Claras con Vegetales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>5 claras de huevo</li><li>1/2 taza de champiñones fileteados</li><li>1/2 taza de espinaca</li><li>1/4 taza de tomate picado</li><li>2 cucharadas de queso cottage</li><li>Sal rosa y orégano</li><li>Spray de aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate las claras con sal y orégano.</li><li>Calienta sartén con spray de aceite de oliva.</li><li>Saltea rápidamente champiñones y espinaca.</li><li>Vierte las claras sobre los vegetales.</li><li>Esparce tomate y cottage por encima.</li><li>Cocina a fuego bajo hasta firmar.</li><li>Dobla cuidadosamente a la mitad.</li><li>Cocina 1 minuto más y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las claras son proteína pura con cero grasa. Cenar proteína activa la termogénesis nocturna: tu cuerpo gasta calorías para digerirla mientras duermes.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">79</div>
+            <div class="recipe-name">Caldo de Pollo con Vegetales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 pechuga de pollo con hueso</li><li>2 zanahorias en rodajas</li><li>2 tallos de apio picados</li><li>1 cebolla en cuartos</li><li>3 dientes de ajo</li><li>1 litro de agua</li><li>Sal, pimienta y hierbas frescas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca el pollo con hueso en una olla grande.</li><li>Agrega agua, cebolla y ajo.</li><li>Cocina a fuego lento por 30 minutos.</li><li>Agrega zanahoria y apio, cocina 10 min más.</li><li>Retira el pollo, deshilacha y vuelve al caldo.</li><li>Condimenta con hierbas frescas.</li><li>Sirve caliente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El caldo de huesos de pollo es rico en colágeno y glicina — un aminoácido que mejora la calidad del sueño. Mejor sueño = más hormona del crecimiento = más quema de grasa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">80</div>
+            <div class="recipe-name">Sopa de Tomate Asado</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>6 tomates maduros cortados a la mitad</li><li>4 dientes de ajo enteros</li><li>1 cebolla en cuartos</li><li>Albahaca fresca</li><li>2 tazas de caldo vegetal</li><li>Aceite de oliva, sal y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C.</li><li>Coloca tomates, ajo y cebolla en bandeja.</li><li>Rocía con aceite de oliva, sal y pimienta.</li><li>Asa por 25 minutos hasta caramelizar.</li><li>Transfiere todo a una olla con caldo vegetal.</li><li>Bate con licuadora de inmersión hasta cremoso.</li><li>Agrega albahaca fresca y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Asar los tomates aumenta su contenido de licopeno — un antioxidante que protege contra el estrés oxidativo celular y apoya la función cardiovascular.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">81</div>
+            <div class="recipe-name">Caldo Miso con Tofu</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 cucharadas de pasta miso</li><li>200g de tofu sedoso en cubos</li><li>1 hoja de alga wakame (hidratada)</li><li>Cebollín picado</li><li>3 tazas de agua caliente</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta el agua sin dejar hervir.</li><li>Disuelve la pasta miso en un poco de agua caliente.</li><li>Agrega el tofu en cubos y la wakame.</li><li>Incorpora la mezcla de miso.</li><li>Calienta sin hervir (hervir destruye los probióticos).</li><li>Sirve con cebollín picado.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El miso es un fermentado rico en probióticos que equilibran tu microbiota intestinal. El 90% de la serotonina se produce en el intestino — un intestino sano = mejor humor y menos antojos.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">82</div>
+            <div class="recipe-name">Sopa de Calabaza Anti-Inflamatoria</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 calabaza mediana pelada y picada</li><li>1 cebolla picada</li><li>1 cucharadita de jengibre rallado</li><li>1/2 taza de leche de coco light</li><li>2 tazas de caldo vegetal</li><li>Sal, pimienta y nuez moscada</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea cebolla y jengibre en aceite de oliva.</li><li>Agrega la calabaza y cubre con caldo.</li><li>Cocina 20 minutos hasta ablandar.</li><li>Bate hasta obtener crema lisa.</li><li>Agrega leche de coco y nuez moscada.</li><li>Calienta 2 minutos más y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La calabaza es rica en betacaroteno que tu cuerpo convierte en vitamina A — esencial para la producción de progesterona. El jengibre potencia el efecto anti-inflamatorio.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">83</div>
+            <div class="recipe-name">Caldo de Legumbres Mixtas Desintoxicante</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 zanahoria en rodajas</li><li>2 tallos de apio picados</li><li>1 calabacín en cubos</li><li>1 puerro en rodajas</li><li>Hierbas frescas (tomillo, perejil)</li><li>1 litro de agua</li><li>Sal rosa y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca todas las legumbres en una olla con agua.</li><li>Lleva a ebullición y reduce a fuego bajo.</li><li>Cocina por 25 minutos.</li><li>Agrega hierbas frescas en los últimos 5 minutos.</li><li>Sirve caliente como cena ligera.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Un caldo de legumbres puro es el reinicio perfecto para tu sistema digestivo. Bajo en calorías, rico en minerales y electrolitos que tu cuerpo necesita para funcionar bien.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">84</div>
+            <div class="recipe-name">Ensalada Caesar con Pollo para Cena</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tazas de lechuga romana</li><li>150g de pollo a la parrilla en tiras</li><li>Crutones de batata horneada</li><li>Salsa: yogur griego, mostaza Dijon, limón, ajo</li><li>1 cucharada de queso parmesano rallado</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hornea cubitos de batata a 200°C por 15 min.</li><li>Asa el pollo y córtalo en tiras.</li><li>Mezcla yogur, mostaza, limón y ajo para la salsa.</li><li>Monta la ensalada con lechuga como base.</li><li>Agrega pollo, crutones de batata y parmesano.</li><li>Rocía con salsa y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta versión fit de la Caesar reemplaza crutones de pan por batata y salsa cremosa por yogur griego. Mismo sabor reconfortante, pero que trabaja a favor de tu metabolismo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">85</div>
+            <div class="recipe-name">Ensalada Griega Light</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tomates en cubos</li><li>1 pepino en rodajas</li><li>1/4 cebolla morada en aros</li><li>Aceitunas negras</li><li>Queso feta light desmenuzado</li><li>Orégano, aceite de oliva y limón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta los vegetales frescos y mezcla en un tazón.</li><li>Agrega aceitunas y queso feta desmenuzado.</li><li>Prepara vinagreta con aceite de oliva, limón y orégano.</li><li>Rocía sobre la ensalada y mezcla suavemente.</li><li>Sirve inmediatamente como cena ligera.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La dieta mediterránea es la más estudiada del mundo para la longevidad. El aceite de oliva extra virgen contiene oleocanthal, un anti-inflamatorio tan potente como el ibuprofeno.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">86</div>
+            <div class="recipe-name">Ensalada Tropical de Camarón</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de camarones cocidos</li><li>1/2 mango en cubos</li><li>1/4 de aguacate en láminas</li><li>2 tazas de mix de hojas verdes</li><li>Salsa de maracuyá (pulpa + limón + aceite de oliva)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea los camarones con ajo y aceite 3 min.</li><li>Monta la base con hojas verdes.</li><li>Distribuye mango, aguacate y camarones.</li><li>Prepara la salsa mezclando maracuyá, limón y aceite.</li><li>Rocía sobre la ensalada y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El mango aporta enzimas digestivas naturales y vitamina A. Los camarones son ricos en zinc — mineral esencial para la producción de testosterona (sí, las mujeres también la necesitan para quemar grasa).</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">87</div>
+            <div class="recipe-name">Ensalada Caprese Light</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tomates grandes maduros</li><li>Queso mozzarella light en rodajas</li><li>Albahaca fresca</li><li>Aceite de oliva extra virgen</li><li>Reducción de balsámico (sin azúcar)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta los tomates en rodajas gruesas.</li><li>Intercala con rodajas de mozzarella.</li><li>Coloca hojas de albahaca fresca entre las capas.</li><li>Rocía con aceite de oliva.</li><li>Finaliza con gotas de reducción balsámica.</li><li>Sirve inmediatamente a temperatura ambiente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La simplicidad italiana en su máxima expresión. El tomate crudo aporta vitamina C intacta y la mozzarella light da proteína con poca grasa saturada.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">88</div>
+            <div class="recipe-name">Ensalada Niçoise Completa</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 lata de atún en agua</li><li>2 huevos cocidos en cuartos</li><li>Judías verdes cocidas al dente</li><li>Tomate en gajos</li><li>Papa baby cocida (opcional)</li><li>Aceitunas negras</li><li>Vinagreta de mostaza Dijon</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina las judías verdes al vapor 4 min (deben quedar crujientes).</li><li>Cocina los huevos duros y córtalos en cuartos.</li><li>Monta todos los ingredientes en un plato grande.</li><li>Prepara vinagreta con mostaza, limón y aceite.</li><li>Rocía sobre la ensalada.</li><li>Sirve como cena completa y elegante.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta ensalada francesa clásica combina 3 fuentes de proteína (atún, huevo, judías) con grasas saludables. Una cena completa que te satisface sin pesadez.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/quema-grasa/cena-proteina.jpg" alt="Cenas: Proteínas y Recetas Express" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Cenas: Proteínas y Recetas Express</h2>
+        <p class="chapter-desc">Pescados, mariscos y opciones vegetarianas para la noche, más recetas de 10 minutos para cuando llegas cansada. Cenar proteína con vegetales es la fórmula perfecta para quemar grasa mientras duermes.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">89</div>
+            <div class="recipe-name">Tilapia al Horno con Tomate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 filetes de tilapia</li><li>2 tomates en rodajas</li><li>1 cebolla en aros</li><li>Aceite de oliva</li><li>Hierbas finas (orégano, tomillo)</li><li>Sal rosa y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C.</li><li>Coloca los filetes en bandeja engrasada.</li><li>Cubre con rodajas de tomate y aros de cebolla.</li><li>Rocía con aceite de oliva y hierbas.</li><li>Hornea 20 minutos hasta que el pescado esté opaco.</li><li>Sirve con ensalada verde.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La tilapia es una proteína ultra magra (100 calorías por filete). Cenar proteína magra antes de las 20h maximiza la producción de hormona del crecimiento durante el sueño.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">90</div>
+            <div class="recipe-name">Salmón a la Parrilla con Limón</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 filete de salmón con piel (180g)</li><li>1 manojo de espárragos</li><li>Jugo de 1 limón</li><li>Ajo, sal rosa y pimienta</li><li>Aceite de oliva</li><li>Eneldo fresco</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Condimenta el salmón con limón, ajo y sal.</li><li>Calienta la parrilla a fuego alto.</li><li>Asa con la piel hacia abajo 5 minutos.</li><li>Voltea y cocina 3 minutos más.</li><li>Asa los espárragos junto con aceite.</li><li>Sirve con eneldo fresco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El omega-3 del salmón reduce los niveles de cortisol (hormona del estrés). Menos cortisol = menos almacenamiento de grasa abdominal = vientre más plano.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">91</div>
+            <div class="recipe-name">Camarón en Calabaza</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 calabaza pequeña (como bowl)</li><li>200g de camarones limpios</li><li>1/2 taza de salsa de tomate natural</li><li>1 diente de ajo</li><li>Cilantro fresco</li><li>Sal y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hornea la calabaza boca abajo a 200°C por 25 min.</li><li>Saltea ajo y camarones en una sartén por 3 min.</li><li>Agrega salsa de tomate y cocina 5 min.</li><li>Retira la calabaza del horno.</li><li>Rellena con la preparación de camarones.</li><li>Finaliza con cilantro fresco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La calabaza como bowl natural es rica en betacaroteno y fibra. Los camarones aportan yodo para tu tiroides y selenio para la desintoxicación hepática.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">92</div>
+            <div class="recipe-name">Pescado al Papillote Aromático</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 filete de pescado blanco</li><li>Rodajas de limón</li><li>Rodajas de calabacín</li><li>Tomates cherry</li><li>Hierbas frescas (albahaca, perejil)</li><li>Aceite de oliva, sal y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C.</li><li>Coloca un filete sobre papel aluminio grande.</li><li>Distribuye vegetales y limón alrededor.</li><li>Rocía con aceite de oliva y hierbas.</li><li>Cierra el papillote sellando los bordes.</li><li>Hornea 15 minutos.</li><li>Abre en el plato y disfruta el aroma.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cocinar al papillote mantiene toda la humedad y nutrientes. El vapor aromático de las hierbas penetra el pescado, creando sabor intenso sin necesidad de grasa extra.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">93</div>
+            <div class="recipe-name">Pulpo a la Parrilla con Páprika</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>300g de pulpo pre-cocido</li><li>Aceite de oliva</li><li>3 dientes de ajo</li><li>Páprika ahumada</li><li>Perejil fresco</li><li>Sal de mar y limón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta el pulpo pre-cocido en porciones.</li><li>Marina con aceite, ajo, páprika y sal por 10 min.</li><li>Calienta la parrilla a fuego alto.</li><li>Asa 2-3 minutos de cada lado hasta caramelizar.</li><li>Sirve con limón y perejil fresco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pulpo tiene apenas 82 calorías por 100g y es uno de los alimentos más ricos en vitamina B12 — esencial para la energía celular y la función nerviosa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">94</div>
+            <div class="recipe-name">Calabacín Relleno de Quinoa</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 calabacines grandes</li><li>1/2 taza de quinoa cocida</li><li>1/4 taza de tomate seco picado</li><li>Aceitunas negras picadas</li><li>Queso cottage</li><li>Albahaca fresca</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta los calabacines a la mitad y vacía el centro.</li><li>Mezcla la pulpa con quinoa, tomate seco y aceitunas.</li><li>Rellena las mitades con la mezcla.</li><li>Agrega cottage por encima.</li><li>Hornea a 200°C por 15-20 minutos.</li><li>Finaliza con albahaca fresca.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El calabacín es 95% agua y apenas 17 calorías por taza. Relleno con quinoa se convierte en una cena completa que no sobrecarga tu sistema digestivo nocturno.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">95</div>
+            <div class="recipe-name">Tofu Revuelto con Vegetales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>300g de tofu firme desmenuzado</li><li>1 taza de brócoli en floretes</li><li>1/2 zanahoria rallada</li><li>2 cucharadas de salsa de soya light</li><li>1 cucharadita de cúrcuma</li><li>Cebollín picado</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Desmenuza el tofu con las manos o tenedor.</li><li>Saltea brócoli y zanahoria en aceite de sésamo 3 min.</li><li>Agrega el tofu desmenuzado.</li><li>Condimenta con cúrcuma y salsa de soya.</li><li>Saltea 5 minutos más revolviendo.</li><li>Sirve con cebollín picado.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El tofu es una excelente fuente de calcio vegetal. La cúrcuma le da un color dorado y potentes propiedades anti-inflamatorias para combatir la hinchazón.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">96</div>
+            <div class="recipe-name">Espagueti de Calabacín con Salsa</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 calabacines grandes</li><li>1 taza de salsa de tomate casera</li><li>2 dientes de ajo</li><li>Albahaca fresca</li><li>Aceite de oliva</li><li>Queso parmesano rallado (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Usa un espiralizador para hacer los zoodles de calabacín.</li><li>Saltea ajo en aceite de oliva 1 minuto.</li><li>Agrega la salsa de tomate y cocina 5 min.</li><li>Incorpora los zoodles y saltea apenas 2 minutos.</li><li>No cocines demasiado — deben quedar al dente.</li><li>Sirve con albahaca fresca y parmesano.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Reemplazar pasta de trigo por calabacín reduce los carbohidratos de 75g a 6g por porción. Tu insulina permanece baja y tu cuerpo quema grasa en vez de almacenarla.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">97</div>
+            <div class="recipe-name">Coliflor Buffalo Horneada</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 coliflor en floretes</li><li>3 cucharadas de salsa picante</li><li>1 cucharada de aceite de oliva</li><li>1/2 cucharadita de ajo en polvo</li><li>Sal y pimienta</li><li>Salsa de yogur para dippear</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 220°C.</li><li>Mezcla salsa picante, aceite y ajo en polvo.</li><li>Baña los floretes de coliflor en la mezcla.</li><li>Dispone en bandeja forrada sin sobreponer.</li><li>Hornea 20-25 minutos, volteando a la mitad.</li><li>Sirve con salsa de yogur griego.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La coliflor es una crucífera rica en indol-3-carbinol (I3C) — un compuesto que ayuda al hígado a metabolizar el exceso de estrógeno. Esencial para tu equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">98</div>
+            <div class="recipe-name">Ensalada de Quinoa Tibia</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de quinoa cocida (tibia)</li><li>1 taza de vegetales asados (pimiento, cebolla, berenjena)</li><li>1 taza de rúcula</li><li>Jugo de 1 limón</li><li>Aceite de oliva</li><li>Sal y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Asa los vegetales en el horno a 200°C por 20 min.</li><li>Mezcla con la quinoa tibia.</li><li>Agrega rúcula fresca.</li><li>Rocía con limón y aceite de oliva.</li><li>Sirve tibia como cena reconfortante.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La quinoa tibia con vegetales asados es la cena reconfortante que no engorda. Calidez sin pesadez — tu cuerpo entra en modo descanso sin estar digiriendo carbohidratos pesados.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">99</div>
+            <div class="recipe-name">Huevos Revueltos con Tomate y Cebollín</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 huevos enteros</li><li>1 tomate picado</li><li>1/4 cebolla picada</li><li>Cebollín fresco picado</li><li>Aceite de oliva</li><li>Sal rosa y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea cebolla y tomate en aceite de oliva.</li><li>Bate los huevos con sal y pimienta.</li><li>Vierte sobre los vegetales.</li><li>Revuelve suavemente a fuego bajo.</li><li>Cocina hasta el punto deseado.</li><li>Finaliza con cebollín fresco.</li><li>Sirve con tostadas integrales o ensalada.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cena lista en 8 minutos. Los huevos aportan todos los aminoácidos esenciales y colina para tu hígado. Cuando llegas cansada, esta es la opción más inteligente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">100</div>
+            <div class="recipe-name">Wrap de Lechuga con Pollo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>Hojas grandes de lechuga americana</li><li>200g de pollo deshilachado condimentado</li><li>1/2 zanahoria rallada</li><li>1/4 pepino en bastones</li><li>Salsa de yogur griego con limón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava y seca las hojas de lechuga.</li><li>Usa cada hoja como una tortilla.</li><li>Rellena con pollo deshilachado y vegetales.</li><li>Rocía con salsa de yogur.</li><li>Enrolla y come con las manos.</li><li>Cena lista en 10 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cero carbohidratos, lleno de sabor y proteína. El wrap de lechuga es la cena express perfecta para tu metabolismo nocturno: liviana, nutritiva y saciante.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">101</div>
+            <div class="recipe-name">Sopa de Jengibre y Zanahoria</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 zanahorias grandes peladas y cortadas en rodajas</li><li>1 trozo de jengibre fresco de 3 cm, pelado y rallado</li><li>1/2 cebolla picada</li><li>1 diente de ajo picado</li><li>2 tazas de caldo de vegetales bajo en sodio</li><li>1 cucharadita de aceite de coco</li><li>1/2 cucharadita de cúrcuma en polvo</li><li>Jugo de 1/2 limón</li><li>Sal, pimienta y cilantro fresco para servir</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta el aceite de coco en una olla mediana a fuego medio y saltea la cebolla y el ajo hasta que estén transparentes.</li><li>Agrega las rodajas de zanahoria, el jengibre rallado y la cúrcuma, revuelve por 2 minutos.</li><li>Vierte el caldo de vegetales, sube el fuego y lleva a ebullición.</li><li>Reduce el fuego y cocina a fuego lento durante 20 minutos hasta que las zanahorias estén muy tiernas.</li><li>Licúa todo con una licuadora de inmersión hasta obtener una crema sedosa y uniforme.</li><li>Agrega el jugo de limón, ajusta sal y pimienta al gusto.</li><li>Sirve caliente decorada con cilantro fresco picado y un hilo de aceite de oliva.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El jengibre es un potente termogénico natural: eleva la temperatura corporal y acelera el metabolismo, ayudando a tu cuerpo a quemar más calorías incluso en reposo. La cúrcuma potencia este efecto antiinflamatorio mientras la zanahoria aporta betacaroteno que nutre la piel y apoya el equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">102</div>
+            <div class="recipe-name">Ensalada Termogénica de Rúcula y Salmón</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>150g de filete de salmón fresco</li><li>3 tazas de rúcula fresca</li><li>1/4 taza de nueces pecanas tostadas</li><li>1/4 aguacate en rebanadas</li><li>1/4 taza de tomate cherry cortado por la mitad</li><li>1 cucharada de aceite de oliva extra virgen</li><li>Jugo de 1 limón</li><li>1 cucharadita de mostaza de Dijon</li><li>Sal, pimienta negra recién molida y hojuelas de chile seco</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Sazona el salmón con sal, pimienta y un poco de chile seco.</li><li>Cocina el salmón en una sartén caliente con un toque de aceite de oliva, 4 minutos por cada lado.</li><li>Deja reposar el salmón 2 minutos y luego desmenúzalo en trozos grandes con un tenedor.</li><li>En un bowl amplio, coloca la rúcula, los tomates cherry y las rebanadas de aguacate.</li><li>Prepara el aderezo mezclando aceite de oliva, jugo de limón y mostaza de Dijon.</li><li>Agrega el salmón desmenuzado sobre la ensalada y rocía con el aderezo.</li><li>Espolvorea las nueces pecanas tostadas y sirve de inmediato.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La rúcula contiene compuestos picantes llamados glucosinolatos que tienen efecto termogénico suave, estimulando la quema calórica. El salmón aporta omega-3 antiinflamatorio que reduce la resistencia a la leptina — la hormona que le dice a tu cerebro que ya estás satisfecha. Juntos crean un plato que quema grasa y controla el apetito.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">103</div>
+            <div class="recipe-name">Pollo al Curry con Vegetales Asados</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de pechuga de pollo cortada en cubos</li><li>1 taza de calabacín en rodajas</li><li>1/2 pimiento rojo en tiras</li><li>1/2 taza de brócoli en floretes</li><li>2 cucharadas de pasta de curry amarillo</li><li>1/2 taza de leche de coco light</li><li>1 cucharadita de cúrcuma en polvo</li><li>1 cucharadita de aceite de coco</li><li>Sal, pimienta y hojas de albahaca fresca</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C y coloca el calabacín, el pimiento y el brócoli en una bandeja con un toque de aceite de coco.</li><li>Asa los vegetales durante 15-18 minutos hasta que estén dorados en los bordes.</li><li>Mientras tanto, sazona los cubos de pollo con cúrcuma, sal y pimienta.</li><li>En una sartén caliente, sella el pollo hasta que esté dorado por todos lados.</li><li>Agrega la pasta de curry y revuelve durante 1 minuto para activar los aromas.</li><li>Incorpora la leche de coco, reduce el fuego y cocina 5 minutos hasta que la salsa espese.</li><li>Sirve el pollo en salsa de curry acompañado de los vegetales asados y decora con albahaca fresca.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las especias del curry — cúrcuma, comino, cilantro, jengibre — son una combinación termogénica poderosa que eleva tu tasa metabólica hasta un 20% durante las horas siguientes a la comida. La capsaicina del curry estimula la producción de norepinefrina, una hormona que ordena a las células grasas liberar su contenido para ser usado como energía.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">104</div>
+            <div class="recipe-name">Bowl de Quinua con Vegetales Rostizados</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de quinua cocida</li><li>1/2 taza de camote en cubos</li><li>1/2 taza de calabacín en medias lunas</li><li>1/4 taza de cebolla morada en gajos</li><li>1/4 taza de garbanzos cocidos</li><li>1 cucharada de aceite de oliva</li><li>1 cucharadita de pimentón ahumado</li><li>Jugo de 1/2 limón</li><li>Sal, pimienta y semillas de calabaza para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C.</li><li>Coloca los cubos de camote, calabacín, cebolla morada y garbanzos en una bandeja con aceite de oliva y pimentón ahumado.</li><li>Rostiza durante 25 minutos volteando a la mitad hasta que estén dorados y caramelizados.</li><li>Cocina la quinua según las instrucciones del paquete y déjala reposar.</li><li>Arma el bowl con la quinua como base y los vegetales rostizados encima.</li><li>Rocía con jugo de limón y un hilo de aceite de oliva extra virgen.</li><li>Espolvorea semillas de calabaza y sirve tibio.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Rostizar los vegetales carameliza sus azúcares naturales sin necesidad de agregar azúcar, satisfaciendo el paladar sin alterar la glucosa en sangre. La quinua aporta proteína completa y fibra que prolonga la saciedad, y el pimentón ahumado contiene capsantina, un compuesto que estimula la oxidación de grasas y apoya la termogénesis.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">105</div>
+            <div class="recipe-name">Wrap de Atún con Pimiento y Aguacate</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 lata de atún en agua, escurrido</li><li>1 tortilla integral</li><li>1/4 aguacate maduro machacado</li><li>1/4 pimiento rojo en tiras finas</li><li>1/4 pepino en bastones</li><li>Hojas de lechuga</li><li>Jugo de 1/2 limón</li><li>1 cucharadita de aceite de oliva</li><li>Sal, pimienta y una pizca de chile en polvo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Escurre el atún y desmenúzalo en un tazón con un tenedor.</li><li>Mezcla el atún con el aguacate machacado, jugo de limón, aceite de oliva, sal y pimienta.</li><li>Calienta la tortilla integral brevemente en una sartén seca.</li><li>Extiende la mezcla de atún y aguacate sobre la tortilla.</li><li>Agrega las tiras de pimiento, los bastones de pepino y las hojas de lechuga.</li><li>Espolvorea una pizca de chile en polvo para activar el efecto termogénico.</li><li>Enrolla firmemente y corta por la mitad en diagonal.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El atún es una fuente magra de proteína que activa la termogénesis inducida por la dieta: tu cuerpo gasta más energía digiriendo proteína que cualquier otro macronutriente. El pimiento rojo aporta vitamina C que potencia la producción de carnitina, una molécula que transporta la grasa almacenada hacia las mitocondrias para ser quemada como energía.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">106</div>
+            <div class="recipe-name">Ceviche de Camarones con Pepino</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>250g de camarones cocidos y limpios</li><li>1 pepino grande pelado y cortado en cubos pequeños</li><li>1/2 taza de tomate picado en cubos</li><li>1/4 cebolla morada picada finamente</li><li>1 chile serrano sin semillas, picado fino (opcional)</li><li>Jugo de 4 limones</li><li>1/4 taza de cilantro fresco picado</li><li>1 cucharada de aceite de oliva</li><li>Sal y pimienta al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina los camarones en agua hirviendo con sal durante 2-3 minutos y enfríalos de inmediato en agua con hielo.</li><li>Corta los camarones por la mitad y colócalos en un bowl de vidrio.</li><li>Agrega el pepino, el tomate, la cebolla morada y el chile serrano.</li><li>Vierte el jugo de limón sobre todos los ingredientes asegurándote de cubrirlos.</li><li>Añade el cilantro picado, el aceite de oliva, sal y pimienta.</li><li>Mezcla suavemente y refrigera durante 20-30 minutos antes de servir.</li><li>Sirve frío en copas o tazones individuales acompañado de rodajas de aguacate.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los camarones son extremadamente bajos en calorías y altos en proteína, con apenas 1 gramo de grasa por porción. Son ricos en yodo, un mineral esencial para la función tiroidea que regula directamente cuántas calorías quemas en reposo. El limón y el chile activan la termogénesis, convirtiendo este plato en una combinación ideal para acelerar la quema de grasa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">107</div>
+            <div class="recipe-name">Brochetas de Pollo con Piña y Chile</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de pechuga de pollo cortada en cubos</li><li>1 taza de piña fresca en cubos</li><li>1/2 pimiento verde en cuadros</li><li>1/2 cebolla morada en cuadros</li><li>1 cucharada de salsa de soya baja en sodio</li><li>1 cucharadita de chile en polvo o tajín</li><li>1 cucharadita de aceite de oliva</li><li>Jugo de 1 limón</li><li>Palillos o brochetas de bambú previamente remojados</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Marina los cubos de pollo con salsa de soya, chile en polvo, jugo de limón y aceite de oliva durante 15 minutos.</li><li>Ensarta alternando en las brochetas: pollo, piña, pimiento y cebolla.</li><li>Calienta una sartén grill o plancha a fuego alto.</li><li>Cocina las brochetas durante 4-5 minutos por cada lado hasta que el pollo esté cocido y con marcas de parrilla.</li><li>La piña debe caramelizarse ligeramente en la superficie.</li><li>Retira del fuego, espolvorea un poco más de chile y un chorrito de limón.</li><li>Sirve calientes como plato principal con una ensalada verde al lado.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La piña contiene bromelina, una enzima que facilita la digestión de proteínas y tiene efecto antiinflamatorio natural. El chile en polvo aporta capsaicina, uno de los compuestos termogénicos más estudiados: aumenta la temperatura corporal y la tasa metabólica durante varias horas. La combinación dulce-picante satisface el paladar sin necesidad de azúcares añadidos.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">108</div>
+            <div class="recipe-name">Crema de Calabaza con Cúrcuma y Jengibre</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 tazas de calabaza pelada y cortada en cubos</li><li>1 trozo de jengibre fresco de 2 cm, rallado</li><li>1 cucharadita de cúrcuma en polvo</li><li>1/2 cebolla picada</li><li>1 diente de ajo</li><li>1 1/2 tazas de caldo de vegetales bajo en sodio</li><li>1/4 taza de leche de coco light</li><li>1 cucharadita de aceite de oliva</li><li>Sal, pimienta y semillas de calabaza tostadas para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta el aceite de oliva en una olla y saltea la cebolla y el ajo hasta que estén dorados.</li><li>Agrega los cubos de calabaza, el jengibre rallado y la cúrcuma, revuelve 2 minutos.</li><li>Vierte el caldo de vegetales y lleva a ebullición.</li><li>Reduce el fuego y cocina durante 20 minutos hasta que la calabaza esté completamente tierna.</li><li>Licúa hasta obtener una crema sedosa y regresa a la olla.</li><li>Incorpora la leche de coco light, ajusta sal y pimienta, y calienta sin hervir.</li><li>Sirve en un bowl decorada con semillas de calabaza tostadas y un toque de pimienta.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La combinación de cúrcuma y jengibre crea un efecto termogénico sinérgico: la cúrcuma reduce la inflamación que bloquea la quema de grasa mientras el jengibre eleva la temperatura corporal. La piperina de la pimienta negra aumenta la absorción de la curcumina en un 2000%. La calabaza es baja en calorías y rica en fibra que mantiene la saciedad por horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">109</div>
+            <div class="recipe-name">Filete de Pescado en Salsa de Limón y Alcaparras</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 filete de pescado blanco (robalo, mero o corvina) de 180g</li><li>2 cucharadas de alcaparras escurridas</li><li>Jugo de 1 limón grande</li><li>1 diente de ajo picado finamente</li><li>1 cucharada de aceite de oliva extra virgen</li><li>1/4 taza de caldo de vegetales bajo en sodio</li><li>1 cucharada de perejil fresco picado</li><li>Sal, pimienta y hojuelas de chile al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Sazona el filete de pescado con sal, pimienta y un poco de jugo de limón.</li><li>Calienta el aceite de oliva en una sartén a fuego medio-alto.</li><li>Cocina el filete 3-4 minutos por cada lado hasta que esté dorado y se desmenuce fácilmente.</li><li>Retira el pescado y en la misma sartén agrega el ajo picado, las alcaparras y las hojuelas de chile.</li><li>Vierte el caldo de vegetales y el jugo de limón restante, cocina 2 minutos reduciendo la salsa.</li><li>Regresa el filete a la sartén, baña con la salsa y cocina 1 minuto más.</li><li>Sirve con perejil fresco por encima y acompaña con vegetales al vapor.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pescado blanco es una de las proteínas más magras que existen, con alto poder termogénico: tu cuerpo gasta hasta el 30% de las calorías del pescado solo para digerirlo. Las alcaparras son ricas en quercetina, un flavonoide que activa las enzimas que descomponen la grasa almacenada. El limón aporta vitamina C que optimiza la oxidación de grasas durante el ejercicio.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">110</div>
+            <div class="recipe-name">Ensalada de Lentejas con Cúrcuma</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de lentejas cocidas y escurridas</li><li>1/2 pepino en cubos pequeños</li><li>1/4 taza de tomate picado</li><li>1/4 cebolla morada picada finamente</li><li>2 cucharadas de cilantro o perejil fresco picado</li><li>1 cucharadita de cúrcuma en polvo</li><li>1 cucharada de aceite de oliva extra virgen</li><li>Jugo de 1 limón</li><li>Sal, pimienta y comino al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Si usas lentejas secas, cocínalas en agua con una pizca de cúrcuma durante 20-25 minutos y escúrrelas.</li><li>Deja enfriar las lentejas a temperatura ambiente.</li><li>En un bowl, combina las lentejas con el pepino, el tomate y la cebolla morada.</li><li>Prepara el aderezo mezclando aceite de oliva, jugo de limón, cúrcuma, comino, sal y pimienta.</li><li>Vierte el aderezo sobre la ensalada y mezcla bien.</li><li>Agrega el cilantro o perejil fresco picado.</li><li>Sirve a temperatura ambiente o ligeramente fría como almuerzo ligero o acompañamiento.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las lentejas son una fuente excepcional de fibra soluble que ralentiza la absorción de glucosa y mantiene la insulina estable, evitando el almacenamiento de grasa abdominal. Su alto contenido de hierro vegetal apoya la producción de energía celular, y la cúrcuma potencia la termogénesis mientras reduce la inflamación que bloquea la pérdida de peso.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">111</div>
+            <div class="recipe-name">Salteado de Tofu con Verduras y Jengibre</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de tofu firme cortado en cubos</li><li>1 taza de brócoli en floretes</li><li>1/2 pimiento rojo en tiras</li><li>1/2 taza de ejotes cortados</li><li>1 trozo de jengibre fresco de 2 cm, rallado</li><li>1 diente de ajo picado</li><li>2 cucharadas de salsa de soya baja en sodio</li><li>1 cucharadita de aceite de ajonjolí</li><li>Semillas de ajonjolí y cebollín para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Escurre el tofu, envuélvelo en papel absorbente y presiónalo para eliminar el exceso de agua.</li><li>Corta el tofu en cubos y dóralos en una sartén con aceite de ajonjolí hasta que estén crujientes por todos lados.</li><li>Retira el tofu y en la misma sartén saltea el ajo y el jengibre durante 30 segundos.</li><li>Agrega el brócoli, el pimiento y los ejotes, saltea a fuego alto durante 3-4 minutos.</li><li>Incorpora la salsa de soya y regresa el tofu dorado a la sartén.</li><li>Mezcla todo durante 1 minuto más a fuego alto.</li><li>Sirve caliente decorado con semillas de ajonjolí y cebollín picado.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El tofu aporta proteína vegetal completa y fitoestrógenos naturales (isoflavonas) que ayudan a compensar la caída de estrógenos después de los 40, aliviando síntomas como los sofocos. El jengibre fresco es un termogénico comprobado que aumenta el gasto calórico hasta un 5% durante las horas posteriores a su consumo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">112</div>
+            <div class="recipe-name">Tacos de Lechuga con Pavo Molido</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de pavo molido</li><li>8 hojas grandes de lechuga orejona o mantequilla</li><li>1/4 taza de cebolla picada finamente</li><li>1 diente de ajo picado</li><li>1/2 cucharadita de comino</li><li>1/2 cucharadita de pimentón ahumado</li><li>1/4 aguacate en cubos</li><li>Salsa picante al gusto</li><li>Cilantro fresco y limón para servir</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta una sartén a fuego medio-alto sin aceite (el pavo suelta su propia grasa).</li><li>Cocina el pavo molido rompiendo los grumos con una cuchara de madera.</li><li>Agrega la cebolla, el ajo, el comino y el pimentón ahumado, cocina 3 minutos más.</li><li>Sazona con sal y pimienta al gusto.</li><li>Lava y seca las hojas de lechuga cuidadosamente para que sirvan como taco.</li><li>Rellena cada hoja con la mezcla de pavo, agrega cubos de aguacate y cilantro.</li><li>Sirve con un chorrito de limón y salsa picante al gusto.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Usar lechuga en lugar de tortilla elimina los carbohidratos refinados que disparan la insulina y favorecen el almacenamiento de grasa. El pavo molido tiene un efecto térmico alto: tu cuerpo gasta más energía digiriendo proteína que carbohidratos. El pimentón ahumado activa la lipólisis, el proceso por el cual tu cuerpo libera grasa almacenada para usarla como combustible.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">113</div>
+            <div class="recipe-name">Bowl de Edamame y Vegetales</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de edamame desvainado (fresco o congelado)</li><li>1/2 taza de zanahoria rallada</li><li>1/2 taza de pepino en rodajas finas</li><li>1/4 taza de col morada en tiras finas</li><li>1/4 aguacate en rebanadas</li><li>1 cucharada de salsa de soya baja en sodio</li><li>1 cucharadita de aceite de ajonjolí</li><li>1 cucharadita de vinagre de arroz</li><li>Semillas de ajonjolí negro y jengibre fresco rallado</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina el edamame en agua hirviendo con sal durante 3-4 minutos y escúrrelo.</li><li>Prepara el aderezo mezclando la salsa de soya, el aceite de ajonjolí, el vinagre de arroz y el jengibre rallado.</li><li>En un bowl amplio, coloca el edamame como base proteica.</li><li>Distribuye la zanahoria rallada, el pepino, la col morada y las rebanadas de aguacate en secciones.</li><li>Rocía el aderezo de jengibre sobre todo el bowl.</li><li>Espolvorea semillas de ajonjolí negro para decorar.</li><li>Sirve frío como almuerzo ligero o acompañamiento de una proteína principal.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El edamame es soya en su forma más pura y natural: aporta proteína completa, fibra y fitoestrógenos que apoyan el equilibrio hormonal. La col morada contiene antocianinas con potente efecto antioxidante, y el jengibre del aderezo activa la termogénesis de forma natural. Este bowl es bajo en calorías pero alto en nutrientes que aceleran el metabolismo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">114</div>
+            <div class="recipe-name">Salmón Glaseado con Jengibre y Limón</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 filete de salmón de 180g</li><li>1 cucharada de salsa de soya baja en sodio</li><li>1 cucharadita de miel pura</li><li>1 trozo de jengibre fresco de 2 cm, rallado</li><li>Jugo y ralladura de 1 limón</li><li>1 diente de ajo picado</li><li>1 cucharadita de aceite de ajonjolí</li><li>Cebollín picado para decorar</li><li>Vegetales verdes al vapor para acompañar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la salsa de soya, la miel, el jengibre rallado, el jugo de limón y el ajo picado en un bowl pequeño.</li><li>Coloca el filete de salmón en un plato y báñalo con la mitad del glaseado, marina 10 minutos.</li><li>Calienta el aceite de ajonjolí en una sartén a fuego medio-alto.</li><li>Cocina el salmón con la piel hacia abajo durante 4 minutos sin moverlo.</li><li>Voltea el salmón y vierte el glaseado restante sobre el filete.</li><li>Cocina 3 minutos más bañando con la salsa de la sartén hasta que esté brillante y caramelizado.</li><li>Sirve con la ralladura de limón, cebollín picado y vegetales verdes al vapor.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El salmón es una de las fuentes más ricas de omega-3, ácidos grasos que reprograman tu metabolismo para quemar grasa en lugar de almacenarla. El jengibre del glaseado amplifica este efecto al activar la proteína UCP1 en las células grasas, que literalmente transforma la grasa blanca en grasa marrón quemadora de calorías. Un plato que combina sabor gourmet con ciencia metabólica real.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">115</div>
+            <div class="recipe-name">Hamburguesa de Pavo con Especias Termogénicas</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de pavo molido</li><li>1/4 cebolla picada finamente</li><li>1 diente de ajo picado</li><li>1/2 cucharadita de jengibre en polvo</li><li>1/2 cucharadita de comino</li><li>1/4 cucharadita de cayena (chile de árbol molido)</li><li>1 cucharadita de pimentón ahumado</li><li>Sal y pimienta al gusto</li><li>Hojas de lechuga, tomate y aguacate para servir</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En un bowl, mezcla el pavo molido con la cebolla, el ajo, el jengibre, el comino, la cayena y el pimentón ahumado.</li><li>Sazona con sal y pimienta y mezcla bien con las manos hasta que las especias estén distribuidas uniformemente.</li><li>Forma 2 hamburguesas de tamaño mediano y presiona ligeramente en el centro para que no se inflen al cocinar.</li><li>Calienta una sartén o grill a fuego medio-alto.</li><li>Cocina las hamburguesas 4-5 minutos por cada lado hasta que estén completamente cocidas por dentro.</li><li>Sirve cada hamburguesa sobre hojas de lechuga grande como base en lugar de pan.</li><li>Agrega rebanadas de tomate, aguacate y un toque de mostaza si lo deseas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta hamburguesa es una bomba termogénica: el jengibre, la cayena, el comino y el pimentón ahumado trabajan en conjunto para elevar la temperatura corporal y acelerar el metabolismo. La cayena en particular contiene capsaicina que puede aumentar la quema calórica hasta un 25% durante horas. Usar lechuga en lugar de pan mantiene la insulina baja, permitiendo que tu cuerpo permanezca en modo quema grasa.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">115 Recetas Quema Grasa</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

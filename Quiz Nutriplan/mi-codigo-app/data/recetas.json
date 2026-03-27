@@ -1,0 +1,3131 @@
+[
+  {
+    "id": 1,
+    "nombre": "Muffins de brócoli para desayuno",
+    "categoria": "desayuno",
+    "ingredientes": [
+      "2 huevos",
+      "1 taza de brócoli cocido y picado",
+      "1/2 taza de harina de almendras",
+      "1/2 taza de queso cottage",
+      "1/4 taza de cebolla picada",
+      "1/2 taza de queso mozzarella rallado",
+      "Orégano al gusto",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Precalienta el horno a 180 °C.",
+      "Mezcla los huevos con el queso cottage.",
+      "Agrega el brócoli, cebolla, harina de almendras, orégano, sal y pimienta.",
+      "Incorpora la mozzarella y mezcla bien.",
+      "Vierte en moldes para muffins engrasados.",
+      "Hornea 20-25 minutos, hasta que estén firmes.",
+      "Retira, coloca más mozzarella por encima y hornea 5 minutos más hasta gratinar."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 2,
+    "nombre": "Empanadas de Pollo con Vegetales (sin harina refinada)",
+    "categoria": "desayuno",
+    "ingredientes": [
+      "1 taza de pollo crudo molido o licuado",
+      "1 huevo pequeño",
+      "Sal, ajo en polvo, orégano al gusto",
+      "Relleno:",
+      "2 cdas de cebolla y pimentón picados",
+      "1 cda de queso bajo en grasa",
+      "1 cdita de aceite de oliva"
+    ],
+    "preparacion": [
+      "Mezcla el pollo molido con el huevo y las especias hasta formar una masa suave y moldeable.",
+      "Sobre papel encerado, forma un círculo plano con la mezcla de pollo (como si fuera la oblea).",
+      "Coloca el relleno de vegetales salteados en el centro.",
+      "Tapa con otra capa fina de pollo y sella bien los bordes usando los dedos húmedos.",
+      "Cocina en la air fryer a 180 °C por 15–18 minutos o hasta que esté dorada por fuera y bien cocida por dentro. ¡Alta en proteína y sin harinas que eleven la glucosa!"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 3,
+    "nombre": "Empanadas de Pollo al Curry con Espinaca",
+    "categoria": "desayuno",
+    "ingredientes": [
+      "1 taza de pollo crudo molido",
+      "1 huevo",
+      "1/2 cdita de curry en polvo",
+      "Sal y pimienta al gusto",
+      "Relleno:",
+      "1/4 taza de espinaca cocida y picada",
+      "1 cda de yogur natural sin azúcar (opcional para",
+      "cremosidad)",
+      "1 cdita de queso rallado"
+    ],
+    "preparacion": [
+      "Mezcla el pollo crudo con huevo, curry y condimentos.",
+      "Sobre papel encerado, aplasta una porción de la mezcla formando un círculo.",
+      "Añade el relleno (espinaca + yogur + queso).",
+      "Cubre con otra capa fina de pollo, sella los bordes con cuidado.",
+      "Lleva a la air fryer a 180 °C por 15–18 minutos, girando a la mitad del tiempo si es necesario."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 4,
+    "nombre": "Empanada de Pollo Rellena con Calabacín y Queso",
+    "categoria": "desayuno",
+    "ingredientes": [
+      "Para la base de pollo:",
+      "1 taza de pollo crudo molido",
+      "1 huevo",
+      "Sal, orégano y ajo en polvo al gusto",
+      "Para el relleno:",
+      "1/4 taza de calabacín rallado (bien escurrido)",
+      "2 cdas de queso bajo en grasa rallado",
+      "Pimienta al gusto"
+    ],
+    "preparacion": [
+      "Mezcla el pollo crudo con el huevo y condimentos hasta form ar una masa moldeable.",
+      "En un trozo de papel ence rado, extiende una capa de la mezcla de pollo en form a de círculo (como si fuera la base de la empanada).",
+      "Mezcla el calabacín con el queso y colócalo en el centro.",
+      "Cubre con otra capa fina de pollo y sella bien los bordes usando los dedos húmedos o una espátula.",
+      "Lleva a la air fryer a 180 °C por 15–18 minutos, hasta que esté dorada y firme.",
+      "Deja reposar 2–3 minutos y sirve. INGREDIENTES: Para el pan: 2 huevos 2 cdas de yogur natural sin azúcar 1 cdita de polvo de hornear 1 pizca de sal Semillas de linaza o chía (opcional) Relleno (agregar después de cocido): 2 cdas de pollo desmenuzado o atún 1 cda de yogur o queso bajo en grasa Orégano o especias al gusto PREPARACION:",
+      "En un bol, bate los huevos con el yogur, sal y polvo de hornear.",
+      "Vierte la mezcla en moldes pequeños (tipo muffin o silicona plana).",
+      "Cocina en horno o air fryer a 180 °C por 12– 15 minutos, hasta que estén dorados y esponjosos.",
+      "Déjalos enfriar un poco, abre por la mitad como si fuera un pan de sándwich.",
+      "Rellena con la mezcla de pollo o atún + yogur/queso y especias. Pan Saludable Relleno con Proteína"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 5,
+    "nombre": "Huevos Revueltos Con Vegetales",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Revuelve 2 huevos con una variedad de vegetales picados (tomate, cebolla, pimiento, espinacas)."
+    ],
+    "consejo": "Los huevos son una excelente fuente de proteínas. Los vegetales aportan vitaminas, minerales y fibra."
+  },
+  {
+    "id": 6,
+    "nombre": "Tortilla de Clara de Huevo con Espinacas y Queso Feta",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Bate 3 claras de huevo con sal y pimienta. Cocina en una sartén antiadherente. Rellena con espinacas frescas y queso feta desmenuzado."
+    ],
+    "consejo": "Las claras de huevo son bajas en grasa y colesterol. El queso feta aporta calcio."
+  },
+  {
+    "id": 7,
+    "nombre": "Huevos Pochados con Aguacate",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Cocina 2 huevos pochados. Sirve sobre una tostada integral con aguacate en rodajas."
+    ],
+    "consejo": "El aguacate aporta grasas saludables y fibra."
+  },
+  {
+    "id": 8,
+    "nombre": "Huevos Duros con Ensalada",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Cocina 2 huevos duros. Acompáñalos con una ensalada fresca con lechuga, tomate, pepino y aderezo ligero (aceite de oliva y limón)."
+    ],
+    "consejo": "Los huevos duros son una opción práctica y portátil para el desayuno."
+  },
+  {
+    "id": 9,
+    "nombre": "Huevos al Horno con Vegetales",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Precalienta el horno a 180°C. En ramequines individuales, coloca vegetales picados (pimientos, cebolla, champiñones) y un huevo en cada uno. Hornea durante 15-20 minutos."
+    ],
+    "consejo": "Esta receta es una forma fácil de incluir vegetales en el desayuno."
+  },
+  {
+    "id": 10,
+    "nombre": "Huevos Duros con Fruta",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Cocina 2 huevos duros. Acompáñalos con una porción de fruta fresca."
+    ],
+    "consejo": "Esta es una opción práctica y portátil para el desayuno."
+  },
+  {
+    "id": 11,
+    "nombre": "Yogur Griego con Bayas y Granola",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1 taza de yogur griego natural sin azúcar añadida con 1/2 taza de bayas frescas y 1/4 taza de granola casera sin azúcar."
+    ],
+    "consejo": "El yogur griego es rico en proteínas. La granola casera te permite controlar los ingredientes y el azúcar."
+  },
+  {
+    "id": 12,
+    "nombre": "Yogur con frutas y semillas",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1 taza de yogur natural con trozos de frutas frescas (arandanos, fresas, kiwi) y 1 cucharada de semillas de chía o lino."
+    ],
+    "consejo": "Las frutas aportan vitaminas y minerales. Las semillas añaden fibra y omega-3."
+  },
+  {
+    "id": 13,
+    "nombre": "Yogur con nueces",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1 taza de yogur griego con 1/4 taza de nueces picadas"
+    ],
+    "consejo": "Las nueces aportan grasas saludables y fibra. La miel debe consumirse con moderación."
+  },
+  {
+    "id": 14,
+    "nombre": "Parfait de Yogur con Capas de Frutas y Granola",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "En un vaso, alterna capas de yogur, frutas y granola."
+    ],
+    "consejo": "Esta es una forma visualmente atractiva de disfrutar de un desayuno saludable."
+  },
+  {
+    "id": 15,
+    "nombre": "Batido de Yogur con Frutas y Vegetales",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1 taza de yogurt, 1/2 taza de frutas (fresas, plátano) y 1/2 taza de vegetales (espinacas, pepino)."
+    ],
+    "consejo": "Los batidos son una forma fácil de obtener una gran cantidad de nutrientes en el desayuno."
+  },
+  {
+    "id": 16,
+    "nombre": "Yogur con frutas y nueces",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1 taza de yogurt natural con 1/2 taza de frutas frescas y 1/4 taza de nueces picadas."
+    ],
+    "consejo": "Este desayuno es rápido, fácil y nutritivo"
+  },
+  {
+    "id": 17,
+    "nombre": "Tostada Integral con Aguacate y Huevo",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Unta 1/2 aguacate en rodajas sobre una tostada de pan integral. Cubre con un huevo pochado o revuelto."
+    ],
+    "consejo": "Esta tostada es una excelente fuente de grasas saludables, proteínas y fibra."
+  },
+  {
+    "id": 18,
+    "nombre": "Tostada Integral con Salmón Ahumado y Queso Crema",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Unta queso crema bajo en grasa sobre una tostada de pan integral. Cubre con salmón ahumado."
+    ],
+    "consejo": "El salmón ahumado aporta omega-3."
+  },
+  {
+    "id": 19,
+    "nombre": "Tostada Integral con Tomate y Albahaca",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Coloca rodajas de tomate y hojas de albahaca fresca sobre una tostada de pan integral. Aliña con un chorrito de aceite de oliva y sal."
+    ],
+    "consejo": "Esta tostada es sencilla pero deliciosa y nutritiva"
+  },
+  {
+    "id": 20,
+    "nombre": "Tostada Integral con Mantequilla de Almendras",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Unta mantequilla de almendras sobre una tostada de pan integral."
+    ],
+    "consejo": "La mantequilla de almendras aporta grasas saludables y proteínas."
+  },
+  {
+    "id": 21,
+    "nombre": "Tostada Integral con Hummus y Vegetales",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Unta hummus sobre una tostada de pan integral. Cubre con vegetales picados (zanahoria, pepino, pimiento)."
+    ],
+    "consejo": "El hummus es una buena fuente de proteínas y fibra."
+  },
+  {
+    "id": 22,
+    "nombre": "Tostada Integral con Aguacate",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Unta 1/2 aguacate en rodajas sobre una tostada de pan integral."
+    ],
+    "consejo": "Esta tostada es una buena fuente de grasas saludables y fibra."
+  },
+  {
+    "id": 23,
+    "nombre": "Pan de Calabaza con Cúrcuma",
+    "categoria": "desayuno",
+    "ingredientes": [
+      "1 taza de puré de calabaza",
+      "1 1/2 tazas de harina de almendras",
+      "1 cucharada de cúrcuma en polvo",
+      "1/2 cucharadita de bicarbonato de sodio",
+      "3 huevos",
+      "2 cucharadas de aceite de coco derretido",
+      "1/4 taza de nueces (opcional)"
+    ],
+    "preparacion": [
+      "Precalienta el horno a 180°C (350°F) y engrasa un molde para pan.",
+      "Mezcla los ingredientes secos: harina de almendras, cúrcuma, bicarbonato y edulcorante.",
+      "Bate los ingredientes húmedos: huevos, puré de calabaza y aceite de coco.",
+      "Combina los ingredientes secos con los húmedos y agrega las nueces (opcional).",
+      "Vierte la mezcla en el molde y hornea durante 40-50 minutos o hasta que esté dorado y al insertar un palillo, salga limpio.",
+      "Deja enfriar antes de servir."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 24,
+    "nombre": "Batido de Proteína con Bayas",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1 scoop de proteína en polvo (whey protein o proteína vegetal), 1/2 taza de leche de almendras sin azúcar, 1/2 taza de bayas congeladas (fresas, arándanos) y 1/2 taza de espinacas."
+    ],
+    "consejo": "Este batido es una excelente opción para después del ejercicio o para un desayuno rápido y nutritivo."
+  },
+  {
+    "id": 25,
+    "nombre": "Batido Verde con Espinacas y Frutas",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1 taza de espinacas frescas, 1/2 manzana verde, 1/2 plátano, 1/2 taza de leche de almendras y jugo de 1/2 limón."
+    ],
+    "consejo": "Los vegetales de hoja verde son ricos en vitaminas y minerales. El limón ayuda a mejorar la absorción del hierro."
+  },
+  {
+    "id": 26,
+    "nombre": "Batido de Aguacate y Pepino",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1/2 aguacate, 1/2 pepino, jugo de 1/2 limón, 1/2 taza de agua y sal y pimienta al gusto."
+    ],
+    "consejo": "El aguacate aporta grasas saludables y el pepino es refrescante y bajo en calorías"
+  },
+  {
+    "id": 27,
+    "nombre": "Batido de Zanahoria y Naranja",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1 zanahoria mediana, 1 naranja pelada, 1/2 pulgada de jengibre fresco y 1/2 taza de agua."
+    ],
+    "consejo": "La zanahoria es rica en betacaroteno, un antioxidante importante para la salud ocular."
+  },
+  {
+    "id": 28,
+    "nombre": "Batido de Frutos Rojos y Semillas",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1/2 taza de frutos rojos congelados (fresas, frambuesas, arándanos), 1 cucharada de semillas de chía o lino y 1/2 taza de leche de almendras sin azúcar."
+    ],
+    "consejo": "Los frutos rojos son ricos en antioxidantes y las semillas aportan fibra y omega-3."
+  },
+  {
+    "id": 29,
+    "nombre": "Batido Proteico de Yogur, Avena y Frutos Rojos",
+    "categoria": "desayuno",
+    "ingredientes": [
+      "1/2 taza de yogur griego natural sin",
+      "azúcar (aporta proteína)",
+      "2 cucharadas de avena integral (fibra y",
+      "saciedad)",
+      "1/4 taza de frutos rojos (arándanos o",
+      "frambuesas)",
+      "1 cucharadita de semillas de chía",
+      "1/2 taza de agua o bebida vegetal sin",
+      "azúcar"
+    ],
+    "preparacion": [
+      "Coloca todos los ingredientes en la licuadora.",
+      "Licúa hasta obtener una textura cremosa y uniforme.",
+      "Sirve frío"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 30,
+    "nombre": "Tortilla de Auyama con Huevo y Queso Bajo en Grasa",
+    "categoria": "desayuno",
+    "ingredientes": [
+      "1/2 taza de auyama cocida y",
+      "triturada",
+      "2 huevos",
+      "2 cucharadas de queso blanco bajo",
+      "en grasa rallado",
+      "Sal y orégano al gusto",
+      "1 cucharadita de aceite de oliva",
+      "(opcional para la sartén)"
+    ],
+    "preparacion": [
+      "Bate los huevos con la auyama triturada.",
+      "Agrega el queso, sal y orégano.",
+      "Calienta una sartén antiadherente y vierte la mezcla.",
+      "Cocina a fuego medio por ambos lados hasta que esté firme y dorada."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 31,
+    "nombre": "Panqueques de Harina de Almendras",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1/4 taza de harina de almendras, 1 huevo, 1/4 taza de leche de almendras y 1/2 cucharadita de polvo para hornear. Cocina en una sartén antiadherente."
+    ],
+    "consejo": "La harina de almendras es baja en carbohidratos y rica en proteínas y grasas saludables."
+  },
+  {
+    "id": 32,
+    "nombre": "Muffins de Huevo con Vegetales",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Bate 6 huevos con sal y pimienta. Mezcla con 1 taza de vegetales picados (pimientos, cebolla, champiñones). Vierte en moldes para muffins y hornea a 180°C durante 20-25 minutos."
+    ],
+    "consejo": "Estos muffins son una excelente opción para un desayuno rápido y fácil de llevar."
+  },
+  {
+    "id": 33,
+    "nombre": "Tortilla de verduras",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Bate 6 huevos con sal y pimienta. Sofríe 1 taza de vegetales picados en una sartén. Vierte los huevos sobre los vegetales y cocina hasta que estén firmes."
+    ],
+    "consejo": "La frittata es una excelente manera de incluir una variedad de vegetales en el desayuno."
+  },
+  {
+    "id": 34,
+    "nombre": "Desayuno de Quinua con Frutas y Nueces",
+    "categoria": "desayuno",
+    "ingredientes": [
+      "½ taza de quinua cruda (sin lavar)",
+      "1 taza de agua (o caldo vegetal bajo en",
+      "sodio)",
+      "Una pizca de sal (opcional)",
+      "½ taza de frutas frescas variadas:",
+      "Puedes usar ½ taza de una sola",
+      "fruta o combinar varias.",
+      "Ejemplos: fresas (picadas),",
+      "arándanos, frambuesas, ½",
+      "manzana pequeña (pelada y picada",
+      "en cubos pequeños).",
+      "¼ taza de nueces picadas:",
+      "Puedes usar nueces, almendras,",
+      "nueces pecanas o una mezcla."
+    ],
+    "preparacion": [
+      "Lava ½ taza de quinua bajo agua fría. Cocina la quinua lavada con 1 taza de agua (o caldo) a fuego bajo y tapada por 15-20 minutos, hasta que se absorba el líquido. Prepara ½ taza de frutas frescas picadas y ¼ taza de nueces picadas. Mezcla la quinua cocida con las frutas y las nueces. Opcional: Añade vainilla, canela o ralladura de cítricos para saborizar. Sirve inmediatamente, tibio o frío."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 35,
+    "nombre": "Cabaña Fruta Fresca con Queso",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Corta 1 taza de fruta fresca en trozos. Acompáñala con 1/2 taza de queso cottage bajo en grasa."
+    ],
+    "consejo": "Esta es una opción refrescante y nutritiva para el desayuno."
+  },
+  {
+    "id": 36,
+    "nombre": "Pudin de chía",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 2 cucharadas de semillas de chía con 1 taza de leche de almendras y 1/2 cucharadita de extracto de vainilla. Refrigera durante la noche. Cubre con frutas y nueces al gusto."
+    ],
+    "consejo": "Las semillas de chía son ricas en fibra y omega-3."
+  },
+  {
+    "id": 37,
+    "nombre": "Bowl de Desayuno con Vegetales y Huevo",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Coloca en un recipiente 1 taza de vegetales de hoja verde (espinacas, kale), 1 huevo pochado y 1/4 aguacate en rodajas."
+    ],
+    "consejo": "Este tazón es una excelente manera de obtener una gran cantidad de nutrientes en el desayuno."
+  },
+  {
+    "id": 38,
+    "nombre": "Wrap de Huevo con Vegetales",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Revuelve 2 huevos con sal y pimienta. Rellena una tortilla integral con los huevos y 1/2 taza de vegetales picados."
+    ],
+    "consejo": "Este wrap es una opción fácil de llevar para el desayuno."
+  },
+  {
+    "id": 39,
+    "nombre": "Ensalada de Frutas con Yogur",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1 taza de frutas frescas cortadas en trozos con 1/2 taza de yogurt natural sin azúcar añadida."
+    ],
+    "consejo": "Esta ensalada es una opción refrescante y nutritiva para el desayuno."
+  },
+  {
+    "id": 40,
+    "nombre": "Crepas de Avena con Frutos rojos",
+    "categoria": "desayuno",
+    "ingredientes": [
+      "1 huevo grande",
+      "1/2 taza de leche de almendras o deslactosada",
+      "1/4 cucharadita de canela molida",
+      "Una pizca de sal",
+      "Frutas frescas variadas (fresas, arándanos, etc.)",
+      "Un poco de aceite de coco o manteca de cerdo"
+    ],
+    "preparacion": [
+      "Licúa: En una licuadora, combina la avena, el huevo, la leche de almendras, la canela, la sal. Licúa hasta obtener una masa suave y homogénea.",
+      "Calienta la sartén: Engrasa ligeramente con aceite de coco o manteca",
+      "Vierte la masa: Vierte aproximadamente 1/4 de taza de la masa en la sartén caliente, extendiéndola rápidamente con un movimiento circular para formar una crepa delgada.",
+      "Cocina: Cocina durante 1-2 minutos por cada lado, o hasta que esté ligeramente dorada.",
+      "Rellena y sirve: Retira la crepa de la sartén y colócala en un plato. Repite el proceso con el resto de la masa"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 41,
+    "nombre": "Sándwich de Desayuno Saludable",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "En un sartén integral, coloca 1 huevo revuelto, 1/4 de aguacate en rodajas, lechuga y tomate."
+    ],
+    "consejo": "Este sándwich es una excelente opción para un desayuno completo y equilibrado."
+  },
+  {
+    "id": 42,
+    "nombre": "Panqueques de Coliflor",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Ralla 1 taza de coliflor. Mezcla con 2 huevos,1/4 taza de harina de almendras y sal y pimienta al gusto. Cocina en una sartén antiadherente."
+    ],
+    "consejo": "Estos panqueques son una alternativa baja en carbohidratos a los panqueques tradicionales."
+  },
+  {
+    "id": 43,
+    "nombre": "Tazón de Açaí con Granola y Frutas",
+    "categoria": "desayuno",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla de açaí congelado con leche de almendras hasta obtener una consistencia suave. Vierta en un tazón y cubre con granola casera sin azúcar y frutos rojos."
+    ],
+    "consejo": "El açaí es rico en antioxidantes y la granola casera te permite controlar los ingredientes."
+  },
+  {
+    "id": 44,
+    "nombre": "Ensalada de Pollo a la Parrilla con Aguacate y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 pechuga de pollo sin piel ni hueso",
+      "(aprox. 150g)",
+      "1 cucharadita de aceite de oliva",
+      "Sal y pimienta al gusto",
+      "2 tazas de mezcla de hojas verdes",
+      "(espinaca, lechuga romana, etc.)",
+      "½ aguacate mediano, en cubos",
+      "½ taza de tomate cherry, partidos por la",
+      "mitad",
+      "½ taza de pepino, en rodajas",
+      "¼ taza de pimiento rojo, en tiras finas",
+      "2 cucharadas de cebolla morada, en",
+      "julianas finas",
+      "Aderezo ligero:2 cucharadas de jugo",
+      "de limón fresco",
+      "1 cucharada de aceite de oliva virgen",
+      "extra",
+      "1 cucharadita de mostaza Dijon",
+      "(revisar etiqueta por azúcares)",
+      "Una pizca de ajo en polvo",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Pollo: Marina con aceite, sal, pimienta. Asa hasta cocido; corta en tiras.",
+      "Vegetales: Lava y corta hojas, aguacate, tomate, pepino, pimiento, cebolla.",
+      "Aderezo: Mezcla jugo de limón, aceite, mostaza, ajo en polvo, sal, pimienta.",
+      "Ensambla: Base de hojas, pollo, aguacate, vegetales.",
+      "Adereza: Vierte sobre la ensalada."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 45,
+    "nombre": "Ensalada de Salmón con Quinua y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla de quinoa cocida, salmón a la parrilla en trozos, espinacas, pepino, tomate cherry y aderezo ligero (yogur griego y hierbas)."
+    ],
+    "consejo": "El salmón es rico en omega-3 y la quinua es un grano integral con alto contenido de fibra y proteína."
+  },
+  {
+    "id": 46,
+    "nombre": "Ensalada de Lentejas con Vegetales y Vinagreta",
+    "categoria": "almuerzo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla lentejas cocidas, zanahoria rallada, apio picado, cebolla roja, pepino y pimiento. Aliña con una vinagreta casera (aceite de oliva, vinagre, mostaza y miel)."
+    ],
+    "consejo": "Las lentejas son una excelente fuente de proteína vegetal y fibra."
+  },
+  {
+    "id": 47,
+    "nombre": "Ensalada de Atún con Huevo Duro y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 cucharadita de aceite de oliva",
+      "Sal y pimienta al gusto",
+      "2 huevos grandes",
+      "2 tazas de mezcla de hojas verdes",
+      "½ taza de tomate cherry, partidos",
+      "½ taza de pepino en rodajas",
+      "¼ taza de pimiento verde en tiras",
+      "¼ taza de cebolla roja en julianas",
+      "2 cucharadas de aceitunas verdes en",
+      "rodajas",
+      "Aderezo Ligero:2 cucharadas de vinagre",
+      "de manzana",
+      "1 cucharada de aceite de oliva virgen",
+      "extra",
+      "1 cucharadita de mostaza",
+      "Hierbas frescas picadas (perejil, cilantro)",
+      "Sal y pimienta al gusto",
+      "Ensalada de Atún con Huevo Duro y",
+      "Vegetales:"
+    ],
+    "preparacion": [
+      "Cocina el Atún: Luego deja enfriar y desmenuza con un tenedor. Cuece los Huevos: Luego enfría, pela y corta en cuartos. Prepara Vegetales: Lava y corta las hojas verdes, los tomates, el pepino, el pimiento y la cebolla. Corta las aceitunas. Haz el Aderezo: Mezcla el vinagre de manzana, aceite de oliva, mostaza, hierbas picadas, sal y pimienta. Ensambla: En un plato, coloca las hojas verdes, luego el atún desmenuzado, los huevos y los vegetales."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 48,
+    "nombre": "Ensalada Caprese con Mozzarella Fresca y Tomate",
+    "categoria": "almuerzo",
+    "ingredientes": [],
+    "preparacion": [
+      "Alternar rodajas de tomate y mozzarella fresca. Decora con hojas de albahaca fresca y aliña con aceite de oliva y vinagre balsámico."
+    ],
+    "consejo": "Esta ensalada es baja en carbohidratos y calorías, pero rica en sabor."
+  },
+  {
+    "id": 49,
+    "nombre": "Pechuga de Pollo a la Parrilla con Vegetales Asados",
+    "categoria": "almuerzo",
+    "ingredientes": [],
+    "preparacion": [
+      "Marina la pechuga de pollo con hierbas y especias. Asa a la parrilla y acompaña con vegetales asados (pimientos, cebolla, calabacín)."
+    ],
+    "consejo": "El pollo a la parrilla es una excelente fuente de proteína magra. Los vegetales asados aportan fibra y vitaminas."
+  },
+  {
+    "id": 50,
+    "nombre": "Pollo al Horno con Limón y Hierbas",
+    "categoria": "almuerzo",
+    "ingredientes": [],
+    "preparacion": [
+      "Marina el pollo con jugo de limón, hierbas frescas (romero, tomillo) y especias. Hornea hasta que esté cocido y jugoso."
+    ],
+    "consejo": "Esta receta es baja en grasa y calorías, pero llena de sabor."
+  },
+  {
+    "id": 51,
+    "nombre": "Pollo Salteado con Vegetales y Salsa Agridulce Casera",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 pechuga de pollo en tiras",
+      "Brócoli en trozos",
+      "Pimentón en tiras",
+      "Calabacín en rodajas",
+      "Cebolla morada",
+      "Ajo picado",
+      "Aceite de oliva",
+      "Sal y pimienta",
+      "Salsa Agridulce Casera",
+      "Ingredientes:",
+      "½ taza de yogur natural griego o normal",
+      "1 cda vinagre de manzana",
+      "1 cdita mostaza",
+      "1 cda jugo de limón",
+      "1 pizca de cúrcuma o jengibre rallado",
+      "Stevia al gusto",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Mezcla todos los ingredientes hasta lograr una salsa cremosa. Prueba y ajusta el toque dulce o ácido según tu gusto. Agrégala al final del salteado (fuego bajo) para que no se corte. Tip diabético: esta salsa no eleva la glucosa, aporta cremosidad y quita el miedo a “las salsas prohibidas”. Preparación del plato",
+      "Saltea el pollo con ajo en aceite de oliva hasta dorar.",
+      "Agrega los vegetales y cocina 3–5 minutos (que queden crujientes).",
+      "Mezcla los ingredientes de la salsa y agrégala al sartén.",
+      "Cocina 2 minutos más y listo."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 52,
+    "nombre": "Wrap de Pollo con Aguacate y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 tortilla de espinaca",
+      "½ pechuga de pollo cocida y desmechada",
+      "½ aguacate en láminas",
+      "Lechuga picada",
+      "Tomate en tiras",
+      "Zanahoria rallada",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Calienta ligeramente la tortilla de espinaca.",
+      "Coloca el pollo, aguacate y vegetales en el centro.",
+      "Agrega el aderezo, sal y pimienta.",
+      "Enrolla y sirve. Ideal para almuerzo ligero o cena saludable."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 53,
+    "nombre": "Curry de Pollo con Vegetales y Arroz Integral",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 pechuga de pollo grande , cortada en cubos",
+      "1 cucharada de aceite de coco",
+      "1 cebolla mediana, picada",
+      "2 dientes de ajo, picados",
+      "1 cucharada de jengibre fresco rallado",
+      "2 cucharadas de pasta de curry suave",
+      "1 lata (400 ml) de leche de coco light",
+      "1 taza de caldo de pollo bajo en sodio",
+      "1 pimiento rojo, en tiras",
+      "1 brócoli pequeño, en floretes",
+      "1/2 taza de guisantes cong elados",
+      "Jugo de 1/2 limón",
+      "Cilantro fresco picado (para decorar)",
+      "Arroz integral cocido o de brocoli (para",
+      "servir)"
+    ],
+    "preparacion": [
+      "Sofríe el pollo: Calienta el aceite de coco en una olla grande . Agrega el pollo y cocina hasta que esté dorado por todos lados. Retira y reserva. Sofríe aromáticos: En la misma olla, agrega la cebolla, el ajo y el jengibre. Cocina hasta que estén fragantes.",
+      "Curry de Pollo con Vegetales y Arroz de Coliflor Ingredientes: 1 pechuga de pollo en cubos 1 taza de brócoli o calabacín en trozos 1/2 taza de leche de coco sin azúcar 1/2 cucharadita de curry en polvo Sal y cúrcuma al gusto 1 taza de arroz de coliflor (rallado o procesado) 1 cucharadita de aceite de oliva Preparación:",
+      "Cocina el pollo con aceite de oliva y curry hasta dorar.",
+      "Agrega los vegetales y leche de coco. Cocina 5–7 min.",
+      "Saltea el arroz de coliflor con sal y cúrcuma en otra sartén.",
+      "Sirve el curry sobre el arroz de coliflor."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 54,
+    "nombre": "Salmón al Horno con Espárragos y Limón",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 filete de salmón",
+      "1 taza de espárragos frescos",
+      "1 cucharada de jugo de limón",
+      "1 cucharadita de aceite de oliva",
+      "Sal, pimienta y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Precalienta el horno a 180 °C.",
+      "Coloca el salmón y los espárragos en una bandeja.",
+      "Rocía con aceite, limón y especias.",
+      "Hornea por 15–20 minutos hasta que el salmón esté cocido y jugoso."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 55,
+    "nombre": "Atún a la Parrilla con Ensalada Mixta",
+    "categoria": "almuerzo",
+    "ingredientes": [],
+    "preparacion": [
+      "Asa el atún a la parrilla y sirve con una ensalada mixta de lechuga, tomate, pepino y aguacate."
+    ],
+    "consejo": "El atún es una buena fuente de proteínas y omega-3"
+  },
+  {
+    "id": 56,
+    "nombre": "Camarones Salteados con Vegetales y Arroz de Coliflor",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "10 camarones limpios",
+      "1/2 taza de brócoli en trozos",
+      "1/4 taza de zanahoria rallada",
+      "1 taza de arroz de coliflor",
+      "1 cucharadita de aceite de oliva",
+      "Ajo en polvo, sal y cúrcuma al gusto"
+    ],
+    "preparacion": [
+      "Saltea los camarones con ajo en aceite por 3–4 min.",
+      "Agrega los vegetales y cocina por 3 minutos más.",
+      "En otra sartén, saltea el arroz de coliflor con cúrcuma y sal.",
+      "Sirve todo junto y disfruta caliente. MARISCOS"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 57,
+    "nombre": "Bacalao al Horno con ocumo y Cebolla",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "2 lomos de bacalao desalado",
+      "(aproximadamente 150-200g cada uno)",
+      "2 ocumos medianos, pelados y cortados en",
+      "rodajas finas",
+      "1 cebolla grande, cortada en julianas finas",
+      "2 dientes de ajo, laminados",
+      "1/4 taza de aceite de oliva virgen extra",
+      "1/4 taza de caldo de pescado o agua",
+      "Perejil fresco picado",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Precalienta el horno: A 180°C (350°F).",
+      "Prepara la base: En una fuente para horno, coloca las rodajas de ocumo y la cebolla en julianas. Esparce el ajo laminado por encima.",
+      "Riega: Rocía con la mitad del aceite de oliva y el caldo de pescado o agua. Salpimienta ligeramente.",
+      "Hornea la base: Lleva al horno hasta que las patatas estén casi tiernas.",
+      "Añade el bacalao: Retira la fuente del horno y coloca los lomos de bacalao sobre los ocumos y la cebolla.",
+      "Bacalao al Horno con ocum o y Cebolla:",
+      "Sazona el bacalao: Salpimienta el bacalao y riega con el resto del aceite de oliva. Opcionalmente, coloca unas rodajas de limón encima y espolvorea un poco de pimentón dulce.",
+      "Hornea el bacalao, hasta que el bacalao esté opaco y se desmenuce fácilmente con un tenedor. M ARISCOS"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 58,
+    "nombre": "Ensalada de Pulpo con Pimientos y Vinagreta",
+    "categoria": "almuerzo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla pulpo cocido en trozos con pimientos rojos y verdes asados, cebolla morada y aceitunas. Aliña con una vinagreta casera."
+    ],
+    "consejo": "El pulpo es una buena fuente de proteínas y minerales. M ARISCOS"
+  },
+  {
+    "id": 59,
+    "nombre": "Hamburguesas Vegetarianas Caseras con Pan Integral",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "(400g) de garbanzos cocidos",
+      "1/2 cebolla pequeña, picada finamente",
+      "1 diente de ajo, picado",
+      "1/4 taza de avena en hojuelas",
+      "2 cucharadas de perejil fresco picado",
+      "1 cucharadita de comino molido",
+      "1/2 cucharadita de pimentón dulce",
+      "Sal y pimienta al gusto",
+      "1 cucharada de aceite de oliva",
+      "4 panes integrales para hamburguesa",
+      "Vegetales frescos para acompañar (lechuga,",
+      "tomate, cebolla, etc.)"
+    ],
+    "preparacion": [
+      "Tritura: En un tazón, machaca los garbanzos con un tenedor",
+      "Mezcla: Agrega la cebolla, el ajo, la avena, el perejil, el comino, el pimentón, la sal y la pimienta a los garbanzos. Mezcla bien.",
+      "Cocina: Calienta el aceite de oliva en una sartén a fuego medio. Cocina las hamburguesas por 4-5 minutos por cada lado, hasta que estén doradas y calientes.",
+      "Sirve: Sirve las hamburguesas en los panes integrales con tus vegetales frescos favoritos."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 60,
+    "nombre": "Tacos Vegetarianos con Frijoles y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [],
+    "preparacion": [
+      "Rellena tortillas integrales con frijoles negros refritos, vegetales salteados (pimiento, cebolla, champiñones) y salsa."
+    ],
+    "consejo": "Los tacos vegetarianos son una opción sabrosa y nutritiva para el almuerzo."
+  },
+  {
+    "id": 61,
+    "nombre": "Lasaña de Vegetales con Queso Cottage",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "9 láminas lasaña integral",
+      "1 cdta aceite oliva",
+      "1 cebolla picada",
+      "2 ajos picados",
+      "1 pimiento rojo, tiras",
+      "1 berenjena, cubos",
+      "1 calabacín, rodajas",
+      "400g tomate triturado",
+      "Orégano, albahaca, sal, pimienta",
+      "500g queso cottage bajo grasa",
+      "1 huevo",
+      "Perejil picado"
+    ],
+    "preparacion": [
+      "Sofríe verduras: Aceite, cebolla, ajo, pimiento, berenjena, calabacín.",
+      "Añade tomate y hierbas: Tomate triturado, orégano, albahaca, sal, pimienta. Cocina 10 min.",
+      "Mezcla queso: Cottage, huevo, perejil, sal, pimienta.",
+      "Monta: Salsa, lasaña, queso, verduras (repite). Termina con salsa y parmesano (opcional).",
+      "Hornea: 180°C (350°F) 30 min tapado, 15-20 min sin tapar."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 62,
+    "nombre": "Curry de Garbanzos con Vegetales y Arroz de coliflor",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 lata garbanzos, enjuagados",
+      "1 cdta aceite coco",
+      "1/2 cebolla picada",
+      "1 ajo picado",
+      "1 cdta jengibre rallado",
+      "1 cdta pasta curry",
+      "1/2 lata leche coco",
+      "1/4 taza caldo vegetal",
+      "Vegetales picados (pimiento y brócoli)",
+      "Jugo limón",
+      "Cilantro",
+      "Arroz de coliflor cocido"
+    ],
+    "preparacion": [
+      "Sofríe: Cebolla, ajo, jengibre en aceite.",
+      "Añade: Curry, garbanzos, leche coco, caldo.",
+      "Vegetales: Incorpora y cocina hasta tiernos.",
+      "Finaliza: Limón, cilantro.",
+      "Sirve: Con arroz de coliflor."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 63,
+    "nombre": "Sopa de Lentejas con Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 taza lentejas",
+      "1 cdta aceite oliva",
+      "1 cebolla picada",
+      "1 zanahoria picada",
+      "1 apio picado",
+      "4 tazas caldo vegetal",
+      "1 tomate picado",
+      "Hierbas (laurel, tomillo)",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Sofríe: Cebolla, zanahoria, apio en aceite.",
+      "Añade: Lentejas, caldo, tomate, hierbas.",
+      "Cocina: Hasta que las lentejas estén tiernas.",
+      "Sazona: Sal, pimienta."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 64,
+    "nombre": "Sopa de Tomate Casera con Albóndigas de Pavo",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 lb pavo molido",
+      "1 huevo",
+      "Pan rallado",
+      "Especias (ajo, cebolla, orégano)",
+      "1 cda aceite oliva",
+      "1 cebolla picada",
+      "2 latas tomate triturado",
+      "Hierbas (laurel)",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Albóndigas: Mezcla pavo, huevo, pan rallado, especias. Forma bolitas.",
+      "Sofríe: Cebolla en aceite.",
+      "Añade: Tomate, caldo, laurel. Cocina.",
+      "Cuece: Agrega albóndigas. Cocina hasta listas.",
+      "Sazona: Sal, pimienta."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 65,
+    "nombre": "Carne Salteada con Brócoli y Calabacín",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "100 g de carne magra (res o cerdo) en",
+      "tiras",
+      "1/2 taza de brócoli",
+      "1/2 taza de calabacín en rodajas",
+      "1 cucharadita de aceite de oliva",
+      "Ajo en polvo, sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Saltea la carne con ajo en aceite hasta que esté dorada.",
+      "Agrega el brócoli y el calabacín. Cocina 5–6 minutos.",
+      "Ajusta sal y pimienta al gusto. Sirve caliente."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 66,
+    "nombre": "Tiras de Carne con Pimientos y Aguacate",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "100 g de carne magra en tiras (res o",
+      "cerdo)",
+      "1/2 pimentón rojo en tiras",
+      "1/2 pimentón verde en tiras",
+      "1/4 de aguacate en rodajas",
+      "1 cucharadita de aceite de oliva",
+      "Sal, ajo en polvo y orégano al gusto"
+    ],
+    "preparacion": [
+      "Saltea la carne en aceite con ajo y orégano.",
+      "Agrega los pimientos y cocina 5 minutos hasta que estén suaves.",
+      "Sirve con rodajas de aguacate por encima."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 67,
+    "nombre": "Wrap de Hummus y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Tortillas integrales",
+      "Hummus",
+      "Vegetales en tiras (zanahoria, pepino,",
+      "pimiento)",
+      "Espinacas y/o lechuga"
+    ],
+    "preparacion": [
+      "Unta: Hummus en la tortilla.",
+      "Rellena: Coloca vegetales y hojas verdes.",
+      "Enrolla: Cierra el wrap.",
+      "Corta: (Opcional) por la mitad. RAPIDAS"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 68,
+    "nombre": "Ensalada de Quinoa con Garbanzos y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Quinoa cocida",
+      "Garbanzos cocidos",
+      "Vegetales picados (pepino, tomate,",
+      "pimiento, cebolla roja)",
+      "Perejil o cilantro picado",
+      "Jugo de limón",
+      "Aceite de oliva",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Combina: Quinoa, garbanzos, vegetales, hierbas.",
+      "Adereza: Jugo de limón, aceite de oliva, sal, pimienta.",
+      "Mezcla: Sirve. RAPIDAS"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 69,
+    "nombre": "Ensalada de atún y aguacate",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 lata de atún en agua, escurrido",
+      "1/2 aguacate maduro, en cubos",
+      "1/4 taza de cebolla morada picada finamente",
+      "1 cucharada de cilantro fresco picado",
+      "1 cucharada de jugo de limón fresco",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Combina: En un tazón pequeño, mezcla el atún escurrido, el aguacate en cubos, la cebolla morada picada y el cilantro picado.",
+      "Adereza: Agrega el jugo de limón, la sal y la pimienta al gusto.",
+      "Mezcla: Revuelve suavemente para combinar todos los ingredientes.",
+      "Sirve: Disfruta inmediatamente. Puedes servirlo solo o sobre hojas de lechuga RAPIDAS"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 70,
+    "nombre": "Tacos de Pescado con Salsa de Aguacate",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Filetes de pescado blanco (tilapia, bacalao)",
+      "Comino, pimentón, sal, pimienta",
+      "Aceite de oliva",
+      "Tortillas de maíz integrales",
+      "Para la Salsa de Aguacate:1 aguacate",
+      "maduro",
+      "1/4 cebolla morada picada",
+      "Cilantro picado",
+      "Jugo de limón",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Pescado: Sazona el pescado. Cocina en aceite.",
+      "Salsa: Machaca aguacate. Mezcla con cebolla, cilantro, limón, sal, pimienta.",
+      "Tacos: Calienta tortillas. Rellena con pescado y salsa RAPIDAS"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 71,
+    "nombre": "Pollo Salteado con Auyama y Cúrcuma",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "1 pechuga de pollo en cubos",
+      "1/2 taza de auyama cocida en trozos",
+      "1 cucharadita de aceite de oliva",
+      "Cúrcuma, sal y ajo en polvo al gusto",
+      "1 ramita de cilantro fresco (opcional)"
+    ],
+    "preparacion": [
+      "Saltea el pollo con aceite, ajo y cúrcuma hasta dorar.",
+      "Agrega la auyama cocida y mezcla por 2–3 minutos.",
+      "Sirve caliente con cilantro por encima."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 72,
+    "nombre": "Pimientos Rellenos con Quinoa y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Pimientos",
+      "Quinoa cocida",
+      "Vegetales picados (cebolla, pimiento,",
+      "calabacín)",
+      "Tomate picado",
+      "Hierbas (orégano, comino)",
+      "Aceite oliva o manteca de cerdo",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "pimientos: Corta por mitad, quita semillas.",
+      "Sofríe: Vegetales en aceite.",
+      "Mezcla: Quinoa, vegetales, tomate, hierbas, caldo.",
+      "Rellena: Pimientos con la mezcla.",
+      "Hornea: Hasta que los pimientos estén tiernos.",
+      "Sazona: Sal, pimienta. RAPIDAS"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 73,
+    "nombre": "Sopa de Pollo y Vegetales con Pata de",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Vegetales picados (Apio y cebolla)",
+      "Hierbas (laurel, tomillo)",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Cuece: Pata de pollo en caldo.",
+      "Añade: Vegetales y hierbas.",
+      "Cocina: Hasta que estén tiernos.",
+      "Sazona: Sal, pimienta.",
+      "Sirve RAPIDAS Al hacer cualquier tipo de sopas, añade solo una clase de verduras. Si combinas por ejemplo, apio con ocumo, ello dispara la glucosa. Por lo tanto solo añade a tu sola UNA CLASE DE VERDURA"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 74,
+    "nombre": "Lasaña de Calabacín con Carne Magra y Queso Ricotta",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacín en láminas",
+      "Carne magra molida (sofrita)",
+      "Queso ricotta bajo grasa",
+      "Salsa de tomate casera",
+      "Ajo, cebolla, orégano",
+      "Queso parmesano rallado",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Prepara calabacín: Lamina el calabacín.",
+      "Sofríe carne: Cocina la carne molida.",
+      "Mezcla ricotta: Con ajo, cebolla, orégano, sal, pimienta.",
+      "Monta: Salsa, calabacín, ricotta, carne (repite). Termina con salsa y parmesano.",
+      "Hornea: Hasta dorar. RAPIDAS Hamburguesa sin pan (envuelta en lechuga) INGREDIENTES: 1 hoja grande de lechuga romana o iceberg (firme y entera) 1 hamburguesa de pollo o carne (a la plancha, sin pan rallado) 1 huevo cocido o a la plancha 1 cda de chicharrón triturado 2 rodajas de tomate 1 rodaja de aguacate PREPARACION: Cocina la hamburguesa a la plancha con sal y especias al gusto. Cocina el huevo a tu gusto Coloca sobre la hoja de lechuga: tomate, hamburguesa, huevo, aguacate y chicharrón. Cierra con otra hoja de lechuga si quieres más firmeza. ¡Enrolla con papel o envuelve como “wrap” y disfruta sin culpa! RECETA EXTRA"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 75,
+    "nombre": "Espagueti de Calabacín con Pollo a la Parrilla y Pesto Casero",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacín (en espiral)",
+      "Pollo a la parrilla (en tiras)",
+      "Pesto casero (albahaca, piñones, ajo,",
+      "parmesano, aceite oliva)",
+      "Opcional: tomates cherry"
+    ],
+    "preparacion": [
+      "Prepara calabacín: Haz espagueti con el calabacín.",
+      "Mezcla: Combina el espagueti de calabacín con el pollo y el pesto.",
+      "Sirve: (Opcional: añade tomates cherry)."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 76,
+    "nombre": "Espagueti de Calabacín con Camarones al Ajillo",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacín (en espiral)",
+      "Camarones pelados",
+      "Ajo picado",
+      "Aceite de oliva",
+      "Perejil picado",
+      "Guindilla (opcional)",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Prepara calabacín: Haz espagueti con el calabacín.",
+      "Sofríe ajo: En aceite, con guindilla (opcional).",
+      "Cocina camarones: Añade y cocina hasta rosados.",
+      "Incorpora calabacín: Cocina brevemente.",
+      "Sazona: Sal, pimienta.",
+      "Sirve: Espolvorea perejil."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 77,
+    "nombre": "Espagueti de Garbanzos con Albóndigas de Pavo",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Espagueti de garbanzos",
+      "Pavo molido",
+      "Huevo",
+      "Pan rallado integral",
+      "Ajo en polvo, orégano",
+      "Salsa de tomate natural",
+      "Manteca de cerdo",
+      "Perejil picado"
+    ],
+    "preparacion": [
+      "Albóndigas: Mezcla pavo, huevo, pan rallado, especias. Forma bolitas. Hornea o cocina en sartén.",
+      "Espagueti: Cocina el espagueti de garbanzos según las instrucciones.",
+      "Salsa: Calienta la salsa de tomate con un poco de manteca de cerdo",
+      "Combina: Sirve el espagueti con las albóndigas y la salsa. Espolvorea perejil."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 78,
+    "nombre": "Espagueti de Calabacín con Salmón al Horno y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacín (en espiral)",
+      "Filete de salmón",
+      "Vegetales picados (pimiento, brócoli,",
+      "tomate cherry)",
+      "Aceite de oliva",
+      "Ajo en polvo, hierbas provenzales",
+      "Sal, pimienta",
+      "Limón (opcional)"
+    ],
+    "preparacion": [
+      "Prepara: Haz espagueti de calabacín.",
+      "Hornea: Salmón y vegetales en aceite con especias.",
+      "Combina: Mezcla el espagueti con el salmón desmenuzado y los vegetales.",
+      "Sazona: Sal, pimienta.",
+      "Sirve: (Opcional: limón)."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 79,
+    "nombre": "Espagueti de Calabacín con Vegetales Salteados y Salsa de Soja",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacín (en espiral)",
+      "Vegetales picados (pimiento, zanahoria,",
+      "brócoli)",
+      "Aceite de oliva",
+      "Salsa de soja baja en sodio",
+      "Ajo picado",
+      "Jengibre rallado (opcional)",
+      "Semillas de sésamo (opcional)"
+    ],
+    "preparacion": [
+      "Prepara: Haz espagueti de calabacín.",
+      "Saltea: Vegetales en aceite con ajo y jengibre (opcional).",
+      "Añade: Espagueti de calabacín y salsa de soja.",
+      "Cocina: Brevemente hasta que esté tierno.",
+      "Sirve: Espolvorea semillas de sésamo"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 80,
+    "nombre": "Pasta de calabacin con Salsa de Tomate y Atún",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacin en espirales",
+      "Atún freso",
+      "Salsa de tomate natural",
+      "Ajo picado",
+      "Aceite de oliva",
+      "Hierbas (orégano, albahaca)",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Cocina los calabacines",
+      "Sofríe: Ajo en aceite o manteca de cerdo",
+      "Añade: Atún y salsa de tomate casera",
+      "Sazona: Hierbas, sal, pimienta.",
+      "Sirve: La pasta con la salsa."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 81,
+    "nombre": "Espagueti de Calabacín con Salsa de Aguacate",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacín (en espiral)",
+      "Aguacate",
+      "Leche almendras (poca)",
+      "Ajo",
+      "Limón",
+      "Cilantro",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Calabacín: Haz espagueti.",
+      "Salsa: Licúa aguacate, leche, ajo, limón, cilantro, sal, pimienta.",
+      "Mezcla: Con el calabacín.",
+      "Sirve."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 82,
+    "nombre": "Espagueti de Calabacín con Tofu Salteado y Vegetales",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacín (en espiral)",
+      "Tofu firme (en cubos)",
+      "Vegetales picados (pimiento, zanahoria,",
+      "brócoli)",
+      "Salsa de soja baja en sodio",
+      "Aceite de oliva",
+      "Ajo picado",
+      "Jengibre (opcional)"
+    ],
+    "preparacion": [
+      "Prepara: Haz espagueti de calabacín.",
+      "Sofríe: Tofu y vegetales en aceite con ajo y jengibre (opcional).",
+      "Añade: Espagueti de calabacín y salsa de soja.",
+      "Cocina: Brevemente.",
+      "Sirve."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 83,
+    "nombre": "Espagueti de Calabacín con Camarones y Salsa Cremosa de Coliflor",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacín (en espiral)",
+      "Camarones pelados",
+      "Coliflor cocida",
+      "Caldo vegetal (poco)",
+      "Ajo",
+      "Levadura nutricional (opcional, sabor queso)",
+      "Limón",
+      "Perejil",
+      "Sal, pimienta"
+    ],
+    "preparacion": [
+      "Prepara: Haz espagueti de calabacín.",
+      "Sofríe: Camarones con ajo.",
+      "Salsa: Licúa coliflor con caldo, levadura (opcional), limón, sal, pimienta.",
+      "Mezcla: Espagueti, camarones, salsa.",
+      "Sirve: Con perejil."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 84,
+    "nombre": "Espagueti de Calabacín con Pollo Desmenuzado y Salsa de Maní",
+    "categoria": "almuerzo",
+    "ingredientes": [
+      "Calabacín (en espiral)",
+      "Mantequilla de maní natural",
+      "Vinagre de arroz",
+      "Ajo picado",
+      "Jengibre rallado (opcional)",
+      "Agua (para consistencia)"
+    ],
+    "preparacion": [
+      "Prepara: Haz espagueti de calabacín.",
+      "Salsa: Mezcla mantequilla de maní, vinagre, ajo, jengibre (opcional) y agua.",
+      "Combina: Espagueti, pollo, salsa.",
+      "Sirve. RECETA EXTRA. Pasta de Calabaza con INGREDIENTES: Ingredientes: 1 taza de calabaza en cubos 100g de carne molida magra 1 diente de ajo picado 1 cda de cebolla picada Sal y pimienta al gusto 1 cda de aceite de oliva Hierbas (orégano, perejil) al gusto PREPARACION: Cocina la calabaza hasta que esté suave y tritúrala hasta formar un puré. En otra sartén, sofríe el ajo y la cebolla en el aceite de oliva. Agrega la carne molida, sal, pimenta y cocina bien. Mezcla el puré de calabaza con la carne, añade hierbas y sirve caliente."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 85,
+    "nombre": "Pechuga de Pollo a la Parrilla con Vegetales Asados",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo (sin piel)",
+      "½ calabacín en rodajas",
+      "½ pimentón rojo en tiras",
+      "¼ cebolla morada en plumas",
+      "1 cdita de aceite de oliva",
+      "Ajo en polvo, orégano, sal y pimienta al",
+      "gusto",
+      "Jugo de ½ limón (opcional)"
+    ],
+    "preparacion": [
+      "Sazona la pechuga con ajo, orégano, sal, pimienta y limón.",
+      "Cocina a la parrilla o sartén antiadherente por 6–7 minutos por lado, hasta dorar.",
+      "En una bandeja, mezcla los vegetales con el aceite de oliva y condimentos.",
+      "Asa al horno (180 °C) por 15–20 minutos o en sartén hasta que estén tiernos.",
+      "Sirve el pollo con los vegetales asados como acompañante. baja en carbohidratos y con grasas saludables."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 86,
+    "nombre": "Pollo al Horno con Limón y Hierbas",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo o muslo sin piel",
+      "1 cdita de aceite de oliva",
+      "Jugo de ½ limón",
+      "½ cdita de orégano seco",
+      "½ cdita de tomillo",
+      "1 diente de ajo picado (opcional)",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Precalienta el horno a 180 °C (350 °F).",
+      "Mezcla el jugo de limón, aceite, ajo y hierbas.",
+      "Sazona el pollo con la mezcla, sal y pimienta.",
+      "Coloca en una bandeja y hornea por 25– 30 minutos, o hasta que esté bien cocido.",
+      "Sirve con vegetales al vapor o ensalada fresca."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 87,
+    "nombre": "Pollo Salteado con Vegetales y Salsa Agridulce Casera",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo en tiras",
+      "½ taza de brócoli en trozos",
+      "¼ pimentón rojo en tiras",
+      "1 cdita de aceite de oliva",
+      "PARA LA SALSA:",
+      "1 cda de vinagre de manzana",
+      "1 cdita de mostaza",
+      "2 cdas de agua"
+    ],
+    "preparacion": [
+      "Mezcla los ingredientes de la salsa y reserva.",
+      "En una sartén, saltea el pollo con el aceite hasta dorar.",
+      "Agrega los vegetales y cocina 5 minutos más.",
+      "Añade la salsa y cocina 2 minutos, mezclando bien.",
+      "Sirve caliente, ¡y disfruta sin miedo al azúcar!",
+      "Pollo Salteado con Vegetales y Salsa Agridulce Casera: azúcar, rica en proteína y fibra, con un toque de sabor balanceado."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 88,
+    "nombre": "Wrap de Pollo con Aguacate y Vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo cocida y desmenuzada",
+      "¼ de aguacate en láminas",
+      "2 hojas grandes de lechuga (o una tortilla",
+      "integral baja en carbohidratos)",
+      "1 cdita de aceite de oliva o yogur natural",
+      "como aderezo",
+      "Sal, orégano y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Coloca sobre la lechuga o tortilla el pollo, aguacate y vegetales.",
+      "Añade el aderezo (aceite o yogur) y condimenta al gusto.",
+      "Enrolla con cuidado formando el wrap.",
+      "Sirve fresco como almuerzo o merienda ligera.",
+      "Wrap de Pollo con Aguacate y Vegetales: Ideal para diabéticos: Rico en proteína, grasas buenas y fibra. Sin harinas refinadas ni picos de glucosa."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 89,
+    "nombre": "Curry de Pollo con Vegetales y Arroz de coliflor",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo en cubos",
+      "½ taza de brócoli en trozos",
+      "¼ taza de pimentón en tiras",
+      "½ cdita de curry en polvo",
+      "1 cdita de aceite de oliva",
+      "1 taza de arroz de coliflor cocido",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "En una sartén, saltea el pollo con aceite y curry hasta que esté dorado.",
+      "Agrega los vegetales y cocina 5–7 minutos, hasta que estén tiernos.",
+      "Añade sal y pimienta al gusto.",
+      "Sirve el salteado de curry sobre una porción de arroz integral caliente. Apto para diabéticos: Combina proteína magra, carbohidrato complejo y fibra, ideal para almuerzos balanceados."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 90,
+    "nombre": "Tortilla de Espinaca con Pollo y Tomate",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 claras + 1 huevo entero",
+      "1/2 taza de espinaca picada",
+      "1/4 taza de pechuga de pollo cocida y",
+      "desmenuzada",
+      "2 rodajas de tomate",
+      "Sal, orégano y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Bate los huevos con sal y especias.",
+      "Añade la espinaca y el pollo.",
+      "Cocina en sartén antiadherente a fuego medio.",
+      "Sirve con rodajas de tomate frescas encima. EXTRA"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 91,
+    "nombre": "Atún a la Parrilla con Ensalada Mixta",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 filete de atún fresco (aprox. 150 g)",
+      "1 taza de lechuga romana o mixta",
+      "½ tomate en cubos",
+      "¼ de pepino en rodajas",
+      "¼ de aguacate en láminas",
+      "1 cdita de aceite de oliva",
+      "Jugo de ½ limón",
+      "Sal, pimienta y orégano al gusto"
+    ],
+    "preparacion": [
+      "Sazona el atún con sal, pimienta y limón.",
+      "Cocina a la parrilla o en sartén antiadherente por 3–4 minutos por lado.",
+      "Mezcla los vegetales, añade el aguacate y adereza con aceite de oliva y limón.",
+      "Sirve el atún sobre la ensalada"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 92,
+    "nombre": "Camarones Salteados con Vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "150 g de camarones limpios y pelados",
+      "¼ taza de brócoli en trozos",
+      "¼ taza de pimentón rojo o verde en tiras",
+      "1 cdita de aceite de oliva",
+      "1 diente de ajo picado (opcional)",
+      "Sal, pimienta y toque de cúrcuma al gusto"
+    ],
+    "preparacion": [
+      "Calienta el aceite en una sartén y sofríe el ajo.",
+      "Agrega los camarones y cocina 2–3 minutos por lado.",
+      "Añade los vegetales y saltea todo junto por 5–7 minutos.",
+      "Condimenta con sal, pimienta y cúrcuma.",
+      "Sirve caliente, solo o con una porción de arroz integral."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 93,
+    "nombre": "Bacalao al Horno con calabacin y Cebolla",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 filete de bacalao (fresco o desalado)",
+      "½ calabacín en rodajas finas",
+      "½ cebolla morada en plumas",
+      "1 cdita de aceite de oliva",
+      "1 diente de ajo picado (opcional)",
+      "Pimienta, orégano y pizca de sal",
+      "Jugo de ½ limón (opcional)"
+    ],
+    "preparacion": [
+      "Precalienta el horno a 180 °C (350 °F).",
+      "Coloca el bacalao en una bandeja junto al calabacín y la cebolla.",
+      "Rocía con aceite, ajo, jugo de limón y condimenta al gusto.",
+      "Hornea por 20–25 minutos o hasta que el pescado esté tierno.",
+      "Sirve caliente, con ensalada fresca si deseas. Apto para diabéticos: Rico en proteína, bajo en carbohidratos, con fibra y grasas saludables. dejar de comer sabroso."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 94,
+    "nombre": "Ensalada de Pulpo con Pimientos y Vinagreta",
+    "categoria": "cena",
+    "ingredientes": [
+      "150 g de pulpo cocido y troceado",
+      "¼ de pimentón rojo en tiras",
+      "¼ de pimentón verde en tiras",
+      "¼ de cebolla morada en plumas finas",
+      "1 cdita de aceite de oliva",
+      "1 cdita de vinagre de manzana o jugo de",
+      "limón",
+      "Sal, pimienta y perejil al gusto"
+    ],
+    "preparacion": [
+      "En un bowl, mezcla el pulpo con los pimientos y la cebolla.",
+      "Aparte, mezcla el aceite, vinagre, sal, pimienta y perejil para hacer la vinagreta.",
+      "Vierte la vinagreta sobre la ensalada y mezcla bien.",
+      "Refrigera por 15 minutos antes de servir para potenciar el sabor."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 95,
+    "nombre": "Hamburguesa Vegetariana Keto con Lentejas y Chía",
+    "categoria": "cena",
+    "ingredientes": [
+      "1/2 taza de lentejas cocidas",
+      "1 cucharada de semillas de chía",
+      "(hidratadas 10 min en 2 cdas de agua)",
+      "1/4 taza de calabacín rallado",
+      "1 cucharada de harina de almendras",
+      "Ajo en polvo, sal y orégano al gusto",
+      "Hojas de lechuga para envolver (en vez",
+      "de pan)"
+    ],
+    "preparacion": [
+      "Tritura las lentejas con el calabacín rallado.",
+      "Agrega la chía, harina y especias.",
+      "Forma una hamburguesa y cocina en sartén antiadherente con unas gotas de aceite.",
+      "Sirve envuelta en lechuga con aguacate o vegetales frescos."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 96,
+    "nombre": "Tacos Vegetarianos con Frijoles y Vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 tortillas integrales pequeñas",
+      "½ taza de frijoles cocidos (sin grasa)",
+      "¼ taza de pimentón y cebolla en tiras",
+      "¼ taza de repollo rallado",
+      "1 cdita de aceite de oliva",
+      "Sal, pimienta y limón al gusto"
+    ],
+    "preparacion": [
+      "Saltea los vegetales con aceite y condimenta.",
+      "Calienta las tortillas y rellénalas con frijoles y vegetales.",
+      "Agrega repollo fresco encima y un chorrito de limón. Apto para diabéticos: Alto en fibra, sin azúcar, con proteína vegetal y saciante."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 97,
+    "nombre": "Lasaña de Vegetales con Queso Cotagge",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 zucchini en láminas finas (o berenjena)",
+      "¼ taza de espinaca picada",
+      "2 cdas de queso cotagge",
+      "1 cdita de aceite de oliva",
+      "Orégano, sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Saltea las verduras con aceite y condimenta.",
+      "En un molde pequeño, arma capas con zucchini, vegetales y queso.",
+      "Hornea por 15–20 min a 180 °C hasta que el queso gratine."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 98,
+    "nombre": "Pizza de Brócoli y pollo",
+    "categoria": "cena",
+    "ingredientes": [
+      "300gr de brócoli",
+      "2 huevos",
+      "75gr queso mozarella",
+      "40gr pollo (pechuga de pollo)",
+      "20gr queso mozarella rallado"
+    ],
+    "preparacion": [
+      "Hervimos el brócoli y lo trituramos.",
+      "Mezclamos el brócoli con el huevo y queso rallado",
+      "La masa la ponemos sobre un papel vegetal en una bandeja y encima de esta masa pondremos el queso",
+      "Precalentamos el horno a 180° y horneamos arriba y abajo hasta que veamos que está hecha"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 99,
+    "nombre": "Sandwich keto",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 cucharadas de manteca de cerdo",
+      "4 huevos",
+      "28gr de jamon de pavo",
+      "Sal y pimienta negra",
+      "Queso cheddar o edam en longas finas"
+    ],
+    "preparacion": [
+      "Añadir manteca a una sartén grande y ponerla a fuego medio. Añadir los huevos y freírlos ligeramente por ambos lados.",
+      "Usar un huevo frito como base para cada \"sándwich\". Colocar el jamón/pastrami/fiambres apilados y luego añadir el queso. Cubrir cada montón con un huevo frito. Dejar en la sartén con el fuego suave si quieres que se derrita el queso.",
+      "Servir de inmediato."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 100,
+    "nombre": "Sándwich Keto",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 hojas grandes de lechuga",
+      "1 huevo duro en rodajas",
+      "2 láminas de aguacate",
+      "1 lonja de queso bajo en sal",
+      "2 rodajas de tomate",
+      "1 cdita de mayonesa de aguacate o yogur",
+      "tipo kefir o griego",
+      "Sal y orégano al gusto"
+    ],
+    "preparacion": [
+      "Usa la lechuga como base del sándwich.",
+      "Coloca el huevo, aguacate, queso y tomate.",
+      "Agrega mayonesa o yogur y condimenta.",
+      "Cierra el sándwich y disfruta frío. Ideal para diabéticos: Sin harinas, rico en grasas saludables, proteína y fibra. Perfecto para desayuno o cena ligera sin picos de glucosa."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 101,
+    "nombre": "Ensalada de Quinua con Garbanzos y Vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "½ taza de quinua cocida",
+      "¼ taza de garbanzos cocidos",
+      "¼ taza de pepino en cubos",
+      "¼ taza de tomate en cubos",
+      "1 cdita de aceite de oliva",
+      "Jugo de ½ limón",
+      "Sal y orégano al gusto"
+    ],
+    "preparacion": [
+      "Mezcla la quinua, garbanzos y vegetales en un bowl.",
+      "Agrega el aceite, jugo de limón y condimenta al gusto.",
+      "Sirve fría como almuerzo o cena ligera."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 102,
+    "nombre": "Rollitos de Lechuga con Carne Molida y Vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "6 hojas grandes de lechuga",
+      "150g de carne molida magra",
+      "1/4 de zanahoria rallada",
+      "1/4 de calabacín rallado",
+      "1 diente de ajo picado",
+      "1 cda de cebolla picada",
+      "Sal y pimienta al gusto",
+      "1 cda de aceite de oliva"
+    ],
+    "preparacion": [
+      "En una sartén, sofríe el ajo y la cebolla en aceite de oliva.",
+      "Agrega la carne molida, cocina bien y añade los vegetales rallados.",
+      "Condimenta al gusto y cocina por 3-5 minutos más.",
+      "Coloca una porción del relleno en cada hoja de lechuga y enrolla como taco o burrito.",
+      "Sirve frío o ligeramente tibio."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 103,
+    "nombre": "Tortilla de Claras con Espinaca y Aguacate",
+    "categoria": "cena",
+    "ingredientes": [
+      "3 claras de huevo",
+      "½ taza de espinaca picada",
+      "1 cdita de aceite de oliva",
+      "¼ de aguacate en láminas",
+      "Sal y orégano al gusto"
+    ],
+    "preparacion": [
+      "Bate las claras con sal y orégano.",
+      "Cocina en sartén con el aceite y añade la espinaca.",
+      "Sirve con aguacate por encima."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 104,
+    "nombre": "Lasaña de Calabacín con Carne Magra y Queso Ricotta",
+    "categoria": "cena",
+    "ingredientes": [],
+    "preparacion": [
+      "Reemplazar las láminas de pasta con láminas de calabacín. Arma la lasaña con carne magra de res o pavo, queso ricotta, salsa de tomate casera y especias."
+    ],
+    "consejo": "Esta lasaña es más baja en carbohidratos y calorías que la lasaña tradicional."
+  },
+  {
+    "id": 105,
+    "nombre": "Pollo al Horno con Brócoli y Coliflor Asados",
+    "categoria": "cena",
+    "ingredientes": [],
+    "preparacion": [
+      "Pollo marino con hierbas y especias. Hornea junto con brócoli y coliflor en floretes."
+    ],
+    "consejo": "Esta es una comida completa y nutritiva, fácil de preparar."
+  },
+  {
+    "id": 106,
+    "nombre": "Filete de Pescado al Limón con Aguacate y Espárragos",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 filete de pescado blanco (merluza,",
+      "tilapia o róbalo)",
+      "Jugo de 1/2 limón",
+      "1 taza de espárragos",
+      "1/4 de aguacate",
+      "1 cucharadita de aceite de oliva",
+      "Sal, pimienta y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Sazona el pescado con limón, sal, ajo y pimienta.",
+      "Cocínalo en sartén o al horno con un chorrito de aceite por 8–10 minutos.",
+      "Aparte, saltea los espárragos 3–4 minutos en sartén.",
+      "Sirve el pescado con espárragos y rodajas de aguacate por encima."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 107,
+    "nombre": "Albóndigas de Pavo en Salsa de Tomate Casera con Calabacín",
+    "categoria": "cena",
+    "ingredientes": [],
+    "preparacion": [
+      "Prepara albóndigas de pavo caseras con carne magra de pavo, sartén rallada integral, huevo y especias. Cocina en salsa de tomate casera y sirve con calabacín en espiral o rallado."
+    ],
+    "consejo": "Esta receta es una opción baja en carbohidratos y calorías, pero rica en proteínas y fibra."
+  },
+  {
+    "id": 108,
+    "nombre": "Pan de Brócoli",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 ramo de Brócoli",
+      "4 Huevos",
+      "2 tazas harina de almendras",
+      "½ queso parmesano",
+      "½ taza queso amarillo",
+      "½ cebolla morada",
+      "3 ajos",
+      "Un poquito cilantro",
+      "1 cuharada de ajonjoli",
+      "½ cucharadita de sal",
+      "½ cucharada de aceite de oliva",
+      "1 cucharada polvo de hornear"
+    ],
+    "preparacion": [
+      "Lava muy bien el brócoli y triturarlo en una procesadora con los otros vegetales, después le agregas huevos, harina y todos los demás ingredientes Cuando tengas una mezcla parecida a una masa la colocas en una bandeja con papel encerado Hornear a 350• por 25 minutos aproximadamente, coloca el queso amarillo y las semillas de ajonjolí o sésamo, al estilo sándwich"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 109,
+    "nombre": "Salmón a la Plancha con Ensalada de Quinoa, Aguacate y Salmon",
+    "categoria": "cena",
+    "ingredientes": [],
+    "preparacion": [
+      "Cocina quinua según las instrucciones del paquete. Mezcla con pepino, tomate, cebolla morada y aguacate en cubos. Aliña con una vinagreta ligera de limón y hierbas. Cocina salmón a la plancha y sirve sobre la ensalada de quinua."
+    ],
+    "consejo": "Esta receta es una excelente fuente de omega-3,Proteínas,fibra y grasas saludables."
+  },
+  {
+    "id": 110,
+    "nombre": "Tacos de Lentejas con Vegetales Salteados",
+    "categoria": "cena",
+    "ingredientes": [],
+    "preparacion": [
+      "Cocina lentejas según las instrucciones del paquete. Saltea vegetales picados (pimiento, cebolla, champiñones) en aceite de oliva. Tortillas rellenas integrales con lentejas, vegetales salteados y salsa."
+    ],
+    "consejo": "Los tacos de lentejas son una opción vegetariana y nutritiva para la cena."
+  },
+  {
+    "id": 111,
+    "nombre": "Pollo al Curry con Vegetales y Arroz de Coliflor",
+    "categoria": "cena",
+    "ingredientes": [],
+    "preparacion": [
+      "Cocina un curry de pollo con leche de coco light, vegetales (zanahoria, Patata, guisantes) y especias. Ralla coliflor y saltea en una sartén con un poco de aceite de oliva hasta que esté tierno. Sirve el curry de pollo sobre el arroz de coliflor."
+    ],
+    "consejo": "El arroz de coliflor es una excelente alternativa baja en carbohidratos al arroz tradicional."
+  },
+  {
+    "id": 112,
+    "nombre": "Carne de Res Salteada con Vegetales",
+    "categoria": "cena",
+    "ingredientes": [],
+    "preparacion": [
+      "Saltea carne de res en tiras con vegetales variados (pimiento, cebolla, champiñones, calabacín) y salsa de soja baja en sodio."
+    ],
+    "consejo": "Esta es una opción rápida y sabrosa para una cena entre semana."
+  },
+  {
+    "id": 113,
+    "nombre": "Salmón a la Plancha con Espárragos y Puré de Batata",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 filete de salmón",
+      "1 taza de espárragos frescos",
+      "1/2 taza de batata cocida",
+      "1 cucharadita de aceite de oliva",
+      "Sal, pimienta y ajo en polvo al gusto",
+      "Limón (opcional)"
+    ],
+    "preparacion": [
+      "Cocina el salmón en sartén con aceite de oliva, sal, ajo y pimienta (5–7 min por lado).",
+      "Saltea los espárragos hasta que estén tiernos.",
+      "Tritura la batata con un poco de sal y unas gotas de aceite de oliva para hacer el puré.",
+      "Sirve todo junto y añade limón al salmón si deseas."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 114,
+    "nombre": "Ensalada de Pollo a la Parrilla con Aderezo de Yogur Griego y Hierbas",
+    "categoria": "cena",
+    "ingredientes": [],
+    "preparacion": [
+      "Cocina pechuga de pollo a la parrilla y corta en tiras. Mezcla lechuga, tomate, pepino, pimiento, cebolla roja y aguacate en cubos. Prepara un aderezo de sin azúcar añadida, hierbas frescas picadas (eneldo, perejil, cilantro), jugo de limón y especias. Sirve la ensalada con el pollo a la parrilla y el aderezo de yogur griego."
+    ],
+    "consejo": "Esta ensalada es una opción fresca y nutritiva para la cena, rica en proteínas, fibra y vitaminas."
+  },
+  {
+    "id": 115,
+    "nombre": "Pavo Relleno con Vegetales y Salsa de Cranberry Casera",
+    "categoria": "cena",
+    "ingredientes": [],
+    "preparacion": [
+      "Rellena pechuga de pavo con una mezcla de pan integral rallado, cebolla, apio, hierbas y especias. Hornea el pavo hasta que esté cocido. Prepara una salsa de cranberry casera sin azúcar añadida cocinando cranberries frescas con un poco de jugo de naranja y especias. Sirve el pavo relleno con vegetales al vapor o asados y salsa de cranberry casera."
+    ],
+    "consejo": "Esta receta es una excelente opción para una cena festiva o especial, rica en proteínas, fibra y vitaminas."
+  },
+  {
+    "id": 116,
+    "nombre": "Ensalada de Atún con Mayonesa de Aguacate y Vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 lata de atún en agua (escurrida)",
+      "1/2 aguacate maduro",
+      "1 cucharadita de limón",
+      "1/4 taza de zanahoria rallada",
+      "1/4 taza de pepino en cubos",
+      "1/4 taza de lechuga picada",
+      "Sal y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Tritura el aguacate con limón, sal y ajo en polvo (esto será tu mayonesa natural). Mezcla el atún con la “mayonesa” de aguacate. Agrega los vegetales y mezcla bien. Sirve fría, sola o sobre hojas de lechuga."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 117,
+    "nombre": "Pollo a la Cazadora con Champiñones y Puré de Calabaza",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo en trozos",
+      "1/2 taza de champiñones en láminas",
+      "1/2 taza de calabaza cocida",
+      "1 cucharadita de aceite de oliva",
+      "1 diente de ajo picado",
+      "Sal, orégano y pimienta al gusto"
+    ],
+    "preparacion": [
+      "En sartén, saltea el ajo y el pollo con aceite hasta dorar.",
+      "Agrega los champiñones y cocina 5–6 minutos.",
+      "Tritura la calabaza cocida con sal y orégano para hacer el puré.",
+      "Sirve el pollo con champiñones sobre una base de puré caliente."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 118,
+    "nombre": "Ensalada de Atún a la Parrilla con Vegetales Asados y Vinagreta Balsámica",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 filete de atún fresco",
+      "1/2 taza de pimientos y calabacín en",
+      "tiras (asados)",
+      "1 taza de lechuga o espinaca",
+      "1 cucharadita de aceite de oliva",
+      "1 cucharadita de vinagre balsámico",
+      "Sal, pimienta y orégano al gusto"
+    ],
+    "preparacion": [
+      "Asa el atún a la parrilla con sal y pimienta (2–3 min por lado).",
+      "Asa los vegetales con unas gotas de aceite.",
+      "En un bowl, mezcla la lechuga, los vegetales y el atún en trozos.",
+      "Aliña con vinagre balsámico, aceite de oliva y orégano."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 119,
+    "nombre": "Ensalada Caprese con Pollo a la Parrilla",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo a la parrilla (en tiras)",
+      "1 tomate en rodajas",
+      "1/2 bola de queso mozzarella light (en",
+      "rodajas)",
+      "Hojas de albahaca fresca",
+      "1 cucharadita de aceite de oliva",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Cocina la pechuga de pollo a la parrilla con sal y pimienta.",
+      "En un plato, coloca rodajas de tomate, queso y pollo.",
+      "Agrega hojas de albahaca y rocía con aceite de oliva.",
+      "Sirve fría o tibia."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 120,
+    "nombre": "Ensalada de Coliflor con Aderezo Cremoso de Aguacate",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 taza de coliflor cocida al vapor (picada",
+      "en trozos pequeños)",
+      "1/2 aguacate maduro",
+      "Jugo de 1/2 limón",
+      "1 cucharadita de aceite de oliva",
+      "Sal, ajo en polvo y pimienta al gusto",
+      "Cilantro fresco (opcional)"
+    ],
+    "preparacion": [
+      "Tritura el aguacate con el jugo de limón, aceite, sal, ajo y pimienta hasta formar un aderezo cremoso.",
+      "Mezcla con la coliflor tibia o fría.",
+      "Agrega cilantro por encima si deseas y sirve como plato principal o acompañante."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 121,
+    "nombre": "Salmón al Horno con Brócoli y Puré de Coliflor",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 filete de salmón",
+      "1 taza de brócoli al vapor",
+      "1 taza de coliflor cocida",
+      "1 cucharadita de aceite de oliva",
+      "Jugo de 1/2 limón",
+      "Sal, pimienta y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Precalienta el horno a 180 °C.",
+      "Coloca el salmón en una bandeja, condimenta con limón, ajo, sal y pimienta. Hornea por 15–20 minutos.",
+      "Cocina el brócoli al vapor por 5 minutos.",
+      "Tritura la coliflor con un poco de sal y aceite de oliva hasta hacer un puré suave.",
+      "Sirve el salmón con el puré y el brócoli al lado."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 122,
+    "nombre": "Tacos de lechuga relleno de coliflor con mayonesa de aguacate",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 taza de coliflor cocida y picada finamente",
+      "4 hojas grandes de lechuga (tipo romana o",
+      "iceberg)",
+      "1/2 aguacate maduro",
+      "1 cucharadita de jugo de limón",
+      "Sal, ajo en polvo y pimienta al gusto",
+      "Cilantro fresco (opcional)"
+    ],
+    "preparacion": [
+      "Tritura el aguacate con limón, sal, ajo y pimienta para hacer una mayonesa cremosa.",
+      "Mezcla con la coliflor picada hasta que quede bien integrado.",
+      "Rellena cada hoja de lechuga con la mezcla y decora con cilantro si deseas.",
+      "Sirve frío como snack o cena ligera."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 123,
+    "nombre": "Pechugas de pollo rellenas con espinacas y queso feta",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo (abierta tipo mariposa)",
+      "1/2 taza de espinacas frescas",
+      "2 cucharadas de queso feta desmenuzado",
+      "1 cucharadita de aceite de oliva",
+      "Sal, pimienta y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Saltea las espinacas en una sartén con unas gotas de aceite hasta que se ablanden.",
+      "Mezcla con el queso feta.",
+      "Rellena la pechuga con esta mezcla y ciérrala con palillos.",
+      "Sazona con sal, pimienta y ajo, y cocina en sartén o al horno hasta que esté dorada y bien cocida."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 124,
+    "nombre": "Tortilla de verduras con aguacate",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 huevos",
+      "1/4 taza de calabacín rallado",
+      "1/4 taza de espinaca picada",
+      "1/4 taza de pimiento en cubitos",
+      "1 cucharadita de aceite de oliva",
+      "1/4 de aguacate en rodajas",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Bate los huevos y mezcla con las verduras.",
+      "En una sartén con aceite, cocina la mezcla a fuego medio hasta que esté firme.",
+      "Sirve con rodajas de aguacate por encima."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 125,
+    "nombre": "Bowl de quinoa, pollo y aguacate",
+    "categoria": "cena",
+    "ingredientes": [
+      "1/2 taza de quinoa cocida",
+      "1/2 pechuga de pollo a la plancha (en tiras)",
+      "1/4 de aguacate en rodajas",
+      "1/4 taza de espinaca o lechuga",
+      "1 cucharadita de aceite de oliva",
+      "Jugo de limón, sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Cocina la quinoa según instrucciones y deja enfriar.",
+      "Asa o cocina el pollo con sal, pimienta y ajo en polvo.",
+      "En un bowl, coloca la base de quinoa, agrega la espinaca, el pollo y el aguacate.",
+      "Rocía con aceite de oliva y jugo de limón antes de servir."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 126,
+    "nombre": "Huevos duros con palitos de vegetales y guacamole",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 huevos duros",
+      "1/2 zanahoria en palitos",
+      "1/2 pepino en palitos",
+      "1/4 de aguacate",
+      "1 cucharadita de jugo de limón",
+      "Sal y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Cocina los huevos durante 10 minutos, pélalos y pártelos por la mitad.",
+      "Corta la zanahoria y el pepino en bastones.",
+      "Tritura el aguacate con el limón, sal y ajo para hacer el guacamole.",
+      "Sirve los huevos con los vegetales y el guacamole como dip."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 127,
+    "nombre": "Camarones al Ajillo con Espagueti de Calabacín",
+    "categoria": "cena",
+    "ingredientes": [
+      "10–12 camarones limpios",
+      "1 calabacín grande (en forma de espagueti)",
+      "1 diente de ajo picado",
+      "1 cucharadita de aceite de oliva",
+      "Sal y perejil al gusto",
+      "Jugo de 1/2 limón (opcional)"
+    ],
+    "preparacion": [
+      "En una sartén, saltea el ajo en aceite de oliva.",
+      "Agrega los camarones y cocina 3–4 minutos hasta que estén rosados.",
+      "Incorpora el espagueti de calabacín, saltea 2–3 minutos más.",
+      "Añade sal, perejil y un chorrito de limón al gusto.",
+      "Sirve caliente."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 128,
+    "nombre": "Hamburguesas de carne magra con aguacate y ensalada",
+    "categoria": "cena",
+    "ingredientes": [
+      "Cebolla picada",
+      "Ajo picado, hierbas y especias al gusto.",
+      "Aguacate en rodajas",
+      "Lechuga, tomate y otros vegetales frescos",
+      "para acompañar"
+    ],
+    "preparacion": [
+      "Mezcla la carne molida con la cebolla, el ajo y las especias. Forma hamburguesas y cocina a la parrilla o en una sartén hasta que estén bien cocidas. Sirve en platos con aguacate en rodajas y una ensalada fresca."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 129,
+    "nombre": "Salmón a la Plancha con Ensalada de Quinoa y Aguacate",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 filete de salmón",
+      "1/2 taza de quinoa cocida",
+      "1/4 de aguacate en cubos",
+      "1/4 taza de pepino y tomate picados",
+      "1 cucharadita de aceite de oliva",
+      "Jugo de 1/2 limón, sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Cocina el salmón a la plancha con sal, pimienta y unas gotas de limón (5–7 min por lado).",
+      "Mezcla la quinoa con el aguacate, pepino, tomate, aceite de oliva, limón y sal.",
+      "Sirve el salmón con la ensalada como acompañante."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 130,
+    "nombre": "Pechugas de pollo a la plancha con ensalada de pepino y aderezo de mostaza",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo (fileteada)",
+      "1 taza de lechuga y espinaca fresca",
+      "1/4 taza de pepino y semillas de girasol",
+      "1 cucharadita de mostaza sin azúcar",
+      "1 cucharadita de vinagre de manzana",
+      "1/2 cucharadita de aceite de oliva",
+      "Sal, pimienta y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Cocina la pechuga a la plancha con ajo, sal y pimienta hasta que esté dorada y cocida.",
+      "Mezcla la lechuga, espinaca y pepino en un bowl y agrega las semillas",
+      "Prepara el aderezo combinando la mostaza, vinagre y aceite de oliva.",
+      "Añade el aderezo a la ensalada y sirve con el pollo caliente."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 131,
+    "nombre": "Ensalada cesar",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 pechuga de pollo a la plancha (en tiras)",
+      "1 taza de lechuga romana picada",
+      "1/4 taza de repollo morado (opcional, aporta",
+      "más fibra)",
+      "1 cucharada de queso parmesano rallado",
+      "1 cucharadita de aceite de oliva",
+      "1 cucharadita de jugo de limón",
+      "1 cucharadita de yogur natural sin azúcar",
+      "1/2 cucharadita de mostaza",
+      "Sal, pimienta y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Cocina el pollo a la plancha con sal, ajo y pimienta.",
+      "En un bowl, mezcla la lechuga y el repollo.",
+      "Prepara el aderezo mezclando el yogur, aceite, mostaza, limón y sal.",
+      "Agrega el pollo a la ensalada, espolvorea el queso y vierte el aderezo por encima."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 132,
+    "nombre": "Atún a la parrilla con ensalada de vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 filete de atún fresco",
+      "1 taza de lechuga o espinaca",
+      "1/4 taza de pepino en rodajas",
+      "1/4 taza de tomate picado",
+      "1 cucharadita de aceite de oliva",
+      "Jugo de 1/2 limón",
+      "Sal, pimienta y ajo en polvo al gusto"
+    ],
+    "preparacion": [
+      "Sazona el atún con sal, ajo y pimienta. Cocina a la parrilla o en sartén 2–3 minutos por lado.",
+      "Mezcla los vegetales en un bowl y aliña con limón, aceite de oliva y una pizca de sal.",
+      "Sirve el atún sobre la ensalada fresca."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 133,
+    "nombre": "Carne de res a la parrilla con berenjenas",
+    "categoria": "cena",
+    "ingredientes": [
+      "150 g de carne de res magra (bistec o",
+      "solomo)",
+      "1/2 berenjena en rodajas",
+      "1 cucharadita de aceite de oliva",
+      "Ajo en polvo, orégano, sal y pimienta al gusto",
+      "Jugo de limón (opcional)"
+    ],
+    "preparacion": [
+      "Sazona la carne con ajo, orégano, sal y pimienta. Cocina a la parrilla o sartén caliente hasta el punto deseado.",
+      "Asa las berenjenas en la parrilla o sartén con unas gotas de aceite hasta que estén doradas y tiernas.",
+      "Sirve la carne caliente junto con las berenjenas. Puedes rociar con un poco de jugo de limón. EXTRA: POLLO CON SALSA DE KIW I INGREDIENTES: Ingredientes: 2 pechugas de pollo sin piel 1 kiwi maduro 1 cucharada de aceite de oliva 2 dientes de ajo picados 1/4 taza de caldo de pollo bajo en sodio Jugo de 1/2 limón Sal y pimienta al gusto PREPARACION: Cocina el pollo: Salpimienta las pechugas de dorarse y estar bien cocidas (6-7 minutos por lado). Retira y reserva. Haz la salsa: En la misma sartén, cocina el ajo, luego agrega el kiwi picado, el caldo de pollo y el jugo de limón. Cocina 3-4 minutos hasta que el kiwi se deshaga y se forme una salsa espesa. Finaliza: Coloca el pollo en la sartén con la salsa y cocina 2-3 minutos más. Ajusta sal y pimienta. Servir: Sirve el pollo con la salsa y acompáñalo con ensalada o vegetales al vapor. EXTRA: POLLO CON SALSA DE KIW I Beneficios: Proteína magra, antioxidantes, y fibra para mantener tu azúcar en sangre estable. ¡Una cena deliciosa y saludable! CHICHARRON Cochino Asado con Ensalada de Aguacate y Tomate INGREDIENTES: 1 porción de cochino asado al horno 1/2 aguacate en cubos Tomate, cebolla y cilantro picados Limón, sal y pimienta PREPARACION: Sirve el cochino con la ensalada fresca de aguacate y tomate. Rocía con limón y listo. Cochino Asado con Brócoli al Vapor y Aguacate INGREDIENTES: 1 porción de cochino asado 1 taza de brócoli cocido al vapor 1/4 de aguacate Aceite de oliva y sal al gusto PREPARACION: Acompaña el cochino con brócoli y aguacate. Agrega un chorrito de aceite de oliva. Ensalada tibia de Cochino Asado con Espinaca y Aguacate INGREDIENTES: Tiras de cochino asado 1 taza de espinaca fresca 1/2 aguacate en rodajas Mostaza y limón para aderezo PREPARACION: Calienta el cochino y mezcla con la espinaca y aguacate. Aliña con mostaza y limón. Cochino Asado con Calabacín Salteado y Aguacate INGREDIENTES: 1 porción de cochino asado 1/2 calabacín en tiras 1/4 de aguacate Ajo y orégano al gusto PREPARACION: Saltea el calabacín en sartén antiadherente con ajo. Sirve junto al cochino y aguacate. Aguacate, Lechuga y Pepino INGREDIENTES: 1 porción de cochino asado en cubos 1 taza de lechuga 1/2 aguacate Pepino en rodajas, limón y sal PREPARACION: Arma un bowl fresco con todos los ingredientes. Sirve frío o tibio según prefieras buenas 20 INTELIGENTES: COM BATE LOS ANTOJOS SIN AFECTAR"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 134,
+    "nombre": "Manzana verde con Mantequilla de Almendras",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Corta una manzana en rodajas y úntalas con 1 cucharada de mantequilla de almendras naturales."
+    ],
+    "consejo": "La manzana aporta fibra y la mantequilla de almendras, grasas saludables y proteínas."
+  },
+  {
+    "id": 135,
+    "nombre": "Zanahorias Baby con Hummus",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Disfruta de zanahorias baby crudas con 2 cucharadas de hummus casero o bajo en sodio."
+    ],
+    "consejo": "Las zanahorias son ricas en betacaroteno y el hummus aporta proteínas y fibra."
+  },
+  {
+    "id": 136,
+    "nombre": "Pepino y Tomates Cherry con Queso Feta",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Corta pepino y tomates cherry en trozos. Mezcla con queso feta desmenuzado y un chorrito de aceite de oliva y hierbas."
+    ],
+    "consejo": "Esta combinación es fresca, baja en calorías y rica en nutrientes."
+  },
+  {
+    "id": 137,
+    "nombre": "Fresas con Crema de Coco",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Disfruta de fresas frescas con una cucharada de crema de coco sin azúcar añadida."
+    ],
+    "consejo": "Las fresas son bajas en azúcar y ricas en antioxidantes. La crema de coco aporta grasas saludables."
+  },
+  {
+    "id": 138,
+    "nombre": "Pimientos Rojos y Amarillos con Guacamole",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Corta pimientos rojos y amarillos en tiras y sírvelos con guacamole casero(aguacate, cebolla, tomate, cilantro, limón)."
+    ],
+    "consejo": "Los pimientos son ricos en vitamina C y el guacamole aporta grasas saludables y fibra."
+  },
+  {
+    "id": 139,
+    "nombre": "Puñado de Almendras",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Disfrute de un puñado de almendras crudas (alrededor de 15-20 almendras)."
+    ],
+    "consejo": "Las almendras son ricas en grasas saludables, Proteínas y fibras."
+  },
+  {
+    "id": 140,
+    "nombre": "Nueces de Brasil",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Disfruta de 2-3 nueces de Brasil."
+    ],
+    "consejo": "Las nueces de Brasil son ricas en selenio, un mineral esencial."
+  },
+  {
+    "id": 141,
+    "nombre": "Semillas de Chía con Yogur Griego",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1 cucharada de semillas de chía con 1/2 taza de yogur griego natural sin azúcar añadida."
+    ],
+    "consejo": "Las semillas de chía son ricas en fibra y omega-3."
+  },
+  {
+    "id": 142,
+    "nombre": "Tostadas de Semillas de Calabaza",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Tuesta semillas de calabaza crudas en una sartén o en el horno hasta que estén doradas."
+    ],
+    "consejo": "Las semillas de calabaza son ricas en magnesio y zinc."
+  },
+  {
+    "id": 143,
+    "nombre": "Mezcla de Nueces y Semillas",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla de almendras, nueces, semillas de calabaza, semillas de girasol y arándanos deshidratados sin azúcar añadida."
+    ],
+    "consejo": "Esta mezcla te proporciona una variedad de nutrientes y grasas saludables."
+  },
+  {
+    "id": 144,
+    "nombre": "Yogur Griego con Bayas",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1/2 taza de yogur griego natural sin azúcar añadida con 1/2 taza de bayas frescas o congeladas."
+    ],
+    "consejo": "El yogur griego es rico en proteínas y las bayas son bajas en azúcar y ricas en antioxidantes."
+  },
+  {
+    "id": 145,
+    "nombre": "Yogur con canela y nueces",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1/2 taza de yogurt natural con 1/4 cucharadita de canela y 1/4 taza de nueces picadas."
+    ],
+    "consejo": "La canela puede ayudar a mejorar la sensibilidad a la insulina."
+  },
+  {
+    "id": 146,
+    "nombre": "Yogur con Semillas y Frutas Deshidratadas",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla 1/2 taza de yogurt natural con 1 cucharada de semillas de chía o lino y 1/4 taza de frutas deshidratadas sin azúcar añadida (pasas, Arándanos, orejones)."
+    ],
+    "consejo": "Las semillas aportan fibra y omega-3.Las frutas deshidratadas son una buena opción si se consumen con moderación."
+  },
+  {
+    "id": 147,
+    "nombre": "Batido de Yogur con Frutas y Vegetales",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1/2 taza de yogurt,1/2 taza de frutas (fresas, plátano) y 1/2 taza de vegetales (espinacas, pepino)."
+    ],
+    "consejo": "Los batidos son una forma fácil de obtener una gran cantidad de nutrientes en un snack."
+  },
+  {
+    "id": 148,
+    "nombre": "Parfait de Yogur con Capas de Frutas y Granola Casera",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "En un vaso, alternar capas de yogur, frutas y granola casera sin azúcar añadida."
+    ],
+    "consejo": "Esta es una forma visualmente atractiva de disfrutar de un snack saludable."
+  },
+  {
+    "id": 149,
+    "nombre": "Rollitos de Pavo y Queso",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Envuelve rodajas de pavo magro con queso bajo en grasa."
+    ],
+    "consejo": "Este snack es rico en proteínas y bajo en carbohidratos."
+  },
+  {
+    "id": 150,
+    "nombre": "Edamame",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Cocina edamame al vapor o hervido y sazona con sal."
+    ],
+    "consejo": "El edamame es una excelente fuente de proteína vegetal y fibra."
+  },
+  {
+    "id": 151,
+    "nombre": "Mini Frittatas de Huevo y Vegetales",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Bate huevos con vegetales picados (espinacas, champiñones, pimientos) y hornea en moldes para muffins."
+    ],
+    "consejo": "Estas mini frittatas son una excelente manera de obtener proteínas y vegetales en un snack."
+  },
+  {
+    "id": 152,
+    "nombre": "Barritas de Granola Caseras",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Precalienta el horno a 180°C. En un recipiente grande , mezcle la avena, las nueces, las semillas y las frutas secas. En una olla pequeña, combina la miel, la mantequilla de maní o almendra s, el aceite de coco, el extracto de vainilla y la sal. Calienta a fuego medio, revolviendo constantemente, hasta que la mezcla esté suave y homog énea. Vierta la mezcla líquida sobre los ingredientes secos y revuelve bien para que todos los ingredientes queden cubiertos. Transfiere la mezcla a un molde cuadrado de 20x20 cm previamente engrasado y presiona firmemente con una espátula o las manos. Horne a durante 25-30 minutos, o hasta que las barras estén doradas. Deja enfriar completamente antes de cortar en barras"
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 153,
+    "nombre": "Tostadas Integrales con Aguacate",
+    "categoria": "snack",
+    "ingredientes": [],
+    "preparacion": [
+      "Unta aguacate en rodajas sobre tostadas de pan integral."
+    ],
+    "consejo": "Esta tostada es una buena fuente de grasas saludables y fibra +20+20 SALUDABLESJUGOS SALUDABLES BEBIDAS SALUDABLES Y ENERGETICAS"
+  },
+  {
+    "id": 154,
+    "nombre": "Jugo Verde Clásico",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1 taza de espinacas, 1/2 pepino, 1/2 manzana verde, jugo de 1/2 limón y 1/2 taza de agua."
+    ],
+    "consejo": "Este jugo es rico en vitaminas, minerales y antioxidantes."
+  },
+  {
+    "id": 155,
+    "nombre": "Smoothie de Aguacate y Kale",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora aguacate, kale, jugo de limón y agua."
+    ],
+    "consejo": "Este smoothie es rico en grasas saludables, vitaminas y minerales."
+  },
+  {
+    "id": 156,
+    "nombre": "Horchata de Chufa (sin azúcar añadida)",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Remoja chufas secas en agua durante la noche. Cuela las chufas y mezcla el líquido resultante con agua fresca y un poco de stevia (un edulcorante natural sin calorías)."
+    ],
+    "consejo": "La horchata de chufa es una bebida tradicional española refrescante y nutritiva."
+  },
+  {
+    "id": 157,
+    "nombre": "Agua de Jamaica",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Hierve flores de jamaica secas en agua. Deja enfriar y sirve con hielo."
+    ],
+    "consejo": "Refrescante y baja en calorías."
+  },
+  {
+    "id": 158,
+    "nombre": "Té de Hibisco",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Prepara té de hibisco caliente o frío según las instrucciones del paquete."
+    ],
+    "consejo": "El hibisco puede ayudar a reducir la presión arterial."
+  },
+  {
+    "id": 159,
+    "nombre": "Jugo de Remolacha y Zanahoria",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en un extractor de jugos remolacha y zanahoria."
+    ],
+    "consejo": "La remolacha puede ayudar a mejorar la circulación sanguínea y la zanahoria es rica en betacaroteno."
+  },
+  {
+    "id": 160,
+    "nombre": "Smoothie de Yogur Griego con Frutos Rojos y Semillas",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora yogur griego natural sin azúcar añadida, frutos rojos congelados y semillas de chía o lino."
+    ],
+    "consejo": "Este smoothie es rico en proteínas, antioxidantes y fibra."
+  },
+  {
+    "id": 161,
+    "nombre": "Batido de Proteína con Aguacate y Espinacas",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora proteína en polvo (whey protein o proteína vegetal), aguacate, espinacas y leche de almendras sin azúcar."
+    ],
+    "consejo": "Este batido es rico en proteínas, grasas saludables y fibra."
+  },
+  {
+    "id": 162,
+    "nombre": "Té Helado de Hierbas",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Prepara té de hierbas (menta, hierbabuena, manzanilla) y deja enfriar. Sirve con hielo y limón."
+    ],
+    "consejo": "Refrescante y sin calorías."
+  },
+  {
+    "id": 163,
+    "nombre": "Limonada Casera con Stevia",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla jugo de limón fresco con agua y stevia (un edulcorante natural sin calorías)."
+    ],
+    "consejo": "Refrescante y baja en calorías."
+  },
+  {
+    "id": 164,
+    "nombre": "Agua con Gas y Limón",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla agua con gas con jugo de limón fresco."
+    ],
+    "consejo": "Refrescante y baja en calorías."
+  },
+  {
+    "id": 165,
+    "nombre": "Leche de Coco Casera",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla carne de coco fresca con agua y cuela."
+    ],
+    "consejo": "La leche de coco casera es rica en grasas saludables."
+  },
+  {
+    "id": 166,
+    "nombre": "Leche de Almendras Casera",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Remoja almendras crudas en agua durante la noche. Cuela las almendras y mezcla el líquido resultante con agua fresca."
+    ],
+    "consejo": "La leche de almendras casera es baja en calorías y carbohidratos."
+  },
+  {
+    "id": 167,
+    "nombre": "Smoothie de Yogur Griego con Bayas y Avena",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora yogur griego natural sin azúcar añadida, bayas frescas o congeladas y avena."
+    ],
+    "consejo": "Este smoothie es rico en proteínas, fibra y calcio."
+  },
+  {
+    "id": 168,
+    "nombre": "Batido de Frutos Rojos y Semillas",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora frutos rojos congelados (fresas, frambuesas, arándanos), semillas de chía o lino y leche de almendras sin azúcar."
+    ],
+    "consejo": "Los frutos rojos son ricos en antioxidantes y las semillas aportan fibra y omega-3."
+  },
+  {
+    "id": 169,
+    "nombre": "Batido de Aguacate y Pepino",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora aguacate, pepino, jugo de limón y agua."
+    ],
+    "consejo": "El aguacate aporta grasas saludables y el pepino es refrescante y bajo en calorías."
+  },
+  {
+    "id": 170,
+    "nombre": "Batido Verde con Espinacas y Frutas",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora espinacas frescas, frutas (manzana, plátano) y leche de almendras."
+    ],
+    "consejo": "Los vegetales de hoja verde son ricos en vitaminas y minerales."
+  },
+  {
+    "id": 171,
+    "nombre": "Batido de Proteína con Bayas",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora proteína en polvo (whey protein o proteína vegetal), leche de almendras sin azúcar, bayas congeladas y espinacas."
+    ],
+    "consejo": "Este batido es una excelente opción para después del ejercicio o para un snack rápido y nutritivo."
+  },
+  {
+    "id": 172,
+    "nombre": "Jugo de Remolacha, Zanahoria y Manzana",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en un extractor de jugos remolacha, zanahoria y manzana."
+    ],
+    "consejo": "La remolacha puede ayudar a mejorar la circulación sanguínea."
+  },
+  {
+    "id": 173,
+    "nombre": "Jugo de Apio, Pepino y Limón",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en un extractor de jugos apio, pepino y limón."
+    ],
+    "consejo": "Este jugo es bajo en calorías y refrescante."
+  },
+  {
+    "id": 174,
+    "nombre": "Jugo de Kale, Zanahoria y Naranja",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en un extractor de jugos kale, zanahoria y naranja."
+    ],
+    "consejo": "El kale es rico en calcio y la zanahoria en betacaroteno."
+  },
+  {
+    "id": 175,
+    "nombre": "Jugo de Espinaca, Pepino y Manzana Verde",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en un extractor de jugos espinacas, pepino y manzana verde."
+    ],
+    "consejo": "Este jugo es rico en vitaminas, minerales y fibra."
+  },
+  {
+    "id": 176,
+    "nombre": "Té de Jengibre",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Prepara té de jengibre caliente rallando jengibre fresco y añadiéndolo a agua caliente."
+    ],
+    "consejo": "El jengibre tiene propiedades antiinflamatorias y puede ayudar a mejorar la digestión."
+  },
+  {
+    "id": 177,
+    "nombre": "Té de Manzanilla",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Prepara té de manzanilla caliente según las instrucciones del paquete."
+    ],
+    "consejo": "La manzanilla tiene propiedades relajantes y puede ayudar a mejorar el sueño."
+  },
+  {
+    "id": 178,
+    "nombre": "Té Verde",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Prepara té verde caliente o frío según las instrucciones del paquete."
+    ],
+    "consejo": "El té verde es rico en antioxidantes y puede ayudar a mejorar la sensibilidad a la insulina."
+  },
+  {
+    "id": 179,
+    "nombre": "Agua de Bayas",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Añade bayas frescas o congeladas (fresas, arándanos, frambuesas) a una jarra de agua. Refrigera por al menos 2 horas antes de servir."
+    ],
+    "consejo": "Las bayas son bajas en azúcar y ricas en antioxidantes."
+  },
+  {
+    "id": 180,
+    "nombre": "Agua de Limón y Jengibre",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Añade rodajas de limón y jengibre fresco a una jarra de agua. Refrigera por al menos 2 horas antes de servir."
+    ],
+    "consejo": "El limón es rico en vitamina C y el jengibre tiene propiedades antiinflamatorias."
+  },
+  {
+    "id": 181,
+    "nombre": "Agua de Pepino y Menta",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Añade rodajas de pepino y hojas de menta fresca a una jarra de agua. Refrigera por al menos 2 horas antes de servir."
+    ],
+    "consejo": "Refrescante y baja en calorías. El pepino y la menta aportan sabor sin añadir azúcar."
+  },
+  {
+    "id": 182,
+    "nombre": "Infusión de Frutas del Bosque",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Prepare una infusión con frutas del bosque congeladas o deshidratadas sin azúcar añadida."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 183,
+    "nombre": "Limonada Casera sin Azúcar",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla jugo de limón fresco con agua y stevia o eritritol al gusto."
+    ],
+    "consejo": "Esta limonada es una alternativa saludable a las limonadas comerciales."
+  },
+  {
+    "id": 184,
+    "nombre": "Café Negro",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Prepare café negro sin azúcar ni leche."
+    ],
+    "consejo": "El café puede ayudar a mejorar la concentración y el estado de ánimo."
+  },
+  {
+    "id": 185,
+    "nombre": "Batido de Zanahoria y Naranja",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1 zanahoria,1 naranja pelada,1/2 pulgada de jengibre y 1/2 taza de agua."
+    ],
+    "consejo": "La zanahoria es rica en betacaroteno y la naranja en vitamina C."
+  },
+  {
+    "id": 186,
+    "nombre": "Agua de Limón y Jengibre",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Agregue rodajas de limón y trozos de jengibre frescos a una jarra de agua. Déjelo reposar en el refrigerador durante al menos 2 horas."
+    ],
+    "consejo": "El limón es rico en vitamina C y el jengibre tiene propiedades antiinflamatorias."
+  },
+  {
+    "id": 187,
+    "nombre": "Jugo Verde Tropical",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1 taza de espinacas,1/2 mango,1/4 piña, jugo de 1/2 limón y 1/2 taza de agua."
+    ],
+    "consejo": "El mango es rico en vitamina C y antioxidantes."
+  },
+  {
+    "id": 188,
+    "nombre": "Jugo Verde Energizante",
+    "categoria": "jugo",
+    "ingredientes": [],
+    "preparacion": [
+      "Mezcla en una licuadora 1 taza de kale,1/2 zanahoria,1/2 manzana,1/2 pulgada de jengibre y 1/2 taza de agua."
+    ],
+    "consejo": "El kale es rico en calcio y el jengibre tiene propiedades antiinflamatorias."
+  },
+  {
+    "id": 189,
+    "nombre": "Espagueti de Calabacín con Pesto Casero y Camarones",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 calabacines grandes (en espiral)",
+      "200 g de camarones limpios",
+      "2 cdas. de aceite de oliva",
+      "1 taza de albahaca fresca",
+      "1 diente de ajo",
+      "2 cdas. de nueces o almendras",
+      "2 cdas. de queso parmesano (opcional)",
+      "Jugo de 1/2 limón",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Saltea los camarones con 1 cda. de aceite de oliva, sal y pimienta hasta que estén rosados.",
+      "Licúa la albahaca, ajo, nueces, parmesano, jugo de limón y 1 cda. de aceite hasta formar el pesto.",
+      "Agrega el espagueti de calabacín a la sartén, mezcla con el pesto y los camarones."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 190,
+    "nombre": "Lasaña de Berenjena con Carne Magra y Queso Ricotta",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 berenjenas en láminas",
+      "300 g de carne magra molida",
+      "1 taza de salsa de tomate natural",
+      "1 taza de ricotta",
+      "1 huevo",
+      "1 cda. de aceite de oliva",
+      "Sal, pimienta y orégano al gusto"
+    ],
+    "preparacion": [
+      "Hornea las láminas de berenjena 10 min para ablandarlas.",
+      "Saltea la carne con salsa de tomate y condimentos.",
+      "Mezcla la ricotta con el huevo.",
+      "Arma capas: berenjena, carne, ricotta, repite.",
+      "Hornea 25 min a 180 °C y sirve caliente."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 191,
+    "nombre": "Coliflor Salteada con Vegetales y Camarones",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 tazas de coliflor en trozos",
+      "200 g de camarones limpios",
+      "1 zanahoria en tiras",
+      "1 calabacín en rodajas",
+      "1 cda. aceite de oliva",
+      "Sal y pimienta"
+    ],
+    "preparacion": [
+      "Saltea la coliflor y vegetales con aceite 5 min.",
+      "Agrega los camarones y cocina hasta que estén rosados.",
+      "Condimenta con salsa de soya, sal y pimienta.",
+      "Sirve caliente como cena ligera."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 192,
+    "nombre": "Ensalada de Quinua con Pollo a la Parrilla y Vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 taza de quinua cocida",
+      "150 g de pechuga de pollo a la parrilla",
+      "1 pepino en cubos",
+      "1 pimentón en tiras",
+      "½ taza de tomates cherry",
+      "1 cda. aceite de oliva, jugo de limón, sal y",
+      "pimienta"
+    ],
+    "preparacion": [
+      "Cocina la quinua y deja enfriar.",
+      "Mezcla con pepino, pimentón y tomates.",
+      "Agrega el pollo en tiras.",
+      "Aliña con aceite, limón, sal y pimienta."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 193,
+    "nombre": "Pimientos Rellenos con Carne Magra y Arroz de Coliflor",
+    "categoria": "cena",
+    "ingredientes": [
+      "4 pimientos grandes",
+      "200 g de carne magra molida",
+      "1 taza de arroz de coliflor",
+      "1 diente de ajo picado",
+      "1 cda. aceite de oliva",
+      "Sal, pimienta y orégano al gusto"
+    ],
+    "preparacion": [
+      "Cocina la carne con ajo, sal, pimienta y orégano.",
+      "Mezcla la carne con el arroz de coliflor.",
+      "Rellena los pimientos con la mezcla y hornea 20-25 min a 180 °C.",
+      "Sirve caliente como plato principal."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 194,
+    "nombre": "Sopa de Vegetales con Fideos de Calabacín",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 tazas de fideos de calabacín",
+      "1 zanahoria en cubos",
+      "1 calabacín en cubos",
+      "1 taza de brócoli en trozos",
+      "4 tazas de caldo de verduras bajo en sodio",
+      "1 diente de ajo picado",
+      "Sal, pimienta y hierbas al gusto"
+    ],
+    "preparacion": [
+      "Hierve el caldo con ajo y vegetales hasta que estén tiernos.",
+      "Agrega los fideos de calabacín y cocina 2- 3 min más.",
+      "Condimenta con sal, pimienta y hierbas.",
+      "Sirve caliente como entrada o plato principal."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 195,
+    "nombre": "Wrap de Lechuga con Pollo Desmenuzado y Aguacate",
+    "categoria": "cena",
+    "ingredientes": [
+      "4 hojas grandes de lechuga",
+      "150 g de pechuga de pollo cocida y",
+      "desmenuzada",
+      "½ aguacate en cubos",
+      "1 tomate pequeño picado",
+      "1 cda. yogur natural o aderezo bajo en",
+      "grasa",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Mezcla el pollo, aguacate y tomate.",
+      "Coloca la mezcla sobre las hojas de lechuga.",
+      "Añade yogur o aderezo, sal y pimienta al gusto.",
+      "Enrolla y sirve como snack o cena ligera."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 196,
+    "nombre": "Salteado de Brócoli y Tofu con Salsa Agridulce Casera",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 tazas de brócoli en trozos",
+      "200 g de tofu firme en cubos",
+      "1 cda. aceite de oliva",
+      "2 cdas. salsa de soya baja en sodio",
+      "1 cda. vinagre de manzana",
+      "1 cdita. miel o edulcorante natural",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Saltea el brócoli en aceite 3-4 min.",
+      "Agrega el tofu y cocina hasta que esté dorado.",
+      "Mezcla la salsa de soya, vinagre y miel; incorpora al salteado.",
+      "Cocina 2-3 min más, ajusta sal y pimienta, y sirve caliente."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 197,
+    "nombre": "Champiñones Rellenos con Carne Magra y Vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "6 champiñones grandes",
+      "150 g de carne magra molida",
+      "½ pimiento en cubos",
+      "1 diente de ajo picado",
+      "1 cda. aceite de oliva",
+      "Sal, pimienta y orégano al gusto"
+    ],
+    "preparacion": [
+      "Retira los tallos de los champiñones y reserva.",
+      "Saltea la carne con ajo, pimiento y condimentos.",
+      "Rellena los champiñones con la mezcla y hornea 15-20 min a 180 °C.",
+      "Sirve calientes como aperitivo o plato principal."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 198,
+    "nombre": "Pasta de Lentejas con Pollo y Vegetales",
+    "categoria": "cena",
+    "ingredientes": [
+      "80-100 g de pasta de lentejas (o garbanzos)",
+      "150 g de pechuga de pollo en tiras",
+      "1 taza de brócoli en trozos",
+      "1 pimiento rojo en tiras",
+      "1 diente de ajo picado",
+      "1 cda. de aceite de oliva",
+      "Sal, pimienta y hierbas al gusto"
+    ],
+    "preparacion": [
+      "Cocina la pasta de lentejas según las instrucciones del paquete. Saltea el pollo en aceite hasta dorarlo. Agrega ajo, brócoli y pimiento; cocina 3-4 minutos hasta que los vegetales estén tiernos. Mezcla la pasta con el salteado, ajusta sal, pimienta y hierbas. Sirve caliente y disfruta de un plato saciante y bajo en carbohidratos simples."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 199,
+    "nombre": "Noodles de Calabaza con Salsa de Tomate y Albóndigas de Lentejas",
+    "categoria": "cena",
+    "ingredientes": [
+      "1 calabaza en forma de noodles",
+      "1 taza de lentejas cocidas",
+      "1 huevo",
+      "2 cdas. pan rallado integral",
+      "1 taza de salsa de tomate natural",
+      "1 cda. aceite de oliva, sal y especias al",
+      "gusto"
+    ],
+    "preparacion": [
+      "Mezcla lentejas, huevo y pan rallado, forma albóndigas y hornea 15 min.",
+      "Saltea los noodles de calabaza con aceite.",
+      "Agrega la salsa de tomate y las albóndigas.",
+      "Sirve caliente."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 200,
+    "nombre": "Risotto de Coliflor con Champiñones y Queso Parmesano",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 tazas de coliflor rallada",
+      "1 taza de champiñones en láminas",
+      "2 cdas. queso parmesano rallado",
+      "1 cda. aceite de oliva",
+      "1 diente de ajo picado, sal y pimienta"
+    ],
+    "preparacion": [
+      "Saltea el ajo y champiñones en aceite.",
+      "Agrega la coliflor rallada y cocina 5 min.",
+      "Mezcla con queso parmesano, sal y pimienta.",
+      "Sirve como guarnición o plato principal."
+    ],
+    "consejo": ""
+  },
+  {
+    "id": 201,
+    "nombre": "Fideos de Batata con Salsa de Pesto Rojo y Pollo a la Parrilla",
+    "categoria": "cena",
+    "ingredientes": [
+      "2 batatas en forma de fideos",
+      "1 pechuga de pollo a la parrilla en tiras",
+      "3 cdas. pesto rojo",
+      "1 cda. aceite de oliva",
+      "Sal y pimienta"
+    ],
+    "preparacion": [
+      "Saltea los fideos de batata en aceite 5 min.",
+      "Mezcla con pesto rojo.",
+      "Añade el pollo en tiras.",
+      "Sirve caliente. te sean útiles y te ayuden a disfrutar de comidas deliciosas y saludables."
+    ],
+    "consejo": ""
+  }
+]

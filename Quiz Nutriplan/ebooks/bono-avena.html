@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Recetas con Avena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #C9922A;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #C9922Add 0%, #C9922A 50%, #C9922Acc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🥣</span>
+    <h1>Recetas con Avena</h1>
+    <p class="hero-sub">Tu cereal estrella con recetas para desayunos, snacks y postres hormonales</p>
+    <div class="hero-count">17 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">La Avena: Tu Cereal Estrella para el Equilibrio Hormonal</h2>
+        <div class="intro-content"><p>La avena es uno de los alimentos más poderosos que existen para estabilizar tu insulina — y probablemente ya la tienes en tu cocina.</p><p>Su secreto se llama betaglucano, un tipo de fibra soluble que forma un gel en tu intestino y frena la absorción de glucosa. Resultado: energía estable durante horas, sin picos ni bajadas.</p><p>Pero OJO — no cualquier avena funciona igual, y cómo la preparas cambia COMPLETAMENTE su efecto en tu glucosa.</p><p>3 reglas de oro para que tu avena sea hormonal:</p><p class="intro-bullet">• 🥣 USA AVENA TRADICIONAL (en hojuelas) — La instantánea tiene IG 79 vs IG 55 de la tradicional</p><p class="intro-bullet">• 🥛 EVITA LECHE CON AZÚCAR — Usa leche vegetal sin azúcar (almendras, coco, soya) o agua</p><p class="intro-bullet">• 🥜 SIEMPRE AGREGA PROTEÍNA + GRASA — Yogur griego, huevo, mantequilla de maní o nueces</p><p>Con estas 3 reglas, cada receta de esta guía se convierte en un desayuno, snack o postre que alimenta tu equilibrio hormonal.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/avena/desayunos.jpg" alt="🌅 Desayunos con Avena — Energía Estable Toda la Mañana" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🌅 Desayunos con Avena — Energía Estable Toda la Mañana</h2>
+        <p class="chapter-desc">El desayuno marca el tono hormonal de todo tu día. Estas recetas con avena te dan energía sostenida de 4+ horas sin picos de insulina.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Parfait de Avena Nocturna con Yogur y Frutos Rojos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de avena en hojuelas (tradicional)</li><li>½ taza de yogur griego natural sin azúcar</li><li>¼ taza de frutos rojos (fresas, arándanos o frambuesas)</li><li>1 cucharadita de semillas de chía</li><li>1 pizca de canela en polvo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En un frasco de vidrio con tapa, mezcla la avena con el yogur y la canela</li><li>Agrega las semillas de chía y mezcla bien</li><li>Coloca los frutos rojos por encima sin mezclar</li><li>Tapa y refrigera toda la noche — al día siguiente está listo para comer</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La avena nocturna (overnight oats) desarrolla almidón resistente durante la noche, lo que BAJA su IG aún más. El yogur griego aporta proteína que frena la absorción y la chía forma un gel que duplica el efecto. Es la versión más hormonal-friendly de la avena.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Avena Cocida con Yogur Griego y Mantequilla de Maní</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de avena integral en hojuelas</li><li>½ taza de agua</li><li>¼ taza de yogur griego natural sin azúcar</li><li>1 cucharadita de mantequilla de maní natural</li><li>1 cucharadita de semillas de chía</li><li>¼ taza de frutos rojos</li><li>Canela al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina la avena con el agua a fuego medio hasta que espese (5-7 minutos)</li><li>Retira del fuego y deja reposar 2 minutos</li><li>Mezcla con el yogur griego hasta obtener textura cremosa</li><li>Corona con frutos rojos, semillas de chía y mantequilla de maní</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La mantequilla de maní aporta grasa saludable + proteína vegetal que ralentizan la digestión de la avena. Una sola cucharadita transforma este desayuno de 'carbohidrato solo' a 'plato completo equilibrado'. Tu insulina nota la diferencia.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Smoothie Bowl de Avena, Yogur y Arándanos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de avena en hojuelas (remojadas la noche anterior)</li><li>½ taza de yogur griego natural</li><li>½ taza de arándanos (frescos o congelados)</li><li>1 cucharadita de semillas de chía</li><li>1 cucharadita de mantequilla de maní natural</li><li>5 almendras laminadas para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En la licuadora, mezcla el yogur, la avena remojada y la mitad de los arándanos</li><li>Licúa hasta obtener una textura cremosa y suave</li><li>Sirve en un bowl y decora con el resto de arándanos, chía y almendras</li><li>Agrega la mantequilla de maní en un hilito por encima — consume inmediatamente</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los arándanos son la fruta con mayor contenido de antocianinas — antioxidantes que mejoran directamente la sensibilidad a la insulina. Combinados con la avena y el yogur, este bowl es un cóctel de protección hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Panquecas de Avena y Huevo con Aguacate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de avena integral en hojuelas</li><li>1 huevo entero + 1 clara</li><li>1 cucharadita de aceite de coco</li><li>¼ de aguacate en láminas</li><li>Pizca de sal marina y orégano</li><li>Canela (opcional, para versión dulce)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la avena con los huevos hasta obtener una masa líquida homogénea</li><li>Calienta el aceite de coco en sartén antiadherente a fuego medio</li><li>Vierte la mezcla formando 2-3 panquecas y cocina 3 min por lado</li><li>Sirve con el aguacate encima y un toque de sal — versión dulce: con canela y frutos rojos</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estas panquecas NO tienen harina — la avena actúa como base. El huevo aporta proteína completa y el aguacate grasa monoinsaturada que estabiliza tu glucosa. Puedes hacerlas dulces (canela + fruta) o saladas (sal + orégano) según tu antojo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Bowl de Avena Nocturna con Nueces y Canela</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de avena integral en hojuelas</li><li>½ taza de yogur griego o kéfir</li><li>1 cucharadita de semillas de lino molido</li><li>3 nueces troceadas (o 6 almendras)</li><li>Canela al gusto</li><li>1 cucharadita de miel pura (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todos los ingredientes en un recipiente de vidrio con tapa</li><li>Refrigera toda la noche (mínimo 6 horas)</li><li>Al día siguiente, revuelve bien y disfruta frío o a temperatura ambiente</li><li>Si usas miel, agrégala al servir — no la refrigeres con la mezcla</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las nueces son ricas en omega-3 vegetal (ALA) y las semillas de lino aportan lignanos — compuestos que ayudan a modular el estrógeno. La canela no solo da sabor: estudios muestran que puede mejorar la sensibilidad a la insulina cuando se consume regularmente.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/avena/snacks.jpg" alt="🍪 Snacks y Meriendas con Avena — Anti-Antojos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🍪 Snacks y Meriendas con Avena — Anti-Antojos</h2>
+        <p class="chapter-desc">Los antojos de las 3-4pm son señales de montaña rusa glucémica. Estos snacks con avena te mantienen estable entre comidas y evitan que recurras a galletas o dulces.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Mini Muffins de Avena y Fresa (Sin Horno)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>½ taza de avena molida (licúa hojuelas 10 segundos)</li><li>¼ taza de yogur griego natural sin azúcar</li><li>2 fresas maduras en cubitos pequeños</li><li>1 cucharadita de semillas de chía</li><li>1 cucharada de mantequilla de maní natural</li><li>Pizca de canela</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todos los ingredientes hasta obtener una masa espesa manejable</li><li>Forma bolitas o mini muffins con las manos húmedas</li><li>Coloca en moldes de silicona o sobre papel encerado</li><li>Lleva al congelador 1 hora — luego conserva en refrigerador hasta 5 días</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estos mini muffins son tu seguro anti-antojos. Prepáralos el domingo y tendrás snacks saludables toda la semana. La combinación avena + mantequilla de maní + yogur te da los 3 macronutrientes (carb + grasa + proteína) en una sola mordida.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Bolitas Energéticas de Avena y Cacao</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de avena en hojuelas</li><li>2 cucharadas de cacao puro en polvo (sin azúcar)</li><li>2 cucharadas de mantequilla de maní natural</li><li>1 cucharada de miel pura</li><li>2 cucharadas de semillas de chía</li><li>1 cucharadita de extracto de vainilla</li><li>Coco rallado sin azúcar para cubrir (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la avena, cacao, chía y mantequilla de maní en un bowl grande</li><li>Agrega la miel y vainilla — amasa hasta que todo se integre</li><li>Si está muy seca, agrega 1 cucharadita de agua. Si muy húmeda, más avena</li><li>Forma bolitas del tamaño de una nuez, rueda en coco y refrigera 30 minutos</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El cacao puro (no chocolate) es uno de los alimentos más ricos en magnesio que existen. El magnesio es esencial para la sensibilidad a la insulina y la producción de serotonina. Estas bolitas son tu antojo dulce sin culpa — y con beneficio hormonal real.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Barritas de Avena con Banana y Nueces</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1½ tazas de avena en hojuelas</li><li>1 banana madura machacada</li><li>¼ taza de nueces troceadas</li><li>2 cucharadas de semillas de girasol</li><li>1 cucharada de aceite de coco derretido</li><li>½ cucharadita de canela</li><li>Pizca de sal</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C y forra un molde rectangular con papel encerado</li><li>Machaca la banana y mezcla con todos los ingredientes hasta integrar</li><li>Presiona la mezcla firmemente en el molde — que quede compacta</li><li>Hornea 20-25 minutos hasta que se dore. Deja enfriar y corta en 8 barritas</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La banana madura actúa como endulzante natural y aglutinante — no necesitas azúcar añadida. Estas barritas duran 5 días en refrigerador y son perfectas para llevar en tu bolso como snack de emergencia. Mucho mejor que cualquier barra comercial.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Galletas de Avena y Mantequilla de Almendras (3 Ingredientes)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de avena en hojuelas</li><li>1 banana madura machacada</li><li>2 cucharadas de mantequilla de almendras (o maní)</li><li>Opcional: chips de chocolate oscuro 70%+ (1 cucharada)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Machaca la banana con un tenedor, mezcla con la avena y la mantequilla</li><li>Forma galletas pequeñas (del tamaño de una cuchara) sobre bandeja con papel encerado</li><li>Hornea a 180°C por 12-15 minutos hasta que estén doradas</li><li>Deja enfriar 10 minutos — se firman al enfriarse</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Solo 3 ingredientes, sin azúcar añadida, sin harina. La mantequilla de almendras aporta proteína y grasa que convierten estas galletas en un snack con impacto glucémico mínimo. Ideales para saciar el antojo dulce sin sabotear tu insulina.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/avena/postres.jpg" alt="🥞 Avena Dulce y Postres — Placer sin Culpa" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🥞 Avena Dulce y Postres — Placer sin Culpa</h2>
+        <p class="chapter-desc">Sí, puedes comer postres con avena que sean deliciosos Y hormonalmente inteligentes. La avena como base reemplaza harinas refinadas y aporta la fibra que tu cuerpo necesita.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Crumble de Avena con Manzana y Canela</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 manzanas verdes peladas y cortadas en cubos</li><li>½ taza de avena en hojuelas</li><li>2 cucharadas de mantequilla (o aceite de coco)</li><li>1 cucharada de miel pura</li><li>½ cucharadita de canela</li><li>Pizca de nuez moscada</li><li>3 nueces troceadas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca las manzanas en un refractario pequeño y espolvorea con canela</li><li>Mezcla la avena con la mantequilla derretida, miel y nuez moscada</li><li>Cubre las manzanas con la mezcla de avena y agrega las nueces encima</li><li>Hornea a 180°C por 25 minutos hasta que la cobertura esté dorada y crujiente</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La manzana verde tiene el IG más bajo de todas las manzanas y la canela potencia la sensibilidad a la insulina. Este crumble usa avena en vez de harina, eliminando los carbohidratos refinados. Postre caliente, reconfortante y hormonal-friendly.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Pudding de Avena y Cacao con Chía</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de avena en hojuelas</li><li>1 cucharada de cacao puro en polvo</li><li>1 cucharada de semillas de chía</li><li>¾ taza de leche de almendras sin azúcar</li><li>1 cucharadita de miel o stevia al gusto</li><li>5 almendras laminadas para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la avena, cacao, chía y leche de almendras en un frasco</li><li>Revuelve bien para que el cacao se disuelva completamente</li><li>Refrigera toda la noche (mínimo 6 horas)</li><li>Al día siguiente, decora con almendras y disfruta como postre o desayuno</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este pudding sabe a mousse de chocolate pero está hecho con ingredientes que protegen tu equilibrio hormonal. La chía absorbe líquido hasta 10 veces su peso, creando una textura cremosa que engaña al cerebro — piensa que estás comiendo un postre indulgente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">Pancakes de Avena con Frutos Rojos (Sin Harina)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>½ taza de avena en hojuelas (licuada en polvo fino)</li><li>1 huevo entero</li><li>¼ taza de leche de almendras sin azúcar</li><li>½ cucharadita de polvo de hornear</li><li>½ cucharadita de canela</li><li>¼ taza de frutos rojos para servir</li><li>1 cucharadita de mantequilla de maní</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa la avena 10 segundos hasta que quede como harina gruesa</li><li>Mezcla con el huevo, leche, polvo de hornear y canela hasta integrar</li><li>En sartén antiadherente a fuego medio, vierte ¼ taza de mezcla por pancake</li><li>Cocina 2-3 min por lado. Sirve con frutos rojos y un toque de mantequilla de maní</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Avena molida reemplaza la harina refinada eliminando el pico glucémico. El huevo agrega proteína completa y la leche de almendras tiene casi cero carbohidratos. Resultado: pancakes que saben a domingo de indulgencia pero que tu insulina puede manejar sin problemas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">Helado de Avena y Banana (2 Ingredientes Base)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 bananas maduras congeladas (cortadas en rodajas antes de congelar)</li><li>2 cucharadas de avena en hojuelas</li><li>1 cucharada de cacao puro (versión chocolate)</li><li>1 cucharada de mantequilla de maní (versión PB)</li><li>Toppings: nueces troceadas, coco rallado o chips de chocolate oscuro</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Congela las rodajas de banana al menos 4 horas (idealmente toda la noche)</li><li>En procesador de alimentos, licúa las bananas congeladas + avena hasta textura cremosa</li><li>Agrega cacao (versión chocolate) o mantequilla de maní (versión PB) y licúa 10 seg más</li><li>Sirve inmediatamente como soft serve o congela 30 min más para textura de helado firme</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este 'helado' no tiene azúcar añadida, ni crema, ni lácteos — solo banana y avena. La banana congelada crea una textura cremosa idéntica al helado real. La avena agrega fibra y volumen. Es el postre que puedes comer sin pensar dos veces.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/avena/ciencia.jpg" alt="🧪 Avena Avanzada — Trucos de Experta" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🧪 Avena Avanzada — Trucos de Experta</h2>
+        <p class="chapter-desc">Domina el arte de la avena hormonal con estas técnicas y recetas que elevan tu nivel. Desde avena salada hasta agua de avena — estrategias que maximizan los beneficios.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">🔬 Avena Tradicional vs Instantánea — La Diferencia Hormonal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── AVENA TRADICIONAL (hojuelas gruesas) ──</li><li>🟢 IG: 55 (bajo) — glucosa sube gradualmente</li><li>🟢 Fibra intacta — betaglucano completo</li><li>🟢 Cocción: 5-7 minutos (o remojo nocturno)</li><li></li><li>── AVENA INSTANTÁNEA (polvo fino) ──</li><li>🔴 IG: 79 (alto) — glucosa sube rápido</li><li>🔴 Fibra fragmentada — betaglucano reducido</li><li>🔴 Cocción: 1-2 minutos (más procesada)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>REGLA DEFINITIVA: usa SIEMPRE avena en hojuelas gruesas (tradicional, rolled oats)</li><li>Si solo encuentras instantánea: remójala la noche anterior — baja un poco su IG</li><li>Lee la etiqueta: 'avena integral en hojuelas' es la correcta; 'avena instantánea' evítala</li><li>La avena cortada (steel-cut) tiene IG AÚN MÁS BAJO que la de hojuelas — es la opción premium</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La diferencia de IG entre avena tradicional (55) e instantánea (79) es ENORME — es la diferencia entre un alimento estabilizador y uno que dispara tu insulina. El procesamiento rompe la fibra, facilitando que la glucosa se absorba rápido. Siempre elige la menos procesada.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">Avena Salada con Huevo y Vegetales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de avena en hojuelas</li><li>½ taza de caldo de verduras (o agua con sal)</li><li>1 huevo (frito o poché)</li><li>¼ de aguacate en láminas</li><li>5 tomates cherry partidos</li><li>Sal, pimienta y un toque de aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina la avena con caldo de verduras en vez de agua (5-7 min) — le da sabor umami</li><li>Mientras se cocina, prepara el huevo como prefieras en otra sartén</li><li>Sirve la avena en un bowl y coloca el huevo, aguacate y tomates encima</li><li>Termina con un hilo de aceite de oliva, sal y pimienta — desayuno gourmet</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La avena salada es el secreto mejor guardado de la cocina hormonal. Al reemplazar el dulce por umami (caldo) y agregar huevo + aguacate, obtienes un desayuno con los 3 macronutrientes perfectamente equilibrados. Muchas personas descubren que la versión salada las sacia MÁS que la dulce.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">16</div>
+            <div class="recipe-name">Agua de Avena — Bebida Estabilizadora</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>½ taza de avena en hojuelas</li><li>1 litro de agua fría</li><li>1 rama de canela (o ½ cucharadita de canela en polvo)</li><li>Hielo al gusto</li><li>Stevia o 1 cucharadita de miel (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Remoja la avena en el agua durante 30 minutos (o toda la noche para mejor resultado)</li><li>Licúa la avena CON el agua de remojo por 30 segundos</li><li>Cuela con un colador fino o tela de queso — exprime bien la pulpa</li><li>Agrega canela y hielo — consume durante el día, refrigera máximo 2 días</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El agua de avena es una bebida tradicional latina que la ciencia respalda: los betaglucanos que se liberan en el agua pueden ayudar a modular la respuesta glucémica de tu siguiente comida. Tomarla 30 minutos antes de comer puede reducir el pico de insulina de esa comida.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">17</div>
+            <div class="recipe-name">Granola Casera Hormonal (Sin Azúcar Añadida)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tazas de avena en hojuelas gruesas</li><li>½ taza de nueces y almendras troceadas</li><li>¼ taza de semillas mixtas (girasol, calabaza, linaza)</li><li>2 cucharadas de aceite de coco derretido</li><li>1 cucharadita de canela</li><li>½ cucharadita de extracto de vainilla</li><li>¼ taza de coco rallado sin azúcar</li><li>Pizca de sal marina</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la avena, nueces, semillas, coco y canela en un bowl grande</li><li>Agrega el aceite de coco derretido y la vainilla — revuelve hasta cubrir todo</li><li>Distribuye en una bandeja para horno en capa fina y uniforme</li><li>Hornea a 160°C por 25-30 minutos, removiendo cada 10 min — hasta dorar parejo</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La granola comercial tiene 15-25g de azúcar por porción — es un postre disfrazado de desayuno. Esta versión casera tiene CERO azúcar añadida y está llena de grasas saludables y proteína de las nueces y semillas. Controlas cada ingrediente. Dura 2 semanas en frasco hermético.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Recetas con Avena</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

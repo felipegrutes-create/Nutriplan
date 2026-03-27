@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — 200 Recetas Saludables</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --verde-mist: #F0FDF4;
+  --rosa: #E8445A;
+  --rosa-light: #FFF1F3;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --sombra-lg: 0 4px 16px rgba(0,0,0,.08), 0 12px 40px rgba(0,0,0,.06);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ========================
+   HERO / COVER
+   ======================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #1B5E3A 0%, #2E7D52 35%, #3A9A68 70%, #2E7D52 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(201,146,42,.15) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,.7);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.2));
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(32px, 7vw, 48px);
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: rgba(255,255,255,.75);
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 28px;
+  border-radius: 2px;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: #fff;
+  display: block;
+  line-height: 1.2;
+}
+
+.hero-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.55);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,.4);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: .4; }
+  50% { opacity: .8; }
+}
+
+.scroll-hint::after {
+  content: '↓';
+  display: block;
+  text-align: center;
+  margin-top: 4px;
+  font-size: 16px;
+}
+
+/* ========================
+   STICKY NAV
+   ======================== */
+.cat-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,253,247,.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--borda);
+  padding: 0 16px;
+  transition: box-shadow .3s;
+}
+
+.cat-nav.scrolled {
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+
+.cat-nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 10px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.cat-nav-inner::-webkit-scrollbar { display: none; }
+
+.cat-btn {
+  white-space: nowrap;
+  padding: 7px 14px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--texto-sub);
+  transition: all .2s;
+  flex-shrink: 0;
+}
+
+.cat-btn:hover {
+  background: var(--verde-light);
+  color: var(--verde);
+}
+
+.cat-btn.active {
+  background: var(--verde);
+  color: #fff;
+  border-color: var(--verde);
+}
+
+/* ========================
+   TABLE OF CONTENTS
+   ======================== */
+.toc {
+  padding: 48px 24px;
+  background: var(--warm);
+}
+
+.toc-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(24px, 5vw, 32px);
+  margin-bottom: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.toc-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: all .2s;
+  overflow: hidden;
+}
+
+.toc-card-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.toc-card-body {
+  padding: 14px 14px 14px 0;
+}
+
+.toc-card:hover {
+  border-color: var(--verde);
+  box-shadow: var(--sombra);
+  transform: translateY(-1px);
+}
+
+.toc-emoji {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.toc-card-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.toc-card-count {
+  font-size: 12px;
+  color: var(--texto-sub);
+}
+
+/* ========================
+   RECIPE SECTIONS
+   ======================== */
+.recipe-section {
+  padding: 48px 24px 24px;
+}
+
+.recipe-section:nth-child(even) {
+  background: var(--warm);
+}
+
+.recipe-section-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.recipe-section-hero {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  box-shadow: var(--sombra);
+}
+
+.recipe-section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--verde-light);
+}
+
+.recipe-section-emoji {
+  font-size: 36px;
+}
+
+.recipe-section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.recipe-section-count {
+  font-size: 13px;
+  color: var(--texto-sub);
+  margin-top: 2px;
+}
+
+/* ========================
+   RECIPE CARDS
+   ======================== */
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+
+.recipe-card:hover {
+  border-color: #ccc;
+}
+
+.recipe-card.open {
+  box-shadow: var(--sombra);
+  border-color: var(--verde);
+}
+
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.recipe-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--verde-light);
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all .2s;
+}
+
+.recipe-card.open .recipe-num {
+  background: var(--verde);
+  color: #fff;
+}
+
+.recipe-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.recipe-toggle {
+  font-size: 18px;
+  color: var(--texto-sub);
+  transition: transform .25s;
+  flex-shrink: 0;
+}
+
+.recipe-card.open .recipe-toggle {
+  transform: rotate(180deg);
+  color: var(--verde);
+}
+
+.recipe-body {
+  display: none;
+  padding: 0 16px 18px;
+  animation: slideDown .25s ease-out;
+}
+
+.recipe-card.open .recipe-body {
+  display: block;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.recipe-divider {
+  height: 1px;
+  background: var(--borda);
+  margin-bottom: 16px;
+}
+
+.recipe-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 8px;
+}
+
+.recipe-ingredients {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.recipe-ingredients li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--texto);
+}
+
+.recipe-ingredients li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--verde);
+  opacity: .4;
+}
+
+.recipe-steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.recipe-steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 32px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--texto);
+  margin-bottom: 8px;
+}
+
+.recipe-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--verde-light);
+  color: var(--verde);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-tip {
+  background: var(--gold-light);
+  border-radius: 10px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--gold);
+}
+
+.recipe-tip-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.recipe-tip-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #78350F;
+  font-style: italic;
+}
+
+/* ========================
+   FOOTER
+   ======================== */
+.ebook-footer {
+  background: var(--verde-deep);
+  color: rgba(255,255,255,.6);
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.ebook-footer-sub {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.ebook-footer-line {
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,.2);
+  margin: 0 auto 16px;
+}
+
+.ebook-footer-copy {
+  font-size: 11px;
+  color: rgba(255,255,255,.35);
+}
+
+/* ========================
+   LOADING
+   ======================== */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--borda);
+  border-top-color: var(--verde);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 14px;
+  color: var(--texto-sub);
+}
+
+/* ========================
+   BACK TO TOP
+   ======================== */
+.btt {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: var(--sombra-lg);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all .3s;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btt.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btt:hover {
+  background: var(--verde-deep);
+}
+
+/* ========================
+   PRINT
+   ======================== */
+@media print {
+  .cat-nav, .scroll-hint, .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; border: 1px solid #ccc; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  .recipe-section { padding: 24px 0; }
+  body { background: #fff; }
+  .toc { page-break-after: always; }
+}
+
+/* ========================
+   RESPONSIVE
+   ======================== */
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .hero-stats { gap: 20px; }
+  .toc, .recipe-section { padding-left: 16px; padding-right: 16px; }
+  .toc-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO COVER -->
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">Edición Exclusiva</span>
+    <span class="hero-icon" aria-hidden="true">🧬</span>
+    <h1>El Código<br><em>Hormonal</em></h1>
+    <p class="hero-sub">200 recetas saludables diseñadas para equilibrar tus hormonas y transformar tu metabolismo después de los 40</p>
+    <div class="hero-divider"></div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">200+</span>
+        <span class="hero-stat-label">Recetas</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">5</span>
+        <span class="hero-stat-label">Categorías</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">100%</span>
+        <span class="hero-stat-label">Saludables</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Explorar recetas</div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="cat-nav" id="catNav">
+  <div class="cat-nav-inner" id="catNavInner">
+    <button class="cat-btn active" data-cat="all" onclick="scrollToSection('toc')">Inicio</button>
+    <button class="cat-btn" data-cat="desayuno" onclick="scrollToSection('sec-desayuno')">Desayunos</button>
+    <button class="cat-btn" data-cat="almuerzo" onclick="scrollToSection('sec-almuerzo')">Almuerzos</button>
+    <button class="cat-btn" data-cat="cena" onclick="scrollToSection('sec-cena')">Cenas</button>
+    <button class="cat-btn" data-cat="snack" onclick="scrollToSection('sec-snack')">Snacks</button>
+    <button class="cat-btn" data-cat="jugo" onclick="scrollToSection('sec-jugo')">Jugos</button>
+  </div>
+</nav>
+
+<!-- TABLE OF CONTENTS -->
+<section class="toc" id="toc">
+  <div class="toc-inner">
+    <div class="section-eyebrow">Contenido</div>
+    <h2 class="section-title">Tu guía completa de recetas</h2>
+    <div class="toc-grid">
+      <a href="#sec-desayuno" class="toc-card">
+        <img src="img/desayuno.jpg" alt="Desayunos" class="toc-card-img" loading="lazy">
+        <div class="toc-card-body">
+          <div class="toc-card-title">Desayunos</div>
+          <div class="toc-card-count" id="toc-count-desayuno">Cargando...</div>
+        </div>
+      </a>
+      <a href="#sec-almuerzo" class="toc-card">
+        <img src="img/almuerzo.jpg" alt="Almuerzos" class="toc-card-img" loading="lazy">
+        <div class="toc-card-body">
+          <div class="toc-card-title">Almuerzos</div>
+          <div class="toc-card-count" id="toc-count-almuerzo">Cargando...</div>
+        </div>
+      </a>
+      <a href="#sec-cena" class="toc-card">
+        <img src="img/cena.jpg" alt="Cenas" class="toc-card-img" loading="lazy">
+        <div class="toc-card-body">
+          <div class="toc-card-title">Cenas</div>
+          <div class="toc-card-count" id="toc-count-cena">Cargando...</div>
+        </div>
+      </a>
+      <a href="#sec-snack" class="toc-card">
+        <img src="img/snack.jpg" alt="Snacks" class="toc-card-img" loading="lazy">
+        <div class="toc-card-body">
+          <div class="toc-card-title">Snacks</div>
+          <div class="toc-card-count" id="toc-count-snack">Cargando...</div>
+        </div>
+      </a>
+      <a href="#sec-jugo" class="toc-card">
+        <img src="img/jugo.jpg" alt="Jugos" class="toc-card-img" loading="lazy">
+        <div class="toc-card-body">
+          <div class="toc-card-title">Jugos &amp; Bebidas</div>
+          <div class="toc-card-count" id="toc-count-jugo">Cargando...</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RECIPES RENDERED HERE -->
+<div id="recipeSections">
+  <div class="loading">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Cargando recetas...</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">200 Recetas Saludables para el Control Hormonal</div>
+  <div class="ebook-footer-line"></div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+
+<script>
+(function() {
+  const CATEGORIES = [
+    { key: 'desayuno', label: 'Desayunos Saludables', emoji: '☀️', img: 'img/desayuno.jpg' },
+    { key: 'almuerzo', label: 'Almuerzos Nutritivos', emoji: '🥗', img: 'img/almuerzo.jpg' },
+    { key: 'cena',     label: 'Cenas Ligeras',        emoji: '🌙', img: 'img/cena.jpg' },
+    { key: 'snack',    label: 'Snacks Inteligentes',   emoji: '🥜', img: 'img/snack.jpg' },
+    { key: 'jugo',     label: 'Jugos & Bebidas',       emoji: '🥤', img: 'img/jugo.jpg' }
+  ];
+
+  async function loadRecetas() {
+    try {
+      const r = await fetch('../mi-codigo-app/data/recetas.json');
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return await r.json();
+    } catch(err) {
+      console.error('Error loading recipes:', err);
+      document.getElementById('recipeSections').innerHTML =
+        '<div class="loading"><div class="loading-text">Error al cargar las recetas. Verifica tu conexión.</div></div>';
+      return [];
+    }
+  }
+
+  function renderRecipeCard(recipe, index) {
+    var hasIng = recipe.ingredientes && recipe.ingredientes.length > 0;
+    var hasSteps = recipe.preparacion && recipe.preparacion.length > 0;
+
+    var ingHTML = '';
+    if (hasIng) {
+      ingHTML = '<div class="recipe-label">Ingredientes</div>' +
+        '<ul class="recipe-ingredients">' +
+        recipe.ingredientes.map(function(i) { return '<li>' + i + '</li>'; }).join('') +
+        '</ul>';
+    }
+
+    var stepsHTML = '';
+    if (hasSteps) {
+      stepsHTML = '<div class="recipe-label">Preparación</div>' +
+        '<ol class="recipe-steps">' +
+        recipe.preparacion.map(function(s) { return '<li>' + s + '</li>'; }).join('') +
+        '</ol>';
+    }
+
+    var tipHTML = '';
+    if (recipe.consejo) {
+      tipHTML = '<div class="recipe-tip">' +
+        '<div class="recipe-tip-label">Consejo Nutricional</div>' +
+        '<div class="recipe-tip-text">' + recipe.consejo + '</div>' +
+        '</div>';
+    }
+
+    return '<div class="recipe-card" data-id="' + recipe.id + '">' +
+      '<div class="recipe-header" onclick="toggleRecipe(this)">' +
+        '<div class="recipe-num">' + (index + 1) + '</div>' +
+        '<div class="recipe-name">' + recipe.nombre + '</div>' +
+        '<span class="recipe-toggle" aria-hidden="true">▾</span>' +
+      '</div>' +
+      '<div class="recipe-body">' +
+        '<div class="recipe-divider"></div>' +
+        ingHTML + stepsHTML + tipHTML +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderSection(cat, recipes) {
+    var filtered = recipes.filter(function(r) { return r.categoria === cat.key; });
+
+    var tocCount = document.getElementById('toc-count-' + cat.key);
+    if (tocCount) tocCount.textContent = filtered.length + ' recetas';
+
+    return '<section class="recipe-section" id="sec-' + cat.key + '">' +
+      '<div class="recipe-section-inner">' +
+        '<img src="' + cat.img + '" alt="' + cat.label + '" class="recipe-section-hero" loading="lazy">' +
+        '<div class="recipe-section-header">' +
+          '<span class="recipe-section-emoji" aria-hidden="true">' + cat.emoji + '</span>' +
+          '<div>' +
+            '<div class="recipe-section-title">' + cat.label + '</div>' +
+            '<div class="recipe-section-count">' + filtered.length + ' recetas</div>' +
+          '</div>' +
+        '</div>' +
+        filtered.map(function(r, i) { return renderRecipeCard(r, i); }).join('') +
+      '</div>' +
+    '</section>';
+  }
+
+  async function init() {
+    var recipes = await loadRecetas();
+    if (!recipes.length) return;
+
+    var html = CATEGORIES.map(function(cat) {
+      return renderSection(cat, recipes);
+    }).join('');
+
+    document.getElementById('recipeSections').innerHTML = html;
+    setupScrollSpy();
+  }
+
+  // Toggle recipe card
+  window.toggleRecipe = function(header) {
+    var card = header.parentElement;
+    card.classList.toggle('open');
+  };
+
+  // Scroll to section
+  window.scrollToSection = function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var navH = document.getElementById('catNav').offsetHeight;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 8;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  };
+
+  // Scroll spy for nav + back-to-top
+  function setupScrollSpy() {
+    var nav = document.getElementById('catNav');
+    var btt = document.getElementById('btt');
+    var buttons = document.querySelectorAll('.cat-btn');
+    var sections = CATEGORIES.map(function(c) {
+      return { key: c.key, el: document.getElementById('sec-' + c.key) };
+    }).filter(function(s) { return s.el; });
+
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function() {
+        ticking = false;
+        var scrollY = window.pageYOffset;
+
+        // Nav shadow
+        if (scrollY > 100) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+
+        // Back to top
+        if (scrollY > 600) btt.classList.add('visible');
+        else btt.classList.remove('visible');
+
+        // Active category
+        var navH = nav.offsetHeight + 20;
+        var current = 'all';
+        for (var i = sections.length - 1; i >= 0; i--) {
+          if (sections[i].el.getBoundingClientRect().top <= navH + 40) {
+            current = sections[i].key;
+            break;
+          }
+        }
+
+        buttons.forEach(function(b) {
+          b.classList.toggle('active', b.dataset.cat === current ||
+            (current === 'all' && b.dataset.cat === 'all'));
+        });
+      });
+    }, { passive: true });
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+</body>
+</html>

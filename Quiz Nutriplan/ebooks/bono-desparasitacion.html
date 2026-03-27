@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Guía de Desparasitación Natural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #16A34A;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #16A34Add 0%, #16A34A 50%, #16A34Acc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🌿</span>
+    <h1>Guía de Desparasitación Natural</h1>
+    <p class="hero-sub">Limpia tu intestino con remedios naturales y recupera tu energía hormonal</p>
+    <div class="hero-count">13 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Limpia Tu Cuerpo, Libera Tu Metabolismo</h2>
+        <div class="intro-content"><p>Tu intestino es tu segundo cerebro. Cuando está cargado de toxinas, parásitos o hongos, tu metabolismo se frena, tu energía baja y tu equilibrio hormonal se desestabiliza.</p><p>Esta guía te enseña a identificar las señales de que tu cuerpo necesita una limpieza, y te da remedios naturales seguros para hacerla desde tu cocina.</p><p>🔍 **Identifica las señales** de acumulación de toxinas</p><p>🌿 **Remedios naturales** con ingredientes que ya tienes</p><p>🥥 **Protocolo anti-cándida** con aceite de coco</p><p>📅 **Plan de limpieza de 7 días** paso a paso</p><p>⚠️ **Precauciones importantes** para hacerlo de forma segura</p><p>⚠️ Esta guía es un complemento natural. Si sospechas de una infección severa o tienes síntomas graves, consulta siempre a tu médico. Los remedios naturales apoyan tu bienestar, no reemplazan el tratamiento médico.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/desparasitacion/cap1-por-que.jpg" alt="¿Por Qué Tu Cuerpo Necesita una Limpieza?" loading="lazy">
+        </div>
+        <h2 class="chapter-title">¿Por Qué Tu Cuerpo Necesita una Limpieza?</h2>
+        <p class="chapter-desc">Entiende cómo las toxinas, parásitos y hongos afectan tu metabolismo hormonal y qué señales te envía tu cuerpo.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Las 3 Amenazas Silenciosas de Tu Intestino</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/amenazas.jpg" alt="Las 3 Amenazas Silenciosas de Tu Intestino" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>⚠️ METALES PESADOS — Mercurio, plomo y arsénico se acumulan por exposición ambiental, alimentos contaminados y empastes dentales. Sobrecargan el hígado y dificultan el procesamiento de hormonas</li><li>🪱 PARÁSITOS — Organismos que viven en tu intestino alimentándose de tus nutrientes. Causan fatiga, problemas digestivos, dolor articular y antojos de azúcar. Más comunes de lo que crees</li><li>🍄 CÁNDIDA — Hongo que vive naturalmente en tu cuerpo pero puede crecer en exceso cuando hay desbalance hormonal, estrés o consumo excesivo de azúcar. Causa infecciones recurrentes, niebla mental y antojos intensos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔗 CONEXIÓN CON TU EQUILIBRIO HORMONAL:</li><li>🔸 Las toxinas sobrecargan el hígado — el mismo órgano que procesa tus hormonas (estrógeno, insulina, cortisol).</li><li>🔸 Los parásitos roban nutrientes que tu cuerpo necesita para producir hormonas correctamente.</li><li>🔸 La cándida produce acetaldehído, una sustancia que cruza la barrera cerebral y causa niebla mental.</li><li>🔸 La inflamación intestinal crónica aumenta la resistencia a la insulina.</li><li>🔸 Un intestino limpio absorbe mejor los nutrientes = hormonas mejor reguladas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🔑 El 70% de tu sistema inmunológico está en tu intestino. Cuando tu flora intestinal está desequilibrada, todo tu cuerpo lo siente: desde tu energía hasta tu ánimo, pasando por tu peso y tus hormonas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Cuestionario: ¿Tu Cuerpo Necesita una Limpieza?</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/cuestionario.jpg" alt="Cuestionario: ¿Tu Cuerpo Necesita una Limpieza?" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>Responde SÍ o NO a cada pregunta:</li><li>1️⃣ ¿Sientes fatiga crónica o cansancio inexplicable, incluso durmiendo bien?</li><li>2️⃣ ¿Tienes problemas digestivos frecuentes (hinchazón, gases, estreñimiento, diarrea)?</li><li>3️⃣ ¿Sufres antojos intensos de azúcar o carbohidratos refinados?</li><li>4️⃣ ¿Tienes niebla mental, dificultad para concentrarte o problemas de memoria?</li><li>5️⃣ ¿Experimentas infecciones por hongos recurrentes?</li><li>6️⃣ ¿Tienes problemas de piel (erupciones, picazón, enrojecimiento)?</li><li>7️⃣ ¿Sientes dolor en articulaciones o músculos sin causa aparente?</li><li>8️⃣ ¿Has tomado antibióticos recientemente o con frecuencia?</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📊 RESULTADOS:</li><li>0-2 respuestas SÍ → Tu cuerpo está relativamente limpio. Haz una limpieza preventiva 1-2 veces al año.</li><li>3-5 respuestas SÍ → Es probable que tengas acumulación de toxinas. El plan de 7 días te beneficiará mucho.</li><li>6-8 respuestas SÍ → Tu cuerpo está pidiendo ayuda. Sigue el plan completo y considera consultar a un profesional.</li><li>💡 Muchos de estos síntomas se confunden con 'cansancio normal' o 'estrés' — pero pueden ser señales de que tu intestino necesita atención.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">📝 Guarda tus respuestas. Repite este cuestionario después de completar el plan de 7 días y compara. La mayoría de las personas notan mejoras en al menos 3-4 síntomas.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/desparasitacion/cap2-remedios.jpg" alt="Remedios Naturales para Desparasitar" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Remedios Naturales para Desparasitar</h2>
+        <p class="chapter-desc">5 recetas con ingredientes naturales que eliminan parásitos, hongos y toxinas de forma segura desde tu cocina.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Semillas de Calabaza Antiparasitarias</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/semillas-calabaza.jpg" alt="Semillas de Calabaza Antiparasitarias" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 cucharadas de semillas de calabaza crudas</li><li>1 vaso de agua o jugo verde (sin azúcar)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Tuesta ligeramente las semillas en un sartén seco (sin aceite) por 2-3 minutos.</li><li>Tritúralas hasta obtener un polvo fino (puedes usar licuadora o mortero).</li><li>Mezcla 1 cucharada del polvo en un vaso de agua o jugo verde.</li><li>Toma en ayunas cada mañana durante 7-10 días consecutivos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🎃 Las semillas de calabaza contienen cucurbitacina, un compuesto que paraliza a los parásitos intestinales y ayuda a expulsarlos naturalmente. Son ricas en zinc, magnesio y omega-3 — minerales clave para tu equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Shot de Jengibre en Ayunas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/shot-jengibre.jpg" alt="Shot de Jengibre en Ayunas" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 trozo de jengibre fresco (2-3 cm)</li><li>½ vaso de agua tibia</li><li>Jugo de ½ limón (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Ralla o exprime el jengibre fresco para obtener su jugo.</li><li>Mezcla con el agua tibia.</li><li>Agrega el limón si deseas (potencia el efecto).</li><li>Bebe de un solo trago cada mañana en ayunas, 5-7 días seguidos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🫚 El jengibre tiene propiedades antiinflamatorias, antibacterianas y antiparasitarias. Elimina protozoos y bacterias intestinales. Además, activa la termogénesis y mejora la digestión. El limón potencia la absorción y aporta vitamina C.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Infusión de Clavo de Olor</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/infusion-clavo.jpg" alt="Infusión de Clavo de Olor" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2-3 clavos de olor enteros</li><li>1 taza de agua (250 ml)</li><li>1 ramita de canela (opcional, mejora el sabor)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hierve el agua y agrega los clavos de olor.</li><li>Si deseas, añade la canela.</li><li>Cocina a fuego bajo por 5 minutos.</li><li>Cuela y bebe después de las comidas, 1-2 veces al día durante 5 días.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🌿 El clavo de olor contiene eugenol, uno de los antimicrobianos naturales más potentes. Elimina lombrices, protozoos y bacterias patógenas. La canela complementa con sus propiedades antifúngicas y reguladoras de insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Ajo Fermentado Antiparasitario</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/ajo-fermentado.jpg" alt="Ajo Fermentado Antiparasitario" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3-4 dientes de ajo fresco pelados</li><li>1 frasco de vidrio con tapa</li><li>Agua suficiente para cubrir los ajos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Pela los dientes de ajo y colócalos en el frasco de vidrio.</li><li>Cúbrelos completamente con agua.</li><li>Tapa el frasco y déjalo en un lugar fresco y oscuro por 3-4 días.</li><li>Consume 1 diente de ajo fermentado cada mañana en ayunas durante 7 días.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🧄 El ajo fermentado conserva la alicina (su compuesto activo) pero reduce la irritación estomacal del ajo crudo. Es antibacteriano, antiviral y antifúngico. Efectivo contra cándida, giardia y lombrices intestinales. Si no toleras el sabor, córtalo pequeño y trágalo con agua como una pastilla.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Licuado de Semillas de Papaya</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/semillas-papaya.jpg" alt="Licuado de Semillas de Papaya" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 cucharadita de semillas de papaya (frescas o secas)</li><li>1 taza de agua</li><li>Jugo de ½ limón (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca las semillas de papaya en la licuadora con el agua.</li><li>Licúa hasta obtener una mezcla homogénea.</li><li>Agrega limón si deseas.</li><li>Bebe en ayunas por la mañana, 5-7 días consecutivos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🍈 Las semillas de papaya contienen carpaína y benzil isotiocianato, compuestos que destruyen parásitos intestinales y amebas. No las botes cuando comas papaya — sécalas al sol y guárdalas para tus licuados. ¡Son un tesoro antiparasitario!</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/desparasitacion/cap3-candida.jpg" alt="Protocolo Anti-Cándida con Aceite de Coco" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Protocolo Anti-Cándida con Aceite de Coco</h2>
+        <p class="chapter-desc">Un protocolo de 30 días con aceite de coco extra virgen para combatir el sobrecrecimiento de cándida de forma natural.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Protocolo de Aceite de Coco (30 Días)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/aceite-coco.jpg" alt="Protocolo de Aceite de Coco (30 Días)" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🥥 Aceite de coco EXTRA VIRGEN (asegúrate que sea extra virgen, no refinado)</li><li>📅 Duración: 30 días continuos</li><li>📈 SEMANA 1: 1 cucharadita de postre al día (mañana)</li><li>📈 SEMANA 2: 1 cucharada al día (mañana)</li><li>📈 SEMANA 3: 1 cucharada mañana + 1 cucharadita tarde</li><li>📈 SEMANA 4: 1 cucharada mañana + 1 cucharada tarde</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>💡 CÓMO TOMARLO:</li><li>🔸 Puedes tomarlo solo (dejándolo derretir en la boca) o mezclarlo con una infusión caliente.</li><li>🔸 Tómalo 15 minutos antes de comer para mayor absorción.</li><li>🔸 Si sientes malestar estomacal, reduce la dosis y sube más lentamente.</li><li>🔸 Guarda el aceite a temperatura ambiente — se solidifica en frío pero sigue siendo igual de efectivo.</li><li>🔸 También puedes usarlo para cocinar tus alimentos (reemplaza otros aceites).</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🥥 El aceite de coco contiene ácido láurico, ácido caprílico y ácido cáprico — tres ácidos grasos que destruyen la membrana celular de la cándida. La clave es la progresión gradual: si subes muy rápido, la muerte masiva de hongos puede generar malestar temporal (die-off). Ve despacio.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Alimentos que Combaten la Cándida vs. los que la Alimentan</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/candida-alimentos.jpg" alt="Alimentos que Combaten la Cándida vs. los que la Alimentan" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>✅ ALIADOS ANTI-CÁNDIDA: Ajo, cebolla, jengibre, cúrcuma, aceite de coco, vinagre de manzana, vegetales verdes, proteínas magras, yogur natural (probióticos)</li><li>✅ ESPECIAS ANTIFÚNGICAS: Orégano, tomillo, romero, canela, clavo de olor</li><li>❌ ALIMENTOS QUE ALIMENTAN LA CÁNDIDA: Azúcar (en todas sus formas), pan blanco, harinas refinadas, alcohol, frutas muy dulces en exceso, lácteos procesados, alimentos fermentados con levadura</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📋 REGLAS DURANTE EL PROTOCOLO:</li><li>🔸 Elimina el azúcar refinado completamente — la cándida se alimenta de azúcar.</li><li>🔸 Reduce carbohidratos refinados (pan blanco, pasta, arroz blanco).</li><li>🔸 Incluye 1-2 dientes de ajo crudo al día (puedes picarlos y tragarlos con agua).</li><li>🔸 Come yogur natural sin azúcar (los probióticos compiten con la cándida por espacio).</li><li>🔸 Bebe 2+ litros de agua al día para ayudar a tu cuerpo a eliminar toxinas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">⚡ REACCIÓN DIE-OFF: En los primeros 3-5 días puedes sentir más cansancio, dolor de cabeza o malestar. Es NORMAL — significa que los hongos están muriendo y tu cuerpo está eliminando las toxinas. Bebe mucha agua, descansa más y no dejes el protocolo. Después del día 5-7, empezarás a sentirte mejor que antes.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/desparasitacion/cap4-plan.jpg" alt="Plan de Limpieza de 7 Días" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Plan de Limpieza de 7 Días</h2>
+        <p class="chapter-desc">Un plan día a día que combina los remedios naturales en una secuencia efectiva y segura.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Días 1-3: Preparación y Limpieza Suave</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/plan-dias1-3.jpg" alt="Días 1-3: Preparación y Limpieza Suave" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🌅 EN AYUNAS: Shot de jengibre con limón + 1 cucharadita aceite de coco</li><li>🍳 DESAYUNO (30 min después): Huevos con vegetales y aguacate (sin pan)</li><li>💧 DURANTE EL DÍA: Mínimo 2.5 litros de agua con limón</li><li>🍽️ ALMUERZO: Proteína magra + vegetales verdes + aceite de oliva</li><li>🫖 DESPUÉS DEL ALMUERZO: Infusión de clavo de olor con canela</li><li>🌙 CENA: Sopa de vegetales con ajo y cúrcuma (ligera, fácil de digerir)</li><li>❌ ELIMINAR estos 3 días: Azúcar, pan, harinas, alcohol, lácteos procesados</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📝 NOTAS IMPORTANTES PARA DÍAS 1-3:</li><li>🔸 Es normal sentir algo de cansancio o dolor de cabeza — tu cuerpo está eliminando toxinas.</li><li>🔸 Bebe MÁS agua de lo normal — ayuda a eliminar lo que tu cuerpo está soltando.</li><li>🔸 Come suficiente — no es una dieta de hambre, es una limpieza. Proteína y vegetales libremente.</li><li>🔸 Evita ejercicio intenso estos días — caminata suave está bien.</li><li>🔸 Duerme lo que necesites — tu cuerpo trabaja durante el sueño.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">💡 Los primeros 3 días son los más difíciles. Los antojos de azúcar pueden ser intensos porque los parásitos y la cándida 'piden' su alimento. Cada día que resistas, estarás debilitando su población. ¡Aguanta!</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Días 4-5: Limpieza Profunda</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/plan-dias4-5.jpg" alt="Días 4-5: Limpieza Profunda" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🌅 EN AYUNAS: 1 cucharada de semillas de calabaza molidas + 1 cucharadita aceite de coco</li><li>🍳 DESAYUNO (30 min después): Avena con canela y nueces (sin azúcar)</li><li>💧 DURANTE EL DÍA: 2.5 litros de agua + infusión de jengibre fría</li><li>🍽️ ALMUERZO: Pollo o pescado con ensalada grande y ajo crudo picado</li><li>🫖 DESPUÉS DEL ALMUERZO: Infusión de clavo de olor</li><li>🧄 ANTES DE CENAR: 1 diente de ajo fermentado (si ya preparaste el frasco)</li><li>🌙 CENA: Vegetales salteados con cúrcuma y aceite de coco</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📝 NOTAS PARA DÍAS 4-5:</li><li>🔸 Para este punto, los antojos de azúcar deberían estar disminuyendo.</li><li>🔸 Tu digestión puede estar cambiando — es normal ir más al baño o tener gases.</li><li>🔸 Tu energía puede empezar a mejorar gradualmente.</li><li>🔸 Sigue bebiendo mucha agua — la hidratación es CLAVE para la eliminación.</li><li>🔸 Puedes hacer ejercicio suave si te sientes con energía.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🎃 Las semillas de calabaza + aceite de coco es la combinación más potente para estos días. La cucurbitacina paraliza los parásitos y el aceite de coco ataca la cándida simultáneamente. Tu intestino recibe un doble tratamiento.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">Días 6-7: Restauración y Cierre</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/plan-dias6-7.jpg" alt="Días 6-7: Restauración y Cierre" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🌅 EN AYUNAS: Licuado de semillas de papaya con limón + 1 cucharadita aceite de coco</li><li>🍳 DESAYUNO: Yogur natural sin azúcar con semillas de chía y canela (probióticos para repoblar)</li><li>💧 DURANTE EL DÍA: 2 litros de agua + agua de limón con menta</li><li>🍽️ ALMUERZO: Proteína magra + vegetales variados + aguacate</li><li>🫖 DESPUÉS DEL ALMUERZO: Infusión de manzanilla con cúrcuma (calma y desinflama)</li><li>🌙 CENA: Sopa de pollo con vegetales, ajo y jengibre</li><li>✅ REINTRODUCE gradualmente: Frutas de bajo IG, legumbres, granos integrales</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>📝 NOTAS PARA DÍAS 6-7:</li><li>🔸 El yogur natural introduce probióticos que repueblan tu flora intestinal con bacterias buenas.</li><li>🔸 No reintroduzcas azúcar refinado — tu cuerpo está limpio, no lo contamines de nuevo.</li><li>🔸 Deberías sentir: más energía, menos hinchazón, mejor digestión, menos antojos.</li><li>🔸 Toma nota de cómo te sientes — compara con el día 1.</li><li>🔸 Después del día 7, continúa con el protocolo de aceite de coco por 23 días más.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🎯 DESPUÉS DEL PLAN: Repite este plan de 7 días cada 3-4 meses como mantenimiento preventivo. Continúa el protocolo de aceite de coco hasta completar 30 días. Mantén el ajo, el jengibre y la cúrcuma como parte regular de tu cocina — son tu escudo protector diario.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/desparasitacion/cap5-prevencion.jpg" alt="Prevención y Estilo de Vida Limpio" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Prevención y Estilo de Vida Limpio</h2>
+        <p class="chapter-desc">Hábitos diarios para mantener tu intestino limpio, tu flora equilibrada y tu metabolismo funcionando al máximo.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">10 Hábitos para un Intestino Limpio</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/desparasitacion/habitos.jpg" alt="10 Hábitos para un Intestino Limpio" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1️⃣ Lava bien frutas y vegetales antes de consumir (usa vinagre de manzana en el agua de lavado)</li><li>2️⃣ Cocina bien las carnes y pescados — nunca los comas crudos o medio crudos</li><li>3️⃣ Bebe agua filtrada o hervida — evita agua de fuentes no seguras</li><li>4️⃣ Incluye ajo, cúrcuma y jengibre en tu cocina diaria como especias antiparasitarias naturales</li><li>5️⃣ Come yogur natural sin azúcar 3-4 veces por semana (probióticos naturales)</li><li>6️⃣ Reduce el azúcar refinado al mínimo — es el alimento favorito de parásitos y cándida</li><li>7️⃣ Come fibra suficiente (vegetales, legumbres, avena) para mantener el tránsito intestinal activo</li><li>8️⃣ Lávate las manos frecuentemente, especialmente antes de comer y después del baño</li><li>9️⃣ Desparasita a tus mascotas regularmente — son fuente común de parásitos</li><li>🔟 Haz el plan de 7 días cada 3-4 meses como mantenimiento preventivo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🧼 LIMPIEZA DE FRUTAS Y VEGETALES:</li><li>🔸 Llena un recipiente con agua y agrega 2 cucharadas de vinagre de manzana.</li><li>🔸 Sumerge frutas y vegetales por 10-15 minutos.</li><li>🔸 Enjuaga con agua limpia y seca.</li><li>🔸 Este simple paso elimina pesticidas, bacterias y huevos de parásitos de la superficie.</li><li>🔸 Especialmente importante en: fresas, lechuga, espinaca, apio y hierbas frescas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">💛 Tu intestino es el centro de tu salud. El 70% de tu sistema inmune, el 90% de tu serotonina (hormona del bienestar) y gran parte de tu capacidad de absorber nutrientes depende de un intestino sano. Cuídalo como cuidas tu corazón — con atención diaria y constancia. ¡Tu cuerpo te lo agradecerá con más energía, mejor ánimo y un metabolismo hormonal en equilibrio!</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Guía de Desparasitación Natural</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

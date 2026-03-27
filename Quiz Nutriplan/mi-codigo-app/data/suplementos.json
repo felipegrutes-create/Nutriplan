@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Magnesio Glicinato",
+    "beneficio": "Mejora la sensibilidad a la insulina y la calidad del sueño. El 70% de las mujeres con resistencia insulínica tienen déficit de magnesio.",
+    "dosis": "300-400mg antes de dormir"
+  },
+  {
+    "nombre": "Berberina",
+    "beneficio": "Eficacia comparable a la metformina para resistencia insulínica. Reduce glucosa en ayunas y mejora perfil lipídico.",
+    "dosis": "500mg, 2x al día con comidas"
+  },
+  {
+    "nombre": "Omega-3 (EPA/DHA)",
+    "beneficio": "Reduce inflamación sistémica que bloquea los receptores de insulina. Mejora composición corporal.",
+    "dosis": "2-3g de EPA+DHA al día"
+  },
+  {
+    "nombre": "Cromo Picolinato",
+    "beneficio": "Potencia la acción de la insulina. Reduce los antojos de carbohidratos y azúcar.",
+    "dosis": "200-400mcg con la comida principal"
+  },
+  {
+    "nombre": "Vitamina D3 + K2",
+    "beneficio": "El déficit de Vitamina D aumenta la resistencia insulínica. K2 dirige el calcio a los huesos (no arterias).",
+    "dosis": "2000-4000 UI D3 + 100mcg K2 al día"
+  },
+  {
+    "nombre": "Zinc",
+    "beneficio": "Esencial para la síntesis y secreción de insulina. Muchas mujeres 40+ tienen déficit.",
+    "dosis": "25-30mg al día con comida"
+  }
+]

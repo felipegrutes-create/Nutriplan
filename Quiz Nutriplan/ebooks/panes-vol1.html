@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Panes Inteligentes Vol. 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #C9922A;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #C9922Add 0%, #C9922A 50%, #C9922Acc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🍞</span>
+    <h1>Panes Inteligentes Vol. 1</h1>
+    <p class="hero-sub">37 recetas de panes sin gluten para tu equilibrio hormonal</p>
+    <div class="hero-count">37 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">¿Por qué Panes Inteligentes?</h2>
+        <div class="intro-content"><p>Cuando hablamos de equilibrio hormonal, uno de los primeros alimentos que debemos repensar es el pan.</p><p>El pan tradicional — hecho con harina de trigo refinada — provoca picos rápidos de glucosa en sangre. Tu páncreas responde liberando grandes cantidades de insulina. Con el tiempo, este ciclo repetido genera resistencia a la insulina: la raíz de la mayoría de los desequilibrios hormonales después de los 40.</p><p>Pero no tienes que renunciar al pan. Solo tienes que hacerlo de forma inteligente.</p><p>Estas 37 recetas usan harinas alternativas de bajo índice glucémico — almendras, coco, linaza, psyllium, arroz integral — que nutren tu cuerpo sin disparar la insulina. Son panes que:</p><p class="intro-bullet">• Mantienen tu glucosa estable durante horas</p><p class="intro-bullet">• Aportan fibras, proteínas y grasas saludables</p><p class="intro-bullet">• No generan inflamación (principal enemigo hormonal)</p><p class="intro-bullet">• Te dan saciedad real, no hambre a las 2 horas</p><p>Cada receta fue pensada para tu día a día: desde panes de 2 minutos en el microondas hasta baguettes artesanales para impresionar.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-rapidos.jpg" alt="Mix de Harinas Sin Gluten" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Mix de Harinas Sin Gluten</h2>
+        <p class="chapter-desc">La base de todo pan inteligente es la mezcla correcta de harinas. Estas 4 combinaciones fueron probadas para diferentes tipos de preparaciones.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Mix 1: Pan Blanco y Pasteles</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1¾ taza de harina de arroz blanco</li><li>2 tazas de fécula de patata</li><li>1½ taza de almidón dulce</li><li>2 cucharadas de goma xantana</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todos los ingredientes secos en un recipiente grande.</li><li>Almacena en un frasco hermético en lugar seco.</li><li>Usa como base para panes blancos suaves y pasteles ligeros.</li><li>La combinación de harina de arroz con fécula de patata crea una textura delicada y aireada.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Prepara una cantidad grande y almacena. Así siempre tendrás tu mix listo para cualquier receta.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Mix 2: Panes Rústicos y Pizzas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de harina de sorgo</li><li>1½ taza de harina de arroz blanco</li><li>1 taza de harina de mijo</li><li>1½ taza de fécula de patata</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Combina todas las harinas en un recipiente grande.</li><li>Mezcla bien hasta que estén homogéneas.</li><li>Almacena en frasco hermético.</li><li>Ideal para panes rústicos, focaccia y pizzas. La harina de sorgo y mijo añaden complejidad de sabor y textura crujiente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El sorgo tiene bajo índice glucémico y es rico en antioxidantes — perfecto para tu código hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Mix 3: Medio Integral</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1½ taza de harina de arroz integral</li><li>¾ taza de fécula de patata</li><li>1 taza de almidón dulce</li><li>1½ cucharada de goma xantana</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todos los ingredientes.</li><li>Almacena en frasco hermético.</li><li>Usa para panes con más fibras y sabor integral.</li><li>La harina de arroz integral aporta más nutrientes y fibras que la versión blanca.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las fibras de la harina integral ayudan a ralentizar la absorción de glucosa — clave para tu equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Mix 4: Panqueques y Panes Rápidos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>110g de harina de arroz integral</li><li>70g de harina de garbanzo</li><li>60g de fécula de patata</li><li>30g de almidón dulce</li><li>20g de harina de linaza</li><li>5g de psyllium (opcional)</li><li>5g de goma xantana</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Pesa todos los ingredientes con precisión.</li><li>Mezcla en recipiente grande hasta homogéneo.</li><li>Almacena en frasco hermético.</li><li>Perfecto para panqueques, panes rápidos y recetas que necesitan textura ligera.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La harina de garbanzo es rica en proteínas y ayuda a mantener la saciedad por más tiempo.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-rapidos.jpg" alt="Panes Rápidos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Panes Rápidos</h2>
+        <p class="chapter-desc">Recetas prácticas para el día a día — listos en minutos, sin fermentación. Perfectos para cuando necesitas algo delicioso rápidamente.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Pan de Sartén</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 huevo batido</li><li>1 cucharada de harina de almendra</li><li>1 cucharada de harina de linaza</li><li>1 cucharada de harina de amaranto</li><li>1 cucharadita de levadura</li><li>Sésamo tostado al gusto</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate el huevo en un recipiente.</li><li>Mezcla las tres harinas, levadura, sal y sésamo.</li><li>Calienta una sartén antiadherente a fuego bajo.</li><li>Vierte la mezcla y tapa.</li><li>Cocina hasta dorar de ambos lados.</li><li>¡Listo en minutos!</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El amaranto es un superalimento: regula la insulina y es rico en proteínas vegetales.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Pan Vapt-Vupt de Microondas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 cucharada de mantequilla</li><li>1 huevo</li><li>½ cucharada de harina de coco</li><li>3 cucharadas de harina de almendra</li><li>1 cucharadita de levadura</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Derrite la mantequilla en una taza apta para microondas (30 segundos).</li><li>Añade el huevo y bate bien por 20 segundos.</li><li>Mezcla las harinas y la sal.</li><li>Agrega la levadura y mezcla suavemente.</li><li>Lleva al microondas por 90 segundos.</li><li>Deja enfriar, desmolda y corta en 4 rebanadas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">¡El pan más rápido del mundo! Perfecto para sándwiches de última hora.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Pan Panini</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 huevo</li><li>2 cucharadas de harina de nueces</li><li>1 cucharada de harina de linaza</li><li>1 cucharada de linaza entera</li><li>1 cucharadita de levadura</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todos los ingredientes en un recipiente.</li><li>Vierte en recipiente apto para microondas.</li><li>Cocina por 2 minutos en el microondas.</li><li>Corta por la mitad horizontalmente.</li><li>Rellena como prefieras.</li><li>Lleva a una sartén antiadherente caliente para dorar y crear las marcas del panini.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La linaza es rica en omega-3, que reduce la inflamación — el enemigo silencioso de tus hormonas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Pan Crujiente</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 huevos</li><li>3 cucharadas de harina de almendras</li><li>1 cucharadita de levadura</li><li>1 cucharada de aceite de oliva</li><li>Romero fresco al gusto</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C.</li><li>Bate los huevos y mezcla con la harina de almendras.</li><li>Añade levadura, aceite de oliva, sal y romero.</li><li>Extiende la masa finita en un molde engrasado.</li><li>Espolvorea romero por encima.</li><li>Hornea hasta quedar crujiente y dorado.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El romero no solo da sabor — es un potente antiinflamatorio que ayuda en el equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-frutas.jpg" alt="Panes con Frutas y Castañas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Panes con Frutas y Castañas</h2>
+        <p class="chapter-desc">Sabores naturalmente dulces que combinan la nutrición de frutas y oleaginosas con la textura perfecta del pan. Ideales para desayuno o meriendas.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Pan de Plátano</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 bananas maduras</li><li>4 huevos</li><li>250g de avena sin gluten</li><li>4 cucharadas de aceite de coco</li><li>1 cucharada de levadura</li><li>Pasas al gusto (opcional)</li><li>Castañas picadas al gusto (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C.</li><li>Bate las bananas, huevos y aceite de coco en la licuadora.</li><li>Añade la avena y bate hasta homogéneo.</li><li>Agrega la levadura y mezcla suavemente con cuchara.</li><li>Incorpora pasas y castañas si deseas.</li><li>Vierte en molde engrasado.</li><li>Hornea por 30 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El plátano maduro tiene más almidón resistente, que alimenta tu microbiota intestinal — esencial para el equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Pan de Maní</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 tazas de maní tostado</li><li>4 huevos</li><li>¾ taza de agua</li><li>1 cucharadita de sal</li><li>1 cucharada de levadura</li><li>Aceite de coco para engrasar</li><li>Cebolla deshidratada para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Tritura el maní en la licuadora hasta convertir en harina.</li><li>Añade sal, huevos y agua. Bate por 2 minutos.</li><li>Apaga la licuadora y agrega la levadura.</li><li>Mezcla delicadamente con una cuchara.</li><li>Vierte en molde engrasado con aceite de coco.</li><li>Espolvorea cebolla deshidratada por encima.</li><li>Hornea a 180°C por 30 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El maní es rico en magnesio, mineral clave para regular la insulina y reducir el cortisol (hormona del estrés).</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Pan de Castañas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3½ tazas de harina de arroz</li><li>½ taza de almidón dulce</li><li>½ taza de castaña de cajú picada</li><li>½ taza de castaña de Pará picada</li><li>Goma xantana al gusto</li><li>¾ taza de agua tibia</li><li>1 cucharada de levadura</li><li>Sal al gusto</li><li>Aceite de oliva al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla harina de arroz, almidón dulce, goma xantana, sal y levadura.</li><li>Añade agua tibia, aceite de oliva y mezcla bien.</li><li>Incorpora las castañas picadas.</li><li>Vierte en molde engrasado.</li><li>Hornea en horno medio (180°C) por 35 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La castaña de Pará es la mayor fuente natural de selenio — mineral esencial para tu tiroides y equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-semillas.jpg" alt="Panes con Psyllium y Semillas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Panes con Psyllium y Semillas</h2>
+        <p class="chapter-desc">El psyllium es el ingrediente secreto de los panes inteligentes: da elasticidad, aporta fibras y mantiene tu glucosa estable por horas.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">Pan con Psyllium</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>6 cucharadas de psyllium</li><li>1¼ taza de harina de almendras</li><li>1 cucharada de levadura</li><li>2 cucharadas de sésamo</li><li>3 claras de huevo</li><li>Agua hirviendo (cantidad necesaria)</li><li>1 cucharada de vinagre</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla harina de almendras, psyllium, levadura, sésamo y sal.</li><li>Añade agua hirviendo poco a poco.</li><li>Agrega vinagre y claras de huevo.</li><li>Mezcla con batidora hasta obtener masa consistente.</li><li>Moldea bolitas y dispón en molde engrasado.</li><li>Hornea a 180°C por 50 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El psyllium es una fibra soluble que crea una barrera en el intestino, ralentizando la absorción de azúcar — tu mejor aliado hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">Pan de Linaza</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1½ taza de harina de linaza dorada</li><li>½ taza de harina de almendras</li><li>4 huevos</li><li>2 cucharadas de aceite de oliva</li><li>½ taza de agua</li><li>1 cucharada de levadura</li><li>Semillas de linaza para decorar</li><li>Hierbas secas al gusto</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En la batidora, mezcla huevos, aceite de oliva y agua.</li><li>Añade las harinas, sal y hierbas.</li><li>Bate hasta homogéneo.</li><li>Agrega la levadura y mezcla con cuchara.</li><li>Vierte en molde engrasado.</li><li>Espolvorea semillas de linaza por encima.</li><li>Deja crecer por 15 minutos.</li><li>Hornea a 180°C por 40 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La linaza dorada es rica en lignanos, compuestos que ayudan a equilibrar el estrógeno — especialmente importante después de los 40.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">Pan de Semillas con Trigo Sarraceno</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de trigo sarraceno</li><li>100g de harina de almendra</li><li>½ taza de linaza</li><li>4 cucharadas de chía</li><li>½ taza de semillas de calabaza</li><li>½ taza de semillas de girasol</li><li>250ml de agua para hidratar la chía</li><li>Agua adicional según necesidad</li><li>1 cucharada de levadura</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hidrata la chía en 250ml de agua por 15 minutos.</li><li>Mezcla harinas, levadura y sal en un recipiente grande.</li><li>Añade agua restante y el gel de chía.</li><li>Incorpora las semillas (reserva algunas para decorar).</li><li>Deja reposar 10 minutos.</li><li>Vierte en molde engrasado y decora con semillas reservadas.</li><li>Hornea a 170°C por 1 hora y 10 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El trigo sarraceno (no contiene trigo ni gluten) es rico en rutina, que mejora la circulación y la función hormonal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-artesanales.jpg" alt="Panes Artesanales" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Panes Artesanales</h2>
+        <p class="chapter-desc">Técnicas de panadería adaptadas para recrear panes clásicos con cortezas crujientes y migas suaves — todo sin disparar tu insulina.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">Baguette Crujiente</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>94g de harina de arroz</li><li>82g de harina de sorgo</li><li>54g de almidón de maíz</li><li>1 cucharada de goma xantana</li><li>1 cucharada de levadura biológica</li><li>1 cucharadita de sal</li><li>Agua fría (cantidad necesaria)</li><li>1 cucharada de aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla harinas, goma xantana, levadura y sal.</li><li>Añade líquidos gradualmente hasta formar masa.</li><li>Divide en 3 partes y forma baguettes sobre superficie enharinada.</li><li>Deja reposar 50 minutos cubierto con paño húmedo.</li><li>Haz cortes diagonales en la superficie.</li><li>Coloca un recipiente con agua hirviendo dentro del horno.</li><li>Hornea a 220°C por 30 minutos hasta dorar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El agua fría es esencial para esta receta. El vapor en el horno es lo que crea la corteza crujiente clásica.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">16</div>
+            <div class="recipe-name">Focaccia Italiana</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de harina de arroz</li><li>10g de levadura biológica</li><li>3 cucharadas de aceite de oliva extra virgen</li><li>400ml de agua tibia</li><li>Sal gruesa al gusto</li><li>Romero fresco</li><li>Aceite de oliva extra para finalizar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla harina y levadura en un recipiente.</li><li>Añade aceite de oliva, sal y agua poco a poco.</li><li>La masa queda líquida — ¡no necesita amasar!</li><li>Cubre y deja crecer por 25 minutos.</li><li>Extiende en bandeja engrasada con aceite de oliva.</li><li>Haz agujeritos con los dedos en toda la superficie.</li><li>Riega generosamente con aceite de oliva.</li><li>Espolvorea romero fresco y sal gruesa.</li><li>Hornea a 180°C por 25 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El aceite de oliva extra virgen es rico en polifenoles que combaten la inflamación — úsalo sin miedo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">17</div>
+            <div class="recipe-name">Pan Sirio</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 tazas de harina sin gluten (Mix 1)</li><li>2 cucharaditas de sal</li><li>5g de levadura biológica</li><li>1½ taza de agua tibia</li><li>2 cucharadas de aceite de oliva</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Activa la levadura en agua tibia por 5 minutos.</li><li>Mezcla harina y sal.</li><li>Añade agua con levadura y aceite de oliva.</li><li>Cubre y deja reposar 10 minutos.</li><li>Amasa por 10 minutos hasta masa suave.</li><li>Deja crecer por 60 minutos hasta doblar de tamaño.</li><li>Divide en 8 porciones y forma discos de 15cm.</li><li>Hornea a 180°C por 8 minutos — 2 discos por vez.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Perfecto para rellenar con proteínas y vegetales. El formato fino ayuda a controlar las porciones.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">18</div>
+            <div class="recipe-name">Pan Australiano</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 huevos</li><li>3 cucharadas de miel</li><li>2 cucharadas de aceite de oliva</li><li>1 tableta (15g) de levadura biológica</li><li>½ taza de agua tibia</li><li>Harina de arroz, harina de maíz, almidón, fécula y linaza</li><li>Cacao en polvo para el color oscuro</li><li>Azúcar morena al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Disuelve la levadura en agua tibia.</li><li>Mezcla huevos, miel y aceite de oliva.</li><li>Añade la levadura disuelta.</li><li>Incorpora las harinas hasta masa homogénea.</li><li>Engrasa molde y espolvorea cacao en polvo.</li><li>Vierte la masa.</li><li>Cubre y deja crecer por 30 minutos.</li><li>Haz 3 cortes en la superficie.</li><li>Espolvorea harina de maíz por encima.</li><li>Hornea a 180°C por 40 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El cacao es rico en magnesio y flavonoides — nutrientes que mejoran la sensibilidad a la insulina.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-vegetales.jpg" alt="Panes con Vegetales" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Panes con Vegetales</h2>
+        <p class="chapter-desc">Incorpora vegetales a tus panes para añadir nutrientes, humedad natural y colores vibrantes. Cada vegetal aporta beneficios específicos para tu equilibrio hormonal.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">19</div>
+            <div class="recipe-name">Pan de Patata</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de agua</li><li>1 cucharada de levadura</li><li>1 cucharadita de azúcar</li><li>2 cucharadas de aceite de oliva</li><li>1 huevo</li><li>Almidón dulce y harina de arroz</li><li>1 patata mediana cocida y picada</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa agua, levadura, azúcar, aceite, sal y huevo.</li><li>Añade almidón dulce, harina de arroz y patata cocida.</li><li>Bate hasta masa homogénea.</li><li>Vierte en molde engrasado.</li><li>Deja crecer por 30 minutos.</li><li>Hornea a 180°C por 40 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cocina la patata y déjala enfriar antes de usar — al enfriar, se forma almidón resistente que no dispara la insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">20</div>
+            <div class="recipe-name">Pan de Batata (Camote)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de batata cocida y machacada</li><li>1 huevo</li><li>4 cucharadas de aceite de oliva</li><li>¾ taza de harina de arroz</li><li>½ taza de almidón dulce</li><li>1 cucharada de harina de linaza</li><li>½ cucharada de levadura biológica</li><li>2 cucharaditas de azúcar demerara</li><li>Goma xantana y sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla batata machacada con huevo y linaza.</li><li>Añade levadura, aceite de oliva, sal, goma xantana y azúcar.</li><li>Incorpora harina de arroz y almidón dulce.</li><li>Amasa hasta que no pegue en las manos.</li><li>Moldea bolitas o la forma que prefieras.</li><li>Deja crecer hasta doblar de tamaño.</li><li>Hornea a 180°C hasta dorar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La batata (camote) tiene índice glucémico más bajo que la patata blanca y es rica en betacaroteno — antioxidante que protege tus células.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">21</div>
+            <div class="recipe-name">Pan de Batata de Microondas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 huevo</li><li>1 batata pequeña cocida y machacada</li><li>1 cucharada de harina de linaza (opcional)</li><li>1 cucharadita de levadura</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Machaca la batata con un tenedor.</li><li>Mezcla con huevo y sal.</li><li>Añade harina de linaza si deseas textura más esponjosa.</li><li>Incorpora la levadura delicadamente.</li><li>Vierte en recipiente apto para microondas.</li><li>Cocina por 2 minutos.</li><li>Corta por la mitad, dora en sartén y rellena como prefieras.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Versión ultra rápida — perfecta para esos días corridos. Listo en 2 minutos.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">22</div>
+            <div class="recipe-name">Pan de Calabaza</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 cucharadas de almidón dulce</li><li>4 cucharadas de almidón agrio</li><li>1 taza de calabaza cocida y machacada</li><li>1 cucharada de aceite de coco</li><li>1 cucharada de chía (opcional)</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todo con las manos hasta formar masa homogénea.</li><li>La masa no debe pegar en las manos.</li><li>Haz bolitas tipo pan de queso.</li><li>Dispón en bandeja con papel manteca.</li><li>Hornea a 180°C por 20 minutos hasta dorar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La calabaza es rica en zinc, mineral esencial para la producción de hormonas. ¡Puede congelar por hasta 60 días!</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">23</div>
+            <div class="recipe-name">Pan de Zanahoria</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 huevos</li><li>½ taza de aceite de oliva</li><li>100g de zanahoria fresca picada</li><li>1¼ taza de harina de arroz</li><li>1 cucharada de levadura</li><li>1 cucharada de azúcar</li><li>Sésamo o linaza para decorar</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa huevos, aceite, azúcar, sal y zanahoria.</li><li>Añade la harina de arroz y bate hasta homogéneo.</li><li>Agrega la levadura y mezcla con cuchara.</li><li>Vierte en molde de pan engrasado.</li><li>Espolvorea sésamo o linaza por encima.</li><li>Hornea a 180°C por aproximadamente 40 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La zanahoria es rica en betacaroteno que tu cuerpo convierte en vitamina A — esencial para la función tiroidea.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">24</div>
+            <div class="recipe-name">Pan de Cebolla</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>6 tazas de harina de arroz</li><li>2 huevos</li><li>1 cebolla mediana</li><li>Agua (cantidad necesaria)</li><li>2 cucharadas de aceite de oliva</li><li>1 cucharada de levadura</li><li>1 cucharadita de azúcar</li><li>Sal al gusto</li><li>1 yema para pincelar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa huevos, agua, aceite y cebolla.</li><li>Mezcla 2 tazas de harina con levadura, azúcar y sal.</li><li>Añade los líquidos de la licuadora poco a poco.</li><li>Incorpora el resto de la harina hasta dar punto.</li><li>Haz bolitas y dispón en bandeja engrasada.</li><li>Deja crecer hasta doblar de tamaño.</li><li>Pincela con yema de huevo.</li><li>Hornea a 180°C por 45 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La cebolla contiene quercetina, un antioxidante que mejora la sensibilidad a la insulina naturalmente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">25</div>
+            <div class="recipe-name">Pan de Yuca</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>500g de yuca cocida y exprimida</li><li>2 tazas de almidón agrio</li><li>3 tazas de almidón dulce</li><li>¾ taza de aceite de oliva</li><li>Orégano, romero y azafrán al gusto</li><li>Sal al gusto</li><li>Agua (según necesidad)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla los almidones con los condimentos y sal.</li><li>Añade el aceite de oliva y mezcla.</li><li>Incorpora la yuca cocida.</li><li>Agrega agua poco a poco hasta masa homogénea.</li><li>Moldea bolitas y dispón en bandeja engrasada.</li><li>Hornea a 180°C por 25 minutos.</li><li>Sube la temperatura a 200°C por 15 minutos más para dorar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El azafrán (cúrcuma) es un potente antiinflamatorio — perfecto para combatir la inflamación hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">26</div>
+            <div class="recipe-name">Pan de Yuca con Chía</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>500g de yuca cocida</li><li>1½ taza de harina sin gluten</li><li>1 cucharada de chía</li><li>½ taza de aceite de oliva</li><li>½ taza de agua</li><li>Cúrcuma y orégano al gusto</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todos los ingredientes hasta formar masa lisa.</li><li>Moldea bolitas del tamaño deseado.</li><li>Dispón en bandeja con papel manteca.</li><li>Hornea a 180°C por 30 minutos hasta dorar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las semillas de chía aportan omega-3 y fibras que ayudan a regular las hormonas y mejorar la digestión.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-artesanales.jpg" alt="Panes Clásicos Adaptados" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Panes Clásicos Adaptados</h2>
+        <p class="chapter-desc">Tus panes favoritos de la panadería, reinventados para cuidar tus hormonas. Sabor auténtico, textura perfecta — sin los picos de glucosa.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">27</div>
+            <div class="recipe-name">Pan Francés</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>100g de harina de arroz (para esponja) + 100g adicional</li><li>100g de almidón dulce</li><li>90g de almidón de maíz</li><li>1 cucharada de goma xantana</li><li>1 cucharada de levadura biológica</li><li>1 cucharadita de azúcar</li><li>100ml de agua tibia + agua adicional</li><li>1 huevo</li><li>2 cucharadas de aceite de oliva</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>ESPONJA: Mezcla levadura, azúcar, 50g de harina de arroz y 100ml de agua tibia. Reserva hasta espumar.</li><li>Mezcla harinas restantes, almidón, goma xantana y sal.</li><li>Añade aceite, huevo, agua y la esponja.</li><li>Bate por 5 minutos hasta masa pegajosa pero moldeable.</li><li>Moldea panecillos sobre superficie enharinada.</li><li>Deja crecer por 1 hora cubierto.</li><li>Haz un corte en la superficie de cada panecillo.</li><li>Coloca un recipiente con agua hirviendo en el horno.</li><li>Hornea a 230°C por 40-45 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El secreto está en la esponja fermentada y el vapor dentro del horno — eso crea la corteza crujiente del pan francés.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">28</div>
+            <div class="recipe-name">Pan de Licuadora</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 cucharada de levadura biológica</li><li>1 cucharadita de azúcar</li><li>1 taza de leche tibia (o leche vegetal)</li><li>10 cucharadas de harina de arroz</li><li>3 cucharadas de almidón dulce</li><li>3 cucharadas de almidón de maíz</li><li>3 cucharadas de fécula de patata</li><li>3 huevos</li><li>2 cucharadas de aceite de oliva</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa levadura, azúcar y leche tibia.</li><li>Añade las harinas, almidones y fécula.</li><li>Agrega huevos, aceite y sal.</li><li>Bate hasta masa homogénea.</li><li>Deja crecer en la licuadora por 15-20 minutos (hasta alcanzar la tapa).</li><li>Vierte en 2 moldes engrasados.</li><li>Hornea a 180°C por 30 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pan más fácil del mundo — todo se hace en la licuadora. Perfecto para principiantes.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">29</div>
+            <div class="recipe-name">Pan Multigranos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>350g de mix de harina sin gluten</li><li>30g de linaza dorada</li><li>40g de sésamo</li><li>Semillas de amaranto, quinoa y girasol</li><li>2 huevos</li><li>1 cucharada de vinagre</li><li>2 cucharadas de aceite de oliva</li><li>Agua (según necesidad)</li><li>Tomillo al gusto</li><li>Azúcar demerara y sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la harina con las semillas, sal, azúcar y tomillo.</li><li>Añade huevos, vinagre, aceite de oliva y agua poco a poco.</li><li>La masa debe quedar húmeda.</li><li>Vierte en molde engrasado.</li><li>Decora con semillas adicionales y un chorrito de agua por encima.</li><li>Deja crecer por 40 minutos.</li><li>Hornea a 180°C por 35 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las semillas de quinoa y amaranto son proteínas completas — raras en el mundo vegetal. Tu cuerpo las necesita para producir hormonas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">30</div>
+            <div class="recipe-name">Pan de Sal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tazas de harina de maíz</li><li>1 taza de almidón dulce</li><li>1 cucharada de levadura</li><li>1 cucharadita de azúcar</li><li>1 huevo</li><li>2 cucharadas de aceite de oliva</li><li>¾ taza de agua tibia (ajustar)</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla harina de maíz, almidón, levadura, azúcar y sal.</li><li>Añade huevo y aceite de oliva.</li><li>Incorpora agua tibia poco a poco — puede necesitar más o menos.</li><li>El punto ideal es masa espesa, como bizcocho denso.</li><li>Engrasa molde con aceite y espolvorea harina de maíz.</li><li>Vierte la masa.</li><li>Deja reposar por 1 hora.</li><li>Hornea a 180°C hasta dorar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La harina de maíz natural (no transgénica) es rica en fibras y tiene índice glucémico moderado.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">31</div>
+            <div class="recipe-name">Pan de Harina de Maíz</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tazas de harina de maíz</li><li>1 taza de almidón dulce</li><li>1 cucharada de levadura</li><li>2 cucharadas de azúcar</li><li>4 cucharadas de aceite de oliva</li><li>1 huevo</li><li>¾ taza de agua tibia</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla los ingredientes secos: harina de maíz, almidón, levadura, azúcar y sal.</li><li>Añade aceite de oliva, agua tibia y huevo.</li><li>Mezcla hasta formar masa espesa y homogénea.</li><li>Vierte en molde de pan inglés engrasado.</li><li>Cubre con paño y deja crecer por 1 hora.</li><li>Hornea a 180°C por 40 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Perfecto para el desayuno con mantequilla de maní natural — combinación que estabiliza tu glucosa toda la mañana.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-integrales.jpg" alt="Panes Integrales y Nutritivos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Panes Integrales y Nutritivos</h2>
+        <p class="chapter-desc">Maximiza la nutrición con panes ricos en fibras, proteínas e ingredientes integrales. Ideales para quien busca salud en cada rebanada.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">32</div>
+            <div class="recipe-name">Pan Integral Completo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de harina de arroz integral</li><li>1 taza de harina de arroz blanco</li><li>½ taza de linaza</li><li>½ taza de almidón dulce</li><li>Semillas de amaranto y quinoa</li><li>1 cucharada de goma xantana</li><li>1 cucharada de levadura biológica</li><li>2 huevos</li><li>2 cucharadas de aceite de oliva</li><li>½ taza de agua + adicional</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Activa la levadura con azúcar en ½ taza de agua tibia. Reserva.</li><li>Mezcla todas las harinas, linaza, almidón, semillas y goma xantana.</li><li>Añade aceite de oliva, sal, huevos y la levadura activada.</li><li>Incorpora agua restante poco a poco.</li><li>Cubre y deja descansar 50 minutos.</li><li>Mezcla de nuevo, divide en 2 moldes engrasados.</li><li>Deja descansar 10 minutos más.</li><li>Hornea a 180°C por 45 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La doble fermentación (50 min + 10 min) es lo que da textura y sabor superiores a este pan integral.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">33</div>
+            <div class="recipe-name">Pan Integral Simple</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>Harina de arroz integral (cantidad necesaria)</li><li>1 cucharada de levadura biológica seca</li><li>2 cucharadas de aceite de oliva</li><li>Agua (según necesidad)</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla harina integral con levadura.</li><li>Añade aceite de oliva y sal.</li><li>Incorpora agua poco a poco, amasando por 10 minutos (5 en batidora).</li><li>La masa queda suave y levemente pegajosa.</li><li>Cubre y deja crecer por 2 horas.</li><li>Amasa brevemente para sacar el gas.</li><li>Moldea en forma de bola y haz cortes superficiales.</li><li>Deja crecer 30 minutos más.</li><li>Hornea a 200°C por 30 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La fermentación larga (2 horas) desarrolla probióticos naturales que benefician tu microbiota intestinal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">34</div>
+            <div class="recipe-name">Pan de Avena con Semillas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de avena en copos gruesos sin gluten</li><li>½ taza de avena adicional para decorar</li><li>1 taza de harina de arroz</li><li>½ taza de almidón dulce</li><li>½ cucharadita de linaza molida</li><li>Mix de semillas: sésamo, chía, linaza o girasol</li><li>1 cucharada de levadura</li><li>Hierbas secas al gusto</li><li>Agua tibia (según necesidad)</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todos los ingredientes secos: harinas, avena, almidón, linaza, sal, hierbas y levadura.</li><li>Añade agua tibia poco a poco hasta formar masa.</li><li>Incorpora el mix de semillas.</li><li>Vierte en molde engrasado.</li><li>Espolvorea la avena reservada por encima.</li><li>Deja crecer hasta doblar de tamaño.</li><li>Hornea a 180°C por 20 minutos.</li><li>Sube a 200°C por 15 minutos más para dorar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La avena tiene beta-glucanos que reducen el colesterol y estabilizan la glucosa — un superalimento para tus hormonas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">35</div>
+            <div class="recipe-name">Pan Casero de Almendras</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>¾ taza de harina de almendras</li><li>1 taza de salvado de avena sin gluten</li><li>3 huevos</li><li>¾ taza de agua</li><li>1 cucharada de aceite de oliva</li><li>2 cucharadas de levadura</li><li>1 cucharadita de vinagre</li><li>Pimienta negra al gusto</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa huevos con agua, aceite de oliva y sal por 2 minutos.</li><li>En un recipiente, mezcla harina de almendras y salvado de avena.</li><li>Incorpora los líquidos de la licuadora.</li><li>Añade vinagre, levadura y pimienta.</li><li>Mezcla hasta homogéneo.</li><li>Vierte en molde engrasado.</li><li>Hornea a 200°C por 30 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La harina de almendras tiene apenas 3g de carbohidratos por porción — uno de los ingredientes más amigables para la insulina.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-especiales.jpg" alt="Panes Especiales" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Panes Especiales</h2>
+        <p class="chapter-desc">Creaciones únicas que exploran ingredientes diferenciados y técnicas especiales. Para cuando quieres sorprender y experimentar.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">36</div>
+            <div class="recipe-name">Pan Vegano</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1½ taza de harina de arroz</li><li>½ taza de fécula de patata</li><li>¼ taza de psyllium</li><li>2 cucharadas de aceite de oliva</li><li>Agua (cantidad necesaria)</li><li>1 cucharada de levadura</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hidrata el psyllium en agua por 10 minutos hasta formar pasta gelatinosa.</li><li>Mezcla las harinas secas en un recipiente.</li><li>Añade la pasta de psyllium y el aceite de oliva.</li><li>Mezcla con las manos hasta masa homogénea.</li><li>Forma una bola y coloca en molde engrasado.</li><li>Deja crecer por 3 horas.</li><li>Haz cortes en la superficie.</li><li>Hornea a 180°C por 40-50 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">100% vegetal — el psyllium sustituye perfectamente los huevos, dando liga y elasticidad a la masa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">37</div>
+            <div class="recipe-name">Pan Tipo Italiano</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>225g de harina de arroz</li><li>80g de fécula de patata</li><li>20g de almidón agrio</li><li>20g de psyllium</li><li>60g de harina de almendras</li><li>1 cucharada de levadura</li><li>Aceite de oliva extra virgen</li><li>Agua tibia (según necesidad)</li><li>Harina de maíz y sésamo para decorar</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla todos los ingredientes secos.</li><li>Añade aceite de oliva y agua tibia poco a poco.</li><li>Mezcla primero con espátula, después con las manos.</li><li>Forma bola, pincela con aceite de oliva.</li><li>Deja reposar por 1 hora.</li><li>Moldea los panes del tamaño deseado.</li><li>Pincela con aceite de oliva.</li><li>Espolvorea harina de maíz y sésamo.</li><li>Hornea a 180°C por 40 minutos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La fermentación lenta de 1 hora desarrolla sabor y mejora la digestibilidad del pan.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">38</div>
+            <div class="recipe-name">Pan de Canela</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>¼ taza de aceite de oliva</li><li>1 taza de azúcar (o eritritol)</li><li>4 claras de huevo</li><li>2 tazas de mix de harinas sin gluten</li><li>Agua (según necesidad)</li><li>Para la cobertura: 8 cucharadas de azúcar + 2 cucharadas de canela + aceite</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate las claras a punto de nieve.</li><li>Mezcla aceite con azúcar.</li><li>Incorpora las claras con movimientos envolventes.</li><li>Añade el mix de harinas alternando con agua.</li><li>Prepara la cobertura mezclando azúcar, canela y un poco de aceite.</li><li>Engrasa el molde y alterna: capa de masa, capa de cobertura.</li><li>Finaliza con la cobertura de canela.</li><li>Hornea a 180°C por 40 minutos. Prueba con palillo.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La canela es un regulador natural de glucosa — estudios muestran que puede mejorar la sensibilidad a la insulina hasta en un 20%.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/panes/panes-especiales.jpg" alt="Bonus: Más Allá del Pan" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Bonus: Más Allá del Pan</h2>
+        <p class="chapter-desc">Aprovecha las técnicas de panes sin gluten para crear pizzas, pasteles, empanadas y más. ¡Expande tu repertorio!</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">39</div>
+            <div class="recipe-name">Pizza Sin Gluten</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>Masa: almidón dulce + harina de arroz</li><li>Salsa de tomate natural</li><li>Queso mozzarella</li><li>Tus toppings favoritos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Prepara la masa con almidón y harina de arroz según tu mix preferido.</li><li>Abre la masa bien finita sobre papel manteca.</li><li>Pre-hornea la masa sola por 10 minutos a 200°C.</li><li>Retira, agrega salsa, queso y toppings.</li><li>Regresa al horno hasta gratinar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Pre-hornear la masa es el secreto: evita que quede cruda por dentro con los toppings.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">40</div>
+            <div class="recipe-name">Pastel Sin Gluten</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>Harina de arroz</li><li>Almidón de maíz</li><li>Goma xantana</li><li>Relleno a tu gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla harina de arroz, almidón de maíz y goma xantana.</li><li>Añade agua hasta formar masa maleable.</li><li>Abre bien fino con rodillo.</li><li>Rellena con tu ingrediente favorito.</li><li>Hornea a 200°C o fríe en airfryer.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">En la airfryer quedan crujientes con mucho menos aceite — opción más saludable para tus hormonas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">41</div>
+            <div class="recipe-name">Empanada Sin Gluten</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>Mix de harinas sin gluten</li><li>Mantequilla fría</li><li>1 yema para pincelar</li><li>Relleno a tu gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla el mix de harinas con mantequilla fría cortada en cubos.</li><li>Trabaja hasta formar una masa arenosa.</li><li>Añade agua helada poco a poco hasta unir.</li><li>Moldea en los moldecitos de empanada.</li><li>Rellena y cierra.</li><li>Pincela con yema de huevo.</li><li>Hornea a 180°C hasta dorar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La mantequilla fría es el secreto de una masa hojaldrada y crujiente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">42</div>
+            <div class="recipe-name">Panqueque Sin Gluten</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>Harina de arroz</li><li>1 huevo</li><li>Agua o leche vegetal</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa todos los ingredientes hasta masa lisa.</li><li>Calienta sartén antiadherente a fuego medio.</li><li>Vierte una porción fina de masa.</li><li>Cocina hasta dorar de ambos lados.</li><li>Rellena como prefieras: dulce o salado.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Versátil para cualquier momento del día — rellena con pollo y vegetales para almuerzo o con frutas para merienda.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Panes Inteligentes Vol. 1</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

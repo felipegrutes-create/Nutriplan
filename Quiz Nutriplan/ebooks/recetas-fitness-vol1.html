@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Recetas Fitness Vol. 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #6366F1;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #6366F1dd 0%, #6366F1 50%, #6366F1cc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">💪</span>
+    <h1>Recetas Fitness Vol. 1</h1>
+    <p class="hero-sub">Nutrición inteligente para mujeres activas</p>
+    <div class="hero-count">50 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Nutrición Fitness para Mujeres 40+: Tu Cuerpo Merece Combustible de Calidad</h2>
+        <div class="intro-content"><p>Después de los 40, tu cuerpo cambia — pero eso no significa que debas conformarte. La caída natural de estrógeno y progesterona ralentiza tu metabolismo, reduce tu masa muscular y facilita la acumulación de grasa, especialmente en el abdomen. La buena noticia es que la alimentación correcta puede revertir todo esto.</p><p>El secreto está en un ciclo poderoso: la proteína construye músculo, el músculo quema grasa incluso en reposo, y la grasa que pierdes deja de interferir con tus hormonas. Es un efecto dominó a tu favor.</p><p>Cada kilogramo de músculo que ganas quema entre 50 y 100 calorías extra por día — sin que hagas nada. Pero para construir ese músculo, necesitas darle a tu cuerpo los nutrientes correctos: proteína de calidad en cada comida, carbohidratos inteligentes que no disparen tu insulina, y grasas buenas que nutran la producción de estrógeno y progesterona.</p><p>Estas 50 recetas fueron diseñadas específicamente para mujeres que quieren:</p><p class="intro-bullet">• Aumentar masa muscular de forma natural y saludable</p><p class="intro-bullet">• Mantener la sensibilidad a la insulina con alimentos que estabilizan la glucosa</p><p class="intro-bullet">• Nutrir el equilibrio hormonal con grasas saludables, fibra y micronutrientes</p><p class="intro-bullet">• Tener energía sostenida durante todo el día sin picos ni caídas</p><p class="intro-bullet">• Preparar comidas prácticas, rápidas y deliciosas</p><p>Cada receta incluye un consejo hormonal que te explica cómo ese plato trabaja a favor de tu metabolismo y tus hormonas. No estás haciendo dieta — estás alimentando tu transformación desde adentro.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/fitness/desayunos.jpg" alt="Desayunos Proteicos Express" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Desayunos Proteicos Express</h2>
+        <p class="chapter-desc">El desayuno marca el ritmo hormonal de todo tu día. Un desayuno alto en proteína estabiliza la glucosa desde la primera hora, evita los antojos de media mañana y le indica a tu cuerpo que es momento de construir músculo, no de almacenar grasa.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Panqueque de Banana y Avena</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 banana madura</li><li>2 huevos enteros</li><li>3 cucharadas de avena en hojuelas</li><li>1 cucharadita de canela en polvo</li><li>1 cucharadita de aceite de coco</li><li>Fresas frescas para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Aplasta la banana con un tenedor hasta formar un puré suave.</li><li>Agrega los huevos y bate bien hasta integrar completamente.</li><li>Incorpora la avena en hojuelas y la canela, mezclando hasta obtener una masa homogénea.</li><li>Calienta una sartén antiadherente con el aceite de coco a fuego medio.</li><li>Vierte pequeñas porciones de la masa formando panqueques medianos.</li><li>Cocina 2 minutos de cada lado hasta que estén dorados.</li><li>Sirve con fresas frescas cortadas y una cucharada de pasta de maní natural.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La avena es rica en betaglucanos, una fibra que ralentiza la absorción de glucosa y evita los picos de insulina. Combinada con el huevo, obtienes un desayuno que mantiene tu energía estable por horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Tortilla de Claras con Espinaca</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 claras de huevo</li><li>1 taza de espinaca fresca</li><li>1/4 de cebolla picada finamente</li><li>4 tomates cherry cortados por la mitad</li><li>1 cucharadita de aceite de oliva</li><li>Sal rosa y pimienta al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate ligeramente las claras con sal rosa y pimienta negra.</li><li>Calienta el aceite de oliva en una sartén antiadherente a fuego medio.</li><li>Sofríe la cebolla por 1 minuto hasta que esté transparente.</li><li>Agrega la espinaca y los tomates cherry, cocina 30 segundos más.</li><li>Vierte las claras batidas por encima de los vegetales distribuyendo bien.</li><li>Cocina a fuego bajo con la sartén tapada hasta que las claras cuajen completamente.</li><li>Dobla la tortilla por la mitad y sirve caliente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las claras de huevo son proteína pura y de alta biodisponibilidad. La espinaca aporta magnesio, un mineral que mejora la sensibilidad a la insulina y apoya la relajación muscular después del ejercicio.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Avena Proteica con Whey</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de avena en hojuelas</li><li>1 taza de leche descremada o vegetal</li><li>1 scoop de whey protein de vainilla</li><li>1 cucharadita de canela en polvo</li><li>1 cucharada de semillas de linaza molida</li><li>Frutos rojos para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta la leche en una olla pequeña a fuego medio.</li><li>Agrega la avena y revuelve constantemente por 5 minutos hasta que espese.</li><li>Retira del fuego y deja enfriar 2 minutos para no desnaturalizar la proteína.</li><li>Incorpora el scoop de whey protein y mezcla vigorosamente hasta integrar.</li><li>Agrega la canela y la linaza molida.</li><li>Vierte en un tazón y decora con frutos rojos frescos.</li><li>Sirve inmediatamente o deja enfriar y lleva al trabajo en un frasco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Consumir proteína en los primeros 30 minutos del día activa la síntesis muscular y estabiliza la glucosa matinal. La linaza aporta lignanos, compuestos que apoyan el equilibrio del estrógeno.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Tapioca Rellena Fit</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 cucharadas de goma de tapioca hidratada</li><li>2 rebanadas de pechuga de pavo</li><li>2 cucharadas de queso cottage</li><li>Rodajas de tomate fresco</li><li>Hojas de rúcula</li><li>Sal y orégano al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta una sartén antiadherente a fuego medio sin aceite.</li><li>Esparce la goma de tapioca uniformemente formando un disco.</li><li>Espera a que la masa se forme y quede consistente, aproximadamente 2 minutos.</li><li>Voltea con cuidado y cocina 30 segundos más del otro lado.</li><li>Agrega el queso cottage, las rebanadas de pavo, tomate y rúcula de un lado.</li><li>Dobla la tapioca por la mitad presionando suavemente.</li><li>Sirve inmediatamente mientras está caliente y crujiente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La tapioca es un carbohidrato de fácil digestión que aporta energía rápida sin inflamar. Al rellenarla con proteína, creas un desayuno que nutre el músculo y mantiene tu metabolismo activo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Yogur Griego con Granola Casera</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 envase de yogur griego natural sin azúcar (170g)</li><li>3 cucharadas de avena en hojuelas</li><li>2 cucharadas de nueces picadas</li><li>1 cucharada de coco rallado sin azúcar</li><li>1 cucharadita de miel de abeja pura</li><li>Frutas frescas de temporada</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la avena, las nueces picadas y el coco rallado en un tazón.</li><li>Agrega la miel y revuelve hasta cubrir uniformemente todos los ingredientes.</li><li>Esparce en una bandeja y hornea a 180°C por 10 minutos, revolviendo a la mitad.</li><li>Deja que la granola se enfríe completamente para que quede crujiente.</li><li>Coloca el yogur griego en la base de un frasco o tazón.</li><li>Agrega capas de frutas frescas picadas y finaliza con la granola casera.</li><li>Consume inmediatamente o tapa el frasco y lleva contigo.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El yogur griego contiene el doble de proteína que el yogur regular y es rico en probióticos. Una flora intestinal sana mejora la producción de serotonina y facilita el equilibrio hormonal general.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Batido Verde Detox</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de espinaca fresca</li><li>1 banana congelada</li><li>1/2 manzana verde con cáscara</li><li>1 cucharada de semillas de linaza</li><li>200ml de agua de coco natural</li><li>Jugo de 1/2 limón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava bien la espinaca y la manzana verde.</li><li>Corta la manzana en trozos manteniendo la cáscara para aprovechar la fibra.</li><li>Coloca la espinaca, banana congelada, manzana y linaza en la licuadora.</li><li>Agrega el agua de coco y el jugo de limón.</li><li>Bate a velocidad máxima por 2 minutos hasta que quede completamente homogéneo.</li><li>Agrega más agua de coco si prefieres una consistencia menos espesa.</li><li>Sirve inmediatamente bien frío para aprovechar todos los nutrientes.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los vegetales de hoja verde oscuro son ricos en magnesio y ácido fólico, nutrientes esenciales para el equilibrio hormonal. El limón potencia la función hepática, ayudando a tu cuerpo a metabolizar mejor el estrógeno.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Wrap de Huevo con Aguacate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 huevos enteros</li><li>1/2 aguacate maduro</li><li>1 tortilla integral pequeña</li><li>Hojas de lechuga fresca</li><li>1/2 tomate picado en cubos</li><li>Sal y pimienta al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate los huevos con sal y pimienta en un tazón.</li><li>Cocina los huevos revueltos en sartén antiadherente a fuego bajo, removiendo suavemente para que queden cremosos.</li><li>Calienta la tortilla integral ligeramente en otra sartén o directamente en el fuego.</li><li>Aplasta el aguacate con un tenedor y espárcelo sobre toda la tortilla.</li><li>Coloca los huevos revueltos en el centro sobre el aguacate.</li><li>Agrega las hojas de lechuga y el tomate picado.</li><li>Enrolla bien apretado, corta por la mitad y sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El aguacate aporta grasas monoinsaturadas que son la materia prima para producir progesterona. Combinado con la proteína del huevo, este wrap es ideal para nutrir hormonas y músculo al mismo tiempo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Crepioca de Pollo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 huevo entero</li><li>2 cucharadas de goma de tapioca hidratada</li><li>100g de pollo deshilachado sazonado</li><li>2 cucharadas de requesón light</li><li>Cebollín fresco picado</li><li>Sal y pimienta al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate el huevo en un tazón y mezcla con la goma de tapioca hasta integrar.</li><li>Vierte la mezcla en una sartén antiadherente caliente formando un disco fino.</li><li>Cocina a fuego medio hasta que los bordes comiencen a despegarse.</li><li>Voltea con cuidado y cocina 30 segundos más del otro lado.</li><li>Agrega el pollo deshilachado y el requesón sobre una mitad de la crepioca.</li><li>Espolvorea cebollín fresco picado por encima.</li><li>Dobla por la mitad, presiona suavemente y sirve caliente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La crepioca combina la energía de la tapioca con la proteína del huevo. El pollo deshilachado aporta aminoácidos esenciales para la recuperación muscular, fundamental para mantener un metabolismo activo después de los 40.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/fitness/smoothies.jpg" alt="Smoothies y Bowls Energéticos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Smoothies y Bowls Energéticos</h2>
+        <p class="chapter-desc">Los smoothies y bowls son aliados perfectos para días de entrenamiento. Aportan energía rápida, proteína y micronutrientes en un formato práctico que tu cuerpo absorbe fácilmente, ideal para antes o después del ejercicio.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Bowl de Açaí Proteico</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 paquete de pulpa de açaí sin azúcar (100g)</li><li>1 banana congelada en rodajas</li><li>1 scoop de whey protein de vainilla</li><li>50ml de leche de almendras sin azúcar</li><li>2 cucharadas de granola casera</li><li>Frutas frescas para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca la pulpa de açaí congelada, la banana y la leche de almendras en la licuadora.</li><li>Agrega el scoop de whey protein a la mezcla.</li><li>Bate a velocidad alta hasta obtener una textura cremosa y consistente, tipo helado.</li><li>Vierte la mezcla en un bowl amplio.</li><li>Decora con granola casera, rodajas de banana fresca y frutas de temporada.</li><li>Agrega semillas de chía o coco rallado si deseas.</li><li>Sirve inmediatamente antes de que se derrita.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El açaí es rico en antioxidantes que combaten el estrés oxidativo, una de las causas de envejecimiento celular acelerado. Su combinación con whey protein crea una comida anabólica que favorece la construcción de masa muscular magra.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Smoothie de Frutos Rojos con Whey</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de frutos rojos congelados (fresas, arándanos, frambuesas)</li><li>1 banana fresca</li><li>1 scoop de whey protein de fresa</li><li>200ml de leche descremada</li><li>1 cucharada de pasta de maní natural</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca los frutos rojos congelados y la banana en la licuadora.</li><li>Agrega la leche descremada y el scoop de whey protein.</li><li>Incorpora la cucharada de pasta de maní natural.</li><li>Bate a velocidad máxima por 2 minutos hasta que quede completamente homogéneo.</li><li>Agrega hielo si deseas una textura más espesa y fría.</li><li>Prueba y ajusta el dulce con stevia si es necesario.</li><li>Sirve en un vaso grande inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los frutos rojos son los campeones en antioxidantes y tienen bajo índice glucémico. Esto significa que nutren tus células sin disparar la insulina, protegiendo tu sensibilidad hormonal mientras aportan vitamina C para la producción de colágeno.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Overnight Oats de Chocolate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de avena en hojuelas</li><li>1 taza de leche de almendras sin azúcar</li><li>1 cucharada de cacao en polvo 100% sin azúcar</li><li>1 cucharada de semillas de chía</li><li>1 cucharada de pasta de maní natural</li><li>Stevia o miel al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En un frasco de vidrio, coloca la avena, el cacao en polvo y las semillas de chía.</li><li>Vierte la leche de almendras y revuelve bien hasta integrar todos los ingredientes.</li><li>Agrega la pasta de maní y endulza con stevia o miel al gusto.</li><li>Tapa el frasco y lleva al refrigerador durante toda la noche (mínimo 6 horas).</li><li>Por la mañana, revuelve y agrega más leche si la consistencia está muy espesa.</li><li>Decora con rodajas de banana, frutos rojos o coco rallado.</li><li>Consume frío directamente del frasco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El cacao puro es rico en magnesio y teobromina, compuestos que mejoran el estado de ánimo y reducen los antojos nocturnos. La chía aporta omega 3 vegetal que apoya la producción de hormonas antiinflamatorias.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">Toast Francés Fitness</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 rebanadas de pan integral grueso</li><li>2 huevos enteros</li><li>1/4 taza de leche descremada</li><li>1 cucharadita de canela en polvo</li><li>1/2 cucharadita de esencia de vainilla</li><li>Frutas frescas para acompañar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate los huevos con la leche, la canela y la esencia de vainilla en un plato hondo.</li><li>Sumerge cada rebanada de pan en la mezcla, dejando absorber 30 segundos por lado.</li><li>Calienta una sartén antiadherente a fuego medio con un toque de aceite de coco.</li><li>Cocina cada rebanada por 2-3 minutos de cada lado hasta que estén doradas.</li><li>Retira y coloca en un plato.</li><li>Decora con frutas frescas cortadas, un toque de canela y un hilo de miel.</li><li>Sirve caliente inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pan integral aporta carbohidratos complejos de liberación lenta, mientras que los huevos suman proteína de alto valor biológico. La canela potencia la sensibilidad a la insulina, convirtiendo este desayuno en un aliado metabólico.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">Waffle Proteico de Avena</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de avena en hojuelas</li><li>2 huevos enteros</li><li>1 scoop de whey protein de vainilla</li><li>1/2 taza de leche descremada</li><li>1 cucharadita de polvo de hornear</li><li>Frutas y pasta de maní para servir</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca la avena, los huevos, el whey protein, la leche y el polvo de hornear en la licuadora.</li><li>Bate por 1 minuto hasta obtener una masa homogénea y sin grumos.</li><li>Deja reposar la masa por 5 minutos para que la avena se hidrate.</li><li>Precalienta la máquina de waffles y engrasa ligeramente con aceite de coco.</li><li>Vierte la masa y cierra la máquina, cocina hasta que estén dorados y crujientes.</li><li>Retira con cuidado y sirve con frutas frescas y un toque de pasta de maní.</li><li>Congela los waffles extras y recalienta en la tostadora cuando los necesites.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cada waffle aporta aproximadamente 25g de proteína, el mínimo que necesitas por comida para estimular la síntesis muscular. La avena proporciona betaglucanos que alimentan tus bacterias intestinales y mejoran la respuesta hormonal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/fitness/snacks.jpg" alt="Snacks y Meriendas Inteligentes" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Snacks y Meriendas Inteligentes</h2>
+        <p class="chapter-desc">Los snacks inteligentes mantienen tu metabolismo activo entre comidas principales. Comer cada 3-4 horas evita caídas de glucosa que disparan el cortisol — la hormona del estrés que ordena a tu cuerpo almacenar grasa abdominal.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">Hummus con Palitos de Vegetales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 lata de garbanzos escurridos (400g)</li><li>2 cucharadas de tahini (pasta de ajonjolí)</li><li>Jugo de 1 limón</li><li>2 dientes de ajo</li><li>3 cucharadas de aceite de oliva extra virgen</li><li>Palitos de zanahoria, pepino y apio para acompañar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Escurre y enjuaga bien los garbanzos.</li><li>Coloca los garbanzos, tahini, jugo de limón, ajo y aceite de oliva en el procesador.</li><li>Procesa por 3-4 minutos hasta obtener una pasta cremosa y suave.</li><li>Agrega 2-3 cucharadas de agua si necesitas una consistencia más ligera.</li><li>Ajusta la sal y el limón al gusto.</li><li>Sirve en un tazón con un chorrito de aceite de oliva y páprika por encima.</li><li>Acompaña con palitos de zanahoria, pepino y apio frescos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los garbanzos son ricos en proteína vegetal y fibra soluble que estabiliza la glucosa. El tahini aporta calcio y zinc, minerales clave para la salud ósea y hormonal después de los 40.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">Chips de Calabacín al Horno</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 calabacines grandes y firmes</li><li>2 cucharadas de aceite de oliva</li><li>1/2 cucharadita de sal marina</li><li>1/2 cucharadita de páprika ahumada</li><li>1/2 cucharadita de ajo en polvo</li><li>Orégano seco al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C y forra una bandeja con papel para hornear.</li><li>Corta los calabacines en rebanadas finas y uniformes de 2-3mm de grosor.</li><li>Coloca las rebanadas en un tazón y mezcla con aceite de oliva y todas las especias.</li><li>Dispón las rebanadas en la bandeja en una sola capa, sin encimar.</li><li>Hornea por 12-15 minutos, voltea cada rebanada con cuidado.</li><li>Hornea 10-12 minutos más hasta que estén doradas y crujientes.</li><li>Deja enfriar completamente en la bandeja — se vuelven más crujientes al enfriarse.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El calabacín es muy bajo en calorías y rico en potasio, un mineral que ayuda a reducir la retención de líquidos. Al hornearlos en lugar de freírlos, obtienes un snack crujiente que no genera inflamación.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">16</div>
+            <div class="recipe-name">Bolitas de Atún Fitness</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 lata de atún en agua escurrido (170g)</li><li>1 huevo entero</li><li>2 cucharadas de avena en hojuelas</li><li>1/4 de cebolla picada finamente</li><li>Perejil y cebollín frescos picados</li><li>Sal, pimienta y ajo en polvo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Escurre muy bien el atún y deshiláchalo con un tenedor en un tazón.</li><li>Agrega el huevo, la avena en hojuelas y todos los condimentos.</li><li>Incorpora la cebolla picada, el perejil y el cebollín, mezcla bien.</li><li>Deja reposar la mezcla 5 minutos para que la avena absorba la humedad.</li><li>Forma bolitas pequeñas del tamaño de una nuez con las manos húmedas.</li><li>Coloca en bandeja forrada con papel para hornear y hornea a 180°C por 20 minutos.</li><li>Voltea a la mitad del tiempo para dorar de ambos lados y sirve con salsa de yogur.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El atún es una de las fuentes más concentradas de proteína y omega 3. Los ácidos grasos omega 3 reducen la inflamación sistémica que interfiere con la señalización hormonal, especialmente después de los 40.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">17</div>
+            <div class="recipe-name">Mix de Nueces Condimentadas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de nueces mixtas (almendras, nueces de castilla, marañones)</li><li>1 cucharada de aceite de oliva</li><li>1 cucharadita de miel de abeja</li><li>1/2 cucharadita de páprika ahumada</li><li>1 ramita de romero fresco picado</li><li>Sal marina al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 150°C.</li><li>Mezcla las nueces con el aceite de oliva y la miel en un tazón.</li><li>Agrega la páprika, el romero picado y la sal marina.</li><li>Revuelve bien hasta que todas las nueces estén cubiertas uniformemente.</li><li>Esparce en una bandeja forrada en una sola capa.</li><li>Hornea por 15 minutos, revolviendo a la mitad del tiempo.</li><li>Deja enfriar completamente y almacena en porciones de 30g en bolsitas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las nueces son ricas en grasas monoinsaturadas y selenio, nutrientes que apoyan directamente la producción de progesterona. Una porción de 30g al día es suficiente para obtener estos beneficios sin excederte en calorías.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">18</div>
+            <div class="recipe-name">Palitos de Queso Horneados</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de queso blanco firme (tipo panela o minas)</li><li>1 huevo batido</li><li>1/2 taza de harina de avena para empanar</li><li>1 cucharadita de orégano seco</li><li>1/2 cucharadita de ajo en polvo</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta el queso en palitos de aproximadamente 1cm de grosor y 7cm de largo.</li><li>Mezcla la harina de avena con el orégano, ajo en polvo y sal en un plato.</li><li>Pasa cada palito de queso por el huevo batido cubriendo bien.</li><li>Luego empana en la mezcla de harina de avena sazonada presionando suavemente.</li><li>Dispón los palitos en una bandeja forrada con papel para hornear.</li><li>Rocía un poco de aceite de oliva en spray por encima.</li><li>Hornea a 200°C por 15 minutos hasta que estén dorados y crujientes.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El queso blanco aporta proteína de caseína, una proteína de absorción lenta que mantiene tus músculos nutridos por más tiempo. Al hornearlos en lugar de freírlos, reduces las grasas inflamatorias.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">19</div>
+            <div class="recipe-name">Pan de Queso Fit de Sartén</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 huevo entero</li><li>2 cucharadas de almidón de yuca (tapioca)</li><li>2 cucharadas de queso blanco rallado</li><li>1 cucharadita de aceite de oliva</li><li>Sal al gusto</li><li>Orégano seco (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En un tazón, mezcla el huevo, el almidón de yuca y el queso rallado.</li><li>Agrega la sal y el orégano, revuelve hasta obtener una masa homogénea.</li><li>Calienta una sartén pequeña antiadherente a fuego medio-bajo.</li><li>Agrega el aceite de oliva y vierte la masa esparciendo uniformemente.</li><li>Cocina tapado por 3 minutos hasta que la base esté firme y dorada.</li><li>Voltea con cuidado y cocina 2 minutos más del otro lado.</li><li>Sirve caliente directamente de la sartén.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este pan de queso de sartén es una alternativa rápida y sin gluten que aporta proteína del queso y el huevo. Es perfecto como merienda pre-entrenamiento, dándote energía sin pesadez.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">20</div>
+            <div class="recipe-name">Muffin de Banana con Chocolate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 bananas maduras</li><li>2 huevos enteros</li><li>1 taza de avena en hojuelas</li><li>1 cucharada de polvo de hornear</li><li>1 cucharada de canela en polvo</li><li>2 cucharadas de gotas de chocolate amargo 70%</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C y prepara un molde de muffins con capacillos.</li><li>Aplasta las bananas con un tenedor y mezcla con los huevos batidos.</li><li>Incorpora la avena en hojuelas, el polvo de hornear y la canela.</li><li>Agrega las gotas de chocolate amargo y mezcla suavemente sin batir de más.</li><li>Distribuye la masa en 8 moldes de muffin, llenando 3/4 de cada uno.</li><li>Hornea por 20-22 minutos hasta que al insertar un palillo salga limpio.</li><li>Deja enfriar 10 minutos antes de desmoldar y consume o congela para la semana.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La banana madura sustituye el azúcar refinada y aporta potasio para la función muscular. El chocolate amargo 70% contiene flavonoides que mejoran la circulación y la sensibilidad a la insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">21</div>
+            <div class="recipe-name">Palomitas Caseras Sazonadas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 taza de maíz para palomitas</li><li>1 cucharada de aceite de coco</li><li>Sal marina fina</li><li>1/2 cucharadita de páprika ahumada</li><li>1/2 cucharadita de ajo en polvo</li><li>1 cucharada de levadura nutricional (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta el aceite de coco en una olla grande con tapa a fuego medio-alto.</li><li>Agrega 3 granos de maíz y espera a que exploten para saber que el aceite está listo.</li><li>Añade el resto del maíz, tapa la olla y sacude suavemente.</li><li>Mantén a fuego medio hasta que las explosiones se espacien a 3 segundos entre sí.</li><li>Retira del fuego y destapa con cuidado.</li><li>Sazona inmediatamente con sal marina, páprika y ajo en polvo mientras están calientes.</li><li>Agrega levadura nutricional si deseas un sabor similar al queso sin lácteos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las palomitas de maíz naturales son un snack de grano entero con fibra que sacia. La levadura nutricional aporta vitaminas del complejo B, esenciales para la producción de energía celular y el equilibrio del sistema nervioso.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/fitness/almuerzos.jpg" alt="Almuerzos de Alto Rendimiento" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Almuerzos de Alto Rendimiento</h2>
+        <p class="chapter-desc">El almuerzo es la comida donde debes concentrar la mayor parte de tus nutrientes. Un plato bien armado con proteína, carbohidrato complejo y vegetales le da a tu cuerpo todo lo que necesita para construir músculo, mantener energía y equilibrar tus hormonas.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">22</div>
+            <div class="recipe-name">Bowl de Pollo con Quinoa</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>150g de pechuga de pollo a la parrilla</li><li>1 taza de quinoa cocida</li><li>1/2 aguacate en rebanadas</li><li>6 tomates cherry cortados por la mitad</li><li>Hojas verdes variadas (rúcula, espinaca)</li><li>Jugo de 1/2 limón y aceite de oliva para aderezar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina la quinoa según las instrucciones del paquete y deja enfriar.</li><li>Sazona la pechuga de pollo con sal, pimienta, ajo y páprika.</li><li>Asa el pollo a la parrilla o sartén por 6 minutos de cada lado hasta dorarlo.</li><li>Corta el pollo en rebanadas y prepara el aguacate.</li><li>Monta el bowl con la quinoa en la base, luego las hojas verdes alrededor.</li><li>Dispón las rebanadas de pollo, aguacate y tomates cherry.</li><li>Rocía con aceite de oliva y jugo de limón, sazona con sal y pimienta.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La quinoa es uno de los pocos granos que contiene los 9 aminoácidos esenciales. Combinada con pollo, creas un almuerzo con proteína completa que maximiza la recuperación muscular y mantiene tu glucosa estable por horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">23</div>
+            <div class="recipe-name">Ensalada Caesar Fit con Pollo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 corazón de lechuga romana</li><li>150g de pechuga de pollo a la parrilla</li><li>2 rebanadas de pan integral en cubos (crutones)</li><li>2 cucharadas de queso parmesano rallado</li><li>Salsa: 3 cucharadas de yogur griego, 1 cucharadita de mostaza, jugo de limón y ajo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Prepara la salsa mezclando el yogur griego con mostaza, jugo de limón y ajo picado.</li><li>Sazona y asa la pechuga de pollo a la parrilla hasta dorar por ambos lados.</li><li>Corta el pan integral en cubos pequeños y tuéstalos en el horno a 180°C por 8 minutos.</li><li>Lava y corta la lechuga romana en trozos grandes.</li><li>Corta el pollo en rebanadas sobre la lechuga.</li><li>Agrega los crutones integrales y espolvorea el queso parmesano.</li><li>Rocía con la salsa de yogur griego y sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La salsa Caesar tradicional tiene mucha grasa saturada. Esta versión con yogur griego aporta probióticos que mejoran la absorción de nutrientes y la salud intestinal, factor clave para el equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">24</div>
+            <div class="recipe-name">Strogonoff Fitness de Pollo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>400g de pechuga de pollo en cubos</li><li>1 cebolla mediana picada</li><li>1 taza de champiñones fileteados</li><li>1 taza de yogur griego natural</li><li>2 cucharadas de salsa de tomate casera</li><li>Sal, pimienta y nuez moscada al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Sazona los cubos de pollo con sal, pimienta y ajo en polvo.</li><li>En una sartén grande, sofríe la cebolla con un poco de aceite de oliva.</li><li>Agrega el pollo y dora por todos los lados a fuego alto por 5 minutos.</li><li>Incorpora los champiñones fileteados y cocina por 3 minutos más.</li><li>Baja el fuego, agrega la salsa de tomate y mezcla bien.</li><li>Apaga el fuego completamente y entonces incorpora el yogur griego, revolviendo.</li><li>Sirve con arroz integral o arroz de coliflor y espolvorea perejil fresco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Sustituir la crema de leche por yogur griego reduce drásticamente las grasas saturadas y aporta proteína extra. Los champiñones contienen vitamina D, esencial para la absorción de calcio y la salud ósea después de los 40.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">25</div>
+            <div class="recipe-name">Wrap de Pollo con Hummus</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 tortilla integral grande</li><li>100g de pollo deshilachado sazonado</li><li>3 cucharadas de hummus casero</li><li>Hojas de lechuga y rúcula</li><li>Zanahoria rallada</li><li>1/2 tomate picado</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta ligeramente la tortilla integral en una sartén o directo en el fuego.</li><li>Esparce el hummus cubriendo toda la superficie de la tortilla.</li><li>Distribuye las hojas de lechuga y rúcula sobre el hummus.</li><li>Coloca el pollo deshilachado en el centro en una línea.</li><li>Agrega la zanahoria rallada y el tomate picado.</li><li>Enrolla la tortilla bien apretada, doblando primero los lados.</li><li>Corta por la mitad en diagonal y sirve o envuelve para llevar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El hummus aporta proteína vegetal del garbanzo y grasas saludables del tahini. Esta combinación con pollo ofrece un perfil de aminoácidos completo que maximiza la reparación muscular después del ejercicio.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">26</div>
+            <div class="recipe-name">Sándwich Natural de Pollo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 rebanadas de pan integral</li><li>100g de pechuga de pollo deshilachada</li><li>2 cucharadas de requesón light</li><li>Lechuga, tomate y zanahoria rallada</li><li>1 cucharadita de mostaza</li><li>Sal y pimienta al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Sazona el pollo deshilachado con mostaza, sal y pimienta, mezcla bien.</li><li>Esparce el requesón light sobre una rebanada de pan integral.</li><li>Coloca una capa de lechuga fresca como base sobre el requesón.</li><li>Agrega el pollo deshilachado sazonado sobre la lechuga.</li><li>Distribuye el tomate en rodajas y la zanahoria rallada encima.</li><li>Cierra el sándwich con la otra rebanada de pan.</li><li>Corta por la mitad en diagonal y sirve o envuelve en papel film para llevar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pan integral aporta fibra y carbohidratos de liberación lenta, mientras que el pollo y el requesón suman más de 30g de proteína. Este sándwich es ideal como almuerzo rápido en días de oficina sin sacrificar nutrición.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">27</div>
+            <div class="recipe-name">Ensalada de Salmón con Batata</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 filete de salmón fresco (150g)</li><li>1 batata (camote) mediana</li><li>2 tazas de mix de hojas verdes</li><li>1 taza de brócoli al vapor</li><li>2 cucharadas de semillas de girasol</li><li>Aderezo: aceite de oliva, limón y sal</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Pela y corta la batata en cubos, hornea a 200°C por 25 minutos hasta dorar.</li><li>Sazona el salmón con sal, pimienta y jugo de limón.</li><li>Asa el salmón en sartén caliente por 4 minutos de cada lado, dejando el centro jugoso.</li><li>Cocina el brócoli al vapor por 5 minutos hasta que esté tierno pero firme.</li><li>Monta la ensalada con las hojas verdes como base en un plato amplio.</li><li>Dispón la batata, el brócoli y el salmón desmenuzado encima.</li><li>Espolvorea las semillas de girasol y rocía con aceite de oliva y limón.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El salmón es la mejor fuente de omega 3 EPA y DHA, ácidos grasos que reducen la inflamación y mejoran la comunicación entre tus células hormonales. La batata aporta carbohidratos complejos que no disparan la insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">28</div>
+            <div class="recipe-name">Atún Sellado con Ajonjolí</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 filete de atún fresco (200g)</li><li>3 cucharadas de ajonjolí (blanco y negro)</li><li>2 cucharadas de salsa de soya baja en sodio</li><li>1 cucharadita de jengibre fresco rallado</li><li>Mix de hojas verdes para acompañar</li><li>1 cucharadita de aceite de ajonjolí</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Marina el filete de atún con salsa de soya, jengibre rallado y aceite de ajonjolí por 10 minutos.</li><li>Esparce el ajonjolí en un plato y presiona el filete por todos los lados para cubrirlo.</li><li>Calienta una sartén de hierro a fuego muy alto hasta que humee ligeramente.</li><li>Sella el atún por 30-40 segundos de cada lado sin moverlo.</li><li>El centro debe quedar rosado y jugoso — no lo cocines de más.</li><li>Corta en rebanadas de 1cm de grosor con un cuchillo afilado.</li><li>Sirve sobre un colchón de hojas verdes con rodajas de pepino y aguacate.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El atún fresco contiene más de 30g de proteína por porción con mínima grasa. El jengibre es un potente antiinflamatorio que mejora la digestión y apoya la termogénesis, acelerando tu metabolismo de forma natural.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">29</div>
+            <div class="recipe-name">Tortilla de Horno con Vegetales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>6 huevos enteros</li><li>1 calabacín rallado</li><li>1 zanahoria rallada</li><li>1/2 taza de brócoli picado finamente</li><li>1/3 taza de queso light rallado</li><li>Sal, pimienta y hierbas frescas al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C y engrasa un molde refractario.</li><li>Bate los huevos en un tazón grande con sal, pimienta y hierbas.</li><li>Exprime el calabacín rallado para retirar el exceso de agua.</li><li>Incorpora el calabacín, la zanahoria, el brócoli y el queso a los huevos batidos.</li><li>Vierte la mezcla en el molde refractario distribuyendo los vegetales uniformemente.</li><li>Hornea por 25-30 minutos hasta que esté firme y dorada por encima.</li><li>Deja enfriar 5 minutos, corta en porciones y sirve con ensalada verde.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta tortilla al horno es una excelente fuente de proteína completa y se puede preparar el domingo para tener porciones listas toda la semana. Los huevos contienen colina, nutriente clave para la función hepática y el metabolismo de grasas.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/fitness/cenas.jpg" alt="Cenas Ligeras y Reconfortantes" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Cenas Ligeras y Reconfortantes</h2>
+        <p class="chapter-desc">La cena es clave para la recuperación nocturna. Tu cuerpo repara músculos y equilibra hormonas mientras duermes. Una cena ligera pero nutritiva favorece la producción de hormona del crecimiento, que quema grasa y regenera tejidos durante la noche.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">30</div>
+            <div class="recipe-name">Risotto de Coliflor con Pollo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 coliflor grande procesada en granos finos</li><li>200g de pechuga de pollo en cubos pequeños</li><li>1 cebolla mediana picada finamente</li><li>2 dientes de ajo picados</li><li>1/2 taza de caldo de vegetales bajo en sodio</li><li>2 cucharadas de queso parmesano rallado</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Procesa la coliflor en el procesador hasta que quede con textura de arroz.</li><li>Sofríe la cebolla y el ajo con aceite de oliva hasta que estén transparentes.</li><li>Agrega los cubos de pollo sazonados y dora por todos los lados.</li><li>Incorpora la coliflor procesada y revuelve bien.</li><li>Agrega el caldo de vegetales poco a poco, revolviendo como si fuera risotto.</li><li>Cocina por 8-10 minutos hasta que la coliflor esté tierna pero no blanda.</li><li>Finaliza con queso parmesano, pimienta negra y perejil fresco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El arroz de coliflor tiene 80% menos carbohidratos que el arroz blanco. Esto permite una cena saciante que no eleva la insulina antes de dormir, favoreciendo la producción de hormona del crecimiento durante la noche.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">31</div>
+            <div class="recipe-name">Sopa de Lentejas Nutritiva</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de lentejas lavadas</li><li>2 zanahorias picadas en cubos</li><li>2 papas medianas peladas y picadas</li><li>1 cebolla y 2 dientes de ajo picados</li><li>1 litro de caldo de vegetales</li><li>Comino, cúrcuma y sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Sofríe la cebolla y el ajo en una olla grande con aceite de oliva.</li><li>Agrega la zanahoria y la papa, sofríe por 3 minutos más.</li><li>Incorpora las lentejas lavadas y el caldo de vegetales.</li><li>Sazona con comino, cúrcuma, sal y pimienta.</li><li>Lleva a ebullición y luego baja a fuego medio-bajo.</li><li>Cocina tapado por 25-30 minutos hasta que las lentejas estén tiernas.</li><li>Sirve bien caliente con un chorrito de aceite de oliva y perejil fresco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las lentejas son ricas en hierro vegetal y ácido fólico, nutrientes que combaten la fatiga hormonal. La cúrcuma potencia la acción antiinflamatoria de esta sopa, ayudando a reducir la inflamación que interfiere con el metabolismo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">32</div>
+            <div class="recipe-name">Escondidinho de Pollo con Coliflor</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>400g de pollo deshilachado sazonado</li><li>1 coliflor grande cocida y escurrida</li><li>200ml de leche descremada</li><li>1/2 taza de salsa de tomate casera</li><li>1/3 taza de queso light rallado para gratinar</li><li>Sal, pimienta y nuez moscada al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina y deshilacha el pollo sazonado con ajo, cebolla y sal.</li><li>Cocina la coliflor al vapor y aplástala con la leche hasta formar un puré cremoso.</li><li>Sazona el puré con sal, pimienta y una pizca de nuez moscada.</li><li>En un refractario, coloca una capa de pollo deshilachado con salsa de tomate.</li><li>Cubre completamente con el puré de coliflor alisando la superficie.</li><li>Espolvorea el queso rallado por encima.</li><li>Hornea a 180°C por 20 minutos hasta que el queso esté dorado y burbujeante.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta versión fitness del clásico sustituye la papa por coliflor, reduciendo los carbohidratos en un 75%. Es una cena reconfortante que alimenta tus músculos con proteína sin sobrecargar tu insulina antes de dormir.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">33</div>
+            <div class="recipe-name">Berenjena Rellena al Horno</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 berenjenas grandes</li><li>300g de carne molida magra de res o pollo</li><li>1 cebolla mediana y 2 tomates picados</li><li>1/2 pimiento rojo picado</li><li>1/3 taza de queso light rallado para gratinar</li><li>Sal, pimienta, orégano y ajo en polvo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta las berenjenas por la mitad a lo largo y retira la pulpa con una cuchara dejando la cáscara intacta.</li><li>Sofríe la cebolla, el ajo y el pimiento con aceite de oliva por 3 minutos.</li><li>Agrega la carne molida y cocina deshaciendo los grumos hasta dorar completamente.</li><li>Pica la pulpa de berenjena y agrégala al sofrito con los tomates.</li><li>Sazona con sal, pimienta y orégano, cocina 5 minutos más.</li><li>Rellena las cáscaras de berenjena con la mezcla y cubre con queso rallado.</li><li>Hornea a 180°C por 30-35 minutos hasta que la berenjena esté tierna y el queso dorado.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La berenjena es rica en nasunina, un antioxidante que protege las membranas celulares. Una cena con vegetales como base y proteína de calidad apoya la regeneración muscular nocturna sin exceso de calorías.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">34</div>
+            <div class="recipe-name">Filete de Tilapia al Horno</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 filetes de tilapia frescos</li><li>Jugo de 1 limón</li><li>8 tomates cherry cortados por la mitad</li><li>Hierbas frescas (tomillo y romero)</li><li>2 cucharadas de aceite de oliva</li><li>3 dientes de ajo laminados</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C.</li><li>Sazona los filetes de tilapia con jugo de limón, sal y pimienta por ambos lados.</li><li>Coloca los filetes en un refractario engrasado.</li><li>Distribuye los tomates cherry, las hierbas frescas y el ajo laminado alrededor.</li><li>Rocía todo con aceite de oliva.</li><li>Hornea por 18-20 minutos hasta que el pescado se deshaga fácilmente con un tenedor.</li><li>Sirve directamente del refractario acompañado de vegetales al vapor o ensalada.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La tilapia es un pescado magro con alta concentración de proteína y muy bajo en grasas. Es ideal para la cena porque se digiere fácilmente, permitiendo un descanso nocturno óptimo para la recuperación muscular y hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">35</div>
+            <div class="recipe-name">Hamburguesa Casera de Pavo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>500g de carne molida de pavo</li><li>1 cebolla pequeña rallada</li><li>2 cucharadas de avena en hojuelas</li><li>1 huevo entero</li><li>1 cucharadita de ajo en polvo</li><li>Sal y pimienta negra al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla la carne molida de pavo con la cebolla rallada, el huevo y la avena.</li><li>Sazona con ajo en polvo, sal y pimienta negra, mezcla con las manos.</li><li>Deja reposar la mezcla en el refrigerador por 15 minutos para que la avena absorba.</li><li>Divide la mezcla en 4 porciones iguales y moldea hamburguesas de 1.5cm de grosor.</li><li>Asa en la parrilla o sartén caliente por 5-6 minutos de cada lado sin presionar.</li><li>Monta en pan integral con lechuga, tomate, mostaza y aguacate.</li><li>Congela las hamburguesas crudas sobrantes individualmente para tener siempre a mano.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pavo es una de las carnes más magras y ricas en triptófano, aminoácido precursor de la serotonina y melatonina. Una cena con pavo no solo nutre tus músculos sino que también favorece un sueño reparador y el equilibrio emocional.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/fitness/mealprep.jpg" alt="Preparaciones para la Semana" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Preparaciones para la Semana</h2>
+        <p class="chapter-desc">El meal prep es tu mejor estrategia para no caer en opciones rápidas y poco saludables. Dedicar unas horas del fin de semana a preparar comidas te asegura que siempre tendrás opciones nutritivas listas, sin excusas ni improvisaciones que saboteen tu progreso.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">36</div>
+            <div class="recipe-name">Tortilla de Horno Meal Prep</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>8 huevos enteros</li><li>1 taza de brócoli picado finamente</li><li>1 calabacín rallado y exprimido</li><li>1/2 taza de queso cottage</li><li>8 tomates cherry cortados por la mitad</li><li>Sal, pimienta y hierbas secas al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C y engrasa un molde refractario rectangular.</li><li>Bate los huevos con el queso cottage, sal, pimienta y hierbas.</li><li>Incorpora el brócoli picado y el calabacín rallado bien exprimido.</li><li>Vierte la mezcla en el refractario distribuyendo los vegetales uniformemente.</li><li>Coloca los tomates cherry por encima presionándolos ligeramente.</li><li>Hornea por 30 minutos hasta que esté firme, dorada y cuajada en el centro.</li><li>Deja enfriar, corta en 6 porciones iguales y almacena en recipientes individuales.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta tortilla se conserva perfectamente 5 días en el refrigerador. Cada porción aporta proteína de alto valor biológico que mantiene tus músculos nutridos. El brócoli contiene indol-3-carbinol, un compuesto que apoya la metabolización saludable del estrógeno.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">37</div>
+            <div class="recipe-name">Muffin Salado de Espinaca</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 huevos enteros</li><li>1 taza de espinaca fresca picada</li><li>1/2 taza de queso cottage</li><li>1/4 taza de harina de avena</li><li>6 tomates cherry</li><li>Sal, pimienta y nuez moscada al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C y engrasa un molde de muffins o usa capacillos de silicona.</li><li>Bate los huevos con el queso cottage en un tazón hasta integrar bien.</li><li>Agrega la espinaca picada, la harina de avena y los condimentos.</li><li>Mezcla bien hasta obtener una masa homogénea.</li><li>Distribuye la mezcla en 6 moldes de muffin, llenando hasta 3/4 de cada uno.</li><li>Coloca un tomate cherry en la parte superior de cada muffin presionando levemente.</li><li>Hornea por 20-22 minutos hasta que estén dorados y firmes al tacto.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estos muffins se congelan perfectamente y se recalientan en microondas en 1 minuto. Son el snack ideal pre o post entrenamiento: la espinaca aporta hierro y magnesio, minerales que previenen calambres y fatiga muscular.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">38</div>
+            <div class="recipe-name">Smoothie Bowl de Aguacate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1/2 aguacate maduro</li><li>1 banana congelada</li><li>1 taza de espinaca fresca</li><li>100ml de leche de coco sin azúcar</li><li>1 cucharada de semillas de chía</li><li>Granola casera y frutas para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca el aguacate, la banana congelada y la espinaca en la licuadora.</li><li>Agrega la leche de coco y bate hasta obtener una crema espesa y suave.</li><li>Si queda muy espeso, agrega un poco más de leche, una cucharada a la vez.</li><li>Vierte en un bowl amplio.</li><li>Espolvorea las semillas de chía por encima.</li><li>Decora con granola casera, rodajas de banana fresca y frutos rojos.</li><li>Consume inmediatamente para mantener la textura cremosa.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El aguacate es rico en grasas monoinsaturadas que son esenciales para la producción de progesterona. Este bowl combina grasas saludables, fibra y micronutrientes que nutren tu sistema hormonal y mantienen la saciedad por horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">39</div>
+            <div class="recipe-name">Wrap de Lechuga con Atún</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 hojas grandes de lechuga americana firmes</li><li>1 lata de atún en agua escurrido (170g)</li><li>1 tomate mediano picado en cubos</li><li>1/2 aguacate en cubos</li><li>Jugo de 1/2 limón</li><li>Sal, pimienta y cilantro fresco picado</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava y seca cuidadosamente las hojas de lechuga, manteniéndolas enteras.</li><li>Escurre el atún y colócalo en un tazón, deshiláchalo con un tenedor.</li><li>Agrega el tomate picado, el cilantro y sazona con sal y pimienta.</li><li>Aplasta el aguacate con limón y sal en otro tazón pequeño.</li><li>Coloca una cucharada de aguacate sobre cada hoja de lechuga.</li><li>Agrega la mezcla de atún sazonado sobre el aguacate.</li><li>Enrolla cada hoja como un wrap, fija con un palillo y sirve fresco.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estos wraps sin tortilla eliminan los carbohidratos innecesarios sin sacrificar sabor. El atún aporta proteína magra y omega 3, mientras que el aguacate provee grasas que tu cuerpo usa para producir hormonas equilibrantes.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">40</div>
+            <div class="recipe-name">Panqueque Fit de Espinaca</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de espinaca fresca</li><li>2 huevos enteros</li><li>3 cucharadas de avena en hojuelas</li><li>2 cucharadas de queso cottage</li><li>1/2 tomate picado y albahaca fresca</li><li>Sal y pimienta al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca la espinaca, los huevos y la avena en la licuadora y bate hasta que quede verde y homogéneo.</li><li>Calienta una sartén antiadherente a fuego medio con un toque de aceite.</li><li>Vierte porciones de la masa formando panqueques finos y redondos.</li><li>Cocina 2 minutos de cada lado hasta que estén firmes y ligeramente dorados.</li><li>Prepara el relleno mezclando el cottage con el tomate picado y la albahaca.</li><li>Rellena cada panqueque con la mezcla, enrolla como una crepé.</li><li>Dispón en un refractario y recalienta en el horno si deseas servir caliente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estos panqueques se preparan en lote y se almacenan en el refrigerador hasta 4 días. La espinaca les da color vibrante y aporta ácido fólico y hierro, mientras que el cottage suma proteína de caseína para nutrición muscular sostenida.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/fitness/postres.jpg" alt="Postres y Dulces Fit" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Postres y Dulces Fit</h2>
+        <p class="chapter-desc">Comer saludable no significa renunciar al placer. Estos postres satisfacen tu antojo dulce sin disparar la insulina ni sabotear tu progreso. Están diseñados con ingredientes naturales que nutren en lugar de inflamar, para que disfrutes sin culpa.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">41</div>
+            <div class="recipe-name">Mousse Proteica de Chocolate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 aguacate maduro</li><li>2 cucharadas de cacao en polvo 100% sin azúcar</li><li>1 scoop de whey protein de chocolate</li><li>2 cucharadas de miel de abeja pura</li><li>1/2 taza de leche descremada</li><li>Frutos rojos para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta el aguacate por la mitad y retira la pulpa con una cuchara.</li><li>Coloca el aguacate, el cacao, el whey protein y la miel en el procesador.</li><li>Agrega la leche descremada y procesa por 2-3 minutos hasta que quede cremoso.</li><li>Prueba y ajusta el dulce con más miel si es necesario.</li><li>Distribuye la mousse en 3-4 frasquitos o copas individuales.</li><li>Lleva al refrigerador por mínimo 2 horas hasta que esté firme y fría.</li><li>Decora con frutos rojos frescos y una pizca de cacao antes de servir.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El aguacate crea la textura cremosa sin lácteos ni azúcar. El cacao puro es rico en magnesio, mineral que relaja los músculos, mejora el sueño y reduce los antojos nocturnos — todo esto fundamental para el equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">42</div>
+            <div class="recipe-name">Brownie de Frijol Negro</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de frijol negro cocido y escurrido</li><li>2 huevos enteros</li><li>3 cucharadas de cacao en polvo 100%</li><li>1/4 taza de miel de abeja pura</li><li>1 cucharadita de polvo de hornear</li><li>2 cucharadas de gotas de chocolate amargo 70%</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C y engrasa un molde cuadrado pequeño.</li><li>Coloca el frijol negro cocido en el procesador y bate hasta formar una pasta suave.</li><li>Agrega los huevos, el cacao en polvo y la miel, procesa hasta integrar.</li><li>Incorpora el polvo de hornear y mezcla brevemente.</li><li>Agrega las gotas de chocolate amargo y revuelve con una espátula.</li><li>Vierte la masa en el molde y distribuye uniformemente.</li><li>Hornea por 20-22 minutos hasta que al insertar un palillo salga con migajas húmedas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Nadie adivina que tiene frijol negro. Este legumbre aporta proteína vegetal, fibra y hierro, creando un postre que estabiliza la glucosa en lugar de dispararla. Los flavonoides del chocolate amargo mejoran la circulación y la sensibilidad a la insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">43</div>
+            <div class="recipe-name">Barra de Cereal Casera</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tazas de avena en hojuelas</li><li>1/2 taza de nueces mixtas picadas</li><li>1/4 taza de miel de abeja pura</li><li>1/4 taza de pasta de maní natural</li><li>2 cucharadas de semillas de chía</li><li>1 cucharadita de canela en polvo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En un tazón grande, mezcla la avena, las nueces picadas, la chía y la canela.</li><li>En una olla pequeña, calienta la miel y la pasta de maní a fuego bajo hasta que se derritan y combinen.</li><li>Vierte la mezcla líquida sobre los ingredientes secos y revuelve bien.</li><li>Presiona firmemente la mezcla en un molde rectangular forrado con papel encerado.</li><li>Asegúrate de que quede bien compacta presionando con una cuchara o las manos.</li><li>Lleva al refrigerador por mínimo 2 horas hasta que esté firme.</li><li>Corta en 8-10 barras, envuelve individualmente y almacena en el refrigerador hasta 2 semanas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estas barras caseras no contienen los azúcares ocultos ni conservantes de las comerciales. La avena y la chía aportan fibra que mantiene estable tu glucosa, mientras que las nueces proveen grasas saludables para la producción hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">44</div>
+            <div class="recipe-name">Rollito de Pechuga de Pavo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 rebanadas de pechuga de pavo</li><li>4 cucharadas de queso crema light</li><li>Palitos de zanahoria delgados</li><li>Palitos de pepino delgados</li><li>Hojas de rúcula fresca</li><li>Mostaza al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Extiende las rebanadas de pechuga de pavo sobre una superficie limpia.</li><li>Esparce una cucharada de queso crema light sobre cada rebanada.</li><li>Agrega una línea fina de mostaza sobre el queso crema.</li><li>Coloca 2-3 hojas de rúcula y palitos de zanahoria y pepino en un extremo.</li><li>Enrolla cada rebanada bien apretada desde el extremo con los vegetales.</li><li>Corta cada rollito por la mitad en diagonal para presentar.</li><li>Fija con un palillo decorativo si es necesario y sirve fríos.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estos rollitos son el postre salado perfecto cuando quieres algo ligero pero proteico. El pavo aporta selenio, un mineral antioxidante que protege la tiroides, glándula maestra del metabolismo que regula cuántas calorías quemas en reposo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">45</div>
+            <div class="recipe-name">Bolitas Energéticas de Cacao</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de avena en hojuelas</li><li>1/2 taza de pasta de maní natural</li><li>3 cucharadas de cacao en polvo 100%</li><li>2 cucharadas de miel de abeja pura</li><li>2 cucharadas de semillas de chía</li><li>1/4 taza de coco rallado sin azúcar para cubrir</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En un tazón, mezcla la avena, la pasta de maní, el cacao en polvo y la miel.</li><li>Agrega las semillas de chía y revuelve hasta obtener una masa firme y homogénea.</li><li>Si la mezcla está muy seca, agrega una cucharada más de miel.</li><li>Con las manos ligeramente húmedas, forma bolitas del tamaño de una nuez grande.</li><li>Rueda cada bolita sobre el coco rallado para cubrirla completamente.</li><li>Coloca las bolitas en un recipiente forrado con papel encerado.</li><li>Refrigera por 1 hora mínimo antes de consumir y almacena hasta 2 semanas en el refrigerador.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estas bolitas son el snack perfecto pre-entrenamiento: aportan energía inmediata de la miel, energía sostenida de la avena y grasas saludables del maní. El cacao puro mejora el flujo sanguíneo al músculo, optimizando el rendimiento durante el ejercicio.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">46</div>
+            <div class="recipe-name">Bowl Proteico de Pollo y Garbanzos</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>150g de pechuga de pollo a la plancha, cortada en cubos</li><li>1/2 taza de garbanzos cocidos y escurridos</li><li>1 taza de espinaca fresca</li><li>1/2 aguacate en rebanadas</li><li>1/4 taza de tomate cherry cortado por la mitad</li><li>2 cucharadas de yogur griego natural</li><li>Jugo de 1/2 limón</li><li>1 cucharadita de aceite de oliva extra virgen</li><li>Sal, pimienta y comino al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Cocina la pechuga de pollo a la plancha con sal y pimienta hasta que esté dorada por ambos lados y córtala en cubos medianos.</li><li>En un bowl amplio, coloca la espinaca fresca como base.</li><li>Agrega los garbanzos escurridos, los cubos de pollo, el tomate cherry y las rebanadas de aguacate.</li><li>Mezcla el yogur griego con el jugo de limón, el aceite de oliva y una pizca de comino para crear un aderezo cremoso.</li><li>Vierte el aderezo sobre el bowl y mezcla suavemente.</li><li>Sirve de inmediato para disfrutar las texturas crujientes y cremosas juntas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este bowl combina dos fuentes de proteína complementarias: el pollo aporta aminoácidos completos para la reparación muscular, mientras los garbanzos agregan fibra y proteína vegetal que estabiliza la insulina. La combinación de ambos optimiza la síntesis proteica y mantiene la saciedad por horas, favoreciendo el equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">47</div>
+            <div class="recipe-name">Tortilla de Claras con Espinaca y Champiñones</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>5 claras de huevo</li><li>1 taza de espinaca fresca picada</li><li>1/2 taza de champiñones frescos rebanados</li><li>1/4 de cebolla picada finamente</li><li>1 cucharadita de aceite de oliva</li><li>Sal, pimienta y una pizca de cúrcuma</li><li>1 cucharada de queso parmesano rallado (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta el aceite de oliva en una sartén antiadherente a fuego medio.</li><li>Saltea la cebolla y los champiñones durante 3 minutos hasta que estén dorados y suelten su aroma.</li><li>Agrega la espinaca y cocina por 1 minuto hasta que se reduzca ligeramente.</li><li>Bate las claras de huevo con sal, pimienta y cúrcuma hasta que estén espumosas.</li><li>Vierte las claras sobre los vegetales salteados y distribuye uniformemente en la sartén.</li><li>Cocina a fuego medio-bajo durante 3-4 minutos sin mover, hasta que la base esté firme.</li><li>Dobla la tortilla por la mitad con cuidado, espolvorea con parmesano y sirve caliente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las claras de huevo son proteína pura sin grasa, ideales para la construcción muscular. La espinaca es rica en magnesio, un mineral que regula más de 300 funciones en tu cuerpo incluyendo la producción de hormonas y la calidad del sueño. Los champiñones aportan vitamina D, esencial para la absorción de calcio después de los 40.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">48</div>
+            <div class="recipe-name">Filete de Res con Brócoli al Vapor</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>180g de filete de res magro</li><li>2 tazas de brócoli fresco cortado en floretes</li><li>1 diente de ajo picado finamente</li><li>1 cucharada de salsa de soya baja en sodio</li><li>1 cucharadita de aceite de ajonjolí</li><li>Jugo de 1/2 limón</li><li>Sal, pimienta negra y hojuelas de chile seco al gusto</li><li>1 cucharadita de semillas de ajonjolí para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Sazona el filete con sal y pimienta y déjalo reposar 10 minutos a temperatura ambiente.</li><li>Cocina el brócoli al vapor durante 4-5 minutos hasta que esté tierno pero crujiente, sin que pierda su color verde intenso.</li><li>En una sartén bien caliente, sella el filete por ambos lados: 3 minutos por lado para término medio.</li><li>Retira el filete de la sartén y déjalo reposar 3 minutos antes de cortarlo en láminas delgadas.</li><li>Mezcla la salsa de soya con el aceite de ajonjolí, el ajo picado y el jugo de limón para crear un aderezo oriental.</li><li>Sirve las láminas de filete junto al brócoli al vapor, baña con el aderezo y espolvorea semillas de ajonjolí.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La carne de res es la fuente número uno de hierro hemo, el tipo que tu cuerpo absorbe con mayor eficiencia. Después de los 40, mantener niveles adecuados de hierro es vital para la energía y la oxigenación muscular. El brócoli aporta sulforafano, un compuesto que apoya la desintoxicación natural de estrógenos y favorece el equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">49</div>
+            <div class="recipe-name">Wrap Proteico de Pavo y Hummus</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 tortilla integral grande</li><li>100g de pechuga de pavo en rebanadas</li><li>3 cucharadas de hummus casero o natural</li><li>1/4 pepino en bastones finos</li><li>1/4 pimiento rojo en tiras</li><li>Hojas de lechuga o espinaca fresca</li><li>1 cucharadita de semillas de girasol</li><li>Sal y pimienta al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta la tortilla integral ligeramente en una sartén seca para que sea más flexible.</li><li>Esparce el hummus de manera uniforme sobre toda la superficie de la tortilla.</li><li>Coloca las rebanadas de pavo cubriendo el centro de la tortilla.</li><li>Agrega las hojas de lechuga o espinaca, los bastones de pepino y las tiras de pimiento.</li><li>Espolvorea las semillas de girasol sobre los vegetales.</li><li>Enrolla la tortilla bien apretada, doblando primero los extremos y luego enrollando desde abajo.</li><li>Corta el wrap por la mitad en diagonal y sirve de inmediato o envuelve en papel aluminio para llevar.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pavo es una de las carnes más magras y ricas en triptófano, un aminoácido que tu cuerpo convierte en serotonina y melatonina, regulando el estado de ánimo y el sueño. El hummus de garbanzos agrega proteína vegetal y fibra que estabiliza la glucosa, evitando los picos de insulina que aceleran el almacenamiento de grasa abdominal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">50</div>
+            <div class="recipe-name">Smoothie de Proteína con Mantequilla de Maní</div>
+            <span class="recipe-toggle" aria-hidden="true">&#9662;</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de leche de almendras sin azúcar</li><li>1 medida de proteína en polvo sabor vainilla o chocolate</li><li>1 cucharada de mantequilla de maní natural sin azúcar</li><li>1/2 plátano maduro congelado</li><li>1 cucharada de avena en hojuelas</li><li>1/2 cucharadita de canela en polvo</li><li>4-5 cubos de hielo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Agrega la leche de almendras al vaso de la licuadora como base líquida.</li><li>Incorpora el plátano congelado, la mantequilla de maní y la avena.</li><li>Añade la proteína en polvo y la canela.</li><li>Agrega los cubos de hielo para obtener una consistencia espesa y fría.</li><li>Licúa a máxima velocidad durante 45-60 segundos hasta que la mezcla sea completamente homogénea y cremosa.</li><li>Sirve de inmediato en un vaso grande y disfruta como desayuno completo o snack post-entrenamiento.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este smoothie es la recuperación muscular en un vaso: la proteína en polvo proporciona aminoácidos de rápida absorción, la mantequilla de maní aporta grasas saludables que reducen la inflamación post-ejercicio, y el plátano repone el potasio perdido durante el entrenamiento. La canela mejora la sensibilidad a la insulina, ayudando a que los nutrientes lleguen directamente al músculo.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Recetas Fitness Vol. 1</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

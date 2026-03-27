@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Guía de Carnes Inteligentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #DC2626;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #DC2626dd 0%, #DC2626 50%, #DC2626cc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🥩</span>
+    <h1>Guía de Carnes Inteligentes</h1>
+    <p class="hero-sub">Proteína inteligente: elige, cocina y combina para tu equilibrio hormonal</p>
+    <div class="hero-count">20 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Proteína Inteligente: Tu Aliada Hormonal</h2>
+        <div class="intro-content"><p>La proteína animal no es tu enemiga — es la materia prima que tu cuerpo necesita para construir músculo, producir hormonas y mantener tu metabolismo activo.</p><p>El secreto no está en CUÁNTA carne comes, sino en CÓMO la eliges, la preparas y la combinas.</p><p>Cuando combinas proteína de calidad con vegetales ricos en fibra y grasas saludables, creas un plato que estabiliza tu insulina, te sacia por horas y alimenta tu sistema hormonal.</p><p>En esta guía vas a aprender:</p><p class="intro-bullet">• 🥩 Cómo elegir los mejores cortes para tu equilibrio hormonal</p><p class="intro-bullet">• 🍗 Recetas con pollo, res y pescado que activan tu metabolismo</p><p class="intro-bullet">• 🥦 Combinaciones inteligentes que evitan picos de insulina</p><p class="intro-bullet">• ⏱️ Preparaciones rápidas para tu día a día real</p><p>Frecuencia recomendada: incluye proteína animal 3-4 veces por semana, alternando con legumbres y huevos los demás días. Prefiere siempre cortes magros y cocciones al horno, salteados o al vapor.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/carnes/cortes.jpg" alt="🔪 Guía de Cortes Inteligentes" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🔪 Guía de Cortes Inteligentes</h2>
+        <p class="chapter-desc">No todas las carnes son iguales. Aprende a elegir los cortes que más benefician tu equilibrio hormonal y cómo prepararlos para máximo aprovechamiento.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">🟢 Cortes Aliados — Tus Mejores Opciones</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── RES ──</li><li>🟢 Lomo de res — magro, alto en hierro y zinc</li><li>🟢 Falda (flank steak) — magra, ideal para desmechada</li><li>🟢 Carne molida magra (95%) — versátil para cualquier receta</li><li></li><li>── POLLO/PAVO ──</li><li>🟢 Pechuga de pollo sin piel — la proteína magra por excelencia</li><li>🟢 Muslo de pollo sin piel — más jugoso, ligeramente más grasa</li><li>🟢 Pechuga de pavo — ultra-magra, perfecta para meal prep</li><li></li><li>── PESCADO ──</li><li>🟢 Salmón — rico en omega-3, antiinflamatorio natural</li><li>🟢 Sardinas — omega-3 + calcio + vitamina D</li><li>🟢 Atún fresco — alto en proteína, bajo en grasa</li><li>🟢 Trucha — omega-3, fácil de preparar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Elige cortes que puedas ver la fibra de la carne sin capas gruesas de grasa visible</li><li>Los pescados grasos (salmón, sardinas) son la excepción: su grasa es omega-3 antiinflamatoria</li><li>Compra carne molida que diga '95% magra' o '90% magra' en la etiqueta</li><li>El pollo con piel tiene el doble de grasa — quítale la piel antes de cocinar</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los cortes magros tienen mayor densidad de proteína por caloría, lo que significa más material para construir músculo y producir hormonas sin exceso de grasas saturadas que inflaman tu sistema.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">🔴 Cortes a Limitar — Consumo Ocasional</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🔴 Costillas de res/cerdo — alto contenido de grasa saturada</li><li>🔴 Tocino/bacon — ultraprocesado, alto en sodio</li><li>🔴 Embutidos (salchichas, chorizo, mortadela) — procesados con aditivos</li><li>🔴 Carne frita o empanizada — la fritura anula los beneficios</li><li>🔴 Pollo con piel frito — duplica las calorías y la grasa</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>No necesitas eliminarlos — consúmelos como excepción, no como base</li><li>Si comes embutidos, busca versiones sin nitratos y bajas en sodio</li><li>Sustituye tocino por pechuga de pavo en rodajas para desayunos</li><li>En vez de empanizar: usa semillas de linaza o avena como cobertura al horno</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las carnes procesadas contienen nitratos, exceso de sodio y grasas trans que promueven inflamación crónica. La inflamación es enemiga directa de tu sensibilidad a la insulina. Mientras más natural y sin procesar sea tu proteína, mejor para tu equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">👩‍🍳 Las 3 Mejores Cocciones para tu Metabolismo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>✅ AL HORNO — Temperatura media (180°C), jugosa y sin grasa añadida</li><li>✅ SALTEADO RÁPIDO — Sartén antiadherente, poco aceite, alta temperatura, cocción rápida</li><li>✅ AL VAPOR / HERVIDO — Preserva nutrientes al máximo, ideal para pescado</li><li></li><li>⚠️ A LIMITAR:</li><li>❌ FRITO — Agrega grasa innecesaria y genera compuestos inflamatorios</li><li>❌ EMPANIZADO — Añade carbohidratos refinados que disparan la insulina</li><li>❌ AHUMADO EXCESIVO — Puede generar compuestos potencialmente dañinos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Sartén antiadherente + 1 cdita de aceite de oliva = la combinación perfecta para saltear</li><li>Al horno con hierbas: romero, tomillo, orégano realzan sabor sin añadir calorías</li><li>Marinadas con limón + ajo + hierbas = carne tierna y sabrosa sin azúcar ni sal excesiva</li><li>El pescado al vapor con limón y eneldo está listo en 8-10 minutos — la opción más rápida</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La cocción a temperaturas extremas (fritura, parrilla muy quemada) genera compuestos llamados AGEs (productos de glicación avanzada) que aumentan la resistencia a la insulina. Cocinar a temperatura media-alta con poco aceite es la estrategia más protectora.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/carnes/res.jpg" alt="🥩 Recetas con Res — Potencia y Sabor" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🥩 Recetas con Res — Potencia y Sabor</h2>
+        <p class="chapter-desc">La carne de res es rica en hierro, zinc y vitamina B12 — nutrientes clave para tu energía y producción hormonal. Estas recetas la combinan con vegetales para un impacto glucémico mínimo.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Tazón de Carne Molida con Espinaca y Aguacate</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>100g de carne molida magra</li><li>1 taza de espinaca fresca</li><li>½ aguacate en cubos</li><li>1 cdita de aceite de oliva</li><li>1 diente de ajo picado</li><li>Sal marina y orégano al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta el aceite de oliva en sartén antiadherente a fuego medio-alto</li><li>Saltea la carne molida con el ajo picado y el orégano hasta dorar (5-6 min)</li><li>Agrega la espinaca fresca y cocina 2 minutos hasta que se reduzca</li><li>Sirve en un plato hondo y corona con los cubos de aguacate fresco</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este tazón tiene los 3 pilares del equilibrio hormonal: proteína (carne), fibra (espinaca) y grasa saludable (aguacate). La espinaca aporta magnesio, mineral clave para la sensibilidad a la insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Rollitos de Repollo con Carne Desmechada</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 hojas grandes de repollo</li><li>120g de carne de res cocida y desmechada</li><li>1 cda de semillas de chía</li><li>½ cdita de cúrcuma en polvo</li><li>1 diente de ajo picado</li><li>Sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Blanquea las hojas de repollo en agua hirviendo 2 minutos para suavizarlas</li><li>Mezcla la carne desmechada con la cúrcuma, chía y ajo</li><li>Coloca la mezcla en el centro de cada hoja y enrolla firme</li><li>Cocina al vapor por 10 minutos hasta que estén tiernos</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El repollo reemplaza la masa como 'envoltorio' — cero carbohidratos refinados. La cúrcuma es antiinflamatoria natural y la chía aporta omega-3. Tu insulina no se entera de que estás comiendo 'rollitos'.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Salteado de Calabacín con Tiras de Res</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>100g de carne de res magra en tiras finas</li><li>1 calabacín grande en medias lunas</li><li>½ pimentón rojo en tiras</li><li>1 diente de ajo picado</li><li>1 cdita de aceite de oliva</li><li>Pimienta negra y sal al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta la carne en tiras finas y sazónalas con ajo, sal y pimienta</li><li>Calienta el aceite en sartén a fuego alto y sella la carne 3-4 minutos</li><li>Retira la carne y en la misma sartén saltea el calabacín y pimentón 4 minutos</li><li>Devuelve la carne, mezcla todo y sirve caliente</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El calabacín tiene IG bajísimo y es 95% agua — llena tu plato sin impactar tu glucosa. El pimentón rojo aporta vitamina C, que mejora la absorción del hierro de la carne. Combinación perfecta.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Tortilla Proteica de Espinaca y Carne Mechada</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 huevos</li><li>50g de carne mechada (sobrante del día anterior)</li><li>½ taza de espinaca picada</li><li>¼ de aguacate en láminas</li><li>Sal marina al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate los huevos con la espinaca picada y una pizca de sal</li><li>Vierte en sartén antiadherente a fuego medio</li><li>Cuando esté casi cuajada, coloca la carne mechada y el aguacate en un lado</li><li>Dobla la tortilla, cocina 1 minuto más y sirve</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta tortilla es un desayuno hormonal perfecto: proteína del huevo + carne, grasa del aguacate, y fibra de la espinaca. Te mantiene saciada hasta el almuerzo sin picos de insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Bowl de Carne con Brócoli al Vapor</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>100g de carne de res magra en cubos</li><li>1 taza de brócoli en ramitas</li><li>½ aguacate en cubos</li><li>1 cdita de aceite de oliva</li><li>Ajo y sal al gusto</li><li>Jugo de ½ limón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Saltea la carne en aceite de oliva con ajo y sal hasta dorar bien (5-6 min)</li><li>Cocina el brócoli al vapor 4-5 minutos — que quede tierno pero firme</li><li>Arma el bowl: base de brócoli, encima la carne, corona con aguacate</li><li>Exprime el limón por encima y sirve inmediatamente</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El brócoli es un vegetal crucífero que ayuda al hígado a metabolizar el exceso de estrógeno — especialmente importante después de los 40. Combinado con proteína y grasa buena, es un plato de equilibrio hormonal completo.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/carnes/pollo.jpg" alt="🍗 Recetas con Pollo y Pavo — Ligeras y Saciantes" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🍗 Recetas con Pollo y Pavo — Ligeras y Saciantes</h2>
+        <p class="chapter-desc">El pollo y el pavo son las proteínas más versátiles y accesibles. Con estas recetas, las transformas en platos que nutren tus hormonas sin complicarte la vida.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Pechuga de Pollo al Limón con Vegetales Asados</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 pechuga de pollo sin piel</li><li>1 calabacín en rodajas</li><li>1 taza de brócoli en ramitas</li><li>½ pimentón rojo en tiras</li><li>Jugo de 1 limón</li><li>1 cda de aceite de oliva</li><li>Romero fresco, sal y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Marina la pechuga en limón, aceite, romero, sal y pimienta por 15 minutos</li><li>Distribuye los vegetales en una bandeja para horno con un toque de aceite</li><li>Coloca la pechuga sobre los vegetales y hornea a 190°C por 25 minutos</li><li>La pechuga se cocina jugosa sobre los vegetales que absorben todos los jugos</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cocinar proteína y vegetales juntos en una sola bandeja es la estrategia más eficiente: un solo plato, mínima limpieza, y los vegetales absorben los jugos de la carne haciéndolos más sabrosos. Meal prep del futuro.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Wraps de Lechuga con Pollo Desmechado</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>120g de pechuga de pollo cocida y desmechada</li><li>4 hojas grandes de lechuga romana</li><li>¼ taza de zanahoria rallada</li><li>¼ de aguacate en tiras</li><li>1 cda de yogur griego natural</li><li>Cilantro fresco picado</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Desmecha el pollo cocido y mezcla con el yogur griego y cilantro</li><li>Lava bien las hojas de lechuga y sécalas — serán tu 'tortilla'</li><li>Coloca el pollo, la zanahoria rallada y el aguacate sobre cada hoja</li><li>Enrolla como taco y come con las manos — fresco y crujiente</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La lechuga reemplaza la tortilla eliminando los carbohidratos refinados que disparan tu insulina. El yogur griego agrega proteína extra y probióticos. Un almuerzo ligero que no te deja pesada ni soñolienta.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Pollo Salteado con Champiñones y Espárragos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>120g de pechuga de pollo en cubos</li><li>1 taza de champiñones laminados</li><li>6 espárragos cortados en trozos</li><li>1 diente de ajo picado</li><li>1 cdita de aceite de oliva</li><li>Tomillo seco, sal y pimienta</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Sella los cubos de pollo en aceite de oliva a fuego alto hasta dorar (4-5 min)</li><li>Retira el pollo y en la misma sartén saltea champiñones y espárragos con ajo</li><li>Cuando los champiñones suelten su líquido, devuelve el pollo</li><li>Espolvorea tomillo, mezcla 1 minuto más y sirve</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los champiñones son una fuente excepcional de vitamina D (especialmente si recibieron luz solar) y selenio — ambos nutrientes clave para la función tiroidea. Los espárragos aportan folato y son prebióticos naturales que alimentan tu microbiota intestinal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">Hamburguesas de Pavo con Espinaca (Sin Pan)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>200g de carne molida de pavo</li><li>½ taza de espinaca picada fina</li><li>1 huevo</li><li>2 cdas de avena en hojuelas</li><li>Ajo en polvo, comino, sal y pimienta</li><li>Hojas de lechuga para servir</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla el pavo molido con espinaca, huevo, avena y especias hasta integrar bien</li><li>Forma 3-4 hamburguesas y cocina en sartén antiadherente 5 min por lado</li><li>Sirve cada hamburguesa envuelta en hoja de lechuga en vez de pan</li><li>Acompaña con rodajas de tomate y aguacate</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La avena en la mezcla actúa como aglutinante Y como fibra que retarda la digestión. El pavo es la carne más magra que existe — prácticamente pura proteína. Sin pan, este plato tiene impacto glucémico casi nulo.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/carnes/pescado.jpg" alt="🐟 Recetas con Pescado — Omega-3 y Antiinflamación" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🐟 Recetas con Pescado — Omega-3 y Antiinflamación</h2>
+        <p class="chapter-desc">Los pescados grasos son la fuente más poderosa de omega-3, el ácido graso que combate la inflamación crónica — el motor silencioso de la resistencia a la insulina.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">Salmón al Horno con Limón y Hierbas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 filete de salmón (150g)</li><li>Jugo de 1 limón</li><li>1 cda de aceite de oliva</li><li>Eneldo fresco (o seco)</li><li>1 diente de ajo en láminas</li><li>Sal y pimienta negra</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 200°C y forra una bandeja con papel aluminio</li><li>Coloca el salmón, baña con limón y aceite, distribuye ajo y eneldo encima</li><li>Cierra el aluminio formando un paquete y hornea 18-20 minutos</li><li>El salmón queda jugoso, tierno y lleno de sabor sin grasa añadida</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El salmón es el rey del omega-3 EPA y DHA — ácidos grasos que reducen la inflamación crónica, mejoran la sensibilidad a la insulina y protegen tu corazón. 2 porciones por semana transforman tu perfil hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">Ensalada Tibia de Atún con Vegetales Crujientes</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 lata de atún en agua (escurrido)</li><li>1 taza de mix de hojas verdes</li><li>½ pepino en rodajas</li><li>5 tomates cherry partidos</li><li>¼ de aguacate en cubos</li><li>Aceite de oliva, limón y sal</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Arma la base con las hojas verdes, pepino y tomates cherry</li><li>Calienta el atún 1 minuto en sartén con un toque de aceite (opcional)</li><li>Coloca el atún tibio sobre la ensalada fría y agrega el aguacate</li><li>Adereza con aceite de oliva, jugo de limón y sal marina</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El contraste tibio-frío hace esta ensalada adictiva. El atún en agua es pura proteína (25g por lata) con casi cero grasa. El aguacate y el aceite de oliva aportan las grasas saludables que tu cuerpo necesita para absorber las vitaminas liposolubles.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">Sardinas al Horno con Tomate y Ajo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>6 sardinas frescas (o 2 latas en aceite de oliva)</li><li>2 tomates maduros en rodajas</li><li>3 dientes de ajo laminados</li><li>1 cda de aceite de oliva</li><li>Perejil fresco picado</li><li>Sal, pimienta y pimentón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Distribuye las rodajas de tomate en una bandeja para horno</li><li>Coloca las sardinas encima, agrega ajo, aceite y especias</li><li>Hornea a 200°C por 15 minutos (8 min si son de lata)</li><li>Espolvorea perejil fresco al servir — el aroma es increíble</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las sardinas son un superalimento subestimado: omega-3 + calcio (de las espinas comestibles) + vitamina D + selenio. Son la proteína más económica y nutritiva que existe para tu equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">16</div>
+            <div class="recipe-name">Ceviche Express de Pescado Blanco</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>150g de filete de pescado blanco (tilapia, corvina) en cubos pequeños</li><li>Jugo de 3-4 limones (debe cubrir el pescado)</li><li>¼ de cebolla morada en plumas finas</li><li>½ pepino en cubitos</li><li>Cilantro fresco picado</li><li>Sal, pimienta y un toque de ají (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Corta el pescado en cubos pequeños y cúbrelo con jugo de limón en un bowl</li><li>Refrigera 30-40 minutos removiendo una vez (el limón 'cocina' el pescado)</li><li>Cuando esté blanco y firme, escurre y mezcla con cebolla, pepino y cilantro</li><li>Sazona con sal, pimienta y ají al gusto — sirve bien frío</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El ceviche es cocción sin fuego ni aceite — la preparación más limpia que existe. El pescado blanco es prácticamente proteína pura con IG cero. La cebolla morada aporta quercetina, un antioxidante que mejora la sensibilidad a la insulina.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/carnes/combinaciones.jpg" alt="🥗 Combinaciones Inteligentes — Tu Plato Perfecto" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🥗 Combinaciones Inteligentes — Tu Plato Perfecto</h2>
+        <p class="chapter-desc">La proteína sola no hace magia. El poder está en CÓMO la combinas. Estas estrategias y recetas te enseñan a armar platos completos que mantienen tu insulina estable por horas.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">17</div>
+            <div class="recipe-name">📐 La Fórmula del Plato Hormonal Perfecto</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🥗 50% del plato → Vegetales sin almidón (espinaca, brócoli, lechuga, calabacín, pepino)</li><li>🍗 25% del plato → Proteína magra (cualquiera de las recetas de esta guía)</li><li>🍠 25% del plato → Carbohidrato inteligente (camote, quinoa, arroz integral, legumbres)</li><li>🫒 + Grasa saludable → 1 cda de aceite de oliva, ¼ aguacate o un puñado de nueces</li><li>🥤 + Bebida → Agua, agua con limón o té sin azúcar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>SIEMPRE empieza comiendo los vegetales primero — la fibra frena la absorción de todo lo demás</li><li>Luego come la proteína — estimula hormonas de saciedad antes del carbohidrato</li><li>El carbohidrato AL FINAL — llega a tu intestino más lento gracias a la fibra y proteína previas</li><li>Este orden simple puede reducir tu pico de glucosa hasta un 30% sin cambiar QUÉ comes</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El orden de los alimentos no es un detalle menor — es una estrategia hormonal poderosa. Vegetales primero crean una capa de fibra que frena la glucosa. Proteína segundo libera péptidos de saciedad. Carbohidrato al final encuentra un intestino 'preparado' que lo absorbe lentamente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">18</div>
+            <div class="recipe-name">❌ Combinaciones que Disparan tu Insulina</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>❌ Carne + arroz blanco solo → Falta fibra, el arroz dispara glucosa</li><li>❌ Carne + papa frita → Doble golpe: carbohidrato alto IG + grasa de fritura</li><li>❌ Pollo empanizado + refresco → Pan rallado + azúcar líquida = tormenta de insulina</li><li>❌ Carne con pan blanco → El pan tiene IG 75, casi como glucosa pura</li><li>❌ Proteína + jugo 'natural' → El jugo sin fibra llega a tu sangre en minutos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Swap: arroz blanco → arroz + frijoles (las legumbres bajan el IG del plato completo)</li><li>Swap: papa frita → camote asado o puré de coliflor</li><li>Swap: empanizado → pollo sellado con especias y semillas como cobertura</li><li>Swap: refresco/jugo → agua con limón, menta o pepino</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El problema nunca fue la carne — siempre fue lo que la acompaña. Un filete de res con ensalada verde es un plato hormonal perfecto. El mismo filete con papa frita y refresco es una bomba de insulina. La diferencia está en los acompañantes, no en la proteína.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">19</div>
+            <div class="recipe-name">📦 Meal Prep Semanal — 30 Minutos el Domingo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>500g de pechuga de pollo (para 4-5 porciones)</li><li>300g de carne molida magra (para 3 porciones)</li><li>1 cabeza grande de brócoli en ramitas</li><li>2 calabacines en rodajas</li><li>2 pimentones en tiras</li><li>3 tazas de espinaca</li><li>Aceite de oliva, ajo, especias variadas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hornea todo el pollo a la vez (sazonado con diferentes especias) a 190°C por 25 min</li><li>Mientras se hornea, saltea la carne molida con ajo en una sartén grande</li><li>Cocina todos los vegetales al vapor en una olla grande (5-6 min)</li><li>Divide en 7-8 contenedores: proteína + vegetales en cada uno. Refrigera hasta 4 días.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El meal prep es tu arma secreta contra las malas decisiones. Cuando llegas cansada a casa y la comida saludable ya está lista, no recurres a delivery o comida procesada. 30 minutos el domingo te ahorran 5 días de estrés culinario y mantienen tu insulina estable toda la semana.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">20</div>
+            <div class="recipe-name">🌿 Marinadas Hormonales — Sabor sin Azúcar</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── MARINADA MEDITERRÁNEA ──</li><li>Aceite de oliva + limón + ajo + romero + orégano</li><li></li><li>── MARINADA ASIÁTICA ──</li><li>Salsa de soya baja en sodio + jengibre + ajo + aceite de sésamo</li><li></li><li>── MARINADA LATINA ──</li><li>Limón + cilantro + comino + ajo + un toque de chile</li><li></li><li>── MARINADA ANTIINFLAMATORIA ──</li><li>Cúrcuma + jengibre + pimienta negra + aceite de oliva + limón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Mezcla los ingredientes de la marinada que prefieras en un bowl</li><li>Sumerge la proteína (pollo, res o pescado) y deja reposar 30 min a 2 horas en refrigerador</li><li>La marinada antiinflamatoria con cúrcuma es especial: la pimienta negra aumenta 2000% la absorción de la curcumina</li><li>Prepara marinadas dobles y guarda la extra en frasco — dura 1 semana en refrigerador</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las marinadas con hierbas y especias no solo dan sabor — muchas tienen propiedades hormonales reales. La cúrcuma es antiinflamatoria, el jengibre mejora la digestión, el romero tiene antioxidantes y el ajo mejora la sensibilidad a la insulina. Sabor CON beneficio.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Guía de Carnes Inteligentes</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

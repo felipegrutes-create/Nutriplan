@@ -1,0 +1,295 @@
+{
+  "titulo": "Bebidas Inteligentes para Tu Equilibrio Hormonal",
+  "tipo": "capitulos",
+  "intro": {
+    "titulo": "Tu Farmacia Líquida Natural",
+    "contenido": "Dentro de tu cocina hay un arsenal de ingredientes que, combinados con agua y constancia, pueden transformar tu bienestar hormonal.\n\nEstas bebidas no son modas ni milagros — son preparaciones basadas en plantas, raíces, semillas y especias que apoyan tu metabolismo, calman tu sistema nervioso y ayudan a mantener tu insulina en equilibrio.\n\n☕ **Infusiones calientes** para las mañanas y las noches\n🧊 **Bebidas frías** para refrescarte sin picos de azúcar\n💧 **Aguas funcionales** para hidratarte con beneficios extra\n🌿 **Ingredientes estrella** que potencian cada preparación\n\n⚠️ **Importante:** Estas bebidas complementan tu alimentación saludable. Nunca les agregues azúcar, miel ni edulcorantes. Tómalas al natural para obtener todos sus beneficios."
+  },
+  "capitulos": [
+    {
+      "nombre": "Infusiones Calientes",
+      "descripcion": "Tés e infusiones que apoyan tu metabolismo y calman tu sistema nervioso — perfectos para comenzar o cerrar el día.",
+      "imagen": "img/bebidas/cap1-infusiones.jpg",
+      "recetas": [
+        {
+          "nombre": "Té de Cáscara de Piña con Canela y Clavos",
+          "imagen": "img/bebidas/te-pina-canela.jpg",
+          "ingredientes": [
+            "Cáscara de ½ piña bien lavada",
+            "1 ramita de canela",
+            "3 clavos de olor",
+            "1 litro de agua"
+          ],
+          "preparacion": [
+            "Hierve el litro de agua en una olla.",
+            "Agrega la cáscara de piña, la canela y los clavos.",
+            "Cocina a fuego bajo por 10 minutos.",
+            "Cuela y deja reposar 5 minutos antes de servir."
+          ],
+          "consejo": "🕐 Cuándo tomarla: 1 taza en ayunas y otra antes de dormir. La piña tiene bromelina que desinfla, la canela mejora la sensibilidad a la insulina y los clavos son antioxidantes potentes."
+        },
+        {
+          "nombre": "Infusión de Hojas de Guayaba con Jengibre",
+          "imagen": "img/bebidas/te-guayaba-jengibre.jpg",
+          "ingredientes": [
+            "4 hojas de guayaba frescas (o secas)",
+            "1 palito de canela (5 cm)",
+            "1 rodaja de jengibre fresco (2 cm)",
+            "1 litro de agua"
+          ],
+          "preparacion": [
+            "Lava bien las hojas de guayaba.",
+            "Hierve el agua y agrega las hojas, la canela y el jengibre.",
+            "Cocina a fuego bajo por 10 minutos.",
+            "Cuela y sirve caliente o tibia."
+          ],
+          "consejo": "🌿 Las hojas de guayaba contienen quercetina, un flavonoide que apoya la función pancreática. El jengibre activa la termogénesis y mejora la digestión."
+        },
+        {
+          "nombre": "Té de Manzanilla con Cúrcuma",
+          "imagen": "img/bebidas/te-manzanilla-curcuma.jpg",
+          "ingredientes": [
+            "1 cucharada de flores de manzanilla (o 1 sobre)",
+            "¼ cucharadita de cúrcuma en polvo",
+            "1 pizca de pimienta negra",
+            "500 ml de agua"
+          ],
+          "preparacion": [
+            "Hierve el agua y agrega la manzanilla y la cúrcuma.",
+            "Añade la pizca de pimienta negra (activa la absorción de la cúrcuma).",
+            "Cocina a fuego bajo por 10 minutos.",
+            "Cuela y sirve."
+          ],
+          "consejo": "🌙 Perfecta para la noche. La manzanilla reduce el cortisol (hormona del estrés que eleva la insulina) y la cúrcuma es antiinflamatoria. La pimienta negra aumenta la absorción de curcumina un 2000%."
+        },
+        {
+          "nombre": "Té de Laurel con Limón y Canela",
+          "imagen": "img/bebidas/te-laurel-limon.jpg",
+          "ingredientes": [
+            "3 hojas de laurel secas",
+            "1 ramita de canela",
+            "Jugo de ½ limón",
+            "500 ml de agua"
+          ],
+          "preparacion": [
+            "Hierve el agua con las hojas de laurel y la canela por 10 minutos.",
+            "Apaga el fuego y cuela.",
+            "Añade el jugo de limón justo antes de tomar (no lo hiervas)."
+          ],
+          "consejo": "🍋 El laurel contiene polifenoles que mejoran la respuesta insulínica. El limón aporta vitamina C y el ácido cítrico retrasa la absorción de carbohidratos. Ideal 30 minutos antes de una comida."
+        },
+        {
+          "nombre": "Infusión de Canela y Clavo Nocturna",
+          "imagen": "img/bebidas/te-canela-clavo.jpg",
+          "ingredientes": [
+            "2 ramitas de canela de Ceylán",
+            "4 clavos de olor",
+            "1 rodaja fina de jengibre",
+            "500 ml de agua"
+          ],
+          "preparacion": [
+            "Coloca todos los ingredientes en una olla con el agua.",
+            "Hierve a fuego medio por 5 minutos.",
+            "Baja el fuego y deja infusionar 10 minutos más.",
+            "Cuela y toma tibio antes de dormir."
+          ],
+          "consejo": "😴 La canela de Ceylán es la más beneficiosa para la sensibilidad insulínica. Tomarla antes de dormir ayuda a estabilizar los niveles hormonales durante la noche, cuando el cuerpo se regenera."
+        }
+      ]
+    },
+    {
+      "nombre": "Bebidas Frías y Batidos",
+      "descripcion": "Opciones refrescantes para los días calurosos — hidratación con beneficios hormonales sin azúcar añadida.",
+      "imagen": "img/bebidas/cap2-frias.jpg",
+      "recetas": [
+        {
+          "nombre": "Limonada de Pepino y Jengibre",
+          "imagen": "img/bebidas/limonada-pepino.jpg",
+          "ingredientes": [
+            "½ pepino pelado y cortado",
+            "Jugo de 2 limones",
+            "1 rodaja de jengibre (1 cm)",
+            "1 litro de agua fría",
+            "Hielo al gusto",
+            "Hojas de menta fresca (opcional)"
+          ],
+          "preparacion": [
+            "Licúa el pepino con el jengibre y medio vaso de agua.",
+            "Cuela y mezcla con el resto del agua y el jugo de limón.",
+            "Agrega hielo y hojas de menta.",
+            "Revuelve bien y sirve inmediatamente."
+          ],
+          "consejo": "🥒 El pepino es 95% agua con minerales. El jengibre activa la termogénesis y el limón alcaliniza. Esta combinación hidrata, desinfla y apoya tu metabolismo sin un solo gramo de azúcar."
+        },
+        {
+          "nombre": "Agua de Jamaica con Canela",
+          "imagen": "img/bebidas/agua-jamaica.jpg",
+          "ingredientes": [
+            "2 cucharadas de flores de jamaica secas",
+            "1 ramita de canela",
+            "1 litro de agua",
+            "Hielo al gusto"
+          ],
+          "preparacion": [
+            "Hierve el agua con la jamaica y la canela por 5 minutos.",
+            "Apaga, tapa y deja reposar hasta que enfríe.",
+            "Cuela, refrigera y sirve con hielo."
+          ],
+          "consejo": "🌺 La jamaica es rica en antocianinas, antioxidantes que protegen las células del páncreas. Naturalmente tiene un sabor ácido delicioso sin necesidad de endulzar. La canela la complementa perfectamente."
+        },
+        {
+          "nombre": "Batido Verde Hormonal",
+          "imagen": "img/bebidas/batido-verde.jpg",
+          "ingredientes": [
+            "1 taza de espinacas frescas",
+            "½ pepino",
+            "1 tallo de apio",
+            "Jugo de 1 limón",
+            "1 rodaja de jengibre",
+            "1 vaso de agua fría"
+          ],
+          "preparacion": [
+            "Lava bien todos los vegetales.",
+            "Licúa todo junto hasta obtener una mezcla homogénea.",
+            "Cuela si prefieres una textura más suave.",
+            "Toma inmediatamente para aprovechar los nutrientes."
+          ],
+          "consejo": "💚 Las espinacas aportan magnesio (mineral clave para la sensibilidad insulínica). El apio es diurético natural y el jengibre termogénico. Ideal en ayunas o como snack de media mañana."
+        },
+        {
+          "nombre": "Agua de Chía con Limón",
+          "imagen": "img/bebidas/agua-chia-limon.jpg",
+          "ingredientes": [
+            "1 cucharada de semillas de chía",
+            "Jugo de 1 limón",
+            "500 ml de agua fría",
+            "Hielo al gusto"
+          ],
+          "preparacion": [
+            "Remoja las semillas de chía en el agua por 15-20 minutos.",
+            "Revuelve cada 5 minutos para evitar grumos.",
+            "Cuando las semillas estén gelificadas, agrega el limón.",
+            "Añade hielo y disfruta."
+          ],
+          "consejo": "🫧 La chía absorbe 12 veces su peso en agua, creando un gel de fibra soluble que retrasa la absorción de azúcar. Tomarla 20 minutos antes de comer reduce los picos de insulina después de la comida."
+        }
+      ]
+    },
+    {
+      "nombre": "Aguas Funcionales e Infusiones Frías",
+      "descripcion": "Aguas con ingredientes activos que puedes preparar la noche anterior y tomar durante todo el día.",
+      "imagen": "img/bebidas/cap3-aguas.jpg",
+      "recetas": [
+        {
+          "nombre": "Agua de Linaza con Canela",
+          "imagen": "img/bebidas/agua-linaza.jpg",
+          "ingredientes": [
+            "1 cucharada de semillas de linaza",
+            "1 ramita de canela (o ½ cucharadita en polvo)",
+            "1 taza de agua (250 ml)",
+            "Jugo de ½ limón (opcional)"
+          ],
+          "preparacion": [
+            "Coloca el agua, las semillas de linaza y la canela en una olla.",
+            "Hierve a fuego medio por 10 minutos, revolviendo de vez en cuando.",
+            "Cuela y deja enfriar.",
+            "Añade el limón antes de tomar si deseas."
+          ],
+          "consejo": "🌰 La linaza es una de las fuentes más ricas de omega-3 vegetal y fibra soluble. El mucílago que libera al hervir forma un gel que estabiliza la insulina. Tómala antes del desayuno."
+        },
+        {
+          "nombre": "Agua Detox de Pepino, Limón y Menta",
+          "imagen": "img/bebidas/agua-detox.jpg",
+          "ingredientes": [
+            "½ pepino en rodajas",
+            "1 limón en rodajas",
+            "8-10 hojas de menta fresca",
+            "1 litro de agua",
+            "Hielo al gusto"
+          ],
+          "preparacion": [
+            "Coloca el pepino, limón y menta en una jarra.",
+            "Agrega el agua fría.",
+            "Refrigera por mínimo 2 horas (ideal toda la noche).",
+            "Toma durante el día. Rellena con agua hasta 2 veces."
+          ],
+          "consejo": "🧊 Prepárala en la noche y tendrás hidratación funcional todo el día. La menta calma la digestión, el pepino aporta sílice y minerales, y el limón ayuda a la absorción de nutrientes."
+        },
+        {
+          "nombre": "Agua de Canela en Frío (Overnight)",
+          "imagen": "img/bebidas/agua-canela-frio.jpg",
+          "ingredientes": [
+            "2 ramitas de canela de Ceylán",
+            "1 litro de agua a temperatura ambiente",
+            "Rodajas de manzana verde (opcional)"
+          ],
+          "preparacion": [
+            "Coloca las ramitas de canela en una jarra con el agua.",
+            "Si deseas, agrega rodajas de manzana verde.",
+            "Deja reposar toda la noche a temperatura ambiente.",
+            "En la mañana, refrigera y toma durante el día."
+          ],
+          "consejo": "💤 La extracción en frío preserva los compuestos termosensibles de la canela. Estudios muestran que la canela de Ceylán mejora la sensibilidad a la insulina hasta un 20%. Puedes reutilizar las ramitas hasta 3 veces."
+        }
+      ]
+    },
+    {
+      "nombre": "Guía de Ingredientes Estrella",
+      "descripcion": "Conoce los superpoderes de cada ingrediente que usas en tus bebidas y cómo potencian tu equilibrio hormonal.",
+      "imagen": "img/bebidas/cap4-ingredientes.jpg",
+      "recetas": [
+        {
+          "nombre": "Las Especias: Canela, Cúrcuma, Clavo y Jengibre",
+          "imagen": "img/bebidas/especias.jpg",
+          "ingredientes": [
+            "🟤 CANELA DE CEYLÁN — Mejora la sensibilidad a la insulina. Usa la de Ceylán (clara y suave), no la Cassia (oscura y fuerte)",
+            "🟡 CÚRCUMA — Antiinflamatoria potente. Siempre combínala con pimienta negra para activar su absorción",
+            "🟤 CLAVO DE OLOR — Antioxidante más potente que existe por gramo. Apoya la función pancreática",
+            "🫚 JENGIBRE — Termogénico natural. Activa el metabolismo y mejora la digestión"
+          ],
+          "preparacion": [
+            "💡 Compra enteras, no en polvo — conservan mejor sus propiedades.",
+            "💡 Guárdalas en frascos de vidrio, lejos de la luz y la humedad.",
+            "💡 La canela de Ceylán se reconoce porque es más clara, quebradiza y tiene capas finas.",
+            "💡 El jengibre fresco es más potente que el seco — rállalo o córtalo en rodajas finas."
+          ],
+          "consejo": "⚠️ Si tomas anticoagulantes, consulta a tu médico antes de consumir cúrcuma y jengibre diariamente, ya que tienen efecto anticoagulante natural."
+        },
+        {
+          "nombre": "Las Semillas: Chía y Linaza",
+          "imagen": "img/bebidas/semillas.jpg",
+          "ingredientes": [
+            "⚫ CHÍA — Absorbe 12x su peso en agua. Rica en omega-3, fibra y proteína. Forma gel que retrasa la absorción de azúcar",
+            "🟤 LINAZA — Fuente de omega-3 vegetal y lignanos. El mucílago protege la mucosa intestinal y estabiliza la insulina",
+            "📏 Porción diaria recomendada: 1-2 cucharadas de cada una",
+            "⏱️ Tiempo de remojo: chía 15-20 min, linaza puede hervirse 10 min"
+          ],
+          "preparacion": [
+            "💡 La chía no necesita molerse — se activa con agua.",
+            "💡 La linaza SÍ debe molerse o hervirse para liberar sus nutrientes.",
+            "💡 Guarda la linaza molida en refrigeración máximo 1 semana.",
+            "💡 Ambas pueden añadirse a jugos, batidos o aguas — son versátiles."
+          ],
+          "consejo": "🔑 Regla de oro: siempre remoja o hidrata las semillas antes de consumirlas. En seco, pasan por tu sistema sin aportar beneficios. Hidratadas, liberan fibra soluble que estabiliza tu insulina."
+        },
+        {
+          "nombre": "Las Hojas y Plantas: Guayaba, Laurel, Menta y Jamaica",
+          "imagen": "img/bebidas/hojas-plantas.jpg",
+          "ingredientes": [
+            "🍃 HOJAS DE GUAYABA — Ricas en quercetina, un flavonoide que apoya la función del páncreas y mejora la sensibilidad insulínica",
+            "🍃 LAUREL — Contiene polifenoles que ayudan a regular la respuesta de la insulina después de comer",
+            "🌿 MENTA — Calma el sistema digestivo, reduce la hinchazón y ayuda a controlar el apetito emocional",
+            "🌺 JAMAICA (HIBISCO) — Rica en antocianinas antioxidantes que protegen las células pancreáticas"
+          ],
+          "preparacion": [
+            "💡 Las hojas de guayaba se consiguen en mercados naturistas o directamente del árbol.",
+            "💡 El laurel seco es igual de efectivo que el fresco.",
+            "💡 La menta fresca tiene más aroma y sabor — cultívala en una maceta en tu cocina.",
+            "💡 Compra la jamaica en flores secas sueltas, no en sobrecitos — es más pura y económica."
+          ],
+          "consejo": "🌱 Tip práctico: Ten un pequeño huerto de menta, albahaca y romero en tu ventana. Siempre tendrás hierbas frescas a la mano para tus infusiones sin costo adicional."
+        }
+      ]
+    }
+  ]
+}

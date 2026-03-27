@@ -1,0 +1,2250 @@
+{
+  "messages": [
+    {
+      "day": 1,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Tu cuerpo es sabio. Confía en el proceso de transformación."
+    },
+    {
+      "day": 2,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "El cortisol elevado por estrés crónico puede afectar tu equilibrio hormonal. Respirar profundo ayuda a regularlo."
+    },
+    {
+      "day": 3,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Toma un vaso grande de agua al despertar. Tu cuerpo lleva horas sin hidratarse."
+    },
+    {
+      "day": 4,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Cada día que te cuidas es un regalo para tu futuro."
+    },
+    {
+      "day": 5,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "Tu cuerpo produce menos estrógeno después de los 40. Alimentos como la linaza ayudan a mantener el equilibrio."
+    },
+    {
+      "day": 6,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Camina 10 minutos después de tu comida principal. Tu metabolismo te lo agradecerá."
+    },
+    {
+      "day": 7,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "No necesitas ser perfecta, solo necesitas ser constante."
+    },
+    {
+      "day": 8,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Dormir menos de 7 horas altera tus hormonas del hambre: grelina sube y leptina baja."
+    },
+    {
+      "day": 9,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Hoy prueba agregar una porción extra de verduras a tu plato."
+    },
+    {
+      "day": 10,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Tu bienestar hormonal empieza con decisiones pequeñas pero poderosas."
+    },
+    {
+      "day": 11,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "La sensibilidad a la insulina mejora cuando caminas 15 minutos después de comer."
+    },
+    {
+      "day": 12,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Respira profundo 5 veces antes de comer. Activa tu sistema digestivo con calma."
+    },
+    {
+      "day": 13,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Eres más fuerte de lo que crees. Tu cuerpo lo demuestra cada día."
+    },
+    {
+      "day": 14,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "El magnesio es clave para más de 300 reacciones en tu cuerpo, incluyendo el sueño y el ánimo."
+    },
+    {
+      "day": 15,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Prepárate una infusión de canela hoy. Es deliciosa y apoya tu metabolismo."
+    },
+    {
+      "day": 16,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "El equilibrio no es un destino, es un camino que recorres con cada elección."
+    },
+    {
+      "day": 17,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "Tu metabolismo no se “rompe” con la edad. Se adapta. Y tú puedes guiarlo."
+    },
+    {
+      "day": 18,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Haz 10 sentadillas antes de tu ducha. Tu cuerpo necesita movimiento."
+    },
+    {
+      "day": 19,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Hoy es un buen día para recordar lo increíble que eres."
+    },
+    {
+      "day": 20,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "La fibra alimenta a tus bacterias intestinales buenas, que ayudan a regular tus hormonas."
+    },
+    {
+      "day": 21,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Hoy duerme 30 minutos antes de lo habitual. Tu descanso hormonal lo necesita."
+    },
+    {
+      "day": 22,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Tu cuerpo ha hecho cosas maravillosas. Trátalo con amor."
+    },
+    {
+      "day": 23,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "El estrés eleva el cortisol, y el cortisol elevado dificulta mantener un peso saludable."
+    },
+    {
+      "day": 24,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Agrega una cucharada de chía a tu desayuno. Fibra y omega-3 en un solo paso."
+    },
+    {
+      "day": 25,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Mereces sentirte bien en tu propia piel, todos los días."
+    },
+    {
+      "day": 26,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "Tu tiroides necesita selenio y yodo para funcionar bien. Las nueces de Brasil son excelentes fuentes de selenio."
+    },
+    {
+      "day": 27,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Estira tu cuerpo durante 5 minutos antes de empezar tu día."
+    },
+    {
+      "day": 28,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Cuidarte no es egoísmo, es la base de todo lo demás."
+    },
+    {
+      "day": 29,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Las proteínas en cada comida ayudan a estabilizar tu energía y mantener la masa muscular."
+    },
+    {
+      "day": 30,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Hoy cocina con aceite de oliva en vez de otros aceites. Tu corazón te lo agradece."
+    },
+    {
+      "day": 31,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Cada paso que das hacia tu bienestar cuenta más de lo que imaginas."
+    },
+    {
+      "day": 32,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "El agua es esencial para que tus riñones eliminen toxinas y tus hormonas funcionen correctamente."
+    },
+    {
+      "day": 33,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Toma un puñado de nueces como snack esta tarde. Grasas buenas para tu cerebro."
+    },
+    {
+      "day": 34,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Tu metabolismo responde a tu amor propio. Cuídate desde adentro."
+    },
+    {
+      "day": 35,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "Después de los 40, la pérdida de masa muscular se acelera. El ejercicio de fuerza la contrarresta."
+    },
+    {
+      "day": 36,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Reduce una cucharada de azúcar hoy. Tu paladar se acostumbrará poco a poco."
+    },
+    {
+      "day": 37,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "No compitas con nadie. Tu único reto es ser mejor que ayer."
+    },
+    {
+      "day": 38,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "La vitamina D actúa como una hormona y afecta tu estado de ánimo, huesos y metabolismo."
+    },
+    {
+      "day": 39,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Antes de dormir, escribe 3 cosas por las que estés agradecida."
+    },
+    {
+      "day": 40,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Tu energía es tu recurso más valioso. Protégela."
+    },
+    {
+      "day": 41,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Tu intestino produce el 90% de la serotonina. Cuidar tu digestión cuida tu ánimo."
+    },
+    {
+      "day": 42,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Camina descalza sobre el pasto durante 5 minutos. Conecta con la tierra."
+    },
+    {
+      "day": 43,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Lo que haces por ti hoy, tu cuerpo te lo agradecerá mañana."
+    },
+    {
+      "day": 44,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "Las grasas saludables como el aguacate y las nueces son fundamentales para producir hormonas."
+    },
+    {
+      "day": 45,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Hoy toma al menos 8 vasos de agua. Lleva una botella contigo."
+    },
+    {
+      "day": 46,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Eres la protagonista de tu historia de bienestar."
+    },
+    {
+      "day": 47,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "El omega-3 del salmón y las sardinas reduce la inflamación y apoya tu equilibrio hormonal."
+    },
+    {
+      "day": 48,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Prueba desayunar con más proteína hoy. Un huevo o yogur natural pueden funcionar."
+    },
+    {
+      "day": 49,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Confía en tu cuerpo. Él sabe regenerarse cuando le das lo que necesita."
+    },
+    {
+      "day": 50,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Comer muchas veces al día no acelera el metabolismo. Lo que importa es la calidad de lo que comes."
+    },
+    {
+      "day": 51,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Haz 5 minutos de respiración profunda esta noche antes de dormir."
+    },
+    {
+      "day": 52,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Tu camino de salud es único. Celebra cada avance, por pequeño que sea."
+    },
+    {
+      "day": 53,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "Tu nivel de insulina se estabiliza cuando combinas proteína con fibra y grasa saludable."
+    },
+    {
+      "day": 54,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Hoy come despacio y mastica bien cada bocado. Dale tiempo a tus hormonas de saciedad."
+    },
+    {
+      "day": 55,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "No se trata de restricción, se trata de nutrir tu cuerpo con intención."
+    },
+    {
+      "day": 56,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "El ejercicio aeróbico moderado reduce el cortisol mejor que el ejercicio intenso prolongado."
+    },
+    {
+      "day": 57,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Agrega cúrcuma a tu comida hoy. Un antiinflamatorio natural que tu cuerpo necesita."
+    },
+    {
+      "day": 58,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Después de los 40, cada hábito saludable tiene un impacto enorme."
+    },
+    {
+      "day": 59,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "La melatonina, hormona del sueño, se produce mejor en oscuridad total. Apaga las pantallas antes de dormir."
+    },
+    {
+      "day": 60,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Camina al menos 15 minutos hoy. No importa si es lento, lo que importa es moverse."
+    },
+    {
+      "day": 61,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Tu cuerpo cambia, pero tu poder interior solo crece."
+    },
+    {
+      "day": 62,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Los fitoestrogenos de la soya y la linaza pueden ayudar a aliviar síntomas del desequilibrio hormonal."
+    },
+    {
+      "day": 63,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Prueba hacer tu café con canela en lugar de azúcar hoy."
+    },
+    {
+      "day": 64,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Hoy decide ser amable contigo misma. Te lo mereces."
+    },
+    {
+      "day": 65,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "Tu hígado procesa las hormonas usadas. Cuidarlo con crucíferas como el brócoli lo ayuda mucho."
+    },
+    {
+      "day": 66,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Hoy cena más temprano. Dale a tu cuerpo 12 horas de descanso digestivo."
+    },
+    {
+      "day": 67,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Cada elección saludable es un acto de amor propio."
+    },
+    {
+      "day": 68,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "El cromo, presente en la canela, puede mejorar la forma en que tu cuerpo maneja la energía de los alimentos."
+    },
+    {
+      "day": 69,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Toma 5 minutos para hacer estiramientos de cuello y hombros ahora mismo."
+    },
+    {
+      "day": 70,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "No subestimes el poder de cuidarte un poquito cada día."
+    },
+    {
+      "day": 71,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "La resistencia a la insulina es reversible con cambios de hábitos. Tu cuerpo puede mejorar."
+    },
+    {
+      "day": 72,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Prepárate un vaso de agua con limón esta mañana. Tu hígado te lo agradecerá."
+    },
+    {
+      "day": 73,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Tu bienestar es prioridad, no lujo."
+    },
+    {
+      "day": 74,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "El ayuno nocturno de 12 horas le da tiempo a tu cuerpo para repararse y equilibrarse."
+    },
+    {
+      "day": 75,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Hoy intenta incluir un alimento de color verde oscuro en tu almuerzo."
+    },
+    {
+      "day": 76,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Eres capaz de lograr cambios que ni imaginas."
+    },
+    {
+      "day": 77,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "Las fluctuaciones hormonales pueden causar retención de líquidos. Beber más agua paradójicamente la reduce."
+    },
+    {
+      "day": 78,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Apaga todas las pantallas una hora antes de dormir hoy."
+    },
+    {
+      "day": 79,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Cuando cuidas tu cuerpo, todo lo demás fluye mejor."
+    },
+    {
+      "day": 80,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "El calcio no solo es para los huesos. También ayuda en la señalización hormonal y muscular."
+    },
+    {
+      "day": 81,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Haz una lista de los alimentos que compraste esta semana y revisa cuántas verduras hay."
+    },
+    {
+      "day": 82,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Tu salud hormonal es una inversión que vale la pena."
+    },
+    {
+      "day": 83,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "La inflamación crónica silenciosa afecta tus hormonas. Los antioxidantes de frutas y verduras la combaten."
+    },
+    {
+      "day": 84,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Prueba reemplazar una bebida azucarada por agua con frutas hoy."
+    },
+    {
+      "day": 85,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "No hay edad para empezar a sentirse increíble."
+    },
+    {
+      "day": 86,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "Tu masa muscular quema más calorías en reposo que la grasa. Invertir en músculo es invertir en metabolismo."
+    },
+    {
+      "day": 87,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Hoy sal a tomar sol 10 minutos por la mañana. Tu vitamina D lo necesita."
+    },
+    {
+      "day": 88,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Tu constancia de hoy construye tu energía de mañana."
+    },
+    {
+      "day": 89,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "El zinc es esencial para la función tiroidea y se encuentra en semillas de calabaza y carne."
+    },
+    {
+      "day": 90,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Cocina una comida desde cero hoy. Tu cuerpo nota la diferencia."
+    },
+    {
+      "day": 91,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Recuerda: el progreso no siempre se ve, pero siempre se siente."
+    },
+    {
+      "day": 92,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Tomar sol 15 minutos al día ayuda a tu cuerpo a producir vitamina D, clave para el ánimo."
+    },
+    {
+      "day": 93,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Intenta comer sin distracciones hoy. Sin teléfono ni televisión durante la comida."
+    },
+    {
+      "day": 94,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Eres mucho más que un número en la báscula."
+    },
+    {
+      "day": 95,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "La progesterona baja puede causar insomnio. Alimentos ricos en vitamina B6 apoyan su producción."
+    },
+    {
+      "day": 96,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Hoy agrega semillas de linaza a tu comida. Fibra y omega-3 naturales."
+    },
+    {
+      "day": 97,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Tu cuerpo merece alimentos que lo nutran y lo llenen de vida."
+    },
+    {
+      "day": 98,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "Los carbohidratos complejos como la avena liberan energía gradualmente, sin picos hormonales bruscos."
+    },
+    {
+      "day": 99,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Haz 3 series de 10 sentadillas hoy. Tu masa muscular te lo agradecerá."
+    },
+    {
+      "day": 100,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Cada nuevo día es una oportunidad para elegir tu bienestar."
+    },
+    {
+      "day": 101,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "Tu microbioma intestinal influye en cómo tu cuerpo procesa los estrógenos."
+    },
+    {
+      "day": 102,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Prepárate una ensalada colorida para tu próxima comida."
+    },
+    {
+      "day": 103,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Tu fuerza interior es tu mejor aliada en este camino."
+    },
+    {
+      "day": 104,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "El potasio del plátano y el aguacate ayuda a regular la presión arterial y el equilibrio de líquidos."
+    },
+    {
+      "day": 105,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Toma un vaso de agua cada vez que vayas al baño hoy."
+    },
+    {
+      "day": 106,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "No necesitas una dieta perfecta, necesitas hábitos que te hagan feliz."
+    },
+    {
+      "day": 107,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "La cúrcuma tiene propiedades antiinflamatorias que apoyan el equilibrio hormonal de forma natural."
+    },
+    {
+      "day": 108,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Hoy intenta subir escaleras en lugar de usar el elevador."
+    },
+    {
+      "day": 109,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Tu transformación empieza con una decisión: elegirte a ti misma."
+    },
+    {
+      "day": 110,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "Los bochornos están relacionados con cambios en el termostato interno del cuerpo por fluctuaciones hormonales."
+    },
+    {
+      "day": 111,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Prueba una fruta que no hayas comido en mucho tiempo."
+    },
+    {
+      "day": 112,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Hoy tu cuerpo te pide amor. Dáselo en forma de buenas decisiones."
+    },
+    {
+      "day": 113,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "La vitamina C ayuda a la absorción del hierro y fortalece tu sistema inmune."
+    },
+    {
+      "day": 114,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Dedica 10 minutos a meditar o simplemente estar en silencio hoy."
+    },
+    {
+      "day": 115,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Eres una mujer poderosa y tu salud es tu mayor riqueza."
+    },
+    {
+      "day": 116,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "El hierro es crucial para transportar oxígeno. Las mujeres lo necesitan especialmente."
+    },
+    {
+      "day": 117,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Hoy toma tu última comida al menos 3 horas antes de dormir."
+    },
+    {
+      "day": 118,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "El autocuidado no es un lujo, es una necesidad que mereces."
+    },
+    {
+      "day": 119,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "La grasa abdominal produce estrógeno extra, lo que puede desequilibrar tu sistema hormonal."
+    },
+    {
+      "day": 120,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Prepárate un snack saludable para la tarde: fruta con nueces."
+    },
+    {
+      "day": 121,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Confía en el proceso. Los cambios reales toman tiempo."
+    },
+    {
+      "day": 122,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "Masticar despacio mejora la digestión y permite que las hormonas de saciedad actúen a tiempo."
+    },
+    {
+      "day": 123,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Camina rápido durante 5 minutos en algún momento del día."
+    },
+    {
+      "day": 124,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Tu cuerpo te habla todos los días. Aprende a escucharlo."
+    },
+    {
+      "day": 125,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "El ácido fólico no solo es para el embarazo. Tu cerebro lo necesita para funcionar bien."
+    },
+    {
+      "day": 126,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Hoy prueba cocinar con jengibre. Rállalo sobre tu comida o hazlo en té."
+    },
+    {
+      "day": 127,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Ser mujer después de los 40 es descubrir una nueva versión de ti."
+    },
+    {
+      "day": 128,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "Los polifenoles del té verde apoyan tu metabolismo de forma natural."
+    },
+    {
+      "day": 129,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Lleva un registro de cuánta agua tomas hoy. ¿Llegas a 2 litros?"
+    },
+    {
+      "day": 130,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Cada comida es una oportunidad de nutrir tu equilibrio hormonal."
+    },
+    {
+      "day": 131,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "Tu cuerpo necesita colesterol para fabricar hormonas. No todas las grasas son malas."
+    },
+    {
+      "day": 132,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Haz un ejercicio de gratitud: nombra 5 partes de tu cuerpo que agradeces."
+    },
+    {
+      "day": 133,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Eres ejemplo de fortaleza para quienes te rodean."
+    },
+    {
+      "day": 134,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Las crucíferas como el brócoli y la coliflor ayudan al hígado a metabolizar los estrógenos."
+    },
+    {
+      "day": 135,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Prueba agregar aguacate a tu próxima comida. Grasas saludables para tus hormonas."
+    },
+    {
+      "day": 136,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Tu energía cambia cuando decides cuidarte de verdad."
+    },
+    {
+      "day": 137,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "La deshidratación leve puede confundirse con hambre. Antes de comer, toma un vaso de agua."
+    },
+    {
+      "day": 138,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Hoy haz 3 respiraciones profundas cada vez que te sientas estresada."
+    },
+    {
+      "day": 139,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "No hay nada más poderoso que una mujer que se elige a sí misma."
+    },
+    {
+      "day": 140,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "El estrés activa la respuesta de lucha o huida, alterando tus niveles de cortisol y adrenalina."
+    },
+    {
+      "day": 141,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Intenta caminar después del almuerzo hoy, aunque sea 5 minutos."
+    },
+    {
+      "day": 142,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Hoy es el mejor día para empezar algo bueno por ti."
+    },
+    {
+      "day": 143,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "La proteína de suero ayuda a preservar la masa muscular durante cambios hormonales."
+    },
+    {
+      "day": 144,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Prepárate un batido verde con espinaca, plátano y leche de almendra."
+    },
+    {
+      "day": 145,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Tu bienestar emocional y físico van de la mano. Cuida ambos."
+    },
+    {
+      "day": 146,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Tu cerebro consume el 20% de tu energía diaria. Aliméntalo con grasas buenas y antioxidantes."
+    },
+    {
+      "day": 147,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Hoy lee las etiquetas de lo que comes. Identifica azúcares escondidos."
+    },
+    {
+      "day": 148,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Pequeños cambios, grandes resultados. Así funciona tu cuerpo."
+    },
+    {
+      "day": 149,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "El sueño profundo es cuando tu cuerpo libera hormona del crecimiento para reparar tejidos."
+    },
+    {
+      "day": 150,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Haz 5 minutos de yoga o estiramiento suave antes de acostarte."
+    },
+    {
+      "day": 151,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Cada mañana es una nueva oportunidad para sentirte mejor."
+    },
+    {
+      "day": 152,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "Los alimentos ultraprocesados inflaman tu cuerpo y dificultan el equilibrio hormonal."
+    },
+    {
+      "day": 153,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Prueba comer una porción más de fruta hoy."
+    },
+    {
+      "day": 154,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Tu salud es el regalo más grande que puedes darte."
+    },
+    {
+      "day": 155,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "La canela puede ayudar a mejorar la sensibilidad de tu cuerpo a la insulina de forma natural."
+    },
+    {
+      "day": 156,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Hoy elige una proteína que no hayas comido esta semana."
+    },
+    {
+      "day": 157,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "No se trata de perfección, se trata de progreso diario."
+    },
+    {
+      "day": 158,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "Las semillas de chía son ricas en omega-3, fibra y calcio. Un superalimento para tu equilibrio."
+    },
+    {
+      "day": 159,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Toma un baño tibio antes de dormir. Relaja tu cuerpo y promueve el sueño."
+    },
+    {
+      "day": 160,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Tu cuerpo tiene una capacidad increíble de adaptarse y mejorar."
+    },
+    {
+      "day": 161,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "El alcohol altera tu sueño REM y dificulta que tu cuerpo regule hormonas durante la noche."
+    },
+    {
+      "day": 162,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Hoy prepárate un té de manzanilla en la noche. Calma natural."
+    },
+    {
+      "day": 163,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Cuando te cuidas, le enseñas al mundo que te valoras."
+    },
+    {
+      "day": 164,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "La vitamina E puede ayudar a reducir los bochornos y sudoración nocturna."
+    },
+    {
+      "day": 165,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Intenta estar de pie al menos 5 minutos por cada hora sentada."
+    },
+    {
+      "day": 166,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Eres más resiliente de lo que piensas. Sigue adelante."
+    },
+    {
+      "day": 167,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Tu sistema linfático necesita movimiento para funcionar. Caminar lo activa."
+    },
+    {
+      "day": 168,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Hoy cocina con más especias y menos sal."
+    },
+    {
+      "day": 169,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "El equilibrio hormonal empieza con amor hacia ti misma."
+    },
+    {
+      "day": 170,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "El exceso de azúcar causa picos de insulina que generan inflamación y desbalance hormonal."
+    },
+    {
+      "day": 171,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Prueba hacer 10 minutos de ejercicio apenas te despiertes."
+    },
+    {
+      "day": 172,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Tu compromiso con tu salud es inspirador. No te detengas."
+    },
+    {
+      "day": 173,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "Los probióticos en el yogur y el kéfir fortalecen tu microbioma y apoyan tu equilibrio hormonal."
+    },
+    {
+      "day": 174,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Prepárate una merienda con yogur natural y frutas del bosque."
+    },
+    {
+      "day": 175,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Hoy es un gran día para celebrar lo que tu cuerpo puede hacer."
+    },
+    {
+      "day": 176,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "La testosterona también es importante para las mujeres. Ayuda con la energía y la masa muscular."
+    },
+    {
+      "day": 177,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Hoy cambia un carbohidrato refinado por uno integral."
+    },
+    {
+      "day": 178,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Cada hábito saludable que adoptas te acerca a tu mejor versión."
+    },
+    {
+      "day": 179,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "Comer verduras de hojas verdes aporta magnesio, folato y fibra, tres aliados de tus hormonas."
+    },
+    {
+      "day": 180,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Dedica 15 minutos a bailar tu canción favorita. Ejercicio y alegría en uno."
+    },
+    {
+      "day": 181,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Tu camino es único y hermoso. Disfruta cada paso."
+    },
+    {
+      "day": 182,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "La exposición a la luz azul de pantallas por la noche suprime la producción de melatonina."
+    },
+    {
+      "day": 183,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Hoy agrega una cucharada de aceite de oliva crudo a tu ensalada."
+    },
+    {
+      "day": 184,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "No subestimes el poder de una buena noche de sueño."
+    },
+    {
+      "day": 185,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "Tu nivel de estrés afecta directamente cómo tu cuerpo maneja la energía de los alimentos."
+    },
+    {
+      "day": 186,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Prueba ir al mercado y comprar una verdura nueva que nunca hayas cocinado."
+    },
+    {
+      "day": 187,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Tu vitalidad después de los 40 depende de lo que eliges hoy."
+    },
+    {
+      "day": 188,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Las legumbres como los frijoles y lentejas aportan fibra y proteína vegetal para tu equilibrio."
+    },
+    {
+      "day": 189,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Haz un inventario de tu despensa y elimina un producto ultraprocesado."
+    },
+    {
+      "day": 190,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Eres suficiente, exactamente como eres en este momento."
+    },
+    {
+      "day": 191,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "El ejercicio de resistencia mejora la densidad ósea, especialmente importante después de los 40."
+    },
+    {
+      "day": 192,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Hoy prepárate un desayuno rico en fibra: avena con frutas y semillas."
+    },
+    {
+      "day": 193,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Tu cuerpo no necesita castigo, necesita cariño y nutrientes."
+    },
+    {
+      "day": 194,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "La inflamación intestinal puede afectar la absorción de nutrientes esenciales para tus hormonas."
+    },
+    {
+      "day": 195,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Toma el sol de la mañana durante tu caminata de hoy."
+    },
+    {
+      "day": 196,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "El verdadero cambio empieza cuando dejas de compararte."
+    },
+    {
+      "day": 197,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Los ácidos grasos de cadena corta que produce tu flora intestinal son antiinflamatorios naturales."
+    },
+    {
+      "day": 198,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Prueba reemplazar los snacks salados por un puñado de almendras."
+    },
+    {
+      "day": 199,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Cada día que eliges cuidarte, ganas en calidad de vida."
+    },
+    {
+      "day": 200,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "El cortisol alto por la noche impide el sueño reparador. Rutinas relajantes antes de dormir ayudan."
+    },
+    {
+      "day": 201,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Hoy intenta cenar antes de las 7 pm para darle descanso a tu sistema digestivo."
+    },
+    {
+      "day": 202,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Tu metabolismo te escucha. Háblale con buenos alimentos."
+    },
+    {
+      "day": 203,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "Tu metabolismo basal disminuye aproximadamente 2% por década después de los 30, pero el ejercicio lo contrarresta."
+    },
+    {
+      "day": 204,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Haz una pausa de 2 minutos para estirar tu espalda ahora mismo."
+    },
+    {
+      "day": 205,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Eres una mujer en evolución constante. Eso es maravilloso."
+    },
+    {
+      "day": 206,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "La insulina no solo regula el azúcar en sangre, también afecta el almacenamiento de grasa y la inflamación."
+    },
+    {
+      "day": 207,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Prueba tomar agua de coco hoy como alternativa hidratante."
+    },
+    {
+      "day": 208,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Tu bienestar no tiene fecha de caducidad. Siempre es buen momento."
+    },
+    {
+      "day": 209,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Las nueces contienen melatonina natural y grasas saludables que promueven un buen descanso."
+    },
+    {
+      "day": 210,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Hoy cocina una receta nueva del plan de Mi Código."
+    },
+    {
+      "day": 211,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Celebra tu cuerpo tal como es hoy, mientras trabajas por el de mañana."
+    },
+    {
+      "day": 212,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "El estrógeno protege el corazón y los huesos. Cuando disminuye, es vital cuidar ambos con nutrición."
+    },
+    {
+      "day": 213,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Intenta comer al menos 5 porciones de frutas y verduras hoy."
+    },
+    {
+      "day": 214,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Cuidarte es un acto revolucionario. Hazlo con orgullo."
+    },
+    {
+      "day": 215,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "La coenzima Q10 apoya la producción de energía celular y disminuye con la edad."
+    },
+    {
+      "day": 216,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Haz 20 minutos de caminata rápida esta tarde."
+    },
+    {
+      "day": 217,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Tu salud merece el mismo esfuerzo que le dedicas a los demás."
+    },
+    {
+      "day": 218,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "El jengibre es antiinflamatorio natural y puede ayudar con la digestión y las náuseas."
+    },
+    {
+      "day": 219,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Hoy prepárate una sopa casera con verduras de temporada."
+    },
+    {
+      "day": 220,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Eres la dueña de tu bienestar. Nadie más puede hacer esto por ti."
+    },
+    {
+      "day": 221,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "La ghrelina, hormona del hambre, aumenta cuando no duermes bien. Descansar te ayuda a comer mejor."
+    },
+    {
+      "day": 222,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Prueba hacer respiración 4-7-8: inhala 4 seg, retén 7, exhala 8."
+    },
+    {
+      "day": 223,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Tu cuerpo es tu templo. Trátalo con respeto y amor."
+    },
+    {
+      "day": 224,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "Los antioxidantes de las frutas rojas protegen tus células del daño oxidativo."
+    },
+    {
+      "day": 225,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Reemplaza una porción de refresco por agua con gas y limón hoy."
+    },
+    {
+      "day": 226,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "El camino hacia el bienestar no tiene que ser difícil. Puede ser gozoso."
+    },
+    {
+      "day": 227,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "Tu cuerpo necesita al menos 25 gramos de fibra al día para un tránsito intestinal saludable."
+    },
+    {
+      "day": 228,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Hoy haz 15 flexiones de brazos contra la pared. Fortalece tu tren superior."
+    },
+    {
+      "day": 229,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Cada decisión cuenta. Tú decides cómo te sientes mañana."
+    },
+    {
+      "day": 230,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "La DHEA, precursora hormonal, disminuye con la edad. El ejercicio ayuda a mantener niveles saludables."
+    },
+    {
+      "day": 231,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Prepárate un bowl de frutas variadas para la merienda."
+    },
+    {
+      "day": 232,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Tu fuerza no disminuye con la edad. Solo se transforma."
+    },
+    {
+      "day": 233,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "Los ácidos grasos omega-3 reducen los triglicéridos y apoyan la salud cardiovascular."
+    },
+    {
+      "day": 234,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Intenta no usar el celular durante las comidas de hoy."
+    },
+    {
+      "day": 235,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Hoy es perfecto para hacer algo lindo por tu cuerpo."
+    },
+    {
+      "day": 236,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "El selenio de las nueces de Brasil es esencial para la conversión de hormona tiroidea T4 a T3."
+    },
+    {
+      "day": 237,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Hoy agrega brócoli a tu almuerzo. Tu hígado te lo agradece."
+    },
+    {
+      "day": 238,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Tu salud hormonal es un viaje, no un destino."
+    },
+    {
+      "day": 239,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "El colágeno disminuye con la edad. La vitamina C es necesaria para que tu cuerpo lo produzca."
+    },
+    {
+      "day": 240,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Toma una foto de tu comida hoy y pregúntate: ¿tiene proteína, fibra y color?"
+    },
+    {
+      "day": 241,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "No hay límite para lo bien que puedes sentirte."
+    },
+    {
+      "day": 242,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "Tu reloj circadiano regula todas tus hormonas. Mantener horarios regulares lo fortalece."
+    },
+    {
+      "day": 243,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Haz una caminata corta antes del desayuno hoy."
+    },
+    {
+      "day": 244,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Eres una inspiración cuando te cuidas con dedicación."
+    },
+    {
+      "day": 245,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "La resistencia a la insulina puede manifestarse como fatiga después de comer. Presta atención a las señales."
+    },
+    {
+      "day": 246,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Prueba preparar agua de pepino y menta para tomar durante el día."
+    },
+    {
+      "day": 247,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Tu cuerpo responde al amor que le das. Empieza hoy."
+    },
+    {
+      "day": 248,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "El brócoli contiene sulforafano, un compuesto que ayuda al hígado a procesar estrógenos."
+    },
+    {
+      "day": 249,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Hoy haz 3 series de plancha de 20 segundos. Tu core te lo agradecerá."
+    },
+    {
+      "day": 250,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "La mejor versión de ti se construye con paciencia y constancia."
+    },
+    {
+      "day": 251,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Las grasas trans de alimentos procesados aumentan la inflamación y el riesgo cardiovascular."
+    },
+    {
+      "day": 252,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Intenta incluir una legumbre en tu alimentación de hoy: frijoles, lentejas o garbanzos."
+    },
+    {
+      "day": 253,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Tu bienestar es contagioso. Cuando tú te cuidas, inspiras a otros."
+    },
+    {
+      "day": 254,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "Tu cuerpo produce cortisol en un patrón natural: alto por la mañana y bajo por la noche."
+    },
+    {
+      "day": 255,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Prepárate una taza de cacao caliente sin azúcar esta noche."
+    },
+    {
+      "day": 256,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Cada amanecer trae una nueva oportunidad para elegir bienestar."
+    },
+    {
+      "day": 257,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "La vitamina K2 dirige el calcio hacia tus huesos en lugar de tus arterias."
+    },
+    {
+      "day": 258,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Hoy escoge las escaleras en cada oportunidad que tengas."
+    },
+    {
+      "day": 259,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Tu poder está en las pequeñas decisiones de cada día."
+    },
+    {
+      "day": 260,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "El eje intestino-cerebro conecta tu digestión con tu estado emocional a través del nervio vago."
+    },
+    {
+      "day": 261,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Prueba hacer 5 minutos de meditación guiada antes de dormir."
+    },
+    {
+      "day": 262,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Eres valiosa, fuerte y capaz de cualquier cambio que te propongas."
+    },
+    {
+      "day": 263,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "La menopausia no es una enfermedad, es una transición natural que puedes atravesar con bienestar."
+    },
+    {
+      "day": 264,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Hoy prepara tu almuerzo en casa y llévalo contigo."
+    },
+    {
+      "day": 265,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Tu metabolismo es tu aliado, no tu enemigo. Aprende a trabajar con él."
+    },
+    {
+      "day": 266,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "El ejercicio libera endorfinas, las hormonas del bienestar y la felicidad natural."
+    },
+    {
+      "day": 267,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Agrega perejil fresco a tu próxima comida. Vitaminas y sabor natural."
+    },
+    {
+      "day": 268,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Hoy eliges salud, mañana recoges los frutos."
+    },
+    {
+      "day": 269,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "Tu cuerpo necesita todos los macronutrientes: proteínas, grasas y carbohidratos en equilibrio."
+    },
+    {
+      "day": 270,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Hoy intenta caminar al menos 6,000 pasos. Tu cuerpo lo necesita."
+    },
+    {
+      "day": 271,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Tu determinación es tu mayor virtud en este camino."
+    },
+    {
+      "day": 272,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "La respiración diafragmática activa el sistema nervioso parasimpático y reduce el cortisol."
+    },
+    {
+      "day": 273,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Prepárate una infusión de jengibre con limón y miel."
+    },
+    {
+      "day": 274,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "No importa cuántas veces empieces, lo importante es no rendirte."
+    },
+    {
+      "day": 275,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "Los flavonoides del cacao puro mejoran la circulación y el estado de ánimo."
+    },
+    {
+      "day": 276,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Haz 10 minutos de estiramientos completos antes de acostarte."
+    },
+    {
+      "day": 277,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Tu cuerpo agradece cada vaso de agua, cada paso, cada respiración consciente."
+    },
+    {
+      "day": 278,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "Tu piel refleja tu salud hormonal. Hidratarte y nutrirse bien se nota por fuera."
+    },
+    {
+      "day": 279,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Hoy come un puñado de arándanos o fresas. Antioxidantes para tu cuerpo."
+    },
+    {
+      "day": 280,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Eres una guerrera silenciosa que lucha por su bienestar cada día."
+    },
+    {
+      "day": 281,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "La falta de vitamina B12 puede causar fatiga y afectar tu estado de ánimo."
+    },
+    {
+      "day": 282,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Prueba hacer tu propio aderezo: aceite de oliva, limón y hierbas."
+    },
+    {
+      "day": 283,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Tu historia de salud la escribes tú, con cada elección."
+    },
+    {
+      "day": 284,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "Los alimentos fermentados como el kimchi y el chucrut fortalecen tu microbioma."
+    },
+    {
+      "day": 285,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Dedica 20 minutos a una actividad que te relaje y disfrutes."
+    },
+    {
+      "day": 286,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "El amor propio es la mejor medicina para tu equilibrio hormonal."
+    },
+    {
+      "day": 287,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "El exceso de cafeína puede elevar el cortisol. Limita el café a 2-3 tazas al día."
+    },
+    {
+      "day": 288,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Hoy toma un descanso consciente de 5 minutos a media mañana."
+    },
+    {
+      "day": 289,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Hoy es un buen día para recordar por qué empezaste este camino."
+    },
+    {
+      "day": 290,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "La grasa no es enemiga. Tu cerebro está hecho 60% de grasa y necesita grasas buenas."
+    },
+    {
+      "day": 291,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Intenta que tu plato tenga al menos 3 colores diferentes en cada comida."
+    },
+    {
+      "day": 292,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Tu compromiso contigo misma es lo más hermoso que puedes hacer."
+    },
+    {
+      "day": 293,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Cada célula de tu cuerpo tiene receptores hormonales. La alimentación afecta a todas."
+    },
+    {
+      "day": 294,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Hoy prepárate un smoothie con espinaca, mango y semillas de chía."
+    },
+    {
+      "day": 295,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Cada célula de tu cuerpo se renueva. Dales el mejor combustible."
+    },
+    {
+      "day": 296,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "El magnesio antes de dormir puede mejorar la calidad de tu sueño y relajar tus músculos."
+    },
+    {
+      "day": 297,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Camina al aire libre hoy. La naturaleza reduce tu cortisol."
+    },
+    {
+      "day": 298,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Eres la mujer que siempre quisiste ser. Solo necesitas creerlo."
+    },
+    {
+      "day": 299,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "La leptina, hormona de la saciedad, funciona mejor cuando duermes lo suficiente."
+    },
+    {
+      "day": 300,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Prueba agregar espárragos a tu cena. Ricos en folato y fibra."
+    },
+    {
+      "day": 301,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Tu bienestar no depende de la edad, depende de tus hábitos."
+    },
+    {
+      "day": 302,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Las hormonas del estrés bloquean las hormonas reproductivas. Manejar el estrés es prioridad."
+    },
+    {
+      "day": 303,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Hoy haz un ejercicio nuevo que nunca hayas probado, aunque sea por 5 minutos."
+    },
+    {
+      "day": 304,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Hoy honra a tu cuerpo con las mejores decisiones posibles."
+    },
+    {
+      "day": 305,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "Tu hígado necesita suficiente agua y nutrientes para eliminar hormonas usadas correctamente."
+    },
+    {
+      "day": 306,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Prepárate una bolsita con frutos secos para tu snack de media tarde."
+    },
+    {
+      "day": 307,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Tu viaje de bienestar es personal e intransferible. Ámalo."
+    },
+    {
+      "day": 308,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "El índice glucémico de un alimento indica qué tan rápido eleva tu insulina después de comerlo."
+    },
+    {
+      "day": 309,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Intenta no comer nada procesado hoy. Solo alimentos reales."
+    },
+    {
+      "day": 310,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "La mujer que se cuida a sí misma puede cuidar al mundo."
+    },
+    {
+      "day": 311,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "La masa ósea alcanza su pico a los 30 años. Después, el calcio y la vitamina D son esenciales."
+    },
+    {
+      "day": 312,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Hoy prueba tomar té verde en lugar de café por la tarde."
+    },
+    {
+      "day": 313,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Tu energía vital mejora con cada hábito saludable que incorporas."
+    },
+    {
+      "day": 314,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Los fitonutrientes de las verduras de colores variados protegen tus células del envejecimiento."
+    },
+    {
+      "day": 315,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Haz 3 pausas activas de 2 minutos durante tu jornada hoy."
+    },
+    {
+      "day": 316,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Eres mucho más fuerte y capaz de lo que te dicen tus dudas."
+    },
+    {
+      "day": 317,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "El exceso de cortisol puede causar niebla mental y dificultad para concentrarte."
+    },
+    {
+      "day": 318,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Cocina con ajo hoy. Además de delicioso, es antiinflamatorio."
+    },
+    {
+      "day": 319,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Cada respiro consciente es un paso hacia tu equilibrio."
+    },
+    {
+      "day": 320,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "Tu corazón necesita omega-3, potasio y magnesio para latir fuerte y sano."
+    },
+    {
+      "day": 321,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Prueba hacer estiramientos de cadera antes de dormir. Libera la tensión del día."
+    },
+    {
+      "day": 322,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Tu cuerpo es tu compañero de vida. Trátalo como a tu mejor amiga."
+    },
+    {
+      "day": 323,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Las proteínas animales y vegetales son complementarias. Varíalas para obtener todos los aminoácidos."
+    },
+    {
+      "day": 324,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Hoy cena una proteína con ensalada. Simple y poderoso."
+    },
+    {
+      "day": 325,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "El bienestar no es una meta, es un estilo de vida que eliges cada día."
+    },
+    {
+      "day": 326,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "El ayuno intermitente puede beneficiar la sensibilidad a la insulina, pero no es para todas."
+    },
+    {
+      "day": 327,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Intenta beber un vaso de agua 30 minutos antes de cada comida."
+    },
+    {
+      "day": 328,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Hoy y siempre, elige lo que te haga sentir viva y plena."
+    },
+    {
+      "day": 329,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "Tu sistema endocrino es una red interconectada. Cuando una hormona se desequilibra, afecta a las demás."
+    },
+    {
+      "day": 330,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Hoy sal a caminar sin audífonos. Escucha los sonidos a tu alrededor."
+    },
+    {
+      "day": 331,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Tu salud es el cimiento sobre el que construyes todo lo demás."
+    },
+    {
+      "day": 332,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "La hidratación adecuada ayuda a tu cuerpo a mantener la temperatura y transportar nutrientes."
+    },
+    {
+      "day": 333,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Prepárate un desayuno con huevo, aguacate y tomate. Proteína y grasas buenas."
+    },
+    {
+      "day": 334,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "Eres perfectamente imperfecta, y eso te hace única."
+    },
+    {
+      "day": 335,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "Los adaptógenos como la ashwagandha pueden ayudar a tu cuerpo a manejar mejor el estrés."
+    },
+    {
+      "day": 336,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Haz una lista de 3 hábitos saludables que quieras incorporar esta semana."
+    },
+    {
+      "day": 337,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Tu cuerpo sabe sanarse. Solo dale las herramientas correctas."
+    },
+    {
+      "day": 338,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "La vitamina A es esencial para la salud de tu piel, visión y sistema inmune."
+    },
+    {
+      "day": 339,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Hoy prueba cenar solo verduras y proteína. Dale descanso a los carbohidratos."
+    },
+    {
+      "day": 340,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Después de los 40, cada día que te cuidas es un día ganado."
+    },
+    {
+      "day": 341,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "Tu frecuencia cardíaca en reposo es un indicador de salud cardiovascular. El ejercicio la mejora."
+    },
+    {
+      "day": 342,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Toma 5 respiraciones profundas antes de cada comida hoy."
+    },
+    {
+      "day": 343,
+      "type": "motivacional",
+      "emoji": "✨",
+      "text": "Tu luz interior brilla más cuando te sientes bien por dentro."
+    },
+    {
+      "day": 344,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Los polifenoles del aceite de oliva extra virgen son antiinflamatorios y protegen tu corazón."
+    },
+    {
+      "day": 345,
+      "type": "accion",
+      "emoji": "🚶‍♀️",
+      "text": "Intenta cocinar una porción extra para tener comida lista mañana."
+    },
+    {
+      "day": 346,
+      "type": "motivacional",
+      "emoji": "🌈",
+      "text": "Hoy celebra el simple hecho de estar aquí, cuidándote."
+    },
+    {
+      "day": 347,
+      "type": "educativa",
+      "emoji": "🔬",
+      "text": "El estrés oxidativo se combate con una dieta rica en frutas y verduras de colores variados."
+    },
+    {
+      "day": 348,
+      "type": "accion",
+      "emoji": "🧘‍♀️",
+      "text": "Hoy dedica 10 minutos a mover tu cuerpo como más te guste."
+    },
+    {
+      "day": 349,
+      "type": "motivacional",
+      "emoji": "💖",
+      "text": "Tu persistencia define tu camino. Sigue adelante, mujer valiente."
+    },
+    {
+      "day": 350,
+      "type": "educativa",
+      "emoji": "🌡️",
+      "text": "Tu tiroides controla tu metabolismo. Cuidarla es cuidar tu energía diaria."
+    },
+    {
+      "day": 351,
+      "type": "accion",
+      "emoji": "🥗",
+      "text": "Prueba agregar cilantro fresco a tu comida. Desintoxicante natural."
+    },
+    {
+      "day": 352,
+      "type": "motivacional",
+      "emoji": "🦋",
+      "text": "Eres tu propia heroína. Actúa en consecuencia."
+    },
+    {
+      "day": 353,
+      "type": "educativa",
+      "emoji": "⚡",
+      "text": "Los aminoácidos esenciales provienen de las proteínas que comes. Son los bloques de construcción de tu cuerpo."
+    },
+    {
+      "day": 354,
+      "type": "accion",
+      "emoji": "💧",
+      "text": "Haz un reto: toma 3 litros de agua hoy y observa cómo te sientes."
+    },
+    {
+      "day": 355,
+      "type": "motivacional",
+      "emoji": "🌺",
+      "text": "Tu bienestar hormonal es posible. Cree en ti y en tu cuerpo."
+    },
+    {
+      "day": 356,
+      "type": "educativa",
+      "emoji": "🧬",
+      "text": "El triptófano de los alimentos se convierte en serotonina. Plátano, pavo y nueces son buenas fuentes."
+    },
+    {
+      "day": 357,
+      "type": "accion",
+      "emoji": "🌿",
+      "text": "Hoy prepárate una ensalada de atún con muchas verduras."
+    },
+    {
+      "day": 358,
+      "type": "motivacional",
+      "emoji": "🙌",
+      "text": "La madurez es descubrir que el mejor proyecto eres tú misma."
+    },
+    {
+      "day": 359,
+      "type": "educativa",
+      "emoji": "💡",
+      "text": "La vitamina B6 es fundamental para la producción de neurotransmisores que regulan tu humor y sueño."
+    },
+    {
+      "day": 360,
+      "type": "accion",
+      "emoji": "🎯",
+      "text": "Intenta hacer 30 segundos de plancha hoy. Cada segundo cuenta."
+    },
+    {
+      "day": 361,
+      "type": "motivacional",
+      "emoji": "💪",
+      "text": "Cada paso cuenta en tu viaje hacia el bienestar integral."
+    },
+    {
+      "day": 362,
+      "type": "educativa",
+      "emoji": "🧠",
+      "text": "El potasio ayuda a regular los fluidos corporales y la función nerviosa. Las legumbres son ricas en potasio."
+    },
+    {
+      "day": 363,
+      "type": "accion",
+      "emoji": "🥤",
+      "text": "Prueba desayunar con avena, nueces y canela. Un trio perfecto para tu metabolismo."
+    },
+    {
+      "day": 364,
+      "type": "motivacional",
+      "emoji": "🌟",
+      "text": "Tu sonrisa refleja tu bienestar interior. Cuídalo con esmero."
+    },
+    {
+      "day": 365,
+      "type": "educativa",
+      "emoji": "📚",
+      "text": "Tu cuerpo necesita descanso activo: días de ejercicio suave que permitan la recuperación muscular y hormonal."
+    }
+  ],
+  "celebrations": [
+    {
+      "streak": 3,
+      "emoji": "⭐",
+      "title": "¡3 días seguidos!",
+      "text": "Ya creaste un hábito. Tu cuerpo lo nota."
+    },
+    {
+      "streak": 7,
+      "emoji": "🎉",
+      "title": "¡Racha de 7 días!",
+      "text": "Una semana completa. Eres imparable."
+    },
+    {
+      "streak": 14,
+      "emoji": "🏆",
+      "title": "¡2 semanas!",
+      "text": "Tu constancia es tu superpoder."
+    },
+    {
+      "streak": 21,
+      "emoji": "👑",
+      "title": "¡21 días!",
+      "text": "Dicen que 21 días forman un hábito. Tú lo lograste."
+    },
+    {
+      "streak": 30,
+      "emoji": "🌟",
+      "title": "¡Un mes completo!",
+      "text": "30 días cuidándote. Tu cuerpo te lo agradece."
+    },
+    {
+      "streak": 60,
+      "emoji": "💎",
+      "title": "¡60 días!",
+      "text": "Dos meses de compromiso. Eso es disciplina real."
+    },
+    {
+      "streak": 90,
+      "emoji": "🔥",
+      "title": "¡90 días!",
+      "text": "Tres meses. Ya no es un esfuerzo — es tu estilo de vida."
+    },
+    {
+      "streak": 180,
+      "emoji": "🦋",
+      "title": "¡6 meses!",
+      "text": "Medio año transformándote. Mira lo lejos que has llegado."
+    },
+    {
+      "streak": 365,
+      "emoji": "🏅",
+      "title": "¡UN AÑO!",
+      "text": "365 días. Eres una leyenda del autocuidado."
+    }
+  ]
+}

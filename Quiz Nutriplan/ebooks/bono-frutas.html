@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Guía de Frutas Inteligentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #F59E0B;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #F59E0Bdd 0%, #F59E0B 50%, #F59E0Bcc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🍎</span>
+    <h1>Guía de Frutas Inteligentes</h1>
+    <p class="hero-sub">Tu semáforo frutal: cuáles potencian y cuáles sabotean tu equilibrio hormonal</p>
+    <div class="hero-count">13 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Tu Guía Inteligente de Frutas para el Equilibrio Hormonal</h2>
+        <div class="intro-content"><p>&quot;¿Puedo comer fruta si quiero cuidar mi insulina?&quot;</p><p>La respuesta es SÍ — pero con inteligencia.</p><p>Las frutas no son tu enemigo. De hecho, son aliadas poderosas: aportan fibra, antioxidantes, vitaminas y minerales que tu sistema hormonal necesita para funcionar correctamente.</p><p>El problema nunca fue la fruta — fue NO saber cuáles elegir, en qué cantidad y cómo combinarlas.</p><p>Esta guía te da un sistema visual tipo semáforo para que sepas exactamente qué frutas te benefician, cuáles moderar y cuáles limitar:</p><p class="intro-bullet">• 🟢 VERDE — Come libremente (con porción normal)</p><p class="intro-bullet">• 🟡 AMARILLO — Come con estrategia (porción controlada)</p><p class="intro-bullet">• 🔴 ROJO — Consume ocasionalmente (porción pequeña)</p><p>4 principios para elegir frutas inteligentes:</p><p class="intro-bullet">• 1️⃣ IG bajo (≤55) — Menor impacto en tu glucosa</p><p class="intro-bullet">• 2️⃣ Rica en fibra — La fibra frena la absorción del azúcar</p><p class="intro-bullet">• 3️⃣ Entera, no procesada — Sin jugos, almíbares ni deshidratada con azúcar</p><p class="intro-bullet">• 4️⃣ Madurez controlada — Más madura = más azúcar libre</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/frutas/estrellas.jpg" alt="⭐ Las Frutas Estrella — Tus Mejores Aliadas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">⭐ Las Frutas Estrella — Tus Mejores Aliadas</h2>
+        <p class="chapter-desc">Estas frutas tienen IG bajo, alto contenido de fibra y nutrientes que mejoran directamente tu sensibilidad a la insulina. Conócelas a fondo.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">🍏 Manzana Verde — La Reina del Equilibrio</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/frutas/manzana.jpg" alt="🍏 Manzana Verde — La Reina del Equilibrio" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Índice Glucémico: 36 (bajo)</li><li>🟢 Fibra por unidad: 4.4g (excelente)</li><li>🟢 Porción ideal: 1 manzana mediana</li><li></li><li>── POR QUÉ ES ESTRELLA ──</li><li>✅ Rica en pectina — fibra soluble que forma gel y frena la absorción de azúcar</li><li>✅ Alta en polifenoles — antioxidantes que mejoran la sensibilidad a la insulina</li><li>✅ Con cáscara aporta quercetina — antiinflamatorio natural</li><li>✅ Disponible todo el año, económica y versátil</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>SIEMPRE cómela con cáscara — ahí está el 50% de la fibra y los polifenoles</li><li>Mejor combinación: manzana + mantequilla de maní = snack hormonal perfecto</li><li>En avena: ralla una manzana verde sobre tu avena con canela — delicioso</li><li>Tip: la manzana verde tiene MENOS azúcar que la roja — elige la verde cuando puedas</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La manzana verde es posiblemente la fruta más segura para tu insulina. Su pectina crea un gel en tu intestino que retarda la absorción de glucosa hasta un 25%. Cómela a mordidas (no en jugo) para que la fibra haga su trabajo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">🫐 Frutos Rojos — Los Antioxidantes Más Poderosos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/frutas/frutos-rojos.jpg" alt="🫐 Frutos Rojos — Los Antioxidantes Más Poderosos" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Fresas — IG 41 | Porción: 1 taza (8-10 fresas)</li><li>🟢 Arándanos — IG 53 | Porción: ¾ taza</li><li>🟢 Frambuesas — IG 32 | Porción: 1 taza</li><li>🟢 Moras — IG 25 | Porción: 1 taza</li><li></li><li>── POR QUÉ SON ESTRELLAS ──</li><li>✅ Mayor concentración de antocianinas (antioxidantes) de todas las frutas</li><li>✅ Las antocianinas mejoran directamente la sensibilidad a la insulina</li><li>✅ Muy bajas en azúcar comparadas con otras frutas</li><li>✅ Altísimas en fibra — las frambuesas tienen 8g por taza</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Sobre yogur griego: el combo más simple y poderoso para tu metabolismo</li><li>En avena nocturna: agrégalas frescas o congeladas al preparar la noche anterior</li><li>Congeladas: mantienen TODOS sus nutrientes y antioxidantes — siempre ten en tu freezer</li><li>Como snack solo: 1 taza de fresas o moras es el snack de IG más bajo que existe</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los frutos rojos son las frutas con mayor poder antiinflamatorio conocido. Estudios muestran que consumir frutos rojos regularmente mejora la sensibilidad a la insulina y reduce marcadores de inflamación crónica. Son la fruta #1 para tu equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">🥑 Aguacate — La Fruta Grasa que Regula Todo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/frutas/aguacate.jpg" alt="🥑 Aguacate — La Fruta Grasa que Regula Todo" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Índice Glucémico: 15 (bajísimo)</li><li>🟢 Fibra por unidad: 10g (extraordinario)</li><li>🟢 Porción ideal: ¼ a ½ aguacate</li><li></li><li>── POR QUÉ ES ESTRELLA ──</li><li>✅ Aunque no es dulce, es una FRUTA — la más rica en grasas monoinsaturadas</li><li>✅ Estas grasas mejoran la sensibilidad a la insulina directamente</li><li>✅ Alto en potasio (más que el plátano) — mineral clave para el metabolismo</li><li>✅ La fibra + grasa crean saciedad de 4+ horas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En tostada de pan de granos: ½ aguacate + huevo + sal marina = desayuno hormonal</li><li>En ensaladas: agrega cubos de aguacate a cualquier ensalada para convertirla en comida completa</li><li>Como acompañante: ¼ aguacate con cualquier plato reduce el impacto glucémico del plato entero</li><li>Guacamole: aguacate + limón + tomate + cilantro + sal = dip perfecto con vegetales crudos</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El aguacate es la fruta más poderosa para tu equilibrio hormonal. Sus grasas monoinsaturadas son la materia prima para producir estrógeno y progesterona. Agregar aguacate a cualquier comida reduce el pico de insulina del plato completo porque la grasa retarda la digestión.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">🍊 Cítricos — Vitamina C y Protección Hormonal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/frutas/citricos.jpg" alt="🍊 Cítricos — Vitamina C y Protección Hormonal" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Naranja — IG 43 | Porción: 1 naranja mediana</li><li>🟢 Pomelo/toronja — IG 25 | Porción: ½ pomelo</li><li>🟢 Mandarina — IG 42 | Porción: 2 mandarinas</li><li>🟢 Limón — IG 20 | Uso: ilimitado como condimento</li><li></li><li>── POR QUÉ SON ESTRELLAS ──</li><li>✅ La vitamina C es esencial para producir cortisol saludable</li><li>✅ El pomelo/toronja tiene compuestos que mejoran la sensibilidad a la insulina</li><li>✅ Los cítricos son ricos en hesperidina — flavonoide protector cardiovascular</li><li>✅ El limón estimula la bilis y apoya la desintoxicación hepática</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>SIEMPRE come la naranja entera (a gajos) — NUNCA en jugo. La fibra cambia todo</li><li>El pomelo antes del desayuno puede mejorar tu respuesta glucémica de la mañana</li><li>Agrega limón a TODO: agua, ensaladas, carnes, jugos — mejora sabor + aporta vitamina C</li><li>Mandarina como snack: 2 mandarinas + puñado de nueces = merienda perfecta</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El pomelo (toronja) es la fruta cítrica con mayor impacto en la sensibilidad a la insulina. IMPORTANTE: si tomas medicamentos, consulta con tu médico antes de consumir pomelo regularmente, ya que puede interactuar con ciertos fármacos.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">🥝 Tropicales Inteligentes — Kiwi, Guayaba y Más</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/frutas/tropical.jpg" alt="🥝 Tropicales Inteligentes — Kiwi, Guayaba y Más" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Kiwi — IG 39 | Porción: 2 kiwis pequeños</li><li>🟢 Guayaba — IG 32 | Porción: 1 guayaba mediana</li><li>🟢 Pera — IG 38 | Porción: 1 pera mediana</li><li>🟢 Ciruela fresca — IG 39 | Porción: 2 ciruelas</li><li></li><li>── POR QUÉ SON ESTRELLAS ──</li><li>✅ Kiwi: más vitamina C que la naranja + enzima actinidina que mejora digestión</li><li>✅ Guayaba: altísima en vitamina C y fibra, casi cero impacto glucémico</li><li>✅ Pera: rica en fibra soluble, ideal como snack de media tarde</li><li>✅ Ciruela fresca: bajo IG y efecto digestivo natural</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Kiwi: córtalo por la mitad y cómelo con cuchara — incluye las semillas (fibra extra)</li><li>Guayaba: cómela entera con cáscara y semillas — ahí está la fibra</li><li>Pera: con cáscara siempre, combinada con queso fresco = snack europeo clásico</li><li>Ciruela fresca: 2 ciruelas después del almuerzo mejoran la digestión y la saciedad</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La guayaba es un superalimento subestimado: tiene 4 veces más vitamina C que la naranja, más fibra que la mayoría de frutas, y un IG de apenas 32. Si vives en una zona donde es accesible, deberías incluirla en tu rotación semanal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/frutas/semaforo.jpg" alt="🚦 Semáforo de Frutas — Tu Referencia Rápida" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🚦 Semáforo de Frutas — Tu Referencia Rápida</h2>
+        <p class="chapter-desc">Imprime esta sección o tómale screenshot. Es tu mapa visual para elegir frutas en el supermercado, la cocina o un restaurante.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">🟢 VERDE — Vía Libre (IG ≤ 55)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Aguacate — IG 15 | Come diariamente</li><li>🟢 Limón — IG 20 | Usa libremente como condimento</li><li>🟢 Pomelo/toronja — IG 25 | Excelente antes del desayuno</li><li>🟢 Moras — IG 25 | Las más bajas en azúcar</li><li>🟢 Frambuesas — IG 32 | Altísimas en fibra (8g/taza)</li><li>🟢 Guayaba — IG 32 | Superfruta subestimada</li><li>🟢 Manzana verde — IG 36 | La reina del equilibrio</li><li>🟢 Pera — IG 38 | Fibra soluble excelente</li><li>🟢 Kiwi — IG 39 | Más vitamina C que la naranja</li><li>🟢 Ciruela fresca — IG 39 | Digestiva natural</li><li>🟢 Fresas — IG 41 | Antioxidantes + bajo azúcar</li><li>🟢 Mandarina — IG 42 | Snack perfecto</li><li>🟢 Naranja — IG 43 | Siempre entera, nunca en jugo</li><li>🟢 Banana ligeramente verde — IG 48 | Almidón resistente</li><li>🟢 Mango (porción pequeña) — IG 51 | Vitamina A</li><li>🟢 Arándanos — IG 53 | Los reyes antiinflamatorios</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Estas frutas puedes incluirlas diariamente en tu alimentación</li><li>Siempre enteras (no en jugo) y con cáscara cuando sea posible</li><li>Combínalas con proteína o grasa para máximo beneficio hormonal</li><li>Rotación: no comas siempre la misma — varía para obtener diferentes nutrientes</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Todas las frutas zona verde tienen en común: IG bajo + fibra alta. La fibra es la razón por la que la fruta entera es tan diferente del jugo. Sin fibra, es solo agua con azúcar. Con fibra, es un paquete nutricional completo que tu insulina puede manejar sin problema.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">🟡 AMARILLO — Con Estrategia (IG 56-69)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟡 Piña — IG 59 | Porción: ½ taza máximo</li><li>🟡 Papaya — IG 60 | Porción: 1 taza pequeña</li><li>🟡 Banana madura — IG 62 | Porción: ½ banana</li><li>🟡 Uvas — IG 59 | Porción: 10-12 uvas</li><li>🟡 Cereza — IG 63 | Porción: 10-12 cerezas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>NO las elimines — consúmelas con estrategia</li><li>SIEMPRE combínalas con proteína: piña + yogur griego, banana + mantequilla de maní</li><li>Porción controlada: la mitad de lo que normalmente comerías</li><li>Mejor en la mañana o media tarde — tu cuerpo maneja mejor la glucosa temprano en el día</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La banana madura tiene IG 62, pero la banana VERDE tiene IG 48 — la diferencia es el almidón resistente que se convierte en azúcar al madurar. Si amas las bananas, elige las que están ligeramente verdes. Y si usas banana en batidos, congélala cuando aún esté verde.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">🔴 ROJO — Ocasional y con Cuidado (IG ≥ 70)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/frutas/evitar.jpg" alt="🔴 ROJO — Ocasional y con Cuidado (IG ≥ 70)" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🔴 Sandía — IG 76 | Porción: 1 rodaja fina (pero CG baja)</li><li>🔴 Dátiles secos — IG 103 | Porción: 1-2 máximo</li><li>🔴 Uvas pasas — IG 64 | Porción: 1 cucharada</li><li>🔴 Fruta seca azucarada — IG variable alto</li><li>🔴 Fruta en almíbar — IG altísimo por el azúcar añadida</li><li>🔴 Jugos de fruta (incluso 'naturales') — sin fibra = azúcar líquida</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>⚠️ CASO ESPECIAL SANDÍA: tiene IG alto (76) pero Carga Glucémica BAJA — la porción normal es 92% agua</li><li>Los dátiles tienen IG 103 — más alto que la glucosa pura. Máximo 1-2 como snack con nueces</li><li>La fruta seca concentra el azúcar: 100g de uvas = 16g azúcar, 100g de pasas = 59g azúcar</li><li>Jugo 'natural' de 4 naranjas = 48g de azúcar SIN fibra que llega a tu sangre en minutos</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La fruta zona roja no es 'mala' — simplemente necesita más cuidado. Un dátil con una nuez dentro es un snack maravilloso. Pero 10 dátiles sin nada es una bomba de azúcar. La porción y la combinación lo cambian todo.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/frutas/estrategias.jpg" alt="🍽️ Estrategias para Comer Frutas con Inteligencia" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🍽️ Estrategias para Comer Frutas con Inteligencia</h2>
+        <p class="chapter-desc">No se trata solo de QUÉ fruta comes, sino de CÓMO la comes. Estas estrategias reducen el impacto glucémico de cualquier fruta.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">📐 Las 5 Reglas de Oro para Comer Frutas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/frutas/ensalada-frutas.jpg" alt="📐 Las 5 Reglas de Oro para Comer Frutas" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1️⃣ SIEMPRE ENTERA — Come la fruta a mordidas o en gajos, nunca en jugo</li><li>2️⃣ NUNCA SOLA EN AYUNAS — Combínala con proteína (yogur, nueces, queso) o grasa (aguacate, maní)</li><li>3️⃣ PORCIÓN CONTROLADA — ½ a 1 fruta mediana por vez, no más</li><li>4️⃣ MEJOR TEMPRANO — Mañana o media tarde; tu sensibilidad a la insulina es mayor en la mañana</li><li>5️⃣ CON CÁSCARA — Ahí está el 40-60% de la fibra y los antioxidantes</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>COMBO #1: Manzana verde + 10 almendras = snack de 3+ horas de saciedad</li><li>COMBO #2: Yogur griego + frutos rojos + chía = desayuno hormonal perfecto</li><li>COMBO #3: Pera + queso fresco = merienda con proteína y fibra</li><li>COMBO #4: Fresas + mantequilla de maní = dulce + proteína + grasa = insulina estable</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La regla más transformadora: NUNCA comas fruta sola con el estómago vacío. La proteína y la grasa actúan como 'freno' que retarda la absorción del azúcar natural. La misma manzana que sola causa un mini-pico, con mantequilla de maní libera su azúcar lentamente durante 2 horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">🥤 Fruta Entera vs Jugo — La Diferencia que Cambia Todo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/frutas/smoothie-fruta.jpg" alt="🥤 Fruta Entera vs Jugo — La Diferencia que Cambia Todo" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── NARANJA ENTERA (1 unidad) ──</li><li>🟢 12g de azúcar + 3g de fibra</li><li>🟢 Absorción: 30-45 minutos (gradual)</li><li>🟢 Pico de insulina: moderado y controlable</li><li></li><li>── JUGO DE NARANJA (3-4 naranjas) ──</li><li>🔴 48g de azúcar + 0g de fibra</li><li>🔴 Absorción: 5-10 minutos (golpe directo)</li><li>🔴 Pico de insulina: masivo e inmediato</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Si quieres fruta líquida: haz BATIDO (licuado con fibra), no jugo (exprimido sin fibra)</li><li>En el batido incluye toda la fruta con su pulpa y fibra + agrega proteína</li><li>Si haces jugo en extractor, pierdes la fibra — el resultado es agua con azúcar con vitaminas</li><li>Excepción: el jugo es útil solo como tratamiento de glucosa baja (hipoglucemia) — ahí su rapidez es una ventaja</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La fibra es la diferencia entre medicina y veneno. La misma fruta con fibra estabiliza tu glucosa; sin fibra la dispara. Un jugo de 4 naranjas entrega 4 veces más azúcar en 6 veces menos tiempo. Tu páncreas recibe un golpe que genera un pico masivo de insulina seguido de una caída brutal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/frutas/mitos.jpg" alt="❌ Mitos vs ✅ Verdades sobre las Frutas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">❌ Mitos vs ✅ Verdades sobre las Frutas</h2>
+        <p class="chapter-desc">Las frutas son probablemente el grupo de alimentos más injustamente castigado por la moda anti-carbohidratos. Vamos a separar la ficción de la realidad.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">❌ MITO: &quot;La fruta es igual que el azúcar de mesa&quot;</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>❌ LO QUE CREES: El azúcar de la fruta es lo mismo que el azúcar refinada</li><li>✅ LA VERDAD: La fruta viene empaquetada con fibra, agua, vitaminas y antioxidantes</li><li>💡 El azúcar de mesa es sacarosa PURA — llega a tu sangre en segundos</li><li>💡 El azúcar de la fruta viene rodeada de fibra que FRENA su absorción</li><li>💡 Los polifenoles de la fruta MEJORAN la sensibilidad a la insulina</li><li>💡 Comparar una manzana con una cucharada de azúcar es como comparar agua de mar con agua pura</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>La fruta aporta nutrientes que tu cuerpo necesita y que el azúcar refinada no tiene</li><li>La fibra de la fruta alimenta tu microbiota intestinal — el azúcar la daña</li><li>Los antioxidantes de la fruta combaten la inflamación — el azúcar la promueve</li><li>Mismo azúcar, efectos opuestos en tu cuerpo — la diferencia es el 'paquete' completo</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Si alguien te dice que la fruta y el azúcar de mesa son iguales, no entiende bioquímica. Tu cuerpo procesa la fructosa de una manzana (con fibra, agua, pectina) de forma COMPLETAMENTE diferente a la sacarosa pura. Una te protege, la otra te daña.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">❌ MITO: &quot;Hay que eliminar TODAS las frutas para perder peso&quot;</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>❌ LO QUE CREES: Las frutas engordan y hay que quitarlas para adelgazar</li><li>✅ LA VERDAD: Eliminar frutas te quita nutrientes esenciales sin beneficio real</li><li>💡 Las frutas zona verde tienen entre 50-100 calorías por porción — casi nada</li><li>💡 Su fibra genera saciedad que PREVIENE atracones de comida procesada</li><li>💡 Tus hormonas necesitan vitamina C, potasio y antioxidantes de las frutas</li><li>💡 Ningún estudio científico muestra que comer fruta entera cause aumento de peso</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En vez de eliminar fruta, elimina lo que REALMENTE sabotea: refrescos, galletas, pan blanco</li><li>2-3 porciones de fruta al día es lo recomendado — con las estrategias de combinación</li><li>La fruta como snack reemplaza opciones mucho peores (chips, dulces, barras procesadas)</li><li>Si eliminas fruta Y procesados, te quedas sin opciones de dulce → atracones inevitables</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las dietas que eliminan las frutas por completo ignoran un dato fundamental: tu cuerpo necesita los micronutrientes de las frutas para producir hormonas correctamente. La vitamina C es esencial para el cortisol, el potasio para la insulina, y los antioxidantes para combatir la inflamación. No elimines — elige mejor.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">✅ VERDAD: La madurez de la fruta cambia su impacto glucémico</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>✅ ESTO SÍ ES CIERTO: Mientras más madura, más azúcar libre y mayor IG</li><li>💡 Banana verde: IG 48 — rica en almidón resistente (actúa como fibra)</li><li>💡 Banana madura: IG 62 — el almidón se convirtió en azúcar libre</li><li>💡 Banana muy madura (manchas negras): IG 70+ — casi todo es azúcar simple</li><li>💡 Lo mismo aplica a: peras, mangos, duraznos, ciruelas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Elige frutas en su punto medio de madurez — ni muy verdes ni muy maduras</li><li>Congela bananas cuando están ligeramente verdes — mantienes su IG más bajo</li><li>Las frutas muy maduras son mejores para hornear (como endulzante natural) que para comer solas</li><li>En el supermercado, elige las que podrás comer en 2-3 días — no compres ya super maduras</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La maduración convierte almidón resistente (fibra) en azúcar libre (glucosa + fructosa). Es un proceso natural, pero entenderlo te da control. Un mango verde firme tiene IG mucho menor que uno super maduro y jugoso. Elige el punto medio y tu insulina estará contenta.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Guía de Frutas Inteligentes</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

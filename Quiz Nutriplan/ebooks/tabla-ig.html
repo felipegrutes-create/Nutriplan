@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Tabla de Índice Glucémico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #06B6D4;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #06B6D4dd 0%, #06B6D4 50%, #06B6D4cc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">📊</span>
+    <h1>Tabla de Índice Glucémico</h1>
+    <p class="hero-sub">Tu semáforo visual para elegir alimentos que estabilizan tu insulina</p>
+    <div class="hero-count">23 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Tu Semáforo Hormonal de Alimentos</h2>
+        <div class="intro-content"><p>¿Alguna vez te preguntaste por qué ciertos alimentos te dejan sin energía a las 2 horas... y otros te mantienen activa toda la mañana?</p><p>La respuesta está en el Índice Glucémico (IG) — un número que mide qué tan rápido un alimento sube tu glucosa en sangre.</p><p>Cuando comes alimentos de IG alto constantemente, tu páncreas libera picos de insulina que, con el tiempo, desregulan todo tu sistema hormonal: metabolismo lento, grasa abdominal, cansancio crónico y antojos incontrolables.</p><p>Esta guía te da un sistema visual tipo semáforo para que elijas tus alimentos con inteligencia:</p><p class="intro-bullet">• 🟢 VERDE (IG ≤ 55) — Vía libre. Estos alimentos mantienen tu insulina estable y tu metabolismo activo.</p><p class="intro-bullet">• 🟡 AMARILLO (IG 56-69) — Con estrategia. Combínalos con proteína y fibra para suavizar el impacto.</p><p class="intro-bullet">• 🔴 ROJO (IG ≥ 70) — Ocasional. Disparan picos de insulina. Úsalos solo de vez en cuando y nunca solos.</p><p>Recuerda: el IG no determina si un alimento es &quot;bueno&quot; o &quot;malo&quot; — mide velocidad. Y tú puedes controlar esa velocidad con las estrategias que encontrarás en cada tarjeta.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/tabla-ig/panes-cereales.jpg" alt="🍞 Panes y Cereales" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🍞 Panes y Cereales</h2>
+        <p class="chapter-desc">Los panes y cereales son la base de muchos desayunos, pero no todos impactan igual tu insulina. Aquí descubrirás cuáles son tus aliados y cuáles evitar.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">🟢 Zona Verde — Cereales que Estabilizan</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Avena tradicional (porridge) — IG 55</li><li>🟢 Pan especial de granos/semillas — IG 53</li><li>🟢 Muesli sin azúcar — IG 57 (limítrofe)</li><li>🟢 Cebada (barley) — IG 28</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>La avena tradicional (NO instantánea) es tu mejor aliada para desayunos estables</li><li>Busca panes que digan 'granos enteros' o 'semillas' en los primeros ingredientes</li><li>El muesli sin azúcar añadido es una excelente base — agrega frutos secos y canela</li><li>La cebada tiene uno de los IG más bajos entre los cereales — úsala en sopas y guisos</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La avena tradicional libera glucosa lentamente, lo que mantiene tu insulina estable por horas. Esto significa menos antojos a media mañana y más energía sostenida.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">🔴 Zona Roja — Cereales que Disparan Picos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🔴 Cornflakes — IG 81</li><li>🔴 Avena instantánea — IG 79</li><li>🔴 Pan blanco de trigo — IG 75</li><li>🔴 Pan integral (sorpresa) — IG 74</li><li>🔴 Pan sin levadura — IG 70</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>⚠️ SORPRESA: El pan integral comercial tiene IG casi igual al blanco (74 vs 75)</li><li>La avena instantánea se procesa más y pierde fibra — su IG sube de 55 a 79</li><li>Los cornflakes son cereales ultraprocesados con uno de los IG más altos</li><li>Si comes pan integral, elige los que tienen granos visibles y semillas enteras</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La industria te vende pan integral como 'saludable', pero su IG es casi idéntico al blanco. Tu páncreas no distingue entre ambos. Elige pan de granos/semillas reales.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">💡 Cambios Inteligentes — Panes y Cereales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>❌ Cornflakes (IG 81) → ✅ Avena tradicional (IG 55)</li><li>❌ Pan blanco (IG 75) → ✅ Pan de granos/semillas (IG 53)</li><li>❌ Pan integral comercial (IG 74) → ✅ Pan de semillas real (IG 53)</li><li>❌ Avena instantánea (IG 79) → ✅ Avena de cocción lenta (IG 55)</li><li>❌ Cereales azucarados → ✅ Muesli sin azúcar (IG 57)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Regla de oro: cuanto más procesado el cereal, mayor su IG</li><li>Lee las etiquetas: si 'harina de trigo' es el primer ingrediente, el IG será alto</li><li>Agrega 1 cucharada de mantequilla de maní a tu avena — la grasa reduce el impacto glucémico</li><li>Tuesta tu propio muesli con avena, nueces y semillas — controlas el azúcar</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cada swap que hagas de zona roja a zona verde reduce la carga sobre tu páncreas. Con el tiempo, esto mejora la sensibilidad a la insulina y reactiva tu metabolismo hormonal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/tabla-ig/arroz-pasta.jpg" alt="🍚 Arroz, Pasta y Granos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🍚 Arroz, Pasta y Granos</h2>
+        <p class="chapter-desc">El arroz y la pasta son básicos en toda cocina latina. Aprende qué versiones usar y cómo prepararlos para minimizar el impacto en tu insulina.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">🟢 Zona Verde — Granos Amigables</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Cebada — IG 28</li><li>🟢 Espagueti blanco — IG 49</li><li>🟢 Espagueti integral — IG 48</li><li>🟢 Fideos de arroz — IG 53</li><li>🟢 Fideos udon — IG 55</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>DATO CLAVE: la pasta tiene IG más bajo que el arroz blanco (49 vs 73)</li><li>Cocina la pasta 'al dente' — cuanto menos cocida, menor el IG</li><li>La cebada es la estrella oculta de los granos con IG 28 — agrégala a sopas y ensaladas</li><li>Los fideos de arroz tienen IG menor al arroz blanco gracias a su estructura</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La pasta al dente conserva más almidón resistente, que actúa como fibra para tu intestino. Menos cocción = menos impacto en tu insulina = más estabilidad hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">🟡🔴 Zona Media y Alta — Arroz y Granos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟡 Cuscús — IG 65</li><li>🟡 Arroz integral — IG 68</li><li>🔴 Arroz blanco cocido — IG 73</li><li>🔴 Congee / arroz tipo papilla — IG 78</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>⚠️ DATO: el arroz integral tiene IG 68 (medio-alto) — no es tan bajo como crees</li><li>El arroz blanco cocido y enfriado forma almidón resistente y baja su IG</li><li>Truco japonés: cocina el arroz, déjalo enfriar y luego recaliéntalo — baja el IG un 10-15%</li><li>Reduce la porción de arroz a ½ taza y llena el resto del plato con vegetales y proteína</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cuando combinas arroz con frijoles, proteína o vegetales, el impacto glucémico del plato completo se reduce. Tu insulina responde al plato entero, no a cada ingrediente por separado.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">💡 Cambios Inteligentes — Arroz y Granos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>❌ Arroz blanco solo (IG 73) → ✅ Arroz + frijoles + vegetales</li><li>❌ Arroz papilla/congee (IG 78) → ✅ Cebada en sopa (IG 28)</li><li>❌ Arroz como base del plato → ✅ Pasta al dente como base (IG 49)</li><li>❌ Cuscús solo (IG 65) → ✅ Cuscús con pollo y vegetales asados</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>La combinación arroz + frijoles es sabia: las legumbres bajan el IG del plato completo</li><li>Sustituye arroz por cebada en sopas y guisos — casi el mismo sabor, 60% menos IG</li><li>Si amas el arroz, no lo elimines: reduce porción y acompaña siempre con proteína</li><li>Experimenta con quinoa (IG 53) como sustituto del arroz en ensaladas</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">No necesitas eliminar el arroz de tu vida. Necesitas cambiar cómo lo comes. Porción controlada + proteína + vegetales = un plato que tu insulina puede manejar sin problemas.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/tabla-ig/frutas.jpg" alt="🍎 Frutas y Jugos Naturales" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🍎 Frutas y Jugos Naturales</h2>
+        <p class="chapter-desc">Las frutas son nutritivas, pero no todas afectan tu glucosa igual. Descubre la regla de oro que cambiará cómo las consumes.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">🟢 Zona Verde — Frutas Estabilizadoras</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Manzana — IG 36</li><li>🟢 Naranja — IG 43</li><li>🟢 Duraznos (en lata, en jugo natural) — IG 43</li><li>🟢 Mermelada natural — IG 49</li><li>🟢 Jugo de naranja natural — IG 50</li><li>🟢 Banana — IG 51</li><li>🟢 Mango — IG 51</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>La manzana es la fruta reina para estabilizar glucosa — cómela con cáscara y a mordidas</li><li>La banana ligeramente verde tiene MENOR IG que la madura — el almidón resistente baja al madurar</li><li>Los cítricos (naranja, mandarina, pomelo) son excelentes opciones con IG moderado</li><li>El mango tiene IG 51 (bajo) — la fibra natural compensa su dulzor</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Regla de oro: FRUTA ENTERA siempre es mejor que jugo. La fibra de la fruta actúa como un 'freno' que retarda la absorción de azúcar. Sin fibra, el azúcar llega de golpe a tu sangre.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">🟡🔴 Frutas con Estrategia</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟡 Piña — IG 59</li><li>🟡 Jugo de piña — IG 59</li><li>🔴 Sandía — IG 76</li><li>🟢 Jugo de manzana — IG 41 (sorpresa baja)</li><li>🟢 Dátiles crudos — IG 42</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>⚠️ CASO ESPECIAL: la sandía tiene IG 76 (alto), pero su Carga Glucémica es BAJA</li><li>Esto pasa porque una porción normal de sandía tiene pocos carbohidratos — es 92% agua</li><li>Puedes comer sandía sin culpa en porciones normales — el IG alto no cuenta toda la historia</li><li>La piña combínala con yogur griego (proteína) para suavizar el pico glucémico</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La sandía es el ejemplo perfecto de por qué el IG solo no basta. Su Carga Glucémica (CG) es baja porque tiene mucha agua y pocos carbohidratos por porción. Mira el IG Y la CG juntos para decidir.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">💡 Tu Estrategia con Frutas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>✅ Come la fruta ENTERA, no en jugo</li><li>✅ Prefiere frutas con cáscara comestible (manzana, pera, durazno)</li><li>✅ Combina fruta con proteína o grasa: manzana + mantequilla de maní</li><li>✅ Las frutas congeladas conservan su fibra y IG original</li><li>⚠️ Fruta seca concentra azúcar — reduce porción a la mitad</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Desayuno ideal: avena + banana + nueces = IG bajo del plato completo</li><li>Snack perfecto: manzana con 10 almendras = saciedad de 3+ horas</li><li>Evita jugos industriales — aunque digan 'natural', pierden la fibra</li><li>Si haces smoothie, incluye la fruta entera con fibra, no solo el jugo</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Cuando comes fruta entera, la fibra forma un 'gel' en tu intestino que frena la absorción de azúcar. Tu insulina sube gradualmente en vez de dispararse. Resultado: energía estable y sin antojos.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/tabla-ig/vegetales.jpg" alt="🥔 Vegetales y Tubérculos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🥔 Vegetales y Tubérculos</h2>
+        <p class="chapter-desc">Los vegetales son tus mejores aliados, pero algunos tubérculos pueden sorprenderte. Conoce las diferencias para armar platos inteligentes.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">🟢 Estrellas Verdes — Vegetales Aliados</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Zanahoria cocida — IG 39</li><li>🟢 Sopa de verduras — IG 48</li><li>🟢 Taro cocido — IG 53</li><li>🟢 Plátano verde — IG 55</li><li>🟢 La mayoría de vegetales sin almidón — IG muy bajo (&lt; 20)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Los vegetales de hoja verde (espinaca, lechuga, kale) tienen IG tan bajo que ni se mide</li><li>Brócoli, coliflor, calabacín, pepino, tomate — todos con IG mínimo</li><li>La zanahoria cocida tiene IG 39 — MÁS BAJO de lo que muchos creen</li><li>El plátano verde es rico en almidón resistente — excelente para tu flora intestinal</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los vegetales sin almidón son los únicos alimentos que puedes comer en cantidad ilimitada sin preocuparte por tu insulina. Llena la MITAD de tu plato con ellos en cada comida.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">🟡🔴 Tubérculos — El Factor Sorpresa</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟡 Camote/batata dulce cocida — IG 63</li><li>🟡 Calabaza cocida — IG 64</li><li>🟡 Papas fritas — IG 63</li><li>🔴 Papa cocida — IG 78</li><li>🔴 Puré instantáneo — IG 87</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>⚠️ SORPRESA: las papas fritas tienen MENOR IG que la papa cocida (63 vs 78)</li><li>La grasa de la fritura retarda la absorción — pero no las convierte en saludables</li><li>El puré instantáneo es el tubérculo con MAYOR IG (87) — evítalo completamente</li><li>El camote/batata tiene IG medio (63), no bajo como muchos creen</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La papa no es el enemigo, pero la forma en que la preparas cambia todo. Papa cocida y enfriada forma almidón resistente que baja su IG. El puré instantáneo es lo opuesto: máxima velocidad a tu sangre.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">💡 Cambios Inteligentes — Tubérculos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>❌ Puré instantáneo (IG 87) → ✅ Puré de coliflor (IG &lt; 20)</li><li>❌ Papa cocida sola (IG 78) → ✅ Papa cocida-enfriada en ensalada</li><li>❌ Papa como base del plato → ✅ Camote asado (IG 63) como acompañamiento</li><li>❌ Papas fritas industriales → ✅ Plátano verde horneado (IG 55)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Puré de coliflor: cocina coliflor al vapor, licúa con un poco de mantequilla y sal — textura similar, IG mínimo</li><li>Ensalada de papa: cocina, enfría en refrigerador, luego adereza — el almidón resistente baja el IG</li><li>Camote asado en rodajas con aceite de oliva y romero — delicioso y con IG medio manejable</li><li>Plátano verde en tostones al horno — crujientes sin la carga glucémica de la papa frita</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El puré de coliflor es uno de los swaps más poderosos que puedes hacer. Mismo confort, misma textura cremosa, pero con IG casi nulo. Tu insulina no se entera de que estás comiendo 'puré'.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/tabla-ig/legumbres.jpg" alt="🫘 Legumbres — Las Campeonas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🫘 Legumbres — Las Campeonas</h2>
+        <p class="chapter-desc">Si hay un grupo de alimentos que merece una estrella dorada para tu equilibrio hormonal, son las legumbres. Todas tienen IG bajo y te sacian por horas.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">🟢 El Cuadro de Honor — Todas IG Bajo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢⭐ Soya/soja en granos — IG 16 (la más baja)</li><li>🟢⭐ Frijoles rojos (kidney beans) — IG 24</li><li>🟢⭐ Garbanzos — IG 28</li><li>🟢⭐ Lentejas — IG 32</li><li>🟢 Frijoles negros — IG ~30</li><li>🟢 Habas — IG ~32</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>DATO PODEROSO: las legumbres tienen los IG más bajos de TODOS los alimentos con carbohidratos</li><li>Contienen proteína vegetal + fibra — la combinación perfecta para estabilizar insulina</li><li>La soya con IG 16 es prácticamente un alimento 'invisible' para tu glucosa</li><li>Las lentejas se cocinan rápido (20 min) y son la opción más práctica del grupo</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las legumbres son únicas: combinan carbohidratos de absorción ultra-lenta con proteína vegetal y fibra soluble. Esta triple combinación mantiene tu insulina en un rango óptimo y alimenta las bacterias buenas de tu intestino.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">💡 Estrategias con Legumbres</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>✅ Agrega frijoles o lentejas a cualquier plato con arroz — baja el IG del plato completo</li><li>✅ Hummus de garbanzos como snack con vegetales crudos — IG mínimo</li><li>✅ Sopa de lentejas como cena — saciante, nutritiva, IG bajísimo</li><li>✅ Ensalada de frijoles negros con tomate y cilantro — almuerzo express</li><li>✅ Edamame (soya verde) como snack — IG 16, alto en proteína</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>La combinación arroz + frijoles de la cocina latina es SABIA: los frijoles bajan el IG del arroz</li><li>Cocina un lote grande de legumbres el domingo y úsalas toda la semana</li><li>Las legumbres enlatadas (enjuagadas) conservan su IG bajo — opción rápida válida</li><li>Agrega garbanzos a ensaladas para convertirlas de snack a comida completa</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Si tuvieras que elegir UN solo cambio en tu alimentación, sería agregar legumbres a tu dieta diaria. Estudios muestran que las personas que comen legumbres regularmente tienen mejor sensibilidad a la insulina y metabolismo más activo.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/tabla-ig/lacteos.jpg" alt="🥛 Lácteos y Alternativas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🥛 Lácteos y Alternativas</h2>
+        <p class="chapter-desc">Los lácteos guardan sorpresas: la leche tiene IG bajo, pero no todas las alternativas vegetales son iguales. Una en particular puede disparar tu glucosa.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">🟢 Zona Verde — Lácteos Seguros</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Leche de soya — IG 34</li><li>🟢 Leche descremada — IG 37</li><li>🟢 Leche entera — IG 39</li><li>🟢 Yogur con fruta — IG 41</li><li>🟢 Helado — IG 51 (sorpresa)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>BUENA NOTICIA: toda la leche de vaca tiene IG bajo, sea entera o descremada</li><li>La leche de soya es la alternativa vegetal con MENOR IG (34) — excelente opción</li><li>El yogur natural sin azúcar añadido es un aliado poderoso para tu equilibrio hormonal</li><li>El helado tiene IG 51 (bajo) por su contenido de grasa — pero ojo con el azúcar añadido</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los lácteos fermentados como el yogur natural y el kéfir no solo tienen IG bajo — también aportan probióticos que mejoran tu microbiota intestinal, directamente conectada con tu equilibrio hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">16</div>
+            <div class="recipe-name">🔴 La Trampa de las Leches Vegetales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🔴 Leche de arroz — IG 86 (¡ALERTA!)</li><li>🟢 Leche de soya — IG 34</li><li>🟢 Leche de almendras sin azúcar — IG ~25</li><li>🟡 Leche de avena — IG ~60 (varía por marca)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>⚠️ TRAMPA PELIGROSA: la leche de arroz tiene IG 86 — más alto que una soda</li><li>Muchas personas eligen leche de arroz creyendo que es saludable — es una bomba glucémica</li><li>La leche de almendras sin azúcar es la alternativa con menor impacto glucémico</li><li>La leche de avena varía mucho según marca — lee etiquetas y elige sin azúcar añadido</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">'Leche vegetal' NO significa automáticamente saludable. La leche de arroz con IG 86 dispara tu insulina más que un refresco. Tu mejor alternativa vegetal: leche de soya (IG 34) o almendras sin azúcar.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">17</div>
+            <div class="recipe-name">💡 Cambios Inteligentes — Lácteos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>❌ Leche de arroz (IG 86) → ✅ Leche de soya (IG 34)</li><li>❌ Yogur de frutas azucarado → ✅ Yogur natural + fruta fresca</li><li>❌ Leche de avena azucarada → ✅ Leche de almendras sin azúcar</li><li>❌ Helado industrial → ✅ Yogur griego congelado con frutos rojos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lee SIEMPRE la etiqueta de leches vegetales — busca 'sin azúcar añadido'</li><li>El yogur griego sin azúcar tiene más proteína y menos carbohidratos que el regular</li><li>Si usas leche en smoothies, la de soya o almendras mantiene el IG más bajo</li><li>Kéfir natural: IG bajo + probióticos + proteína — triple beneficio hormonal</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El yogur griego sin azúcar es posiblemente el lácteo más poderoso para tu equilibrio hormonal: alto en proteína, bajo IG, rico en probióticos, y te sacia por horas. Úsalo como base de smoothies, snacks y postres.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/tabla-ig/snacks.jpg" alt="🍫 Snacks, Dulces y Bebidas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🍫 Snacks, Dulces y Bebidas</h2>
+        <p class="chapter-desc">Aquí es donde el IG te puede engañar: algunos dulces tienen IG bajo pero no son saludables. Aprende a leer más allá del número.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">18</div>
+            <div class="recipe-name">🟢🟡 IG Bajo No Significa Saludable</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Chocolate — IG 40 (bajo, pero...)</li><li>🟡 Papas chips/crujientes — IG 56</li><li>🟡 Soda/refresco — IG 59</li><li>🟡 Miel — IG 61</li><li>🟡 Palomitas — IG 65</li><li>🟡 Azúcar de mesa — IG 65</li><li>🔴 Rice crackers/galletas de arroz — IG 87</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>⚠️ LECCIÓN CLAVE: el chocolate tiene IG 40 (bajo), pero puede ser alto en calorías/grasas</li><li>El azúcar de mesa tiene IG 65 (medio) — MENOR que el pan blanco. ¿Entonces es mejor? NO.</li><li>El IG mide solo velocidad de absorción — no mide calorías, grasas, ni valor nutricional</li><li>Las galletas de arroz inflado (IG 87) son la peor opción del grupo — evítalas</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El IG es UNA herramienta, no la única. Un chocolate puede tener IG bajo pero ser alto en calorías. Usa el IG junto con el sentido común: IG bajo + nutritivo = ganadora. IG bajo + ultraprocesado = trampa.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">19</div>
+            <div class="recipe-name">💡 Snacks Inteligentes — Tu Kit Anti-Antojos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>✅ Puñado de nueces mixtas — IG &lt; 20, alto en grasas buenas</li><li>✅ Manzana con mantequilla de maní — IG ~35 del combo</li><li>✅ Hummus con palitos de zanahoria — IG &lt; 30</li><li>✅ Chocolate oscuro 70%+ (2 cuadritos) — IG ~40</li><li>✅ Edamame con sal de mar — IG 16</li><li>✅ Yogur griego con canela — IG ~35</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Los frutos secos (nueces, almendras, pistachos) tienen IG tan bajo que no se mide</li><li>El chocolate oscuro 70%+ tiene menos azúcar y más antioxidantes que el chocolate con leche</li><li>Prepara bolsitas de snack mix el domingo: nueces + semillas + cuadritos de chocolate oscuro</li><li>Lleva siempre un snack inteligente en tu bolso — es tu seguro contra picos de insulina</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los antojos a las 3-4pm son una señal de que tu insulina está en montaña rusa. Un snack de IG bajo 2 horas después del almuerzo mantiene tu glucosa estable y elimina esos antojos desesperantes.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">20</div>
+            <div class="recipe-name">🥤 Bebidas — Lo que Nadie te Dice</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Agua (siempre la #1) — IG 0</li><li>🟢 Café negro sin azúcar — IG 0</li><li>🟢 Té verde/herbal sin azúcar — IG 0</li><li>🟡 Soda/refresco regular — IG 59</li><li>🔴 Leche de arroz — IG 86</li><li>🟢 Jugo de naranja natural — IG 50</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Las bebidas sin azúcar (agua, café, té) no afectan tu glucosa — son neutras</li><li>El refresco tiene IG 59 (medio) pero el problema real es la CANTIDAD de azúcar: ~40g por lata</li><li>Agua con limón, menta o jengibre — hidratación con sabor y IG cero</li><li>El café con canela puede ayudar a la sensibilidad a la insulina (sin azúcar añadido)</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El agua es la bebida más poderosa para tu metabolismo hormonal. La deshidratación leve aumenta el cortisol (hormona del estrés), que a su vez eleva tu glucosa. Objetivo: 8 vasos diarios mínimo.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/tabla-ig/semaforo.jpg" alt="🎯 Guía Rápida — Tu Cheat Sheet" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🎯 Guía Rápida — Tu Cheat Sheet</h2>
+        <p class="chapter-desc">Todo lo que necesitas recordar en una sola sección. Imprime esta página o tómale screenshot — es tu referencia diaria para decisiones inteligentes.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">21</div>
+            <div class="recipe-name">📋 Resumen Semáforo — Los 30 Alimentos Clave</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── 🟢 VERDE (IG ≤ 55) — VÍA LIBRE ──</li><li>Soya/soja: 16 | Frijoles rojos: 24 | Garbanzos: 28</li><li>Cebada: 28 | Lentejas: 32 | Leche de soya: 34</li><li>Manzana: 36 | Leche descremada: 37 | Zanahoria: 39</li><li>Chocolate: 40 | Yogur con fruta: 41 | Naranja: 43</li><li>Espagueti: 49 | Banana: 51 | Pan de granos: 53</li><li>Avena tradicional: 55 | Plátano verde: 55</li><li></li><li>── 🟡 AMARILLO (IG 56-69) — CON ESTRATEGIA ──</li><li>Papas chips: 56 | Muesli: 57 | Soda: 59 | Miel: 61</li><li>Camote cocido: 63 | Papa frita: 63 | Calabaza: 64</li><li>Palomitas: 65 | Cuscús: 65 | Azúcar: 65 | Arroz integral: 68</li><li></li><li>── 🔴 ROJO (IG ≥ 70) — OCASIONAL ──</li><li>Pan sin levadura: 70 | Arroz blanco: 73 | Pan integral: 74</li><li>Pan blanco: 75 | Sandía: 76 | Papa cocida: 78</li><li>Congee: 78 | Avena instantánea: 79 | Cornflakes: 81</li><li>Leche de arroz: 86 | Puré instantáneo: 87 | Rice crackers: 87</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Imprime esta lista y pégala en tu refrigerador — es tu mapa diario</li><li>No necesitas memorizar todos los números — solo recuerda los colores</li><li>Arma cada comida con 70% verde, 20% amarillo, 10% rojo (o menos)</li><li>Cuando dudes de un alimento, búscalo aquí antes de servirte</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este semáforo es tu herramienta más poderosa. No necesitas perfección — necesitas consistencia. Cada comida basada en zona verde es un paso hacia un metabolismo hormonal más equilibrado.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">22</div>
+            <div class="recipe-name">🧠 Las 5 Reglas de Oro del IG</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1️⃣ COMBINA SIEMPRE — Carbohidrato + proteína + grasa buena = IG más bajo del plato</li><li>2️⃣ COCCIÓN IMPORTA — Al dente, menos cocido, enfriado = menor IG</li><li>3️⃣ FIBRA ES REINA — Más fibra natural = absorción más lenta = insulina estable</li><li>4️⃣ PORCIÓN ES CLAVE — IG alto en porción pequeña puede tener Carga Glucémica baja</li><li>5️⃣ NO OBSESIONES — El IG es una guía, no una cárcel. Usa el 80/20</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Regla 80/20: si el 80% de tus comidas son zona verde, el 20% restante no importa tanto</li><li>Nunca comas carbohidratos solos — siempre con proteína, grasa o fibra</li><li>Empieza tu comida con vegetales o ensalada ANTES del carbohidrato — reduce el pico glucémico hasta 30%</li><li>La Carga Glucémica (CG) importa tanto como el IG: porción pequeña = impacto pequeño</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La regla más transformadora: come tus vegetales PRIMERO, luego proteína, y por último los carbohidratos. Este orden simple puede reducir tu pico de glucosa hasta un 30% sin cambiar lo que comes — solo cambiando el orden.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">23</div>
+            <div class="recipe-name">✨ Tu Plato Hormonal Ideal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🥗 50% del plato → Vegetales sin almidón (IG casi nulo)</li><li>🍗 25% del plato → Proteína magra (sin IG significativo)</li><li>🍚 25% del plato → Carbohidrato de zona verde o amarilla</li><li>🫒 Agregar → 1 cucharada de grasa saludable (aceite de oliva, aguacate)</li><li>🥤 Acompañar → Agua, té sin azúcar o agua con limón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Este modelo funciona para CUALQUIER comida — desayuno, almuerzo o cena</li><li>La proteína y la grasa saludable ralentizan la digestión del carbohidrato</li><li>Los vegetales aportan volumen y fibra sin impacto glucémico — llénalos primero</li><li>Ejemplo perfecto: ensalada grande + pechuga de pollo + ½ taza de arroz + aguacate</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este plato no es una 'dieta' — es un modelo de alimentación que tus hormonas agradecerán. Cuando tu insulina se mantiene estable, todo se alinea: más energía, menos antojos, mejor sueño, y ese metabolismo que creías perdido vuelve a activarse.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Tabla de Índice Glucémico</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

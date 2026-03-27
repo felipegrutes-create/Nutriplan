@@ -1,0 +1,351 @@
+{
+  "archivo": "02-Panes-Inteligentes-Sin-Gluten-Vol-2.pdf",
+  "tipo": "capitulos",
+  "total_recetas": 45,
+  "intro": {
+    "titulo": "Más Panes, Más Opciones, Mismo Equilibrio",
+    "contenido": "Si ya exploraste el Volumen 1, sabes que es posible comer pan sin sabotear tus hormonas. Este segundo volumen lleva esa idea aún más lejos.\n\nAquí encontrarás 45 nuevas recetas que amplían tu repertorio: desde panes con harinas especiales como garbanzo y tapioca, hasta creaciones clásicas reinventadas como ciabatta, brioche y pan de hamburguesa — todo sin gluten y sin picos de insulina.\n\n¿Por qué importa para tus hormonas?\n\nCada vez que comes pan de harina refinada, tu glucosa sube rápido, tu insulina se dispara, y tu cuerpo entra en modo \"almacenamiento de grasa\". Con el tiempo, este ciclo lleva a resistencia a la insulina, fatiga crónica y desequilibrio hormonal.\n\nEstos panes inteligentes rompen ese ciclo. Usan harinas de bajo índice glucémico que liberan energía lentamente, manteniendo tus hormonas en equilibrio y tu metabolismo activo.\n\n• 45 recetas nuevas organizadas por categoría\n• Ingredientes accesibles en cualquier supermercado\n• Desde panes de 2 minutos hasta recetas artesanales\n• Cada receta con consejo hormonal específico"
+  },
+  "capitulos": [
+    {
+      "nombre": "Mix de Harinas Sin Gluten",
+      "descripcion": "4 mezclas base probadas y aprobadas. Prepáralas con anticipación y tendrás la base lista para cualquier receta.",
+      "imagen": "img/panes/panes-rapidos.jpg",
+      "recetas": [
+        {
+          "nombre": "Mix 1: Pan Blanco y Pasteles",
+          "ingredientes": ["1¾ taza de harina de arroz blanco", "2 tazas de fécula de patata", "1½ taza de almidón dulce", "2 cucharadas de goma xantana"],
+          "preparacion": ["Mezcle todos los ingredientes secos en un recipiente grande.", "Integre completamente hasta obtener una mezcla homogénea.", "Guarde en un recipiente hermético en lugar fresco y seco.", "Ideal para panes blancos esponjosos y pasteles ligeros."],
+          "consejo": "Este mix tiene el índice glucémico más alto de los 4. Úsalo con moderación y combínalo siempre con proteínas."
+        },
+        {
+          "nombre": "Mix 2: Panes Rústicos, Focaccia y Pizzas",
+          "ingredientes": ["1 taza de harina de sorgo", "1 taza de harina de mijo", "1½ taza de harina de arroz blanco", "1½ taza de fécula de patata", "2 cucharadas de goma xantana"],
+          "preparacion": ["Combine todas las harinas y la goma xantana en un recipiente grande.", "Mezcle bien hasta obtener una mezcla homogénea.", "Guarde en recipiente hermético.", "Perfecta para preparaciones rústicas y sabrosas."],
+          "consejo": "El sorgo y el mijo tienen menor índice glucémico que el arroz — mejor opción para tu equilibrio hormonal."
+        },
+        {
+          "nombre": "Mix 3: Pan Medio Integral",
+          "ingredientes": ["1½ taza de harina de arroz integral", "¾ taza de fécula de patata", "1 taza de almidón dulce", "1½ cucharada de goma xantana"],
+          "preparacion": ["Mezcle todos los ingredientes en un recipiente grande.", "Asegúrese de que estén bien combinados.", "Proporciona sabor más nutritivo y textura ligeramente más densa.", "Ideal para panes integrales con más fibra."],
+          "consejo": "La harina integral conserva el salvado del arroz, rico en fibras que ralentizan la absorción de glucosa."
+        },
+        {
+          "nombre": "Mix 4: Panqueques, Pasteles y Panes",
+          "ingredientes": ["110g de harina de arroz integral", "70g de harina de garbanzo", "60g de fécula de patata", "30g de almidón dulce", "20g de harina de linaza", "5g de psyllium (opcional)", "5g de goma xantana"],
+          "preparacion": ["Combine todos los ingredientes secos.", "Mezcle bien hasta mezcla uniforme.", "Versátil para panqueques y preparaciones ligeras.", "La harina de garbanzo aporta proteínas extra."],
+          "consejo": "Mix más equilibrado: combina proteínas (garbanzo), fibras (linaza, psyllium) y carbohidratos complejos."
+        }
+      ]
+    },
+    {
+      "nombre": "Panes Rápidos",
+      "descripcion": "Listos en minutos, sin fermentación. Para esos días en que necesitas algo delicioso sin esperar.",
+      "imagen": "img/panes/panes-rapidos.jpg",
+      "recetas": [
+        {
+          "nombre": "Pan de Sartén",
+          "ingredientes": ["1 huevo", "1 cucharadita de levadura biológica", "1 cucharadita de sésamo tostado", "1 cucharada de harina de almendras", "1 cucharada de copos de amaranto o quinoa", "1 cucharada de harina de linaza dorada", "1 pizca de sal"],
+          "preparacion": ["Bate el huevo con un tenedor.", "Agrega las harinas y mezcla bien.", "Añade sésamo y levadura.", "Calienta sartén pequeña a fuego bajo.", "Vierte la masa y tapa.", "Cocina hasta dorar ambos lados."],
+          "consejo": "Listo en 5 minutos. El amaranto regula la insulina y es una de las proteínas vegetales más completas."
+        },
+        {
+          "nombre": "Pan Vapt-Vupt de Microondas",
+          "ingredientes": ["1 cucharada de mantequilla (o ghee)", "1 huevo", "½ cucharada de harina de coco", "3 cucharadas de harina de almendra", "1 pizca de sal", "½ cucharada de levadura en polvo"],
+          "preparacion": ["Derrite la mantequilla en taza por 30 segundos.", "Agrega huevo y bate 20 segundos.", "Añade harinas y sal, mezcla.", "Incorpora levadura.", "Microondas por 90 segundos.", "Desmolda y corta en 4 rebanadas."],
+          "consejo": "El ghee tiene ácido butírico — aliado de tu microbiota intestinal y equilibrio hormonal."
+        },
+        {
+          "nombre": "Pan Panini",
+          "ingredientes": ["1 huevo", "2 cucharadas de harina de nueces", "1 cucharada de harina de linaza", "1 cucharada de linaza entera", "1 cucharadita de levadura en polvo", "Sal al gusto"],
+          "preparacion": ["Mezcla todos los ingredientes.", "Lleva al microondas por 2 minutos.", "Corta por la mitad.", "Rellena como prefieras.", "Dora en sartén antiadherente para marcar."],
+          "consejo": "Las nueces son ricas en omega-3 y melatonina, mejoran la calidad del sueño — esencial para la reparación hormonal."
+        },
+        {
+          "nombre": "Pan Crujiente",
+          "ingredientes": ["2 huevos", "3 cucharadas de harina de almendras", "1 cucharadita de levadura en polvo", "1 cucharada de aceite de oliva", "Romero al gusto", "Sal y condimentos al gusto"],
+          "preparacion": ["Bate bien los huevos.", "Agrega harina, condimentos y levadura.", "Extiende finito en molde engrasado.", "Espolvorea romero.", "Hornea a 200°C hasta crujiente."],
+          "consejo": "El romero contiene ácido carnósico, un potente antiinflamatorio natural que protege tus neuronas."
+        }
+      ]
+    },
+    {
+      "nombre": "Panes con Frutas y Oleaginosas",
+      "descripcion": "Sabores naturalmente dulces con la nutrición de frutas maduras y oleaginosas ricas en grasas saludables.",
+      "imagen": "img/panes/panes-frutas.jpg",
+      "recetas": [
+        {
+          "nombre": "Pan de Plátano",
+          "ingredientes": ["4 huevos", "4 plátanos bien maduros", "4 cucharadas de aceite de coco", "3 cucharadas de azúcar mascabado", "250g de avena sin gluten", "1 cucharada de levadura", "1 cucharadita de canela", "Pasas y castañas picadas (opcional)"],
+          "preparacion": ["Precalienta el horno a 180°C.", "Licúa todo excepto avena y levadura.", "Agrega avena y bate hasta homogéneo.", "Incorpora levadura con cuchara.", "Añade pasas y castañas si deseas.", "Vierte en molde engrasado.", "Hornea por 30 minutos."],
+          "consejo": "El aceite de coco contiene ácido láurico que mejora la sensibilidad a la insulina y tiene propiedades antimicrobianas."
+        },
+        {
+          "nombre": "Pan de Maní",
+          "ingredientes": ["3 tazas de maní tostado", "4 huevos", "⅔ taza de agua", "1 cucharadita de sal", "1 cucharada de levadura en polvo", "Aceite de coco para engrasar", "1 cucharada de cebolla deshidratada"],
+          "preparacion": ["Tritura maní en licuadora hasta harina.", "Agrega sal, huevos y agua. Bate 2 minutos.", "Apaga, agrega levadura y mezcla suave.", "Vierte en molde engrasado.", "Espolvorea cebolla deshidratada.", "Hornea a 180°C por 30 minutos."],
+          "consejo": "El maní aporta magnesio y resveratrol, que mejoran la función de la insulina y protegen contra el envejecimiento celular."
+        },
+        {
+          "nombre": "Pan de Almendras",
+          "ingredientes": ["1½ taza de harina de almendras", "¾ taza de almidón dulce", "¼ taza de harina de linaza dorada", "1 cucharadita de sal", "1 cucharadita de azúcar", "1 cucharada de levadura biológica", "4 huevos"],
+          "preparacion": ["Mezcla ingredientes secos y reserva.", "Bate bien los huevos.", "Agrega secos e incorpora.", "Vierte en molde engrasado.", "Cubre y deja crecer hasta doblar.", "Hornea a 180°C por 40 minutos."],
+          "consejo": "La almendra tiene apenas 3g de carbohidratos netos por porción y es rica en vitamina E, poderoso antioxidante hormonal."
+        }
+      ]
+    },
+    {
+      "nombre": "Panes con Semillas",
+      "descripcion": "Semillas que aportan omega-3, fibras y proteínas. El psyllium da elasticidad sin gluten y estabiliza tu glucosa.",
+      "imagen": "img/panes/panes-semillas.jpg",
+      "recetas": [
+        {
+          "nombre": "Pan con Psyllium",
+          "ingredientes": ["1¼ taza de harina de almendras", "6 cucharadas de psyllium en polvo", "2 cucharaditas de levadura en polvo", "2 cucharaditas de vinagre de manzana", "1¼ taza de agua hirviendo", "3 claras de huevo", "Sal y sésamo al gusto"],
+          "preparacion": ["Mezcla harina, psyllium, levadura, sésamo y sal.", "Agrega agua hirviendo, vinagre y claras.", "Mezcla con batidora hasta masa consistente.", "Moldea bolitas en molde engrasado.", "Hornea a 180°C por 50 minutos."],
+          "consejo": "El psyllium absorbe 10x su peso en agua, creando gel que ralentiza digestión y estabiliza glucosa."
+        },
+        {
+          "nombre": "Pan de Linaza",
+          "ingredientes": ["4 huevos", "3 cucharadas de aceite de oliva extra virgen", "1⅓ taza de harina de linaza dorada", "⅔ taza de harina de almendras", "1 cucharadita de sal", "1 taza de agua", "1 cucharada de levadura", "Semillas de linaza para decorar"],
+          "preparacion": ["En batidora: huevos, aceite, harinas, sal y hierbas. Bate.", "Añade agua y bate un poco más.", "Agrega levadura, mezcla con cuchara.", "Vierte en molde engrasado.", "Espolvorea semillas.", "Deja crecer 15 min.", "Hornea a 180°C por 40 minutos."],
+          "consejo": "La linaza dorada es la fuente vegetal más rica en omega-3 y lignanos para equilibrar el estrógeno después de los 40."
+        },
+        {
+          "nombre": "Pan de Semillas con Trigo Sarraceno",
+          "ingredientes": ["200g de harina de trigo sarraceno", "100g de harina de almendra", "4 cucharadas de chía", "450ml de agua", "4 cucharadas de aceite de oliva", "Semillas de girasol, calabaza y linaza (⅙ taza cada)", "1 cucharadita de sal", "12g de levadura sin gluten"],
+          "preparacion": ["Hidrata chía en 250ml de agua por 15 min.", "Mezcla harinas, levadura y sal.", "Agrega agua restante y gel de chía.", "Incorpora semillas (reserva para decorar).", "Vierte en molde, decora con semillas.", "Hornea a 170°C por 1h10min."],
+          "consejo": "El trigo sarraceno (libre de gluten) es rico en rutina, flavonoide que mejora la circulación y salud cardiovascular."
+        },
+        {
+          "nombre": "Pan de Trigo Sarraceno Puro",
+          "ingredientes": ["2 tazas de harina de trigo sarraceno", "1 taza de harina de arroz", "1 taza de harina de garbanzo", "2 tazas de agua tibia", "1 sobre de levadura biológica (10g)", "1 cucharadita de levadura química", "1 cucharadita de sal", "1 cucharadita de azúcar"],
+          "preparacion": ["Coloca las 3 harinas en recipiente.", "Agrega levadura química, sal y azúcar.", "Disuelve levadura biológica en agua tibia.", "Vierte líquido sobre harinas y mezcla.", "Vierte en molde engrasado.", "Deja crecer 40 minutos.", "Hornea a 180°C por 35-40 minutos."],
+          "consejo": "Garbanzo + trigo sarraceno = proteína completa con todos los aminoácidos esenciales para la producción hormonal."
+        }
+      ]
+    },
+    {
+      "nombre": "Panes Artesanales",
+      "descripcion": "Técnicas clásicas de panadería adaptadas: cortezas crujientes, migas suaves y sabores auténticos.",
+      "imagen": "img/panes/panes-artesanales.jpg",
+      "recetas": [
+        {
+          "nombre": "Baguette Crujiente",
+          "ingredientes": ["94g de harina de arroz", "82g de harina de sorgo", "54g de almidón de maíz", "1 cucharadita de sal", "2 cucharaditas de goma xantana", "2 cucharadas de levadura biológica seca", "1 clara de huevo", "1 cucharada de miel", "1 cucharadita de vinagre de manzana", "1 taza de agua fría"],
+          "preparacion": ["En batidora: harinas, goma, levadura y sal.", "Agrega clara, miel, vinagre y agua fría.", "Bate hasta masa suave y moldeable.", "Divide en 3 y forma baguettes.", "Haz cortes diagonales. Reposa 50 min cubierto.", "Pon agua hirviendo en bandeja en el horno.", "Hornea a 220°C por 30 minutos."],
+          "consejo": "El agua fría y el vapor crean la corteza crujiente clásica. La harina de sorgo aporta antioxidantes."
+        },
+        {
+          "nombre": "Focaccia Italiana",
+          "ingredientes": ["10g de levadura biológica", "1 cucharada de azúcar", "240ml de agua tibia", "200g de harina de arroz", "1 cucharada de goma xantana", "¼ cucharada de bicarbonato", "2 cucharadas de aceite de oliva", "1 huevo", "Romero, sal gruesa y aceite de oliva extra"],
+          "preparacion": ["Disuelve azúcar y levadura en agua tibia. Reposa 5 min.", "Mezcla harina, xantana, bicarbonato y sal.", "Agrega huevo, aceite y levadura activada.", "Extiende en bandeja engrasada.", "Haz agujeritos con los dedos.", "Riega con aceite de oliva, romero y sal gruesa.", "Hornea a 180°C por 25 minutos."],
+          "consejo": "El aceite de oliva en crudo conserva sus polifenoles — potentes antiinflamatorios para tus hormonas."
+        },
+        {
+          "nombre": "Pan Sirio",
+          "ingredientes": ["3 tazas de harina sin gluten", "2 cucharaditas de sal", "5g de levadura biológica seca", "1½ taza de agua tibia", "2 cucharadas de aceite de oliva"],
+          "preparacion": ["Activa levadura en agua tibia por 5 min.", "Junta secos, luego líquidos con levadura.", "Amasa 10 min hasta masa suave.", "Deja crecer 60 min hasta doblar.", "Divide en 8 discos de 15cm.", "Hornea a 180°C por 8 min, 2 por vez."],
+          "consejo": "Pan fino ideal para wraps con proteína, vegetales y aguacate — comida hormonal equilibrada."
+        },
+        {
+          "nombre": "Pan Australiano",
+          "ingredientes": ["2 huevos", "3 cucharadas de miel", "2 cucharadas de aceite de oliva", "1 cucharada de vinagre de manzana", "1 tableta de levadura (15g)", "½ taza de agua tibia", "Harinas de arroz, maíz, almidón, fécula y linaza", "2 cucharadas de cacao en polvo", "4 cucharadas de azúcar mascabado", "½ cucharadita de goma xantana"],
+          "preparacion": ["Disuelve levadura en agua tibia.", "Mezcla huevos, miel, aceite y vinagre.", "Agrega levadura y harinas.", "Engrasa molde, espolvorea cacao.", "Vierte masa, deja crecer 30 min.", "Haz 3 cortes, espolvorea harina de maíz.", "Hornea a 180°C por 40 minutos."],
+          "consejo": "El cacao puro es rico en magnesio y flavonoides que mejoran la sensibilidad a la insulina y el ánimo."
+        },
+        {
+          "nombre": "Pan Ciabatta",
+          "ingredientes": ["1 taza de harina de garbanzo", "1½ taza de harina de arroz", "1 taza de almidón dulce", "2 cucharaditas de goma xantana", "1 sobre de levadura (11g)", "2 cucharadas de azúcar", "½ cucharada de sal", "1 taza de agua tibia", "1 huevo", "½ taza de aceite", "1 cucharadita de vinagre"],
+          "preparacion": ["Mezcla harinas, almidón, goma, levadura, azúcar y sal.", "Agrega agua, huevo, aceite y vinagre.", "Mezcla hasta masa uniforme.", "Vierte en molde engrasado.", "Deja crecer 45 minutos.", "Hornea a 180°C por 35 minutos."],
+          "consejo": "La harina de garbanzo convierte esta ciabatta en un pan de liberación lenta de glucosa, rico en proteínas."
+        }
+      ]
+    },
+    {
+      "nombre": "Panes con Vegetales y Tubérculos",
+      "descripcion": "Vegetales que añaden nutrientes, humedad y colores vibrantes. Cada uno con beneficios hormonales específicos.",
+      "imagen": "img/panes/panes-vegetales.jpg",
+      "recetas": [
+        {
+          "nombre": "Pan Básico con Patata",
+          "ingredientes": ["1 taza de agua", "1 tableta de levadura (15g)", "3 cucharadas de azúcar", "3 cucharadas de aceite", "1 cucharadita de sal", "1 huevo", "1 taza de almidón dulce", "1½ taza de harina de arroz", "1 patata cocida picada"],
+          "preparacion": ["Licúa agua, levadura, azúcar, aceite, sal y huevo.", "Agrega almidón, harina y patata cocida.", "Bate hasta masa homogénea.", "Vierte en molde engrasado.", "Deja crecer 30 minutos.", "Hornea a 180°C por 40 minutos."],
+          "consejo": "Patata cocida y enfriada genera almidón resistente que no dispara la insulina — un truco hormonal simple."
+        },
+        {
+          "nombre": "Pan de Calabaza",
+          "ingredientes": ["4 cucharadas de almidón dulce", "4 cucharadas de almidón agrio", "2 cucharadas de agua", "1 taza de calabaza cocida machacada", "1 cucharada de aceite de coco", "1 cucharada de chía (opcional)", "Sal al gusto"],
+          "preparacion": ["Mezcla todo con las manos hasta masa homogénea.", "Ajusta con más almidón si se pega.", "Forma bolitas tipo pan de queso.", "Dispón en bandeja con papel manteca.", "Hornea a 180°C por 20 minutos."],
+          "consejo": "La calabaza es rica en zinc — mineral esencial para la tiroides. Se congela por 60 días."
+        },
+        {
+          "nombre": "Pan de Patata Estilo Pão de Queijo",
+          "ingredientes": ["4 patatas medianas (800g en puré)", "150g de almidón agrio", "150g de almidón dulce", "2 huevos", "150ml de aceite de oliva", "150ml de agua tibia", "Sal, orégano y albahaca al gusto"],
+          "preparacion": ["Mezcla agua tibia y aceite en un vaso.", "Coloca en recipiente con todos los ingredientes.", "Mezcla todo muy bien.", "Con cuchara, forma bolitas en bandeja engrasada.", "Hornea a 180°C por 25-30 minutos."],
+          "consejo": "Las hierbas italianas no solo dan sabor — el orégano y la albahaca tienen propiedades antiinflamatorias comprobadas."
+        },
+        {
+          "nombre": "Pan de Batata (Camote)",
+          "ingredientes": ["1 taza de batata cocida machacada", "1 cucharada de harina de linaza", "1 huevo", "½ cucharada de levadura biológica", "4 cucharadas de aceite de oliva", "2 cucharaditas de azúcar demerara", "¾ taza de harina de arroz", "½ taza de almidón dulce", "Sal y goma xantana al gusto"],
+          "preparacion": ["En batidora: batata, huevo, linaza, levadura, aceite, sal, goma y azúcar.", "Agrega harina y almidón.", "Amasa hasta que no se pegue.", "Moldea bolitas.", "Deja crecer hasta doblar.", "Hornea a 180°C hasta dorar."],
+          "consejo": "La batata tiene índice glucémico moderado y betacaroteno — antioxidante que protege tus células."
+        },
+        {
+          "nombre": "Pan de Batata de Microondas",
+          "ingredientes": ["1 huevo", "1 batata pequeña cocida machacada", "Sal al gusto", "1 cucharadita de levadura", "1 cucharada de harina de linaza (opcional)"],
+          "preparacion": ["Machaca la batata.", "Mezcla con huevo y sal.", "Agrega linaza si deseas.", "Añade levadura suavemente.", "Microondas por 2 minutos.", "Corta, dora en sartén y rellena."],
+          "consejo": "Pan de 2 minutos: batata + linaza = fibra + omega-3 para un snack rápido y hormonal."
+        },
+        {
+          "nombre": "Pan de Castañas",
+          "ingredientes": ["3½ tazas de harina de arroz", "½ taza de castaña de cajú picada", "½ taza de castaña de Pará picada", "1 cucharadita de goma xantana", "3 cucharadas de azúcar", "1 sobre de levadura (11g)", "2 cucharaditas de sal", "¾ taza de agua tibia", "3 cucharadas de mantequilla"],
+          "preparacion": ["Coloca ingredientes en orden en recipiente.", "Mezcla hasta masa homogénea.", "Vierte en molde engrasado.", "Deja crecer 40 minutos.", "Hornea a 180°C por 35 minutos."],
+          "consejo": "La castaña de Pará tiene la mayor concentración de selenio — 1 al día cubre tus necesidades de tiroides."
+        },
+        {
+          "nombre": "Pan de Cebolla",
+          "ingredientes": ["6 tazas de harina de arroz", "2 huevos", "½ taza de aceite", "1 sobre de levadura", "1 taza de agua tibia", "Sal y azúcar al gusto", "1 cebolla mediana", "1 yema para pincelar"],
+          "preparacion": ["Mezcla 2 tazas de harina con levadura, azúcar y sal.", "Licúa huevos, agua, aceite y cebolla.", "Vierte líquidos sobre harina y mezcla.", "Agrega harina restante hasta dar punto.", "Forma bolitas, deja crecer.", "Pincela con yema.", "Hornea a 180°C por 45 minutos."],
+          "consejo": "La cebolla tiene quercetina e inulina — prebióticos que alimentan tu microbiota y mejoran la absorción de nutrientes."
+        },
+        {
+          "nombre": "Pan de Zanahoria",
+          "ingredientes": ["1¼ taza de harina de arroz", "3 huevos", "½ taza de aceite", "1 cucharada de azúcar", "1 cucharadita de sal", "100g de zanahoria fresca picada", "1 cucharada de levadura", "Linaza o sésamo para decorar"],
+          "preparacion": ["Licúa todos los ingredientes excepto levadura.", "Agrega levadura, mezcla con cuchara.", "Vierte en molde engrasado.", "Espolvorea sésamo o linaza.", "Hornea a 180°C por 40 minutos."],
+          "consejo": "La zanahoria aporta betacaroteno → vitamina A → esencial para la producción de progesterona."
+        },
+        {
+          "nombre": "Pan de Ñame",
+          "ingredientes": ["1 taza de ñame crudo rallado", "3 cucharadas de aceite de coco", "½ cucharadita de sal", "2 cucharaditas de hierbas finas", "1 diente de ajo machacado", "¾ taza de almidón dulce"],
+          "preparacion": ["Mezcla ñame, aceite, sal, hierbas y ajo.", "Agrega almidón hasta masa que no se pegue.", "Forma bolitas.", "Hornea a 180°C por 25 minutos."],
+          "consejo": "El ñame contiene diosgenina — un precursor natural de progesterona. Especialmente beneficioso después de los 40."
+        },
+        {
+          "nombre": "Pan de Maíz",
+          "ingredientes": ["3 huevos", "150ml de agua", "30ml de aceite de oliva", "1¼ taza de almidón dulce", "1¼ taza de harina de maíz", "1 cucharada de levadura biológica", "2 cucharadas de linaza y avena", "2 cucharadas de azúcar", "Goma xantana y sal al gusto"],
+          "preparacion": ["Mezcla secos: harina, almidón, avena, linaza, azúcar, goma, sal y levadura.", "Agrega huevos, agua y aceite.", "Mezcla hasta homogéneo.", "Vierte en molde engrasado.", "Deja crecer 30 min.", "Hornea a 180°C por 35 minutos."],
+          "consejo": "La avena y la linaza añaden fibras solubles que suavizan el impacto glucémico de la harina de maíz."
+        }
+      ]
+    },
+    {
+      "nombre": "Panes con Harinas Especiales",
+      "descripcion": "Harinas diferenciadas que expanden tu repertorio: coco, garbanzo y tapioca con beneficios únicos.",
+      "imagen": "img/panes/panes-especiales.jpg",
+      "recetas": [
+        {
+          "nombre": "Pan de Harina de Coco",
+          "ingredientes": ["⅓ taza de almidón agrio", "½ taza de harina de coco", "¼ taza de agua (60ml)", "1 huevo", "4 cucharadas de aceite", "1 pizca de sal"],
+          "preparacion": ["Mezcla secos: almidón, harina de coco y sal.", "Agrega huevo, mezcla hasta harina gruesa.", "Añade agua y aceite. Sigue mezclando.", "Forma masa homogénea.", "Moldea panecillos en bandeja.", "Hornea a 180°C por 20-25 minutos."],
+          "consejo": "La harina de coco tiene 5g de fibra por cucharada y muy bajo índice glucémico — ideal para tu código hormonal."
+        },
+        {
+          "nombre": "Pan con Harina de Garbanzo",
+          "ingredientes": ["4 huevos", "1½ taza de harina de garbanzo", "4 cucharadas de harina de linaza", "1 cucharadita de sal marina", "3 cucharadas de agua", "2 cucharaditas de levadura en polvo"],
+          "preparacion": ["Precalienta el horno a 180°C.", "Engrasa molde pequeño (10x22cm).", "Mezcla todo con batidor, levadura al final.", "Transfiere al molde.", "Hornea por 30-35 minutos.", "Enfría antes de desmoldar."],
+          "consejo": "Garbanzo + linaza = proteínas + omega-3 para un pan que nutre tus hormonas en cada rebanada."
+        },
+        {
+          "nombre": "Pan de Tapioca",
+          "ingredientes": ["2½ tazas de agua (o leche vegetal)", "½ taza de avellanas crudas", "1 huevo", "3 cucharadas de aceite", "250g de tapioca granulada", "½ taza de almidón dulce", "Sal y condimentos al gusto"],
+          "preparacion": ["Licúa agua con avellanas hasta crema.", "Agrega huevo y aceite. Bate.", "Mezcla tapioca con sal y condimentos.", "Vierte líquido sobre tapioca. Hidrata 15 min.", "Agrega almidón y mezcla.", "Vierte en molde engrasado.", "Hornea a 180°C por 40 minutos."],
+          "consejo": "Las avellanas aportan vitamina E y grasas monoinsaturadas que protegen contra el estrés oxidativo hormonal."
+        }
+      ]
+    },
+    {
+      "nombre": "Panes Clásicos Reinventados",
+      "descripcion": "Hamburguesa, molde, canela y más — tus favoritos adaptados para cuidar tus hormonas.",
+      "imagen": "img/panes/panes-integrales.jpg",
+      "recetas": [
+        {
+          "nombre": "Pan de Hamburguesa",
+          "ingredientes": ["1 taza de harina de arroz (150g)", "1 taza de almidón dulce (100g)", "1 cucharadita de goma xantana", "1 cucharada de azúcar", "1 cucharadita de sal", "1 huevo", "1 taza de leche tibia (240ml)", "1 cucharadita de levadura biológica", "2 cucharadas de aceite de oliva", "Sésamo para decorar"],
+          "preparacion": ["Mezcla ingredientes secos.", "Licúa leche, huevo, aceite y levadura.", "Vierte líquidos sobre secos y mezcla.", "Reposa 15 min. Divide en 6 porciones.", "Forma discos, pincela con yema.", "Espolvorea sésamo.", "Hornea a 180°C por 20-25 minutos."],
+          "consejo": "Usa leche vegetal de almendras para menos carga glucémica. Rellena con proteína magra y aguacate."
+        },
+        {
+          "nombre": "Pan de Molde",
+          "ingredientes": ["2 tazas de harina de arroz", "1½ taza de almidón dulce", "3 cucharaditas de goma xantana", "3 cucharadas de azúcar", "1 cucharadita de sal", "1 cucharada de levadura biológica", "3 cucharadas de aceite de oliva", "3 huevos", "1½ taza de agua tibia"],
+          "preparacion": ["Mezcla todos los secos.", "Agrega húmedos y agua según necesidad.", "Masa blanda pero consistente.", "Vierte en molde engrasado.", "Deja crecer 40 min.", "Hornea a 180°C por 35-40 minutos."],
+          "consejo": "Rebánalo y congela — tuesta directo del freezer para sándwiches rápidos y saludables."
+        },
+        {
+          "nombre": "Pan de Avena",
+          "ingredientes": ["1 cucharada de azúcar mascabado", "1 sobre de levadura (10g)", "1 taza de harina de arroz", "½ taza de almidón dulce", "½ cucharadita de linaza", "½ cucharadita de sal", "2 cucharadas de aceite de oliva", "1 taza de avena en copos", "1 taza de agua tibia", "½ taza de avena extra para decorar"],
+          "preparacion": ["Mezcla secos (reserva ½ taza de avena).", "Agrega aceite de oliva.", "Incorpora agua tibia poco a poco.", "Vierte en molde engrasado.", "Espolvorea avena reservada.", "Deja crecer hasta doblar.", "Hornea: 180°C por 20 min, luego 200°C por 15 min."],
+          "consejo": "La avena tiene beta-glucanos que reducen colesterol y estabilizan glucosa — superalimento metabólico."
+        },
+        {
+          "nombre": "Pan Dulce de Canela",
+          "ingredientes": ["¼ taza de aceite", "1 taza de azúcar (o eritritol)", "4 claras a punto de nieve", "2 tazas de mix sin gluten", "Levadura y bicarbonato", "½ cucharadita de sal", "1 taza de agua", "Cobertura: 8 cda azúcar + 2 cda canela + aceite"],
+          "preparacion": ["Mezcla aceite con azúcar.", "Incorpora claras a punto de nieve suavemente.", "Agrega harinas alternando con agua.", "Prepara cobertura: azúcar + canela + aceite.", "Engrasa molde. Alterna: masa, cobertura, masa, cobertura.", "Hornea a 180°C por 40 minutos."],
+          "consejo": "La canela regula la glucosa naturalmente — puede mejorar la sensibilidad a la insulina hasta en un 20%."
+        },
+        {
+          "nombre": "Pan Esponjoso",
+          "ingredientes": ["¾ taza de agua tibia (37°C)", "1 cucharada de levadura biológica", "1 cucharada de azúcar mascabado", "1 huevo", "1 taza de harina de arroz integral", "½ taza de harina de oleaginosas", "¼ taza de almidón dulce", "¼ taza de fécula", "1 cucharada de aceite de oliva", "Sal al gusto", "Semillas para decorar"],
+          "preparacion": ["Mezcla agua, levadura y azúcar. Deja reaccionar.", "Agrega huevo y aceite de oliva.", "Incorpora harinas, almidón, fécula y sal.", "Mezcla hasta masa suave.", "Vierte en molde engrasado.", "Deja crecer 40 min. Decora con semillas.", "Hornea a 180°C por 30-35 minutos."],
+          "consejo": "La harina de oleaginosas aporta grasas saludables que ayudan a absorber vitaminas liposolubles A, D, E y K."
+        }
+      ]
+    },
+    {
+      "nombre": "Panes Integrales y Nutritivos",
+      "descripcion": "Máxima nutrición con ingredientes integrales: más fibras, más minerales, más saciedad en cada rebanada.",
+      "imagen": "img/panes/panes-integrales.jpg",
+      "recetas": [
+        {
+          "nombre": "Pan Integral Completo",
+          "ingredientes": ["1 sobre de levadura biológica", "1 cucharada de azúcar mascabado", "2½ tazas de agua tibia", "1 taza de harina de arroz integral", "1 taza de harina de arroz blanco", "½ taza de harina de linaza", "½ taza de almidón dulce", "Semillas de linaza, amaranto y quinoa", "1 cucharada de goma xantana", "4 cucharadas de aceite de oliva", "Sal al gusto", "2 huevos"],
+          "preparacion": ["Disuelve levadura y azúcar en ½ taza de agua. Reserva.", "Mezcla harinas, semillas, goma y sal.", "Agrega aceite, huevos y levadura.", "Incorpora agua restante poco a poco.", "Deja descansar 50 minutos.", "Mezcla, divide en 2 moldes.", "Reposa 10 min más.", "Hornea a 180°C por 45 minutos."],
+          "consejo": "Quinoa + amaranto + linaza: proteína completa, omega-3 y fibras para glucosa estable por horas."
+        },
+        {
+          "nombre": "Pan Integral Simple",
+          "ingredientes": ["500g de harina de arroz integral", "1 sobre de levadura (10g)", "3 cucharadas de aceite de oliva", "400ml de agua tibia", "1 cucharadita de sal"],
+          "preparacion": ["Junta harina y levadura.", "Agrega aceite y sal.", "Incorpora agua poco a poco, amasando 10 min.", "Masa suave y levemente pegajosa.", "Deja crecer 2 horas.", "Amasa para sacar gas. Moldea bola.", "Haz cortes. Crece 30 min más.", "Hornea a 200°C por 30 minutos."],
+          "consejo": "Fermentación de 2 horas produce ácidos orgánicos que facilitan la absorción de minerales esenciales."
+        },
+        {
+          "nombre": "Pan Rústico",
+          "ingredientes": ["1½ tazas de harina de arroz integral", "1¼ taza de harina de arroz blanco", "1 taza de harina de garbanzo", "¼ taza de linaza triturada", "Sal, goma xantana", "¼ taza de aceite de oliva", "¼ taza de miel", "1 taza de agua tibia", "½ cucharadita de levadura", "⅓ taza de puré de patata"],
+          "preparacion": ["Precalienta horno a 150°C. Engrasa molde.", "Combina harinas, linaza, sal y goma.", "Mezcla aceite, miel, agua, levadura y puré.", "Combina secos y líquidos.", "Vierte en molde.", "Hornea a 150°C por 60-70 minutos.", "Enfría completamente antes de cortar."],
+          "consejo": "Cocción lenta a 150°C preserva más nutrientes y crea un pan denso y ultra saciante."
+        }
+      ]
+    },
+    {
+      "nombre": "Panecillos y Masas Especiales",
+      "descripcion": "Desde panecillos rápidos hasta brioche y recetas con arracacha — creaciones únicas para expandir tu repertorio.",
+      "imagen": "img/panes/panes-especiales.jpg",
+      "recetas": [
+        {
+          "nombre": "Panecillo Rápido",
+          "ingredientes": ["3 tazas de harina sin gluten", "3 cucharadas de azúcar", "4 cucharadas de margarina sin leche", "2 cucharadas de levadura en polvo", "2 huevos", "200ml de leche vegetal"],
+          "preparacion": ["Mezcla todo con cuchara.", "Engrasa palmas con margarina.", "Forma panecillos con las manos.", "Dispón en bandeja engrasada.", "Pincela con yema.", "Hornea a 180°C por 20-25 minutos."],
+          "consejo": "Usa leche de almendras para versión con menos impacto glucémico y más proteínas."
+        },
+        {
+          "nombre": "Panecillo Brioche",
+          "ingredientes": ["300g de mezcla sin gluten", "10g de levadura biológica", "3 huevos", "3 cucharadas de azúcar", "3 cucharadas de mantequilla", "150ml de agua tibia"],
+          "preparacion": ["Engrasa moldes de pan inglés.", "En batidora: margarina, huevos, azúcar, mezcla y agua.", "Mezcla con espátula, después bate.", "Bate 5 min hasta masa sedosa.", "Vierte en moldes.", "Deja crecer 30 min.", "Hornea a 180°C por 25-30 minutos."],
+          "consejo": "Mantequilla grass-fed aporta vitamina K2 y ácido butírico — aliados para la salud ósea y hormonal."
+        },
+        {
+          "nombre": "Pan de Arracacha",
+          "ingredientes": ["2 tazas de almidón agrio", "3 tazas de almidón dulce", "Orégano, romero o albahaca", "Cúrcuma y sal al gusto", "¾ taza de aceite de oliva", "500g de arracacha cocida", "Agua según necesidad"],
+          "preparacion": ["Mezcla almidones con hierbas, cúrcuma y sal.", "Agrega aceite de oliva.", "Incorpora arracacha cocida.", "Añade agua poco a poco amasando.", "Moldea bolitas.", "Hornea: 180°C por 25 min, luego 200°C por 15 min."],
+          "consejo": "La cúrcuma contiene curcumina — uno de los antiinflamatorios naturales más potentes del planeta."
+        },
+        {
+          "nombre": "Pan de Arracacha con Chía",
+          "ingredientes": ["500g de arracacha cocida", "1 cucharadita de sal", "1 cucharadita de cúrcuma", "1 cucharada de chía", "½ cucharada de orégano", "1½ taza de harina sin gluten", "½ taza de aceite de oliva", "½ taza de agua"],
+          "preparacion": ["Mezcla arracacha con aceite, sal y cúrcuma.", "Agrega chía, orégano y harina.", "Incorpora agua hasta masa lisa.", "Moldea bolitas.", "Hornea a 180°C por 25-30 minutos."],
+          "consejo": "Chía + cúrcuma + aceite de oliva: trío antiinflamatorio que protege tus articulaciones y equilibrio hormonal."
+        }
+      ]
+    }
+  ]
+}

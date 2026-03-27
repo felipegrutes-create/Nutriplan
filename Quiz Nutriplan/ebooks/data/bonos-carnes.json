@@ -1,0 +1,419 @@
+{
+  "archivo": "Bonos-Carnes.pdf",
+  "tipo": "capitulos",
+  "intro": {
+    "titulo": "Proteína Inteligente: Tu Aliada Hormonal",
+    "contenido": "La proteína animal no es tu enemiga — es la materia prima que tu cuerpo necesita para construir músculo, producir hormonas y mantener tu metabolismo activo.\n\nEl secreto no está en CUÁNTA carne comes, sino en CÓMO la eliges, la preparas y la combinas.\n\nCuando combinas proteína de calidad con vegetales ricos en fibra y grasas saludables, creas un plato que estabiliza tu insulina, te sacia por horas y alimenta tu sistema hormonal.\n\nEn esta guía vas a aprender:\n\n• 🥩 Cómo elegir los mejores cortes para tu equilibrio hormonal\n• 🍗 Recetas con pollo, res y pescado que activan tu metabolismo\n• 🥦 Combinaciones inteligentes que evitan picos de insulina\n• ⏱️ Preparaciones rápidas para tu día a día real\n\nFrecuencia recomendada: incluye proteína animal 3-4 veces por semana, alternando con legumbres y huevos los demás días. Prefiere siempre cortes magros y cocciones al horno, salteados o al vapor."
+  },
+  "capitulos": [
+    {
+      "nombre": "🔪 Guía de Cortes Inteligentes",
+      "descripcion": "No todas las carnes son iguales. Aprende a elegir los cortes que más benefician tu equilibrio hormonal y cómo prepararlos para máximo aprovechamiento.",
+      "imagen": "img/carnes/cortes.jpg",
+      "recetas": [
+        {
+          "nombre": "🟢 Cortes Aliados — Tus Mejores Opciones",
+          "ingredientes": [
+            "── RES ──",
+            "🟢 Lomo de res — magro, alto en hierro y zinc",
+            "🟢 Falda (flank steak) — magra, ideal para desmechada",
+            "🟢 Carne molida magra (95%) — versátil para cualquier receta",
+            "",
+            "── POLLO/PAVO ──",
+            "🟢 Pechuga de pollo sin piel — la proteína magra por excelencia",
+            "🟢 Muslo de pollo sin piel — más jugoso, ligeramente más grasa",
+            "🟢 Pechuga de pavo — ultra-magra, perfecta para meal prep",
+            "",
+            "── PESCADO ──",
+            "🟢 Salmón — rico en omega-3, antiinflamatorio natural",
+            "🟢 Sardinas — omega-3 + calcio + vitamina D",
+            "🟢 Atún fresco — alto en proteína, bajo en grasa",
+            "🟢 Trucha — omega-3, fácil de preparar"
+          ],
+          "preparacion": [
+            "Elige cortes que puedas ver la fibra de la carne sin capas gruesas de grasa visible",
+            "Los pescados grasos (salmón, sardinas) son la excepción: su grasa es omega-3 antiinflamatoria",
+            "Compra carne molida que diga '95% magra' o '90% magra' en la etiqueta",
+            "El pollo con piel tiene el doble de grasa — quítale la piel antes de cocinar"
+          ],
+          "consejo": "Los cortes magros tienen mayor densidad de proteína por caloría, lo que significa más material para construir músculo y producir hormonas sin exceso de grasas saturadas que inflaman tu sistema."
+        },
+        {
+          "nombre": "🔴 Cortes a Limitar — Consumo Ocasional",
+          "ingredientes": [
+            "🔴 Costillas de res/cerdo — alto contenido de grasa saturada",
+            "🔴 Tocino/bacon — ultraprocesado, alto en sodio",
+            "🔴 Embutidos (salchichas, chorizo, mortadela) — procesados con aditivos",
+            "🔴 Carne frita o empanizada — la fritura anula los beneficios",
+            "🔴 Pollo con piel frito — duplica las calorías y la grasa"
+          ],
+          "preparacion": [
+            "No necesitas eliminarlos — consúmelos como excepción, no como base",
+            "Si comes embutidos, busca versiones sin nitratos y bajas en sodio",
+            "Sustituye tocino por pechuga de pavo en rodajas para desayunos",
+            "En vez de empanizar: usa semillas de linaza o avena como cobertura al horno"
+          ],
+          "consejo": "Las carnes procesadas contienen nitratos, exceso de sodio y grasas trans que promueven inflamación crónica. La inflamación es enemiga directa de tu sensibilidad a la insulina. Mientras más natural y sin procesar sea tu proteína, mejor para tu equilibrio hormonal."
+        },
+        {
+          "nombre": "👩‍🍳 Las 3 Mejores Cocciones para tu Metabolismo",
+          "ingredientes": [
+            "✅ AL HORNO — Temperatura media (180°C), jugosa y sin grasa añadida",
+            "✅ SALTEADO RÁPIDO — Sartén antiadherente, poco aceite, alta temperatura, cocción rápida",
+            "✅ AL VAPOR / HERVIDO — Preserva nutrientes al máximo, ideal para pescado",
+            "",
+            "⚠️ A LIMITAR:",
+            "❌ FRITO — Agrega grasa innecesaria y genera compuestos inflamatorios",
+            "❌ EMPANIZADO — Añade carbohidratos refinados que disparan la insulina",
+            "❌ AHUMADO EXCESIVO — Puede generar compuestos potencialmente dañinos"
+          ],
+          "preparacion": [
+            "Sartén antiadherente + 1 cdita de aceite de oliva = la combinación perfecta para saltear",
+            "Al horno con hierbas: romero, tomillo, orégano realzan sabor sin añadir calorías",
+            "Marinadas con limón + ajo + hierbas = carne tierna y sabrosa sin azúcar ni sal excesiva",
+            "El pescado al vapor con limón y eneldo está listo en 8-10 minutos — la opción más rápida"
+          ],
+          "consejo": "La cocción a temperaturas extremas (fritura, parrilla muy quemada) genera compuestos llamados AGEs (productos de glicación avanzada) que aumentan la resistencia a la insulina. Cocinar a temperatura media-alta con poco aceite es la estrategia más protectora."
+        }
+      ]
+    },
+    {
+      "nombre": "🥩 Recetas con Res — Potencia y Sabor",
+      "descripcion": "La carne de res es rica en hierro, zinc y vitamina B12 — nutrientes clave para tu energía y producción hormonal. Estas recetas la combinan con vegetales para un impacto glucémico mínimo.",
+      "imagen": "img/carnes/res.jpg",
+      "recetas": [
+        {
+          "nombre": "Tazón de Carne Molida con Espinaca y Aguacate",
+          "ingredientes": [
+            "100g de carne molida magra",
+            "1 taza de espinaca fresca",
+            "½ aguacate en cubos",
+            "1 cdita de aceite de oliva",
+            "1 diente de ajo picado",
+            "Sal marina y orégano al gusto"
+          ],
+          "preparacion": [
+            "Calienta el aceite de oliva en sartén antiadherente a fuego medio-alto",
+            "Saltea la carne molida con el ajo picado y el orégano hasta dorar (5-6 min)",
+            "Agrega la espinaca fresca y cocina 2 minutos hasta que se reduzca",
+            "Sirve en un plato hondo y corona con los cubos de aguacate fresco"
+          ],
+          "consejo": "Este tazón tiene los 3 pilares del equilibrio hormonal: proteína (carne), fibra (espinaca) y grasa saludable (aguacate). La espinaca aporta magnesio, mineral clave para la sensibilidad a la insulina."
+        },
+        {
+          "nombre": "Rollitos de Repollo con Carne Desmechada",
+          "ingredientes": [
+            "4 hojas grandes de repollo",
+            "120g de carne de res cocida y desmechada",
+            "1 cda de semillas de chía",
+            "½ cdita de cúrcuma en polvo",
+            "1 diente de ajo picado",
+            "Sal al gusto"
+          ],
+          "preparacion": [
+            "Blanquea las hojas de repollo en agua hirviendo 2 minutos para suavizarlas",
+            "Mezcla la carne desmechada con la cúrcuma, chía y ajo",
+            "Coloca la mezcla en el centro de cada hoja y enrolla firme",
+            "Cocina al vapor por 10 minutos hasta que estén tiernos"
+          ],
+          "consejo": "El repollo reemplaza la masa como 'envoltorio' — cero carbohidratos refinados. La cúrcuma es antiinflamatoria natural y la chía aporta omega-3. Tu insulina no se entera de que estás comiendo 'rollitos'."
+        },
+        {
+          "nombre": "Salteado de Calabacín con Tiras de Res",
+          "ingredientes": [
+            "100g de carne de res magra en tiras finas",
+            "1 calabacín grande en medias lunas",
+            "½ pimentón rojo en tiras",
+            "1 diente de ajo picado",
+            "1 cdita de aceite de oliva",
+            "Pimienta negra y sal al gusto"
+          ],
+          "preparacion": [
+            "Corta la carne en tiras finas y sazónalas con ajo, sal y pimienta",
+            "Calienta el aceite en sartén a fuego alto y sella la carne 3-4 minutos",
+            "Retira la carne y en la misma sartén saltea el calabacín y pimentón 4 minutos",
+            "Devuelve la carne, mezcla todo y sirve caliente"
+          ],
+          "consejo": "El calabacín tiene IG bajísimo y es 95% agua — llena tu plato sin impactar tu glucosa. El pimentón rojo aporta vitamina C, que mejora la absorción del hierro de la carne. Combinación perfecta."
+        },
+        {
+          "nombre": "Tortilla Proteica de Espinaca y Carne Mechada",
+          "ingredientes": [
+            "2 huevos",
+            "50g de carne mechada (sobrante del día anterior)",
+            "½ taza de espinaca picada",
+            "¼ de aguacate en láminas",
+            "Sal marina al gusto"
+          ],
+          "preparacion": [
+            "Bate los huevos con la espinaca picada y una pizca de sal",
+            "Vierte en sartén antiadherente a fuego medio",
+            "Cuando esté casi cuajada, coloca la carne mechada y el aguacate en un lado",
+            "Dobla la tortilla, cocina 1 minuto más y sirve"
+          ],
+          "consejo": "Esta tortilla es un desayuno hormonal perfecto: proteína del huevo + carne, grasa del aguacate, y fibra de la espinaca. Te mantiene saciada hasta el almuerzo sin picos de insulina."
+        },
+        {
+          "nombre": "Bowl de Carne con Brócoli al Vapor",
+          "ingredientes": [
+            "100g de carne de res magra en cubos",
+            "1 taza de brócoli en ramitas",
+            "½ aguacate en cubos",
+            "1 cdita de aceite de oliva",
+            "Ajo y sal al gusto",
+            "Jugo de ½ limón"
+          ],
+          "preparacion": [
+            "Saltea la carne en aceite de oliva con ajo y sal hasta dorar bien (5-6 min)",
+            "Cocina el brócoli al vapor 4-5 minutos — que quede tierno pero firme",
+            "Arma el bowl: base de brócoli, encima la carne, corona con aguacate",
+            "Exprime el limón por encima y sirve inmediatamente"
+          ],
+          "consejo": "El brócoli es un vegetal crucífero que ayuda al hígado a metabolizar el exceso de estrógeno — especialmente importante después de los 40. Combinado con proteína y grasa buena, es un plato de equilibrio hormonal completo."
+        }
+      ]
+    },
+    {
+      "nombre": "🍗 Recetas con Pollo y Pavo — Ligeras y Saciantes",
+      "descripcion": "El pollo y el pavo son las proteínas más versátiles y accesibles. Con estas recetas, las transformas en platos que nutren tus hormonas sin complicarte la vida.",
+      "imagen": "img/carnes/pollo.jpg",
+      "recetas": [
+        {
+          "nombre": "Pechuga de Pollo al Limón con Vegetales Asados",
+          "ingredientes": [
+            "1 pechuga de pollo sin piel",
+            "1 calabacín en rodajas",
+            "1 taza de brócoli en ramitas",
+            "½ pimentón rojo en tiras",
+            "Jugo de 1 limón",
+            "1 cda de aceite de oliva",
+            "Romero fresco, sal y pimienta"
+          ],
+          "preparacion": [
+            "Marina la pechuga en limón, aceite, romero, sal y pimienta por 15 minutos",
+            "Distribuye los vegetales en una bandeja para horno con un toque de aceite",
+            "Coloca la pechuga sobre los vegetales y hornea a 190°C por 25 minutos",
+            "La pechuga se cocina jugosa sobre los vegetales que absorben todos los jugos"
+          ],
+          "consejo": "Cocinar proteína y vegetales juntos en una sola bandeja es la estrategia más eficiente: un solo plato, mínima limpieza, y los vegetales absorben los jugos de la carne haciéndolos más sabrosos. Meal prep del futuro."
+        },
+        {
+          "nombre": "Wraps de Lechuga con Pollo Desmechado",
+          "ingredientes": [
+            "120g de pechuga de pollo cocida y desmechada",
+            "4 hojas grandes de lechuga romana",
+            "¼ taza de zanahoria rallada",
+            "¼ de aguacate en tiras",
+            "1 cda de yogur griego natural",
+            "Cilantro fresco picado"
+          ],
+          "preparacion": [
+            "Desmecha el pollo cocido y mezcla con el yogur griego y cilantro",
+            "Lava bien las hojas de lechuga y sécalas — serán tu 'tortilla'",
+            "Coloca el pollo, la zanahoria rallada y el aguacate sobre cada hoja",
+            "Enrolla como taco y come con las manos — fresco y crujiente"
+          ],
+          "consejo": "La lechuga reemplaza la tortilla eliminando los carbohidratos refinados que disparan tu insulina. El yogur griego agrega proteína extra y probióticos. Un almuerzo ligero que no te deja pesada ni soñolienta."
+        },
+        {
+          "nombre": "Pollo Salteado con Champiñones y Espárragos",
+          "ingredientes": [
+            "120g de pechuga de pollo en cubos",
+            "1 taza de champiñones laminados",
+            "6 espárragos cortados en trozos",
+            "1 diente de ajo picado",
+            "1 cdita de aceite de oliva",
+            "Tomillo seco, sal y pimienta"
+          ],
+          "preparacion": [
+            "Sella los cubos de pollo en aceite de oliva a fuego alto hasta dorar (4-5 min)",
+            "Retira el pollo y en la misma sartén saltea champiñones y espárragos con ajo",
+            "Cuando los champiñones suelten su líquido, devuelve el pollo",
+            "Espolvorea tomillo, mezcla 1 minuto más y sirve"
+          ],
+          "consejo": "Los champiñones son una fuente excepcional de vitamina D (especialmente si recibieron luz solar) y selenio — ambos nutrientes clave para la función tiroidea. Los espárragos aportan folato y son prebióticos naturales que alimentan tu microbiota intestinal."
+        },
+        {
+          "nombre": "Hamburguesas de Pavo con Espinaca (Sin Pan)",
+          "ingredientes": [
+            "200g de carne molida de pavo",
+            "½ taza de espinaca picada fina",
+            "1 huevo",
+            "2 cdas de avena en hojuelas",
+            "Ajo en polvo, comino, sal y pimienta",
+            "Hojas de lechuga para servir"
+          ],
+          "preparacion": [
+            "Mezcla el pavo molido con espinaca, huevo, avena y especias hasta integrar bien",
+            "Forma 3-4 hamburguesas y cocina en sartén antiadherente 5 min por lado",
+            "Sirve cada hamburguesa envuelta en hoja de lechuga en vez de pan",
+            "Acompaña con rodajas de tomate y aguacate"
+          ],
+          "consejo": "La avena en la mezcla actúa como aglutinante Y como fibra que retarda la digestión. El pavo es la carne más magra que existe — prácticamente pura proteína. Sin pan, este plato tiene impacto glucémico casi nulo."
+        }
+      ]
+    },
+    {
+      "nombre": "🐟 Recetas con Pescado — Omega-3 y Antiinflamación",
+      "descripcion": "Los pescados grasos son la fuente más poderosa de omega-3, el ácido graso que combate la inflamación crónica — el motor silencioso de la resistencia a la insulina.",
+      "imagen": "img/carnes/pescado.jpg",
+      "recetas": [
+        {
+          "nombre": "Salmón al Horno con Limón y Hierbas",
+          "ingredientes": [
+            "1 filete de salmón (150g)",
+            "Jugo de 1 limón",
+            "1 cda de aceite de oliva",
+            "Eneldo fresco (o seco)",
+            "1 diente de ajo en láminas",
+            "Sal y pimienta negra"
+          ],
+          "preparacion": [
+            "Precalienta el horno a 200°C y forra una bandeja con papel aluminio",
+            "Coloca el salmón, baña con limón y aceite, distribuye ajo y eneldo encima",
+            "Cierra el aluminio formando un paquete y hornea 18-20 minutos",
+            "El salmón queda jugoso, tierno y lleno de sabor sin grasa añadida"
+          ],
+          "consejo": "El salmón es el rey del omega-3 EPA y DHA — ácidos grasos que reducen la inflamación crónica, mejoran la sensibilidad a la insulina y protegen tu corazón. 2 porciones por semana transforman tu perfil hormonal."
+        },
+        {
+          "nombre": "Ensalada Tibia de Atún con Vegetales Crujientes",
+          "ingredientes": [
+            "1 lata de atún en agua (escurrido)",
+            "1 taza de mix de hojas verdes",
+            "½ pepino en rodajas",
+            "5 tomates cherry partidos",
+            "¼ de aguacate en cubos",
+            "Aceite de oliva, limón y sal"
+          ],
+          "preparacion": [
+            "Arma la base con las hojas verdes, pepino y tomates cherry",
+            "Calienta el atún 1 minuto en sartén con un toque de aceite (opcional)",
+            "Coloca el atún tibio sobre la ensalada fría y agrega el aguacate",
+            "Adereza con aceite de oliva, jugo de limón y sal marina"
+          ],
+          "consejo": "El contraste tibio-frío hace esta ensalada adictiva. El atún en agua es pura proteína (25g por lata) con casi cero grasa. El aguacate y el aceite de oliva aportan las grasas saludables que tu cuerpo necesita para absorber las vitaminas liposolubles."
+        },
+        {
+          "nombre": "Sardinas al Horno con Tomate y Ajo",
+          "ingredientes": [
+            "6 sardinas frescas (o 2 latas en aceite de oliva)",
+            "2 tomates maduros en rodajas",
+            "3 dientes de ajo laminados",
+            "1 cda de aceite de oliva",
+            "Perejil fresco picado",
+            "Sal, pimienta y pimentón"
+          ],
+          "preparacion": [
+            "Distribuye las rodajas de tomate en una bandeja para horno",
+            "Coloca las sardinas encima, agrega ajo, aceite y especias",
+            "Hornea a 200°C por 15 minutos (8 min si son de lata)",
+            "Espolvorea perejil fresco al servir — el aroma es increíble"
+          ],
+          "consejo": "Las sardinas son un superalimento subestimado: omega-3 + calcio (de las espinas comestibles) + vitamina D + selenio. Son la proteína más económica y nutritiva que existe para tu equilibrio hormonal."
+        },
+        {
+          "nombre": "Ceviche Express de Pescado Blanco",
+          "ingredientes": [
+            "150g de filete de pescado blanco (tilapia, corvina) en cubos pequeños",
+            "Jugo de 3-4 limones (debe cubrir el pescado)",
+            "¼ de cebolla morada en plumas finas",
+            "½ pepino en cubitos",
+            "Cilantro fresco picado",
+            "Sal, pimienta y un toque de ají (opcional)"
+          ],
+          "preparacion": [
+            "Corta el pescado en cubos pequeños y cúbrelo con jugo de limón en un bowl",
+            "Refrigera 30-40 minutos removiendo una vez (el limón 'cocina' el pescado)",
+            "Cuando esté blanco y firme, escurre y mezcla con cebolla, pepino y cilantro",
+            "Sazona con sal, pimienta y ají al gusto — sirve bien frío"
+          ],
+          "consejo": "El ceviche es cocción sin fuego ni aceite — la preparación más limpia que existe. El pescado blanco es prácticamente proteína pura con IG cero. La cebolla morada aporta quercetina, un antioxidante que mejora la sensibilidad a la insulina."
+        }
+      ]
+    },
+    {
+      "nombre": "🥗 Combinaciones Inteligentes — Tu Plato Perfecto",
+      "descripcion": "La proteína sola no hace magia. El poder está en CÓMO la combinas. Estas estrategias y recetas te enseñan a armar platos completos que mantienen tu insulina estable por horas.",
+      "imagen": "img/carnes/combinaciones.jpg",
+      "recetas": [
+        {
+          "nombre": "📐 La Fórmula del Plato Hormonal Perfecto",
+          "ingredientes": [
+            "🥗 50% del plato → Vegetales sin almidón (espinaca, brócoli, lechuga, calabacín, pepino)",
+            "🍗 25% del plato → Proteína magra (cualquiera de las recetas de esta guía)",
+            "🍠 25% del plato → Carbohidrato inteligente (camote, quinoa, arroz integral, legumbres)",
+            "🫒 + Grasa saludable → 1 cda de aceite de oliva, ¼ aguacate o un puñado de nueces",
+            "🥤 + Bebida → Agua, agua con limón o té sin azúcar"
+          ],
+          "preparacion": [
+            "SIEMPRE empieza comiendo los vegetales primero — la fibra frena la absorción de todo lo demás",
+            "Luego come la proteína — estimula hormonas de saciedad antes del carbohidrato",
+            "El carbohidrato AL FINAL — llega a tu intestino más lento gracias a la fibra y proteína previas",
+            "Este orden simple puede reducir tu pico de glucosa hasta un 30% sin cambiar QUÉ comes"
+          ],
+          "consejo": "El orden de los alimentos no es un detalle menor — es una estrategia hormonal poderosa. Vegetales primero crean una capa de fibra que frena la glucosa. Proteína segundo libera péptidos de saciedad. Carbohidrato al final encuentra un intestino 'preparado' que lo absorbe lentamente."
+        },
+        {
+          "nombre": "❌ Combinaciones que Disparan tu Insulina",
+          "ingredientes": [
+            "❌ Carne + arroz blanco solo → Falta fibra, el arroz dispara glucosa",
+            "❌ Carne + papa frita → Doble golpe: carbohidrato alto IG + grasa de fritura",
+            "❌ Pollo empanizado + refresco → Pan rallado + azúcar líquida = tormenta de insulina",
+            "❌ Carne con pan blanco → El pan tiene IG 75, casi como glucosa pura",
+            "❌ Proteína + jugo 'natural' → El jugo sin fibra llega a tu sangre en minutos"
+          ],
+          "preparacion": [
+            "Swap: arroz blanco → arroz + frijoles (las legumbres bajan el IG del plato completo)",
+            "Swap: papa frita → camote asado o puré de coliflor",
+            "Swap: empanizado → pollo sellado con especias y semillas como cobertura",
+            "Swap: refresco/jugo → agua con limón, menta o pepino"
+          ],
+          "consejo": "El problema nunca fue la carne — siempre fue lo que la acompaña. Un filete de res con ensalada verde es un plato hormonal perfecto. El mismo filete con papa frita y refresco es una bomba de insulina. La diferencia está en los acompañantes, no en la proteína."
+        },
+        {
+          "nombre": "📦 Meal Prep Semanal — 30 Minutos el Domingo",
+          "ingredientes": [
+            "500g de pechuga de pollo (para 4-5 porciones)",
+            "300g de carne molida magra (para 3 porciones)",
+            "1 cabeza grande de brócoli en ramitas",
+            "2 calabacines en rodajas",
+            "2 pimentones en tiras",
+            "3 tazas de espinaca",
+            "Aceite de oliva, ajo, especias variadas"
+          ],
+          "preparacion": [
+            "Hornea todo el pollo a la vez (sazonado con diferentes especias) a 190°C por 25 min",
+            "Mientras se hornea, saltea la carne molida con ajo en una sartén grande",
+            "Cocina todos los vegetales al vapor en una olla grande (5-6 min)",
+            "Divide en 7-8 contenedores: proteína + vegetales en cada uno. Refrigera hasta 4 días."
+          ],
+          "consejo": "El meal prep es tu arma secreta contra las malas decisiones. Cuando llegas cansada a casa y la comida saludable ya está lista, no recurres a delivery o comida procesada. 30 minutos el domingo te ahorran 5 días de estrés culinario y mantienen tu insulina estable toda la semana."
+        },
+        {
+          "nombre": "🌿 Marinadas Hormonales — Sabor sin Azúcar",
+          "ingredientes": [
+            "── MARINADA MEDITERRÁNEA ──",
+            "Aceite de oliva + limón + ajo + romero + orégano",
+            "",
+            "── MARINADA ASIÁTICA ──",
+            "Salsa de soya baja en sodio + jengibre + ajo + aceite de sésamo",
+            "",
+            "── MARINADA LATINA ──",
+            "Limón + cilantro + comino + ajo + un toque de chile",
+            "",
+            "── MARINADA ANTIINFLAMATORIA ──",
+            "Cúrcuma + jengibre + pimienta negra + aceite de oliva + limón"
+          ],
+          "preparacion": [
+            "Mezcla los ingredientes de la marinada que prefieras en un bowl",
+            "Sumerge la proteína (pollo, res o pescado) y deja reposar 30 min a 2 horas en refrigerador",
+            "La marinada antiinflamatoria con cúrcuma es especial: la pimienta negra aumenta 2000% la absorción de la curcumina",
+            "Prepara marinadas dobles y guarda la extra en frasco — dura 1 semana en refrigerador"
+          ],
+          "consejo": "Las marinadas con hierbas y especias no solo dan sabor — muchas tienen propiedades hormonales reales. La cúrcuma es antiinflamatoria, el jengibre mejora la digestión, el romero tiene antioxidantes y el ajo mejora la sensibilidad a la insulina. Sabor CON beneficio."
+        }
+      ]
+    }
+  ]
+}

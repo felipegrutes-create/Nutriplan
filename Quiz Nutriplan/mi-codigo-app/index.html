@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Mi Código">
+<meta name="theme-color" content="#2E7D52">
+<title>Mi Código</title>
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<!-- AUTH GATE (shown when not authenticated) -->
+<div id="authGate" style="display:none">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#F8F9FA">
+    <div style="background:#fff;border-radius:16px;padding:32px 24px;max-width:360px;width:100%;text-align:center;border:1px solid #E5E7EB">
+      <div style="font-size:32px;margin-bottom:12px" aria-hidden="true">🔒</div>
+      <h2 style="font-size:18px;font-weight:800;margin-bottom:8px">Acceso a Mi Código</h2>
+      <p style="font-size:13px;color:#4B5563;margin-bottom:20px">Accede desde el enlace en tu email de bienvenida</p>
+      <p style="font-size:12px;color:#9CA3AF">¿No encuentras el email? Revisa tu carpeta de spam</p>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP (shown when authenticated) -->
+<div id="app" style="display:none">
+
+  <!-- TOP BAR -->
+  <header class="app-header">
+    <div class="header-title" id="headerTitle">Mi Código</div>
+    <div class="header-streak" id="headerStreak" aria-label="Racha actual">🔥 0</div>
+  </header>
+
+  <!-- TAB CONTENT -->
+  <main class="tab-content" id="tabContent" role="main">
+    <!-- Injected by app.js -->
+  </main>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav" aria-label="Navegación principal">
+    <button class="nav-btn active" onclick="App.navigate('home')" data-tab="home" aria-label="Inicio">
+      <span class="nav-icon" aria-hidden="true">🏠</span>
+      <span class="nav-label">Home</span>
+    </button>
+    <button class="nav-btn" onclick="App.navigate('progress')" data-tab="progress" aria-label="Mi progreso">
+      <span class="nav-icon" aria-hidden="true">📊</span>
+      <span class="nav-label">Progreso</span>
+    </button>
+    <button class="nav-fab" onclick="App.navigate('midia')" data-tab="midia" aria-label="Mi Día">
+      <div class="fab-circle" aria-hidden="true">☀️</div>
+      <span class="nav-label">Mi Día</span>
+    </button>
+    <button class="nav-btn" onclick="App.navigate('compras')" data-tab="compras" aria-label="Lista de compras">
+      <span class="nav-icon" aria-hidden="true">🛒</span>
+      <span class="nav-label">Compras</span>
+    </button>
+    <button class="nav-btn" onclick="App.navigate('mas')" data-tab="mas" aria-label="Más opciones">
+      <span class="nav-icon" aria-hidden="true">📖</span>
+      <span class="nav-label">Más</span>
+    </button>
+  </nav>
+
+  <!-- INSTALL BANNER -->
+  <div class="install-banner" id="installBanner" style="display:none" role="complementary" aria-label="Instalar aplicación">
+    <span>📲 Instala la app en tu celular</span>
+    <button onclick="installApp()" class="install-btn">Instalar</button>
+    <button onclick="dismissInstall()" class="install-close" aria-label="Cerrar banner de instalación">✕</button>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/checkin.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/recetas.js"></script>
+<script src="js/cycle.js"></script>
+<script src="js/messages.js"></script>
+<script src="js/backup.js"></script>
+<script src="js/midia.js"></script>
+<script src="js/shopping.js?v=2"></script>
+<script src="js/mas.js"></script>
+<script src="js/app.js"></script>
+<script>
+// Register service worker
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function(err){
+    console.warn('SW registration failed:', err);
+  });
+}
+
+// PWA install prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  deferredPrompt = e;
+  const banner = document.getElementById('installBanner');
+  if(banner && !localStorage.getItem('mc_installDismissed')) {
+    banner.style.display = 'flex';
+  }
+});
+
+function installApp() {
+  if(deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt = null;
+  }
+  dismissInstall();
+}
+
+function dismissInstall() {
+  localStorage.setItem('mc_installDismissed', '1');
+  const banner = document.getElementById('installBanner');
+  if(banner) banner.style.display = 'none';
+}
+</script>
+</body>
+</html>

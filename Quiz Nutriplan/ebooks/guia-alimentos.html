@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Guía de Alimentos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #2E7D52;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #2E7D52dd 0%, #2E7D52 50%, #2E7D52cc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🥬</span>
+    <h1>Guía de Alimentos</h1>
+    <p class="hero-sub">Tu mapa completo de alimentos para el equilibrio hormonal</p>
+    <div class="hero-count">16 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Tu Mapa de Alimentos Hormonales</h2>
+        <div class="intro-content"><p>Olvídate de las listas rígidas de &quot;permitidos&quot; y &quot;prohibidos&quot;. Tu cuerpo no funciona así — y tu relación con la comida tampoco debería.</p><p>Esta guía usa un sistema de semáforo simple para que tomes decisiones inteligentes sin estrés:</p><p>🟢 VERDE — Prefiere (casi todos los días): Alimentos que estabilizan tus hormonas, nutren tu metabolismo y te dan energía sostenida.</p><p>🟡 AMARILLO — A veces (porciones pequeñas): Alimentos que puedes disfrutar con moderación, sin culpa, pero con consciencia.</p><p>🔴 ROJO — Evita o limita (raramente): Alimentos que provocan picos de insulina, inflamación o desbalance hormonal cuando se consumen con frecuencia.</p><p>Esto NO es una dieta de restricción. Es un mapa. Cada categoría de alimentos tiene opciones verdes que apoyan tu equilibrio hormonal — y la meta es hacer intercambios inteligentes, no pasar hambre ni sentir que te estás castigando.</p><p>Después de los 40, tus hormonas cambian. El estrógeno baja, la insulina se vuelve menos eficiente, y tu metabolismo necesita más apoyo. La buena noticia: lo que comes tiene un impacto directo en cómo funcionan tus hormonas. Cada elección en el supermercado, cada plato que armas, es una oportunidad de enviarle a tu cuerpo el mensaje correcto.</p><p>Usa esta guía como tu compañera de compras, tu consejera en la cocina y tu recordatorio de que comer bien no significa comer aburrido — significa comer con estrategia.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/guia/bebidas.jpg" alt="Bebidas — Lo que Tomas Importa Más" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Bebidas — Lo que Tomas Importa Más</h2>
+        <p class="chapter-desc">La mayoría de las mujeres subestiman el impacto de lo que beben. Una sola bebida azucarada puede provocar un pico de insulina más alto que un plato de comida completo, porque los líquidos llegan al torrente sanguíneo sin ningún freno. Este capítulo te muestra cómo hidratarte a favor de tus hormonas.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Bebidas que Hidratan y Equilibran</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Agua natural — tu aliada #1, la única bebida que tu cuerpo realmente necesita para cada función metabólica</li><li>🟢 Agua con gas (sin azúcar ni saborizantes) — misma hidratación con una sensación más satisfactoria</li><li>🟢 Agua con limón — estimula la digestión y apoya la función del hígado, tu central de procesamiento hormonal</li><li>🟢 Té y café sin azúcar — la cafeína en dosis moderadas puede mejorar la sensibilidad a la insulina</li><li>🟢 Infusiones herbales (manzanilla, menta, hierbabuena) — hidratan sin calorías y reducen el cortisol</li><li>🟡 Refresco diet/cero — no tiene calorías, pero los edulcorantes artificiales pueden alterar tu microbiota intestinal</li><li>🟡 Leche vegetal sin azúcar (almendra, coco) — revisa la etiqueta, muchas traen azúcar escondida</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Evita refrescos regulares — un solo vaso tiene 35-40g de azúcar, equivalente a 8 cucharaditas disparando tu insulina</li><li>🔴 Evita jugos comerciales, incluso los que dicen &quot;100% natural&quot; — sin la fibra de la fruta, son azúcar líquida</li><li>🔴 Evita tés listos embotellados — la mayoría contienen tanta azúcar como un refresco</li><li>🔴 Evita bebidas energéticas — combinan azúcar + cafeína excesiva, una receta para picos de cortisol e insulina</li><li>INTERCAMBIO INTELIGENTE: Jugo en el almuerzo → agua natural + fruta entera de postre (ganas fibra, pierdes el pico)</li><li>INTERCAMBIO INTELIGENTE: Refresco de la tarde → agua con gas + rodajas de limón y pepino</li><li>ESTRATEGIA: Lleva siempre una botella de agua contigo — cuando tienes agua disponible, eliges agua</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las calorías líquidas son la ruta más rápida hacia un pico de insulina porque no hay fibra, proteína ni grasa que frene la absorción. Tu cuerpo absorbe el azúcar de una bebida en minutos, mientras que el mismo azúcar dentro de una fruta entera tarda horas en procesarse.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Bebidas Funcionales para tu Metabolismo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Té verde — rico en catequinas (EGCG) que activan la quema de grasa y mejoran la sensibilidad a la insulina</li><li>🟢 Té de jengibre — antiinflamatorio natural, acelera el metabolismo y mejora la digestión</li><li>🟢 Infusión de canela — ayuda a regular los niveles de glucosa y calma los antojos de dulce</li><li>🟢 Agua tibia con vinagre de manzana (1 cucharada en un vaso) — tomada antes de comer, reduce el pico de glucosa postcomida</li><li>🟢 Caldo de huesos — rico en colágeno, glutamina y minerales que reparan el intestino y apoyan la producción hormonal</li><li>🟢 Té de cúrcuma (golden milk sin azúcar) — antiinflamatorio que protege contra la resistencia a la insulina</li><li>🟡 Café con aceite de coco — aporta energía sostenida, pero cuida la porción de grasa si buscas bajar de peso</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>TÉ VERDE: Prepáralo con agua a 80°C (no hirviendo) por 3 minutos — el agua muy caliente destruye las catequinas. Ideal en la mañana o temprano en la tarde</li><li>TÉ DE JENGIBRE: Hierve 3-4 rodajas de jengibre fresco en 500ml de agua por 10 minutos. Puedes añadir limón al servir. Perfecto después de las comidas para mejorar la digestión</li><li>INFUSIÓN DE CANELA: Hierve 1 rama de canela en 300ml de agua por 8 minutos. Tómala 20 minutos antes de una comida rica en carbohidratos</li><li>VINAGRE DE MANZANA: Diluye 1 cucharada en un vaso grande de agua. Tómalo 15-20 minutos antes de comer. Nunca lo tomes solo — el ácido puede dañar el esmalte dental</li><li>CALDO DE HUESOS: Cocina huesos de pollo o res con agua, vinagre de manzana, cebolla, ajo y sal por 12-24 horas a fuego bajo. Cuela y toma como sopa o como base para otras preparaciones</li><li>ESTRATEGIA DIARIA: Mañana → té verde o café. Media mañana → agua con limón. Antes del almuerzo → agua con vinagre. Tarde → infusión de canela. Noche → manzanilla o jengibre</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las catequinas del té verde pueden aumentar la oxidación de grasa en un 17%. El jengibre reduce marcadores de inflamación. Y la canela mejora la forma en que tus células responden a la insulina. Estas no son bebidas mágicas — son herramientas reales respaldadas por ciencia.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/guia/proteinas.jpg" alt="Proteínas — Tu Aliado #1" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Proteínas — Tu Aliado #1</h2>
+        <p class="chapter-desc">Después de los 40, tu cuerpo pierde masa muscular más rápido, tu metabolismo se desacelera y tus hormonas necesitan más materia prima para producirse. La proteína es la respuesta a los tres problemas. No se trata de comer como fisicoculturista — se trata de asegurar que cada comida tenga una fuente de proteína que trabaje a tu favor.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Proteínas que Nutren tus Hormonas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Huevos — la proteína más completa y económica. La yema contiene colina, esencial para la función hepática y hormonal</li><li>🟢 Pechuga de pollo o pavo — proteína magra con alto poder de saciedad y bajo impacto en la insulina</li><li>🟢 Pescado (salmón, tilapia, trucha, sardina) — el salmón y la sardina aportan omega-3 antiinflamatorio</li><li>🟢 Yogur griego natural (sin azúcar) — combina proteína + probióticos para tu salud intestinal</li><li>🟢 Cottage cheese (requesón) — alto en proteína, bajo en carbohidratos, versátil para cualquier comida</li><li>🟢 Legumbres (frijoles, lentejas, garbanzos) — proteína vegetal + fibra, una combinación ganadora</li><li>🟢 Tofu y tempeh — opciones vegetales con fitoestrógenos que apoyan el equilibrio hormonal en la menopausia</li><li>🟡 Carne roja magra — buena fuente de hierro y zinc, pero limita a 2-3 veces por semana en porciones moderadas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Evita embutidos y carnes procesadas (salchichas, jamón, salami, tocino) — son ultraprocesados cargados de sodio, nitratos y conservadores que promueven inflamación</li><li>🔴 Evita carnes empanizadas y fritas — el empanizado añade carbohidratos refinados y la fritura cambia la calidad de la grasa</li><li>🔴 Evita nuggets y hamburguesas procesadas — contienen más harina y relleno que proteína real</li><li>MÉTODOS DE COCCIÓN 🟢: A la plancha, al horno, al vapor, hervido, en guiso con vegetales — todos conservan la proteína sin añadir grasa dañina</li><li>INTERCAMBIO INTELIGENTE: Salchichas del desayuno → huevos revueltos con espinaca (más proteína, cero ultraprocesados)</li><li>INTERCAMBIO INTELIGENTE: Nuggets de pollo → pechuga cortada en tiras, sazonada con hierbas y horneada (mismo sabor, nutrición real)</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La proteína tiene el efecto térmico más alto de todos los macronutrientes: tu cuerpo gasta entre el 25-30% de las calorías de la proteína solamente en digerirla. Esto significa que comer proteína literalmente acelera tu metabolismo durante las horas posteriores a la comida.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Cómo Combinar Proteínas en Cada Comida</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 DESAYUNO: 2-3 huevos revueltos + espinaca + tomate — proteína completa que estabiliza tu glucosa hasta el almuerzo</li><li>🟢 MEDIA MAÑANA: Yogur griego natural + un puñado de nueces — proteína + grasa saludable = saciedad sin picos</li><li>🟢 ALMUERZO: Pechuga de pollo o pescado + quinoa + ensalada abundante — el trío perfecto de proteína + carbo inteligente + fibra</li><li>🟢 MEDIA TARDE: Huevo duro + palitos de zanahoria — snack con proteína que previene la caída energética de las 3-4 PM</li><li>🟢 CENA: Salmón o tilapia al horno + ensalada verde + aguacate — proteína + omega-3 + grasas buenas para reparación nocturna</li><li>🟢 OPCIÓN VEGETARIANA: Ensalada de lentejas con pimiento, tomate y aceite de oliva — proteína vegetal completa</li><li>🟡 SNACK RÁPIDO: Rollito de pechuga de pavo natural (no procesada) con pepino y mostaza — cuando necesitas algo rápido sin cocinar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>REGLA DE ORO: Incluye proteína en CADA comida y snack — nunca comas carbohidratos solos</li><li>PASO 1: Al planificar cualquier comida, empieza por la proteína (¿qué proteína voy a incluir?)</li><li>PASO 2: Agrega vegetales abundantes alrededor de tu proteína (mitad del plato)</li><li>PASO 3: Completa con un carbohidrato inteligente en porción controlada (un cuarto del plato)</li><li>TRUCO PARA NO SENTIRLO FORZADO: Cocina proteína en cantidad los domingos — pollo desmenuzado, huevos duros, frijoles — y tendrás proteína lista para agregar a cualquier comida entre semana</li><li>ESTRATEGIA DE ORDEN: Come la proteína ANTES que los carbohidratos en cada comida — esto cambia completamente tu respuesta hormonal</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Comer proteína primero en una comida puede reducir el pico de glucosa posterior hasta en un 30%. El orden en que los alimentos llegan a tu estómago determina la velocidad con la que el azúcar entra a tu sangre.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/guia/vegetales.jpg" alt="Vegetales y Frutas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Vegetales y Frutas</h2>
+        <p class="chapter-desc">Los vegetales son probablemente el único grupo de alimentos donde puedes comer más sin preocuparte. Son ricos en fibra, minerales y antioxidantes con mínimo impacto en tu insulina. Las frutas también son tus aliadas — pero la forma en que las consumes marca toda la diferencia entre nutrir tu cuerpo o disparar tu glucosa.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Vegetales: Come Sin Límite (Casi)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Hojas verdes (espinaca, kale, lechuga, acelga, arúgula) — los más ricos en magnesio, hierro y ácido fólico</li><li>🟢 Brócoli y coliflor — crucíferos que apoyan la desintoxicación de estrógeno en el hígado</li><li>🟢 Pepino y apio — hidratantes naturales con casi cero impacto en la glucosa</li><li>🟢 Tomate — rico en licopeno, un antioxidante que protege tus células del estrés oxidativo</li><li>🟢 Calabacín (zucchini) — versátil, bajo en carbohidratos, perfecto como sustituto de pasta</li><li>🟢 Pimiento (chile morrón) — más vitamina C que una naranja, fortalece la producción de colágeno</li><li>🟢 Champiñones y berenjena — saciantes, ricos en fibra, absorben sabor de cualquier preparación</li><li>🟡 Vegetales con almidón (papa, yuca, camote, maíz, chícharos) — nutritivos pero con más carbohidratos, consume en porciones moderadas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Evita depender solo de vegetales con almidón como base de tus comidas — una papa grande tiene el mismo impacto glucémico que un plato de arroz</li><li>🔴 Evita vegetales fritos (tempura, aros de cebolla) — la fritura convierte un alimento verde en uno rojo</li><li>MÉTODO DEL PLATO: Llena SIEMPRE la mitad de tu plato con vegetales sin almidón — esta sola estrategia transforma cualquier comida</li><li>PREPARACIÓN RÁPIDA: Lava y corta tus vegetales el domingo para tenerlos listos toda la semana en contenedores en el refrigerador</li><li>INTERCAMBIO INTELIGENTE: Puré de papa → puré de coliflor (misma textura cremosa, fracción de los carbohidratos)</li><li>INTERCAMBIO INTELIGENTE: Papas fritas → bastones de camote al horno con romero (más fibra, liberación más lenta de glucosa)</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los vegetales de hoja verde oscuro son la fuente más rica de magnesio — el mineral que tu receptor de insulina necesita para funcionar correctamente. La deficiencia de magnesio es una de las causas más ignoradas de resistencia a la insulina, y más del 60% de las mujeres mayores de 40 no consumen suficiente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Frutas Inteligentes: Cuáles, Cuándo y Cuánto</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Fresas, moras, arándanos, frambuesas — las frutas con menor índice glucémico y mayor cantidad de antioxidantes</li><li>🟢 Manzana (con cáscara) — la pectina de la cáscara forma un gel que atrapa azúcares y los libera lentamente</li><li>🟢 Pera — alta en fibra soluble, excelente para la digestión y la saciedad</li><li>🟢 Naranja y toronja — enteras (no en jugo), la fibra de los gajos controla la absorción de fructosa</li><li>🟢 Kiwi — dos kiwis tienen más vitamina C que una naranja y mejoran la digestión gracias a la actinidina</li><li>🟡 Plátano/banana — más almidón y azúcar que otras frutas, prefiere los menos maduros (más almidón resistente)</li><li>🟡 Mango, piña, sandía — índice glucémico más alto, disfrútalos en porciones pequeñas y siempre con proteína o grasa</li><li>🟡 Fruta seca (pasas, dátiles, arándanos secos) — azúcar concentrada, máximo 1 cucharada como topping</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Evita reemplazar fruta entera por jugo — al licuar la fruta eliminas la fibra y conviertes la fructosa en azúcar libre</li><li>🔴 Evita fruta en almíbar o en conserva con azúcar añadida — es fruta ahogada en jarabe de glucosa</li><li>🔴 Evita smoothies comerciales o de tienda — pueden contener hasta 60g de azúcar en un solo vaso</li><li>REGLA DE ORO: Siempre acompaña la fruta con proteína o grasa — manzana + crema de cacahuate, fresas + yogur griego, naranja + puñado de nueces</li><li>CUÁNDO COMERLA: Después de una comida principal (como postre) es mejor que sola como snack — la comida previa frena el pico de glucosa</li><li>CUÁNTO: 1-2 porciones al día es perfecto. Una porción = 1 fruta mediana o 1 taza de fruta picada</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La fruta entera contiene fibra que forma un gel en tu intestino, liberando el azúcar lentamente a lo largo de horas. El jugo elimina toda esa fibra y convierte la fruta en azúcar líquida que llega a tu sangre en minutos. La diferencia hormonal entre comer una naranja y tomar jugo de naranja es enorme.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/guia/carbohidratos.jpg" alt="Carbohidratos Inteligentes" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Carbohidratos Inteligentes</h2>
+        <p class="chapter-desc">Los carbohidratos no son el enemigo. El problema es el TIPO de carbohidrato y la FORMA en que lo comes. Tu cuerpo necesita carbohidratos para producir serotonina, mantener la función tiroidea y tener energía. La clave está en elegir los que se absorben lentamente y combinarlos de forma inteligente para que trabajen a favor de tu metabolismo, no en contra.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Carbohidratos que Tu Cuerpo Agradece</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Avena (hojuelas, no instantánea) — fibra beta-glucano que forma un gel en el intestino y estabiliza la glucosa por horas</li><li>🟢 Arroz integral — índice glucémico 48 vs 73 del arroz blanco, una diferencia que tu insulina nota inmediatamente</li><li>🟢 Quinoa — uno de los pocos carbohidratos que también es proteína completa, perfecto para el equilibrio hormonal</li><li>🟢 Camote/batata — rico en fibra y betacarotenos, se absorbe más lento que la papa blanca</li><li>🟢 Pan integral (de verdad) — el primer ingrediente debe ser &quot;harina integral&quot; o &quot;grano entero&quot;, no &quot;harina de trigo enriquecida&quot;</li><li>🟢 Legumbres (frijoles, lentejas, garbanzos) — carbohidratos envueltos en fibra y proteína, la combinación ideal</li><li>🟡 Tortilla de maíz — mejor opción que pan blanco, pero controla la cantidad (2-3 por comida)</li><li>🟡 Pasta integral al dente — cocida al dente tiene menor índice glucémico que la pasta blanda, la textura importa</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Reduce el arroz blanco — se convierte en glucosa casi tan rápido como el azúcar de mesa</li><li>🔴 Reduce el pan blanco y las harinas refinadas — la harina blanca es almidón puro sin fibra que lo frene</li><li>🔴 Evita cereales de caja azucarados — aunque digan &quot;con vitaminas&quot;, son básicamente harina + azúcar + marketing</li><li>🔴 Evita galletas y bollería industrial — combinan harina refinada + azúcar + grasas trans, el trío que más inflama</li><li>INTERCAMBIO INTELIGENTE: Arroz blanco → arroz integral o quinoa (misma función en el plato, respuesta hormonal completamente diferente)</li><li>INTERCAMBIO INTELIGENTE: Pan blanco del desayuno → rodajas de camote tostado como base (más fibra, más nutrientes, menos pico)</li><li>INTERCAMBIO INTELIGENTE: Pasta regular → fideos de calabacín o pasta integral al dente en porción controlada</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La diferencia de índice glucémico entre el arroz blanco (73) y el arroz integral (48) significa que tu páncreas produce una cantidad completamente diferente de insulina con cada uno. A lo largo de meses, esa diferencia determina si tu cuerpo desarrolla resistencia a la insulina o la revierte.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">El Orden en que Comes Importa</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>PASO 1 — FIBRA PRIMERO: Empieza cada comida con vegetales o ensalada (5 minutos comiendo esto antes de lo demás)</li><li>PASO 2 — PROTEÍNA DESPUÉS: Sigue con tu fuente de proteína (pollo, pescado, huevos, legumbres)</li><li>PASO 3 — GRASA JUNTO CON LA PROTEÍNA: El aceite de oliva, el aguacate o las nueces van naturalmente con este paso</li><li>PASO 4 — CARBOHIDRATO AL FINAL: Ahora sí, come tu arroz, pan, papa o tortilla</li><li>EJEMPLO ALMUERZO: Ensalada verde con tomate (primero) → pechuga a la plancha (segundo) → arroz integral con frijoles (al final)</li><li>EJEMPLO CENA: Sopa de vegetales (primero) → salmón al horno (segundo) → camote en cubos (al final)</li><li>EJEMPLO DESAYUNO: Espinaca salteada (primero) → huevos revueltos (segundo) → avena o tostada integral (al final)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>POR QUÉ FUNCIONA: Los vegetales crean una capa de fibra en tu estómago que actúa como una malla física</li><li>LA PROTEÍNA SEGUNDO: Estimula hormonas de saciedad (GLP-1) que le dicen a tu cerebro &quot;ya estoy satisfecha&quot; antes de llegar al carbohidrato</li><li>CARBOHIDRATO AL FINAL: Llega a un estómago que ya tiene fibra y proteína, así que la absorción es dramáticamente más lenta</li><li>RESULTADO MEDIBLE: Este simple cambio de orden puede reducir el pico de glucosa después de comer entre un 30-40%, sin cambiar qué comes ni cuánto comes</li><li>TRUCO PARA RESTAURANTES: Pide la ensalada como entrada (no como acompañamiento) y empieza por ella mientras esperas el plato fuerte</li><li>NO NECESITAS SER PERFECTA: Si no puedes separar los pasos, al menos asegúrate de comer algunos bocados de vegetal y proteína antes de atacar el arroz o el pan</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este orden crea una &quot;malla de fibra&quot; en tu estómago que físicamente ralentiza la absorción de los carbohidratos que comes después. No es magia — es mecánica digestiva. La misma comida, comida en diferente orden, produce una respuesta hormonal completamente diferente.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/guia/grasas.jpg" alt="Grasas y Lácteos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Grasas y Lácteos</h2>
+        <p class="chapter-desc">Durante décadas nos dijeron que la grasa era la enemiga. Hoy sabemos que sin grasa saludable, tu cuerpo no puede producir hormonas sexuales, absorber vitaminas esenciales ni mantener tu cerebro funcionando. El problema nunca fue &quot;la grasa&quot; — fue el TIPO de grasa. Y con los lácteos, el peligro no está en la leche: está en todo el azúcar que le agregan.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Grasas que Nutren tus Hormonas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Aceite de oliva extra virgen — antiinflamatorio, protege tu corazón y mejora la sensibilidad a la insulina</li><li>🟢 Aguacate — grasa monoinsaturada + fibra + potasio, el alimento más completo para tu perfil hormonal</li><li>🟢 Nueces y almendras — grasas buenas + proteína + magnesio. Un puñado diario (30g) protege tu metabolismo</li><li>🟢 Nueces de Brasil — la fuente natural más rica de selenio, mineral esencial para la función tiroidea (2-3 al día bastan)</li><li>🟢 Semillas (chía, linaza, calabaza) — omega-3 vegetal + fibra que alimenta tu microbiota y estabiliza hormonas</li><li>🟢 Pescados grasos (salmón, sardina, caballa) — omega-3 EPA y DHA que reducen la inflamación sistémica</li><li>🟡 Aceite de coco — útil para cocinar a alta temperatura, pero úsalo con moderación por su alto contenido de grasa saturada</li><li>🟡 Mantequilla y quesos — en porciones pequeñas aportan vitaminas liposolubles, pero no como fuente principal de grasa</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Evita grasas trans (galletas rellenas, margarinas duras, algunos snacks empacados) — la grasa trans inflama tus células y empeora directamente la resistencia a la insulina</li><li>🔴 Evita el exceso de frituras — freír cambia la estructura química de los aceites, creando compuestos proinflamatorios</li><li>🔴 Evita aceites vegetales refinados en exceso (soya, canola, girasol) — su alto contenido de omega-6 promueve inflamación cuando se consume sin equilibrio</li><li>INTERCAMBIO INTELIGENTE: Aderezos comerciales de ensalada → aceite de oliva + limón + sal + pimienta (más sano, más barato, más sabroso)</li><li>INTERCAMBIO INTELIGENTE: Freír en aceite vegetal → cocinar al horno con un chorrito de aceite de oliva o al vapor</li><li>ESTRATEGIA: Agrega una fuente de grasa buena a cada comida — medio aguacate, un chorrito de aceite de oliva, un puñado de nueces. Tu cuerpo la necesita para absorber vitaminas A, D, E y K</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Tus hormonas sexuales (estrógeno, progesterona, testosterona) están literalmente HECHAS de colesterol y grasa. Sin grasa saludable suficiente en tu alimentación, tu cuerpo no tiene la materia prima para producirlas. Esto es especialmente crítico después de los 40, cuando la producción hormonal ya está disminuyendo naturalmente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Lácteos: El Peligro Está en lo Azucarado</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Yogur griego natural (sin azúcar, sin sabor) — alto en proteína + probióticos vivos que fortalecen tu intestino</li><li>🟢 Leche natural sin azúcar añadida — fuente de calcio y vitamina D, ambos esenciales para la salud ósea después de los 40</li><li>🟢 Cottage cheese (requesón) — alto en proteína caseína de absorción lenta, ideal para la cena o antes de dormir</li><li>🟢 Quesos maduros en moderación (parmesano, manchego) — ricos en calcio y prácticamente sin lactosa</li><li>🟢 Kéfir natural — más probióticos que el yogur, excelente para restaurar la flora intestinal</li><li>🟡 Queso fresco (panela, Oaxaca) — bajo en grasa pero revisa el sodio. Buena opción en porciones controladas</li><li>🟡 Crema ácida — úsala como complemento, no como base. Una cucharada añade sabor sin exceso</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Evita yogures tipo &quot;postre&quot; (con mermelada, chocolate, galleta) — pueden tener más azúcar que un helado</li><li>🔴 Evita leches saborizadas y chocolatadas comerciales — un vaso puede contener 25-30g de azúcar añadida</li><li>🔴 Evita yogures de fruta comerciales — la &quot;fruta&quot; suele ser jarabe de maíz con saborizante y colorante</li><li>INTERCAMBIO INTELIGENTE: Yogur de fresa comercial → yogur griego natural + fresas reales picadas + canela (controlas el azúcar, ganas proteína y probióticos)</li><li>INTERCAMBIO INTELIGENTE: Leche chocolatada → leche natural + 1 cucharadita de cacao puro en polvo (sin azúcar)</li><li>ESTRATEGIA: Lee siempre la etiqueta del yogur. Si el azúcar aparece entre los primeros 3 ingredientes, devuélvelo al estante</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los lácteos fermentados como el yogur natural y el kéfir contienen probióticos que fortalecen tu salud intestinal — y tu intestino produce el 90% de tu serotonina, la hormona del bienestar. Un intestino sano significa mejor ánimo, menos antojos emocionales y mejor equilibrio hormonal general.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/guia/snacks.jpg" alt="Snacks y Dulces" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Snacks y Dulces</h2>
+        <p class="chapter-desc">Los snacks son donde la mayoría de los planes alimenticios se desmoronan. No porque seas débil — sino porque llegas a las 3-4 PM con hambre real, energía baja, y lo más fácil de alcanzar es algo ultraprocesado. La solución no es &quot;no comer entre comidas&quot;. Es tener las opciones correctas preparadas y entender cómo manejar los antojos de dulce sin culpa.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Snacks que Sostienen tu Energía</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Nueces y almendras naturales (porción de 30g, un puñado) — grasa + proteína + fibra que te sostienen 2-3 horas sin picos</li><li>🟢 Yogur griego natural con semillas de chía — proteína + probióticos + fibra, el snack más completo</li><li>🟢 Palitos de zanahoria, pepino o jícama con guacamole — crujientes, frescos y con grasa buena que sacia</li><li>🟢 Palomitas de maíz caseras (con poco aceite y sal) — un snack de grano entero con fibra, sorprendentemente bajo en calorías</li><li>🟢 Huevo duro — la proteína más portátil que existe. Cocina varios el domingo y tenlos listos en el refrigerador</li><li>🟢 Manzana con crema de cacahuate natural (1 cucharada) — carbohidrato + grasa + proteína en cada bocado</li><li>🟡 Queso panela o cottage con rodajas de tomate — proteína + frescura, pero cuida la porción de queso</li><li>🟡 Edamames (frijoles de soya) con sal de mar — proteína vegetal satisfactoria, pero modera si tienes sensibilidad a la soya</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Evita galletas rellenas (tipo sándwich) — la combinación de harina refinada + azúcar + grasa trans es lo que más dispara la insulina y la inflamación</li><li>🔴 Evita snacks salados ultraprocesados (papas fritas de bolsa, frituras de maíz) — diseñados para que no puedas parar de comer</li><li>🔴 Evita barras de granola dulces — la mayoría son golosinas disfrazadas con más azúcar que una galleta</li><li>REGLA FUNDAMENTAL: Nunca comas un carbohidrato solo como snack — siempre combínalo con proteína o grasa. Galletas solas = pico. Galleta integral + queso = estabilidad</li><li>ESTRATEGIA ANTI-CAÍDA DE ENERGÍA: Si regularmente tienes el bajón de las 3-4 PM, planifica tu snack de media tarde ANTES de que llegue el hambre</li><li>PREPARACIÓN SEMANAL: Los domingos prepara bolsitas con porciones de nueces, corta palitos de vegetales y cocina huevos duros. Snacks saludables listos = decisiones fáciles</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La caída de energía de las 3-4 de la tarde es típicamente un bajón de insulina provocado por un almuerzo alto en carbohidratos refinados. Tu cuerpo produjo demasiada insulina, bajó demasiado la glucosa, y ahora pide azúcar desesperadamente. Un snack rico en proteína previene esta montaña rusa hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">Dulces Sin Culpa: La Estrategia Correcta</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Chocolate oscuro 70%+ cacao — rico en flavonoides que mejoran la circulación y la sensibilidad a la insulina. 1-2 cuadritos satisfacen</li><li>🟢 Fruta fresca con yogur griego y canela — dulzura natural + proteína + el poder regulador de la canela</li><li>🟢 Banana congelada licuada (&quot;helado&quot; de banana) — textura cremosa de helado sin azúcar añadida. Agrega cacao en polvo para versión chocolate</li><li>🟢 Postres caseros con menos azúcar (reducir el azúcar de recetas a la mitad funciona en casi todo)</li><li>🟢 Dátiles rellenos de crema de cacahuate (1-2 piezas) — dulzura intensa + grasa + fibra que frena la absorción</li><li>🟡 Un trozo pequeño de pastel en ocasión especial (cumpleaños, celebración) — planificado, disfrutado, sin culpa</li><li>🟡 Gelatina sin azúcar con fruta fresca — no es nutritiva, pero satisface el antojo sin pico significativo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Evita comer dulce con el estómago vacío — sin fibra ni proteína previa, el azúcar llega directamente a tu sangre</li><li>🔴 Evita combinar postre + bebida azucarada — es una doble carga de azúcar que multiplica el pico de insulina</li><li>🔴 Evita &quot;picotear&quot; dulces durante todo el día — es mejor un momento consciente de dulce que 5 bocaditos inconscientes</li><li>🔴 Evita dulces como premio o consuelo emocional — crea un ciclo de dependencia hormonal difícil de romper</li><li>REGLA DE ORO: Come tu dulce DESPUÉS de una comida completa (con fibra + proteína). El pico de glucosa se reduce dramáticamente comparado con comer el mismo dulce solo</li><li>ESTRATEGIA ANTI-ANTOJO: Antojo de dulce → 1 cuadrito de chocolate oscuro + una taza de té de canela. El chocolate satisface, la canela estabiliza. Espera 15 minutos — el antojo casi siempre pasa</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Comer postre DESPUÉS de una comida completa con fibra y proteína reduce dramáticamente el pico de glucosa en comparación con comer ese mismo postre con el estómago vacío. No se trata de eliminar lo dulce de tu vida — se trata de comerlo en el momento y el contexto correcto para que tu cuerpo lo maneje sin estrés hormonal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/guia/supermercado.jpg" alt="Trampas del Supermercado" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Trampas del Supermercado</h2>
+        <p class="chapter-desc">La industria alimentaria invierte miles de millones en hacer que los productos ultraprocesados parezcan saludables. Palabras como &quot;natural&quot;, &quot;multigrano&quot;, &quot;light&quot; y &quot;sin azúcar&quot; son estrategias de marketing, no garantías de salud. Este capítulo te enseña a ver detrás del empaque y tomar decisiones informadas en cada pasillo del supermercado.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">Falsos Alimentos Saludables</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>⚠️ Granola con azúcar — la mayoría de las granolas comerciales tienen más azúcar por porción que un cereal de chocolate para niños</li><li>⚠️ Açaí con jarabe y granola — el açaí puro es un superalimento, pero los tazones comerciales pueden tener 50-80g de azúcar</li><li>⚠️ Smoothies y jugos &quot;detox&quot; de tienda — un smoothie comercial puede contener más azúcar que un refresco grande</li><li>⚠️ Pan &quot;multigrano&quot; o &quot;7 granos&quot; — suena saludable, pero si el primer ingrediente es &quot;harina de trigo enriquecida&quot;, es pan blanco disfrazado</li><li>⚠️ Productos &quot;diet&quot; o &quot;light&quot; — muchos reducen grasa pero aumentan azúcar para compensar el sabor</li><li>⚠️ Barritas de cereal &quot;saludables&quot; — revisa la etiqueta: muchas tienen 15-20g de azúcar, igual que una golosina</li><li>⚠️ Galletas &quot;integrales&quot; — a menudo son galletas regulares con un poco de salvado añadido y el mismo azúcar de siempre</li><li>⚠️ Yogur de fruta &quot;con probióticos&quot; — sí tiene probióticos, pero también 20-25g de azúcar que alimentan bacterias dañinas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>REGLA DE LOS PRIMEROS 3 INGREDIENTES: Lo que aparece primero en la lista es lo que más contiene el producto. Si azúcar, harina o jarabe están entre los primeros 3, es un producto azucarado disfrazado</li><li>NOMBRES ESCONDIDOS DEL AZÚCAR: Jarabe de maíz, fructosa, maltodextrina, dextrosa, jarabe de agave, miel de maple, azúcar invertida — son todas azúcar con nombres diferentes</li><li>MIRA CARBOHIDRATOS TOTALES: &quot;Sin azúcar&quot; no significa &quot;sin carbohidratos&quot;. Muchos productos sin azúcar usan harinas y almidones que se convierten en glucosa igual</li><li>REGLA DEL 5: Si la lista de ingredientes tiene más de 5 items que no reconoces o no podrías comprar en un mercado, piénsalo dos veces</li><li>COMPARA POR PORCIÓN: Dos productos que parecen similares pueden tener porciones muy diferentes en la etiqueta. Siempre compara por 100g, no por &quot;porción sugerida&quot;</li><li>ESTRATEGIA EN EL SÚPER: Compra principalmente en el perímetro de la tienda (frutas, vegetales, carnes, lácteos). Los pasillos centrales son territorio de ultraprocesados</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La industria alimentaria gasta miles de millones en hacer que los productos procesados parezcan saludables. Tu mejor defensa: entre más corta y reconocible sea la lista de ingredientes, mejor es el producto para tus hormonas. Si tu abuela no reconocería los ingredientes, probablemente tu cuerpo tampoco.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">Salsas y Condimentos: Azúcar Escondida</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 Ajo, cebolla, limón — la base de sabor más poderosa y con cero azúcar añadida</li><li>🟢 Hierbas frescas (cilantro, perejil, albahaca, orégano) — sabor intenso, antioxidantes, sin calorías</li><li>🟢 Pimienta negra, comino, pimentón, chile en polvo — las especias no solo dan sabor, muchas son antiinflamatorias</li><li>🟢 Salsa de tomate casera (tomate + ajo + cebolla + hierbas) — tú controlas lo que lleva, sin azúcar ni conservadores</li><li>🟢 Aderezo de yogur natural (yogur + limón + hierbas + sal) — cremoso, proteico y sin el azúcar de los aderezos comerciales</li><li>🟢 Vinagre (de manzana, balsámico, de vino) — el ácido acético del vinagre realmente ayuda a reducir picos de glucosa</li><li>🟡 Mostaza — generalmente baja en azúcar, pero revisa la etiqueta de las versiones con miel</li><li>🟡 Salsa de soya — sin azúcar pero muy alta en sodio, usa la versión reducida en sodio con moderación</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🔴 Limita la salsa BBQ (barbacoa) — una cucharada puede contener 6g de azúcar, más que una galleta</li><li>🔴 Limita salsas agridulces — son básicamente jarabe de maíz con saborizantes y colorantes</li><li>🔴 Limita el ketchup en exceso — 1 cucharada tiene 4g de azúcar. Dos cucharadas ya son 8g de azúcar pura</li><li>🔴 Evita aderezos comerciales cremosos (ranch, Caesar, mil islas) — combinan azúcar + aceites refinados + conservadores</li><li>INTERCAMBIO INTELIGENTE: Salsa BBQ comercial → mezcla de salsa de tomate casera + un toque de vinagre de manzana + pimentón ahumado</li><li>INTERCAMBIO INTELIGENTE: Aderezo cremoso comercial → aceite de oliva + limón + mostaza Dijon + sal y pimienta (listo en 30 segundos)</li><li>DATO QUE SORPRENDE: Una salsa puede convertir una comida perfectamente saludable en una bomba de azúcar sin que te des cuenta. Siempre pregúntate: ¿qué le estoy echando encima?</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las salsas comerciales son una de las fuentes de azúcar más subestimadas en la alimentación diaria. Una cucharada de salsa BBQ tiene más azúcar que una galleta. Cuando cocinas tus propias salsas con ingredientes reales, eliminas una fuente oculta de azúcar que saboteaba tu equilibrio hormonal sin que lo supieras.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/guia/compras.jpg" alt="Tu Guía de Compras" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Tu Guía de Compras</h2>
+        <p class="chapter-desc">Todo lo que aprendiste en los capítulos anteriores se resume aquí: una guía práctica para el momento de la verdad — cuando estás en el supermercado con el carrito vacío y necesitas tomar 50 decisiones en 30 minutos. Una cocina bien abastecida es tu mejor defensa contra las decisiones impulsivas. Cuando la comida saludable está disponible, las elecciones saludables se vuelven fáciles.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">Lista de Compras para tu Código Hormonal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 VEGETALES: Espinaca, brócoli, coliflor, pepino, tomate, calabacín, pimiento, champiñones, lechuga, zanahoria, cebolla, ajo, apio, ejotes</li><li>🟢 FRUTAS: Fresas, moras, arándanos, manzanas, peras, naranjas, kiwi, limones (siempre de temporada, más frescas y económicas)</li><li>🟢 PROTEÍNAS: Huevos, pechuga de pollo, pescado (salmón, tilapia, sardina), pavo, legumbres secas (frijoles, lentejas, garbanzos), tofu</li><li>🟢 CARBOHIDRATOS INTELIGENTES: Avena en hojuelas, arroz integral, quinoa, camote, pan integral (verificado), tortilla de maíz</li><li>🟢 GRASAS SALUDABLES: Aceite de oliva extra virgen, aguacates, nueces, almendras, nueces de Brasil, semillas de chía, semillas de linaza, semillas de calabaza</li><li>🟢 LÁCTEOS: Yogur griego natural sin azúcar, leche natural, cottage cheese, kéfir</li><li>🟢 BEBIDAS: Té verde, jengibre fresco, canela en rama, manzanilla, vinagre de manzana</li><li>🟢 CONDIMENTOS: Cúrcuma, comino, pimienta negra, pimentón, orégano, hierbas frescas, mostaza Dijon, salsa de tomate sin azúcar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>REGLA DEL PERÍMETRO: Haz la mayoría de tus compras en las orillas de la tienda — ahí están los alimentos frescos (frutas, vegetales, carnes, lácteos). Los pasillos centrales están dominados por ultraprocesados</li><li>NUNCA COMPRES CON HAMBRE: Cuando tienes hambre, tu cerebro busca calorías rápidas y tu carrito se llena de snacks ultraprocesados. Come algo con proteína antes de ir al súper</li><li>PLANIFICA ANTES DE IR: Dedica 10 minutos a pensar tus comidas de la semana y haz tu lista. Ir sin lista = comprar por impulso</li><li>COMPRA DE TEMPORADA: Las frutas y vegetales de temporada son más frescas, más nutritivas y más económicas. Pregunta en tu mercado local qué está en temporada</li><li>LA REGLA DEL CARRITO VISUAL: Al final de tu compra, mira tu carrito. Si más de la mitad es empaquetado, reconsidera. Un carrito saludable tiene más colores naturales que empaques brillantes</li><li>PREPARA AL LLEGAR: Apenas llegues a casa, lava y corta tus vegetales, cocina tus proteínas base y porciona tus nueces. 30 minutos de preparación = una semana de comidas fáciles</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Una cocina bien abastecida con los alimentos correctos es tu mejor defensa contra la alimentación impulsiva. Cuando abres el refrigerador y lo primero que ves son vegetales lavados, proteínas listas y frutas frescas, las decisiones saludables dejan de requerir fuerza de voluntad — se vuelven la opción más fácil.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">16</div>
+            <div class="recipe-name">El Método del Plato: Tu Fórmula Visual</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟢 1/2 DEL PLATO — Vegetales sin almidón: Ensalada, brócoli, espinaca, calabacín, ejotes, tomate, pepino. Esta es la parte más grande y la más importante</li><li>🟢 1/4 DEL PLATO — Proteína: Pollo, pescado, huevos, tofu, legumbres, queso cottage. Tu fuente de saciedad y construcción muscular</li><li>🟢 1/4 DEL PLATO — Carbohidrato inteligente: Arroz integral, quinoa, camote, avena, pasta integral, tortilla de maíz. La energía que tu cuerpo necesita</li><li>🟢 AL LADO — Un vaso de agua: Siempre. No refresco, no jugo, no té endulzado. Agua natural o agua con gas</li><li>🟢 COMPLEMENTO — Una porción de grasa buena: Medio aguacate, un chorrito de aceite de oliva en la ensalada, o las nueces del snack anterior</li><li>🟢 POSTRE OPCIONAL — Una fruta entera o yogur natural: Si quieres algo dulce después, que sea real y en porción consciente</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>DESAYUNO CON MÉTODO DEL PLATO: 1/2 plato = espinaca o tomate. 1/4 plato = huevos (2-3). 1/4 plato = avena o tostada integral. Agua o café sin azúcar al lado</li><li>ALMUERZO CON MÉTODO DEL PLATO: 1/2 plato = ensalada mixta abundante. 1/4 plato = pechuga a la plancha o pescado. 1/4 plato = arroz integral o quinoa. Agua al lado</li><li>CENA CON MÉTODO DEL PLATO: 1/2 plato = vegetales al vapor o ensalada. 1/4 plato = salmón, pollo o legumbres. 1/4 plato = camote o sopa de vegetales. Infusión de manzanilla al lado</li><li>POR QUÉ FUNCIONA: No necesitas contar calorías, pesar alimentos ni usar aplicaciones. Tu plato se convierte en tu calculadora visual — la proporción correcta crea naturalmente el balance de macronutrientes que tu insulina necesita</li><li>EN RESTAURANTES: Visualiza mentalmente el plato dividido. Pide ensalada extra si el plato viene con poca verdura. Lleva la mitad del carbohidrato para después si la porción es grande</li><li>PARA TODA LA FAMILIA: Este método funciona para todos — no necesitas cocinar diferente. Simplemente ajusta las proporciones de cada sección según las necesidades de cada persona</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El método del plato es recomendado por nutricionistas a nivel mundial porque funciona sin contar, sin medir y sin obsesionarte. Automáticamente crea el balance de macronutrientes que favorece la sensibilidad a la insulina — más fibra, proteína adecuada y carbohidratos en proporción justa. Simple, visual y sostenible para toda la vida.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Guía de Alimentos</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

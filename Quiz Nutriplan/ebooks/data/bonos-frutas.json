@@ -1,0 +1,308 @@
+{
+  "archivo": "Bonos-Frutas.pdf",
+  "tipo": "capitulos",
+  "intro": {
+    "titulo": "Tu Guía Inteligente de Frutas para el Equilibrio Hormonal",
+    "contenido": "\"¿Puedo comer fruta si quiero cuidar mi insulina?\"\n\nLa respuesta es SÍ — pero con inteligencia.\n\nLas frutas no son tu enemigo. De hecho, son aliadas poderosas: aportan fibra, antioxidantes, vitaminas y minerales que tu sistema hormonal necesita para funcionar correctamente.\n\nEl problema nunca fue la fruta — fue NO saber cuáles elegir, en qué cantidad y cómo combinarlas.\n\nEsta guía te da un sistema visual tipo semáforo para que sepas exactamente qué frutas te benefician, cuáles moderar y cuáles limitar:\n\n• 🟢 VERDE — Come libremente (con porción normal)\n• 🟡 AMARILLO — Come con estrategia (porción controlada)\n• 🔴 ROJO — Consume ocasionalmente (porción pequeña)\n\n4 principios para elegir frutas inteligentes:\n\n• 1️⃣ IG bajo (≤55) — Menor impacto en tu glucosa\n• 2️⃣ Rica en fibra — La fibra frena la absorción del azúcar\n• 3️⃣ Entera, no procesada — Sin jugos, almíbares ni deshidratada con azúcar\n• 4️⃣ Madurez controlada — Más madura = más azúcar libre"
+  },
+  "capitulos": [
+    {
+      "nombre": "⭐ Las Frutas Estrella — Tus Mejores Aliadas",
+      "descripcion": "Estas frutas tienen IG bajo, alto contenido de fibra y nutrientes que mejoran directamente tu sensibilidad a la insulina. Conócelas a fondo.",
+      "imagen": "img/frutas/estrellas.jpg",
+      "recetas": [
+        {
+          "nombre": "🍏 Manzana Verde — La Reina del Equilibrio",
+          "imagen": "img/frutas/manzana.jpg",
+          "ingredientes": [
+            "🟢 Índice Glucémico: 36 (bajo)",
+            "🟢 Fibra por unidad: 4.4g (excelente)",
+            "🟢 Porción ideal: 1 manzana mediana",
+            "",
+            "── POR QUÉ ES ESTRELLA ──",
+            "✅ Rica en pectina — fibra soluble que forma gel y frena la absorción de azúcar",
+            "✅ Alta en polifenoles — antioxidantes que mejoran la sensibilidad a la insulina",
+            "✅ Con cáscara aporta quercetina — antiinflamatorio natural",
+            "✅ Disponible todo el año, económica y versátil"
+          ],
+          "preparacion": [
+            "SIEMPRE cómela con cáscara — ahí está el 50% de la fibra y los polifenoles",
+            "Mejor combinación: manzana + mantequilla de maní = snack hormonal perfecto",
+            "En avena: ralla una manzana verde sobre tu avena con canela — delicioso",
+            "Tip: la manzana verde tiene MENOS azúcar que la roja — elige la verde cuando puedas"
+          ],
+          "consejo": "La manzana verde es posiblemente la fruta más segura para tu insulina. Su pectina crea un gel en tu intestino que retarda la absorción de glucosa hasta un 25%. Cómela a mordidas (no en jugo) para que la fibra haga su trabajo."
+        },
+        {
+          "nombre": "🫐 Frutos Rojos — Los Antioxidantes Más Poderosos",
+          "imagen": "img/frutas/frutos-rojos.jpg",
+          "ingredientes": [
+            "🟢 Fresas — IG 41 | Porción: 1 taza (8-10 fresas)",
+            "🟢 Arándanos — IG 53 | Porción: ¾ taza",
+            "🟢 Frambuesas — IG 32 | Porción: 1 taza",
+            "🟢 Moras — IG 25 | Porción: 1 taza",
+            "",
+            "── POR QUÉ SON ESTRELLAS ──",
+            "✅ Mayor concentración de antocianinas (antioxidantes) de todas las frutas",
+            "✅ Las antocianinas mejoran directamente la sensibilidad a la insulina",
+            "✅ Muy bajas en azúcar comparadas con otras frutas",
+            "✅ Altísimas en fibra — las frambuesas tienen 8g por taza"
+          ],
+          "preparacion": [
+            "Sobre yogur griego: el combo más simple y poderoso para tu metabolismo",
+            "En avena nocturna: agrégalas frescas o congeladas al preparar la noche anterior",
+            "Congeladas: mantienen TODOS sus nutrientes y antioxidantes — siempre ten en tu freezer",
+            "Como snack solo: 1 taza de fresas o moras es el snack de IG más bajo que existe"
+          ],
+          "consejo": "Los frutos rojos son las frutas con mayor poder antiinflamatorio conocido. Estudios muestran que consumir frutos rojos regularmente mejora la sensibilidad a la insulina y reduce marcadores de inflamación crónica. Son la fruta #1 para tu equilibrio hormonal."
+        },
+        {
+          "nombre": "🥑 Aguacate — La Fruta Grasa que Regula Todo",
+          "imagen": "img/frutas/aguacate.jpg",
+          "ingredientes": [
+            "🟢 Índice Glucémico: 15 (bajísimo)",
+            "🟢 Fibra por unidad: 10g (extraordinario)",
+            "🟢 Porción ideal: ¼ a ½ aguacate",
+            "",
+            "── POR QUÉ ES ESTRELLA ──",
+            "✅ Aunque no es dulce, es una FRUTA — la más rica en grasas monoinsaturadas",
+            "✅ Estas grasas mejoran la sensibilidad a la insulina directamente",
+            "✅ Alto en potasio (más que el plátano) — mineral clave para el metabolismo",
+            "✅ La fibra + grasa crean saciedad de 4+ horas"
+          ],
+          "preparacion": [
+            "En tostada de pan de granos: ½ aguacate + huevo + sal marina = desayuno hormonal",
+            "En ensaladas: agrega cubos de aguacate a cualquier ensalada para convertirla en comida completa",
+            "Como acompañante: ¼ aguacate con cualquier plato reduce el impacto glucémico del plato entero",
+            "Guacamole: aguacate + limón + tomate + cilantro + sal = dip perfecto con vegetales crudos"
+          ],
+          "consejo": "El aguacate es la fruta más poderosa para tu equilibrio hormonal. Sus grasas monoinsaturadas son la materia prima para producir estrógeno y progesterona. Agregar aguacate a cualquier comida reduce el pico de insulina del plato completo porque la grasa retarda la digestión."
+        },
+        {
+          "nombre": "🍊 Cítricos — Vitamina C y Protección Hormonal",
+          "imagen": "img/frutas/citricos.jpg",
+          "ingredientes": [
+            "🟢 Naranja — IG 43 | Porción: 1 naranja mediana",
+            "🟢 Pomelo/toronja — IG 25 | Porción: ½ pomelo",
+            "🟢 Mandarina — IG 42 | Porción: 2 mandarinas",
+            "🟢 Limón — IG 20 | Uso: ilimitado como condimento",
+            "",
+            "── POR QUÉ SON ESTRELLAS ──",
+            "✅ La vitamina C es esencial para producir cortisol saludable",
+            "✅ El pomelo/toronja tiene compuestos que mejoran la sensibilidad a la insulina",
+            "✅ Los cítricos son ricos en hesperidina — flavonoide protector cardiovascular",
+            "✅ El limón estimula la bilis y apoya la desintoxicación hepática"
+          ],
+          "preparacion": [
+            "SIEMPRE come la naranja entera (a gajos) — NUNCA en jugo. La fibra cambia todo",
+            "El pomelo antes del desayuno puede mejorar tu respuesta glucémica de la mañana",
+            "Agrega limón a TODO: agua, ensaladas, carnes, jugos — mejora sabor + aporta vitamina C",
+            "Mandarina como snack: 2 mandarinas + puñado de nueces = merienda perfecta"
+          ],
+          "consejo": "El pomelo (toronja) es la fruta cítrica con mayor impacto en la sensibilidad a la insulina. IMPORTANTE: si tomas medicamentos, consulta con tu médico antes de consumir pomelo regularmente, ya que puede interactuar con ciertos fármacos."
+        },
+        {
+          "nombre": "🥝 Tropicales Inteligentes — Kiwi, Guayaba y Más",
+          "imagen": "img/frutas/tropical.jpg",
+          "ingredientes": [
+            "🟢 Kiwi — IG 39 | Porción: 2 kiwis pequeños",
+            "🟢 Guayaba — IG 32 | Porción: 1 guayaba mediana",
+            "🟢 Pera — IG 38 | Porción: 1 pera mediana",
+            "🟢 Ciruela fresca — IG 39 | Porción: 2 ciruelas",
+            "",
+            "── POR QUÉ SON ESTRELLAS ──",
+            "✅ Kiwi: más vitamina C que la naranja + enzima actinidina que mejora digestión",
+            "✅ Guayaba: altísima en vitamina C y fibra, casi cero impacto glucémico",
+            "✅ Pera: rica en fibra soluble, ideal como snack de media tarde",
+            "✅ Ciruela fresca: bajo IG y efecto digestivo natural"
+          ],
+          "preparacion": [
+            "Kiwi: córtalo por la mitad y cómelo con cuchara — incluye las semillas (fibra extra)",
+            "Guayaba: cómela entera con cáscara y semillas — ahí está la fibra",
+            "Pera: con cáscara siempre, combinada con queso fresco = snack europeo clásico",
+            "Ciruela fresca: 2 ciruelas después del almuerzo mejoran la digestión y la saciedad"
+          ],
+          "consejo": "La guayaba es un superalimento subestimado: tiene 4 veces más vitamina C que la naranja, más fibra que la mayoría de frutas, y un IG de apenas 32. Si vives en una zona donde es accesible, deberías incluirla en tu rotación semanal."
+        }
+      ]
+    },
+    {
+      "nombre": "🚦 Semáforo de Frutas — Tu Referencia Rápida",
+      "descripcion": "Imprime esta sección o tómale screenshot. Es tu mapa visual para elegir frutas en el supermercado, la cocina o un restaurante.",
+      "imagen": "img/frutas/semaforo.jpg",
+      "recetas": [
+        {
+          "nombre": "🟢 VERDE — Vía Libre (IG ≤ 55)",
+          "ingredientes": [
+            "🟢 Aguacate — IG 15 | Come diariamente",
+            "🟢 Limón — IG 20 | Usa libremente como condimento",
+            "🟢 Pomelo/toronja — IG 25 | Excelente antes del desayuno",
+            "🟢 Moras — IG 25 | Las más bajas en azúcar",
+            "🟢 Frambuesas — IG 32 | Altísimas en fibra (8g/taza)",
+            "🟢 Guayaba — IG 32 | Superfruta subestimada",
+            "🟢 Manzana verde — IG 36 | La reina del equilibrio",
+            "🟢 Pera — IG 38 | Fibra soluble excelente",
+            "🟢 Kiwi — IG 39 | Más vitamina C que la naranja",
+            "🟢 Ciruela fresca — IG 39 | Digestiva natural",
+            "🟢 Fresas — IG 41 | Antioxidantes + bajo azúcar",
+            "🟢 Mandarina — IG 42 | Snack perfecto",
+            "🟢 Naranja — IG 43 | Siempre entera, nunca en jugo",
+            "🟢 Banana ligeramente verde — IG 48 | Almidón resistente",
+            "🟢 Mango (porción pequeña) — IG 51 | Vitamina A",
+            "🟢 Arándanos — IG 53 | Los reyes antiinflamatorios"
+          ],
+          "preparacion": [
+            "Estas frutas puedes incluirlas diariamente en tu alimentación",
+            "Siempre enteras (no en jugo) y con cáscara cuando sea posible",
+            "Combínalas con proteína o grasa para máximo beneficio hormonal",
+            "Rotación: no comas siempre la misma — varía para obtener diferentes nutrientes"
+          ],
+          "consejo": "Todas las frutas zona verde tienen en común: IG bajo + fibra alta. La fibra es la razón por la que la fruta entera es tan diferente del jugo. Sin fibra, es solo agua con azúcar. Con fibra, es un paquete nutricional completo que tu insulina puede manejar sin problema."
+        },
+        {
+          "nombre": "🟡 AMARILLO — Con Estrategia (IG 56-69)",
+          "ingredientes": [
+            "🟡 Piña — IG 59 | Porción: ½ taza máximo",
+            "🟡 Papaya — IG 60 | Porción: 1 taza pequeña",
+            "🟡 Banana madura — IG 62 | Porción: ½ banana",
+            "🟡 Uvas — IG 59 | Porción: 10-12 uvas",
+            "🟡 Cereza — IG 63 | Porción: 10-12 cerezas"
+          ],
+          "preparacion": [
+            "NO las elimines — consúmelas con estrategia",
+            "SIEMPRE combínalas con proteína: piña + yogur griego, banana + mantequilla de maní",
+            "Porción controlada: la mitad de lo que normalmente comerías",
+            "Mejor en la mañana o media tarde — tu cuerpo maneja mejor la glucosa temprano en el día"
+          ],
+          "consejo": "La banana madura tiene IG 62, pero la banana VERDE tiene IG 48 — la diferencia es el almidón resistente que se convierte en azúcar al madurar. Si amas las bananas, elige las que están ligeramente verdes. Y si usas banana en batidos, congélala cuando aún esté verde."
+        },
+        {
+          "nombre": "🔴 ROJO — Ocasional y con Cuidado (IG ≥ 70)",
+          "imagen": "img/frutas/evitar.jpg",
+          "ingredientes": [
+            "🔴 Sandía — IG 76 | Porción: 1 rodaja fina (pero CG baja)",
+            "🔴 Dátiles secos — IG 103 | Porción: 1-2 máximo",
+            "🔴 Uvas pasas — IG 64 | Porción: 1 cucharada",
+            "🔴 Fruta seca azucarada — IG variable alto",
+            "🔴 Fruta en almíbar — IG altísimo por el azúcar añadida",
+            "🔴 Jugos de fruta (incluso 'naturales') — sin fibra = azúcar líquida"
+          ],
+          "preparacion": [
+            "⚠️ CASO ESPECIAL SANDÍA: tiene IG alto (76) pero Carga Glucémica BAJA — la porción normal es 92% agua",
+            "Los dátiles tienen IG 103 — más alto que la glucosa pura. Máximo 1-2 como snack con nueces",
+            "La fruta seca concentra el azúcar: 100g de uvas = 16g azúcar, 100g de pasas = 59g azúcar",
+            "Jugo 'natural' de 4 naranjas = 48g de azúcar SIN fibra que llega a tu sangre en minutos"
+          ],
+          "consejo": "La fruta zona roja no es 'mala' — simplemente necesita más cuidado. Un dátil con una nuez dentro es un snack maravilloso. Pero 10 dátiles sin nada es una bomba de azúcar. La porción y la combinación lo cambian todo."
+        }
+      ]
+    },
+    {
+      "nombre": "🍽️ Estrategias para Comer Frutas con Inteligencia",
+      "descripcion": "No se trata solo de QUÉ fruta comes, sino de CÓMO la comes. Estas estrategias reducen el impacto glucémico de cualquier fruta.",
+      "imagen": "img/frutas/estrategias.jpg",
+      "recetas": [
+        {
+          "nombre": "📐 Las 5 Reglas de Oro para Comer Frutas",
+          "imagen": "img/frutas/ensalada-frutas.jpg",
+          "ingredientes": [
+            "1️⃣ SIEMPRE ENTERA — Come la fruta a mordidas o en gajos, nunca en jugo",
+            "2️⃣ NUNCA SOLA EN AYUNAS — Combínala con proteína (yogur, nueces, queso) o grasa (aguacate, maní)",
+            "3️⃣ PORCIÓN CONTROLADA — ½ a 1 fruta mediana por vez, no más",
+            "4️⃣ MEJOR TEMPRANO — Mañana o media tarde; tu sensibilidad a la insulina es mayor en la mañana",
+            "5️⃣ CON CÁSCARA — Ahí está el 40-60% de la fibra y los antioxidantes"
+          ],
+          "preparacion": [
+            "COMBO #1: Manzana verde + 10 almendras = snack de 3+ horas de saciedad",
+            "COMBO #2: Yogur griego + frutos rojos + chía = desayuno hormonal perfecto",
+            "COMBO #3: Pera + queso fresco = merienda con proteína y fibra",
+            "COMBO #4: Fresas + mantequilla de maní = dulce + proteína + grasa = insulina estable"
+          ],
+          "consejo": "La regla más transformadora: NUNCA comas fruta sola con el estómago vacío. La proteína y la grasa actúan como 'freno' que retarda la absorción del azúcar natural. La misma manzana que sola causa un mini-pico, con mantequilla de maní libera su azúcar lentamente durante 2 horas."
+        },
+        {
+          "nombre": "🥤 Fruta Entera vs Jugo — La Diferencia que Cambia Todo",
+          "imagen": "img/frutas/smoothie-fruta.jpg",
+          "ingredientes": [
+            "── NARANJA ENTERA (1 unidad) ──",
+            "🟢 12g de azúcar + 3g de fibra",
+            "🟢 Absorción: 30-45 minutos (gradual)",
+            "🟢 Pico de insulina: moderado y controlable",
+            "",
+            "── JUGO DE NARANJA (3-4 naranjas) ──",
+            "🔴 48g de azúcar + 0g de fibra",
+            "🔴 Absorción: 5-10 minutos (golpe directo)",
+            "🔴 Pico de insulina: masivo e inmediato"
+          ],
+          "preparacion": [
+            "Si quieres fruta líquida: haz BATIDO (licuado con fibra), no jugo (exprimido sin fibra)",
+            "En el batido incluye toda la fruta con su pulpa y fibra + agrega proteína",
+            "Si haces jugo en extractor, pierdes la fibra — el resultado es agua con azúcar con vitaminas",
+            "Excepción: el jugo es útil solo como tratamiento de glucosa baja (hipoglucemia) — ahí su rapidez es una ventaja"
+          ],
+          "consejo": "La fibra es la diferencia entre medicina y veneno. La misma fruta con fibra estabiliza tu glucosa; sin fibra la dispara. Un jugo de 4 naranjas entrega 4 veces más azúcar en 6 veces menos tiempo. Tu páncreas recibe un golpe que genera un pico masivo de insulina seguido de una caída brutal."
+        }
+      ]
+    },
+    {
+      "nombre": "❌ Mitos vs ✅ Verdades sobre las Frutas",
+      "descripcion": "Las frutas son probablemente el grupo de alimentos más injustamente castigado por la moda anti-carbohidratos. Vamos a separar la ficción de la realidad.",
+      "imagen": "img/frutas/mitos.jpg",
+      "recetas": [
+        {
+          "nombre": "❌ MITO: \"La fruta es igual que el azúcar de mesa\"",
+          "ingredientes": [
+            "❌ LO QUE CREES: El azúcar de la fruta es lo mismo que el azúcar refinada",
+            "✅ LA VERDAD: La fruta viene empaquetada con fibra, agua, vitaminas y antioxidantes",
+            "💡 El azúcar de mesa es sacarosa PURA — llega a tu sangre en segundos",
+            "💡 El azúcar de la fruta viene rodeada de fibra que FRENA su absorción",
+            "💡 Los polifenoles de la fruta MEJORAN la sensibilidad a la insulina",
+            "💡 Comparar una manzana con una cucharada de azúcar es como comparar agua de mar con agua pura"
+          ],
+          "preparacion": [
+            "La fruta aporta nutrientes que tu cuerpo necesita y que el azúcar refinada no tiene",
+            "La fibra de la fruta alimenta tu microbiota intestinal — el azúcar la daña",
+            "Los antioxidantes de la fruta combaten la inflamación — el azúcar la promueve",
+            "Mismo azúcar, efectos opuestos en tu cuerpo — la diferencia es el 'paquete' completo"
+          ],
+          "consejo": "Si alguien te dice que la fruta y el azúcar de mesa son iguales, no entiende bioquímica. Tu cuerpo procesa la fructosa de una manzana (con fibra, agua, pectina) de forma COMPLETAMENTE diferente a la sacarosa pura. Una te protege, la otra te daña."
+        },
+        {
+          "nombre": "❌ MITO: \"Hay que eliminar TODAS las frutas para perder peso\"",
+          "ingredientes": [
+            "❌ LO QUE CREES: Las frutas engordan y hay que quitarlas para adelgazar",
+            "✅ LA VERDAD: Eliminar frutas te quita nutrientes esenciales sin beneficio real",
+            "💡 Las frutas zona verde tienen entre 50-100 calorías por porción — casi nada",
+            "💡 Su fibra genera saciedad que PREVIENE atracones de comida procesada",
+            "💡 Tus hormonas necesitan vitamina C, potasio y antioxidantes de las frutas",
+            "💡 Ningún estudio científico muestra que comer fruta entera cause aumento de peso"
+          ],
+          "preparacion": [
+            "En vez de eliminar fruta, elimina lo que REALMENTE sabotea: refrescos, galletas, pan blanco",
+            "2-3 porciones de fruta al día es lo recomendado — con las estrategias de combinación",
+            "La fruta como snack reemplaza opciones mucho peores (chips, dulces, barras procesadas)",
+            "Si eliminas fruta Y procesados, te quedas sin opciones de dulce → atracones inevitables"
+          ],
+          "consejo": "Las dietas que eliminan las frutas por completo ignoran un dato fundamental: tu cuerpo necesita los micronutrientes de las frutas para producir hormonas correctamente. La vitamina C es esencial para el cortisol, el potasio para la insulina, y los antioxidantes para combatir la inflamación. No elimines — elige mejor."
+        },
+        {
+          "nombre": "✅ VERDAD: La madurez de la fruta cambia su impacto glucémico",
+          "ingredientes": [
+            "✅ ESTO SÍ ES CIERTO: Mientras más madura, más azúcar libre y mayor IG",
+            "💡 Banana verde: IG 48 — rica en almidón resistente (actúa como fibra)",
+            "💡 Banana madura: IG 62 — el almidón se convirtió en azúcar libre",
+            "💡 Banana muy madura (manchas negras): IG 70+ — casi todo es azúcar simple",
+            "💡 Lo mismo aplica a: peras, mangos, duraznos, ciruelas"
+          ],
+          "preparacion": [
+            "Elige frutas en su punto medio de madurez — ni muy verdes ni muy maduras",
+            "Congela bananas cuando están ligeramente verdes — mantienes su IG más bajo",
+            "Las frutas muy maduras son mejores para hornear (como endulzante natural) que para comer solas",
+            "En el supermercado, elige las que podrás comer en 2-3 días — no compres ya super maduras"
+          ],
+          "consejo": "La maduración convierte almidón resistente (fibra) en azúcar libre (glucosa + fructosa). Es un proceso natural, pero entenderlo te da control. Un mango verde firme tiene IG mucho menor que uno super maduro y jugoso. Elige el punto medio y tu insulina estará contenta."
+        }
+      ]
+    }
+  ]
+}

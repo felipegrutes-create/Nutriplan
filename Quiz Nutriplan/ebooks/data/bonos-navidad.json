@@ -1,0 +1,272 @@
+{
+  "archivo": "Bonos-Navidad.pdf",
+  "tipo": "capitulos",
+  "intro": {
+    "titulo": "Celebra la Navidad sin Sacrificar tu Equilibrio Hormonal",
+    "contenido": "La Navidad es momento de celebrar, compartir y disfrutar en familia. Pero para muchas mujeres después de los 40, las fiestas significan ansiedad: ¿qué puedo comer? ¿me va a hacer daño? ¿voy a perder todo mi progreso?\n\nEste recetario navideño te libera de esas preocupaciones.\n\nCada receta fue diseñada para mantener los sabores y la tradición de la Navidad latina — hallacas, pan de jamón, ponche, pollo glaseado, tortas — pero con ingredientes que protegen tu equilibrio hormonal.\n\n• 🎄 Todos los clásicos navideños están aquí — adaptados con inteligencia\n• 🥜 Harinas de almendra y coco reemplazan las harinas refinadas\n• 🍗 Proteínas de calidad como base de cada plato principal\n• 🍎 Endulzantes naturales y especias que benefician tu metabolismo\n\nLa regla de oro para las fiestas: disfruta sin culpa, come con estrategia, y al día siguiente vuelve a tu rutina normal. Un día de celebración entre 30 días de buenos hábitos NO cambia nada.\n\n¡Feliz Navidad y que cada bocado sea con consciencia y placer!"
+  },
+  "capitulos": [
+    {
+      "nombre": "🍗 Platos Principales — El Corazón de la Cena",
+      "descripcion": "Los platos que hacen especial la cena navideña, adaptados para que tu insulina no se dispare mientras disfrutas con tu familia.",
+      "imagen": "img/navidad/principales.jpg",
+      "recetas": [
+        {
+          "nombre": "Hallaca de Pollo Saludable (Sin Harina)",
+          "imagen": "img/navidad/hallaca.jpg",
+          "ingredientes": [
+            "── MASA DE POLLO ──",
+            "500g de pechuga de pollo cocida y desmenuzada",
+            "2 cucharadas de aceite de oliva",
+            "¼ taza de caldo de pollo sin sal añadida",
+            "1 huevo",
+            "1 cucharadita de cúrcuma (para color dorado)",
+            "Sal y pimienta al gusto",
+            "",
+            "── RELLENO ──",
+            "100g de carne magra cocida y picada",
+            "50g de aceitunas verdes sin relleno",
+            "½ pimentón rojo picado",
+            "½ cebolla picada",
+            "1 diente de ajo picado",
+            "1 cucharada de aceite de oliva",
+            "Comino, sal y pimienta al gusto",
+            "",
+            "── PARA ENVOLVER ──",
+            "Hojas de plátano limpias y pasadas por agua caliente"
+          ],
+          "preparacion": [
+            "MASA: Tritura el pollo cocido en procesador hasta formar una pasta. Agrega huevo, aceite, cúrcuma y caldo poco a poco hasta obtener una masa maleable y firme",
+            "RELLENO: Sofríe cebolla, ajo y pimentón en aceite de oliva. Agrega la carne, aceitunas y especias. Cocina 3 minutos",
+            "ARMADO: Sobre hoja de plátano, extiende una capa de masa, coloca 2-3 cucharadas de relleno, cubre con más masa y cierra el paquete",
+            "COCCIÓN: Cocina al vapor 25-30 minutos. Deja reposar unos minutos antes de abrir"
+          ],
+          "consejo": "La masa de pollo reemplaza la masa de maíz tradicional, eliminando los carbohidratos refinados. La cúrcuma no solo da el color dorado clásico — es antiinflamatoria. Una hallaca que sabe a Navidad pero que tu insulina puede manejar sin problemas."
+        },
+        {
+          "nombre": "Hallaca de Garbanzos (Versión Vegetal)",
+          "imagen": "img/navidad/hallaca-garbanzo.jpg",
+          "ingredientes": [
+            "── MASA ──",
+            "2 tazas de garbanzos cocidos",
+            "½ taza de harina de garbanzos",
+            "½ taza de caldo de verduras",
+            "Sal, pimienta y comino al gusto",
+            "",
+            "── RELLENO ──",
+            "200g de carne magra de res cocida y picada",
+            "½ cebolla picada",
+            "½ pimentón rojo picado",
+            "1 diente de ajo picado",
+            "1 cucharada de aceite de oliva",
+            "1 cucharada de pasta de tomate natural",
+            "Ají dulce al gusto"
+          ],
+          "preparacion": [
+            "MASA: Licúa los garbanzos cocidos con el caldo hasta obtener una pasta suave. Mezcla con la harina de garbanzos, sal y pimienta hasta formar una masa moldeable",
+            "RELLENO: Saltea cebolla, ajo y pimentón en aceite de oliva. Añade la carne y cocina hasta dorar. Agrega pasta de tomate y especias",
+            "ARMADO: Sobre hojas de plátano (lavadas y pasadas por agua caliente), coloca una porción de masa, aplana, añade el relleno y cierra como hallaca tradicional",
+            "COCCIÓN: Hierve en agua durante 20-25 minutos. Retira, deja enfriar un poco y sirve"
+          ],
+          "consejo": "Los garbanzos tienen IG 28 (bajísimo) y aportan proteína vegetal + fibra. Esta masa no solo es más amigable con tu insulina que la de maíz — también es más nutritiva y te sacia mucho más. Una innovación navideña que tu familia va a amar."
+        },
+        {
+          "nombre": "Pan de Jamón sin Harinas Refinadas",
+          "imagen": "img/navidad/pan-jamon.jpg",
+          "ingredientes": [
+            "── MASA ──",
+            "2 tazas de harina de almendra",
+            "2 cucharadas de harina de coco",
+            "¼ cucharadita de sal",
+            "3 cucharadas de mantequilla derretida (o aceite de oliva)",
+            "½ taza de leche de almendras sin azúcar",
+            "1 huevo",
+            "",
+            "── RELLENO ──",
+            "150g de jamón de pavo bajo en sodio",
+            "50g de aceitunas verdes picadas",
+            "¼ pimentón rojo en tiras",
+            "2 cucharadas de queso crema o mozzarella rallada"
+          ],
+          "preparacion": [
+            "MASA: Mezcla las harinas y sal. Añade mantequilla y mezcla hasta textura arenosa. Agrega huevo y leche hasta formar masa maleable",
+            "ARMADO: Estira la masa entre dos hojas de papel vegetal formando un rectángulo. Distribuye jamón, aceitunas, pimentón y queso en el centro",
+            "ENROLLADO: Enrolla desde un borde largo hacia el otro formando un cilindro. Sella los bordes y pincela con huevo batido",
+            "HORNEADO: Precalienta a 180°C. Hornea 20-25 minutos hasta que esté dorado y firme al tacto"
+          ],
+          "consejo": "La harina de almendra tiene IG bajo (~20) y es rica en proteína y grasas saludables. Este pan de jamón sabe a tradición navideña pero sin el pico glucémico de la harina de trigo. La familia no nota la diferencia — tu cuerpo sí."
+        },
+        {
+          "nombre": "Pollo Relleno Navideño con Brócoli",
+          "imagen": "img/navidad/pollo-relleno.jpg",
+          "ingredientes": [
+            "── POLLO ──",
+            "1.2 kg de filetes de pechuga de pollo",
+            "Sal, pimienta, ajo en polvo y tomillo seco",
+            "15 ml de aceite de oliva",
+            "",
+            "── RELLENO ──",
+            "1 taza de coliflor rallada (reemplaza el pan)",
+            "3 dientes de ajo picados",
+            "100g de queso mozzarella bajo en grasa",
+            "½ taza de salsa de tomate casera sin azúcar",
+            "50g de arándanos frescos o deshidratados sin azúcar",
+            "20 ml de aceite de oliva",
+            "",
+            "── ACOMPAÑAMIENTO ──",
+            "200g de brócoli en ramitas"
+          ],
+          "preparacion": [
+            "Coloca los filetes sobre papel vegetal, ligeramente superpuestos. Sazona con sal, pimienta, ajo en polvo y tomillo",
+            "RELLENO: Mezcla coliflor rallada, ajo, mozzarella, salsa de tomate, arándanos y aceite hasta integrar bien",
+            "Distribuye el relleno sobre los filetes. Enrolla con ayuda del papel vegetal para mantener forma. Unta con aceite de oliva por fuera",
+            "Hornea envuelto en papel vegetal a 180°C hasta que esté completamente cocido. Acompaña con brócoli al vapor (4-6 min)"
+          ],
+          "consejo": "La coliflor rallada reemplaza el pan rallado del relleno tradicional — mismo volumen, misma textura, pero con IG casi nulo. Los arándanos aportan antioxidantes y un toque agridulce festivo. Un plato que impresiona en la mesa navideña."
+        },
+        {
+          "nombre": "Pollo Glaseado Navideño con Yogur y Mostaza",
+          "imagen": "img/navidad/pollo-glaseado.jpg",
+          "ingredientes": [
+            "1 pollo entero o 4 muslos/piernas (aprox. 1.5-2 kg)",
+            "2 cucharadas de aceite de oliva",
+            "½ taza de yogur griego natural sin azúcar",
+            "2 cucharadas de mostaza Dijon",
+            "2 dientes de ajo picados",
+            "1 cucharadita de paprika",
+            "½ cucharadita de canela en polvo",
+            "Sal y pimienta al gusto",
+            "Hierbas frescas (romero, tomillo) para decorar"
+          ],
+          "preparacion": [
+            "Precalienta el horno a 180°C. Limpia y seca el pollo con papel absorbente. Frota sal, pimienta, paprika y canela por toda la superficie",
+            "GLASEADO: Mezcla yogur, mostaza y ajo picado hasta obtener una mezcla homogénea. Puedes añadir hierbas secas al gusto",
+            "Coloca el pollo en bandeja para hornear y cúbrelo con la mitad del glaseado. Hornea 45-60 minutos, pincelando con el resto a la mitad de la cocción",
+            "El pollo está listo cuando los jugos salen claros y la piel está dorada. Decora con hierbas frescas y sirve"
+          ],
+          "consejo": "El glaseado de yogur y mostaza reemplaza las salsas azucaradas tradicionales (miel, azúcar morena, mermelada). El yogur le da un brillo dorado hermoso, lo mantiene jugoso, y la mostaza aporta sabor profundo. Espectacular en la mesa, invisible para tu insulina."
+        }
+      ]
+    },
+    {
+      "nombre": "🥗 Ensalada y Acompañamiento Festivo",
+      "descripcion": "La ensalada navideña es el complemento perfecto que equilibra los platos principales. Esta versión proteica te mantiene saciada sin necesidad de repetir.",
+      "imagen": "img/navidad/ensalada.jpg",
+      "recetas": [
+        {
+          "nombre": "Ensalada Navideña de Pollo con Aderezo de Yogur",
+          "imagen": "img/navidad/ensalada.jpg",
+          "ingredientes": [
+            "── BASE ──",
+            "2 pechugas de pollo cocidas y desmenuzadas",
+            "½ taza de apio picado",
+            "¼ taza de pimentón rojo picado",
+            "¼ taza de pimientos verdes picados",
+            "¼ taza de aceitunas verdes o negras picadas",
+            "2 huevos duros picados",
+            "2 cucharadas de almendras laminadas",
+            "",
+            "── ADEREZO ──",
+            "3 cucharadas de yogur griego natural sin azúcar",
+            "1 cucharadita de mostaza Dijon",
+            "Jugo de ½ limón",
+            "Sal y pimienta al gusto"
+          ],
+          "preparacion": [
+            "En un bowl grande, mezcla el pollo desmenuzado, apio, pimentones, huevos, aceitunas y almendras",
+            "En un recipiente aparte, mezcla el yogur, mostaza, limón, sal y pimienta hasta obtener un aderezo homogéneo",
+            "Vierte el aderezo sobre la ensalada y mezcla suavemente para cubrir todos los ingredientes",
+            "Refrigera al menos 30-60 minutos antes de servir para que se integren los sabores. Decora con perejil fresco"
+          ],
+          "consejo": "Esta ensalada es la acompañante perfecta de las hallacas y el pan de jamón. El yogur griego reemplaza la mayonesa reduciendo calorías y agregando probióticos. Las almendras aportan crujido + grasas saludables. Un plato festivo que equilibra tu mesa navideña."
+        }
+      ]
+    },
+    {
+      "nombre": "🥤 Bebidas Navideñas — Brindis sin Picos",
+      "descripcion": "El ponche y las bebidas navideñas suelen ser bombas de azúcar. Estas versiones conservan el espíritu festivo pero cuidan tu equilibrio hormonal.",
+      "imagen": "img/navidad/bebidas.jpg",
+      "recetas": [
+        {
+          "nombre": "Ponche de Huevo Navideño (Eggnog Saludable)",
+          "imagen": "img/navidad/ponche.jpg",
+          "ingredientes": [
+            "4 huevos grandes",
+            "Stevia al gusto (o 1 cucharada de miel pura)",
+            "1 taza de leche de almendras sin azúcar",
+            "½ taza de crema de coco para cocinar",
+            "¼ taza de ron o brandy (opcional — omitir para versión sin alcohol)",
+            "1 cucharadita de esencia de vainilla",
+            "½ cucharadita de canela en polvo",
+            "1 pizca de nuez moscada",
+            "1 pizca de sal"
+          ],
+          "preparacion": [
+            "Separa las yemas de las claras. Bate las yemas con el endulzante hasta que estén cremosas y pálidas",
+            "En una olla a fuego bajo, mezcla la leche de almendras, crema de coco, vainilla, canela, nuez moscada y sal. Añade lentamente las yemas revolviendo constantemente (no debe hervir). Cocina 8-10 minutos hasta espesar",
+            "Retira del fuego, deja enfriar un poco y añade el ron o brandy si deseas",
+            "Opcional: bate las claras a punto de nieve e incorpóralas suavemente para un ponche más espumoso. Se conserva en refrigerador hasta 5 días"
+          ],
+          "consejo": "La leche de almendras y la crema de coco reemplazan la leche tradicional y la crema de leche, reduciendo enormemente los carbohidratos. La canela y nuez moscada no solo dan el sabor clásico navideño — ambas especias ayudan a mejorar la sensibilidad a la insulina."
+        }
+      ]
+    },
+    {
+      "nombre": "🍪 Postres Navideños — Dulzura Inteligente",
+      "descripcion": "La mesa navideña no está completa sin postres. Estas versiones usan harinas de almendra y coco, endulzantes naturales y especias que cuidan tu equilibrio hormonal.",
+      "imagen": "img/navidad/postres.jpg",
+      "recetas": [
+        {
+          "nombre": "Galletas Navideñas con Especias",
+          "imagen": "img/navidad/galletas.jpg",
+          "ingredientes": [
+            "2 tazas de harina de almendra",
+            "¼ taza de harina de coco",
+            "½ cucharadita de polvo de hornear",
+            "¼ cucharadita de sal",
+            "½ taza de mantequilla ghee o clarificada (derretida)",
+            "1 huevo grande",
+            "1 cucharadita de esencia de vainilla",
+            "½ cucharadita de canela en polvo",
+            "¼ cucharadita de nuez moscada",
+            "Stevia al gusto",
+            "Opcional: chispas de chocolate oscuro 70%+ o nueces picadas"
+          ],
+          "preparacion": [
+            "Bate la mantequilla derretida con el endulzante. Añade huevo y vainilla hasta integrar",
+            "En otro bowl, mezcla las harinas, polvo de hornear, sal y especias. Incorpora a los ingredientes húmedos. Agrega chispas de chocolate o nueces si deseas",
+            "Precalienta el horno a 180°C. Forma bolitas de masa, aplánalas y colócalas en bandeja con papel de horno dejando espacio entre ellas",
+            "Hornea 12-15 minutos hasta que los bordes estén dorados. Enfría 5 minutos en la bandeja antes de mover"
+          ],
+          "consejo": "La harina de almendra tiene 6 veces más proteína que la harina de trigo y un IG bajísimo. Estas galletas son tan navideñas como las tradicionales — canela, nuez moscada, vainilla — pero sin el tsunami de glucosa que disparan las galletas de harina blanca."
+        },
+        {
+          "nombre": "Torta de Manzana Navideña con Especias",
+          "imagen": "img/navidad/torta-manzana.jpg",
+          "ingredientes": [
+            "2 manzanas verdes (Granny Smith) peladas y en cubos",
+            "1 taza de harina de almendra",
+            "¼ taza de harina de coco",
+            "1 cucharadita de polvo de hornear",
+            "½ cucharadita de canela en polvo",
+            "¼ cucharadita de nuez moscada",
+            "3 huevos grandes",
+            "½ taza de yogur griego natural sin azúcar",
+            "3 cucharadas de aceite de coco derretido",
+            "1 cucharadita de esencia de vainilla",
+            "Stevia al gusto",
+            "Pizca de sal",
+            "Nueces picadas o almendras laminadas para decorar"
+          ],
+          "preparacion": [
+            "Lava, pela y corta las manzanas en cubitos pequeños. Reserva algunas rodajas finas para decorar la superficie",
+            "Mezcla las harinas, polvo de hornear, canela, nuez moscada y sal en un bowl",
+            "En otro bowl, bate huevos con yogur, aceite de coco, vainilla y endulzante. Incorpora los ingredientes secos suavemente",
+            "Agrega los cubitos de manzana a la mezcla. Vierte en molde engrasado, decora con manzanas y nueces. Hornea a 180°C por 25-35 minutos"
+          ],
+          "consejo": "La manzana verde Granny Smith tiene el IG más bajo entre las manzanas y aporta pectina — una fibra que forma gel y retarda la absorción de azúcar. Con harinas de almendra y coco, esta torta navideña es un postre que puedes disfrutar con tranquilidad hormonal."
+        }
+      ]
+    }
+  ]
+}

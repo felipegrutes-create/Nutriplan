@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Diagnóstico Metabólico — Nutriplan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2145233352888094');
+fbq('track', 'PageView');
+</script>
+<style>
+:root{--verde:#2E7D52;--verde-light:rgba(74,222,128,.08);--creme:rgba(255,255,255,.05);--creme-dark:rgba(255,255,255,.06);--dourado:#C9922A;--texto:#fff;--texto-sub:rgba(255,255,255,.5);--branco:rgba(255,255,255,.05);--borda:rgba(255,255,255,.1);--rosa:#E8445A;--radius:12px;--radius-sm:8px;--ease-premium:cubic-bezier(0.22, 1, 0.36, 1)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'DM Sans',sans-serif;background:#0f1f15;color:#fff;min-height:100vh;overflow-x:hidden}
+.quiz-wrapper{max-width:480px;margin:0 auto;min-height:100vh;background:#0f1f15;position:relative;overflow:hidden}
+.quiz-header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#0f1f15;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;z-index:100;margin-top:38px}
+.btn-back{width:32px;height:32px;border:none;background:transparent;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:rgba(255,255,255,.4);transition:color .25s var(--ease-premium);flex-shrink:0}
+.btn-back:hover{color:#fff}
+.logo-text{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:#4ade80;letter-spacing:-0.3px}
+.progress-wrap{position:fixed;top:0;left:0;width:100%;z-index:200;padding:10px 20px 6px;background:#0f1f15}
+.progress-bar-outer{width:100%;height:8px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden}
+.progress-bar-inner{height:100%;background:linear-gradient(90deg,#4ade80,#2E7D52);border-radius:99px;transition:width .5s var(--ease-premium)}
+.progress-text{display:block;text-align:center;font-size:11px;font-weight:600;color:rgba(255,255,255,.5);margin-top:4px;letter-spacing:.5px;text-transform:uppercase}
+.q-label{display:none}
+.slide{display:none;padding:32px 24px 100px;animation:fadeSlideIn .3s ease;min-height:calc(100vh - 68px)}
+.slide.active{display:block}
+@keyframes fadeSlideIn{from{opacity:0}to{opacity:1}}
+.q-label{font-size:11px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;padding-left:12px;border-left:3px solid #4ade80}
+.q-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.25;color:#fff;margin-bottom:8px}
+.q-sub{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:28px;line-height:1.5}
+.options-list{display:flex;flex-direction:column;gap:10px}
+.options-list > *{animation:fadeSlideIn .4s var(--ease-premium) both}
+.options-list > :nth-child(1){animation-delay:0ms}
+.options-list > :nth-child(2){animation-delay:60ms}
+.options-list > :nth-child(3){animation-delay:120ms}
+.options-list > :nth-child(4){animation-delay:180ms}
+.options-list > :nth-child(5){animation-delay:240ms}
+.options-list > :nth-child(6){animation-delay:300ms}
+.option-btn{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.1);border-radius:50px;cursor:pointer;text-align:left;transition:all .25s var(--ease-premium);width:100%;min-height:56px}
+.option-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.15)}
+.option-btn.selected{border-color:#4ade80;background:rgba(74,222,128,.12)}
+.option-btn.selected .opt-check{background:#4ade80;border-color:#4ade80;transform:scale(1);animation:checkPop .25s var(--ease-premium)}
+@keyframes checkPop{from{transform:scale(0)}to{transform:scale(1)}}
+.option-btn.selected .opt-check::after{display:block}
+.opt-icon{font-size:22px;flex-shrink:0;order:2;margin-left:auto;line-height:1}
+.opt-check{display:none}
+.option-btn.selected .opt-icon{transform:scale(1.1);transition:transform .2s var(--ease-premium)}
+.opt-text-main{font-size:15px;font-weight:500;color:#fff;line-height:1.35;flex:1;order:1}
+.opt-text-sub{display:none}
+.option-btn.multi .opt-check{display:none}
+.option-btn.multi.selected{position:relative}
+.option-btn.multi.selected::after{content:'✓';position:absolute;right:16px;top:50%;transform:translateY(-50%);width:24px;height:24px;background:#4ade80;color:#0f1f15;border-radius:50%;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;animation:checkPop .25s var(--ease-premium)}
+.break-card{background:rgba(255,255,255,.05);border:none;border-left:3px solid #4ade80;border-radius:var(--radius);padding:24px;color:#fff;margin-bottom:24px;position:relative;overflow:hidden}
+.break-card::before{display:none}
+.break-emoji{font-size:32px;margin-bottom:14px;display:block}
+.break-title{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;line-height:1.3;margin-bottom:10px;color:#fff}
+.break-text{font-size:14px;line-height:1.6;color:rgba(255,255,255,.65)}
+/* Body type grid — horizontal cards like RH */
+.body-type-grid{display:flex;flex-direction:column;gap:10px}
+.body-type-card{display:flex;align-items:center;border:2px solid rgba(255,255,255,.1);border-radius:50px;padding:8px 24px 8px 24px;cursor:pointer;transition:all .25s var(--ease-premium);background:rgba(255,255,255,.07);min-height:72px}
+.body-type-card:hover{background:rgba(255,255,255,.12)}
+.body-type-card.selected{border-color:#4ade80;background:rgba(74,222,128,.12)}
+.body-type-card:last-child:nth-child(odd){max-width:none;margin:0;width:100%}
+.body-type-card svg,.body-type-card img{height:70px;width:auto;margin:0;display:block;flex-shrink:0;order:2;margin-left:auto;object-fit:contain;opacity:.75}
+.body-type-card.selected img{opacity:1}
+.body-type-label{font-size:16px;font-weight:600;color:#fff;transition:color .2s;order:1;flex:1}
+.body-type-card.selected .body-type-label{color:#4ade80}
+/* Zone grid */
+.zone-grid{display:flex;flex-direction:column;gap:10px}
+.zone-btn{display:flex;align-items:center;gap:12px;padding:10px 20px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.1);border-radius:50px;cursor:pointer;transition:all .25s var(--ease-premium);font-size:16px;font-weight:600;color:#fff;min-height:72px;overflow:hidden}
+.zone-btn:hover{background:rgba(255,255,255,.12)}
+.zone-btn.selected{border-color:#4ade80;background:rgba(74,222,128,.12)}
+.zone-btn.zone-full{width:100%}
+.zone-btn .zone-emoji{display:none}
+.zone-btn .zone-check{width:22px;height:22px;border:2px solid rgba(255,255,255,.2);border-radius:50%;flex-shrink:0;position:relative;transition:all .25s var(--ease-premium)}
+.zone-btn.selected .zone-check{background:#4ade80;border-color:#4ade80;animation:checkPop .25s var(--ease-premium)}
+.zone-btn.selected .zone-check::after{content:'✓';font-size:12px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;position:absolute;inset:0}
+.zone-btn .zone-img{height:65px;width:auto;object-fit:contain;flex-shrink:0;margin-left:auto;border-radius:8px}
+/* Sliders */
+.slider-wrap{padding:16px 0 8px}
+.slider-display{text-align:center;margin-bottom:20px}
+.slider-value{font-family:'DM Sans',sans-serif;font-size:48px;font-weight:700;color:#4ade80;line-height:1}
+.slider-unit{font-size:16px;color:rgba(255,255,255,.5);font-weight:500;margin-left:4px}
+.slider-label-row{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.4);margin-bottom:12px;font-weight:500}
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;outline:none;cursor:pointer;background:linear-gradient(to right,#4ade80 0%,#4ade80 var(--pct,50%),rgba(255,255,255,.15) var(--pct,50%),rgba(255,255,255,.15) 100%)}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid #4ade80;box-shadow:0 2px 12px rgba(74,222,128,0.4);cursor:pointer;transition:transform .15s}
+input[type="range"]::-webkit-slider-thumb:active{transform:scale(1.15)}
+input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid #4ade80;cursor:pointer}
+.toggle-row{display:flex;gap:8px;margin-bottom:20px}
+.toggle-btn{flex:1;padding:10px;border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);background:rgba(255,255,255,.05);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:rgba(255,255,255,.5)}
+.toggle-btn.active{border-color:#4ade80;background:rgba(74,222,128,.12);color:#4ade80}
+/* Email */
+.email-hero{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:28px 22px;text-align:center;margin-bottom:24px}
+.email-hero-title{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+.email-hero-sub{font-size:14px;color:rgba(255,255,255,.6);line-height:1.5}
+.counter-big{font-family:'DM Sans',sans-serif;font-size:28px;color:#4ade80;font-weight:700}
+.email-input-wrap{position:relative;margin-bottom:12px}
+.email-input{width:100%;padding:16px 20px;border:1px solid rgba(255,255,255,.15);border-radius:50px;font-size:16px;font-family:'DM Sans',sans-serif;background:rgba(255,255,255,.08);color:#fff;outline:none;transition:all .25s var(--ease-premium)}
+.email-input:focus{border-color:#4ade80;box-shadow:0 0 0 2px rgba(74,222,128,0.15)}
+.email-terms{font-size:11px;color:rgba(255,255,255,.35);text-align:center;line-height:1.5;margin-bottom:20px}
+.email-terms a{color:#4ade80}
+/* Loading */
+.loading-wrap{text-align:center;padding:20px 0 40px}
+.loading-ring-wrap{width:100px;height:100px;margin:0 auto 24px;position:relative}
+.loading-ring{width:100%;height:100%;transform:rotate(-90deg)}
+.loading-ring-bg{fill:none;stroke:rgba(255,255,255,.1);stroke-width:3}
+.loading-ring-progress{fill:none;stroke:#4ade80;stroke-width:3;stroke-linecap:round;stroke-dasharray:283;stroke-dashoffset:283;transition:stroke-dashoffset .3s ease}
+.loading-pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:24px;font-weight:700;color:#4ade80}
+.loading-circle{display:none}
+.loading-title{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+.loading-sub{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:28px}
+.analysis-item{display:flex;align-items:center;gap:12px;padding:12px 0;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:0;text-align:left;opacity:0;transform:translateY(8px);transition:all .5s var(--ease-premium)}
+.analysis-item.show{opacity:1;transform:translateY(0)}
+.ai-icon{width:34px;height:34px;background:rgba(74,222,128,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ai-text{font-size:13px;color:rgba(255,255,255,.6);font-weight:500}
+.ai-done{margin-left:auto;font-size:18px}
+/* Result */
+.result-hero{background:linear-gradient(135deg,#2E7D52 0%,#1B5E3A 100%);margin:-32px -24px 24px;padding:36px 24px 32px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.result-hero::before{display:none}
+.result-badge-top{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.20);border-radius:99px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.result-name{font-family:'Playfair Display',serif;font-size:26px;line-height:1.25;margin-bottom:10px;position:relative}
+.result-desc{font-size:14px;opacity:.9;line-height:1.6;position:relative}
+.result-section{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:20px;margin-bottom:14px}
+.result-section h3{font-size:14px;font-weight:700;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.insight-item{display:flex;gap:10px;margin-bottom:10px;font-size:14px;color:rgba(255,255,255,.65);line-height:1.5}
+.insight-item::before{content:'→';color:#4ade80;font-weight:700;flex-shrink:0;margin-top:1px}
+.bmi-bar-wrap{margin:14px 0}
+.bmi-bar{height:12px;border-radius:99px;background:linear-gradient(to right,#4CAF7A,#FFB347,#E8445A);position:relative;margin-bottom:6px}
+.bmi-marker{position:absolute;top:-4px;width:20px;height:20px;background:#fff;border:3px solid #0f1f15;border-radius:50%;transform:translateX(-50%);transition:left .8s ease}
+.bmi-labels{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.5);font-weight:500}
+.progress-chart{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:18px;margin-bottom:14px}
+.chart-highlight{color:#4ade80;font-weight:700}
+/* Offer */
+.offer-wrap{background:rgba(255,255,255,.05);border:1px solid rgba(74,222,128,.25);border-radius:20px;overflow:hidden;margin-bottom:16px}
+.offer-header{background:linear-gradient(135deg,#2E7D52,#1B5E3A);color:#fff;text-align:center;padding:16px 14px;position:relative;overflow:hidden}
+.offer-header::before{display:none}
+.offer-header-badge{font-size:11px;opacity:.85;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;position:relative}
+.offer-header-title{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;position:relative}
+.offer-body{padding:24px 20px}
+.offer-price-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:8px}
+.price-old{font-size:18px;color:rgba(255,255,255,.45);text-decoration:line-through}
+.price-new{font-size:44px;font-weight:700;color:#4ade80;font-family:'Playfair Display',serif}
+.price-new small{font-size:18px}
+.price-desc{font-size:13px;color:rgba(255,255,255,.5);text-align:center;margin-bottom:16px}
+.includes-list{margin-bottom:20px}
+.include-item{display:flex;align-items:center;gap:12px;padding:10px 0;font-size:14px;color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.08)}
+.include-item:last-child{border-bottom:none}
+.include-check{width:22px;height:22px;background:#4ade80;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#0f1f15}
+.include-check svg{width:12px;height:12px}
+.guarantee-row{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:14px 16px;font-size:13px;color:rgba(255,255,255,.65);margin-bottom:16px}
+.guarantee-icon{font-size:24px;flex-shrink:0}
+/* Testimonials */
+.testimonial-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-left:3px solid #4ade80;border-radius:var(--radius);padding:18px;margin-bottom:12px;position:relative}
+.testimonial-card::before{display:none}
+.testi-stars{font-size:14px;margin-bottom:8px;color:#C9922A}
+.testi-text{font-size:14px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:12px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,rgba(74,222,128,.15),rgba(74,222,128,.08));display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid rgba(255,255,255,.1);box-shadow:0 2px 6px rgba(0,0,0,0.2)}
+.testi-name{font-size:13px;font-weight:600;color:#fff}
+.testi-loc{font-size:11px;color:rgba(255,255,255,.45)}
+/* FAQ */
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;font-size:14px;font-weight:600;color:#fff;background:none;border:none;width:100%;text-align:left;transition:color .2s}
+.faq-q:hover{color:#4ade80}
+.faq-q-icon{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:16px;color:#4ade80;transition:all .3s var(--ease-premium);flex-shrink:0}
+.faq-q.open .faq-q-icon{transform:rotate(45deg);background:#4ade80;color:#0f1f15}
+.faq-a{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;padding-bottom:16px;display:none}
+.faq-a.show{display:block}
+/* CTA */
+.cta-fixed{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;padding:16px 20px;background:#0f1f15;border-top:1px solid rgba(255,255,255,.06);z-index:200}
+.cta-fixed.hidden{display:none}
+.btn-cta{display:block;width:100%;padding:18px 24px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .25s var(--ease-premium);text-align:center;letter-spacing:0.3px;box-shadow:0 4px 20px rgba(74,222,128,.3)}
+.btn-cta:hover{background:linear-gradient(135deg,#22c55e,#256B45);box-shadow:0 6px 24px rgba(74,222,128,.4)}
+.btn-cta:active{background:linear-gradient(135deg,#16a34a,#1B5E3A)}
+.btn-cta:disabled{background:rgba(255,255,255,.1);color:rgba(255,255,255,.25);cursor:not-allowed;box-shadow:none}
+.btn-cta-checkout{background:#E8445A}
+.btn-cta-checkout:hover{background:#D63851}
+.timer-bar{display:flex;align-items:center;justify-content:center;gap:8px;padding:8px 0 0;font-size:12px;color:#E8445A;font-weight:500}
+.timer-display{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700}
+.disclaimer{font-size:10px;color:rgba(255,255,255,.35);text-align:center;padding:16px 20px;line-height:1.5;opacity:.7}
+.section-divider{display:flex;align-items:center;gap:10px;margin:20px 0 16px}
+.divider-line{flex:1;height:1px;background:rgba(255,255,255,.1)}
+.divider-text{font-size:12px;color:rgba(255,255,255,.45);font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+.offer-timer-bar{background:#E8445A;color:#fff;text-align:center;padding:12px;font-size:13px;font-weight:600;border-radius:var(--radius-sm);margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:8px}
+.offer-timer-num{background:rgba(255,255,255,0.2);border-radius:6px;padding:3px 10px;font-family:'Playfair Display',serif;font-size:18px;font-weight:700}
+.sp-avatars{display:none}
+.stat-row{display:none}
+.weight-opt{border-radius:50px !important;box-shadow:none !important}
+.weight-opt:hover{opacity:0.85 !important}
+.weight-opt.selected{opacity:1 !important}
+/* Body type summary in result */
+.body-summary{display:flex;gap:12px;align-items:center;justify-content:center;margin:12px 0}
+.body-summary-item{text-align:center;flex:1}
+.body-summary-label{font-size:11px;opacity:.7;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.body-summary-value{font-size:16px;font-weight:700}
+.body-summary-arrow{font-size:20px;opacity:.5;flex-shrink:0}
+/* Chart animation */
+.chart-line-animated{stroke-dasharray:1000;stroke-dashoffset:1000;animation:drawLine 8s linear forwards}
+@keyframes drawLine{0%{stroke-dashoffset:1000}15%{stroke-dashoffset:850}35%{stroke-dashoffset:650}55%{stroke-dashoffset:450}70%{stroke-dashoffset:300}85%{stroke-dashoffset:150}100%{stroke-dashoffset:0}}
+.chart-dot-start{opacity:0;animation:dotAppear .3s ease 0s forwards}
+.chart-dot-end{opacity:0;animation:dotAppear .3s ease 4.5s forwards}
+@keyframes dotAppear{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+.chart-label-start{opacity:0;animation:labelFade .3s ease .1s forwards}
+.chart-label-end{opacity:0;animation:labelFade .3s ease 4.6s forwards}
+@keyframes labelFade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.chart-dot-pulse{animation:dotPulse 1.5s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{r:4;opacity:1}50%{r:6;opacity:.7}}
+.chart-area{opacity:0;animation:fadeIn .8s ease .8s forwards}
+.chart-labels-anim{opacity:0;animation:fadeIn .5s ease 1.2s forwards}
+@keyframes fadeIn{to{opacity:1}}
+/* Progress chart refined */
+.progress-chart{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:20px;margin-bottom:14px}
+/* Responsive */
+@media(max-width:360px){.q-title{font-size:23px}.slider-value{font-size:44px}.body-type-card svg,.body-type-card img{height:60px}.body-type-grid{gap:8px}.body-type-card{padding:6px 16px}.zone-grid{gap:8px}.option-btn{padding:12px 14px}.slide{padding:24px 16px 100px}}</style>
+</head>
+<body>
+<div class="quiz-wrapper" id="quizWrapper">
+  <div class="quiz-header" id="quizHeader">
+    <button class="btn-back" id="btnBack" onclick="goBack()">&#8592;</button>
+    <div class="logo-text">Nutriplan</div>
+    <div class="progress-wrap">
+      <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar" style="width:0%"></div></div>
+      <span class="progress-text" id="progressText"></span>
+    </div>
+  </div>
+
+  <!-- SLIDE 0 — WELCOME -->
+  <div class="slide active" id="slide-0" style="padding:0;">
+    <div id="slide0-welcome" style="min-height:100vh; position:relative; overflow:hidden; background:#F4F1EC;">
+
+      <!-- HERO IMAGE — warm tinted overlay to neutralize red bricks -->
+      <div style="width:100%; height:380px; position:relative; overflow:hidden;">
+        <img src="pexels-shvets-production-8972593.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 28%; display:block;">
+        <!-- warm green tint overlay — kills red bricks, unifies palette -->
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(46,125,82,0.08) 0%, rgba(46,125,82,0.04) 40%, rgba(244,241,236,0.3) 70%, #F4F1EC 100%); mix-blend-mode:normal;"></div>
+        <!-- soft top shadow for depth -->
+        <div style="position:absolute; top:0; left:0; right:0; height:60px; background:linear-gradient(to bottom, rgba(30,30,30,0.06), transparent);"></div>
+        <!-- badge -->
+        <div style="position:absolute; top:14px; left:50%; transform:translateX(-50%); background:rgba(255,255,255,0.93); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-radius:24px; padding:6px 16px; font-size:10px; font-weight:700; color:#2E7D52; text-transform:uppercase; letter-spacing:1.5px; box-shadow:0 2px 16px rgba(0,0,0,0.06); font-family:'DM Sans',sans-serif; white-space:nowrap;">&#10022; Quiz gratuito &#183; 2 min</div>
+      </div>
+
+      <!-- CONTENT — flows from image -->
+      <div style="padding:0 22px 130px; position:relative; z-index:2; margin-top:-60px;">
+
+        <!-- Headline — editorial Playfair with highlight blocks -->
+        <h1 style="font-size:27px; line-height:1.5; margin:0 0 16px; font-family:'Playfair Display',serif; font-weight:700; animation:fadeSlideIn .6s cubic-bezier(0.22, 1, 0.36, 1) .1s both;">
+          <span style="background:#2E7D52; color:#FFFFFF; padding:4px 12px 6px; border-radius:4px; display:inline; box-decoration-break:clone; -webkit-box-decoration-break:clone;">Descubre por qu&#233;</span><br>
+          <span style="background:#2E7D52; color:#FFFFFF; padding:4px 12px 6px; border-radius:4px; display:inline; box-decoration-break:clone; -webkit-box-decoration-break:clone;">no bajas de peso</span><br>
+          <span style="background:#2E7D52; color:#FFFFFF; padding:4px 12px 6px; border-radius:4px; display:inline; box-decoration-break:clone; -webkit-box-decoration-break:clone;">aunque haces todo bien</span>
+        </h1>
+
+        <p style="font-size:14px; color:#5C5C6E; line-height:1.65; margin:0 0 28px; font-family:'DM Sans',sans-serif; max-width:340px; animation:fadeSlideIn .6s cubic-bezier(0.22, 1, 0.36, 1) .2s both;">
+          No es tu culpa. Descubre la <strong style="color:#1A1A2E;">se&#241;al hormonal</strong> que bloquea tu metabolismo &#8212; y c&#243;mo desactivarla.
+        </p>
+
+        <!-- Name input -->
+        <div style="margin-bottom:20px; animation:fadeSlideIn .6s cubic-bezier(0.22, 1, 0.36, 1) .25s both;">
+          <label style="font-size:15px; font-weight:600; color:#1A1A2E; display:block; margin-bottom:8px; font-family:'DM Sans',sans-serif; text-align:center;">&#191;Cu&#225;l es tu nombre?</label>
+          <input type="text" id="userName" placeholder="Tu nombre" maxlength="30"
+            oninput="answers.userName=this.value.trim()"
+            style="width:100%; padding:14px 20px; border:1px solid #E5E7EB; border-radius:50px; font-size:16px; font-family:'DM Sans',sans-serif; text-align:center; outline:none; transition:border-color .25s; background:#fff;"
+            onfocus="this.style.borderColor='#2E7D52'" onblur="this.style.borderColor='#E5E7EB'">
+        </div>
+
+        <!-- Weight selector card -->
+        <div style="background:#FFFFFF; border-radius:20px; padding:24px 20px 22px; box-shadow:0 8px 32px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.03); animation:fadeSlideIn .6s cubic-bezier(0.22, 1, 0.36, 1) .3s both;">
+          <p style="font-size:15px; font-weight:600; color:#1A1A2E; margin:0 0 16px; font-family:'DM Sans',sans-serif; text-align:center;">&#191;Cu&#225;nto te gustar&#237;a perder?</p>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <div onclick="selWeight(this,'1-5 kg')" class="weight-opt" style="background:#2E7D52; border:2px solid #2E7D52; border-radius:50px; padding:16px 8px; text-align:center; cursor:pointer; transition:all .3s cubic-bezier(0.22, 1, 0.36, 1);">
+              <span style="font-size:16px; font-weight:700; display:block; color:#FFFFFF; font-family:'DM Sans',sans-serif; letter-spacing:0.3px;">1&#8211;5 KG</span>
+            </div>
+            <div onclick="selWeight(this,'5-10 kg')" class="weight-opt" style="background:#2E7D52; border:2px solid #2E7D52; border-radius:50px; padding:16px 8px; text-align:center; cursor:pointer; transition:all .3s cubic-bezier(0.22, 1, 0.36, 1);">
+              <span style="font-size:16px; font-weight:700; display:block; color:#FFFFFF; font-family:'DM Sans',sans-serif; letter-spacing:0.3px;">5&#8211;10 KG</span>
+            </div>
+            <div onclick="selWeight(this,'10-20 kg')" class="weight-opt" style="background:#2E7D52; border:2px solid #2E7D52; border-radius:50px; padding:16px 8px; text-align:center; cursor:pointer; transition:all .3s cubic-bezier(0.22, 1, 0.36, 1);">
+              <span style="font-size:16px; font-weight:700; display:block; color:#FFFFFF; font-family:'DM Sans',sans-serif; letter-spacing:0.3px;">10&#8211;20 KG</span>
+            </div>
+            <div onclick="selWeight(this,'+20 kg')" class="weight-opt" style="background:#2E7D52; border:2px solid #2E7D52; border-radius:50px; padding:16px 8px; text-align:center; cursor:pointer; transition:all .3s cubic-bezier(0.22, 1, 0.36, 1);">
+              <span style="font-size:16px; font-weight:700; display:block; color:#FFFFFF; font-family:'DM Sans',sans-serif; letter-spacing:0.3px;">+20 KG</span>
+            </div>
+          </div>
+
+          <!-- Future pacing (hidden, shown by JS) -->
+          <div id="futurePacingQuiz" style="display:none; background:#F0FDF4; border:1px solid #D1FAE5; border-radius:12px; padding:14px 16px; margin-top:14px;">
+            <p id="fpTextQuiz" style="font-size:13px; color:#374151; line-height:1.55; margin:0; font-style:italic;"></p>
+          </div>
+        </div>
+
+        <!-- Social proof -->
+        <div style="padding:16px 0 0; text-align:center; font-size:12px; color:#9CA3AF; font-family:'DM Sans',sans-serif; animation:fadeSlideIn .6s cubic-bezier(0.22, 1, 0.36, 1) .45s both;">
+          <span style="display:inline-flex; align-items:center; gap:6px;">
+            <span style="width:6px; height:6px; background:#2E7D52; border-radius:50%; display:inline-block;"></span>
+<span id="socialCounter" style="color:#374151; font-weight:700;">0</span> mujeres ya completaron
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PANEL B — Social proof (hidden, shown after weight selection) -->
+    <div id="slide0-social" style="display:none; min-height:100vh; position:relative; background:#FFFFFF; padding:0;">
+      <!-- Social proof number -->
+      <div style="text-align:center; padding:40px 24px 24px;">
+        <div style="font-family:'Playfair Display',serif; font-size:42px; font-weight:700; color:#2E7D52; line-height:1; margin-bottom:6px; animation:fadeSlideIn .5s cubic-bezier(0.22, 1, 0.36, 1) .1s both;">24,891</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:18px; font-weight:600; color:#1A1A2E; line-height:1.4; animation:fadeSlideIn .5s cubic-bezier(0.22, 1, 0.36, 1) .15s both;">mujeres ya descubrieron<br>su diagn&#243;stico</div>
+      </div>
+
+      <!-- Group photo -->
+      <div style="padding:0 28px; margin-bottom:28px; animation:fadeSlideIn .6s cubic-bezier(0.22, 1, 0.36, 1) .2s both;">
+        <img src="38511416-ai-gerado-grupo-do-mulheres-feliz-e-abraco-com-celebracao-rindo-amizade-objetivo-foto.jpeg" alt="" style="width:100%; border-radius:16px; display:block; object-fit:cover; height:320px; object-position:center 20%;">
+      </div>
+
+      <!-- Tagline -->
+      <div style="text-align:center; padding:0 32px 32px; animation:fadeSlideIn .6s cubic-bezier(0.22, 1, 0.36, 1) .35s both;">
+        <h2 style="font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:#1A1A2E; line-height:1.35; margin:0 0 24px;">
+          Dise&#241;ado para el cuerpo<br>de la mujer que cambia<br>despu&#233;s de los 30
+        </h2>
+
+        <!-- Continue button -->
+        <button onclick="showSlide(1)" style="display:block; width:100%; max-width:320px; margin:0 auto; padding:18px 24px; background:#2E7D52; color:#FFFFFF; border:none; border-radius:50px; font-size:17px; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer; transition:all .25s cubic-bezier(0.22, 1, 0.36, 1); letter-spacing:0.3px; box-shadow:0 4px 16px rgba(46,125,82,0.25);">
+          Continuar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 1 — Situación con el peso -->
+  <div class="slide" id="slide-1">
+    <div class="q-label">Pregunta 1 de 18</div>
+    <h2 class="q-title">&#191;Cu&#225;l de estas frases podr&#237;as haber dicho T&#218;?</h2>
+    <p class="q-sub">Esto nos ayuda a calibrar tu protocolo</p>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectSingle(this,1,'weightSituation','subiendo')"><span class="opt-icon">&#128200;</span><span class="opt-text-main">Cada vez que me peso, el n&#250;mero es m&#225;s alto<span class="opt-text-sub">He aumentado en los &#250;ltimos meses</span></span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,1,'weightSituation','rebote')"><span class="opt-icon">&#128260;</span><span class="opt-text-main">Pierdo unos kilos&#8230; y luego los recupero todos (o m&#225;s)<span class="opt-text-sub">Siempre recupero lo que pierdo</span></span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,1,'weightSituation','lento')"><span class="opt-icon">&#128034;</span><span class="opt-text-main">Como poco y aun as&#237; no bajo &#8212; mi cuerpo no responde<span class="opt-text-sub">Como poco y aun as&#237; no bajo</span></span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,1,'weightSituation','como')"><span class="opt-icon">&#129300;</span><span class="opt-text-main">Algo cambi&#243; en mi cuerpo y ya nada funciona como antes<span class="opt-text-sub">Algo cambi&#243; en mi cuerpo</span></span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 — Motivación (NOVO) -->
+  <div class="slide" id="slide-2">
+    <div class="q-label">Pregunta 2 de 18</div>
+    <h2 class="q-title">Cierra los ojos un momento... &#191;Qu&#233; te gustar&#237;a sentir?</h2>
+    <p class="q-sub">Selecciona todo lo que aplique</p>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectSingle(this,2,'motivation','salud')"><span class="opt-icon">&#128154;</span><span class="opt-text-main">Sentirme segura con mi salud</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,2,'motivation','espejo')"><span class="opt-icon">&#128378;</span><span class="opt-text-main">Mirarme al espejo y reconocerme</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,2,'motivation','energia')"><span class="opt-icon">&#9889;</span><span class="opt-text-main">Despertar con energ&#237;a real, no con cansancio</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,2,'motivation','mostrar')"><span class="opt-icon">&#128170;</span><span class="opt-text-main">Mostrarles a los que no creyeron que pod&#237;a</span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 — Métodos intentados -->
+  <div class="slide" id="slide-3">
+    <div class="q-label">Pregunta 3 de 18</div>
+    <h2 class="q-title">Nada de eso fue tu culpa. &#191;Cu&#225;les has probado?</h2>
+    <p class="q-sub">Cada uno funciona a corto plazo, pero ninguno cambia la se&#241;al hormonal.</p>
+    <div class="options-list">
+      <button class="option-btn multi" onclick="selectMulti(this)"><span class="opt-icon">&#129367;</span><span class="opt-text-main">Dietas restrictivas</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" onclick="selectMulti(this)"><span class="opt-icon">&#127939;</span><span class="opt-text-main">Ejercicio intenso</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" onclick="selectMulti(this)"><span class="opt-icon">&#128138;</span><span class="opt-text-main">Pastillas o suplementos</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" onclick="selectMulti(this)"><span class="opt-icon">&#9203;</span><span class="opt-text-main">Ayuno intermitente</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" onclick="selectMulti(this)"><span class="opt-icon">&#128528;</span><span class="opt-text-main">Nada, es mi primera vez</span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 — Tiempo luchando -->
+  <div class="slide" id="slide-4">
+    <div class="q-label">Pregunta 4 de 18</div>
+    <h2 class="q-title">&#191;Cu&#225;nto tiempo llevas sinti&#233;ndote atrapada?</h2>
+    <p class="q-sub">Esto revela c&#243;mo est&#225; tu resistencia insul&#237;nica</p>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectSingle(this,4,'timeFighting','menos1')"><span class="opt-icon">&#128197;</span><span class="opt-text-main">Menos de 1 a&#241;o</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,4,'timeFighting','1a3')"><span class="opt-icon">&#128198;</span><span class="opt-text-main">Entre 1 y 3 a&#241;os</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,4,'timeFighting','3a5')"><span class="opt-icon">&#128336;</span><span class="opt-text-main">Entre 3 y 5 a&#241;os</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,4,'timeFighting','mas5')"><span class="opt-icon">&#9203;</span><span class="opt-text-main">M&#225;s de 5 a&#241;os</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,4,'timeFighting','siempre')"><span class="opt-icon">&#128148;</span><span class="opt-text-main">Toda mi vida</span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 — Tipo de cuerpo actual (NOVO - SVG) -->
+  <div class="slide" id="slide-5">
+    <div class="q-label">Tu cuerpo &#183; 1 de 3</div>
+    <h2 class="q-title">&#191;Cu&#225;l describe mejor tu tipo de cuerpo actual?</h2>
+    <p class="q-sub">Selecciona la silueta m&#225;s parecida a ti</p>
+    <div class="body-type-grid">
+      <div class="body-type-card" onclick="selectBodyType(this,'regular')">
+        <img src="11111111.png" alt="Regular" style="height:80px;width:auto">
+        <div class="body-type-label">Regular</div>
+      </div>
+      <div class="body-type-card" onclick="selectBodyType(this,'flacido')">
+        <img src="2222222222222.png" alt="Fl&#225;cido" style="height:80px;width:auto">
+        <div class="body-type-label">Fl&#225;cido</div>
+      </div>
+      <div class="body-type-card" onclick="selectBodyType(this,'michelines')">
+        <img src="333333333333333.png" alt="Michelines" style="height:80px;width:auto">
+        <div class="body-type-label">Michelines</div>
+      </div>
+      <div class="body-type-card" onclick="selectBodyType(this,'sobrepeso')">
+        <img src="44444444444444.png" alt="Sobrepeso" style="height:80px;width:auto">
+        <div class="body-type-label">Sobrepeso</div>
+      </div>
+      <div class="body-type-card" onclick="selectBodyType(this,'obeso')">
+        <img src="555555555555.png" alt="Obeso" style="height:80px;width:auto">
+        <div class="body-type-label">Obeso</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 — Cuerpo ideal (NOVO - SVG) -->
+  <div class="slide" id="slide-6">
+    <div class="q-label">Tu cuerpo &#183; 2 de 3</div>
+    <h2 class="q-title">&#191;Cu&#225;l es tu cuerpo ideal?</h2>
+    <p class="q-sub">Selecciona la silueta que m&#225;s te gustar&#237;a lograr</p>
+    <div class="body-type-grid">
+      <div class="body-type-card" onclick="selectIdealBody(this,'curvy')">
+        <img src="curvy.png" alt="Curvy" style="height:80px;width:auto">
+        <div class="body-type-label">Curvy</div>
+      </div>
+      <div class="body-type-card" onclick="selectIdealBody(this,'regular')">
+        <img src="Regular.png" alt="Regular" style="height:80px;width:auto">
+        <div class="body-type-label">Regular</div>
+      </div>
+      <div class="body-type-card" onclick="selectIdealBody(this,'plano')">
+        <img src="Flat.png" alt="Flat" style="height:80px;width:auto">
+        <div class="body-type-label">Plano</div>
+      </div>
+      <div class="body-type-card" onclick="selectIdealBody(this,'fit')">
+        <img src="Fit.png" alt="Fit" style="height:80px;width:auto">
+        <div class="body-type-label">Fit</div>
+      </div>
+      <div class="body-type-card" onclick="selectIdealBody(this,'atletico')">
+        <img src="Athletic.png" alt="Atlético" style="height:80px;width:auto">
+        <div class="body-type-label">Atl&#233;tico</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7 — Zonas a mejorar (NOVO) -->
+  <div class="slide" id="slide-7">
+    <div class="q-label">Tu cuerpo &#183; 3 de 3</div>
+    <h2 class="q-title">&#191;Qu&#233; zonas quieres mejorar?</h2>
+    <p class="q-sub">Selecciona todas las que apliquen</p>
+    <div class="zone-grid">
+      <div class="zone-btn" onclick="selectZone(this,'brazos')"><span class="zone-check"></span><span class="zone-emoji">&#128170;</span>Brazos<img src="bodypart_1.png" class="zone-img" alt="Brazos"></div>
+      <div class="zone-btn" onclick="selectZone(this,'estomago')"><span class="zone-check"></span><span class="zone-emoji">&#127856;</span>Est&#243;mago<img src="bodypart_2.png" class="zone-img" alt="Estómago"></div>
+      <div class="zone-btn" onclick="selectZone(this,'espalda')"><span class="zone-check"></span><span class="zone-emoji">&#129703;</span>Espalda<img src="bodypart_3.png" class="zone-img" alt="Espalda"></div>
+      <div class="zone-btn" onclick="selectZone(this,'gluteos')"><span class="zone-check"></span><span class="zone-emoji">&#127351;</span>Gl&#250;teos<img src="bodypart_4.png" class="zone-img" alt="Glúteos"></div>
+      <div class="zone-btn" onclick="selectZone(this,'piernas')"><span class="zone-check"></span><span class="zone-emoji">&#129462;</span>Piernas<img src="bodypart_5.png" class="zone-img" alt="Piernas"></div>
+      <div class="zone-btn" onclick="selectZone(this,'caderas')"><span class="zone-check"></span><span class="zone-emoji">&#128131;</span>Caderas<img src="bodypart_6.png" class="zone-img" alt="Caderas"></div>
+      <div class="zone-btn zone-full" onclick="selectZone(this,'todo')"><span class="zone-check"></span><span class="zone-emoji">&#127775;</span>Todo el cuerpo<img src="bodypart_7.png" class="zone-img" alt="Todo el cuerpo"></div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8 — BREAK: Testimonial + Stats -->
+  <div class="slide" id="slide-8">
+    <div style="background:linear-gradient(135deg,rgba(46,125,82,.12),rgba(74,222,128,.06));border:1px solid rgba(74,222,128,.15);border-radius:16px;padding:20px;margin-bottom:16px;text-align:center">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4ade80;margin-bottom:12px">Dato cient&#237;fico</div>
+      <div style="display:flex;justify-content:center;gap:24px;margin-bottom:12px">
+        <div>
+          <div style="font-size:28px;font-weight:800;color:#4ade80">46.5%</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5)">Latinoam&#233;rica</div>
+        </div>
+        <div style="font-size:20px;color:rgba(255,255,255,.3);align-self:center">vs</div>
+        <div>
+          <div style="font-size:28px;font-weight:800;color:rgba(255,255,255,.4)">15.5%</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5)">Europa</div>
+        </div>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,.8);line-height:1.5;margin-bottom:8px">Las latinas tenemos <strong style="color:#4ade80">3 veces m&#225;s</strong> resistencia a la insulina que las europeas</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.7);line-height:1.4">No es falta de disciplina &#8212; es una predisposici&#243;n hormonal de nuestra biolog&#237;a latina.</div>
+      <div style="font-size:9px;color:rgba(255,255,255,.3);margin-top:8px">Fuente: Swissinfo / Asoc. Mexicana de Medicina de la Reproducci&#243;n, 2024</div>
+    </div>
+    <div class="break-card"><span class="break-emoji">&#11088;</span><div class="break-title">Mujeres como t&#250; ya lo lograron</div><div class="break-text">"En 3 semanas baj&#233; 4 kg. <strong>Sin pasar hambre.</strong> Solo cambiando c&#243;mo combino los alimentos." &#8212; Mar&#237;a G., Guadalajara</div>
+      <div class="stat-row">
+        <div class="stat-box"><span class="stat-num">24,891</span><span class="stat-label">Mujeres unidas</span></div>
+        <div class="stat-box"><span class="stat-num">4.8&#11088;</span><span class="stat-label">Calificaci&#243;n</span></div>
+      </div>
+    </div>
+    <div class="testimonial-card"><div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><div class="testi-text">"Mi metabolismo estaba dormido. Con El Código Hormonal en 21 d&#237;as not&#233; la diferencia en el espejo."</div><div class="testi-author"><img src="ebooks/img/testi-valentina.jpg" alt="Carmen V." style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);flex-shrink:0"><div><div class="testi-name">Carmen V.</div><div class="testi-loc">Lima, Per&#250; &#183; hace 2 semanas</div></div></div></div>
+  </div>
+
+  <!-- SLIDE 9 — Actividad física -->
+  <div class="slide" id="slide-9">
+    <div class="q-label">Pregunta 7 de 18</div>
+    <h2 class="q-title">&#191;Qu&#233; tan activa eres f&#237;sicamente?</h2>
+    <p class="q-sub">Esto calibra tu gasto energ&#233;tico real</p>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectSingle(this,9,'activityLevel','nada')"><span class="opt-icon">&#128715;</span><span class="opt-text-main">Muy poco o nada</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,9,'activityLevel','caminar')"><span class="opt-icon">&#128694;</span><span class="opt-text-main">Solo caminar</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,9,'activityLevel','moderada')"><span class="opt-icon">&#128077;</span><span class="opt-text-main">1-2 veces por semana</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,9,'activityLevel','regular')"><span class="opt-icon">&#128170;</span><span class="opt-text-main">3-4 veces por semana</span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 10 — Horas de sueño -->
+  <div class="slide" id="slide-10">
+    <div class="q-label">Pregunta 8 de 18</div>
+    <h2 class="q-title">&#191;Cu&#225;ntas horas duermes por noche?</h2>
+    <p class="q-sub">El sue&#241;o afecta directamente tu insulina &#8212; cada hora cuenta</p>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectSingle(this,10,'sleepHours','menos5')"><span class="opt-icon">&#128564;</span><span class="opt-text-main">Menos de 5 horas</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,10,'sleepHours','5a6')"><span class="opt-icon">&#128554;</span><span class="opt-text-main">Entre 5 y 6 horas</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,10,'sleepHours','7a8')"><span class="opt-icon">&#128564;</span><span class="opt-text-main">Entre 7 y 8 horas</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,10,'sleepHours','mas8')"><span class="opt-icon">&#128524;</span><span class="opt-text-main">M&#225;s de 8 horas</span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 11 — Agua diaria (NOVO) -->
+  <div class="slide" id="slide-11">
+    <div class="q-label">Pregunta 9 de 18</div>
+    <h2 class="q-title">&#191;Cu&#225;nta agua tomas al d&#237;a?</h2>
+    <p class="q-sub">La hidrataci&#243;n cambia c&#243;mo tu cuerpo procesa grasa</p>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectSingle(this,11,'waterIntake','solo_cafe')"><span class="opt-icon">&#9749;</span><span class="opt-text-main">Casi solo caf&#233; o refrescos</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,11,'waterIntake','1a4')"><span class="opt-icon">&#128167;</span><span class="opt-text-main">1-4 vasos al d&#237;a</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,11,'waterIntake','5a7')"><span class="opt-icon">&#128166;</span><span class="opt-text-main">5-7 vasos al d&#237;a</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,11,'waterIntake','8a10')"><span class="opt-icon">&#127754;</span><span class="opt-text-main">8-10 vasos al d&#237;a</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,11,'waterIntake','10mas')"><span class="opt-icon">&#127754;&#128167;</span><span class="opt-text-main">M&#225;s de 10 vasos</span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 12 — Tipo de alimentación -->
+  <div class="slide" id="slide-12">
+    <div class="q-label">Pregunta 10 de 18</div>
+    <h2 class="q-title">&#191;C&#243;mo describir&#237;as tu alimentaci&#243;n hoy?</h2>
+    <p class="q-sub">No hay dietas buenas o malas &#8212; solo combinaciones</p>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectSingle(this,12,'dietType','todo')"><span class="opt-icon">&#127869;</span><span class="opt-text-main">Como de todo, sin restricciones</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,12,'dietType','bajo_carb')"><span class="opt-icon">&#129361;</span><span class="opt-text-main">Intento comer bajo en carbohidratos</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,12,'dietType','vegetariana')"><span class="opt-icon">&#129367;</span><span class="opt-text-main">Vegetariana o vegana</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,12,'dietType','sin_gluten')"><span class="opt-icon">&#127806;</span><span class="opt-text-main">Sin gluten o sin l&#225;cteos</span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 13 — Alergias alimentarias (NOVO) -->
+  <div class="slide" id="slide-13">
+    <div class="q-label">Pregunta 11 de 18</div>
+    <h2 class="q-title">&#191;Tienes alguna alergia alimentaria?</h2>
+    <p class="q-sub">Para que comas delicioso sin restricciones innecesarias</p>
+    <div class="options-list">
+      <button class="option-btn multi" onclick="selectAllergy(this,'lacteos')"><span class="opt-icon">&#129371;</span><span class="opt-text-main">L&#225;cteos</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" onclick="selectAllergy(this,'gluten')"><span class="opt-icon">&#127838;</span><span class="opt-text-main">Gluten</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" onclick="selectAllergy(this,'huevos')"><span class="opt-icon">&#129370;</span><span class="opt-text-main">Huevos</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" onclick="selectAllergy(this,'frutos_secos')"><span class="opt-icon">&#129372;</span><span class="opt-text-main">Frutos secos</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" onclick="selectAllergy(this,'pescado')"><span class="opt-icon">&#128031;</span><span class="opt-text-main">Pescado / mariscos</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" onclick="selectAllergy(this,'soya')"><span class="opt-icon">&#127813;</span><span class="opt-text-main">Soya</span><span class="opt-check"></span></button>
+      <button class="option-btn multi" id="allergyNone" onclick="selectAllergy(this,'ninguna')"><span class="opt-icon">&#10004;</span><span class="opt-text-main">Ninguna</span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 14 — Para quién cocinas -->
+  <div class="slide" id="slide-14">
+    <div class="q-label">Pregunta 12 de 18</div>
+    <h2 class="q-title">&#191;Para qui&#233;n cocinas normalmente?</h2>
+    <p class="q-sub">Tu plan ser&#225; para tu estilo de vida real</p>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectSingle(this,14,'cooksFor','familia')"><span class="opt-icon">&#128106;</span><span class="opt-text-main">Para toda la familia</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,14,'cooksFor','pareja')"><span class="opt-icon">&#128107;</span><span class="opt-text-main">Para m&#237; y mi pareja</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,14,'cooksFor','sola')"><span class="opt-icon">&#128587;</span><span class="opt-text-main">Solo para m&#237;</span><span class="opt-check"></span></button>
+      <button class="option-btn" onclick="selectSingle(this,14,'cooksFor','fuera')"><span class="opt-icon">&#127962;</span><span class="opt-text-main">Casi no cocino, como fuera</span><span class="opt-check"></span></button>
+    </div>
+  </div>
+
+  <!-- SLIDE 14b — Dinner time -->
+  <div class="slide" id="slide-14b">
+    <div class="q-label">Tu rutina</div>
+    <h2 class="q-title">&#191;A qu&#233; hora sueles cenar?</h2>
+    <p class="q-sub">El horario impacta directamente tu metabolismo nocturno</p>
+    <div class="options-list">
+      <div class="option-btn" onclick="selectSingleCustom(this,'14b','dinnerTime','antes6')"><span class="opt-text-main">Antes de las 6pm</span><span class="opt-icon">&#127749;</span></div>
+      <div class="option-btn" onclick="selectSingleCustom(this,'14b','dinnerTime','6a8')"><span class="opt-text-main">Entre 6pm y 8pm</span><span class="opt-icon">&#127750;</span></div>
+      <div class="option-btn" onclick="selectSingleCustom(this,'14b','dinnerTime','8a10')"><span class="opt-text-main">Entre 8pm y 10pm</span><span class="opt-icon">&#127769;</span></div>
+      <div class="option-btn" onclick="selectSingleCustom(this,'14b','dinnerTime','despues10')"><span class="opt-text-main">Despu&#233;s de las 10pm</span><span class="opt-icon">&#127761;</span></div>
+    </div>
+  </div>
+
+  <!-- SLIDE 14c — Cooking time -->
+  <div class="slide" id="slide-14c">
+    <div class="q-label">Tu rutina</div>
+    <h2 class="q-title">&#191;Cu&#225;nto tiempo tienes para cocinar?</h2>
+    <p class="q-sub">Adaptamos las recetas a tu disponibilidad</p>
+    <div class="options-list">
+      <div class="option-btn" onclick="selectSingleCustom(this,'14c','cookingTime','15min')"><span class="opt-text-main">Menos de 15 minutos</span><span class="opt-icon">&#9889;</span></div>
+      <div class="option-btn" onclick="selectSingleCustom(this,'14c','cookingTime','30min')"><span class="opt-text-main">15-30 minutos</span><span class="opt-icon">&#9201;&#65039;</span></div>
+      <div class="option-btn" onclick="selectSingleCustom(this,'14c','cookingTime','1hora')"><span class="opt-text-main">30-60 minutos</span><span class="opt-icon">&#128105;&#8205;&#127859;</span></div>
+      <div class="option-btn" onclick="selectSingleCustom(this,'14c','cookingTime','mas1hora')"><span class="opt-text-main">M&#225;s de 1 hora</span><span class="opt-icon">&#127859;</span></div>
+    </div>
+  </div>
+
+  <!-- SLIDE 15 — Break: Personalización dinámica -->
+  <div class="slide" id="slide-15">
+    <h2 class="q-title" style="font-size:24px;line-height:1.8;margin-bottom:12px;"><span style="background:#2E7D52; color:#FFFFFF; padding:3px 10px 5px; border-radius:4px; box-decoration-break:clone; -webkit-box-decoration-break:clone;">El 99.9% de los planes son efectivos para la poblaci&#243;n general</span></h2>
+    <p style="font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px;">Sin embargo, casi ninguno est&#225; dise&#241;ado para mujeres <strong style="color:#fff;">mayores de 35 a&#241;os</strong> cuyos cambios hormonales alteran la se&#241;al de insulina. Nutriplan ofrece un enfoque integral para revertir la acumulaci&#243;n de grasa hormonal con <strong style="color:#4ade80;">0 alimentos prohibidos</strong>.</p>
+    <img src="pexels-ibidsy-14634934.jpg" alt="Mujer saludable" style="width:100%;border-radius:16px;margin-bottom:20px;object-fit:cover;max-height:480px;">
+    <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:20px;">Seg&#250;n tus respuestas, llevas <strong style="color:#fff;" id="personSlideTime">un tiempo</strong> luchando con tu peso, tu actividad f&#237;sica es <strong style="color:#fff;" id="personSlideActivity">limitada</strong>, y quieres mejorar especialmente en <strong style="color:#4ade80;" id="personSlideZones">zonas clave</strong>. Todo esto apunta a una <strong style="color:#fff;">se&#241;al de insulina desregulada</strong> &#8212; y es exactamente lo que Nutriplan corrige.</p>
+    <div style="display:flex;gap:10px;margin-bottom:4px;">
+      <div style="flex:1;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;text-align:center;">
+        <div style="font-size:22px;font-weight:800;color:#4ade80;">42.9%</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;line-height:1.3;">de mujeres en esta etapa tienen s&#237;ndrome metab&#243;lico</div>
+      </div>
+      <div style="flex:1;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;text-align:center;">
+        <div style="font-size:22px;font-weight:800;color:#4ade80;">0</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;line-height:1.3;">alimentos prohibidos en tu protocolo personalizado</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 16 — Estatura -->
+  <div class="slide" id="slide-16">
+    <div class="q-label">Datos metab&#243;licos &#183; 1 de 4</div>
+    <h2 class="q-title">&#191;Cu&#225;l es tu estatura?</h2>
+    <p class="q-sub">Esta informaci&#243;n permite calcular tu &#237;ndice metab&#243;lico personalizado</p>
+    <div class="toggle-row"><button class="toggle-btn active" id="heightCmBtn" onclick="setHeightUnit('cm')">cm</button><button class="toggle-btn" id="heightFtBtn" onclick="setHeightUnit('ft')">ft/in</button></div>
+    <div class="slider-wrap"><div class="slider-display"><span class="slider-value" id="heightVal">162</span><span class="slider-unit" id="heightUnitLabel">cm</span></div><div class="slider-label-row"><span id="heightMin">140 cm</span><span id="heightMax">200 cm</span></div><input type="range" id="heightSlider" min="140" max="200" value="162" step="1" oninput="updateSlider('height')" style="--pct:37%"></div>
+  </div>
+
+  <!-- SLIDE 17 — Peso actual -->
+  <div class="slide" id="slide-17">
+    <div class="q-label">Datos metab&#243;licos &#183; 2 de 4</div>
+    <h2 class="q-title">&#191;Cu&#225;l es tu peso actual?</h2>
+    <p class="q-sub">Esta informaci&#243;n ayuda en los c&#225;lculos metab&#243;licos</p>
+    <div class="toggle-row"><button class="toggle-btn active" id="weightKgBtn" onclick="setWeightUnit('kg')">kg</button><button class="toggle-btn" id="weightLbBtn" onclick="setWeightUnit('lb')">lb</button></div>
+    <div class="slider-wrap"><div class="slider-display"><span class="slider-value" id="weightVal">72</span><span class="slider-unit" id="weightUnitLabel">kg</span></div><div class="slider-label-row"><span id="weightMin">40 kg</span><span id="weightMax">150 kg</span></div><input type="range" id="weightSlider" min="40" max="150" value="72" step="1" oninput="updateSlider('weight')" style="--pct:29%"></div>
+  </div>
+
+  <!-- SLIDE 18 — Peso deseado -->
+  <div class="slide" id="slide-18">
+    <div class="q-label">Datos metab&#243;licos &#183; 3 de 4</div>
+    <h2 class="q-title">&#191;Cu&#225;l es tu peso deseado?</h2>
+    <div class="slider-wrap"><div class="slider-display"><span class="slider-value" id="targetVal">60</span><span class="slider-unit" id="targetUnitLabel">kg</span></div><div class="slider-label-row"><span>40 kg</span><span>120 kg</span></div><input type="range" id="targetSlider" min="40" max="120" value="60" step="1" oninput="updateSlider('target')" style="--pct:25%"></div>
+  </div>
+
+  <!-- SLIDE 19 — Edad -->
+  <div class="slide" id="slide-19">
+    <div class="q-label">Datos metab&#243;licos &#183; 4 de 4</div>
+    <h2 class="q-title">&#191;Cu&#225;ntos a&#241;os tienes?</h2>
+    <p class="q-sub">El metabolismo cambia con la edad &#8212; ajustamos tu plan</p>
+    <div class="slider-wrap"><div class="slider-display"><span class="slider-value" id="ageVal">42</span><span class="slider-unit">a&#241;os</span></div><div class="slider-label-row"><span>25 a&#241;os</span><span>75 a&#241;os</span></div><input type="range" id="ageSlider" min="25" max="75" value="42" step="1" oninput="updateSlider('age')" style="--pct:34%"></div>
+  </div>
+
+  <!-- SLIDE 20 — Perfil / Resumen -->
+  <div class="slide" id="slide-20">
+    <div class="q-label">Tu perfil personal</div>
+    <h2 class="q-title">Resumen basado en tus respuestas</h2>
+    <div class="result-section" style="margin-bottom:16px;">
+      <h3>&#128202; Tu IMC actual</h3>
+      <div id="bmiValue" style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#4ade80;margin-bottom:8px;">&#8212;</div>
+      <div class="bmi-bar-wrap"><div class="bmi-bar"><div class="bmi-marker" id="bmiMarker" style="left:40%"></div></div><div class="bmi-labels"><span>Normal</span><span>Sobrepeso</span><span>Obesidad</span></div></div>
+      <p id="bmiDesc" style="font-size:13px;color:rgba(255,255,255,.55);margin-top:10px;line-height:1.5;"></p>
+    </div>
+    <div class="result-section" style="margin-bottom:16px;" id="bodyTypeSection">
+      <h3>&#128101; Tu tipo de cuerpo</h3>
+      <div class="body-summary">
+        <div class="body-summary-item"><div class="body-summary-label">Actual</div><div class="body-summary-value" id="bodyTypeCurrent">&#8212;</div></div>
+        <div class="body-summary-arrow">&#8594;</div>
+        <div class="body-summary-item"><div class="body-summary-label">Ideal</div><div class="body-summary-value" id="bodyTypeIdeal" style="color:#4ade80;">&#8212;</div></div>
+      </div>
+      <p id="zonesDesc" style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5;margin-top:8px;"></p>
+    </div>
+    <div class="result-section">
+      <h3>&#9889; Tu potencial en 3 semanas</h3>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);"><span style="font-size:14px;color:rgba(255,255,255,.5);">Peso actual</span><span id="curWeightDisplay" style="font-weight:700;font-size:16px;color:#fff;">&#8212; kg</span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);"><span style="font-size:14px;color:rgba(255,255,255,.5);">Meta en 3 semanas</span><span id="week3Display" style="font-weight:700;font-size:16px;color:#4ade80;">&#8212; kg</span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;"><span style="font-size:14px;color:rgba(255,255,255,.5);">Posible reducci&#243;n</span><span id="diffDisplay" style="font-weight:700;font-size:16px;color:#4ade80;">&#8212; kg</span></div>
+      <div style="background:rgba(232,68,90,.08);border:1px solid rgba(232,68,90,.12);border-radius:12px;padding:14px;margin-top:12px;text-align:center">
+        <div style="font-size:24px;font-weight:800;color:#E8445A;margin-bottom:4px">8 de 10</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.4">personas con sobrepeso en M&#233;xico ya tienen resistencia a la insulina &#8212; y la mayor&#237;a no lo sabe</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.3);margin-top:6px">Asoc. Mexicana de Medicina de la Reproducci&#243;n, 2024</div>
+      </div>
+    </div>
+
+    <!-- Body Fat Before/After Comparison -->
+    <div class="result-section" id="bodyFatSection" style="display:none">
+      <div style="display:flex;border-bottom:2px solid rgba(255,255,255,.08);margin-bottom:16px">
+        <div style="flex:1;text-align:center;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.25);margin-bottom:-2px">
+          <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.05em">Ahora</span>
+        </div>
+        <div style="flex:1;text-align:center;padding-bottom:10px;border-bottom:2px solid #4ade80;margin-bottom:-2px">
+          <span style="font-size:12px;font-weight:700;color:#4ade80;letter-spacing:.05em">Despu&#233;s del plan</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px">
+        <!-- NOW -->
+        <div style="flex:1;text-align:center">
+          <div style="position:relative;margin-bottom:12px">
+            <div id="bfNowCircle" style="width:100px;height:100px;margin:0 auto;border-radius:50%;background:conic-gradient(#E8445A var(--bf-now-pct,35%),rgba(255,255,255,.08) 0);display:flex;align-items:center;justify-content:center">
+              <div style="width:76px;height:76px;border-radius:50%;background:#0f1f15;display:flex;flex-direction:column;align-items:center;justify-content:center">
+                <div id="bfNowValue" style="font-size:24px;font-weight:800;color:#E8445A">--%</div>
+                <div style="font-size:8px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px">Grasa</div>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:2px">Grasa corporal</div>
+          <div id="bfNowLabel" style="font-size:11px;color:#E8445A;font-weight:600">Por encima</div>
+          <div style="margin-top:8px">
+            <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7)">Peso saludable</div>
+            <div style="display:flex;gap:4px;justify-content:center;margin-top:4px">
+              <div id="bfNowDots" style="display:flex;gap:3px"></div>
+            </div>
+          </div>
+        </div>
+        <!-- AFTER -->
+        <div style="flex:1;text-align:center">
+          <div style="position:relative;margin-bottom:12px">
+            <div id="bfAfterCircle" style="width:100px;height:100px;margin:0 auto;border-radius:50%;background:conic-gradient(#4ade80 var(--bf-after-pct,20%),rgba(255,255,255,.08) 0);display:flex;align-items:center;justify-content:center">
+              <div style="width:76px;height:76px;border-radius:50%;background:#0f1f15;display:flex;flex-direction:column;align-items:center;justify-content:center">
+                <div id="bfAfterValue" style="font-size:24px;font-weight:800;color:#4ade80">--%</div>
+                <div style="font-size:8px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px">Grasa</div>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:2px">Grasa corporal</div>
+          <div id="bfAfterLabel" style="font-size:11px;color:#4ade80;font-weight:600">Saludable</div>
+          <div style="margin-top:8px">
+            <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7)">Peso saludable</div>
+            <div style="display:flex;gap:4px;justify-content:center;margin-top:4px">
+              <div id="bfAfterDots" style="display:flex;gap:3px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:14px;font-size:11px;color:rgba(255,255,255,.35)">* Estimaci&#243;n basada en tu IMC, edad y perfil hormonal</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 21 — Gráfico proyección -->
+  <div class="slide" id="slide-21">
+    <div class="q-label">Tu proyecci&#243;n personalizada</div>
+    <h2 class="q-title">Tu potencial de mejora en 12 semanas</h2>
+    <div class="q-sub">Basado en tu perfil, estimamos que puedes alcanzar <span class="chart-highlight" id="targetDisplay">&#8212;</span></div>
+    <div class="progress-chart">
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><div><div style="font-size:12px;color:rgba(255,255,255,.5);">Peso inicial</div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;" id="chartStartWeight">&#8212;</div></div><div style="text-align:right;"><div style="font-size:12px;color:rgba(255,255,255,.5);">Meta 12 semanas</div><div style="font-family:'Playfair Display',serif;font-size:22px;color:#4ade80;font-weight:700;" id="chartEndWeight">&#8212;</div></div></div>
+      <svg viewBox="0 0 300 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;overflow:visible;"><defs><linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#E8445A"/><stop offset="100%" stop-color="#2E7D52"/></linearGradient><linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#2E7D52" stop-opacity="0.12"/><stop offset="100%" stop-color="#2E7D52" stop-opacity="0"/></linearGradient></defs><line x1="10" y1="25" x2="290" y2="25" stroke="rgba(255,255,255,.1)" stroke-width="0.5" opacity="0.5"/><line x1="10" y1="50" x2="290" y2="50" stroke="rgba(255,255,255,.1)" stroke-width="0.5" opacity="0.5"/><line x1="10" y1="75" x2="290" y2="75" stroke="rgba(255,255,255,.1)" stroke-width="0.5" opacity="0.5"/><path class="chart-area" d="M10,20 C60,20 80,35 100,50 C130,70 150,78 200,85 C240,90 270,91 290,91 L290,100 L10,100 Z" fill="url(#areaGrad)"/><path id="chartPath" class="chart-line-animated" d="M10,20 C60,20 80,35 100,50 C130,70 150,78 200,85 C240,90 270,91 290,91" stroke="url(#lineGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="10" cy="20" r="5" fill="#E8445A" class="chart-dot-start"/><circle cx="290" cy="91" r="5" fill="#4ade80" class="chart-dot-end"/><text x="10" y="11" font-size="9" fill="rgba(255,255,255,.5)" text-anchor="middle" font-family="DM Sans,sans-serif" class="chart-label-start">Sem 1</text><text x="290" y="106" font-size="9" fill="#4ade80" text-anchor="middle" font-weight="700" font-family="DM Sans,sans-serif" class="chart-label-end">Sem 12</text></svg>
+    </div>
+    <div class="break-card"><span class="break-emoji">&#9989;</span><div class="break-title">Sin dietas restrictivas</div><div class="break-text">El Código Hormonal funciona con alimentos reales &#8212; sin eliminar grupos ni pasar hambre.</div></div>
+  </div>
+
+  <!-- SLIDE 22 — Email -->
+  <div class="slide" id="slide-22">
+    <div class="email-hero"><div class="counter-big" id="emailGoalWeight">&#8212;</div><div class="email-hero-title">Tu programa personalizado est&#225; listo</div><div class="email-hero-sub">Ingresa tu email para recibir tu <strong>Perfil Metab&#243;lico</strong> y El Código Hormonal calibrado para ti</div></div>
+    <div class="email-input-wrap"><input type="email" class="email-input" id="emailInput" placeholder="tu@email.com" oninput="validateEmail()"></div>
+    <div class="email-terms">Al continuar aceptas nuestros <a href="#">T&#233;rminos</a> y <a href="#">Pol&#237;tica de Privacidad</a>.</div>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;padding:16px 18px;background:linear-gradient(135deg,rgba(74,222,128,.08),rgba(46,125,82,.12));border:1px solid rgba(74,222,128,.2);border-radius:16px">
+      <div style="display:flex;margin-right:-4px">
+        <img src="ebooks/img/testi-carolina.jpg.jpg" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid #0f1f15;position:relative;z-index:3">
+        <img src="ebooks/img/testi-valentina.jpg" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid #0f1f15;margin-left:-10px;position:relative;z-index:2">
+        <img src="ebooks/img/testi-maria.png" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid #0f1f15;margin-left:-10px;position:relative;z-index:1">
+        <img src="ebooks/img/testi-daniela.png" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid #0f1f15;margin-left:-10px;position:relative;z-index:0">
+      </div>
+      <div>
+        <div style="font-size:18px;font-weight:800;color:#4ade80;line-height:1">24,891</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:2px">mujeres ya transformaron su metabolismo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 23 — Loading -->
+  <div class="slide" id="slide-23">
+    <div class="loading-wrap"><div class="loading-ring-wrap"><svg class="loading-ring" viewBox="0 0 100 100"><circle class="loading-ring-bg" cx="50" cy="50" r="45"/><circle class="loading-ring-progress" id="loadingRingProgress" cx="50" cy="50" r="45"/></svg><div class="loading-pct" id="loadingPct">0%</div></div><div class="loading-title">Calculando tu Perfil Metab&#243;lico...</div><div class="loading-sub">Analizando tus respuestas y datos</div></div>
+    <div id="analysisItems">
+      <div class="analysis-item" id="ai1"><div class="ai-icon">&#128302;</div><div class="ai-text">Analizando historial de peso...</div><span class="ai-done">&#8987;</span></div>
+      <div class="analysis-item" id="ai2"><div class="ai-icon">&#9889;</div><div class="ai-text">Calculando resistencia insul&#237;nica...</div><span class="ai-done">&#8987;</span></div>
+      <div class="analysis-item" id="ai3"><div class="ai-icon">&#127869;</div><div class="ai-text">Seleccionando recetas calibradas...</div><span class="ai-done">&#8987;</span></div>
+      <div class="analysis-item" id="ai4"><div class="ai-icon">&#127919;</div><div class="ai-text">Preparando tu protocolo de 3 semanas...</div><span class="ai-done">&#8987;</span></div>
+    </div>
+  </div>
+
+  <!-- SLIDE 24 — Resultado final -->
+  <div class="slide" id="slide-24">
+    <div class="result-hero"><div class="result-badge-top">Tu Perfil Metab&#243;lico</div><div class="result-name" id="resultProfileName">El Interruptor Bloqueado</div><div class="result-desc" id="resultProfileDesc">Tu metabolismo tiene el interruptor de quema de grasa bloqueado.</div><div style="display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:6px 14px;margin-top:12px;font-size:11px;letter-spacing:0.5px;position:relative;">Basado en investigaci&#243;n sobre resistencia insul&#237;nica</div></div>
+    <div class="result-section"><h3>&#128269; Lo que descubrimos sobre ti</h3><div class="insight-item">Tu insulina elevada ordena a tu cuerpo almacenar grasa en lugar de quemarla</div><div class="insight-item">Las dietas que probaste reducen calor&#237;as pero no cambian la se&#241;al hormonal</div><div class="insight-item">Tu cuerpo necesita combinaciones espec&#237;ficas de alimentos para resetear el interruptor</div></div>
+    <div class="result-section"><h3>&#9989; Lo que necesitas</h3><div class="insight-item"><strong>El Código Hormonal:</strong> combinaciones que apagan la se&#241;al de almacenamiento</div><div class="insight-item"><strong>Recetas calibradas</strong> que activan la quema metab&#243;lica sin pasar hambre</div><div class="insight-item"><strong>Protocolo de 3 semanas</strong> para resetear tu interruptor definitivamente</div></div>
+    <!-- Before/After body image -->
+    <div style="margin:20px 0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;padding:16px">
+      <div style="display:flex;margin-bottom:12px">
+        <div style="flex:1;text-align:center;font-size:12px;font-weight:700;color:rgba(255,255,255,.5)">Ahora</div>
+        <div style="flex:1;text-align:center;font-size:12px;font-weight:700;color:#4ade80">Despu&#233;s del plan</div>
+      </div>
+      <img src="ebooks/img/FP_pagVendas.jpg" alt="Transformaci&#243;n corporal" style="width:100%;border-radius:10px;display:block;margin-bottom:14px">
+      <div style="display:flex;gap:12px">
+        <div style="flex:1;text-align:center">
+          <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7)">Grasa corporal</div>
+          <div id="bfImgNow" style="font-size:22px;font-weight:800;color:#E8445A;margin:4px 0">--%</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4)">Peso no saludable</div>
+          <div style="display:flex;gap:3px;justify-content:center;margin-top:6px" id="bfImgNowDots"></div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,.1)"></div>
+        <div style="flex:1;text-align:center">
+          <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.7)">Grasa corporal</div>
+          <div id="bfImgAfter" style="font-size:22px;font-weight:800;color:#4ade80;margin:4px 0">--%</div>
+          <div style="font-size:11px;color:#4ade80">Peso saludable</div>
+          <div style="display:flex;gap:3px;justify-content:center;margin-top:6px" id="bfImgAfterDots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone mockups -->
+    <div style="margin:24px 0;text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px 16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4ade80;margin-bottom:8px">Lo que recibes</div>
+      <div style="font-size:18px;font-weight:800;color:#fff;margin-bottom:16px;font-family:'Playfair Display',serif">Tu programa completo en tu celular</div>
+      <div style="display:flex;justify-content:center;gap:8px;align-items:flex-end;overflow:hidden;padding:0 8px">
+        <!-- Phone 1: Bonos Especiales -->
+        <div style="width:130px;flex-shrink:0">
+          <div style="background:#1a1a1a;border-radius:18px;padding:4px;box-shadow:0 8px 32px rgba(0,0,0,.4)">
+            <div style="background:#FFFDF8;border-radius:14px;overflow:hidden;aspect-ratio:9/16;position:relative">
+              <iframe src="ebooks/preview-bonos.html" style="width:390px;height:693px;border:none;transform:scale(0.333);transform-origin:top left;pointer-events:none" tabindex="-1"></iframe>
+            </div>
+          </div>
+          <div style="font-size:9px;color:rgba(255,255,255,.4);margin-top:6px">11 Bonos Extra</div>
+        </div>
+        <!-- Phone 2: Portal hero (center, larger) -->
+        <div style="width:150px;flex-shrink:0;margin-bottom:8px">
+          <div style="background:#1a1a1a;border-radius:20px;padding:4px;box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)">
+            <div style="background:#0f1f15;border-radius:16px;overflow:hidden;aspect-ratio:9/16;position:relative">
+              <iframe src="ebooks/portal.html" style="width:450px;height:800px;border:none;transform:scale(0.333);transform-origin:top left;pointer-events:none" tabindex="-1"></iframe>
+            </div>
+          </div>
+          <div style="font-size:10px;color:#4ade80;margin-top:6px;font-weight:700">El Código Hormonal</div>
+        </div>
+        <!-- Phone 3: Plan 31 Días -->
+        <div style="width:130px;flex-shrink:0">
+          <div style="background:#1a1a1a;border-radius:18px;padding:4px;box-shadow:0 8px 32px rgba(0,0,0,.4)">
+            <div style="background:#FFFDF8;border-radius:14px;overflow:hidden;aspect-ratio:9/16;position:relative">
+              <iframe src="ebooks/plan-31-dias.html" style="width:390px;height:693px;border:none;transform:scale(0.333);transform-origin:top left;pointer-events:none" tabindex="-1"></iframe>
+            </div>
+          </div>
+          <div style="font-size:9px;color:rgba(255,255,255,.4);margin-top:6px">Protocolo 21 Días</div>
+        </div>
+      </div>
+    </div>
+    <div class="offer-timer-bar" id="offerTimerBar">&#9888;&#65039; Tu precio personalizado de US$9 expira en: <span class="offer-timer-num" id="offerTimer">10:00</span></div>
+    <div class="offer-wrap"><div class="offer-header"><div class="offer-header-badge">Tu plan personalizado</div><div class="offer-header-title">El Código Hormonal</div></div><div class="offer-body"><div class="offer-price-row"><span class="price-old">$37</span><span class="price-new"><small>US$</small>9</span></div><div class="price-desc">Acceso completo &#183; Garant&#237;a 60 d&#237;as &#183; Pago &#250;nico</div><div class="includes-list"><div class="include-item"><div class="include-check">&#10003;</div><span>+150 recetas metab&#243;licas en espa&#241;ol</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Protocolo de 3 semanas paso a paso</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Lista de activadores metab&#243;licos</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Plan diario de comidas incluido</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Acceso inmediato en tu celular</span></div></div><div style="background:rgba(201,146,42,.08);border:1px solid rgba(201,146,42,.15);border-radius:12px;padding:14px 16px;margin:16px 0;text-align:center"><div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.5">&#9888;&#65039; Sin intervenci&#243;n, la resistencia a la insulina se profundiza con los a&#241;os &#8212; <strong style="color:#C9922A">dificultando cada vez m&#225;s la p&#233;rdida de peso</strong></div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:6px">Por eso actuar hoy marca la diferencia.</div></div><div class="guarantee-row"><span class="guarantee-icon">&#128737;</span><span><strong>Garant&#237;a total de 60 d&#237;as.</strong> Si no ves resultados, te devolvemos el 100% sin preguntas.</span></div></div></div>
+    <div class="section-divider"><div class="divider-line"></div><span class="divider-text">Lo que dicen ellas</span><div class="divider-line"></div></div>
+    <div class="testimonial-card"><div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><div class="testi-text">"Prob&#233; 4 dietas en 2 a&#241;os. Nada. Con El Código Hormonal, en 3 semanas baj&#233; 4 kg sin dejar de comer lo que me gusta."</div><div class="testi-author"><img src="ebooks/img/testi-maria.png" alt="Mar&#237;a G." style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);flex-shrink:0"><div><div class="testi-name">Mar&#237;a G.</div><div class="testi-loc">Guadalajara, M&#233;xico</div></div></div></div>
+    <div class="testimonial-card"><div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><div class="testi-text">"Mi doctora siempre me dec&#237;a &#8216;come menos&#8217;. Baj&#233; 6 kg en 30 d&#237;as comiendo M&#193;S &#8212; ella no pod&#237;a creerlo."</div><div class="testi-author"><img src="ebooks/img/testi-carolina.jpg.jpg" alt="Carmen V." style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);flex-shrink:0"><div><div class="testi-name">Carmen V.</div><div class="testi-loc">Lima, Per&#250;</div></div></div></div>
+    <div class="testimonial-card"><div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><div class="testi-text">"20 a&#241;os luchando. Pens&#233; que era gen&#233;tica. En 5 semanas baj&#233; 8 kg y por primera vez me siento en control."</div><div class="testi-author"><img src="ebooks/img/testi-daniela.png" alt="Patricia L." style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);flex-shrink:0"><div><div class="testi-name">Patricia L.</div><div class="testi-loc">Buenos Aires, Argentina</div></div></div></div>
+    <div class="section-divider"><div class="divider-line"></div><span class="divider-text">Preguntas frecuentes</span><div class="divider-line"></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;Necesito experiencia en cocina? <span class="faq-q-icon">+</span></button><div class="faq-a">No. Todas las recetas son sencillas, con ingredientes comunes y preparaci&#243;n m&#225;ximo de 30 minutos.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;Funciona si tengo resistencia a la insulina? <span class="faq-q-icon">+</span></button><div class="faq-a">S&#237;. El protocolo est&#225; dise&#241;ado para mejorar el equilibrio hormonal y la respuesta insul&#237;nica. Siempre consulta a tu m&#233;dico.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;El precio est&#225; en d&#243;lares? <span class="faq-q-icon">+</span></button><div class="faq-a">S&#237;. US$9. Hotmart convierte autom&#225;ticamente a la moneda de tu pa&#237;s.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;C&#243;mo funciona la garant&#237;a? <span class="faq-q-icon">+</span></button><div class="faq-a">60 d&#237;as para pedir reembolso completo, sin preguntas. Solo escr&#237;benos.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;Tiene base cient&#237;fica?<span class="faq-q-icon">+</span></button><div class="faq-a">S&#237;. El m&#233;todo est&#225; basado en investigaci&#243;n publicada sobre resistencia insul&#237;nica y combinaci&#243;n de macronutrientes. La relaci&#243;n entre insulina y almacenamiento de grasa est&#225; documentada en m&#250;ltiples estudios endocrinol&#243;gicos. Nuestro protocolo aplica estos principios a combinaciones de alimentos espec&#237;ficas.</div></div>
+    <div class="disclaimer">Los resultados pueden variar. Este sitio no ofrece consejo m&#233;dico.</div>
+  </div>
+
+  <!-- CTA FIJO -->
+  <div class="cta-fixed" id="ctaFixed">
+    <button class="btn-cta" id="mainCta">Descubrir mi perfil &#8594;</button>
+    <div class="timer-bar" id="timerBar" style="display:none;">&#9203; Oferta expira en: <span class="timer-display" id="timerDisplay">10:00</span></div>
+  </div>
+</div>
+
+<script>
+let currentSlide=0,userEmail='',resolvedProfile='',offerTimerInterval=null,offerSeconds=600;
+const answers={
+  userName:'',
+  weightSituation:null,motivations:[],methodsTried:[],timeFighting:null,
+  bodyType:null,idealBody:null,targetZones:[],
+  activityLevel:null,sleepHours:null,waterIntake:null,
+  dietType:null,allergies:[],cooksFor:null,
+  dinnerTime:'',cookingTime:'',
+  height:162,weight:72,targetWeight:60,age:42,
+  heightUnit:'cm',weightUnit:'kg',weightGoal:null
+};
+
+const bodyTypeLabels={regular:'Regular',flacido:'Flácido',michelines:'Michelines',sobrepeso:'Sobrepeso',obeso:'Obeso'};
+const idealBodyLabels={curvy:'Curvy',regular:'Regular',plano:'Plano',fit:'Fit',atletico:'Atlético'};
+
+function showSocialProof(headline, testimonial, author, age, country, photo, callback, dataCallout) {
+  var overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;inset:0;background:#0f1f15;z-index:500;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;animation:fadeSlideIn .4s ease;overflow-y:auto';
+  var dataCalloutHtml = dataCallout ? dataCallout : '';
+  overlay.innerHTML =
+    '<div style="text-align:center;max-width:380px">' +
+      '<div style="font-family:Playfair Display,serif;font-size:24px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:24px">' + headline + '</div>' +
+      dataCalloutHtml +
+      '<div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 20px;margin-bottom:24px;text-align:center">' +
+        '<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;line-height:1.6;margin-bottom:16px">"' + testimonial + '"</div>' +
+        '<img src="ebooks/img/' + photo + '" alt="' + author + '" style="width:56px;height:56px;border-radius:50%;object-fit:cover;margin:0 auto 8px;display:block;border:3px solid rgba(255,255,255,.2);box-shadow:0 2px 12px rgba(0,0,0,.3)">' +
+        '<div style="font-size:13px;font-weight:600;color:#fff">' + author + ', ' + age + '</div>' +
+        '<div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:8px">' + country + '</div>' +
+        '<div style="color:#C9922A;font-size:16px;letter-spacing:2px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>' +
+      '</div>' +
+      '<button id="socialProofBtn" style="padding:16px 48px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;border:none;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif;letter-spacing:.3px;box-shadow:0 4px 20px rgba(74,222,128,.3)">CONTINUAR</button>' +
+    '</div>';
+  document.body.appendChild(overlay);
+  document.getElementById('socialProofBtn').addEventListener('click', function() {
+    this.disabled = true;
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity .3s';
+    setTimeout(function() {
+      overlay.remove();
+      // Go to slide 3 directly - no showSlide, pure DOM
+      document.querySelectorAll('.slide').forEach(function(s){s.classList.remove('active');});
+      document.getElementById('slide-3').classList.add('active');
+      currentSlide = 3;
+      window.scrollTo(0,0);
+      updateProgress();
+      updateCta();
+      document.getElementById('mainCta').disabled = true;
+    }, 350);
+  });
+}
+
+function showInsight(text, emoji, callback) {
+  var overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;inset:0;background:#0f1f15;z-index:500;display:flex;align-items:center;justify-content:center;padding:32px;animation:fadeSlideIn .4s ease';
+  overlay.innerHTML = '<div style="text-align:center;max-width:340px;">' +
+    '<div style="font-size:48px;margin-bottom:16px">' + emoji + '</div>' +
+    '<div style="font-size:22px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:12px;font-family:Playfair Display,serif">' + text + '</div>' +
+    '<div style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:24px">Basado en tu diagn&#243;stico</div>' +
+    '<button style="padding:16px 40px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;border:none;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif;box-shadow:0 4px 20px rgba(74,222,128,.3)">Continuar &#8594;</button>' +
+  '</div>';
+  document.body.appendChild(overlay);
+  overlay.querySelector('button').onclick = function() {
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity .3s';
+    setTimeout(function() { overlay.remove(); if(callback) callback(); }, 300);
+  };
+}
+
+function showSlide(n){
+  // Insight intercepts (Change 4)
+  if(n === 5 && !window._insight5Shown) {
+    window._insight5Shown = true;
+    var name = answers.userName ? answers.userName + ', ' : '';
+    showInsight(name + 'el 87% de mujeres con tu perfil logran resultados visibles en 3 semanas', '&#128202;', function() { showSlide(5); });
+    return;
+  }
+  if(n === 12 && !window._insight12Shown) {
+    window._insight12Shown = true;
+    var actText = answers.activityLevel === 'nada' ? 'incluso sin ejercicio, ' : 'con tu nivel de actividad, ';
+    var name = answers.userName ? answers.userName + ', ' : '';
+    showInsight(name + actText + 'tu metabolismo puede reactivarse con los alimentos correctos', '&#128293;', function() { showSlide(12); });
+    return;
+  }
+  if(n === 16 && !window._insight16Shown) {
+    window._insight16Shown = true;
+    var name = answers.userName ? answers.userName + ', ' : '';
+    showInsight(name + 'ya tenemos tu perfil alimentario. Ahora calibremos tu plan con tus medidas exactas', '&#10024;', function() { showSlide(16); });
+    return;
+  }
+  // Intercept slide 15 to show new questions 14b/14c first (Change 5)
+  if(n === 15 && !answers.dinnerTime) {
+    document.querySelectorAll('.slide').forEach(function(s){s.classList.remove('active');});
+    document.getElementById('slide-14b').classList.add('active');
+    window.scrollTo(0,0);
+    return;
+  }
+
+  document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));
+  document.getElementById('slide-'+n).classList.add('active');
+  window.scrollTo(0,0);currentSlide=n;updateProgress();updateCta();
+  // Reset slide 0 panels when leaving
+  if(n>=1){document.getElementById('slide0-welcome').style.display='';document.getElementById('slide0-social').style.display='none';}
+  if(n===1)fbq('trackCustom','QuizStarted');
+  if(n===5)fbq('trackCustom','BodyTypeSelected');
+  if(n===6)fbq('trackCustom','IdealBodySelected');
+  if(n===7)fbq('trackCustom','ZonesSelected');
+  if(n===22)fbq('trackCustom','QuizCompleted');
+  if(n===24){fbq('trackCustom','ResultPageViewed');startOfferTimer();}
+  if(n===23)runLoadingAnimation();
+  if(n===15)populatePersonSlide();
+  if(n===20)calculateAndShowBMI();
+  if(n===21){populateChart();animateChart();}
+  if(n===22)populateEmailSlide();
+  if(n===24)populateResult();
+  // Name personalization (Change 2)
+  if(n===8){
+    var name = answers.userName || '';
+    var el = document.querySelector('#slide-8 .break-title');
+    if(el && name) el.textContent = name + ', mujeres como t\u00fa ya lo lograron';
+  }
+  if(n===20){
+    var name = answers.userName || '';
+    if(name){
+      var el = document.getElementById('bmiDesc');
+      if(el && el.textContent) el.textContent = name + ', ' + el.textContent.charAt(0).toLowerCase() + el.textContent.slice(1);
+    }
+  }
+  if(n===22){
+    var name = answers.userName || '';
+    if(name){
+      var el = document.querySelector('#slide-22 .email-hero-title');
+      if(el) el.textContent = name + ', tu programa personalizado est\u00e1 listo';
+    }
+  }
+  if(n===24){
+    var name = answers.userName || '';
+    if(name){
+      var el = document.getElementById('resultProfileDesc');
+      if(el && el.textContent) el.textContent = name + ', ' + el.textContent.charAt(0).toLowerCase() + el.textContent.slice(1);
+    }
+  }
+}
+
+function goBack(){
+  if(currentSlide===1){
+    // Go back to social proof panel in slide 0
+    showSlide(0);
+    document.getElementById('slide0-welcome').style.display='none';
+    document.getElementById('slide0-social').style.display='block';
+    return;
+  }
+  if(currentSlide>0)showSlide(currentSlide-1);
+}
+
+function handleCta(){
+  if(currentSlide===0){
+    const socialPanel=document.getElementById('slide0-social');
+    if(socialPanel&&socialPanel.style.display!=='none'){showSlide(1);return;}
+    showSlide(1);return;
+  }
+  // Multi-select slides need at least 1 selected
+  if([3,7,13].includes(currentSlide)){
+    if(!document.querySelector('#slide-'+currentSlide+' .option-btn.selected, #slide-'+currentSlide+' .zone-btn.selected')){shakeCta();return;}
+    showSlide(currentSlide+1);return;
+  }
+  // Email slide
+  if(currentSlide===22){
+    const email=document.getElementById('emailInput').value;
+    if(!isValidEmail(email)){shakeCta();return;}
+    userEmail=email;fbq('track','Lead',{content_name:'QuizEmail'});showSlide(23);return;
+  }
+  // Checkout
+  if(currentSlide===24){goToCheckout();return;}
+  showSlide(currentSlide+1);
+}
+
+function updateProgress(){
+  const bar=document.getElementById('progressBar'),text=document.getElementById('progressText'),back=document.getElementById('btnBack');
+  if(currentSlide===0){document.getElementById('quizHeader').style.display='none';document.querySelector('.progress-wrap').style.display='none';return;}
+  document.getElementById('quizHeader').style.display='flex';
+  document.querySelector('.progress-wrap').style.display='block';
+  if(currentSlide>=1&&currentSlide<=22){
+    const pct=Math.round(currentSlide/22*100);bar.style.width=pct+'%';
+    var phase=currentSlide<=4?'PERFIL':currentSlide<=7?'CUERPO':currentSlide<=11?'ESTILO DE VIDA':currentSlide<=15?'ALIMENTACIÓN':currentSlide<=19?'MEDIDAS':'RESULTADO';
+    text.textContent=phase;
+  }else{bar.style.width='100%';text.textContent='';}
+  back.style.visibility=currentSlide<=1?'hidden':'visible';
+}
+
+function updateCta(){
+  const cta=document.getElementById('mainCta'),ctaFixed=document.getElementById('ctaFixed'),timerBar=document.getElementById('timerBar');
+  if([0,23].includes(currentSlide)){ctaFixed.classList.add('hidden');return;}
+  ctaFixed.classList.remove('hidden');
+  const labels={
+    1:'Continuar →',2:'Continuar →',3:'Continuar →',4:'Continuar →',
+    5:'Continuar →',6:'Continuar →',7:'Continuar →',
+    8:'Continuar →',9:'Continuar →',10:'Continuar →',11:'Continuar →',
+    12:'Continuar →',13:'Continuar →',14:'Continuar →',15:'Continuar →',
+    16:'Continuar →',17:'Continuar →',18:'Continuar →',19:'Ver mi perfil →',
+    20:'Ver mi proyección →',21:'Ver mi plan →',22:'Recibir mi plan gratuito →',
+    24:'Ver El Código Hormonal →'
+  };
+  cta.textContent=labels[currentSlide]||'Continuar →';
+  if(currentSlide===24){cta.classList.add('btn-cta-checkout');timerBar.style.display='flex';}
+  else{cta.classList.remove('btn-cta-checkout');timerBar.style.display='none';}
+  // Disable CTA for single-select slides without selection
+  const singleSlides=[1,4,9,10,11,12,14];
+  if(singleSlides.includes(currentSlide)){
+    cta.disabled=!document.querySelector('#slide-'+currentSlide+' .option-btn.selected');
+  }else{cta.disabled=false;}
+}
+
+function selectSingle(btn,slideNum,key,val){
+  document.getElementById('slide-'+slideNum).querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');answers[key]=val;
+  // Slide 2 (motivation): show social proof then go to slide 3
+  if(slideNum===2){
+    setTimeout(function(){
+      var mot = answers.motivation || '';
+      var headline, testi, author, age, country, photo;
+      if (mot === 'espejo') {
+        headline = '\u00a1Est\u00e1s en el lugar correcto!';
+        testi = 'Me miraba al espejo y no me reconoc\u00eda. Despu\u00e9s de 3 semanas con El C\u00f3digo Hormonal, volv\u00ed a sentirme yo. Mi ropa me queda, mi piel brilla.';
+        author = 'Carolina'; age = '38'; country = 'M\u00e9xico'; photo = 'testi-carolina.jpg.jpg';
+      } else if (mot === 'energia') {
+        headline = '\u00a1Est\u00e1s en el lugar correcto!';
+        testi = 'Me despertaba agotada todos los d\u00edas. Pens\u00e9 que era normal despu\u00e9s de los 35. En la segunda semana del protocolo empec\u00e9 a despertar con energ\u00eda real.';
+        author = 'Valentina'; age = '42'; country = 'Colombia'; photo = 'testi-valentina.jpg';
+      } else if (mot === 'salud') {
+        headline = '\u00a1Est\u00e1s en el lugar correcto!';
+        testi = 'Mi m\u00e9dico not\u00f3 la diferencia en mis ex\u00e1menes despu\u00e9s de 4 semanas. Me pregunt\u00f3 qu\u00e9 hab\u00eda cambiado. Solo cambi\u00e9 la forma de comer.';
+        author = 'Mar\u00eda Elena'; age = '47'; country = 'Per\u00fa'; photo = 'testi-maria.png';
+      } else {
+        headline = '\u00a1Est\u00e1s en el lugar correcto!';
+        testi = 'Mi familia no cre\u00eda que pod\u00eda cambiar. Cuando empezaron a notar la diferencia, me preguntaron qu\u00e9 estaba haciendo. La mejor venganza es el resultado.';
+        author = 'Daniela'; age = '35'; country = 'Argentina'; photo = 'testi-daniela.png';
+      }
+      var name = answers.userName ? answers.userName + ', ' : '';
+      var insulinDataCallout = '<div style="background:rgba(232,68,90,.08);border:1px solid rgba(232,68,90,.15);border-radius:12px;padding:12px 16px;margin-bottom:16px;text-align:center"><div style="font-size:12px;color:#E8445A;font-weight:600;line-height:1.5">6 de cada 10 personas con resistencia a la insulina son <strong>mujeres</strong> — incluso las que parecen "delgadas"</div><div style="font-size:10px;color:rgba(232,68,90,.6);margin-top:4px">Asoc. Mexicana de Medicina de la Reproducción, 2024</div></div>';
+      showSocialProof(name + headline, testi, author, age, country, photo, function(){}, insulinDataCallout);
+    },300);
+    return;
+  }
+  setTimeout(()=>{updateCta();setTimeout(()=>showSlide(currentSlide+1),250);},150);
+}
+
+function selectMulti(btn){btn.classList.toggle('selected');updateCta();document.getElementById('mainCta').disabled=!document.querySelector('.slide.active .option-btn.selected');}
+
+function selectBodyType(card,val){
+  document.querySelectorAll('#slide-5 .body-type-card').forEach(c=>c.classList.remove('selected'));
+  card.classList.add('selected');answers.bodyType=val;
+  setTimeout(()=>showSlide(6),400);
+}
+
+function selectIdealBody(card,val){
+  document.querySelectorAll('#slide-6 .body-type-card').forEach(c=>c.classList.remove('selected'));
+  card.classList.add('selected');answers.idealBody=val;
+  setTimeout(()=>showSlide(7),400);
+}
+
+function selectZone(btn,val){
+  if(val==='todo'){
+    // "Todo el cuerpo" deselects others
+    document.querySelectorAll('#slide-7 .zone-btn').forEach(b=>{if(b!==btn)b.classList.remove('selected');});
+    btn.classList.toggle('selected');
+    answers.targetZones=btn.classList.contains('selected')?['todo']:[];
+  }else{
+    // Deselect "todo" if selecting specific zone
+    document.querySelector('#slide-7 .zone-full').classList.remove('selected');
+    btn.classList.toggle('selected');
+    const zones=[];
+    document.querySelectorAll('#slide-7 .zone-btn.selected').forEach(b=>{
+      const z=b.getAttribute('onclick').match(/'(\w+)'\)/)[1];
+      zones.push(z);
+    });
+    answers.targetZones=zones;
+  }
+  document.getElementById('mainCta').disabled=!document.querySelector('#slide-7 .zone-btn.selected');
+}
+
+function selectAllergy(btn,val){
+  if(val==='ninguna'){
+    // "Ninguna" deselects all others
+    document.querySelectorAll('#slide-13 .option-btn').forEach(b=>{if(b!==btn)b.classList.remove('selected');});
+    btn.classList.toggle('selected');
+    answers.allergies=btn.classList.contains('selected')?['ninguna']:[];
+  }else{
+    // Deselect "ninguna" if selecting specific allergy
+    document.getElementById('allergyNone').classList.remove('selected');
+    btn.classList.toggle('selected');
+    const allergies=[];
+    document.querySelectorAll('#slide-13 .option-btn.selected').forEach(b=>{
+      const a=b.getAttribute('onclick').match(/'(\w+)'\)/)[1];
+      if(a!=='ninguna')allergies.push(a);
+    });
+    answers.allergies=allergies;
+  }
+  document.getElementById('mainCta').disabled=!document.querySelector('#slide-13 .option-btn.selected');
+}
+
+function selWeight(el,val){
+  document.querySelectorAll('.weight-opt').forEach(b=>{b.style.borderColor='#2E7D52';b.style.background='#2E7D52';b.style.boxShadow='';b.style.transform='';b.style.opacity='';b.classList.remove('selected');});
+  el.classList.add('selected');
+  el.style.borderColor='#1B5E3B';el.style.background='#1B5E3B';el.style.boxShadow='0 6px 24px rgba(27,94,59,0.35)';el.style.transform='scale(1.05)';
+  document.querySelectorAll('.weight-opt:not(.selected)').forEach(b=>{b.style.opacity='0.6';});
+  answers.weightGoal=val;
+  const msgs={'1-5 kg':'Imagina ponerte esa ropa guardada en tu armario — en solo 3 semanas mujeres como tú reportan hasta 3-4 kg menos sin pasar hambre.','5-10 kg':'Imagina cómo te sentirás en 6 semanas: más ligera, con más energía, con ropa que antes no te cerraba.','10-20 kg':'Imagina mirarte al espejo en 3 meses y ver una transformación real. Mujeres con tu perfil han perdido entre 10 y 18 kg.','+20 kg':'Imagina recuperar tu cuerpo, tu energía y tu confianza. Cambios visibles desde la primera semana.'};
+  const fp=document.getElementById('futurePacingQuiz');
+  if(fp){document.getElementById('fpTextQuiz').textContent=msgs[val];fp.style.display='block';}
+  setTimeout(()=>{
+    // Show social proof panel instead of going to slide 1
+    document.getElementById('slide0-welcome').style.display='none';
+    document.getElementById('slide0-social').style.display='block';
+    window.scrollTo(0,0);
+  },700);
+}
+
+function updateSlider(type){
+  if(type==='height'){const sl=document.getElementById('heightSlider'),val=parseInt(sl.value),pct=((val-parseInt(sl.min))/(parseInt(sl.max)-parseInt(sl.min))*100).toFixed(1);sl.style.setProperty('--pct',pct+'%');if(answers.heightUnit==='cm'){document.getElementById('heightVal').textContent=val;answers.height=val;}else{document.getElementById('heightVal').textContent=Math.floor(val/12)+"'"+val%12+'"';answers.height=Math.round(val*2.54);}}
+  if(type==='weight'){const sl=document.getElementById('weightSlider'),val=parseInt(sl.value),pct=((val-parseInt(sl.min))/(parseInt(sl.max)-parseInt(sl.min))*100).toFixed(1);sl.style.setProperty('--pct',pct+'%');document.getElementById('weightVal').textContent=val;answers.weight=answers.weightUnit==='kg'?val:Math.round(val*0.453592);}
+  if(type==='target'){const sl=document.getElementById('targetSlider'),val=parseInt(sl.value),pct=((val-parseInt(sl.min))/(parseInt(sl.max)-parseInt(sl.min))*100).toFixed(1);sl.style.setProperty('--pct',pct+'%');document.getElementById('targetVal').textContent=val;answers.targetWeight=answers.weightUnit==='kg'?val:Math.round(val*0.453592);}
+  if(type==='age'){const sl=document.getElementById('ageSlider'),val=parseInt(sl.value),pct=((val-parseInt(sl.min))/(parseInt(sl.max)-parseInt(sl.min))*100).toFixed(1);sl.style.setProperty('--pct',pct+'%');document.getElementById('ageVal').textContent=val;answers.age=val;}
+}
+
+function setHeightUnit(u){answers.heightUnit=u;const sl=document.getElementById('heightSlider');if(u==='cm'){document.getElementById('heightCmBtn').classList.add('active');document.getElementById('heightFtBtn').classList.remove('active');sl.min=140;sl.max=200;sl.step=1;sl.value=answers.height||162;document.getElementById('heightUnitLabel').textContent='cm';document.getElementById('heightMin').textContent='140 cm';document.getElementById('heightMax').textContent='200 cm';}else{document.getElementById('heightFtBtn').classList.add('active');document.getElementById('heightCmBtn').classList.remove('active');sl.min=56;sl.max=80;sl.step=1;sl.value=Math.round((answers.height||162)/2.54);document.getElementById('heightUnitLabel').textContent='';document.getElementById('heightMin').textContent="4'8\"";document.getElementById('heightMax').textContent="6'8\"";}updateSlider('height');}
+
+function setWeightUnit(u){answers.weightUnit=u;const sl=document.getElementById('weightSlider'),tsl=document.getElementById('targetSlider');if(u==='kg'){document.getElementById('weightKgBtn').classList.add('active');document.getElementById('weightLbBtn').classList.remove('active');sl.min=40;sl.max=150;sl.value=answers.weight||72;document.getElementById('weightUnitLabel').textContent='kg';document.getElementById('weightMin').textContent='40 kg';document.getElementById('weightMax').textContent='150 kg';tsl.min=40;tsl.max=120;tsl.value=answers.targetWeight||60;document.getElementById('targetUnitLabel').textContent='kg';}else{document.getElementById('weightLbBtn').classList.add('active');document.getElementById('weightKgBtn').classList.remove('active');sl.min=90;sl.max=330;sl.value=Math.round((answers.weight||72)/0.453592);document.getElementById('weightUnitLabel').textContent='lb';document.getElementById('weightMin').textContent='90 lb';document.getElementById('weightMax').textContent='330 lb';tsl.min=90;tsl.max=265;tsl.value=Math.round((answers.targetWeight||60)/0.453592);document.getElementById('targetUnitLabel').textContent='lb';}updateSlider('weight');updateSlider('target');}
+
+function populatePersonSlide(){
+  const timeMap={menos1:'menos de 1 año','1a3':'entre 1 y 3 años','3a5':'entre 3 y 5 años',mas5:'más de 5 años',siempre:'toda la vida'};
+  const actMap={nada:'muy baja',caminar:'ligera (caminar)',moderada:'moderada',regular:'activa'};
+  const zoneMap={brazos:'brazos',estomago:'estómago',espalda:'espalda',gluteos:'glúteos',piernas:'piernas',caderas:'caderas',todo:'todo el cuerpo'};
+  const el=id=>document.getElementById(id);
+  if(answers.timeFighting)el('personSlideTime').textContent=timeMap[answers.timeFighting]||answers.timeFighting;
+  if(answers.activityLevel)el('personSlideActivity').textContent=actMap[answers.activityLevel]||answers.activityLevel;
+  if(answers.targetZones&&answers.targetZones.length)el('personSlideZones').textContent=answers.targetZones.map(z=>zoneMap[z]||z).join(', ');
+}
+
+function calculateAndShowBMI(){
+  const h=answers.height/100,w=answers.weight;if(!h||!w)return;
+  const bmi=(w/(h*h)).toFixed(1);
+  document.getElementById('bmiValue').textContent=bmi+' — '+bmiLabel(bmi);
+  const pct=Math.min(Math.max(((bmi-18.5)/(35-18.5))*100,5),95);
+  document.getElementById('bmiMarker').style.left=pct+'%';
+  document.getElementById('bmiDesc').textContent=bmi<18.5?'Tu IMC está en rango bajo.':bmi<25?'Tu IMC está en rango normal.':bmi<30?'Tu IMC indica sobrepeso. La resistencia insulínica suele ser la causa principal.':'Tu IMC indica obesidad. El protocolo de 3 semanas puede hacer una diferencia visible rápidamente.';
+  const u=answers.weightUnit||'kg';
+  const reduction=w<60?2.5:w<75?3.5:w<90?4.5:w<110?5.5:7;
+  const week3=(w-reduction).toFixed(1);
+  document.getElementById('curWeightDisplay').textContent=w+' '+u;
+  document.getElementById('week3Display').textContent=week3+' '+u;
+  document.getElementById('diffDisplay').textContent='−'+reduction.toFixed(1)+' '+u;
+  // Body type summary
+  if(answers.bodyType){document.getElementById('bodyTypeCurrent').textContent=bodyTypeLabels[answers.bodyType]||answers.bodyType;}
+  if(answers.idealBody){document.getElementById('bodyTypeIdeal').textContent=idealBodyLabels[answers.idealBody]||answers.idealBody;}
+  // Zones description
+  if(answers.targetZones.length>0){
+    if(answers.targetZones.includes('todo')){
+      document.getElementById('zonesDesc').textContent='Tu objetivo: transformación completa de todo el cuerpo.';
+    }else if(answers.targetZones.includes('estomago')){
+      document.getElementById('zonesDesc').textContent='Zonas prioritarias: '+answers.targetZones.join(', ')+'. El metabolismo abdominal es el más sensible a la insulina — las recetas calibradas pueden generar cambios visibles rápido.';
+    }else{
+      document.getElementById('zonesDesc').textContent='Zonas prioritarias: '+answers.targetZones.join(', ')+'. Las recetas calibradas trabajarán estas áreas de forma específica.';
+    }
+  }
+  // Body Fat comparison
+  populateBodyFat(bmi, w, answers.targetWeight);
+}
+
+function populateBodyFat(bmi, currentWeight, targetWeight) {
+  var age = answers.age || 35;
+  // Estimate body fat % for women: (1.20 × BMI) + (0.23 × Age) - 5.4
+  var bfNow = Math.round((1.20 * parseFloat(bmi)) + (0.23 * age) - 5.4);
+  bfNow = Math.max(15, Math.min(55, bfNow));
+  // Estimate after: calculate target BMI and derive body fat
+  var h = answers.height / 100;
+  var targetBmi = targetWeight / (h * h);
+  var bfAfter = Math.round((1.20 * targetBmi) + (0.23 * age) - 5.4);
+  bfAfter = Math.max(12, Math.min(bfNow - 3, bfAfter));
+  // Labels
+  var nowLabel = bfNow > 35 ? 'Muy alto' : bfNow > 30 ? 'Alto' : bfNow > 25 ? 'Por encima' : 'Normal';
+  var afterLabel = bfAfter <= 24 ? 'Saludable' : bfAfter <= 28 ? 'Normal' : 'Mejorado';
+  // Dots: 1-5 scale (5 = healthy)
+  var nowScore = bfNow > 35 ? 1 : bfNow > 30 ? 2 : bfNow > 25 ? 3 : 4;
+  var afterScore = bfAfter > 30 ? 3 : bfAfter > 25 ? 4 : 5;
+  // Populate DOM
+  var section = document.getElementById('bodyFatSection');
+  if (!section) return;
+  section.style.display = 'block';
+  document.getElementById('bfNowValue').textContent = bfNow + '%';
+  document.getElementById('bfAfterValue').textContent = bfAfter + '%';
+  document.getElementById('bfNowLabel').textContent = nowLabel;
+  document.getElementById('bfAfterLabel').textContent = afterLabel;
+  // Conic gradient percentages (scale to 360deg visual)
+  document.getElementById('bfNowCircle').style.background = 'conic-gradient(#E8445A ' + (bfNow * 3.6) + 'deg, rgba(255,255,255,.08) 0)';
+  document.getElementById('bfAfterCircle').style.background = 'conic-gradient(#4ade80 ' + (bfAfter * 3.6) + 'deg, rgba(255,255,255,.08) 0)';
+  // Dots
+  var dotsNow = '', dotsAfter = '';
+  for (var i = 0; i < 5; i++) {
+    dotsNow += '<div style="width:10px;height:10px;border-radius:50%;background:' + (i < nowScore ? '#E8445A' : 'rgba(255,255,255,.12)') + '"></div>';
+    dotsAfter += '<div style="width:10px;height:10px;border-radius:50%;background:' + (i < afterScore ? '#4ade80' : 'rgba(255,255,255,.12)') + '"></div>';
+  }
+  document.getElementById('bfNowDots').innerHTML = dotsNow;
+  document.getElementById('bfAfterDots').innerHTML = dotsAfter;
+  // Also populate the image-based comparison card
+  var imgNow = document.getElementById('bfImgNow');
+  var imgAfter = document.getElementById('bfImgAfter');
+  if (imgNow) imgNow.textContent = bfNow + '%';
+  if (imgAfter) imgAfter.textContent = bfAfter + '%';
+  var imgNowDots = document.getElementById('bfImgNowDots');
+  var imgAfterDots = document.getElementById('bfImgAfterDots');
+  if (imgNowDots) imgNowDots.innerHTML = dotsNow;
+  if (imgAfterDots) imgAfterDots.innerHTML = dotsAfter;
+}
+
+function bmiLabel(b){return b<18.5?'Bajo peso':b<25?'Normal':b<30?'Sobrepeso':'Obesidad';}
+
+function populateChart(){
+  const u=answers.weightUnit||'kg',w=u==='kg'?answers.weight:Math.round(answers.weight/0.453592),t=u==='kg'?answers.targetWeight:Math.round(answers.targetWeight/0.453592);
+  document.getElementById('chartStartWeight').textContent=w+' '+u;
+  document.getElementById('chartEndWeight').textContent=t+' '+u;
+  document.getElementById('targetDisplay').textContent=t+' '+u;
+}
+
+function animateChart(){
+  // Re-trigger all chart animations
+  var els = document.querySelectorAll('#slide-21 .chart-line-animated, #slide-21 .chart-dot-start, #slide-21 .chart-dot-end, #slide-21 .chart-label-start, #slide-21 .chart-label-end');
+  els.forEach(function(el) {
+    var classes = el.className.baseVal || el.className;
+    var animClasses = ['chart-line-animated','chart-dot-start','chart-dot-end','chart-label-start','chart-label-end'];
+    animClasses.forEach(function(c) {
+      if (el.classList.contains(c)) {
+        el.classList.remove(c);
+        void el.offsetWidth;
+        el.classList.add(c);
+      }
+    });
+  });
+}
+
+function populateEmailSlide(){
+  const u=answers.weightUnit||'kg',t=u==='kg'?answers.targetWeight:Math.round(answers.targetWeight/0.453592);
+  document.getElementById('emailGoalWeight').textContent='Meta: '+t+' '+u;
+}
+
+function populateResult(){
+  const p={subiendo:{name:'El Interruptor Bloqueado',desc:'Tu metabolismo tiene el interruptor de quema de grasa bloqueado.'},rebote:{name:'El Metabolismo Resistente',desc:'El efecto rebote tiene una causa hormonal.'},lento:{name:'El Freno Hormonal',desc:'Tu metabolismo lento es una señal hormonal.'},como:{name:'El Reset Pendiente',desc:'El Código Hormonal es el primer paso real.'}}[answers.weightSituation]||{name:'El Interruptor Bloqueado',desc:'El Código Hormonal activa tu quema de grasa.'};
+  resolvedProfile = p.name;
+  document.getElementById('resultProfileName').textContent=p.name;
+  var desc=p.desc;
+  var timeMap={menos1:'Llevas poco tiempo buscando solución','1a3':'Llevas más de un año luchando','3a5':'Llevas años intentándolo',mas5:'Llevas más de 5 años en esta batalla',siempre:'Llevas toda la vida en esta batalla'};
+  var timeText=timeMap[answers.timeFighting]||'';
+  var zoneNames={brazos:'brazos',estomago:'zona abdominal',espalda:'espalda',gluteos:'glúteos',piernas:'piernas',caderas:'caderas',todo:'todo tu cuerpo'};
+  var zoneText='';
+  if(answers.targetZones&&answers.targetZones.length>0){
+    if(answers.targetZones.includes('todo')){zoneText='Tu protocolo trabajará una transformación completa de todo tu cuerpo.';}
+    else{var zones=answers.targetZones.map(function(z){return zoneNames[z]||z;}).join(', ');zoneText='Tu protocolo enfocará especialmente en: '+zones+'.';}
+  }
+  var fullDesc=desc;
+  if(timeText)fullDesc+=' '+timeText+', pero eso termina hoy.';
+  if(zoneText)fullDesc+=' '+zoneText;
+  document.getElementById('resultProfileDesc').textContent=fullDesc;
+}
+
+function runLoadingAnimation(){
+  const ring=document.getElementById('loadingRingProgress'),pctEl=document.getElementById('loadingPct');
+  const circumference=2*Math.PI*45;
+  let progress=0;
+  const progressInterval=setInterval(()=>{
+    progress+=2;if(progress>100)progress=100;
+    if(ring)ring.style.strokeDashoffset=circumference-(progress/100)*circumference;
+    if(pctEl)pctEl.textContent=progress+'%';
+    if(progress>=100)clearInterval(progressInterval);
+  },80);
+  let i=0;const items=['ai1','ai2','ai3','ai4'],iv=setInterval(()=>{
+    if(i<items.length){const el=document.getElementById(items[i]);el.classList.add('show');const doneIdx=i;setTimeout(()=>document.getElementById(items[doneIdx]).querySelector('.ai-done').textContent='✅',600);i++;}
+    else{clearInterval(iv);setTimeout(()=>showSlide(24),800);}
+  },1000);
+}
+
+function startOfferTimer(){
+  if(offerTimerInterval)return;offerSeconds=600;
+  offerTimerInterval=setInterval(()=>{
+    offerSeconds--;if(offerSeconds<=0){clearInterval(offerTimerInterval);offerSeconds=0;}
+    const d=Math.floor(offerSeconds/60)+':'+String(offerSeconds%60).padStart(2,'0');
+    const e1=document.getElementById('timerDisplay'),e2=document.getElementById('offerTimer');
+    if(e1)e1.textContent=d;if(e2)e2.textContent=d;
+  },1000);
+}
+
+function isValidEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+function validateEmail(){document.getElementById('mainCta').disabled=!isValidEmail(document.getElementById('emailInput').value);}
+function goToCheckout(){
+  if(typeof fbq === 'function') fbq('track','InitiateCheckout');
+  const params = new URLSearchParams();
+  if(!userEmail) console.warn('[goToCheckout] userEmail is empty — email param will be omitted');
+  if(userEmail) params.set('email', userEmail);
+  // Append profile name for personalization on sales page
+  const profileName = resolvedProfile || '';
+  if(profileName) params.set('perfil', profileName);
+  window.location.href = 'codigo-hormonal.html' + (params.toString() ? '?' + params.toString() : '');
+}
+function toggleFaq(btn){btn.nextElementSibling.classList.toggle('show');btn.classList.toggle('open');}
+function shakeCta(){if(currentSlide===22){const e=document.getElementById('emailInput');if(e){e.style.borderColor='#E8445A';e.style.boxShadow='0 0 0 2px rgba(232,68,90,0.15)';setTimeout(()=>{e.style.borderColor='';e.style.boxShadow='';},1500);}}else{const c=document.getElementById('mainCta');c.style.borderColor='#E8445A';setTimeout(()=>{c.style.borderColor='';},800);}}
+
+// Custom slide navigation for slides 14b, 14c (Change 5)
+function selectSingleCustom(btn, slideId, key, val) {
+  document.getElementById('slide-' + slideId).querySelectorAll('.option-btn').forEach(function(b){b.classList.remove('selected');});
+  btn.classList.add('selected');
+  answers[key] = val;
+  var nextMap = { '14b': '14c', '14c': '15' };
+  var next = nextMap[slideId];
+  setTimeout(function() {
+    if (next && next.match(/^\d+$/)) {
+      showSlide(parseInt(next));
+    } else {
+      // Show custom slide
+      document.querySelectorAll('.slide').forEach(function(s){s.classList.remove('active');});
+      document.getElementById('slide-' + next).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+  }, 400);
+}
+
+// Dynamic social proof counter animation (Change 3)
+function animateSocialCounter() {
+  var el = document.getElementById('socialCounter');
+  if(!el) return;
+  var target = Math.floor(Math.random() * (25200 - 24800 + 1)) + 24800;
+  var start = 0;
+  var duration = 1500;
+  var startTime = null;
+  function step(timestamp) {
+    if(!startTime) startTime = timestamp;
+    var progress = Math.min((timestamp - startTime) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    var current = Math.floor(eased * target);
+    el.textContent = current.toLocaleString('es-MX');
+    if(progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.textContent = target.toLocaleString('es-MX');
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+document.getElementById('mainCta').addEventListener('click',handleCta);
+window.addEventListener('load',()=>{fbq('track','ViewContent');updateProgress();['height','weight','target','age'].forEach(updateSlider);animateSocialCounter();});
+</script>
+</body>
+</html>

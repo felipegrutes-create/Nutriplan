@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Checklist Anti-Hipoglucemia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #2E7D52;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #2E7D52dd 0%, #2E7D52 50%, #2E7D52cc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">✅</span>
+    <h1>Checklist Anti-Hipoglucemia</h1>
+    <p class="hero-sub">Tu sistema de protección hormonal con checklists diarios y kit de emergencia</p>
+    <div class="hero-count">15 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Tu Sistema de Protección Hormonal</h2>
+        <div class="intro-content"><p>¿Alguna vez sentiste un hambre desesperante de repente, temblor en las manos, mareo o esa sensación de que 'necesitas comer algo YA'?</p><p>Eso es una bajada de glucosa — y es una señal clara de que tu sistema hormonal necesita atención.</p><p>Cuando pasas muchas horas sin comer, cuando comes solo carbohidratos simples, o cuando tu insulina está desregulada, tu cuerpo entra en modo de emergencia: libera cortisol y adrenalina para subir la glucosa, lo que genera esos síntomas incómodos y un ciclo de antojos incontrolables.</p><p>La buena noticia: esto es 100% prevenible con hábitos simples.</p><p>Esta guía te da un sistema completo de prevención con checklists diarios, protocolos de acción y un kit de emergencia que siempre deberías tener a mano.</p><p class="intro-bullet">• 🛡️ Prevención es la clave — el 90% de las bajadas se evitan con hábitos correctos</p><p class="intro-bullet">• ⚡ Acción rápida — saber qué hacer en los primeros 5 minutos marca toda la diferencia</p><p class="intro-bullet">• 🎒 Kit siempre listo — nunca te dejes agarrar desprevenida</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/checklist/sintomas.jpg" alt="⚠️ Señales de Alerta — Reconoce los Síntomas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">⚠️ Señales de Alerta — Reconoce los Síntomas</h2>
+        <p class="chapter-desc">Tu cuerpo te avisa cuando la glucosa baja demasiado. Aprende a leer estas señales para actuar ANTES de que se conviertan en un problema serio.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">🟡 Señales Tempranas — Nivel 1 (Actúa Ahora)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>⬜ Hambre intensa y repentina — aparece 'de la nada'</li><li>⬜ Temblor leve en las manos — especialmente al escribir o sostener objetos</li><li>⬜ Sudor frío — transpiración sin esfuerzo físico</li><li>⬜ Nerviosismo o ansiedad sin causa aparente</li><li>⬜ Dificultad para concentrarte — sientes la mente 'en blanco'</li><li>⬜ Irritabilidad — te molestas por cosas que normalmente no te afectan</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Si marcaste 2 o más señales → ve directamente a la tarjeta de Protocolo de Acción Rápida</li><li>Estas señales aparecen porque tu cerebro depende de glucosa para funcionar</li><li>Tu cuerpo libera adrenalina y cortisol para 'rescatar' la situación — de ahí el temblor y la ansiedad</li><li>La mayoría de mujeres después de los 40 experimentan esto con más frecuencia por cambios hormonales</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las señales tempranas son tu sistema de alarma. Cuando tu glucosa baja, tu cuerpo activa las hormonas del estrés (cortisol + adrenalina) para intentar subirla. Si actúas rápido en este nivel, evitas que escale.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">🔴 Señales Serias — Nivel 2 (Acción Inmediata)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>⬜ Mareo fuerte o visión borrosa</li><li>⬜ Debilidad extrema — las piernas no te sostienen bien</li><li>⬜ Dolor de cabeza intenso</li><li>⬜ Confusión — no puedes hablar o pensar con claridad</li><li>⬜ Piel pálida o grisácea</li><li>⬜ Sensación de desmayo</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>🚨 Si hay CONFUSIÓN o DESMAYO → llama a emergencias inmediatamente</li><li>No intentes conducir ni estar de pie — siéntate o recuéstate de lado</li><li>Si estás sola, llama a alguien de confianza ANTES de que empeore</li><li>Nunca fuerces comida a alguien que está confundida o inconsciente — riesgo de ahogamiento</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El nivel 2 es raro si sigues la prevención diaria, pero es vital saber qué hacer. La confusión mental sucede porque tu cerebro no tiene suficiente combustible. Esto es una emergencia médica — no intentes resolverlo sola.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">🔍 ¿Por Qué me Pasa Esto?</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>❌ Saltar comidas — especialmente el desayuno</li><li>❌ Comer solo carbohidratos simples (pan blanco, galletas, jugos)</li><li>❌ Hacer ejercicio intenso en ayunas</li><li>❌ Tomar alcohol sin haber comido</li><li>❌ Pasar más de 4-5 horas sin comer</li><li>❌ Estrés crónico — el cortisol agota tus reservas de glucosa</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>La causa #1 es saltear comidas: tu cuerpo no tiene combustible y entra en modo emergencia</li><li>Comer solo carbohidratos simples causa un pico rápido seguido de una caída brusca</li><li>El ejercicio en ayunas quema glucosa que no tienes — receta para mareos y temblor</li><li>El alcohol bloquea la producción de glucosa en el hígado — nunca tomes sin comer antes</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La hipoglucemia reactiva (bajadas después de comer) es especialmente común en mujeres con resistencia a la insulina. Tu páncreas sobrecompensa liberando demasiada insulina, lo que tumba tu glucosa por debajo de lo normal. La prevención diaria rompe este ciclo.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/checklist/prevencion.jpg" alt="📋 Tu Checklist de Prevención Diaria" loading="lazy">
+        </div>
+        <h2 class="chapter-title">📋 Tu Checklist de Prevención Diaria</h2>
+        <p class="chapter-desc">La prevención es tu superpoder. Estos 7 hábitos diarios mantienen tu glucosa estable y eliminan el 90% de las bajadas. Márcalos cada día hasta que sean automáticos.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">✅ Los 7 Hábitos Protectores — Marca Cada Día</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>⬜ HÁBITO 1 — Como cada 3-4 horas (no salto ninguna comida)</li><li>⬜ HÁBITO 2 — Cada comida incluye proteína (huevo, pollo, pescado, legumbres)</li><li>⬜ HÁBITO 3 — Nunca como carbohidratos solos (siempre con proteína o grasa)</li><li>⬜ HÁBITO 4 — No hago ejercicio en ayunas (como algo ligero antes)</li><li>⬜ HÁBITO 5 — No tomo alcohol sin haber comido proteína primero</li><li>⬜ HÁBITO 6 — Duermo 7-8 horas (el sueño regula mis hormonas del hambre)</li><li>⬜ HÁBITO 7 — Tengo mi kit de emergencia conmigo (bolso, oficina, auto)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Imprime esta lista y pégala en tu refrigerador o espejo del baño</li><li>Cada noche antes de dormir, revisa cuántos hábitos cumpliste hoy</li><li>Meta de la semana 1: cumplir 5 de 7 hábitos al día</li><li>Meta del mes 1: los 7 hábitos se sienten naturales y automáticos</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estos 7 hábitos son tu escudo hormonal. Cada uno protege un eslabón diferente de tu sistema: la frecuencia de comidas estabiliza insulina, la proteína frena la absorción de glucosa, y el sueño regula leptina y grelina (hormonas del hambre).</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">🌅 Rutina de Mañana — Tu Escudo del Día</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>⬜ AL DESPERTAR — Tomar 1 vaso grande de agua (la deshidratación empeora todo)</li><li>⬜ DENTRO DE 1 HORA — Desayunar con proteína + grasa + carbohidrato complejo</li><li>⬜ VERIFICAR — ¿Tengo snack en mi bolso para media mañana?</li><li>⬜ SI HAGO EJERCICIO — Comer algo ligero 30 min antes (banana + nueces)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Desayuno ideal: huevos revueltos + aguacate + pan de granos = estabilidad de 4+ horas</li><li>Opción rápida: yogur griego + avena + frutos secos = listo en 3 minutos</li><li>Opción express: smoothie de proteína + banana + mantequilla de maní</li><li>NUNCA salgas de casa sin desayunar — es la principal causa de bajadas a media mañana</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El desayuno con proteína es tu primera línea de defensa. Después de 8+ horas de ayuno nocturno, tu glucosa está en su punto más bajo. Un desayuno sin proteína causa un pico rápido seguido de una caída brutal hacia las 10-11am.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">🌙 Rutina de Noche — Protección Nocturna</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>⬜ CENA EQUILIBRADA — Proteína + vegetales + carbohidrato complejo (no solo ensalada)</li><li>⬜ HORARIO — Cenar al menos 2 horas antes de dormir</li><li>⬜ EVITAR — No tomar alcohol como 'última bebida' del día</li><li>⬜ SNACK NOCTURNO — Si tienes antecedentes de bajadas, un puñado de nueces antes de dormir</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Una cena demasiado ligera (solo ensalada) puede causar bajadas durante la madrugada</li><li>El alcohol antes de dormir bloquea la producción de glucosa del hígado mientras duermes</li><li>Las nueces antes de dormir liberan glucosa lentamente durante la noche — protección de 6+ horas</li><li>Si te despiertas con sudor o ansiedad a las 3am, puede ser una bajada nocturna — habla con tu médico</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Las bajadas nocturnas son silenciosas y peligrosas. Tu cuerpo produce glucosa durante el sueño gracias al hígado, pero el alcohol o una cena insuficiente interfieren. La proteína en la cena y las nueces antes de dormir son tu seguro nocturno.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/checklist/emergencia.jpg" alt="⚡ Protocolo de Acción Rápida" loading="lazy">
+        </div>
+        <h2 class="chapter-title">⚡ Protocolo de Acción Rápida</h2>
+        <p class="chapter-desc">Si sientes que tu glucosa está bajando, estos 4 pasos te estabilizan en 15-20 minutos. Memorízalos — la velocidad de tu respuesta marca la diferencia.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">🔢 Los 4 Pasos — Regla 15-15</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>PASO 1 ➜ DETENTE — Siéntate, no camines ni conduzcas</li><li>PASO 2 ➜ TOMA AZÚCAR RÁPIDA — UNA de estas opciones:</li><li>  • ½ vaso de jugo de naranja natural</li><li>  • 1 cucharada de miel disuelta en agua</li><li>  • 1 cucharada de azúcar en medio vaso de agua</li><li>  • 3-4 caramelos duros (no chocolate)</li><li>PASO 3 ➜ ESPERA 15 MINUTOS — Quédate sentada y respira</li><li>PASO 4 ➜ COME PROTEÍNA — Para mantener estable:</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>La regla 15-15: toma azúcar rápida → espera 15 minutos → evalúa → repite si necesitas</li><li>NO uses chocolate como rescate — la grasa retarda la absorción del azúcar</li><li>Después del azúcar rápida, SIEMPRE come proteína para evitar una segunda caída</li><li>Si los síntomas no mejoran después de 15 min, repite el PASO 2 una vez más</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El azúcar rápida del PASO 2 sube tu glucosa en 10-15 minutos. Pero si te detienes ahí, la insulina la tumbará de nuevo. La proteína del PASO 4 es la que MANTIENE tu glucosa estable después del rescate. Ambos pasos son esenciales.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">🍗 PASO 4 Detallado — Proteínas de Mantenimiento</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>✅ Puñado de nueces o almendras (10-15 unidades)</li><li>✅ 1 trozo de queso con galletas integrales</li><li>✅ Yogur griego natural</li><li>✅ 1 huevo duro (si lo tienes preparado)</li><li>✅ Mantequilla de maní con rodajas de manzana</li><li>✅ Un puñado de frutos secos mixtos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Come la proteína INMEDIATAMENTE después de que pasen los 15 minutos del rescate</li><li>La proteína mantiene tu glucosa estable las siguientes 2-3 horas</li><li>Sin este paso, el azúcar rápida sube tu glucosa → tu insulina reacciona → vuelve a caer</li><li>Después del episodio, come tu siguiente comida completa a la hora normal — no la saltes</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Piensa en el rescate como un puente de dos tramos: el azúcar rápida es el primer tramo que te saca de la emergencia, y la proteína es el segundo tramo que te lleva a tierra firme. Sin la proteína, te quedas a mitad del puente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">🚨 Cuándo Llamar a Emergencias</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🔴 La persona está confundida y no puede hablar coherentemente</li><li>🔴 Pérdida de conciencia o desmayo</li><li>🔴 Convulsiones</li><li>🔴 No mejora después de 2 rondas de la Regla 15-15</li><li>🔴 No puede tragar líquidos de forma segura</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>LLAMA A EMERGENCIAS inmediatamente — no esperes 'a ver si mejora'</li><li>NO fuerces comida ni bebida a alguien confundida o inconsciente — riesgo de ahogamiento</li><li>Recuéstala de lado (posición de recuperación) mientras llega la ayuda</li><li>Mantén la calma y describe los síntomas claramente al operador de emergencias</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Estos casos son raros cuando sigues la prevención diaria, pero es vital que tú y tu familia sepan qué hacer. La confusión severa y el desmayo significan que el cerebro no tiene suficiente glucosa para funcionar — requiere atención médica profesional.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/checklist/snacks.jpg" alt="🎒 Tu Kit de Emergencia — Siempre Contigo" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🎒 Tu Kit de Emergencia — Siempre Contigo</h2>
+        <p class="chapter-desc">Arma estos kits y tenlos siempre listos. Es como llevar un paraguas — ojalá no lo necesites, pero si llueve, te salva.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">👜 Kit para tu Bolso — 5 Elementos Esenciales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1️⃣ Sobrecitos de miel o azúcar (2-3 unidades) → rescate rápido</li><li>2️⃣ Bolsita de frutos secos mixtos (30g) → proteína de mantenimiento</li><li>3️⃣ Barra de granola con proteína → opción de emergencia completa</li><li>4️⃣ Botella de agua pequeña → siempre necesaria</li><li>5️⃣ Teléfono cargado → para llamar si necesitas ayuda</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Prepara 3 kits iguales: uno para el bolso, uno para la oficina, uno para el auto</li><li>Revisa y renueva los snacks cada 2 semanas — que no estén vencidos ni aplastados</li><li>Los sobrecitos de miel son perfectos: no se derraman, no pesan, duran meses</li><li>Guarda el kit en un compartimiento fijo de tu bolso — siempre el mismo lugar</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El kit de emergencia es tu red de seguridad. El 80% de las bajadas serias ocurren cuando la persona no tenía nada a mano para comer. Estos 5 elementos pesan menos de 200g y caben en cualquier bolso.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">🏢 Kit para la Oficina / Trabajo</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1️⃣ Frutos secos en frasco hermético (almendras, nueces, maní)</li><li>2️⃣ Mantequilla de maní individual (sobrecitos)</li><li>3️⃣ Galletas integrales (paquete sellado)</li><li>4️⃣ Jugo de naranja en caja (larga vida, sin refrigerar)</li><li>5️⃣ Caramelos duros (3-4 unidades para emergencia)</li><li>6️⃣ Agua — siempre tener una botella en tu escritorio</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Guarda todo en un cajón específico de tu escritorio — que todos sepan dónde está</li><li>Avisa a una compañera de confianza sobre tu situación y dónde está tu kit</li><li>El jugo en caja de larga vida es clave: no necesita refrigerador y dura meses</li><li>Renueva los snacks cada mes al inicio — ponlo como recordatorio en tu celular</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El estrés laboral dispara el cortisol, que puede provocar bajadas reactivas. Tener tu kit en la oficina te da tranquilidad mental — y esa tranquilidad por sí sola ayuda a regular tus hormonas del estrés.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">🚗 Kit para el Auto</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1️⃣ Barra de granola o proteína (resistente al calor)</li><li>2️⃣ Frutos secos en bolsa sellada</li><li>3️⃣ Caramelos duros (no se derriten como el chocolate)</li><li>4️⃣ Botella de agua sellada</li><li>⚠️ REGLA DE ORO: NUNCA conduzcas si sientes síntomas de bajada</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Si sientes síntomas mientras conduces → DETENTE de forma segura, enciende las luces de emergencia</li><li>Come algo del kit ANTES de continuar — espera al menos 15 minutos</li><li>Evita chocolate o barras blandas en el auto — el calor las derrite</li><li>Los frutos secos y caramelos duros son ideales: resisten temperatura y duran semanas</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Conducir con glucosa baja es TAN peligroso como conducir con alcohol. Tus reflejos se vuelven lentos, tu visión se nubla y puedes perder la conciencia. Si sientes la más mínima señal, detente inmediatamente. Tu vida y la de otros depende de eso.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/checklist/rutina.jpg" alt="🌟 Tu Rutina Semanal Anti-Bajadas" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🌟 Tu Rutina Semanal Anti-Bajadas</h2>
+        <p class="chapter-desc">Más allá de los hábitos diarios, estas rutinas semanales refuerzan tu sistema de protección y aseguran que nunca te agarren desprevenida.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">📅 Checklist Semanal — Domingo de Preparación</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>⬜ Preparar snacks para la semana (bolsitas de frutos secos porcionados)</li><li>⬜ Cocinar proteínas base (pollo desmenuzado, huevos duros, frijoles)</li><li>⬜ Revisar y reponer los 3 kits de emergencia (bolso, oficina, auto)</li><li>⬜ Planificar las 5 cenas de la semana (que todas tengan proteína)</li><li>⬜ Hacer lista de compras con alimentos protectores</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Dedica 30 minutos el domingo a preparar tu semana de protección</li><li>Cocina un lote grande de proteína que puedas usar de diferentes formas</li><li>Porciona 5 bolsitas de frutos secos (30g cada una) para tu snack diario</li><li>Revisa si los snacks de tus kits están frescos — renueva los que estén por vencer</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La preparación del domingo es tu inversión de 30 minutos que te protege 7 días. Las bajadas de glucosa casi siempre ocurren cuando no hay nada preparado y recurres a lo más rápido: carbohidratos simples que empeoran el ciclo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">🛒 Lista de Compras Protectora</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── PROTEÍNAS (siempre en casa) ──</li><li>✅ Huevos — la proteína más versátil y rápida de preparar</li><li>✅ Yogur griego natural — snack + desayuno + salsa</li><li>✅ Queso — para emergencias rápidas (no necesita preparación)</li><li>✅ Pollo/pescado — proteína base para comidas principales</li><li>✅ Frutos secos mixtos — tu snack protector #1</li><li></li><li>── CARBOHIDRATOS INTELIGENTES ──</li><li>✅ Avena tradicional (NO instantánea) — desayunos estables</li><li>✅ Pan de granos/semillas — IG bajo, saciante</li><li>✅ Legumbres (frijoles, lentejas, garbanzos) — estabilizadores naturales</li><li></li><li>── KIT DE RESCATE ──</li><li>✅ Miel en sobrecitos o frasco pequeño</li><li>✅ Jugo de naranja en caja (larga vida)</li><li>✅ Barras de granola con proteína</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Ten siempre al menos 3 fuentes de proteína rápida en tu refrigerador</li><li>Los huevos duros se preparan en lote y duran 5 días en el refrigerador</li><li>Compra frutos secos en bolsa grande y porciónalos tú — más económico</li><li>El yogur griego + avena + frutos secos = 3 ingredientes que cubren desayuno y snack de toda la semana</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Tu refrigerador es tu farmacia hormonal. Cuando siempre tienes proteína accesible, nunca recurres a soluciones de emergencia (pan blanco, galletas, jugos) que empeoran el ciclo. Mantenerlo abastecido es cuidar tu salud hormonal.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">👨‍👩‍👧 Guía para tu Familia — Lo que Deben Saber</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>📌 RECONOCER — Señales de bajada: temblor, sudor frío, confusión, irritabilidad</li><li>📌 MANTENER CALMA — No asustarse; transmitir tranquilidad</li><li>📌 OFRECER — Jugo, miel con agua, o caramelo si la persona puede tragar</li><li>📌 ESPERAR — 15 minutos después del azúcar rápida, luego dar proteína</li><li>📌 NUNCA — Forzar comida si la persona está confundida o no puede tragar</li><li>📌 LLAMAR — A emergencias si hay desmayo, convulsiones o no mejora en 30 min</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Habla con tu pareja y familia sobre esto — no es dramático, es prevención inteligente</li><li>Muéstrales dónde están tus kits de emergencia en casa y en el auto</li><li>Enséñales la Regla 15-15: azúcar rápida → esperar 15 min → proteína</li><li>Que tengan el número de emergencias guardado con acceso rápido en su celular</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Involucrar a tu familia no es señal de debilidad — es inteligencia. Las bajadas severas pueden causar confusión, lo que significa que tú misma no puedes ayudarte. Una familia informada puede actuar en segundos y evitar una situación peligrosa.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Checklist Anti-Hipoglucemia</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

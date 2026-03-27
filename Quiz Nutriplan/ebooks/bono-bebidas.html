@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Bebidas Inteligentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #16A34A;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #16A34Add 0%, #16A34A 50%, #16A34Acc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🍵</span>
+    <h1>Bebidas Inteligentes</h1>
+    <p class="hero-sub">Tu farmacia líquida natural para el equilibrio hormonal</p>
+    <div class="hero-count">15 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Tu Farmacia Líquida Natural</h2>
+        <div class="intro-content"><p>Dentro de tu cocina hay un arsenal de ingredientes que, combinados con agua y constancia, pueden transformar tu bienestar hormonal.</p><p>Estas bebidas no son modas ni milagros — son preparaciones basadas en plantas, raíces, semillas y especias que apoyan tu metabolismo, calman tu sistema nervioso y ayudan a mantener tu insulina en equilibrio.</p><p>☕ **Infusiones calientes** para las mañanas y las noches</p><p>🧊 **Bebidas frías** para refrescarte sin picos de azúcar</p><p>💧 **Aguas funcionales** para hidratarte con beneficios extra</p><p>🌿 **Ingredientes estrella** que potencian cada preparación</p><p>⚠️ **Importante:** Estas bebidas complementan tu alimentación saludable. Nunca les agregues azúcar, miel ni edulcorantes. Tómalas al natural para obtener todos sus beneficios.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/bebidas/cap1-infusiones.jpg" alt="Infusiones Calientes" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Infusiones Calientes</h2>
+        <p class="chapter-desc">Tés e infusiones que apoyan tu metabolismo y calman tu sistema nervioso — perfectos para comenzar o cerrar el día.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Té de Cáscara de Piña con Canela y Clavos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/te-pina-canela.jpg" alt="Té de Cáscara de Piña con Canela y Clavos" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>Cáscara de ½ piña bien lavada</li><li>1 ramita de canela</li><li>3 clavos de olor</li><li>1 litro de agua</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hierve el litro de agua en una olla.</li><li>Agrega la cáscara de piña, la canela y los clavos.</li><li>Cocina a fuego bajo por 10 minutos.</li><li>Cuela y deja reposar 5 minutos antes de servir.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🕐 Cuándo tomarla: 1 taza en ayunas y otra antes de dormir. La piña tiene bromelina que desinfla, la canela mejora la sensibilidad a la insulina y los clavos son antioxidantes potentes.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Infusión de Hojas de Guayaba con Jengibre</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/te-guayaba-jengibre.jpg" alt="Infusión de Hojas de Guayaba con Jengibre" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 hojas de guayaba frescas (o secas)</li><li>1 palito de canela (5 cm)</li><li>1 rodaja de jengibre fresco (2 cm)</li><li>1 litro de agua</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava bien las hojas de guayaba.</li><li>Hierve el agua y agrega las hojas, la canela y el jengibre.</li><li>Cocina a fuego bajo por 10 minutos.</li><li>Cuela y sirve caliente o tibia.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🌿 Las hojas de guayaba contienen quercetina, un flavonoide que apoya la función pancreática. El jengibre activa la termogénesis y mejora la digestión.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Té de Manzanilla con Cúrcuma</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/te-manzanilla-curcuma.jpg" alt="Té de Manzanilla con Cúrcuma" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 cucharada de flores de manzanilla (o 1 sobre)</li><li>¼ cucharadita de cúrcuma en polvo</li><li>1 pizca de pimienta negra</li><li>500 ml de agua</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hierve el agua y agrega la manzanilla y la cúrcuma.</li><li>Añade la pizca de pimienta negra (activa la absorción de la cúrcuma).</li><li>Cocina a fuego bajo por 10 minutos.</li><li>Cuela y sirve.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🌙 Perfecta para la noche. La manzanilla reduce el cortisol (hormona del estrés que eleva la insulina) y la cúrcuma es antiinflamatoria. La pimienta negra aumenta la absorción de curcumina un 2000%.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Té de Laurel con Limón y Canela</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/te-laurel-limon.jpg" alt="Té de Laurel con Limón y Canela" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>3 hojas de laurel secas</li><li>1 ramita de canela</li><li>Jugo de ½ limón</li><li>500 ml de agua</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hierve el agua con las hojas de laurel y la canela por 10 minutos.</li><li>Apaga el fuego y cuela.</li><li>Añade el jugo de limón justo antes de tomar (no lo hiervas).</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🍋 El laurel contiene polifenoles que mejoran la respuesta insulínica. El limón aporta vitamina C y el ácido cítrico retrasa la absorción de carbohidratos. Ideal 30 minutos antes de una comida.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Infusión de Canela y Clavo Nocturna</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/te-canela-clavo.jpg" alt="Infusión de Canela y Clavo Nocturna" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 ramitas de canela de Ceylán</li><li>4 clavos de olor</li><li>1 rodaja fina de jengibre</li><li>500 ml de agua</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca todos los ingredientes en una olla con el agua.</li><li>Hierve a fuego medio por 5 minutos.</li><li>Baja el fuego y deja infusionar 10 minutos más.</li><li>Cuela y toma tibio antes de dormir.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">😴 La canela de Ceylán es la más beneficiosa para la sensibilidad insulínica. Tomarla antes de dormir ayuda a estabilizar los niveles hormonales durante la noche, cuando el cuerpo se regenera.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/bebidas/cap2-frias.jpg" alt="Bebidas Frías y Batidos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Bebidas Frías y Batidos</h2>
+        <p class="chapter-desc">Opciones refrescantes para los días calurosos — hidratación con beneficios hormonales sin azúcar añadida.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Limonada de Pepino y Jengibre</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/limonada-pepino.jpg" alt="Limonada de Pepino y Jengibre" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>½ pepino pelado y cortado</li><li>Jugo de 2 limones</li><li>1 rodaja de jengibre (1 cm)</li><li>1 litro de agua fría</li><li>Hielo al gusto</li><li>Hojas de menta fresca (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa el pepino con el jengibre y medio vaso de agua.</li><li>Cuela y mezcla con el resto del agua y el jugo de limón.</li><li>Agrega hielo y hojas de menta.</li><li>Revuelve bien y sirve inmediatamente.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🥒 El pepino es 95% agua con minerales. El jengibre activa la termogénesis y el limón alcaliniza. Esta combinación hidrata, desinfla y apoya tu metabolismo sin un solo gramo de azúcar.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Agua de Jamaica con Canela</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/agua-jamaica.jpg" alt="Agua de Jamaica con Canela" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 cucharadas de flores de jamaica secas</li><li>1 ramita de canela</li><li>1 litro de agua</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Hierve el agua con la jamaica y la canela por 5 minutos.</li><li>Apaga, tapa y deja reposar hasta que enfríe.</li><li>Cuela, refrigera y sirve con hielo.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🌺 La jamaica es rica en antocianinas, antioxidantes que protegen las células del páncreas. Naturalmente tiene un sabor ácido delicioso sin necesidad de endulzar. La canela la complementa perfectamente.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Batido Verde Hormonal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/batido-verde.jpg" alt="Batido Verde Hormonal" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de espinacas frescas</li><li>½ pepino</li><li>1 tallo de apio</li><li>Jugo de 1 limón</li><li>1 rodaja de jengibre</li><li>1 vaso de agua fría</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava bien todos los vegetales.</li><li>Licúa todo junto hasta obtener una mezcla homogénea.</li><li>Cuela si prefieres una textura más suave.</li><li>Toma inmediatamente para aprovechar los nutrientes.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">💚 Las espinacas aportan magnesio (mineral clave para la sensibilidad insulínica). El apio es diurético natural y el jengibre termogénico. Ideal en ayunas o como snack de media mañana.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Agua de Chía con Limón</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/agua-chia-limon.jpg" alt="Agua de Chía con Limón" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 cucharada de semillas de chía</li><li>Jugo de 1 limón</li><li>500 ml de agua fría</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Remoja las semillas de chía en el agua por 15-20 minutos.</li><li>Revuelve cada 5 minutos para evitar grumos.</li><li>Cuando las semillas estén gelificadas, agrega el limón.</li><li>Añade hielo y disfruta.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🫧 La chía absorbe 12 veces su peso en agua, creando un gel de fibra soluble que retrasa la absorción de azúcar. Tomarla 20 minutos antes de comer reduce los picos de insulina después de la comida.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/bebidas/cap3-aguas.jpg" alt="Aguas Funcionales e Infusiones Frías" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Aguas Funcionales e Infusiones Frías</h2>
+        <p class="chapter-desc">Aguas con ingredientes activos que puedes preparar la noche anterior y tomar durante todo el día.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Agua de Linaza con Canela</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/agua-linaza.jpg" alt="Agua de Linaza con Canela" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 cucharada de semillas de linaza</li><li>1 ramita de canela (o ½ cucharadita en polvo)</li><li>1 taza de agua (250 ml)</li><li>Jugo de ½ limón (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca el agua, las semillas de linaza y la canela en una olla.</li><li>Hierve a fuego medio por 10 minutos, revolviendo de vez en cuando.</li><li>Cuela y deja enfriar.</li><li>Añade el limón antes de tomar si deseas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🌰 La linaza es una de las fuentes más ricas de omega-3 vegetal y fibra soluble. El mucílago que libera al hervir forma un gel que estabiliza la insulina. Tómala antes del desayuno.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Agua Detox de Pepino, Limón y Menta</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/agua-detox.jpg" alt="Agua Detox de Pepino, Limón y Menta" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>½ pepino en rodajas</li><li>1 limón en rodajas</li><li>8-10 hojas de menta fresca</li><li>1 litro de agua</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca el pepino, limón y menta en una jarra.</li><li>Agrega el agua fría.</li><li>Refrigera por mínimo 2 horas (ideal toda la noche).</li><li>Toma durante el día. Rellena con agua hasta 2 veces.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🧊 Prepárala en la noche y tendrás hidratación funcional todo el día. La menta calma la digestión, el pepino aporta sílice y minerales, y el limón ayuda a la absorción de nutrientes.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">Agua de Canela en Frío (Overnight)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/agua-canela-frio.jpg" alt="Agua de Canela en Frío (Overnight)" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 ramitas de canela de Ceylán</li><li>1 litro de agua a temperatura ambiente</li><li>Rodajas de manzana verde (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca las ramitas de canela en una jarra con el agua.</li><li>Si deseas, agrega rodajas de manzana verde.</li><li>Deja reposar toda la noche a temperatura ambiente.</li><li>En la mañana, refrigera y toma durante el día.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">💤 La extracción en frío preserva los compuestos termosensibles de la canela. Estudios muestran que la canela de Ceylán mejora la sensibilidad a la insulina hasta un 20%. Puedes reutilizar las ramitas hasta 3 veces.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/bebidas/cap4-ingredientes.jpg" alt="Guía de Ingredientes Estrella" loading="lazy">
+        </div>
+        <h2 class="chapter-title">Guía de Ingredientes Estrella</h2>
+        <p class="chapter-desc">Conoce los superpoderes de cada ingrediente que usas en tus bebidas y cómo potencian tu equilibrio hormonal.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">Las Especias: Canela, Cúrcuma, Clavo y Jengibre</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/especias.jpg" alt="Las Especias: Canela, Cúrcuma, Clavo y Jengibre" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🟤 CANELA DE CEYLÁN — Mejora la sensibilidad a la insulina. Usa la de Ceylán (clara y suave), no la Cassia (oscura y fuerte)</li><li>🟡 CÚRCUMA — Antiinflamatoria potente. Siempre combínala con pimienta negra para activar su absorción</li><li>🟤 CLAVO DE OLOR — Antioxidante más potente que existe por gramo. Apoya la función pancreática</li><li>🫚 JENGIBRE — Termogénico natural. Activa el metabolismo y mejora la digestión</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>💡 Compra enteras, no en polvo — conservan mejor sus propiedades.</li><li>💡 Guárdalas en frascos de vidrio, lejos de la luz y la humedad.</li><li>💡 La canela de Ceylán se reconoce porque es más clara, quebradiza y tiene capas finas.</li><li>💡 El jengibre fresco es más potente que el seco — rállalo o córtalo en rodajas finas.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">⚠️ Si tomas anticoagulantes, consulta a tu médico antes de consumir cúrcuma y jengibre diariamente, ya que tienen efecto anticoagulante natural.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">Las Semillas: Chía y Linaza</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/semillas.jpg" alt="Las Semillas: Chía y Linaza" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>⚫ CHÍA — Absorbe 12x su peso en agua. Rica en omega-3, fibra y proteína. Forma gel que retrasa la absorción de azúcar</li><li>🟤 LINAZA — Fuente de omega-3 vegetal y lignanos. El mucílago protege la mucosa intestinal y estabiliza la insulina</li><li>📏 Porción diaria recomendada: 1-2 cucharadas de cada una</li><li>⏱️ Tiempo de remojo: chía 15-20 min, linaza puede hervirse 10 min</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>💡 La chía no necesita molerse — se activa con agua.</li><li>💡 La linaza SÍ debe molerse o hervirse para liberar sus nutrientes.</li><li>💡 Guarda la linaza molida en refrigeración máximo 1 semana.</li><li>💡 Ambas pueden añadirse a jugos, batidos o aguas — son versátiles.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🔑 Regla de oro: siempre remoja o hidrata las semillas antes de consumirlas. En seco, pasan por tu sistema sin aportar beneficios. Hidratadas, liberan fibra soluble que estabiliza tu insulina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">Las Hojas y Plantas: Guayaba, Laurel, Menta y Jamaica</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/bebidas/hojas-plantas.jpg" alt="Las Hojas y Plantas: Guayaba, Laurel, Menta y Jamaica" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>🍃 HOJAS DE GUAYABA — Ricas en quercetina, un flavonoide que apoya la función del páncreas y mejora la sensibilidad insulínica</li><li>🍃 LAUREL — Contiene polifenoles que ayudan a regular la respuesta de la insulina después de comer</li><li>🌿 MENTA — Calma el sistema digestivo, reduce la hinchazón y ayuda a controlar el apetito emocional</li><li>🌺 JAMAICA (HIBISCO) — Rica en antocianinas antioxidantes que protegen las células pancreáticas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>💡 Las hojas de guayaba se consiguen en mercados naturistas o directamente del árbol.</li><li>💡 El laurel seco es igual de efectivo que el fresco.</li><li>💡 La menta fresca tiene más aroma y sabor — cultívala en una maceta en tu cocina.</li><li>💡 Compra la jamaica en flores secas sueltas, no en sobrecitos — es más pura y económica.</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">🌱 Tip práctico: Ten un pequeño huerto de menta, albahaca y romero en tu ventana. Siempre tendrás hierbas frescas a la mano para tus infusiones sin costo adicional.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Bebidas Inteligentes</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

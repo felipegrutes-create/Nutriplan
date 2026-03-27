@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Comience Aquí</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #2E7D52;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #2E7D52dd 0%, #2E7D52 50%, #2E7D52cc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">📖</span>
+    <h1>Comience Aquí</h1>
+    <p class="hero-sub">Tu guía de inicio para transformar tu metabolismo</p>
+    <div class="hero-count">8 secciones</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Bienvenida a El Código Hormonal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body">
+            <div class="recipe-divider"></div>
+            <div class="section-text"><p>¡Felicitaciones por tomar la mejor decisión para tu salud!</p><p>El Código Hormonal no es una dieta más — es un sistema completo diseñado para mujeres que quieren entender cómo funciona su cuerpo y tomar el control de su bienestar hormonal.</p><p>Aquí vas a encontrar todo lo que necesitas: recetas deliciosas, guías prácticas, planes alimenticios y herramientas que te van a acompañar día a día en esta transformación.</p><p>Esta guía de inicio rápido te va a mostrar exactamente por dónde empezar y cómo aprovechar al máximo cada recurso.</p></div>
+        </div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">¿Qué es El Código Hormonal?</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body">
+            <div class="recipe-divider"></div>
+            <div class="section-text"><p>Tu cuerpo tiene un código interno que regula todo: energía, peso, humor, sueño y metabolismo. Ese código son tus hormonas.</p><p>Cuando tus hormonas están en equilibrio, todo funciona: quemas grasa naturalmente, tienes energía durante todo el día, duermes bien y te sientes increíble.</p><p>Cuando están desbalanceadas — especialmente después de los 40 — aparece la resistencia a la insulina, la inflamación silenciosa, el cansancio crónico y esos kilos que no se van con nada.</p><p>El Código Hormonal te enseña a usar la alimentación como tu herramienta principal para reactivar tu metabolismo y recuperar tu equilibrio hormonal de forma natural, sin medicamentos, sin dietas extremas y sin pasar hambre.</p></div>
+        </div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">¿Qué incluye tu Kit Completo?</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body">
+            <div class="recipe-divider"></div>
+            <div class="section-text"><p>Tu programa incluye 22 ebooks organizados en dos categorías:</p><p>KIT PRINCIPAL (11 guías):</p><p>• Comience Aquí — Esta guía que estás leyendo</p><p>• Panes Inteligentes Vol. 1 y 2 — 90 recetas de panes sin harinas refinadas</p><p>• Recetas Quema Grasa — 85 recetas termogénicas que aceleran tu metabolismo</p><p>• Recetas Fitness Vol. 1 y 2 — 85 recetas proteicas para tu cuerpo ideal</p><p>• Plan de 31 Días — Plan alimenticio completo día por día</p><p>• Guía de Alimentos — Lista completa de alimentos permitidos y a evitar</p><p>• Tabla Índice Glucémico — Referencia rápida para elegir tus alimentos</p><p>• Checklist Hipoglucemia — Control preventivo paso a paso</p><p>• Mitos y Verdades — Todo lo que pensabas que sabías sobre la insulina</p><p>BONOS ESPECIALES (11 recursos extra):</p><p>• 200 Recetas Saludables — El recetario completo con desayunos, almuerzos, cenas, snacks y jugos</p><p>• Guías especializadas de carnes, avena, frutas, bebidas y jugos</p><p>• Recetas navideñas para celebrar sin culpa</p><p>• Guía de masa muscular, ejercicios, control emocional y desparasitación natural</p></div>
+        </div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Cómo navegar tu biblioteca</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body">
+            <div class="recipe-divider"></div>
+            <div class="section-text"><p>Tu biblioteca está organizada para que encuentres lo que necesitas en segundos:</p><p>1. PORTAL PRINCIPAL — Es tu página de inicio. Desde ahí accedes a todos los ebooks con un solo toque.</p><p>2. CADA EBOOK — Se abre como una página elegante con tarjetas expandibles. Toca cualquier tarjeta para ver el contenido completo (ingredientes, preparación, consejos).</p><p>3. BOTÓN 'VOLVER AL PORTAL' — En la parte superior de cada ebook encontrarás un enlace para regresar al portal principal.</p><p>4. NAVEGACIÓN POR CATEGORÍAS — Los ebooks de recetas tienen un menú de categorías en la parte superior para filtrar rápidamente.</p><p>5. FUNCIONA OFFLINE — Una vez que abras un ebook, puedes consultarlo sin conexión a internet. Ideal para cuando estés en la cocina.</p></div>
+        </div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Tu plan de acción: Los primeros 7 días</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body">
+            <div class="recipe-divider"></div>
+            <div class="section-text"><p>No intentes leer todo de una vez. Sigue este plan simple:</p><p>DÍA 1-2: Lee esta guía completa y explora la Guía de Alimentos para conocer qué comer y qué evitar.</p><p>DÍA 3: Consulta la Tabla de Índice Glucémico y marca tus alimentos favoritos que tienen bajo índice.</p><p>DÍA 4-5: Abre las 200 Recetas Saludables y elige 5 desayunos y 5 almuerzos que te gusten. No necesitas cocinar aún — solo elegir.</p><p>DÍA 6: Haz tu primera lista de compras basada en las recetas que elegiste.</p><p>DÍA 7: ¡Cocina tu primera receta! Empieza por algo simple — un desayuno o un jugo funcional.</p><p>A partir de la semana 2, sigue el Plan de 31 Días para tener una estructura completa.</p></div>
+        </div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">5 reglas de oro para tu equilibrio hormonal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body">
+            <div class="recipe-divider"></div>
+            <div class="section-text"><p>Estos son los principios fundamentales que guían todo el programa:</p><p>1. COME PARA NUTRIR, NO PARA LLENAR — Cada receta fue diseñada para aportar nutrientes que tus hormonas necesitan: proteínas limpias, grasas saludables, fibras y antioxidantes.</p><p>2. CONTROLA TU INSULINA — La insulina es la hormona maestra. Cuando la controlas, las demás hormonas se equilibran. Evita azúcares refinados, harinas blancas y alimentos ultraprocesados.</p><p>3. NO PASES HAMBRE — Saltear comidas dispara el cortisol (hormona del estrés) y desregula todo tu sistema. Come cada 3-4 horas con las recetas del programa.</p><p>4. MUÉVETE CON INTENCIÓN — No necesitas maratones. Consulta la Guía de Ejercicios para rutinas simples que potencian tu metabolismo hormonal.</p><p>5. DUERME COMO PRIORIDAD — Entre las 10pm y las 2am tu cuerpo produce la hormona del crecimiento, que quema grasa y repara tejidos. Respeta ese horario.</p></div>
+        </div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Tu app companion: Mi Código</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body">
+            <div class="recipe-divider"></div>
+            <div class="section-text"><p>Además de tus ebooks, tienes acceso a Mi Código — tu app de seguimiento diario.</p><p>Con la app puedes:</p><p>• Hacer check-in diario de tus hábitos (agua, sueño, ejercicio, alimentación)</p><p>• Ver tu progreso semanal en gráficos visuales</p><p>• Acceder a recetas directamente desde tu celular</p><p>• Recibir tips diarios de bienestar hormonal</p><p>• Seguir tu racha de días consecutivos</p><p>La app funciona en cualquier celular — solo necesitas el enlace y tu código de acceso mensual.</p><p>Es el complemento perfecto para mantener tu motivación y ver resultados reales semana a semana.</p></div>
+        </div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">¡Estás lista para comenzar!</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body">
+            <div class="recipe-divider"></div>
+            <div class="section-text"><p>Tienes en tus manos el programa más completo para transformar tu salud hormonal.</p><p>No importa si nunca hiciste dieta, si ya probaste mil cosas que no funcionaron, o si crees que es muy tarde para cambiar. Tu cuerpo tiene una capacidad increíble de recuperarse cuando le das los nutrientes correctos.</p><p>Cada receta, cada guía, cada herramienta de este programa fue creada pensando en ti — en tu realidad, en tu cocina, en tu día a día.</p><p>Tu próximo paso: Regresa al portal y abre la Guía de Alimentos. Es el mejor punto de partida para entender qué alimentos trabajan a favor de tus hormonas.</p><p>¡Tu transformación comienza hoy!</p></div>
+        </div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Comience Aquí</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

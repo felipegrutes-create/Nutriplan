@@ -1,0 +1,72 @@
+[
+  {
+    "nombre": "Wall Pilates para principiantes",
+    "emoji": "🧱",
+    "duracion": "20 min",
+    "nivel": "Principiante",
+    "url": "https://www.youtube.com/results?search_query=wall+pilates+principiantes+mujeres+40"
+  },
+  {
+    "nombre": "Yoga suave para metabolismo",
+    "emoji": "🧘‍♀️",
+    "duracion": "25 min",
+    "nivel": "Principiante",
+    "url": "https://www.youtube.com/results?search_query=yoga+suave+metabolismo+mujeres+mayores"
+  },
+  {
+    "nombre": "Caminata metabólica (técnica)",
+    "emoji": "🚶‍♀️",
+    "duracion": "30 min",
+    "nivel": "Todos",
+    "url": "https://www.youtube.com/results?search_query=caminata+metabolica+quemar+grasa"
+  },
+  {
+    "nombre": "Tai Chi para mujeres 40+",
+    "emoji": "🌊",
+    "duracion": "20 min",
+    "nivel": "Principiante",
+    "url": "https://www.youtube.com/results?search_query=tai+chi+para+mujeres+mayores+principiantes"
+  },
+  {
+    "nombre": "Yoga hormonal — perimenopausia",
+    "emoji": "🌸",
+    "duracion": "30 min",
+    "nivel": "Principiante",
+    "url": "https://www.youtube.com/results?search_query=yoga+hormonal+perimenopausia+espanol"
+  },
+  {
+    "nombre": "Pilates de bajo impacto",
+    "emoji": "💪",
+    "duracion": "25 min",
+    "nivel": "Principiante-Intermedio",
+    "url": "https://www.youtube.com/results?search_query=pilates+bajo+impacto+mujeres+40"
+  },
+  {
+    "nombre": "Estiramientos para reducir cortisol",
+    "emoji": "🌙",
+    "duracion": "15 min",
+    "nivel": "Todos",
+    "url": "https://www.youtube.com/results?search_query=estiramientos+reducir+cortisol+estres+mujeres"
+  },
+  {
+    "nombre": "Chair Yoga — sin impacto",
+    "emoji": "🪑",
+    "duracion": "20 min",
+    "nivel": "Principiante",
+    "url": "https://www.youtube.com/results?search_query=chair+yoga+en+espanol+mujeres+mayores"
+  },
+  {
+    "nombre": "Caminata post-comida (rutina)",
+    "emoji": "🌿",
+    "duracion": "10-15 min",
+    "nivel": "Todos",
+    "url": "https://www.youtube.com/results?search_query=caminata+despues+de+comer+glucosa+insulina"
+  },
+  {
+    "nombre": "Yoga restaurativo para dormir",
+    "emoji": "😴",
+    "duracion": "20 min",
+    "nivel": "Todos",
+    "url": "https://www.youtube.com/results?search_query=yoga+restaurativo+dormir+relajar+noche"
+  }
+]

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Jugos Verdes Detox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #16A34A;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #16A34Add 0%, #16A34A 50%, #16A34Acc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🥤</span>
+    <h1>Jugos Verdes Detox</h1>
+    <p class="hero-sub">Tu farmacia líquida con recetas para cada momento del día</p>
+    <div class="hero-count">15 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Jugos Verdes: Tu Farmacia Líquida para el Equilibrio Hormonal</h2>
+        <div class="intro-content"><p>Los jugos verdes no son una moda — son una herramienta poderosa de nutrición concentrada que puede transformar tu equilibrio hormonal cuando se preparan correctamente.</p><p>Los vegetales de hoja verde son ricos en clorofila, magnesio, antioxidantes y enzimas vivas que apoyan tu hígado, reducen inflamación y mejoran la sensibilidad a la insulina.</p><p>Pero OJO — no todos los jugos verdes son iguales. Un jugo mal formulado (con mucha fruta y poco vegetal) puede ser una bomba de azúcar disfrazada de salud.</p><p>Las 3 reglas de oro de los jugos hormonales:</p><p class="intro-bullet">• 🥬 REGLA 70/30 — Mínimo 70% vegetales, máximo 30% fruta (o menos)</p><p class="intro-bullet">• 🍋 USA LICUADORA — Conserva la fibra, a diferencia del extractor que la elimina</p><p class="intro-bullet">• 🧊 CONSUME FRESCO — Bebe inmediatamente o guarda máximo 24h en refrigerador</p><p>En esta guía encontrarás jugos para cada momento del día y cada necesidad: energía matutina, digestión, antiinflamación, inmunidad y relajación nocturna.</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/jugos/basicos.jpg" alt="🌿 Jugos Verdes Básicos — Tu Base Diaria" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🌿 Jugos Verdes Básicos — Tu Base Diaria</h2>
+        <p class="chapter-desc">Estos jugos son tu punto de partida. Simples, con pocos ingredientes y efectivos para estabilizar tu glucosa desde la primera semana. Empieza con 3 veces por semana.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Agua de Magnesio Matutina</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/magnesio.jpg" alt="Agua de Magnesio Matutina" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de agua filtrada (temperatura ambiente)</li><li>½ cucharadita de sal marina (no sal de mesa)</li><li>Jugo de ½ limón fresco</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Vierte el agua en un vaso grande</li><li>Agrega la sal marina y revuelve hasta que se disuelva completamente</li><li>Exprime el limón y mezcla bien</li><li>Bebe en ayunas, 20 minutos antes del desayuno</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta bebida simple es un activador metabólico: la sal marina aporta minerales traza (magnesio, potasio, zinc) y el limón estimula la producción de bilis en tu hígado, preparándolo para metabolizar las grasas del día. Tu sistema hormonal despierta con el cuerpo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Jugo Verde Clásico Hormonal</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/clasico.jpg" alt="Jugo Verde Clásico Hormonal" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de espinaca fresca</li><li>½ pepino con cáscara</li><li>1 rama de apio</li><li>1 cucharadita de jengibre fresco rallado</li><li>Jugo de ½ limón</li><li>1 taza de agua filtrada</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava bien todos los vegetales bajo agua corriente</li><li>Corta el pepino y el apio en trozos pequeños para facilitar el licuado</li><li>Agrega todo a la licuadora: espinaca, pepino, apio, jengibre, limón y agua</li><li>Licúa por 1 minuto hasta obtener una mezcla homogénea. Agrega hielo y sirve</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este es el jugo base que puedes tomar diariamente. La espinaca aporta magnesio (mineral clave para la sensibilidad a la insulina), el pepino hidrata sin carbohidratos, el apio es antiinflamatorio y el jengibre mejora la circulación y la digestión. Todo con IG prácticamente cero.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Refrescante de Clorofila con Agua de Coco</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/clorofila.jpg" alt="Refrescante de Clorofila con Agua de Coco" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de espinaca fresca</li><li>½ limón con cáscara (bien lavado, sin semillas)</li><li>½ pepino en trozos</li><li>1 taza de agua de coco sin azúcar añadida</li><li>3-4 hojas de menta fresca</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava bien el limón, la espinaca y el pepino</li><li>Corta el limón en trozos pequeños con cáscara (retira las semillas)</li><li>Agrega todo a la licuadora junto con el agua de coco y la menta</li><li>Licúa bien hasta integrar completamente. Sirve con hielo</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El agua de coco aporta electrolitos naturales (potasio, magnesio) que mejoran la hidratación celular. La cáscara del limón contiene limoneno, un compuesto que apoya la desintoxicación hepática. Tu hígado es central en tu metabolismo hormonal — cuidarlo es cuidar todo tu sistema.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/jugos/funcionales.jpg" alt="⚡ Jugos Funcionales — Un Jugo para Cada Necesidad" loading="lazy">
+        </div>
+        <h2 class="chapter-title">⚡ Jugos Funcionales — Un Jugo para Cada Necesidad</h2>
+        <p class="chapter-desc">Estos jugos van más allá de la nutrición básica. Cada uno tiene un propósito específico: combatir inflamación, mejorar digestión, fortalecer inmunidad o relajar antes de dormir.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Verde con Nopal y Canela — Estabilizador de Glucosa</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/nopal.jpg" alt="Verde con Nopal y Canela — Estabilizador de Glucosa" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>½ nopal mediano (crudo y limpio)</li><li>1 taza de acelga fresca</li><li>½ manzana verde (opcional, si prefieres un toque de dulzor)</li><li>½ cucharadita de canela de Ceilán en polvo</li><li>1 taza de agua filtrada</li><li>Jugo de ½ limón</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Pela el nopal, retira las espinas y córtalo en cubitos pequeños</li><li>Lava bien la acelga y la manzana (si la usas)</li><li>Añade todo a la licuadora junto con la canela, limón y agua</li><li>Licúa hasta que se integre completamente. Cuela si prefieres textura más suave</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El nopal es un tesoro de la medicina tradicional latina con respaldo científico: su fibra mucilaginosa forma un gel que retarda la absorción de glucosa. La canela de Ceilán complementa este efecto mejorando la sensibilidad a la insulina. Juntos son el dúo estabilizador más poderoso.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Detox Verde Alcalinizante — Limpieza Profunda</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/detox.jpg" alt="Detox Verde Alcalinizante — Limpieza Profunda" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de kale (col rizada) sin tallos gruesos</li><li>1 rama de perejil fresco</li><li>½ diente de ajo pequeño (opcional — potente pero intenso)</li><li>1 cucharadita de vinagre de manzana orgánico</li><li>1 taza de agua fría</li><li>Jugo de ½ limón</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava bien todos los vegetales. Retira los tallos gruesos del kale</li><li>Coloca el kale, perejil, ajo (si lo usas), vinagre y agua en la licuadora</li><li>Licúa por 45 segundos o hasta que quede suave</li><li>Agrega hielo y limón, licúa 10 segundos más. Consume inmediatamente</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El kale es el vegetal con mayor densidad nutricional que existe — más hierro que la carne, más calcio que la leche, más vitamina C que la naranja. El vinagre de manzana antes de comer puede reducir el pico de glucosa postcomida hasta un 20%. Detox real, no marketing.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Estimulante Digestivo con Menta y Chía</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/digestivo.jpg" alt="Estimulante Digestivo con Menta y Chía" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de apio picado</li><li>1 ramita de menta fresca (6-8 hojas)</li><li>1 cucharadita de semillas de chía (remojadas 10 min en agua)</li><li>½ taza de té verde frío sin azúcar</li><li>Jugo de ½ limón</li><li>½ taza de agua</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava bien el apio y la menta</li><li>Remoja las semillas de chía en 2 cucharadas de agua por 10 minutos</li><li>Prepara el té verde con anticipación y enfríalo</li><li>Licúa el apio, la menta, el limón, el té verde y el agua. Al final, añade la chía remojada y solo mezcla sin licuar</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El apio contiene apigenina, un compuesto que reduce la inflamación intestinal. La menta relaja los músculos del tracto digestivo, aliviando gases e hinchazón. El té verde aporta catequinas que activan el metabolismo. Y la chía forma un gel prebiótico que alimenta tu microbiota — la conexión directa entre intestino y hormonas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Shot Antiinflamatorio de Cúrcuma y Jengibre</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/antiinflamatorio.jpg" alt="Shot Antiinflamatorio de Cúrcuma y Jengibre" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 trozo de jengibre fresco (3 cm, pelado)</li><li>1 trozo de cúrcuma fresca (2 cm, pelada) o 1 cdita de cúrcuma en polvo</li><li>Jugo de 1 limón completo</li><li>1 pizca de pimienta negra (ESENCIAL — activa la curcumina)</li><li>½ taza de agua</li><li>1 cucharadita de miel pura (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Pela el jengibre y la cúrcuma. Si usas cúrcuma fresca, cuidado: mancha todo de amarillo</li><li>Licúa el jengibre, cúrcuma, limón, pimienta negra y agua por 30 segundos</li><li>Cuela si deseas (o tómalo con la pulpa para máxima fibra)</li><li>Bebe como 'shot' de una vez — es concentrado e intenso. Sigue con un vaso de agua</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este shot es medicina líquida: la curcumina de la cúrcuma es el antiinflamatorio natural más estudiado del mundo, y la pimienta negra aumenta su absorción 2000%. El jengibre complementa el efecto. La inflamación crónica es el motor de la resistencia a la insulina — combatirla es proteger tu metabolismo.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Jugo de Inmunidad con Cítricos y Espinaca</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/inmunidad.jpg" alt="Jugo de Inmunidad con Cítricos y Espinaca" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de espinaca fresca</li><li>1 naranja pelada y en gajos</li><li>½ limón con cáscara (sin semillas)</li><li>1 trozo pequeño de jengibre (1 cm)</li><li>1 zanahoria mediana pelada</li><li>½ taza de agua</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava todos los vegetales. Pela la naranja y la zanahoria</li><li>Corta todo en trozos pequeños para facilitar el licuado</li><li>Agrega espinaca, naranja, limón, jengibre, zanahoria y agua a la licuadora</li><li>Licúa 1 minuto hasta obtener textura homogénea. Sirve con hielo</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La vitamina C de los cítricos no solo protege tu inmunidad — también es esencial para la producción de cortisol saludable. La zanahoria aporta betacaroteno que tu cuerpo convierte en vitamina A, necesaria para la función tiroidea. Un jugo que protege múltiples ejes hormonales a la vez.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Infusión Nocturna Relajante — Para Dormir Mejor</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/nocturno.jpg" alt="Infusión Nocturna Relajante — Para Dormir Mejor" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de agua caliente (no hirviendo)</li><li>1 bolsita de manzanilla o valeriana</li><li>½ cucharadita de canela en polvo</li><li>1 cucharadita de vinagre de manzana</li><li>1 pizca de nuez moscada</li><li>1 cucharadita de miel pura (opcional)</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Calienta el agua a punto de infusión (no hirviendo — preserva los compuestos activos)</li><li>Agrega la bolsita de manzanilla o valeriana y deja reposar 5 minutos</li><li>Retira la bolsita y mezcla la canela, vinagre de manzana y nuez moscada</li><li>Bebe tibio 30 minutos antes de acostarte — es tu ritual de cierre hormonal</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La manzanilla contiene apigenina que activa receptores GABA en tu cerebro, induciéndote al sueño. La canela antes de dormir puede mejorar tu glucosa en ayunas al día siguiente. El vinagre de manzana antes de dormir ha mostrado reducir la glucosa matutina hasta un 4-6%. Un ritual nocturno con triple beneficio hormonal.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/jugos/basicos.jpg" alt="💪 Batidos Verdes Proteicos — Jugos que Alimentan" loading="lazy">
+        </div>
+        <h2 class="chapter-title">💪 Batidos Verdes Proteicos — Jugos que Alimentan</h2>
+        <p class="chapter-desc">Cuando quieres más que un jugo — un batido que puede funcionar como snack o complemento de comida. La proteína los convierte en estabilizadores hormonales completos.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">10</div>
+            <div class="recipe-name">Batido Verde Proteico con Mantequilla de Maní</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/batido-proteico.jpg" alt="Batido Verde Proteico con Mantequilla de Maní" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de espinaca fresca</li><li>½ banana congelada (corta en rodajas antes de congelar)</li><li>1 cucharada de mantequilla de maní natural</li><li>1 taza de leche de almendras sin azúcar</li><li>1 cucharadita de semillas de chía</li><li>½ cucharadita de canela</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Agrega la leche de almendras y la espinaca a la licuadora primero — licúa 20 segundos</li><li>Añade la banana congelada, mantequilla de maní, chía y canela</li><li>Licúa 1 minuto hasta obtener textura cremosa y espesa</li><li>Agrega hielo si quieres más frío. Consume inmediatamente</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Este batido tiene los 3 macros perfectamente balanceados: proteína (mantequilla de maní), carbohidrato de IG bajo (banana + avena), y grasa saludable. La espinaca se 'esconde' en el sabor del maní y la canela. Tu insulina sube gradualmente y se mantiene estable por horas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">11</div>
+            <div class="recipe-name">Batido Verde de Aguacate y Cacao</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/funcionales.jpg" alt="Batido Verde de Aguacate y Cacao" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de espinaca fresca</li><li>¼ de aguacate maduro</li><li>1 cucharada de cacao puro en polvo (sin azúcar)</li><li>1 taza de leche de coco sin azúcar</li><li>1 cucharadita de miel pura (opcional)</li><li>½ cucharadita de extracto de vainilla</li><li>Hielo al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa la espinaca con la leche de coco primero hasta que desaparezca</li><li>Agrega el aguacate, cacao, vainilla y miel (si la usas)</li><li>Licúa 1 minuto hasta textura cremosa — el aguacate le da consistencia de milkshake</li><li>Sirve con hielo — sabe a batido de chocolate pero está lleno de vegetales</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El aguacate aporta grasas monoinsaturadas que mantienen estable tu glucosa y dan una textura cremosa indulgente. El cacao puro es una de las fuentes más ricas de magnesio (mineral #1 para sensibilidad a la insulina) y teobromina (estimulante suave sin los nervios del café). Un batido que sabe a postre y funciona como medicina.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">12</div>
+            <div class="recipe-name">Batido Tropical Antiinflamatorio</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/jugos/inmunidad.jpg" alt="Batido Tropical Antiinflamatorio" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 taza de kale o espinaca</li><li>½ taza de piña congelada (porción controlada)</li><li>1 trozo de jengibre fresco (2 cm)</li><li>½ cucharadita de cúrcuma en polvo</li><li>1 pizca de pimienta negra</li><li>1 taza de leche de almendras sin azúcar</li><li>1 cucharadita de aceite de coco</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Licúa el kale con la leche de almendras hasta que se disuelva</li><li>Agrega la piña congelada, jengibre, cúrcuma, pimienta y aceite de coco</li><li>Licúa 1 minuto a máxima potencia hasta obtener textura suave</li><li>Consume inmediatamente — la piña le da dulzor tropical sin necesidad de endulzante</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La piña contiene bromelina, una enzima que reduce la inflamación y mejora la digestión de proteínas. El aceite de coco contiene MCTs (triglicéridos de cadena media) que tu cuerpo usa como energía directa sin pasar por insulina. Tropical, delicioso y funcionalmente antiinflamatorio.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/jugos/ciencia.jpg" alt="📋 Tu Guía Rápida de Ingredientes" loading="lazy">
+        </div>
+        <h2 class="chapter-title">📋 Tu Guía Rápida de Ingredientes</h2>
+        <p class="chapter-desc">No necesitas memorizar cada receta — con esta guía de ingredientes puedes crear tus propios jugos verdes hormonales. Mezcla, experimenta y encuentra tus combinaciones favoritas.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">13</div>
+            <div class="recipe-name">🟢 Ingredientes Estrella y sus Beneficios Hormonales</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── VEGETALES BASE (usa 1-2 por jugo) ──</li><li>🥬 Espinaca — Magnesio + hierro + clorofila. Sabor suave, ideal para principiantes</li><li>🥬 Kale (col rizada) — Más densa que la espinaca. Calcio + vitamina K + antioxidantes</li><li>🥬 Acelga — Rica en potasio y magnesio. Sabor ligeramente dulce</li><li></li><li>── HIDRATANTES (usa 1 por jugo) ──</li><li>🥒 Pepino — 95% agua, casi cero carbohidratos. Diurético natural</li><li>🥒 Apio — Alcalinizante, antiinflamatorio, muy bajo en calorías</li><li></li><li>── POTENCIADORES (usa 1-2 por jugo) ──</li><li>🍋 Limón — Vitamina C, estimula el hígado, IG bajísimo</li><li>🫚 Jengibre — Antiinflamatorio, mejora circulación y digestión</li><li>🫚 Cúrcuma — Curcumina antiinflamatoria (siempre con pimienta negra)</li><li>🌿 Menta — Relaja el tracto digestivo, alivia gases</li><li>🌿 Perejil — Diurético natural, rico en vitamina C y hierro</li><li>🌵 Nopal — Fibra mucilaginosa que estabiliza glucosa</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>FÓRMULA BÁSICA: 1 vegetal base + 1 hidratante + 1-2 potenciadores + agua o líquido base</li><li>LÍQUIDOS BASE: agua filtrada, agua de coco sin azúcar, té verde frío, leche de almendras</li><li>Si quieres dulzor natural: ½ manzana verde o ½ taza de piña (máximo 30% fruta)</li><li>SIEMPRE agrega limón — mejora sabor, aporta vitamina C y activa los demás nutrientes</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Con esta fórmula puedes crear infinitas combinaciones. La regla es simple: la BASE debe ser vegetal verde, los potenciadores dan función específica, y el líquido determina la textura. No hay combinación 'incorrecta' — lo peor que puede pasar es que no te guste el sabor. Experimenta.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">14</div>
+            <div class="recipe-name">🔴 Ingredientes a Evitar en tus Jugos</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>❌ Frutas de IG alto en exceso — Banana madura, mango, sandía, uvas (solo porción pequeña)</li><li>❌ Jugos de fruta comerciales o concentrados — Azúcar líquida sin fibra</li><li>❌ Miel, azúcar de coco, dátiles en exceso — Endulzantes que siguen siendo azúcar</li><li>❌ Lácteos azucarados — Yogures de sabor, leche condensada</li><li>❌ Polvos verdes comerciales — Muchos tienen azúcar oculta y aditivos</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Si usas fruta, que sea: manzana verde, limón, frutos rojos o piña en porción pequeña</li><li>Lee las etiquetas de leches vegetales — busca 'sin azúcar añadida'</li><li>Mejor endulzar con canela, vainilla o un toque de stevia que con miel</li><li>Los polvos verdes NO reemplazan vegetales frescos — la fibra y las enzimas vivas se pierden</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El error más común en jugos verdes es convertirlos en batidos de fruta disfrazados. Si tu jugo sabe 'delicioso y dulce' desde el primer día, probablemente tiene demasiada fruta. Un jugo hormonal real sabe a vegetal con un toque de limón. El paladar se adapta en 1-2 semanas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">15</div>
+            <div class="recipe-name">📅 Tu Plan Semanal de Jugos — Empieza Aquí</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── SEMANA 1 (3 jugos) ──</li><li>Lunes → Agua de Magnesio Matutina (la más simple para empezar)</li><li>Miércoles → Jugo Verde Clásico Hormonal (tu base diaria)</li><li>Viernes → Refrescante de Clorofila con Agua de Coco</li><li></li><li>── SEMANA 2 (4 jugos) ──</li><li>Agrega: Martes → Shot Antiinflamatorio de Cúrcuma</li><li></li><li>── SEMANA 3 (5 jugos) ──</li><li>Agrega: Jueves → Batido Verde Proteico como snack de media mañana</li><li></li><li>── SEMANA 4+ ──</li><li>Personaliza según lo que más te gustó y lo que tu cuerpo mejor tolera</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>No empieces con todos los jugos a la vez — tu sistema digestivo necesita adaptarse</li><li>Si sientes gases o hinchazón las primeras veces, es normal — la fibra está limpiando</li><li>El mejor momento para un jugo verde: en ayunas o 30 minutos antes de una comida</li><li>Observa tu energía, digestión y sueño cada semana — los cambios son sutiles pero reales</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La consistencia supera la intensidad. 3 jugos verdes por semana durante 3 meses transforman tu microbiota intestinal, reducen inflamación crónica y mejoran tu sensibilidad a la insulina mucho más que un 'detox intensivo' de 3 días. Tu cuerpo necesita constancia, no extremos.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Jugos Verdes Detox</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

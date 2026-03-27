@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Código Hormonal — Recetario Navideño Saludable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #2E7D52;
+  --verde-deep: #1B5E3A;
+  --verde-light: #E8F5EE;
+  --cream: #FFFDF7;
+  --warm: #FBF8F3;
+  --gold: #C9922A;
+  --gold-light: #F9F3E6;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --borda: #E5E7EB;
+  --accent: #DC2626;
+  --sombra: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(165deg, #DC2626dd 0%, #DC2626 50%, #DC2626cc 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,255,255,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 480px;
+  animation: fadeUp .8s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.hero-icon { font-size: 52px; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.2)); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 42px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-count {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.content-area {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.content-area h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.recipe-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .2s;
+}
+.recipe-card:hover { border-color: #ccc; }
+.recipe-card.open { box-shadow: var(--sombra); border-color: var(--accent); }
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s;
+}
+.recipe-card.open .recipe-num { background: var(--accent); color: #fff; }
+.recipe-name { flex: 1; font-weight: 600; font-size: 14px; line-height: 1.35; }
+.recipe-toggle { font-size: 18px; color: var(--texto-sub); transition: transform .25s; flex-shrink: 0; }
+.recipe-card.open .recipe-toggle { transform: rotate(180deg); color: var(--accent); }
+.recipe-body { display: none; padding: 0 16px 18px; animation: slideDown .25s ease-out; }
+.recipe-card.open .recipe-body { display: block; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-divider { height: 1px; background: var(--borda); margin-bottom: 16px; }
+.recipe-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.recipe-ingredients { list-style: none; padding: 0; margin-bottom: 18px; }
+.recipe-ingredients li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.7;
+}
+.recipe-ingredients li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); opacity: .4;
+}
+.recipe-steps { list-style: none; counter-reset: step; padding: 0; margin-bottom: 16px; }
+.recipe-steps li {
+  counter-increment: step; position: relative; padding-left: 32px;
+  font-size: 14px; line-height: 1.7; margin-bottom: 8px;
+}
+.recipe-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--verde-light); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.recipe-tip {
+  background: var(--gold-light); border-radius: 10px;
+  padding: 14px 16px; border-left: 3px solid var(--gold);
+}
+.recipe-tip-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.recipe-tip-text { font-size: 13px; line-height: 1.6; color: #78350F; font-style: italic; }
+.recipe-img {
+  width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.recipe-img img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+}
+.section-text p {
+  font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: var(--texto);
+}
+.ebook-footer {
+  background: #1a1a2e; color: rgba(255,255,255,.6);
+  text-align: center; padding: 40px 24px;
+}
+.ebook-footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 6px;
+}
+.ebook-footer-sub { font-size: 12px; margin-bottom: 16px; }
+.ebook-footer-copy { font-size: 11px; color: rgba(255,255,255,.3); }
+.btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transform: translateY(12px);
+  transition: all .3s; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+}
+.btt.visible { opacity: 1; transform: translateY(0); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: 13px; font-weight: 600;
+  position: relative; z-index: 2; margin-bottom: 16px;
+}
+.back-link:hover { color: #fff; }
+@media print {
+  .btt { display: none !important; }
+  .hero { min-height: auto; padding: 40px 24px; page-break-after: always; }
+  .recipe-body { display: block !important; }
+  .recipe-card { break-inside: avoid; box-shadow: none !important; }
+  .recipe-toggle { display: none; }
+  body { background: #fff; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 32px 20px; }
+  .content-area { padding: 24px 16px 40px; }
+}
+
+.intro-section {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-light);
+}
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+.intro-bullet {
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  margin-left: 4px;
+  color: var(--texto) !important;
+  font-weight: 500;
+}
+.chapter-header {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chapter-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.chapter-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.chapter-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+  border-bottom: none !important;
+}
+.chapter-desc {
+  font-size: 14px;
+  color: var(--texto-sub);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 4px;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-content">
+    <a href="portal.html" class="back-link">← Volver al portal</a>
+    <span class="hero-badge">El Código Hormonal</span>
+    <span class="hero-icon" aria-hidden="true">🎄</span>
+    <h1>Recetario Navideño Saludable</h1>
+    <p class="hero-sub">Celebra la Navidad con sabor, tradición y equilibrio hormonal</p>
+    <div class="hero-count">9 recetas</div>
+  </div>
+</section>
+<div class="content-area">
+<div class="intro-section">
+        <h2 class="intro-title">Celebra la Navidad sin Sacrificar tu Equilibrio Hormonal</h2>
+        <div class="intro-content"><p>La Navidad es momento de celebrar, compartir y disfrutar en familia. Pero para muchas mujeres después de los 40, las fiestas significan ansiedad: ¿qué puedo comer? ¿me va a hacer daño? ¿voy a perder todo mi progreso?</p><p>Este recetario navideño te libera de esas preocupaciones.</p><p>Cada receta fue diseñada para mantener los sabores y la tradición de la Navidad latina — hallacas, pan de jamón, ponche, pollo glaseado, tortas — pero con ingredientes que protegen tu equilibrio hormonal.</p><p class="intro-bullet">• 🎄 Todos los clásicos navideños están aquí — adaptados con inteligencia</p><p class="intro-bullet">• 🥜 Harinas de almendra y coco reemplazan las harinas refinadas</p><p class="intro-bullet">• 🍗 Proteínas de calidad como base de cada plato principal</p><p class="intro-bullet">• 🍎 Endulzantes naturales y especias que benefician tu metabolismo</p><p>La regla de oro para las fiestas: disfruta sin culpa, come con estrategia, y al día siguiente vuelve a tu rutina normal. Un día de celebración entre 30 días de buenos hábitos NO cambia nada.</p><p>¡Feliz Navidad y que cada bocado sea con consciencia y placer!</p></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/navidad/principales.jpg" alt="🍗 Platos Principales — El Corazón de la Cena" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🍗 Platos Principales — El Corazón de la Cena</h2>
+        <p class="chapter-desc">Los platos que hacen especial la cena navideña, adaptados para que tu insulina no se dispare mientras disfrutas con tu familia.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">1</div>
+            <div class="recipe-name">Hallaca de Pollo Saludable (Sin Harina)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/navidad/hallaca.jpg" alt="Hallaca de Pollo Saludable (Sin Harina)" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── MASA DE POLLO ──</li><li>500g de pechuga de pollo cocida y desmenuzada</li><li>2 cucharadas de aceite de oliva</li><li>¼ taza de caldo de pollo sin sal añadida</li><li>1 huevo</li><li>1 cucharadita de cúrcuma (para color dorado)</li><li>Sal y pimienta al gusto</li><li></li><li>── RELLENO ──</li><li>100g de carne magra cocida y picada</li><li>50g de aceitunas verdes sin relleno</li><li>½ pimentón rojo picado</li><li>½ cebolla picada</li><li>1 diente de ajo picado</li><li>1 cucharada de aceite de oliva</li><li>Comino, sal y pimienta al gusto</li><li></li><li>── PARA ENVOLVER ──</li><li>Hojas de plátano limpias y pasadas por agua caliente</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>MASA: Tritura el pollo cocido en procesador hasta formar una pasta. Agrega huevo, aceite, cúrcuma y caldo poco a poco hasta obtener una masa maleable y firme</li><li>RELLENO: Sofríe cebolla, ajo y pimentón en aceite de oliva. Agrega la carne, aceitunas y especias. Cocina 3 minutos</li><li>ARMADO: Sobre hoja de plátano, extiende una capa de masa, coloca 2-3 cucharadas de relleno, cubre con más masa y cierra el paquete</li><li>COCCIÓN: Cocina al vapor 25-30 minutos. Deja reposar unos minutos antes de abrir</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La masa de pollo reemplaza la masa de maíz tradicional, eliminando los carbohidratos refinados. La cúrcuma no solo da el color dorado clásico — es antiinflamatoria. Una hallaca que sabe a Navidad pero que tu insulina puede manejar sin problemas.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">2</div>
+            <div class="recipe-name">Hallaca de Garbanzos (Versión Vegetal)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/navidad/hallaca-garbanzo.jpg" alt="Hallaca de Garbanzos (Versión Vegetal)" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── MASA ──</li><li>2 tazas de garbanzos cocidos</li><li>½ taza de harina de garbanzos</li><li>½ taza de caldo de verduras</li><li>Sal, pimienta y comino al gusto</li><li></li><li>── RELLENO ──</li><li>200g de carne magra de res cocida y picada</li><li>½ cebolla picada</li><li>½ pimentón rojo picado</li><li>1 diente de ajo picado</li><li>1 cucharada de aceite de oliva</li><li>1 cucharada de pasta de tomate natural</li><li>Ají dulce al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>MASA: Licúa los garbanzos cocidos con el caldo hasta obtener una pasta suave. Mezcla con la harina de garbanzos, sal y pimienta hasta formar una masa moldeable</li><li>RELLENO: Saltea cebolla, ajo y pimentón en aceite de oliva. Añade la carne y cocina hasta dorar. Agrega pasta de tomate y especias</li><li>ARMADO: Sobre hojas de plátano (lavadas y pasadas por agua caliente), coloca una porción de masa, aplana, añade el relleno y cierra como hallaca tradicional</li><li>COCCIÓN: Hierve en agua durante 20-25 minutos. Retira, deja enfriar un poco y sirve</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Los garbanzos tienen IG 28 (bajísimo) y aportan proteína vegetal + fibra. Esta masa no solo es más amigable con tu insulina que la de maíz — también es más nutritiva y te sacia mucho más. Una innovación navideña que tu familia va a amar.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">3</div>
+            <div class="recipe-name">Pan de Jamón sin Harinas Refinadas</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/navidad/pan-jamon.jpg" alt="Pan de Jamón sin Harinas Refinadas" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── MASA ──</li><li>2 tazas de harina de almendra</li><li>2 cucharadas de harina de coco</li><li>¼ cucharadita de sal</li><li>3 cucharadas de mantequilla derretida (o aceite de oliva)</li><li>½ taza de leche de almendras sin azúcar</li><li>1 huevo</li><li></li><li>── RELLENO ──</li><li>150g de jamón de pavo bajo en sodio</li><li>50g de aceitunas verdes picadas</li><li>¼ pimentón rojo en tiras</li><li>2 cucharadas de queso crema o mozzarella rallada</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>MASA: Mezcla las harinas y sal. Añade mantequilla y mezcla hasta textura arenosa. Agrega huevo y leche hasta formar masa maleable</li><li>ARMADO: Estira la masa entre dos hojas de papel vegetal formando un rectángulo. Distribuye jamón, aceitunas, pimentón y queso en el centro</li><li>ENROLLADO: Enrolla desde un borde largo hacia el otro formando un cilindro. Sella los bordes y pincela con huevo batido</li><li>HORNEADO: Precalienta a 180°C. Hornea 20-25 minutos hasta que esté dorado y firme al tacto</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La harina de almendra tiene IG bajo (~20) y es rica en proteína y grasas saludables. Este pan de jamón sabe a tradición navideña pero sin el pico glucémico de la harina de trigo. La familia no nota la diferencia — tu cuerpo sí.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">4</div>
+            <div class="recipe-name">Pollo Relleno Navideño con Brócoli</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/navidad/pollo-relleno.jpg" alt="Pollo Relleno Navideño con Brócoli" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── POLLO ──</li><li>1.2 kg de filetes de pechuga de pollo</li><li>Sal, pimienta, ajo en polvo y tomillo seco</li><li>15 ml de aceite de oliva</li><li></li><li>── RELLENO ──</li><li>1 taza de coliflor rallada (reemplaza el pan)</li><li>3 dientes de ajo picados</li><li>100g de queso mozzarella bajo en grasa</li><li>½ taza de salsa de tomate casera sin azúcar</li><li>50g de arándanos frescos o deshidratados sin azúcar</li><li>20 ml de aceite de oliva</li><li></li><li>── ACOMPAÑAMIENTO ──</li><li>200g de brócoli en ramitas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Coloca los filetes sobre papel vegetal, ligeramente superpuestos. Sazona con sal, pimienta, ajo en polvo y tomillo</li><li>RELLENO: Mezcla coliflor rallada, ajo, mozzarella, salsa de tomate, arándanos y aceite hasta integrar bien</li><li>Distribuye el relleno sobre los filetes. Enrolla con ayuda del papel vegetal para mantener forma. Unta con aceite de oliva por fuera</li><li>Hornea envuelto en papel vegetal a 180°C hasta que esté completamente cocido. Acompaña con brócoli al vapor (4-6 min)</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La coliflor rallada reemplaza el pan rallado del relleno tradicional — mismo volumen, misma textura, pero con IG casi nulo. Los arándanos aportan antioxidantes y un toque agridulce festivo. Un plato que impresiona en la mesa navideña.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">5</div>
+            <div class="recipe-name">Pollo Glaseado Navideño con Yogur y Mostaza</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/navidad/pollo-glaseado.jpg" alt="Pollo Glaseado Navideño con Yogur y Mostaza" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>1 pollo entero o 4 muslos/piernas (aprox. 1.5-2 kg)</li><li>2 cucharadas de aceite de oliva</li><li>½ taza de yogur griego natural sin azúcar</li><li>2 cucharadas de mostaza Dijon</li><li>2 dientes de ajo picados</li><li>1 cucharadita de paprika</li><li>½ cucharadita de canela en polvo</li><li>Sal y pimienta al gusto</li><li>Hierbas frescas (romero, tomillo) para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Precalienta el horno a 180°C. Limpia y seca el pollo con papel absorbente. Frota sal, pimienta, paprika y canela por toda la superficie</li><li>GLASEADO: Mezcla yogur, mostaza y ajo picado hasta obtener una mezcla homogénea. Puedes añadir hierbas secas al gusto</li><li>Coloca el pollo en bandeja para hornear y cúbrelo con la mitad del glaseado. Hornea 45-60 minutos, pincelando con el resto a la mitad de la cocción</li><li>El pollo está listo cuando los jugos salen claros y la piel está dorada. Decora con hierbas frescas y sirve</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">El glaseado de yogur y mostaza reemplaza las salsas azucaradas tradicionales (miel, azúcar morena, mermelada). El yogur le da un brillo dorado hermoso, lo mantiene jugoso, y la mostaza aporta sabor profundo. Espectacular en la mesa, invisible para tu insulina.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/navidad/ensalada.jpg" alt="🥗 Ensalada y Acompañamiento Festivo" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🥗 Ensalada y Acompañamiento Festivo</h2>
+        <p class="chapter-desc">La ensalada navideña es el complemento perfecto que equilibra los platos principales. Esta versión proteica te mantiene saciada sin necesidad de repetir.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">6</div>
+            <div class="recipe-name">Ensalada Navideña de Pollo con Aderezo de Yogur</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/navidad/ensalada.jpg" alt="Ensalada Navideña de Pollo con Aderezo de Yogur" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>── BASE ──</li><li>2 pechugas de pollo cocidas y desmenuzadas</li><li>½ taza de apio picado</li><li>¼ taza de pimentón rojo picado</li><li>¼ taza de pimientos verdes picados</li><li>¼ taza de aceitunas verdes o negras picadas</li><li>2 huevos duros picados</li><li>2 cucharadas de almendras laminadas</li><li></li><li>── ADEREZO ──</li><li>3 cucharadas de yogur griego natural sin azúcar</li><li>1 cucharadita de mostaza Dijon</li><li>Jugo de ½ limón</li><li>Sal y pimienta al gusto</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>En un bowl grande, mezcla el pollo desmenuzado, apio, pimentones, huevos, aceitunas y almendras</li><li>En un recipiente aparte, mezcla el yogur, mostaza, limón, sal y pimienta hasta obtener un aderezo homogéneo</li><li>Vierte el aderezo sobre la ensalada y mezcla suavemente para cubrir todos los ingredientes</li><li>Refrigera al menos 30-60 minutos antes de servir para que se integren los sabores. Decora con perejil fresco</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">Esta ensalada es la acompañante perfecta de las hallacas y el pan de jamón. El yogur griego reemplaza la mayonesa reduciendo calorías y agregando probióticos. Las almendras aportan crujido + grasas saludables. Un plato festivo que equilibra tu mesa navideña.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/navidad/bebidas.jpg" alt="🥤 Bebidas Navideñas — Brindis sin Picos" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🥤 Bebidas Navideñas — Brindis sin Picos</h2>
+        <p class="chapter-desc">El ponche y las bebidas navideñas suelen ser bombas de azúcar. Estas versiones conservan el espíritu festivo pero cuidan tu equilibrio hormonal.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">7</div>
+            <div class="recipe-name">Ponche de Huevo Navideño (Eggnog Saludable)</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/navidad/ponche.jpg" alt="Ponche de Huevo Navideño (Eggnog Saludable)" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>4 huevos grandes</li><li>Stevia al gusto (o 1 cucharada de miel pura)</li><li>1 taza de leche de almendras sin azúcar</li><li>½ taza de crema de coco para cocinar</li><li>¼ taza de ron o brandy (opcional — omitir para versión sin alcohol)</li><li>1 cucharadita de esencia de vainilla</li><li>½ cucharadita de canela en polvo</li><li>1 pizca de nuez moscada</li><li>1 pizca de sal</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Separa las yemas de las claras. Bate las yemas con el endulzante hasta que estén cremosas y pálidas</li><li>En una olla a fuego bajo, mezcla la leche de almendras, crema de coco, vainilla, canela, nuez moscada y sal. Añade lentamente las yemas revolviendo constantemente (no debe hervir). Cocina 8-10 minutos hasta espesar</li><li>Retira del fuego, deja enfriar un poco y añade el ron o brandy si deseas</li><li>Opcional: bate las claras a punto de nieve e incorpóralas suavemente para un ponche más espumoso. Se conserva en refrigerador hasta 5 días</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La leche de almendras y la crema de coco reemplazan la leche tradicional y la crema de leche, reduciendo enormemente los carbohidratos. La canela y nuez moscada no solo dan el sabor clásico navideño — ambas especias ayudan a mejorar la sensibilidad a la insulina.</div>
+        </div></div>
+    </div><div class="chapter-header">
+        <div class="chapter-img">
+            <img src="img/navidad/postres.jpg" alt="🍪 Postres Navideños — Dulzura Inteligente" loading="lazy">
+        </div>
+        <h2 class="chapter-title">🍪 Postres Navideños — Dulzura Inteligente</h2>
+        <p class="chapter-desc">La mesa navideña no está completa sin postres. Estas versiones usan harinas de almendra y coco, endulzantes naturales y especias que cuidan tu equilibrio hormonal.</p>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">8</div>
+            <div class="recipe-name">Galletas Navideñas con Especias</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/navidad/galletas.jpg" alt="Galletas Navideñas con Especias" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 tazas de harina de almendra</li><li>¼ taza de harina de coco</li><li>½ cucharadita de polvo de hornear</li><li>¼ cucharadita de sal</li><li>½ taza de mantequilla ghee o clarificada (derretida)</li><li>1 huevo grande</li><li>1 cucharadita de esencia de vainilla</li><li>½ cucharadita de canela en polvo</li><li>¼ cucharadita de nuez moscada</li><li>Stevia al gusto</li><li>Opcional: chispas de chocolate oscuro 70%+ o nueces picadas</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Bate la mantequilla derretida con el endulzante. Añade huevo y vainilla hasta integrar</li><li>En otro bowl, mezcla las harinas, polvo de hornear, sal y especias. Incorpora a los ingredientes húmedos. Agrega chispas de chocolate o nueces si deseas</li><li>Precalienta el horno a 180°C. Forma bolitas de masa, aplánalas y colócalas en bandeja con papel de horno dejando espacio entre ellas</li><li>Hornea 12-15 minutos hasta que los bordes estén dorados. Enfría 5 minutos en la bandeja antes de mover</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La harina de almendra tiene 6 veces más proteína que la harina de trigo y un IG bajísimo. Estas galletas son tan navideñas como las tradicionales — canela, nuez moscada, vainilla — pero sin el tsunami de glucosa que disparan las galletas de harina blanca.</div>
+        </div></div>
+    </div><div class="recipe-card">
+        <div class="recipe-header" onclick="toggleRecipe(this)">
+            <div class="recipe-num">9</div>
+            <div class="recipe-name">Torta de Manzana Navideña con Especias</div>
+            <span class="recipe-toggle" aria-hidden="true">▾</span>
+        </div>
+        <div class="recipe-body"><div class="recipe-img"><img src="img/navidad/torta-manzana.jpg" alt="Torta de Manzana Navideña con Especias" loading="lazy"></div><div class="recipe-divider"></div><div class="recipe-label">Ingredientes</div><ul class="recipe-ingredients"><li>2 manzanas verdes (Granny Smith) peladas y en cubos</li><li>1 taza de harina de almendra</li><li>¼ taza de harina de coco</li><li>1 cucharadita de polvo de hornear</li><li>½ cucharadita de canela en polvo</li><li>¼ cucharadita de nuez moscada</li><li>3 huevos grandes</li><li>½ taza de yogur griego natural sin azúcar</li><li>3 cucharadas de aceite de coco derretido</li><li>1 cucharadita de esencia de vainilla</li><li>Stevia al gusto</li><li>Pizca de sal</li><li>Nueces picadas o almendras laminadas para decorar</li></ul><div class="recipe-label">Preparación</div><ol class="recipe-steps"><li>Lava, pela y corta las manzanas en cubitos pequeños. Reserva algunas rodajas finas para decorar la superficie</li><li>Mezcla las harinas, polvo de hornear, canela, nuez moscada y sal en un bowl</li><li>En otro bowl, bate huevos con yogur, aceite de coco, vainilla y endulzante. Incorpora los ingredientes secos suavemente</li><li>Agrega los cubitos de manzana a la mezcla. Vierte en molde engrasado, decora con manzanas y nueces. Hornea a 180°C por 25-35 minutos</li></ol><div class="recipe-tip">
+            <div class="recipe-tip-label">Consejo Nutricional</div>
+            <div class="recipe-tip-text">La manzana verde Granny Smith tiene el IG más bajo entre las manzanas y aporta pectina — una fibra que forma gel y retarda la absorción de azúcar. Con harinas de almendra y coco, esta torta navideña es un postre que puedes disfrutar con tranquilidad hormonal.</div>
+        </div></div>
+    </div>
+</div>
+<footer class="ebook-footer">
+  <div class="ebook-footer-brand">El Código Hormonal</div>
+  <div class="ebook-footer-sub">Recetario Navideño Saludable</div>
+  <div class="ebook-footer-copy">Material exclusivo para miembros. Todos los derechos reservados.</div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">↑</button>
+<script>
+function toggleRecipe(h){ h.parentElement.classList.toggle('open'); }
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('btt');
+  if(window.pageYOffset > 400) b.classList.add('visible');
+  else b.classList.remove('visible');
+}, {passive:true});
+</script>
+</body>
+</html>

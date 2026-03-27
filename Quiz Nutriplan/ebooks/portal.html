@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El Código Hormonal — Tu Biblioteca Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --verde:#2E7D52;--verde-deep:#1a4a31;--verde-light:#3a9966;
+  --rosa:#E8445A;--rosa-soft:#f06b7d;
+  --gold:#C9922A;--gold-light:#e8b84a;--gold-pale:#f5e6c8;
+  --cream:#FFF8F0;--cream-dark:#f0e8db;
+  --ink:#1a1a1a;--ink-light:#4a4a4a;--ink-faint:#8a8a7a;
+  --parchment:#FFFDF8;
+  --shadow-soft:0 2px 20px rgba(26,74,49,.08);
+  --shadow-card:0 4px 24px rgba(26,74,49,.1), 0 1px 4px rgba(0,0,0,.06);
+  --shadow-hover:0 12px 40px rgba(26,74,49,.18), 0 4px 12px rgba(0,0,0,.08);
+  --radius:16px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'DM Sans',sans-serif;color:var(--ink);
+  background:var(--parchment);line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* ── Grain overlay ── */
+body::before{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Hero ── */
+.hero{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:3rem 1.5rem;overflow:hidden;
+  background:url('../Fundo Front.jpg') center center / cover no-repeat;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(10,30,18,.65) 0%, rgba(10,30,18,.45) 40%, rgba(10,30,18,.70) 100%),
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(201,146,42,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(46,125,82,.10) 0%, transparent 50%);
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, transparent 85%, var(--parchment) 100%);
+  pointer-events:none;
+}
+
+.hero-content{position:relative;z-index:2;max-width:680px}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(201,146,42,.15);backdrop-filter:blur(12px);
+  border:1px solid rgba(201,146,42,.35);
+  padding:.55rem 1.4rem;border-radius:100px;
+  font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:2.5rem;
+  animation:fadeDown .8s ease-out both;
+  box-shadow:0 0 20px rgba(201,146,42,.1);
+}
+.hero-badge::before{content:'✦';font-size:.65rem}
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:clamp(3rem,9vw,5.5rem);line-height:1.05;
+  color:#fff;margin-bottom:1.2rem;
+  animation:fadeDown .8s .15s ease-out both;
+  text-shadow:0 2px 30px rgba(0,0,0,.3);
+}
+.hero h1 em{
+  font-style:italic;color:var(--gold-light);
+  display:block;font-size:.85em;
+  text-shadow:0 2px 20px rgba(201,146,42,.3);
+}
+.hero-sub{
+  font-size:clamp(1rem,2.5vw,1.2rem);color:rgba(255,255,255,.85);
+  font-weight:400;max-width:520px;margin:0 auto 3rem;
+  animation:fadeDown .8s .3s ease-out both;
+  line-height:1.7;
+  text-shadow:0 1px 8px rgba(0,0,0,.2);
+}
+
+.hero-stats{
+  display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;
+  animation:fadeDown .8s .45s ease-out both;
+  background:rgba(255,255,255,.07);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.1);
+  padding:1.2rem 2.5rem;border-radius:16px;
+}
+.hero-stat{text-align:center;color:rgba(255,255,255,.9)}
+.hero-stat strong{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:2.4rem;font-weight:600;color:var(--gold-light);line-height:1.1;
+}
+.hero-stat span{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;opacity:.7;font-weight:500}
+
+.hero-scroll{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,.5);font-size:.75rem;text-transform:uppercase;
+  letter-spacing:.1em;display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  animation:fadeDown .8s .6s ease-out both;
+}
+.hero-scroll::after{
+  content:'';width:1px;height:30px;background:rgba(255,255,255,.3);
+  animation:scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes scrollPulse{
+  0%,100%{opacity:.3;transform:scaleY(1)}
+  50%{opacity:.8;transform:scaleY(1.3)}
+}
+
+/* ── Photo strip ── */
+.photo-strip{
+  display:flex;gap:0;overflow:hidden;
+  height:200px;position:relative;
+}
+.photo-strip::before,.photo-strip::after{
+  content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;
+}
+.photo-strip::before{left:0;background:linear-gradient(90deg,var(--parchment),transparent)}
+.photo-strip::after{right:0;background:linear-gradient(-90deg,var(--parchment),transparent)}
+.photo-strip img{
+  flex:1;min-width:0;object-fit:cover;height:100%;
+  filter:saturate(.85) brightness(.95);
+  transition:filter .4s;
+}
+.photo-strip img:hover{filter:saturate(1) brightness(1)}
+
+/* ── Sections ── */
+.library{padding:0 1.5rem 4rem;max-width:1100px;margin:0 auto}
+
+.section-header{
+  text-align:center;padding:4rem 0 2.5rem;
+}
+.section-header .section-tag{
+  display:inline-block;
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--verde);background:rgba(46,125,82,.08);
+  padding:.4rem 1rem;border-radius:100px;margin-bottom:1rem;
+}
+.section-header h2{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:clamp(2rem,5vw,2.8rem);color:var(--ink);line-height:1.15;
+}
+.section-header h2 span{color:var(--verde)}
+.section-header p{
+  color:var(--ink-faint);margin-top:.5rem;font-size:.95rem;max-width:500px;
+  margin-left:auto;margin-right:auto;
+}
+
+.section-divider{
+  width:60px;height:2px;margin:0 auto;
+  background:linear-gradient(90deg,var(--gold),var(--verde));
+  border-radius:2px;opacity:.5;
+}
+
+/* ── Card grid ── */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1.25rem;
+}
+
+.ebook-card{
+  position:relative;display:flex;gap:1rem;align-items:flex-start;
+  background:#fff;border:1px solid rgba(46,125,82,.08);
+  border-radius:var(--radius);padding:1.25rem;
+  text-decoration:none;color:var(--ink);
+  box-shadow:var(--shadow-soft);
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+  cursor:pointer;overflow:hidden;
+  opacity:0;transform:translateY(24px);
+}
+.ebook-card.visible{
+  opacity:1;transform:translateY(0);
+}
+.ebook-card:hover{
+  box-shadow:var(--shadow-hover);
+  transform:translateY(-4px);
+  border-color:rgba(46,125,82,.2);
+}
+.ebook-card:hover .card-icon{
+  transform:scale(1.1) rotate(-3deg);
+}
+.ebook-card:hover .card-arrow{
+  opacity:1;transform:translateX(0);
+}
+
+/* Accent stripe on left */
+.ebook-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:4px;border-radius:var(--radius) 0 0 var(--radius);
+  background:var(--card-accent, var(--verde));
+  opacity:0;transition:opacity .3s;
+}
+.ebook-card:hover::before{opacity:1}
+
+.card-icon{
+  flex-shrink:0;width:52px;height:52px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;border-radius:14px;
+  background:var(--card-bg, rgba(46,125,82,.06));
+  transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+
+.card-body{flex:1;min-width:0}
+.card-body h3{
+  font-family:'DM Sans',sans-serif;font-weight:700;
+  font-size:.95rem;line-height:1.3;margin-bottom:.25rem;
+  color:var(--ink);
+}
+.card-body p{
+  font-size:.82rem;color:var(--ink-faint);line-height:1.4;
+}
+.card-count{
+  display:inline-block;margin-top:.4rem;
+  font-size:.7rem;font-weight:600;letter-spacing:.04em;
+  color:var(--card-accent, var(--verde));
+  background:var(--card-bg, rgba(46,125,82,.06));
+  padding:.2rem .6rem;border-radius:6px;
+}
+
+.card-arrow{
+  position:absolute;right:1rem;top:50%;transform:translateX(-8px);
+  margin-top:-10px;
+  opacity:0;transition:all .3s;
+  color:var(--card-accent, var(--verde));font-size:1.2rem;
+}
+
+/* ── "Comience Aquí" featured card ── */
+.ebook-card.featured{
+  grid-column:1/-1;
+  background:linear-gradient(135deg, var(--verde-deep), var(--verde));
+  border:none;padding:1.75rem;
+}
+.ebook-card.featured .card-icon{
+  background:rgba(255,255,255,.15);font-size:2rem;
+  width:64px;height:64px;
+}
+.ebook-card.featured .card-body h3{color:#fff;font-size:1.1rem}
+.ebook-card.featured .card-body p{color:rgba(255,255,255,.75)}
+.ebook-card.featured .card-count{
+  background:rgba(255,255,255,.15);color:var(--gold-light);
+}
+.ebook-card.featured .card-arrow{color:#fff}
+.ebook-card.featured::before{display:none}
+.ebook-card.featured:hover{
+  box-shadow:0 16px 48px rgba(26,74,49,.3);
+  transform:translateY(-4px);
+}
+
+/* ── Bono section styling ── */
+.bonos .section-tag{color:var(--gold);background:rgba(201,146,42,.1)}
+.bonos .section-header h2 span{color:var(--gold)}
+
+.bonos .ebook-card{
+  --card-accent:var(--gold);
+  --card-bg:rgba(201,146,42,.07);
+}
+.bonos .ebook-card .card-count{
+  color:var(--gold);
+}
+
+/* ── 200 Recetas featured bono ── */
+.ebook-card.featured-bono{
+  grid-column:1/-1;
+  background:linear-gradient(135deg, #8B4513, var(--gold));
+  border:none;padding:1.75rem;
+}
+.ebook-card.featured-bono .card-icon{
+  background:rgba(255,255,255,.15);font-size:2rem;
+  width:64px;height:64px;
+}
+.ebook-card.featured-bono .card-body h3{color:#fff;font-size:1.1rem}
+.ebook-card.featured-bono .card-body p{color:rgba(255,255,255,.75)}
+.ebook-card.featured-bono .card-count{
+  background:rgba(255,255,255,.15);color:#fff;
+}
+.ebook-card.featured-bono .card-arrow{color:#fff}
+.ebook-card.featured-bono::before{display:none}
+.ebook-card.featured-bono:hover{
+  box-shadow:0 16px 48px rgba(139,69,19,.3);
+  transform:translateY(-4px);
+}
+
+/* ── Footer ── */
+.portal-footer{
+  text-align:center;padding:3rem 1.5rem;
+  border-top:1px solid rgba(46,125,82,.08);
+  background:linear-gradient(180deg, var(--parchment), var(--cream-dark));
+}
+.portal-footer .brand{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:1.4rem;color:var(--verde-deep);margin-bottom:.5rem;
+}
+.portal-footer p{font-size:.8rem;color:var(--ink-faint)}
+.portal-footer .footer-line{
+  width:40px;height:2px;margin:1rem auto;
+  background:var(--gold);border-radius:2px;opacity:.4;
+}
+
+/* ── App link banner ── */
+.app-banner{
+  margin:2rem auto 0;max-width:600px;
+  background:linear-gradient(135deg, var(--verde-deep), var(--verde));
+  border-radius:var(--radius);padding:1.5rem 2rem;
+  display:flex;align-items:center;gap:1rem;
+  text-decoration:none;color:#fff;
+  box-shadow:var(--shadow-card);
+  transition:all .35s;
+}
+.app-banner:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-hover);
+}
+.app-banner .banner-icon{font-size:2.5rem;flex-shrink:0}
+.app-banner h4{font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.app-banner p{font-size:.8rem;opacity:.75}
+
+/* ── Responsive ── */
+@media(max-width:600px){
+  .hero{min-height:90vh;padding:2.5rem 1.25rem}
+  .hero-stats{gap:1.5rem}
+  .hero-stat strong{font-size:1.8rem}
+  .card-grid{grid-template-columns:1fr}
+  .photo-strip{height:140px}
+  .library{padding:0 1rem 3rem}
+  .app-banner{flex-direction:column;text-align:center;padding:1.25rem}
+}
+
+@media(min-width:900px){
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .ebook-card.featured,.ebook-card.featured-bono{
+    grid-column:1/-1;
+    flex-direction:row;align-items:center;
+  }
+}
+
+/* ── Print ── */
+@media print{
+  .hero{min-height:auto;padding:2rem;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .photo-strip,.hero-scroll{display:none}
+  .ebook-card{break-inside:avoid;box-shadow:none;border:1px solid #ddd;opacity:1!important;transform:none!important}
+  .app-banner{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Acceso Exclusivo</div>
+    <h1>El Código <em>Hormonal</em></h1>
+    <p class="hero-sub">Tu Biblioteca Digital de Bienestar Hormonal — guías, recetas y herramientas para transformar tu salud.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>22</strong><span>Ebooks</span></div>
+      <div class="hero-stat"><strong>500+</strong><span>Recetas</span></div>
+      <div class="hero-stat"><strong>11</strong><span>Bonos</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll">Explorar<br></div>
+</header>
+
+<!-- ═══ Photo strip ═══ -->
+<div class="photo-strip">
+  <img src="img/desayuno.jpg" alt="Desayunos saludables" loading="lazy">
+  <img src="img/almuerzo.jpg" alt="Almuerzos balanceados" loading="lazy">
+  <img src="img/cena.jpg" alt="Cenas nutritivas" loading="lazy">
+  <img src="img/snack.jpg" alt="Snacks inteligentes" loading="lazy">
+  <img src="img/jugo.jpg" alt="Jugos funcionales" loading="lazy">
+</div>
+
+<!-- ═══ Banner Carousel ═══ -->
+<div class="banner-carousel" style="max-width:680px;margin:2rem auto;padding:0 1.5rem">
+  <div style="position:relative;overflow:hidden;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.1)">
+    <!-- Slides -->
+    <div id="bannerTrack" style="display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);will-change:transform">
+
+      <!-- Slide 1: Welcome + Mi Código App -->
+      <div class="banner-slide" style="min-width:100%;min-height:320px;position:relative;display:flex;align-items:center;padding:0;color:#fff;overflow:hidden">
+        <img src="../38511416-ai-gerado-grupo-do-mulheres-feliz-e-abraco-com-celebracao-rindo-amizade-objetivo-foto.jpeg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%">
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,30,18,.82) 0%,rgba(10,30,18,.6) 55%,rgba(10,30,18,.2) 100%)"></div>
+        <div style="position:relative;z-index:1;padding:28px 48px;max-width:70%">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#4ade80;margin-bottom:8px">⚡ Acelera tus resultados 3x</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:8px;line-height:1.25;text-shadow:0 2px 8px rgba(0,0,0,.3)">Las mujeres que usan <em style="color:#4ade80;font-style:italic">Mi Código</em> ven resultados en la mitad del tiempo</h3>
+          <p style="font-size:.78rem;opacity:.85;line-height:1.5;margin-bottom:12px">Te dice qué comer, cuánta agua tomar y rastrea tu progreso. Sin adivinar, sin olvidar.</p>
+          <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:14px">
+            <span style="font-size:.73rem;display:flex;align-items:center;gap:6px"><span style="color:#4ade80">✓</span> Menú diario personalizado</span>
+            <span style="font-size:.73rem;display:flex;align-items:center;gap:6px"><span style="color:#4ade80">✓</span> Lista de compras automática</span>
+            <span style="font-size:.73rem;display:flex;align-items:center;gap:6px"><span style="color:#4ade80">✓</span> Reporte para tu médico</span>
+          </div>
+          <a href="../mi-codigo-app/" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;border-radius:50px;font-size:.9rem;font-weight:700;text-decoration:none;font-family:'DM Sans',sans-serif;box-shadow:0 4px 16px rgba(74,222,128,.3);transition:transform .2s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''">Abrir Mi Código →</a>
+        </div>
+      </div>
+
+      <!-- Slide 2: Recetas Quema Grasa (with cover) -->
+      <div class="banner-slide" style="min-width:100%;min-height:280px;position:relative;overflow:hidden;background:#1a1a1a">
+        <img src="ChatGPT Image 26 de dez. de 2025, 02_16_30.png" alt="100 Recetas Asesinas de Barriga" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#1a1a1a">
+        <a href="recetas-quema-grasa.html" style="position:absolute;inset:0;z-index:2;display:block"></a>
+      </div>
+
+      <!-- Slide 3: Recetas Fitness (with cover) -->
+      <div class="banner-slide" style="min-width:100%;min-height:280px;position:relative;overflow:hidden;background:#f8e8ee">
+        <img src="ChatGPT Image 26 de dez. de 2025, 02_43_27.png" alt="100 Recetas Fitness para Mujeres" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#f8e8ee">
+        <a href="recetas-fitness-vol1.html" style="position:absolute;inset:0;z-index:2;display:block"></a>
+      </div>
+
+    </div>
+
+    <!-- Nav arrows -->
+    <button onclick="moveBanner(-1)" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);border:none;font-size:18px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.2);z-index:2;display:flex;align-items:center;justify-content:center">‹</button>
+    <button onclick="moveBanner(1)" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);border:none;font-size:18px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.2);z-index:2;display:flex;align-items:center;justify-content:center">›</button>
+
+    <!-- Dots -->
+    <div id="bannerDots" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2">
+      <span class="bdot active" onclick="goToBanner(0)" style="width:10px;height:10px;border-radius:50%;background:#fff;opacity:1;cursor:pointer;transition:opacity .3s;box-shadow:0 1px 4px rgba(0,0,0,.2)"></span>
+      <span class="bdot" onclick="goToBanner(1)" style="width:10px;height:10px;border-radius:50%;background:#fff;opacity:.4;cursor:pointer;transition:opacity .3s;box-shadow:0 1px 4px rgba(0,0,0,.2)"></span>
+      <span class="bdot" onclick="goToBanner(2)" style="width:10px;height:10px;border-radius:50%;background:#fff;opacity:.4;cursor:pointer;transition:opacity .3s;box-shadow:0 1px 4px rgba(0,0,0,.2)"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+var _bannerIdx = 0, _bannerTotal = 3, _bannerTimer;
+function moveBanner(dir) {
+  _bannerIdx = (_bannerIdx + dir + _bannerTotal) % _bannerTotal;
+  _updateBanner();
+  _resetBannerTimer();
+}
+function goToBanner(i) {
+  _bannerIdx = i;
+  _updateBanner();
+  _resetBannerTimer();
+}
+function _updateBanner() {
+  document.getElementById('bannerTrack').style.transform = 'translateX(-' + (_bannerIdx * 100) + '%)';
+  document.querySelectorAll('#bannerDots .bdot').forEach(function(d, i) {
+    d.style.opacity = i === _bannerIdx ? '1' : '.4';
+  });
+}
+function _resetBannerTimer() {
+  clearInterval(_bannerTimer);
+  _bannerTimer = setInterval(function() { moveBanner(1); }, 8000);
+}
+_resetBannerTimer();
+
+// Touch swipe support
+(function() {
+  var track = document.getElementById('bannerTrack'), startX = 0;
+  track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { moveBanner(diff > 0 ? 1 : -1); }
+  }, {passive:true});
+})();
+</script>
+
+<!-- ═══ Protocolo 3 Semanas ═══ -->
+<main class="library">
+  <section class="protocolo-3s">
+    <div class="section-header">
+      <div class="section-tag" style="background:rgba(232,68,90,.08);color:var(--rosa)" id="protocolo">Tu protocolo personalizado</div>
+      <h2>Protocolo de <span style="color:var(--rosa)">21 Días</span></h2>
+      <p>Cada día te dice exactamente qué comer — solo elige, prepara y disfruta</p>
+    </div>
+    <div class="section-divider" style="background:linear-gradient(90deg,var(--rosa),var(--gold))"></div>
+
+<style>
+.proto-section { max-width: 680px; margin: 0 auto; }
+.proto-week-label {
+  text-align: center; padding: 1.5rem 0 .5rem;
+  font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.proto-day {
+  background: #fff; border: 1px solid rgba(0,0,0,.06);
+  border-radius: 16px; margin-bottom: 10px;
+  overflow: hidden; transition: all .3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,.03);
+}
+.proto-day-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; cursor: pointer;
+  transition: background .2s;
+}
+.proto-day-header:hover { background: rgba(46,125,82,.03); }
+.proto-day-badge {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem; font-weight: 800; color: #fff; flex-shrink: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+.proto-w1 .proto-day-badge { background: linear-gradient(135deg, #2E7D52, #1a4a31); }
+.proto-w2 .proto-day-badge { background: linear-gradient(135deg, #C9922A, #a07520); }
+.proto-w3 .proto-day-badge { background: linear-gradient(135deg, #E8445A, #c53549); }
+.proto-day-info { flex: 1; }
+.proto-day-title {
+  font-size: .95rem; font-weight: 700; color: #1a1a1a;
+  font-family: 'DM Sans', sans-serif;
+}
+.proto-day-sub {
+  font-size: .75rem; color: #8a8a7a; margin-top: 2px;
+}
+.proto-day-arrow {
+  font-size: 1.2rem; color: #ccc; transition: transform .3s;
+}
+.proto-day.open .proto-day-arrow { transform: rotate(90deg); color: #2E7D52; }
+.proto-day-body {
+  display: none; padding: 0 16px 16px;
+  border-top: 1px solid rgba(0,0,0,.04);
+}
+.proto-day.open .proto-day-body { display: block; }
+.proto-body-msg {
+  font-size: .82rem; color: #4a4a4a; font-style: italic;
+  padding: 12px 0 8px; line-height: 1.5;
+  border-bottom: 1px dashed rgba(0,0,0,.06); margin-bottom: 12px;
+}
+.proto-meal {
+  padding: 8px 0;
+}
+.proto-meal-label {
+  font-size: .7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .08em; margin-bottom: 4px;
+}
+.proto-meal-label.des { color: #C9922A; }
+.proto-meal-label.alm { color: #2E7D52; }
+.proto-meal-label.cen { color: #6366f1; }
+.proto-meal-label.snk { color: #E8445A; }
+.proto-meal-label.jug { color: #3b82f6; }
+.proto-meal-opts {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.proto-meal-opt {
+  font-size: .82rem; color: #2E7D52;
+  background: #f0fdf4; padding: 6px 12px;
+  border-radius: 20px; border: 1px solid rgba(46,125,82,.15);
+  cursor: pointer; transition: all .2s;
+  text-decoration: none;
+}
+.proto-meal-opt:hover {
+  background: #dcfce7; border-color: rgba(46,125,82,.3);
+  transform: scale(1.02);
+}
+.proto-extras {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  padding: 10px 0; margin-top: 4px;
+  border-top: 1px dashed rgba(0,0,0,.06);
+}
+.proto-extra {
+  font-size: .75rem; color: #4a4a4a;
+  background: #f0fdf4; padding: 4px 10px;
+  border-radius: 12px; display: flex; align-items: center; gap: 4px;
+}
+.proto-tip {
+  font-size: .8rem; color: #2E7D52; font-weight: 500;
+  padding: 10px 12px; background: rgba(46,125,82,.04);
+  border-radius: 10px; margin-top: 8px; line-height: 1.45;
+}
+</style>
+
+    <div class="proto-section">
+
+      <!-- ══════ SEMANA 1 — RESET HORMONAL ══════ -->
+      <div class="proto-week-label" style="color:#2E7D52">🌿 Semana 1 — Reset Hormonal</div>
+
+      <!-- Día 1 -->
+      <div class="proto-day proto-w1 open">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">1</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 1 — Tu Nuevo Comienzo</div>
+            <div class="proto-day-sub">Semana 1 · Reset Hormonal</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Hoy comienza tu transformación. Tu cuerpo está preparándose para el cambio.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Batido Proteico de Yogur Avena y Frutos Rojos</span>
+              <span class="proto-meal-opt">Tortilla de Auyama con Huevo y Queso Bajo en Grasa</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Ensalada de Pollo a la Parrilla con Aguacate</span>
+              <span class="proto-meal-opt">Wrap de Pollo con Aguacate y Vegetales</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pechuga de Pollo a la Parrilla con Vegetales Asados</span>
+              <span class="proto-meal-opt">Sopa de Tomate con Pavo Molido</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Manzana verde con Mantequilla de Almendras</span>
+            <span class="proto-extra">🥤 Jugo Verde Clásico</span>
+            <span class="proto-extra">💧 6 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Come despacio, mastica cada bocado 20 veces</div>
+        </div>
+      </div>
+
+      <!-- Día 2 -->
+      <div class="proto-day proto-w1">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">2</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 2 — Proteína Inteligente</div>
+            <div class="proto-day-sub">Semana 1 · Reset Hormonal</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tus células están empezando a responder a los nuevos alimentos.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Desayuno de Quinua con Frutas y Nueces</span>
+              <span class="proto-meal-opt">Muffins de Brócoli</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Salmón al Horno con Espárragos y Limón</span>
+              <span class="proto-meal-opt">Curry de Pollo con Vegetales y Arroz Integral</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Atún a la Parrilla con Ensalada Mixta</span>
+              <span class="proto-meal-opt">Pollo al Horno con Limón y Hierbas</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Zanahorias Baby con Hummus</span>
+            <span class="proto-extra">🥤 Smoothie de Aguacate y Kale</span>
+            <span class="proto-extra">💧 7 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Desayuna con proteína para estabilizar tu energía todo el día</div>
+        </div>
+      </div>
+
+      <!-- Día 3 -->
+      <div class="proto-day proto-w1">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">3</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 3 — Limpieza Natural</div>
+            <div class="proto-day-sub">Semana 1 · Reset Hormonal</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tu cuerpo está liberando toxinas. Bebe mucha agua.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Crepas de Avena con Frutos Rojos</span>
+              <span class="proto-meal-opt">Pan de Calabaza con Cúrcuma</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales y Arroz de Coliflor</span>
+              <span class="proto-meal-opt">Ensalada de Atún con Huevo Duro</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Bacalao al Horno con Ocumo y Cebolla</span>
+              <span class="proto-meal-opt">Ensalada de Salmón con Quinua</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Pepino y Tomates Cherry con Queso Feta</span>
+            <span class="proto-extra">🥤 Limonada con Stevia</span>
+            <span class="proto-extra">💧 7 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Agrega 1 vaso de agua con limón al despertar</div>
+        </div>
+      </div>
+
+      <!-- Día 4 -->
+      <div class="proto-day proto-w1">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">4</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 4 — Movimiento y Nutrición</div>
+            <div class="proto-day-sub">Semana 1 · Reset Hormonal</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tu energía puede fluctuar — es normal, tu metabolismo se está ajustando.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Empanadas de Pollo con Vegetales</span>
+              <span class="proto-meal-opt">Batido Proteico de Yogur Avena y Frutos Rojos</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pollo Salteado con Vegetales y Salsa Agridulce</span>
+              <span class="proto-meal-opt">Bacalao al Horno con Calabacín</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales</span>
+              <span class="proto-meal-opt">Pechuga de Pollo a la Parrilla con Vegetales Asados</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Yogur Griego con Bayas</span>
+            <span class="proto-extra">🥤 Té de Jengibre</span>
+            <span class="proto-extra">💧 8 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Camina 10 minutos después del almuerzo</div>
+        </div>
+      </div>
+
+      <!-- Día 5 -->
+      <div class="proto-day proto-w1">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">5</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 5 — El Orden Importa</div>
+            <div class="proto-day-sub">Semana 1 · Reset Hormonal</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tu sistema digestivo se está adaptando a la nueva alimentación.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Tortilla de Auyama con Huevo y Queso Bajo en Grasa</span>
+              <span class="proto-meal-opt">Desayuno de Quinua con Frutas y Nueces</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Hamburguesas Vegetarianas con Pan Integral</span>
+              <span class="proto-meal-opt">Ensalada de Pollo a la Parrilla con Aguacate</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Sopa de Tomate con Pavo Molido</span>
+              <span class="proto-meal-opt">Atún a la Parrilla con Ensalada Mixta</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Rollitos de Pavo y Queso</span>
+            <span class="proto-extra">🥤 Batido de Proteína con Bayas</span>
+            <span class="proto-extra">💧 8 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Orden de tu plato: verduras primero, proteína segundo, carbohidratos al final</div>
+        </div>
+      </div>
+
+      <!-- Día 6 -->
+      <div class="proto-day proto-w1">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">6</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 6 — Descanso Digestivo</div>
+            <div class="proto-day-sub">Semana 1 · Reset Hormonal</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Los primeros cambios internos ya están ocurriendo.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Empanadas de Pollo al Curry con Espinaca</span>
+              <span class="proto-meal-opt">Crepas de Avena con Frutos Rojos</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Salmón al Horno con Espárragos y Limón</span>
+              <span class="proto-meal-opt">Wrap de Pollo con Aguacate y Vegetales</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pollo al Horno con Limón y Hierbas</span>
+              <span class="proto-meal-opt">Ensalada de Salmón con Quinua</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Manzana verde con Mantequilla de Almendras</span>
+            <span class="proto-extra">🥤 Jugo Verde Clásico</span>
+            <span class="proto-extra">💧 8 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Cena 3 horas antes de dormir para mejor descanso</div>
+        </div>
+      </div>
+
+      <!-- Día 7 -->
+      <div class="proto-day proto-w1">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">7</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 7 — Primera Victoria</div>
+            <div class="proto-day-sub">Semana 1 · Reset Hormonal</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">¡Primera semana completa! Tu cuerpo ya reconoce los nuevos patrones.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Muffins de Brócoli</span>
+              <span class="proto-meal-opt">Pan de Calabaza con Cúrcuma</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Curry de Pollo con Vegetales y Arroz Integral</span>
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales y Arroz de Coliflor</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Bacalao al Horno con Ocumo y Cebolla</span>
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Zanahorias Baby con Hummus</span>
+            <span class="proto-extra">🥤 Smoothie de Aguacate y Kale</span>
+            <span class="proto-extra">💧 8 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Celebra tu primera semana — ¡te lo mereces!</div>
+        </div>
+      </div>
+
+      <!-- ══════ SEMANA 2 — ACELERAR RESULTADOS ══════ -->
+      <div class="proto-week-label" style="color:#C9922A">⚡ Semana 2 — Acelerar Resultados</div>
+
+      <!-- Día 8 -->
+      <div class="proto-day proto-w2">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">8</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 8 — Ayuno Suave</div>
+            <div class="proto-day-sub">Semana 2 · Acelerar Resultados</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Semana 2: tu metabolismo está más activo que hace 7 días.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Empanada de Pollo Rellena con Calabacín y Queso</span>
+              <span class="proto-meal-opt">Batido Proteico de Yogur Avena y Frutos Rojos</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pollo Salteado con Vegetales y Salsa Agridulce</span>
+              <span class="proto-meal-opt">Ensalada de Atún con Huevo Duro</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pechuga de Pollo a la Parrilla con Vegetales Asados</span>
+              <span class="proto-meal-opt">Ensalada de Salmón con Quinua</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Pepino y Tomates Cherry con Queso Feta</span>
+            <span class="proto-extra">🥤 Té de Jengibre</span>
+            <span class="proto-extra">💧 8 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Prueba ayuno suave: desayuna 1 hora más tarde</div>
+        </div>
+      </div>
+
+      <!-- Día 9 -->
+      <div class="proto-day proto-w2">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">9</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 9 — Equilibrio Interior</div>
+            <div class="proto-day-sub">Semana 2 · Acelerar Resultados</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tus hormonas están empezando a encontrar su equilibrio.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Tortilla de Auyama con Huevo y Queso Bajo en Grasa</span>
+              <span class="proto-meal-opt">Desayuno de Quinua con Frutas y Nueces</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Salmón al Horno con Espárragos y Limón</span>
+              <span class="proto-meal-opt">Hamburguesas Vegetarianas con Pan Integral</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Atún a la Parrilla con Ensalada Mixta</span>
+              <span class="proto-meal-opt">Sopa de Tomate con Pavo Molido</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Yogur Griego con Bayas</span>
+            <span class="proto-extra">🥤 Limonada con Stevia</span>
+            <span class="proto-extra">💧 8 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Incluye 1 cucharada de vinagre de manzana antes de comer</div>
+        </div>
+      </div>
+
+      <!-- Día 10 -->
+      <div class="proto-day proto-w2">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">10</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 10 — Desinflamar</div>
+            <div class="proto-day-sub">Semana 2 · Acelerar Resultados</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">La inflamación comienza a reducirse — puedes notar menos hinchazón.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Crepas de Avena con Frutos Rojos</span>
+              <span class="proto-meal-opt">Muffins de Brócoli</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Bacalao al Horno con Calabacín</span>
+              <span class="proto-meal-opt">Ensalada de Pollo a la Parrilla con Aguacate</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pollo al Horno con Limón y Hierbas</span>
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Manzana verde con Mantequilla de Almendras</span>
+            <span class="proto-extra">🥤 Smoothie de Aguacate y Kale</span>
+            <span class="proto-extra">💧 9 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Cambia el café por té verde por hoy</div>
+        </div>
+      </div>
+
+      <!-- Día 11 -->
+      <div class="proto-day proto-w2">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">11</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 11 — Poder Antiinflamatorio</div>
+            <div class="proto-day-sub">Semana 2 · Acelerar Resultados</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tu cuerpo quema grasa de forma más eficiente ahora.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pan de Calabaza con Cúrcuma</span>
+              <span class="proto-meal-opt">Empanadas de Pollo con Vegetales</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales y Arroz de Coliflor</span>
+              <span class="proto-meal-opt">Wrap de Pollo con Aguacate y Vegetales</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Bacalao al Horno con Ocumo y Cebolla</span>
+              <span class="proto-meal-opt">Pechuga de Pollo a la Parrilla con Vegetales Asados</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Zanahorias Baby con Hummus</span>
+            <span class="proto-extra">🥤 Jugo Verde Clásico</span>
+            <span class="proto-extra">💧 9 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Agrega cúrcuma a una de tus comidas — es antiinflamatoria</div>
+        </div>
+      </div>
+
+      <!-- Día 12 -->
+      <div class="proto-day proto-w2">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">12</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 12 — Controla los Antojos</div>
+            <div class="proto-day-sub">Semana 2 · Acelerar Resultados</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Los antojos disminuyen a medida que tu insulina se estabiliza.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Empanadas de Pollo al Curry con Espinaca</span>
+              <span class="proto-meal-opt">Batido Proteico de Yogur Avena y Frutos Rojos</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Curry de Pollo con Vegetales y Arroz Integral</span>
+              <span class="proto-meal-opt">Ensalada de Atún con Huevo Duro</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Ensalada de Salmón con Quinua</span>
+              <span class="proto-meal-opt">Atún a la Parrilla con Ensalada Mixta</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Rollitos de Pavo y Queso</span>
+            <span class="proto-extra">🥤 Batido de Proteína con Bayas</span>
+            <span class="proto-extra">💧 9 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Si tienes antojo dulce, come 3 almendras y espera 10 minutos</div>
+        </div>
+      </div>
+
+      <!-- Día 13 -->
+      <div class="proto-day proto-w2">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">13</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 13 — Brillo Interior</div>
+            <div class="proto-day-sub">Semana 2 · Acelerar Resultados</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tu piel y cabello empiezan a reflejar los cambios internos.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Desayuno de Quinua con Frutas y Nueces</span>
+              <span class="proto-meal-opt">Tortilla de Auyama con Huevo y Queso Bajo en Grasa</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pollo Salteado con Vegetales y Salsa Agridulce</span>
+              <span class="proto-meal-opt">Salmón al Horno con Espárragos y Limón</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pollo al Horno con Limón y Hierbas</span>
+              <span class="proto-meal-opt">Sopa de Tomate con Pavo Molido</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Pepino y Tomates Cherry con Queso Feta</span>
+            <span class="proto-extra">🥤 Té de Jengibre</span>
+            <span class="proto-extra">💧 10 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Prueba una cena solo de ensalada y proteína</div>
+        </div>
+      </div>
+
+      <!-- Día 14 -->
+      <div class="proto-day proto-w2">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">14</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 14 — Mitad del Camino</div>
+            <div class="proto-day-sub">Semana 2 · Acelerar Resultados</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">¡2 semanas! Los cambios visibles comienzan a aparecer.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Empanada de Pollo Rellena con Calabacín y Queso</span>
+              <span class="proto-meal-opt">Crepas de Avena con Frutos Rojos</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Ensalada de Pollo a la Parrilla con Aguacate</span>
+              <span class="proto-meal-opt">Bacalao al Horno con Calabacín</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales</span>
+              <span class="proto-meal-opt">Bacalao al Horno con Ocumo y Cebolla</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Yogur Griego con Bayas</span>
+            <span class="proto-extra">🥤 Limonada con Stevia</span>
+            <span class="proto-extra">💧 10 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Toma una foto de tu progreso — compara con el día 1</div>
+        </div>
+      </div>
+
+      <!-- ══════ SEMANA 3 — CONSOLIDAR ══════ -->
+      <div class="proto-week-label" style="color:#E8445A">🔥 Semana 3 — Consolidar</div>
+
+      <!-- Día 15 -->
+      <div class="proto-day proto-w3">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">15</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 15 — Metabolismo Renovado</div>
+            <div class="proto-day-sub">Semana 3 · Consolidar</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Semana 3: estás construyendo un metabolismo nuevo y eficiente.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Muffins de Brócoli</span>
+              <span class="proto-meal-opt">Batido Proteico de Yogur Avena y Frutos Rojos</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Hamburguesas Vegetarianas con Pan Integral</span>
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales y Arroz de Coliflor</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pechuga de Pollo a la Parrilla con Vegetales Asados</span>
+              <span class="proto-meal-opt">Atún a la Parrilla con Ensalada Mixta</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Manzana verde con Mantequilla de Almendras</span>
+            <span class="proto-extra">🥤 Jugo Verde Clásico</span>
+            <span class="proto-extra">💧 10 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Introduce 1 receta nueva que no hayas probado</div>
+        </div>
+      </div>
+
+      <!-- Día 16 -->
+      <div class="proto-day proto-w3">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">16</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 16 — Caminata Nocturna</div>
+            <div class="proto-day-sub">Semana 3 · Consolidar</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tu cuerpo ya prefiere los alimentos que le nutren.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pan de Calabaza con Cúrcuma</span>
+              <span class="proto-meal-opt">Empanadas de Pollo al Curry con Espinaca</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Ensalada de Pollo a la Parrilla con Aguacate</span>
+              <span class="proto-meal-opt">Curry de Pollo con Vegetales y Arroz Integral</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Ensalada de Salmón con Quinua</span>
+              <span class="proto-meal-opt">Sopa de Tomate con Pavo Molido</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Zanahorias Baby con Hummus</span>
+            <span class="proto-extra">🥤 Smoothie de Aguacate y Kale</span>
+            <span class="proto-extra">💧 10 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Haz 15 minutos de caminata después de cenar</div>
+        </div>
+      </div>
+
+      <!-- Día 17 -->
+      <div class="proto-day proto-w3">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">17</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 17 — Prepara con Amor</div>
+            <div class="proto-day-sub">Semana 3 · Consolidar</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">La energía es más constante durante todo el día.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Tortilla de Auyama con Huevo y Queso Bajo en Grasa</span>
+              <span class="proto-meal-opt">Desayuno de Quinua con Frutas y Nueces</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Salmón al Horno con Espárragos y Limón</span>
+              <span class="proto-meal-opt">Pollo Salteado con Vegetales y Salsa Agridulce</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Pollo al Horno con Limón y Hierbas</span>
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Rollitos de Pavo y Queso</span>
+            <span class="proto-extra">🥤 Batido de Proteína con Bayas</span>
+            <span class="proto-extra">💧 10 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Prepara tus comidas del día siguiente la noche anterior</div>
+        </div>
+      </div>
+
+      <!-- Día 18 -->
+      <div class="proto-day proto-w3">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">18</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 18 — Semillas de Vida</div>
+            <div class="proto-day-sub">Semana 3 · Consolidar</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tu ropa puede empezar a sentirse diferente.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Crepas de Avena con Frutos Rojos</span>
+              <span class="proto-meal-opt">Empanada de Pollo Rellena con Calabacín y Queso</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Ensalada de Atún con Huevo Duro</span>
+              <span class="proto-meal-opt">Wrap de Pollo con Aguacate y Vegetales</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Bacalao al Horno con Ocumo y Cebolla</span>
+              <span class="proto-meal-opt">Pechuga de Pollo a la Parrilla con Vegetales Asados</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Pepino y Tomates Cherry con Queso Feta</span>
+            <span class="proto-extra">🥤 Té de Jengibre</span>
+            <span class="proto-extra">💧 10 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Agrega semillas de chía o lino a tu desayuno</div>
+        </div>
+      </div>
+
+      <!-- Día 19 -->
+      <div class="proto-day proto-w3">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">19</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 19 — Descanso Profundo</div>
+            <div class="proto-day-sub">Semana 3 · Consolidar</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">El equilibrio hormonal se refleja en mejor sueño y humor.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Empanadas de Pollo con Vegetales</span>
+              <span class="proto-meal-opt">Muffins de Brócoli</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Bacalao al Horno con Calabacín</span>
+              <span class="proto-meal-opt">Hamburguesas Vegetarianas con Pan Integral</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Atún a la Parrilla con Ensalada Mixta</span>
+              <span class="proto-meal-opt">Ensalada de Salmón con Quinua</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Yogur Griego con Bayas</span>
+            <span class="proto-extra">🥤 Limonada con Stevia</span>
+            <span class="proto-extra">💧 10 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Relájate 10 minutos antes de dormir — el cortisol afecta tu peso</div>
+        </div>
+      </div>
+
+      <!-- Día 20 -->
+      <div class="proto-day proto-w3">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">20</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 20 — Comer Consciente</div>
+            <div class="proto-day-sub">Semana 3 · Consolidar</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">Tu cuerpo está en modo de quema óptima.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Batido Proteico de Yogur Avena y Frutos Rojos</span>
+              <span class="proto-meal-opt">Pan de Calabaza con Cúrcuma</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales y Arroz de Coliflor</span>
+              <span class="proto-meal-opt">Ensalada de Pollo a la Parrilla con Aguacate</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Sopa de Tomate con Pavo Molido</span>
+              <span class="proto-meal-opt">Pollo al Horno con Limón y Hierbas</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Manzana verde con Mantequilla de Almendras</span>
+            <span class="proto-extra">🥤 Jugo Verde Clásico</span>
+            <span class="proto-extra">💧 10 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Come sin pantallas hoy — solo tú y tu comida</div>
+        </div>
+      </div>
+
+      <!-- Día 21 -->
+      <div class="proto-day proto-w3">
+        <div class="proto-day-header">
+          <div class="proto-day-badge">21</div>
+          <div class="proto-day-info">
+            <div class="proto-day-title">Día 21 — Código Hormonal Activado</div>
+            <div class="proto-day-sub">Semana 3 · Consolidar</div>
+          </div>
+          <div class="proto-day-arrow">›</div>
+        </div>
+        <div class="proto-day-body">
+          <div class="proto-body-msg">¡Lo lograste! 21 días de nuevo código hormonal activado.</div>
+          <div class="proto-meal">
+            <div class="proto-meal-label des">🍳 Desayuno (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Desayuno de Quinua con Frutas y Nueces</span>
+              <span class="proto-meal-opt">Empanadas de Pollo al Curry con Espinaca</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label alm">🥗 Almuerzo (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Salmón al Horno con Espárragos y Limón</span>
+              <span class="proto-meal-opt">Pollo Salteado con Vegetales y Salsa Agridulce</span>
+            </div>
+          </div>
+          <div class="proto-meal">
+            <div class="proto-meal-label cen">🍽️ Cena (elige 1)</div>
+            <div class="proto-meal-opts">
+              <span class="proto-meal-opt">Camarones Salteados con Vegetales</span>
+              <span class="proto-meal-opt">Bacalao al Horno con Ocumo y Cebolla</span>
+            </div>
+          </div>
+          <div class="proto-extras">
+            <span class="proto-extra">🍎 Rollitos de Pavo y Queso</span>
+            <span class="proto-extra">🥤 Smoothie de Aguacate y Kale</span>
+            <span class="proto-extra">💧 10 vasos de agua</span>
+            <span class="proto-extra">⏰ Entre comidas: 3-4 horas</span>
+          </div>
+          <div class="proto-tip">💡 Escribe 3 cambios positivos que notaste estas 3 semanas</div>
+        </div>
+      </div>
+
+    </div><!-- .proto-section -->
+
+    <script>
+    // Accordion
+    document.querySelectorAll('.proto-day-header').forEach(h => {
+      h.addEventListener('click', () => {
+        const day = h.closest('.proto-day');
+        const wasOpen = day.classList.contains('open');
+        document.querySelectorAll('.proto-day').forEach(d => d.classList.remove('open'));
+        if (!wasOpen) day.classList.add('open');
+      });
+    });
+
+    // Recipe data + click handler
+    var _protoRecetas = null;
+
+    function _loadRecetas(cb) {
+      if (_protoRecetas) { cb(_protoRecetas); return; }
+      fetch('../mi-codigo-app/data/recetas.json')
+        .then(r => r.json())
+        .then(data => { _protoRecetas = data; cb(data); })
+        .catch(() => { cb([]); });
+    }
+
+    function _showRecipe(name) {
+      _loadRecetas(function(recetas) {
+        var q = name.toLowerCase().trim();
+        var recipe = recetas.find(r => r.nombre.toLowerCase() === q);
+        if (!recipe) {
+          // Try partial match
+          recipe = recetas.find(r => r.nombre.toLowerCase().includes(q.slice(0, 20)));
+        }
+        if (!recipe) {
+          recipe = recetas.find(r => q.includes(r.nombre.toLowerCase().slice(0, 20)));
+        }
+
+        var overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:fadeDown .3s ease';
+        overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
+
+        if (!recipe) {
+          overlay.innerHTML = '<div style="background:#fff;border-radius:16px;padding:24px;max-width:400px;width:100%;text-align:center">' +
+            '<p style="font-size:14px;color:#4a4a4a">Receta no encontrada en la base de datos.</p>' +
+            '<button onclick="this.closest(\'div[style*=fixed]\').remove()" style="margin-top:12px;padding:8px 20px;background:#2E7D52;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:DM Sans,sans-serif">Cerrar</button>' +
+          '</div>';
+          document.body.appendChild(overlay);
+          return;
+        }
+
+        var ings = (recipe.ingredientes || []).filter(function(i) { return i.trim().length > 2 && !i.trim().endsWith(':'); });
+        var steps = recipe.preparacion || [];
+
+        var html = '<div style="background:#fff;border-radius:16px;max-width:440px;width:100%;max-height:85vh;overflow-y:auto">' +
+          '<div style="padding:20px 20px 0;display:flex;justify-content:space-between;align-items:flex-start">' +
+            '<div>' +
+              '<span style="font-size:.65rem;font-weight:700;color:#2E7D52;background:rgba(46,125,82,.08);padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px">' + (recipe.categoria || '') + '</span>' +
+              '<h3 style="font-size:1.1rem;font-weight:800;color:#1a1a1a;margin-top:6px;font-family:DM Sans,sans-serif;line-height:1.3">' + recipe.nombre + '</h3>' +
+            '</div>' +
+            '<button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:none;border:none;font-size:22px;cursor:pointer;color:#999;flex-shrink:0;padding:0 0 0 12px">✕</button>' +
+          '</div>';
+
+        if (ings.length) {
+          html += '<div style="padding:12px 20px">' +
+            '<div style="font-size:.7rem;font-weight:700;color:#2E7D52;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px">Ingredientes</div>' +
+            '<ul style="padding-left:18px;font-size:.85rem;color:#4a4a4a;line-height:1.8">' +
+            ings.map(function(i) { return '<li>' + i + '</li>'; }).join('') +
+            '</ul></div>';
+        }
+
+        if (steps.length) {
+          html += '<div style="padding:0 20px 12px">' +
+            '<div style="font-size:.7rem;font-weight:700;color:#C9922A;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px">Preparación</div>' +
+            '<ol style="padding-left:18px;font-size:.85rem;color:#4a4a4a;line-height:1.7">' +
+            steps.map(function(s) { return '<li style="margin-bottom:4px">' + s + '</li>'; }).join('') +
+            '</ol></div>';
+        }
+
+        if (recipe.consejo) {
+          html += '<div style="margin:0 20px 20px;padding:12px;background:#fffbeb;border-radius:10px;font-size:.8rem;color:#78350f;line-height:1.5">' +
+            '<strong>💡 Consejo:</strong> ' + recipe.consejo + '</div>';
+        }
+
+        html += '</div>';
+        overlay.innerHTML = html;
+        document.body.appendChild(overlay);
+      });
+    }
+
+    // Make all recipe options clickable
+    document.querySelectorAll('.proto-meal-opt').forEach(function(opt) {
+      opt.addEventListener('click', function(e) {
+        e.stopPropagation();
+        _showRecipe(this.textContent.trim());
+      });
+    });
+    </script>
+
+  </section>
+
+  <div class="section-divider" style="margin:2rem auto"></div>
+
+<!-- ═══ Kit Principal ═══ -->
+  <section class="kit-principal">
+    <div class="section-header">
+      <div class="section-tag">Programa completo</div>
+      <h2>Kit <span>Principal</span></h2>
+      <p>11 guías esenciales para dominar tu equilibrio hormonal</p>
+    </div>
+    <div class="section-divider"></div>
+    <div class="card-grid" style="margin-top:2rem" id="kit-grid">
+
+      <a href="comience-aqui.html" class="ebook-card featured">
+        <div class="card-icon">📖</div>
+        <div class="card-body">
+          <h3>Comience Aquí</h3>
+          <p>Tu guía de inicio rápido — por dónde empezar y cómo aprovechar todo el programa al máximo.</p>
+          <span class="card-count">Guía de inicio</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="panes-vol1.html" class="ebook-card">
+        <div class="card-icon">🍞</div>
+        <div class="card-body">
+          <h3>Panes Inteligentes Vol. 1</h3>
+          <p>Panes saludables sin harinas refinadas</p>
+          <span class="card-count">41 recetas</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="panes-vol2.html" class="ebook-card">
+        <div class="card-icon">🥖</div>
+        <div class="card-body">
+          <h3>Panes Inteligentes Vol. 2</h3>
+          <p>Panes funcionales con ingredientes naturales</p>
+          <span class="card-count">49 recetas</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <div class="ebook-card locked" style="position:relative;pointer-events:none;opacity:.75;cursor:default">
+        <div style="position:absolute;inset:0;background:rgba(255,255,255,.6);border-radius:var(--radius);z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:auto;cursor:pointer;text-decoration:none" onclick="window.open('https://pay.hotmart.com/XXXXXXX','_blank')">
+          <div style="width:40px;height:40px;background:rgba(232,68,90,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:6px">🔒</div>
+          <span style="font-size:.7rem;font-weight:700;color:var(--rosa);background:rgba(232,68,90,.08);padding:3px 10px;border-radius:20px">Desbloquear</span>
+        </div>
+        <div class="card-icon">🔥</div>
+        <div class="card-body">
+          <h3>Recetas Quema Grasa</h3>
+          <p>Recetas termogénicas para acelerar tu metabolismo</p>
+          <span class="card-count">115 recetas</span>
+        </div>
+      </div>
+
+      <div class="ebook-card locked" style="position:relative;pointer-events:none;opacity:.75;cursor:default">
+        <div style="position:absolute;inset:0;background:rgba(255,255,255,.6);border-radius:var(--radius);z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:auto;cursor:pointer;text-decoration:none" onclick="window.open('https://pay.hotmart.com/XXXXXXX','_blank')">
+          <div style="width:40px;height:40px;background:rgba(232,68,90,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:6px">🔒</div>
+          <span style="font-size:.7rem;font-weight:700;color:var(--rosa);background:rgba(232,68,90,.08);padding:3px 10px;border-radius:20px">Desbloquear</span>
+        </div>
+        <div class="card-icon">💪</div>
+        <div class="card-body">
+          <h3>Recetas Fitness Vol. 1</h3>
+          <p>Recetas proteicas para tu cuerpo ideal</p>
+          <span class="card-count">50 recetas</span>
+        </div>
+      </div>
+
+      <div class="ebook-card locked" style="position:relative;pointer-events:none;opacity:.75;cursor:default">
+        <div style="position:absolute;inset:0;background:rgba(255,255,255,.6);border-radius:var(--radius);z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:auto;cursor:pointer;text-decoration:none" onclick="window.open('https://pay.hotmart.com/XXXXXXX','_blank')">
+          <div style="width:40px;height:40px;background:rgba(232,68,90,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:6px">🔒</div>
+          <span style="font-size:.7rem;font-weight:700;color:var(--rosa);background:rgba(232,68,90,.08);padding:3px 10px;border-radius:20px">Desbloquear</span>
+        </div>
+        <div class="card-icon">🏋️</div>
+        <div class="card-body">
+          <h3>Recetas Fitness Vol. 2</h3>
+          <p>Recetas de alto rendimiento y recuperación</p>
+          <span class="card-count">50 recetas</span>
+        </div>
+      </div>
+
+      <a href="plan-31-dias.html" class="ebook-card">
+        <div class="card-icon">📅</div>
+        <div class="card-body">
+          <h3>Plan de 31 Días</h3>
+          <p>Plan alimenticio completo día por día</p>
+          <span class="card-count">Plan completo</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="guia-alimentos.html" class="ebook-card">
+        <div class="card-icon">🥗</div>
+        <div class="card-body">
+          <h3>Guía de Alimentos</h3>
+          <p>Alimentos permitidos y prohibidos para tu equilibrio</p>
+          <span class="card-count">Guía completa</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="tabla-ig.html" class="ebook-card">
+        <div class="card-icon">📊</div>
+        <div class="card-body">
+          <h3>Tabla Índice Glucémico</h3>
+          <p>Referencia rápida de índice glucémico por alimento</p>
+          <span class="card-count">Tabla de referencia</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="checklist.html" class="ebook-card">
+        <div class="card-icon">✅</div>
+        <div class="card-body">
+          <h3>Checklist Hipoglucemia</h3>
+          <p>Control y prevención de episodios hipoglucémicos</p>
+          <span class="card-count">Checklist</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="mitos-verdades.html" class="ebook-card">
+        <div class="card-icon">🧠</div>
+        <div class="card-body">
+          <h3>Mitos y Verdades sobre la Insulina</h3>
+          <p>Desmitificando creencias sobre resistencia a la insulina</p>
+          <span class="card-count">42 temas</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══ Bonos ═══ -->
+  <section class="bonos" id="bonos">
+    <div class="section-header">
+      <div class="section-tag">Material extra</div>
+      <h2>Bonos <span>Especiales</span></h2>
+      <p>11 recursos adicionales para potenciar tus resultados</p>
+    </div>
+    <div class="section-divider" style="background:linear-gradient(90deg,var(--gold),var(--rosa))"></div>
+    <div class="card-grid" style="margin-top:2rem" id="bonos-grid">
+
+      <a href="200-recetas.html" class="ebook-card featured-bono">
+        <div class="card-icon">🍽️</div>
+        <div class="card-body">
+          <h3>200 Recetas Saludables</h3>
+          <p>El recetario completo — desayunos, almuerzos, cenas, snacks y jugos para cada día.</p>
+          <span class="card-count">200+ recetas</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-carnes.html" class="ebook-card">
+        <div class="card-icon">🥩</div>
+        <div class="card-body">
+          <h3>Guía de Carnes</h3>
+          <p>Recetas con carnes magras y proteínas limpias</p>
+          <span class="card-count">Recetas + guía</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-avena.html" class="ebook-card">
+        <div class="card-icon">🥣</div>
+        <div class="card-body">
+          <h3>Recetas con Avena</h3>
+          <p>Recetas nutritivas con avena integral</p>
+          <span class="card-count">6 recetas</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-navidad.html" class="ebook-card">
+        <div class="card-icon">🎄</div>
+        <div class="card-body">
+          <h3>Recetas Navideñas</h3>
+          <p>Menú navideño saludable sin culpa</p>
+          <span class="card-count">9 recetas</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-jugos.html" class="ebook-card">
+        <div class="card-icon">🧃</div>
+        <div class="card-body">
+          <h3>Jugos y Batidos</h3>
+          <p>Jugos funcionales y batidos detox</p>
+          <span class="card-count">Recetas + guía</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-frutas.html" class="ebook-card">
+        <div class="card-icon">🍎</div>
+        <div class="card-body">
+          <h3>Guía de Frutas</h3>
+          <p>Frutas y su índice glucémico — cuáles elegir</p>
+          <span class="card-count">13 secciones</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-bebidas.html" class="ebook-card">
+        <div class="card-icon">🍹</div>
+        <div class="card-body">
+          <h3>Bebidas Saludables</h3>
+          <p>Bebidas sin azúcar y alternativas naturales</p>
+          <span class="card-count">Recetas + guía</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-masa-muscular.html" class="ebook-card">
+        <div class="card-icon">💪</div>
+        <div class="card-body">
+          <h3>Masa Muscular</h3>
+          <p>Guía de ganancia muscular y alimentación</p>
+          <span class="card-count">8 secciones</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-emociones.html" class="ebook-card">
+        <div class="card-icon">🧘</div>
+        <div class="card-body">
+          <h3>Control Emocional</h3>
+          <p>Manejo emocional y su relación con la alimentación</p>
+          <span class="card-count">9 secciones</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-ejercicios.html" class="ebook-card">
+        <div class="card-icon">🏃</div>
+        <div class="card-body">
+          <h3>Ejercicios</h3>
+          <p>Rutinas de ejercicio para equilibrio hormonal</p>
+          <span class="card-count">10 rutinas</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="bono-desparasitacion.html" class="ebook-card">
+        <div class="card-icon">🌿</div>
+        <div class="card-body">
+          <h3>Desparasitación Natural</h3>
+          <p>Guía completa de desparasitación con remedios naturales</p>
+          <span class="card-count">14 secciones</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══ App banner ═══ -->
+  <a href="../mi-codigo-app/index.html" class="app-banner">
+    <div class="banner-icon">📱</div>
+    <div>
+      <h4>Mi Código — App Companion</h4>
+      <p>Accede a tu app de seguimiento hormonal diario con check-in, progreso y recetas.</p>
+    </div>
+  </a>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="portal-footer">
+  <div class="brand">El Código Hormonal</div>
+  <div class="footer-line"></div>
+  <p>Tu transformación hormonal comienza aquí.<br>© 2026 El Código Hormonal. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+/* ── Scroll reveal cards ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      const cards = entry.target.querySelectorAll('.ebook-card');
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('visible');
+        }, index * 80);
+      });
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card-grid').forEach(grid => observer.observe(grid));
+</script>
+</body>
+</html>

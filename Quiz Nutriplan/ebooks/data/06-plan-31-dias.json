@@ -1,0 +1,660 @@
+{
+  "archivo": "06-Plan-31-Dias-Control-Glucemico.pdf",
+  "tipo": "capitulos",
+  "total_recetas": 31,
+  "intro": {
+    "titulo": "Tu Transformación en 31 Días",
+    "contenido": "Este no es un plan rígido ni una dieta de moda. Es un sistema progresivo de 31 días diseñado para reprogramar tu metabolismo hormonal de forma natural y sostenible. Cada semana construye sobre la anterior: primero reseteas tus hábitos, luego aprendes a identificar lo que dispara tus desequilibrios, después optimizas la sensibilidad a la insulina, y finalmente consolidas todo en un estilo de vida que es tuyo para siempre. No necesitas fuerza de voluntad extrema ni cambios drásticos de la noche a la mañana. Solo necesitas dar un paso cada día. Al llegar al día 31, tendrás un enfoque personalizado para comer, moverte y vivir que apoya tu equilibrio hormonal de manera natural. Tu cuerpo después de los 40 no está en tu contra — solo necesita que le hables en su idioma. Este plan te enseña ese idioma."
+  },
+  "capitulos": [
+    {
+      "nombre": "Semana 1: Reset Hormonal",
+      "descripcion": "Los primeros 7 días están dedicados a resetear tus patrones hormonales básicos. Vas a soltar los hábitos que disparan picos de insulina sin que te des cuenta y a establecer las bases de tu nueva relación con la comida. No se trata de restricción — se trata de inteligencia hormonal. Cada día introduces un cambio simple pero poderoso que tu cuerpo va a agradecer de inmediato.",
+      "imagen": "img/plan31/semana1.jpg",
+      "recetas": [
+        {
+          "nombre": "Día 1: Conciencia Hormonal",
+          "ingredientes": [
+            "Registro de energía: anota cómo te sientes al despertar, a media mañana, después de comer y antes de dormir",
+            "Inventario de hábitos actuales: escribe qué desayunas, almuerzas y cenas normalmente",
+            "Identificación de antojos: registra a qué hora aparecen y qué tipo de alimento deseas",
+            "Evaluación del sueño: ¿a qué hora te acuestas? ¿Te despiertas cansada?",
+            "Foto de tu despensa: observa cuántos productos ultraprocesados tienes en casa",
+            "Compromiso personal: escribe una frase sobre por qué quieres este cambio"
+          ],
+          "preparacion": [
+            "Consigue un cuaderno o abre una nota en tu teléfono que será tu diario hormonal durante estos 31 días",
+            "Al despertar, antes de levantarte, califica tu energía del 1 al 10 y anótala",
+            "Durante el día, escribe todo lo que comes y bebes, sin juzgarte — solo observa",
+            "Junto a cada comida, anota cómo te sentiste 1 hora después: con energía, cansada, con sueño, hinchada",
+            "Antes de dormir, registra tu estado de ánimo general del día y la calidad de tu sueño la noche anterior",
+            "Revisa tu despensa y marca los productos que tienen azúcar añadida, harinas refinadas o ingredientes que no reconoces",
+            "Escribe en tu diario: '¿Qué quiero lograr en estos 31 días?' y pega esa nota donde la veas cada mañana"
+          ],
+          "consejo": "La conciencia es el primer paso hacia cualquier transformación hormonal. Cuando una mujer después de los 40 empieza a observar cómo reacciona su cuerpo a los alimentos, descubre patrones que llevaba años ignorando. El estrógeno y la progesterona fluctúan de maneras nuevas en esta etapa, y eso cambia cómo tu cuerpo procesa los alimentos. Observar sin juzgar es la herramienta más poderosa que tienes."
+        },
+        {
+          "nombre": "Día 2: Desayuno Terapéutico",
+          "ingredientes": [
+            "Proteína en el desayuno: huevos, yogur griego sin azúcar, o proteína vegetal",
+            "Grasa saludable: aguacate, aceite de oliva, o frutos secos",
+            "Fibra natural: vegetales frescos, semillas de chía o linaza",
+            "Eliminación matutina: retira el pan blanco, los jugos de fruta y el azúcar de tu mañana",
+            "Hidratación antes de comer: un vaso de agua al despertar, antes del desayuno"
+          ],
+          "preparacion": [
+            "Prepara tu desayuno la noche anterior si es posible — tenerlo listo elimina la tentación de opciones rápidas y poco saludables",
+            "Empieza con un vaso de agua natural al despertar, antes de cualquier alimento",
+            "Prepara 2 huevos revueltos o cocidos con un poco de aceite de oliva y sal",
+            "Agrega medio aguacate cortado en rebanadas y un puñado de espinacas o tomate",
+            "Si prefieres yogur, usa yogur griego sin azúcar con una cucharada de semillas de chía y nueces",
+            "Come sentada, sin prisa, masticando bien cada bocado durante al menos 15 minutos",
+            "Anota en tu diario cómo te sientes 2 horas después del desayuno: ¿tienes hambre? ¿Estás con energía?"
+          ],
+          "consejo": "El desayuno determina tu perfil hormonal para todo el día. Cuando empiezas con pan, jugo o cereal, tu insulina se dispara y luego cae en picada, provocando hambre, antojos y fatiga antes del mediodía. Al incluir proteína, grasa y fibra desde la primera comida, mantienes tu insulina estable y tu cuerpo entra en modo de quema de grasa en lugar de modo de almacenamiento. Después de los 40, este simple cambio puede transformar completamente tu energía."
+        },
+        {
+          "nombre": "Día 3: Orden Correcto de los Alimentos",
+          "ingredientes": [
+            "Fibra primero: empieza cada comida con vegetales o ensalada",
+            "Proteína segundo: come la carne, pollo, pescado o huevo después de los vegetales",
+            "Carbohidratos al final: deja el arroz, la papa, el plátano o la tortilla para el último lugar",
+            "Observación consciente: nota cómo te sientes después de comer en este orden",
+            "Práctica en todas las comidas: aplica este orden en el almuerzo y la cena de hoy"
+          ],
+          "preparacion": [
+            "Prepara tu almuerzo con los tres componentes separados en el plato para que sea fácil comerlos en orden",
+            "Comienza comiendo todos los vegetales de tu plato: ensalada, brócoli, espinacas, tomate — lo que tengas",
+            "Espera 2-3 minutos antes de pasar al siguiente grupo de alimentos",
+            "Come toda la proteína: pollo, pescado, carne, huevo o legumbres",
+            "Finalmente, come los carbohidratos que tengas en el plato: arroz, papa, tortilla, plátano",
+            "Repite este orden en la cena de hoy y compara cómo te sientes versus días anteriores",
+            "Registra en tu diario si notaste menos pesadez, menos sueño o más energía después de comer"
+          ],
+          "consejo": "Investigaciones recientes demuestran que comer los alimentos en el orden correcto — fibra, luego proteína, luego carbohidratos — puede reducir el pico de glucosa después de comer hasta en un 30%. La fibra crea una barrera protectora en tu intestino que ralentiza la absorción del azúcar. Para las mujeres en la etapa hormonal de los 40+, donde la sensibilidad a la insulina ya está cambiando naturalmente, este simple truco es una herramienta poderosa sin tener que cambiar lo que comes, solo el orden."
+        },
+        {
+          "nombre": "Día 4: Cena Ligera",
+          "ingredientes": [
+            "Proteína liviana: pescado, pollo a la plancha, o huevos",
+            "Vegetales abundantes: la base de tu cena debe ser verduras cocidas o en ensalada",
+            "Límite horario: termina de cenar al menos 3 horas antes de acostarte",
+            "Reducción de carbohidratos nocturnos: minimiza o elimina arroz, pan y pasta en la cena",
+            "Infusión digestiva: manzanilla, menta o jengibre después de cenar"
+          ],
+          "preparacion": [
+            "Calcula tu hora de dormir y resta 3 horas — esa es tu hora límite para cenar",
+            "Prepara una cena basada en proteína y vegetales: por ejemplo, pechuga a la plancha con ensalada grande",
+            "Usa aceite de oliva y limón como aderezo en lugar de salsas comerciales que suelen tener azúcar",
+            "Come despacio, sentada en la mesa, sin televisión ni teléfono",
+            "Si sientes hambre después de cenar, toma una infusión de manzanilla o menta sin azúcar",
+            "Antes de dormir, anota en tu diario la hora de tu última comida y cómo te sientes al acostarte",
+            "Mañana al despertar, registra cómo dormiste y tu nivel de energía — compara con días anteriores"
+          ],
+          "consejo": "Tu cuerpo tiene un reloj hormonal interno que se prepara para el descanso nocturno reduciendo la producción de insulina. Si cenas tarde o comes carbohidratos pesados por la noche, obligas a tu páncreas a trabajar cuando debería estar descansando. Para las mujeres después de los 40, esto es especialmente importante porque la calidad del sueño afecta directamente los niveles de cortisol del día siguiente, creando un ciclo que sabotea tu equilibrio hormonal. Una cena ligera y temprana rompe ese ciclo."
+        },
+        {
+          "nombre": "Día 5: Hidratación Inteligente",
+          "ingredientes": [
+            "Cálculo de tu necesidad diaria de agua: 30-35 ml por cada kg de peso corporal",
+            "Agua como primera bebida del día: un vaso grande al despertar",
+            "Saborizantes naturales: limón, menta fresca, pepino, o jengibre",
+            "Eliminación de bebidas azucaradas: refrescos, jugos industriales, aguas saborizadas comerciales",
+            "Distribución inteligente: tomar agua entre comidas, no durante las comidas"
+          ],
+          "preparacion": [
+            "Calcula tu consumo ideal: multiplica tu peso en kg por 30 ml — ese es tu mínimo diario de agua",
+            "Al despertar, toma un vaso grande de agua natural antes de cualquier otra cosa",
+            "Prepara una jarra de agua con rodajas de limón y hojas de menta para tener durante todo el día",
+            "Programa alarmas cada 2 horas en tu teléfono como recordatorio para tomar agua",
+            "Evita tomar grandes cantidades de agua durante las comidas — un vaso pequeño es suficiente",
+            "Sustituye cualquier refresco, jugo industrial o bebida azucarada por agua con fruta natural",
+            "Antes de dormir, revisa cuánta agua tomaste hoy y ajusta para mañana si fue menos de lo calculado"
+          ],
+          "consejo": "La deshidratación afecta directamente tu equilibrio hormonal. Cuando no tomas suficiente agua, tu sangre se vuelve más concentrada y tus niveles de glucosa suben artificialmente. Además, muchas veces confundimos sed con hambre, lo que nos lleva a comer cuando en realidad el cuerpo solo necesita agua. Después de los 40, los mecanismos de sed se vuelven menos eficientes, así que no esperes a tener sed para tomar agua — programa tu hidratación conscientemente."
+        },
+        {
+          "nombre": "Día 6: Movimiento Post-Comida",
+          "ingredientes": [
+            "Caminata suave después de comer: 10-15 minutos a paso tranquilo",
+            "Movimiento después del almuerzo: esta es la comida donde el efecto es más poderoso",
+            "Activación muscular: los músculos de tus piernas son los mayores consumidores de glucosa",
+            "Sin ejercicio intenso: una caminata suave es suficiente, no necesitas correr",
+            "Incorporar a la rutina: hazlo parte natural de tu día, no una tarea extra"
+          ],
+          "preparacion": [
+            "Después de almorzar hoy, en lugar de sentarte en el sofá, sal a caminar 10 minutos alrededor de tu casa o cuadra",
+            "Camina a un paso cómodo — no necesitas sudar ni agitarte, solo moverte",
+            "Si llueve o no puedes salir, camina dentro de tu casa o sube y baja escaleras suavemente",
+            "Mientras caminas, respira profundo y disfruta el momento — esto también reduce el cortisol",
+            "Intenta repetir la caminata después de la cena, aunque sean solo 5 minutos",
+            "Nota cómo te sientes después de caminar: probablemente menos pesadez y más claridad mental",
+            "Registra en tu diario si notaste diferencia en tu energía de la tarde comparada con días anteriores"
+          ],
+          "consejo": "Cuando caminas después de comer, tus músculos se activan y absorben glucosa directamente de la sangre sin necesitar insulina. Este es uno de los descubrimientos más importantes para las mujeres que buscan equilibrio hormonal después de los 40: no necesitas ejercicio extremo. Una simple caminata de 10-15 minutos puede reducir tu pico de glucosa post-comida significativamente. Los músculos son el órgano metabólico más grande de tu cuerpo — úsalos a tu favor."
+        },
+        {
+          "nombre": "Día 7: Evaluación Semanal",
+          "ingredientes": [
+            "Revisión del diario: lee todo lo que registraste esta semana",
+            "Identificación de victorias: anota al menos 3 cosas que hiciste bien",
+            "Reconocimiento de retos: ¿qué fue lo más difícil? ¿Qué puedes ajustar?",
+            "Comparación de energía: ¿cómo te sientes hoy vs el día 1?",
+            "Planificación para la semana 2: ¿qué hábito de esta semana quieres fortalecer?"
+          ],
+          "preparacion": [
+            "Siéntate en un lugar tranquilo con tu diario y dedica 20-30 minutos a esta revisión",
+            "Lee tus notas del día 1 al 6: observa los patrones que aparecen en tu energía y estados de ánimo",
+            "Escribe las 3 cosas que mejor te funcionaron esta semana — pueden ser pequeñas, todo cuenta",
+            "Anota cuál fue tu mayor reto y piensa en una solución práctica para la próxima semana",
+            "Califica tu energía general de esta semana del 1 al 10 y compárala con cómo te sentías antes",
+            "Escribe un mensaje de aliento para ti misma: reconoce tu esfuerzo y compromiso",
+            "Planifica qué días de la próxima semana necesitas preparar comida con anticipación"
+          ],
+          "consejo": "La evaluación semanal no es para juzgarte — es para conocerte. Tu cuerpo después de los 40 tiene una sabiduría que no tenía a los 20: sabe qué le funciona si le prestas atención. Los cambios hormonales de esta etapa no son tu enemigo; son una invitación a escuchar más profundamente. Las mujeres que llevan un registro semanal de sus hábitos logran mantener sus cambios 3 veces más que las que no lo hacen. Tu diario es tu mejor herramienta."
+        }
+      ]
+    },
+    {
+      "nombre": "Semana 2: Control de Picos Ocultos",
+      "descripcion": "Ya tienes las bases. Ahora viene lo interesante: descubrir los saboteadores escondidos. Esta semana vas a aprender a identificar los alimentos que parecen saludables pero disparan tu insulina, a construir el plato perfecto, y a crear tu propia lista de alimentos que funcionan para tu cuerpo. Es la semana de la inteligencia alimentaria.",
+      "imagen": "img/plan31/semana2.jpg",
+      "recetas": [
+        {
+          "nombre": "Día 8: Merienda Estratégica",
+          "ingredientes": [
+            "Regla de oro: nunca comer fruta sola — siempre acompañarla de proteína o grasa",
+            "Combinaciones inteligentes: manzana con mantequilla de almendras, fresas con yogur griego",
+            "Frutos secos como aliados: un puñado de nueces o almendras estabiliza tu glucosa",
+            "Horarios de merienda: a media mañana y/o a media tarde, si tienes hambre real",
+            "Porciones conscientes: la merienda no es otra comida, es un puente entre comidas"
+          ],
+          "preparacion": [
+            "Prepara tus meriendas del día en la mañana y lleva en un recipiente: así evitas recurrir a opciones poco saludables",
+            "Para la media mañana, prepara una manzana cortada con 10 almendras o una cucharada de mantequilla de maní natural",
+            "Para la media tarde, prepara yogur griego sin azúcar con un puñado de frutos rojos y semillas de chía",
+            "Si comes fruta, asegúrate de comerla siempre después de o junto con proteína — nunca sola",
+            "Observa si realmente tienes hambre antes de merendar — a veces es aburrimiento o costumbre",
+            "Anota en tu diario qué merienda elegiste y cómo te sentiste después: ¿te sostuvo hasta la siguiente comida?",
+            "Evita las galletas, barritas de cereal comerciales y snacks empaquetados aunque digan 'saludables'"
+          ],
+          "consejo": "La fruta es natural y nutritiva, pero contiene fructosa que puede elevar tu glucosa rápidamente si la comes sola, especialmente frutas tropicales como mango, piña o banano. Al combinarla con proteína (yogur, queso, frutos secos) o grasa saludable (aguacate, mantequilla de almendras), la fibra y la grasa ralentizan la absorción del azúcar. Para las mujeres 40+, donde la resistencia a la insulina se desarrolla gradualmente, esta simple combinación marca una diferencia enorme en tu estabilidad hormonal diaria."
+        },
+        {
+          "nombre": "Día 9: Falsos Alimentos Saludables",
+          "ingredientes": [
+            "Granola: llena de azúcar añadida y aceites vegetales refinados",
+            "Miel: tiene un impacto en tu glucosa casi idéntico al azúcar de mesa",
+            "Tapioca: almidón puro con índice glucémico muy alto y casi sin nutrientes",
+            "Jugos naturales: toda la fructosa de la fruta sin la fibra que la amortigua",
+            "Yogur de sabores: puede contener hasta 6 cucharadas de azúcar por vaso"
+          ],
+          "preparacion": [
+            "Revisa tu despensa y refrigerador: identifica los productos que consideras 'saludables' pero que podrían no serlo",
+            "Lee las etiquetas de tu granola, yogur de sabores, barras de cereal y galletas integrales",
+            "Busca palabras como: azúcar, miel, jarabe, fructosa, maltodextrina, dextrosa — son todas formas de azúcar",
+            "Si tienes jugos naturales en casa, recuerda que un vaso de jugo de naranja tiene el azúcar de 4-5 naranjas sin la fibra",
+            "Reemplaza la granola por avena natural con semillas y nueces que tú misma prepares",
+            "Sustituye el yogur de sabores por yogur griego natural sin azúcar — agrégale fruta fresca tú misma",
+            "Anota en tu diario qué 'falsos saludables' descubriste y con qué los vas a reemplazar"
+          ],
+          "consejo": "La industria alimentaria ha creado productos que se venden como saludables pero que disparan tu insulina tanto o más que un dulce convencional. La miel, por ejemplo, tiene un índice glucémico de 58 — casi igual que el azúcar blanca. La granola comercial puede tener más azúcar por porción que un cereal infantil. Para las mujeres en transición hormonal, estos picos ocultos son especialmente dañinos porque cada pico de insulina le envía a tu cuerpo la señal de almacenar grasa, especialmente en la zona abdominal."
+        },
+        {
+          "nombre": "Día 10: El Plato Perfecto",
+          "ingredientes": [
+            "50% vegetales: la mitad de tu plato debe ser verduras variadas de colores",
+            "25% proteína: un cuarto del plato con proteína de calidad (pollo, pescado, huevo, legumbres)",
+            "25% carbohidratos inteligentes: el último cuarto con arroz integral, camote, quinoa o legumbres",
+            "Grasa saludable como complemento: aceite de oliva, aguacate o semillas como aderezo",
+            "Volumen visual: tu plato debe verse abundante — la saciedad empieza por los ojos"
+          ],
+          "preparacion": [
+            "Para el almuerzo de hoy, saca un plato grande y divídelo mentalmente en 4 partes",
+            "Llena la mitad del plato con vegetales: ensalada mixta, brócoli al vapor, zanahorias, o lo que tengas",
+            "Coloca en un cuarto del plato tu proteína: una pechuga, filete de pescado, huevos o legumbres",
+            "En el último cuarto, agrega un carbohidrato inteligente: camote, arroz integral, quinoa o plátano verde",
+            "Agrega una cucharada de aceite de oliva extra virgen sobre los vegetales o un cuarto de aguacate",
+            "Recuerda el orden del día 3: come primero los vegetales, luego la proteína, y los carbohidratos al final",
+            "Toma una foto de tu plato y guárdala — empieza a crear tu galería de platos perfectos para inspirarte"
+          ],
+          "consejo": "La fórmula del plato perfecto (50% vegetales, 25% proteína, 25% carbohidratos inteligentes) no es una restricción — es una liberación. Cuando armas tu plato así, comes en abundancia, te sientes satisfecha y tu glucosa se mantiene estable. Las mujeres después de los 40 necesitan más proteína de la que creen para mantener masa muscular, que es tu motor metabólico principal. Y los vegetales te dan fibra, vitaminas y minerales que tus hormonas necesitan para funcionar correctamente."
+        },
+        {
+          "nombre": "Día 11: Postre Inteligente",
+          "ingredientes": [
+            "Regla principal: comer postre solo después de una comida completa, nunca en ayunas",
+            "Opciones inteligentes: chocolate oscuro (70%+), fruta con yogur, postre casero sin azúcar refinada",
+            "Porciones conscientes: disfruta un poco, no necesitas privarte completamente",
+            "Timing: el postre después de una comida con proteína y fibra tiene mucho menor impacto",
+            "Eliminación: postres industriales, galletas comerciales, helados con jarabe"
+          ],
+          "preparacion": [
+            "Hoy vas a disfrutar un postre inteligente después de tu almuerzo — no antes, no como merienda aislada",
+            "Elige una de estas opciones: 2 cuadros de chocolate oscuro 70%+, o fresas con una cucharada de crema batida natural",
+            "Come tu almuerzo completo primero: vegetales, proteína y carbohidratos en el orden correcto",
+            "Espera 5-10 minutos después de terminar tu comida antes de comer el postre",
+            "Come el postre despacio, saboreando cada bocado — la satisfacción está en la calidad, no en la cantidad",
+            "Nota cómo te sientes: la comida previa ralentiza la absorción del azúcar del postre",
+            "Compara esta experiencia con cómo te sentías cuando comías dulces a media tarde con el estómago vacío"
+          ],
+          "consejo": "Aquí hay una verdad que nadie te dice: el mismo postre puede tener un efecto completamente diferente en tu glucosa dependiendo de CUÁNDO lo comas. Cuando comes un postre con el estómago vacío, el azúcar entra directamente a tu sangre y dispara la insulina. Pero cuando lo comes después de una comida con fibra y proteína, esos nutrientes ya crearon una barrera protectora en tu intestino que ralentiza la absorción. Para la mujer 40+, esto significa que no tienes que renunciar a lo dulce — solo necesitas ser estratégica con el momento."
+        },
+        {
+          "nombre": "Día 12: Protocolo Nocturno",
+          "ingredientes": [
+            "Cena temprana y ligera: terminar de comer al menos 3 horas antes de dormir",
+            "Reducción de estímulos: apagar pantallas brillantes 1 hora antes de dormir",
+            "Rutina de relajación: preparar tu cuerpo para el descanso con actividades tranquilas",
+            "Hora de dormir: antes de las 23:00 para sincronizar con tu ritmo hormonal natural",
+            "Ambiente de sueño: oscuridad total, temperatura fresca, silencio"
+          ],
+          "preparacion": [
+            "Decide tu hora de dormir (idealmente antes de las 23:00) y calcula tu hora límite de cena (3 horas antes)",
+            "Prepara una cena ligera basada en proteína y vegetales: una sopa de verduras con pollo, o ensalada con huevo",
+            "Después de cenar, prepara una infusión de manzanilla o pasiflora — sin azúcar",
+            "Una hora antes de dormir, reduce la intensidad de las luces de tu casa y apaga la televisión",
+            "Deja tu teléfono fuera del dormitorio o ponlo en modo silencioso lejos de tu cama",
+            "Toma una ducha tibia que ayude a tu cuerpo a bajar la temperatura para el sueño",
+            "En la cama, practica la respiración 4-4-6: inhala 4 segundos, sostén 4, exhala 6. Repite 5 veces"
+          ],
+          "consejo": "Lo que haces por la noche programa las hormonas del día siguiente. La melatonina, la hormona del sueño, necesita oscuridad para producirse. La hormona del crecimiento, que repara tus tejidos y ayuda a quemar grasa, se libera durante el sueño profundo. Y la insulina necesita ese descanso nocturno para calibrarse. En las mujeres 40+, la calidad del sueño afecta directamente los niveles de cortisol matutino. Un mal protocolo nocturno puede sabotear todo el buen trabajo que hiciste durante el día."
+        },
+        {
+          "nombre": "Día 13: Comer con Atención",
+          "ingredientes": [
+            "Duración mínima: 20 minutos por comida, sin prisa",
+            "Masticación completa: cada bocado merece 15-20 masticaciones antes de tragar",
+            "Sin distracciones: apagar televisor, dejar el teléfono lejos, no comer frente a la computadora",
+            "Reconocimiento de saciedad: aprender a sentir cuándo tu cuerpo dice 'suficiente'",
+            "Gratitud por la comida: un momento de apreciación antes de empezar"
+          ],
+          "preparacion": [
+            "Elige una de las comidas de hoy para practicar la alimentación consciente — el almuerzo es ideal",
+            "Antes de comer, apaga el televisor, cierra el computador y pon tu teléfono en otra habitación",
+            "Siéntate a la mesa con tu plato servido — no comas de pie ni caminando",
+            "Antes del primer bocado, observa tu plato: los colores, los aromas, las texturas",
+            "Come despacio, poniendo el tenedor en la mesa entre cada bocado",
+            "Mastica cada bocado al menos 15 veces antes de tragar — nota cómo cambian los sabores",
+            "A mitad de la comida, haz una pausa de 2 minutos y pregúntate: ¿todavía tengo hambre o ya estoy satisfecha?"
+          ],
+          "consejo": "Tu cerebro necesita aproximadamente 20 minutos para recibir la señal de saciedad desde tu estómago. Cuando comes rápido o distraída, puedes consumir mucho más de lo que tu cuerpo necesita antes de que esa señal llegue. Comer con atención activa las hormonas de saciedad (leptina y colecistoquinina) de manera más eficiente. Además, masticar bien inicia la digestión en la boca, reduciendo la carga sobre tu sistema digestivo. Para las mujeres 40+, la alimentación consciente también reduce el cortisol durante la comida, mejorando la respuesta insulínica."
+        },
+        {
+          "nombre": "Día 14: Tu Lista Personal",
+          "ingredientes": [
+            "Lista de alimentos que te hacen sentir bien: con energía, sin pesadez, sin antojos después",
+            "Lista de alimentos que te afectan: te dan sueño, te hinchan, te provocan antojos",
+            "Combinaciones ganadoras: las mezclas de alimentos que mejor te funcionaron estas 2 semanas",
+            "Horarios ideales: ¿a qué hora te funciona mejor desayunar, almorzar y cenar?",
+            "Recetas favoritas: las preparaciones que más disfrutaste y que quieres repetir"
+          ],
+          "preparacion": [
+            "Siéntate con tu diario y revisa las 2 semanas completas de anotaciones",
+            "Crea una lista con el título 'Alimentos que me funcionan' y anota los que te dieron buena energía",
+            "Crea otra lista con 'Alimentos a evitar o limitar' — los que te provocaron pesadez, sueño o antojos",
+            "Identifica las 3 mejores combinaciones de comida que encontraste: las que te dejaron satisfecha y con energía",
+            "Anota tus horarios ideales de comida según lo que observaste estas 2 semanas",
+            "Escribe las recetas o preparaciones que más disfrutaste y que son fáciles de repetir",
+            "Guarda esta lista en un lugar visible en tu cocina — será tu referencia personalizada para las próximas semanas"
+          ],
+          "consejo": "Después de dos semanas de observación consciente, tienes algo que ningún nutricionista puede darte: conocimiento directo de cómo TU cuerpo responde a los alimentos. Cada mujer después de los 40 tiene un perfil hormonal único. Lo que funciona perfecto para una amiga puede no funcionar para ti. Tu lista personal es la herramienta más poderosa que vas a crear en este plan. Es tu mapa personalizado de alimentación hormonal inteligente, y solo tú puedes crearlo."
+        }
+      ]
+    },
+    {
+      "nombre": "Semana 3: Sensibilidad a la Insulina",
+      "descripcion": "Las dos primeras semanas sentaron las bases. Ahora vamos a profundizar: vas a optimizar cómo tu cuerpo responde a la insulina usando herramientas más avanzadas — ejercicio estratégico, grasas funcionales, manejo del estrés, calidad de sueño y un ayuno natural de 12 horas. Esta semana es donde la ciencia y la práctica se unen para acelerar tu transformación hormonal.",
+      "imagen": "img/plan31/semana3.jpg",
+      "recetas": [
+        {
+          "nombre": "Día 15: Fuerza Metabólica",
+          "ingredientes": [
+            "Sentadillas simples: el ejercicio más efectivo para activar los músculos grandes de las piernas",
+            "Flexiones contra la pared: fortalecen brazos y pecho sin necesidad de ir al piso",
+            "Subir escaleras: usa las escaleras de tu casa como tu gimnasio personal",
+            "Frecuencia: 2-3 series de 10 repeticiones de cada ejercicio",
+            "Momento ideal: antes o después de las comidas para maximizar el uso de glucosa"
+          ],
+          "preparacion": [
+            "Elige un espacio cómodo en tu casa donde puedas moverte libremente, no necesitas equipo",
+            "Haz 10 sentadillas: párate con los pies separados al ancho de tus hombros, baja como si te fueras a sentar en una silla invisible",
+            "Si las sentadillas completas son difíciles, usa una silla real: siéntate y levántate 10 veces",
+            "Haz 10 flexiones contra la pared: pon las manos en la pared a la altura de los hombros y empuja",
+            "Descansa 1 minuto y repite la serie completa 2-3 veces según tu capacidad",
+            "Si tienes escaleras en casa, sube y baja 3-5 veces a paso firme como ejercicio adicional",
+            "Anota en tu diario cómo te sentiste: ¿energizada? ¿Cansada? Mañana será más fácil"
+          ],
+          "consejo": "El músculo es el órgano metabólico más importante de tu cuerpo y el mayor consumidor de glucosa. Cada gramo de músculo que construyes es como agregar un quemador de glucosa que funciona las 24 horas, incluso mientras duermes. Después de los 40, perdemos masa muscular naturalmente si no la ejercitamos, lo que reduce nuestra capacidad de procesar la glucosa. Ejercicios simples de fuerza como sentadillas y flexiones contrarrestan esta pérdida y mejoran dramáticamente tu sensibilidad a la insulina."
+        },
+        {
+          "nombre": "Día 16: Grasas Funcionales",
+          "ingredientes": [
+            "Aceite de oliva extra virgen: la grasa estrella para cocinar y aderezar",
+            "Aguacate: grasa monoinsaturada que sacia y nutre tus hormonas",
+            "Semillas de chía y linaza: ricas en omega-3, fibra y lignanos beneficiosos para las hormonas femeninas",
+            "Frutos secos: almendras, nueces, pistachos — grasas saludables con proteína",
+            "Eliminación de aceites dañinos: reducir aceites de soya, canola, girasol refinados"
+          ],
+          "preparacion": [
+            "En el desayuno, agrega una cucharada de semillas de chía o linaza molida a tu yogur o huevos",
+            "Para cocinar, usa exclusivamente aceite de oliva extra virgen o aceite de coco",
+            "En el almuerzo, agrega medio aguacate a tu plato — combina perfecto con cualquier proteína",
+            "Como merienda, come un puñado de nueces o almendras (aproximadamente 15-20 unidades)",
+            "Revisa las etiquetas de los productos que tienes: busca y evita aceite de soya, de canola y grasas hidrogenadas",
+            "Prepara un aderezo casero: aceite de oliva + limón + sal + ajo — úsalo en todas tus ensaladas",
+            "Registra en tu diario cómo te sientes con más grasas saludables: probablemente más saciada y con menos antojos"
+          ],
+          "consejo": "Las grasas saludables no te engordan — te equilibran. Tus hormonas están hechas de grasa: el estrógeno, la progesterona, el cortisol — todas necesitan grasa como materia prima. Cuando eliminas la grasa de tu alimentación, tus hormonas sufren. El aceite de oliva, las semillas de chía y linaza contienen compuestos que apoyan específicamente las hormonas femeninas después de los 40. Además, la grasa saludable en las comidas ralentiza la absorción de glucosa, manteniendo tu insulina estable por más tiempo."
+        },
+        {
+          "nombre": "Día 17: Control del Estrés",
+          "ingredientes": [
+            "Técnica de respiración 4-4-6: inhalar 4 segundos, sostener 4, exhalar 6",
+            "Momentos de pausa: 3 pausas conscientes de 2-3 minutos durante el día",
+            "Identificación de fuentes de estrés: reconocer qué situaciones te activan el cortisol",
+            "Actividades relajantes: lo que te hace sentir en paz — música, naturaleza, lectura",
+            "Límite de noticias y redes sociales: reducir la exposición a información estresante"
+          ],
+          "preparacion": [
+            "Al despertar, antes de revisar tu teléfono, haz 5 ciclos de respiración 4-4-6: inhala 4 segundos, sostén 4, exhala 6",
+            "Programa 3 alarmas durante el día (mañana, mediodía, tarde) como recordatorio para hacer una pausa de respiración",
+            "En cada pausa, cierra los ojos, pon una mano en tu abdomen y respira profundamente 5 veces",
+            "Identifica las 3 situaciones que más estrés te generan y escríbelas en tu diario",
+            "Para cada situación estresante, escribe una acción que puedas tomar para manejarla mejor",
+            "Reduce el tiempo en redes sociales y noticias a máximo 30 minutos al día durante esta semana",
+            "Antes de dormir, haz otra ronda de respiración 4-4-6 y piensa en 3 cosas buenas que pasaron hoy"
+          ],
+          "consejo": "El estrés crónico es quizás el saboteador hormonal más poderoso y menos reconocido. Cuando estás estresada, tu cuerpo libera cortisol, y el cortisol ordena al hígado liberar glucosa almacenada hacia la sangre — así que tus niveles de glucosa suben incluso sin haber comido nada. Para las mujeres 40+, esto es especialmente problemático porque el cortisol alto también interfiere con el estrógeno y la progesterona, amplificando los síntomas hormonales. La respiración profunda activa el nervio vago, que es el freno natural de tu sistema de estrés."
+        },
+        {
+          "nombre": "Día 18: Eliminación de Ultraprocesados",
+          "ingredientes": [
+            "Lectura de etiquetas: si tiene más de 5 ingredientes o no reconoces alguno, evítalo",
+            "Palabras de alerta: maltodextrina, jarabe de maíz, fructosa, glutamato monosódico",
+            "Regla simple: si tu abuela no lo reconocería como comida, probablemente no lo es",
+            "Sustituciones: reemplazar productos procesados por opciones naturales",
+            "Limpieza de despensa: sacar gradualmente los ultraprocesados de tu hogar"
+          ],
+          "preparacion": [
+            "Saca todos los productos empaquetados de tu despensa y ponlos sobre la mesa",
+            "Lee la lista de ingredientes de cada uno — no la tabla nutricional, sino la lista de ingredientes",
+            "Si encuentras maltodextrina, jarabe de maíz, fructosa o nombres que no puedes pronunciar, apártalos",
+            "Haz una lista de esos productos y busca una alternativa natural para cada uno",
+            "Por ejemplo: galletas comerciales → nueces y fruta. Salsa de tomate industrial → tomate natural licuado",
+            "No tienes que tirar todo hoy — ve terminando lo que tienes y no vuelvas a comprarlo",
+            "Anota en tu diario cuántos productos ultraprocesados encontraste — probablemente te sorprenderás"
+          ],
+          "consejo": "Los ultraprocesados no solo contienen azúcares ocultos — contienen aditivos que alteran directamente tu microbiota intestinal y tus señales hormonales. Emulsionantes, colorantes artificiales y conservantes pueden aumentar la permeabilidad intestinal, generando inflamación crónica de bajo grado que empeora la resistencia a la insulina. Para las mujeres en la etapa 40+, donde el equilibrio hormonal es especialmente delicado, eliminar ultraprocesados puede producir cambios notables en energía y bienestar en cuestión de días."
+        },
+        {
+          "nombre": "Día 19: Ayuno Natural de 12 Horas",
+          "ingredientes": [
+            "Ventana de ayuno: 12 horas entre tu última comida del día y la primera del día siguiente",
+            "Ejemplo práctico: si cenas a las 20:00, desayunas a las 08:00",
+            "Hidratación libre: agua, infusiones sin azúcar y café negro están permitidos durante el ayuno",
+            "Sin extremos: no se trata de pasar hambre sino de darle descanso a tu sistema digestivo",
+            "Gradualidad: si ahora comes muy tarde, empieza con 10 horas y ve aumentando"
+          ],
+          "preparacion": [
+            "Decide tu ventana de alimentación: por ejemplo, primera comida a las 8:00, última comida completada antes de las 20:00",
+            "Prepara tu cena para comer temprano — recuerda que debe ser ligera y basada en proteína con vegetales",
+            "Después de cenar, solo toma agua o infusiones sin azúcar — nada de snacks nocturnos",
+            "Si sientes hambre por la noche, toma una infusión de manzanilla caliente — la sensación suele pasar en 15 minutos",
+            "Al despertar, toma un vaso de agua grande y espera hasta tu hora de desayuno programada",
+            "Si 12 horas te parece mucho al inicio, empieza con 10 horas y aumenta 30 minutos cada 2-3 días",
+            "Registra en tu diario cómo dormiste y cómo te sentiste al despertar — muchas mujeres reportan mejor sueño con el ayuno de 12 horas"
+          ],
+          "consejo": "El ayuno de 12 horas no es una moda — es el ritmo natural de tu cuerpo. Durante miles de años, los humanos comíamos con la luz del sol y descansábamos por la noche. Este periodo de ayuno natural permite que la insulina baje a niveles basales, que las células se reparen mediante un proceso llamado autofagia, y que el hígado procese las grasas almacenadas. Para las mujeres 40+, este ayuno suave es suficiente para obtener beneficios metabólicos sin el estrés hormonal que pueden causar los ayunos prolongados."
+        },
+        {
+          "nombre": "Día 20: Sueño Reparador",
+          "ingredientes": [
+            "Hora de dormir: antes de las 23:00 para alinearte con tu reloj biológico",
+            "Oscuridad total: cortinas gruesas o antifaz para bloquear toda la luz",
+            "Temperatura fresca: entre 18-21°C es ideal para el sueño profundo",
+            "Ritual nocturno: actividades que preparen tu cuerpo y mente para dormir",
+            "Duración: 7-8 horas completas de sueño ininterrumpido"
+          ],
+          "preparacion": [
+            "Esta noche vas a implementar tu protocolo de sueño reparador completo",
+            "A las 21:00 baja la intensidad de las luces de tu casa y apaga pantallas brillantes",
+            "Toma una ducha tibia o un baño de pies con agua caliente para bajar tu temperatura corporal",
+            "Prepara tu habitación: cierra cortinas completamente, ajusta la temperatura si es posible",
+            "Aplica unas gotas de lavanda en tu almohada o usa un difusor — la lavanda promueve el sueño profundo",
+            "En la cama, haz tu respiración 4-4-6 durante 3-5 minutos con los ojos cerrados",
+            "Proponte dormir a la misma hora todos los días, incluyendo fines de semana — la consistencia es clave"
+          ],
+          "consejo": "Una sola noche de mal sueño puede reducir tu sensibilidad a la insulina hasta en un 30% al día siguiente. Eso significa que tu cuerpo necesita producir mucha más insulina para procesar la misma cantidad de comida. Para las mujeres 40+, el sueño es cuando se produce la mayor parte de la hormona del crecimiento, esencial para reparar tejidos, mantener masa muscular y quemar grasa. La melatonina, que solo se produce en oscuridad, también tiene efectos protectores sobre tus ovarios y tu tiroides. Dormir bien no es un lujo — es una necesidad hormonal."
+        },
+        {
+          "nombre": "Día 21: Medición de Progreso",
+          "ingredientes": [
+            "Comparación semana 1 vs semana 3: revisa tus registros del día 1 y compara con hoy",
+            "Energía diaria: ¿ha mejorado? ¿Tienes más estabilidad durante el día?",
+            "Calidad de sueño: ¿duermes mejor? ¿Te despiertas con más energía?",
+            "Antojos: ¿han disminuido? ¿Son menos intensos o frecuentes?",
+            "Estado de ánimo: ¿te sientes más estable emocionalmente?"
+          ],
+          "preparacion": [
+            "Dedica 30-40 minutos a esta evaluación — es uno de los ejercicios más importantes del plan",
+            "Abre tu diario en la página del día 1 y lee lo que escribiste sobre tu energía, sueño y estado de ánimo",
+            "Ahora califica esas mismas categorías hoy, del 1 al 10, y escríbelas junto a las del día 1",
+            "Haz una lista de todos los cambios positivos que notas, por pequeños que sean",
+            "Registra si tus antojos han cambiado: ¿comes menos dulce? ¿Tienes menos hambre entre comidas?",
+            "Anota cómo ha cambiado tu sueño y tu energía al despertar en comparación con hace 3 semanas",
+            "Escribe una carta breve a ti misma reconociendo tu compromiso: llevas 21 días transformando tu metabolismo"
+          ],
+          "consejo": "Tres semanas es el tiempo que necesita tu cuerpo para empezar a crear nuevas rutas metabólicas. Si has seguido el plan, tu sensibilidad a la insulina ya ha mejorado, tus células están respondiendo mejor a las señales hormonales y tu microbiota intestinal está cambiando a tu favor. Muchas mujeres 40+ reportan que alrededor del día 21 sienten un 'click': los cambios que al principio requerían esfuerzo consciente empiezan a sentirse naturales. Confía en tu proceso — los cambios más profundos son los que no se ven pero se sienten."
+        }
+      ]
+    },
+    {
+      "nombre": "Semana 4: Autonomía y Consolidación",
+      "descripcion": "Has llegado a la etapa final — y la más importante. En estos últimos 10 días vas a consolidar todo lo aprendido en un sistema que funcione para TI de manera permanente. No hay reglas rígidas: hay principios que ya conoces y que vas a adaptar a tu vida real. Al terminar esta semana, no vas a necesitar que nadie te diga qué comer — vas a tener la autonomía para tomar decisiones inteligentes sobre tu alimentación y tu salud hormonal cada día.",
+      "imagen": "img/plan31/semana4.jpg",
+      "recetas": [
+        {
+          "nombre": "Día 22: Planificación Semanal",
+          "ingredientes": [
+            "30 minutos cada domingo para planificar las comidas de la semana",
+            "Lista de compras basada en tu plan: evita ir al supermercado sin lista",
+            "Preparación anticipada: deja listas proteínas y vegetales para varios días",
+            "Menú semanal simple: no necesitas recetas complicadas, solo combinaciones inteligentes",
+            "Flexibilidad incorporada: deja 1-2 comidas libres en tu plan para imprevistos"
+          ],
+          "preparacion": [
+            "Elige un momento tranquilo del domingo (o el día que te funcione) para sentarte a planificar",
+            "Revisa tu lista personal del día 14 y elige los alimentos que mejor te funcionan",
+            "Planifica 5 desayunos, 5 almuerzos y 5 cenas — los otros 2 días pueden ser flexibles",
+            "Haz tu lista de compras basada en ese plan y ve al supermercado con la lista en mano",
+            "El domingo por la tarde, prepara proteínas para varios días: cocina pollo, huevos duros, o frijoles",
+            "Lava y corta vegetales para tener listos en el refrigerador durante la semana",
+            "Anota tu plan en un lugar visible de la cocina — cuando el plan está a la vista, es más fácil seguirlo"
+          ],
+          "consejo": "La planificación elimina las decisiones impulsivas. Cuando llegas a la hora de comer con hambre y sin plan, tu cerebro busca la opción más rápida y fácil — que generalmente es la menos saludable. Las investigaciones muestran que tomamos más de 200 decisiones relacionadas con la comida cada día, y la fatiga de decisión es real. Para las mujeres 40+ que ya lidian con cambios hormonales, reducir la carga de decisiones diarias liberando esa energía mental es un regalo enorme para tu bienestar."
+        },
+        {
+          "nombre": "Día 23: Lectura de Etiquetas",
+          "ingredientes": [
+            "Los primeros 3 ingredientes: son lo que el producto contiene en mayor cantidad",
+            "Maltodextrina: tiene un índice glucémico más alto que el azúcar de mesa",
+            "Jarabes: jarabe de maíz, jarabe de glucosa, jarabe de fructosa — todos son azúcar concentrada",
+            "Fructosa aislada: afecta directamente el hígado y promueve resistencia a la insulina",
+            "Regla de los 5 ingredientes: si tiene más de 5 ingredientes difíciles de pronunciar, evítalo"
+          ],
+          "preparacion": [
+            "Hoy vas a practicar la lectura de etiquetas con los productos que tienes en casa",
+            "Toma 5 productos empaquetados de tu despensa y voltéalos para ver la lista de ingredientes",
+            "Busca estas palabras: maltodextrina, jarabe (de maíz, de glucosa, de fructosa), dextrosa, sacarosa",
+            "Fíjate en qué posición aparecen: si están entre los primeros 3 ingredientes, ese producto es principalmente azúcar",
+            "Practica con productos que consideras saludables: barras de cereal, galletas integrales, yogures de sabor",
+            "La próxima vez que vayas al supermercado, lee la etiqueta ANTES de poner el producto en el carrito",
+            "Anota en tu diario los productos que descubriste que tenían azúcar oculta — comparte con una amiga para crear conciencia"
+          ],
+          "consejo": "La industria alimentaria usa más de 50 nombres diferentes para el azúcar en las etiquetas. La maltodextrina tiene un índice glucémico de 85-105, mucho más alto que el azúcar de mesa (65). El jarabe de maíz de alta fructosa es especialmente dañino para el hígado y promueve directamente la resistencia a la insulina. Para las mujeres 40+, donde cada pico de insulina cuenta, aprender a leer etiquetas es como aprender a leer un idioma nuevo que protege tu salud. El conocimiento es tu mejor defensa."
+        },
+        {
+          "nombre": "Día 24: Cocinar = Control",
+          "ingredientes": [
+            "Autonomía total: cuando cocinas, decides exactamente qué entra en tu cuerpo",
+            "Sin azúcares ocultos: tú controlas cada cucharada de todo lo que agregas",
+            "Aceites de calidad: solo usas los que elegiste conscientemente",
+            "Porciones adecuadas: sirves lo que tu cuerpo necesita, no lo que el restaurante decide",
+            "Ahorro económico: cocinar en casa es más barato que comer fuera o comprar procesados"
+          ],
+          "preparacion": [
+            "Hoy prepara al menos una comida completamente desde cero, con ingredientes naturales que tú elijas",
+            "Elige una receta simple que disfrutes: puede ser una sopa de verduras con pollo, un salteado de vegetales con proteína, o una ensalada abundante",
+            "Usa aceite de oliva extra virgen para cocinar, sal natural y especias frescas o secas",
+            "Evita usar salsas comerciales, cubos de caldo industrial o condimentos empaquetados con glutamato",
+            "Mientras cocinas, disfruta el proceso: los aromas, los colores, la transformación de los ingredientes",
+            "Prepara una porción extra y guárdala para mañana — cocinar una vez y comer dos veces es una estrategia poderosa",
+            "Anota la receta que preparaste en tu diario con tus ajustes personales — estás creando tu propio libro de cocina hormonal"
+          ],
+          "consejo": "Cocinar tus propios alimentos es el acto más poderoso de autonomía en tu salud hormonal. Cuando comes fuera o compras alimentos procesados, no sabes qué aceites usaron, cuánta azúcar agregaron, ni qué aditivos contiene. Una salsa de tomate industrial puede tener más azúcar que un helado. Al cocinar, tú decides todo. Para las mujeres 40+, cocinar también es un acto de amor propio: estás eligiendo nutrirte con intención. Y un beneficio extra — las especias como cúrcuma, canela y jengibre que puedes agregar libremente tienen propiedades antiinflamatorias y reguladoras de la insulina."
+        },
+        {
+          "nombre": "Día 25: Hambre Emocional",
+          "ingredientes": [
+            "Distinguir hambre física de hambre emocional: son sensaciones completamente diferentes",
+            "Hambre física: aparece gradualmente, acepta cualquier alimento nutritivo, se satisface al comer",
+            "Hambre emocional: aparece repentinamente, busca alimentos específicos (dulce, salado, crocante), no se satisface",
+            "Desencadenantes comunes: estrés, aburrimiento, soledad, ansiedad, cansancio",
+            "Estrategias alternativas: acciones que satisfacen la necesidad emocional sin recurrir a la comida"
+          ],
+          "preparacion": [
+            "Antes de cada comida o merienda de hoy, haz una pausa y pregúntate: ¿tengo hambre física real?",
+            "Señales de hambre física: sensación en el estómago, baja energía, dificultad para concentrarte, cualquier alimento suena bien",
+            "Señales de hambre emocional: aparece de repente, quieres algo específico (chocolate, pan, papas), viene con una emoción",
+            "Si identificas hambre emocional, espera 10 minutos antes de comer — toma agua, sal a caminar o llama a alguien",
+            "Identifica tus desencadenantes emocionales: ¿cuándo tiendes a comer sin hambre real? ¿Qué estás sintiendo en ese momento?",
+            "Crea una lista de 5 actividades que puedes hacer cuando sientes hambre emocional: caminar, respirar, llamar a una amiga, escuchar música, tomar un baño",
+            "Anota en tu diario cada vez que identifiques hambre emocional y qué hiciste en su lugar — celebra cada victoria"
+          ],
+          "consejo": "El hambre emocional es una de las principales razones por las que las mujeres 40+ sienten que 'no pueden controlar' su alimentación. No es falta de voluntad — es una respuesta hormonal real. El cortisol (hormona del estrés) aumenta los antojos de alimentos dulces y grasos porque tu cuerpo busca una recompensa rápida de dopamina. Los cambios hormonales de esta etapa pueden intensificar estas señales. Reconocer la diferencia entre hambre física y emocional no se trata de negarte comida, sino de darte lo que realmente necesitas en ese momento."
+        },
+        {
+          "nombre": "Día 26: Flexibilidad Consciente",
+          "ingredientes": [
+            "Comer fuera sin culpa: puedes aplicar tus principios en cualquier restaurante",
+            "Estrategia de menú: empieza con ensalada o vegetales, elige proteína de calidad, modera los carbohidratos",
+            "Recuperación inteligente: si comiste de más, la siguiente comida es tu oportunidad de equilibrar",
+            "Sin perfeccionismo: un día de indulgencia no arruina semanas de buen trabajo",
+            "Movimiento compensatorio: caminar después de una comida abundante ayuda enormemente"
+          ],
+          "preparacion": [
+            "Si hoy comes fuera, aplica esta estrategia: pide una ensalada o sopa de verduras como entrada",
+            "Para el plato principal, elige proteína (pollo, pescado, carne) con vegetales como acompañamiento",
+            "Si quieres carbohidratos, pide una porción pequeña y cómelos al final, después de los vegetales y la proteína",
+            "Bebe agua en lugar de refrescos o jugos — si quieres algo diferente, pide agua mineral con limón",
+            "Si decides comer postre, compártelo con alguien — disfrutas el sabor sin el exceso",
+            "Después de comer fuera, camina al menos 15 minutos: de regreso a casa, al carro, o alrededor del restaurante",
+            "No te castigues si comiste más de lo habitual — simplemente haz la siguiente comida más ligera y sigue adelante"
+          ],
+          "consejo": "La rigidez es enemiga de la sostenibilidad. Cualquier plan que no te permita vivir tu vida social con normalidad está destinado a fracasar. La clave no es evitar situaciones sociales con comida — es navegar esas situaciones con inteligencia. Las mujeres 40+ que mantienen sus hábitos a largo plazo son las que aprendieron a ser flexibles sin perder la conciencia. Un restaurante no es una amenaza — es un lugar para aplicar lo que sabes. Y si un día te excedes, tu cuerpo tiene una capacidad increíble de reequilibrarse al día siguiente."
+        },
+        {
+          "nombre": "Día 27: Movimiento Placentero",
+          "ingredientes": [
+            "Ejercicio que disfrutes: el mejor ejercicio es el que harás consistentemente",
+            "Opciones variadas: bailar, nadar, caminar en la naturaleza, andar en bicicleta, yoga",
+            "Sin presión de rendimiento: no necesitas un gimnasio costoso ni rutinas extremas",
+            "Frecuencia sobre intensidad: 30 minutos diarios de movimiento suave supera 1 hora semanal intensa",
+            "Movimiento social: hacer ejercicio con amigas o familia lo hace más sostenible y divertido"
+          ],
+          "preparacion": [
+            "Haz una lista de 5 actividades físicas que disfrutas o que crees que podrías disfrutar",
+            "Elige una de esas actividades y practícala hoy durante al menos 20-30 minutos",
+            "Si te gusta bailar, pon tu música favorita y baila en tu sala — cuenta como ejercicio",
+            "Si prefieres caminar, elige una ruta bonita: un parque, una calle arbolada, o simplemente tu vecindario",
+            "Invita a una amiga, familiar o vecina a acompañarte — el movimiento social se mantiene más fácilmente",
+            "Mientras te mueves, nota cómo te sientes: la energía, el estado de ánimo, la claridad mental",
+            "Programa esta actividad como una cita fija en tu semana — mínimo 3 veces por semana, idealmente todos los días"
+          ],
+          "consejo": "El ejercicio no tiene que ser sufrimiento para ser efectivo. De hecho, el ejercicio que disfrutas activa tu sistema de recompensa de manera saludable, liberando endorfinas y serotonina que contrarrestan los efectos del cortisol. Para las mujeres 40+, el movimiento placentero tiene beneficios hormonales enormes: mejora la sensibilidad a la insulina, protege la masa muscular, fortalece los huesos (importante para la prevención de osteoporosis), y mejora el ánimo. El secreto no es encontrar el ejercicio perfecto — es encontrar el que te haga sonreír."
+        },
+        {
+          "nombre": "Día 28: Comparación Antes vs Después",
+          "ingredientes": [
+            "Revisión de hábitos anteriores: cómo desayunabas, almorzabas y cenabas antes del plan",
+            "Hábitos actuales: cómo comes ahora, qué eliges, cómo te sientes",
+            "Cambios físicos: energía, sueño, digestión, peso, medidas, apariencia de la piel",
+            "Cambios emocionales: confianza, autonomía, relación con la comida, manejo del estrés",
+            "Celebración del progreso: cada pequeño cambio merece ser reconocido"
+          ],
+          "preparacion": [
+            "Abre tu diario en una página nueva y divide la hoja en dos columnas: ANTES y DESPUÉS",
+            "En la columna ANTES, escribe cómo era un día típico de alimentación antes de empezar este plan",
+            "En la columna DESPUÉS, escribe cómo es un día típico ahora — desde el desayuno hasta la cena",
+            "Anota los cambios que notas en tu energía, sueño, digestión, antojos y estado de ánimo",
+            "Compara cómo te sentías al despertar el día 1 versus cómo te sientes al despertar hoy",
+            "Escribe al menos 5 logros que has alcanzado en estos 28 días, por pequeños que parezcan",
+            "Comparte tus logros con alguien de confianza — verbalizar tu progreso lo hace más real y motivante"
+          ],
+          "consejo": "Cuando estamos en medio de un proceso de cambio, tendemos a enfocarnos en lo que falta en lugar de en lo que hemos logrado. Este ejercicio de comparación es esencial porque tu cerebro necesita evidencia concreta de que tus esfuerzos están dando resultados. Para las mujeres 40+, los cambios hormonales pueden ser más sutiles que un número en la balanza: mejor sueño, menos inflamación, más energía estable, menos antojos, mejor humor. Todos estos son indicadores de que tu metabolismo hormonal se está reequilibrando. Celebra cada uno."
+        },
+        {
+          "nombre": "Día 29: Tu Mapa Personal",
+          "ingredientes": [
+            "Alimentos que te funcionan: tu lista definitiva de comidas que te dan energía y estabilidad",
+            "Alimentos a evitar: los que descubriste que te afectan negativamente",
+            "Horarios ideales: las horas que mejor funcionan para tus comidas y meriendas",
+            "Rutinas ganadoras: las combinaciones de hábitos que te dan mejores resultados",
+            "Señales de tu cuerpo: ya sabes leer lo que tu cuerpo te dice — documéntalo"
+          ],
+          "preparacion": [
+            "Este es el ejercicio más importante de todo el plan: vas a crear tu mapa personal de salud hormonal",
+            "En una hoja nueva, escribe el título: 'Mi Mapa de Equilibrio Hormonal' con tu nombre y la fecha",
+            "Sección 1: Lista definitiva de alimentos que me funcionan — revisa tu diario y elige los mejores",
+            "Sección 2: Alimentos que debo limitar o evitar — los que te provocaron pesadez, antojos o bajones de energía",
+            "Sección 3: Mi rutina diaria ideal — desde que despiertas hasta que duermes, incluyendo comidas, ejercicio y descanso",
+            "Sección 4: Mis estrategias para situaciones difíciles — qué hacer en restaurantes, eventos sociales, días difíciles",
+            "Guarda este mapa en un lugar accesible — es tu guía personalizada que ningún libro ni experto puede darte"
+          ],
+          "consejo": "Después de 29 días de observación consciente, tienes algo invaluable: conocimiento directo de tu propio cuerpo. Ningún estudio científico, ningún libro, ningún profesional de salud puede decirte exactamente cómo reacciona TU cuerpo a cada alimento, a cada hora de sueño, a cada fuente de estrés. Tu mapa personal es el resultado de 29 días de ciencia aplicada a tu vida real. Para la mujer 40+, este autoconocimiento es la diferencia entre depender de dietas externas toda la vida y tener autonomía total sobre tu salud hormonal."
+        },
+        {
+          "nombre": "Día 30: Los 5 Hábitos Clave",
+          "ingredientes": [
+            "El hábito que más diferencia hizo en tu glucosa y energía",
+            "El hábito más fácil de mantener en tu rutina diaria",
+            "El hábito que más disfrutas hacer cada día",
+            "El hábito que mejoró tu energía o tu sueño de forma más notable",
+            "El hábito que quieres perfeccionar o profundizar en el próximo mes"
+          ],
+          "preparacion": [
+            "Revisa todo tu diario desde el día 1 hasta hoy y marca los momentos de mayor impacto",
+            "De todo lo que aprendiste y practicaste, elige los 5 hábitos que tuvieron el mayor efecto positivo en tu vida",
+            "Escribe cada hábito en una tarjeta o nota adhesiva con una frase corta que lo resuma",
+            "Ordénalos por prioridad: si solo pudieras mantener 1, ¿cuál sería? ¿Y si pudieras mantener 2? Y así sucesivamente",
+            "Para cada hábito, escribe exactamente CUÁNDO y CÓMO lo vas a practicar cada día",
+            "Pega estas 5 tarjetas en tu espejo del baño, tu refrigerador o tu mesita de noche — donde las veas diariamente",
+            "Estos 5 hábitos son tu programa mínimo de mantenimiento: si haces estos 5 cada día, mantienes tu equilibrio hormonal"
+          ],
+          "consejo": "No necesitas hacer todo perfectamente cada día para mantener tu equilibrio hormonal. Necesitas los 5 hábitos correctos. La ciencia del cambio de comportamiento muestra que las personas que eligen sus hábitos centrales y los practican consistentemente tienen mucho más éxito que las que intentan hacerlo todo. Para las mujeres 40+, la clave es la consistencia, no la perfección. Tus 5 hábitos son como las 5 columnas de un templo: mientras estén en pie, la estructura se mantiene, aunque el resto fluctúe."
+        },
+        {
+          "nombre": "Día 31: Plan de Continuidad",
+          "ingredientes": [
+            "El día 31 no es el final — es el comienzo de tu nueva vida",
+            "Revisión mensual: cada mes, revisa tus 5 hábitos clave y ajusta lo necesario",
+            "Optimización trimestral: cada 3 meses, evalúa tu progreso general y establece nuevas metas",
+            "Comunidad: comparte lo que aprendiste con otras mujeres que puedan beneficiarse",
+            "Compromiso permanente: esta transformación no tiene fecha de vencimiento"
+          ],
+          "preparacion": [
+            "Escribe tu plan de continuidad con metas concretas para los próximos 3 meses",
+            "Programar una revisión mensual: elige un día fijo cada mes para releer tu diario y evaluar tus hábitos",
+            "Cada mes, hazte estas 3 preguntas: ¿estoy manteniendo mis 5 hábitos? ¿Cómo está mi energía? ¿Qué puedo mejorar?",
+            "Cada trimestre, haz una evaluación más profunda: ¿cómo me siento comparada con hace 3 meses?",
+            "Comparte tu experiencia con al menos una mujer que pueda beneficiarse — enseñar es la mejor forma de aprender",
+            "Si tienes un día difícil o una semana donde los hábitos se debilitan, no te juzgues — simplemente vuelve a empezar al día siguiente",
+            "Escribe una carta a tu yo del futuro: cuéntale lo que lograste en estos 31 días y lo que esperas para los próximos 31"
+          ],
+          "consejo": "Has completado 31 días de transformación hormonal. Pero la verdadera magia empieza ahora: cuando estos hábitos dejan de ser un plan y se convierten en tu forma de vivir. Las mujeres 40+ que mantienen su equilibrio hormonal a largo plazo tienen algo en común: no siguen dietas, tienen un sistema personalizado que evoluciona con ellas. Tu cuerpo va a seguir cambiando, y tu sistema debe adaptarse. La revisión mensual y la optimización trimestral aseguran que siempre estés en sintonía con lo que tu cuerpo necesita. Esta no es una meta alcanzada — es un camino que recorrerás con sabiduría y confianza el resto de tu vida."
+        }
+      ]
+    }
+  ]
+}

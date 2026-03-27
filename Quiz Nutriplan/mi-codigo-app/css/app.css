@@ -1,0 +1,271 @@
+/* =====================
+   CSS Variables
+   ===================== */
+:root {
+  --verde: #2E7D52;
+  --verde-light: #F0FDF4;
+  --verde-dark: #1B5E3A;
+  --dourado: #C9922A;
+  --texto: #1A1A2E;
+  --texto-sub: #4B5563;
+  --branco: #FFFFFF;
+  --borda: #E5E7EB;
+  --bg: #F8F9FA;
+  --rosa: #E8445A;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --nav-height: 64px;
+  --header-height: 52px;
+}
+
+/* =====================
+   Reset
+   ===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* =====================
+   App Header
+   ===================== */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  height: var(--header-height);
+  background: var(--verde);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 100;
+}
+
+.header-title {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.header-streak {
+  font-size: 14px;
+  font-weight: 700;
+  background: rgba(255,255,255,.15);
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+/* =====================
+   Tab Content
+   ===================== */
+.tab-content {
+  margin-top: var(--header-height);
+  margin-bottom: var(--nav-height);
+  min-height: calc(100vh - var(--header-height) - var(--nav-height));
+  overflow-y: auto;
+}
+
+/* =====================
+   Bottom Nav
+   ===================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  height: var(--nav-height);
+  background: #fff;
+  border-top: 1px solid var(--borda);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 4px;
+  z-index: 100;
+}
+
+.nav-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 0;
+  color: var(--texto-sub);
+  transition: color .2s;
+}
+
+.nav-btn.active {
+  color: var(--verde);
+}
+
+.nav-btn:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+.nav-icon {
+  font-size: 20px;
+}
+
+.nav-label {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =====================
+   Install Banner
+   ===================== */
+.install-banner {
+  position: fixed;
+  bottom: var(--nav-height);
+  left: 0;
+  right: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--verde);
+  color: #fff;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 200;
+  font-size: 13px;
+}
+
+.install-btn {
+  background: #fff;
+  color: var(--verde);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.install-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.7);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+}
+
+/* =====================
+   Common Components
+   ===================== */
+.section {
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--borda);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--texto-sub);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.btn-primary {
+  display: block;
+  background: var(--verde);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-primary:active {
+  background: var(--verde-dark);
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid var(--verde-dark);
+  outline-offset: 2px;
+}
+
+/* =====================
+   FAB (Floating Action Button)
+   ===================== */
+.nav-fab {
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  position: relative;
+}
+
+.fab-circle {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--verde), var(--verde-dark));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(46, 125, 82, .4);
+  margin-top: -20px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.nav-fab:active .fab-circle {
+  transform: scale(.92);
+  box-shadow: 0 2px 8px rgba(46, 125, 82, .3);
+}
+
+.nav-fab .nav-label {
+  color: var(--verde);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.nav-fab.active .fab-circle {
+  box-shadow: 0 4px 20px rgba(46, 125, 82, .5);
+}

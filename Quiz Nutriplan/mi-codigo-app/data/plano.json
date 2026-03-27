@@ -1,0 +1,44 @@
+[
+  {
+    "dia": "Lunes",
+    "desayuno": "Huevos revueltos con espinacas + té verde",
+    "almuerzo": "Pechuga de pollo a la plancha + ensalada verde + aceite de oliva",
+    "cena": "Salmón al horno + brócoli al vapor + limón"
+  },
+  {
+    "dia": "Martes",
+    "desayuno": "Yogur griego natural + nueces + canela",
+    "almuerzo": "Ensalada de atún con aguacate + tomates cherry",
+    "cena": "Pavo molido salteado + zucchini + ajo"
+  },
+  {
+    "dia": "Miércoles",
+    "desayuno": "Batido: espinacas + proteína + almendras + agua",
+    "almuerzo": "Lentejas con vegetales + ensalada mixta",
+    "cena": "Camarones a la plancha + espárragos + aceite de oliva"
+  },
+  {
+    "dia": "Jueves",
+    "desayuno": "Huevos pochados + aguacate + tostada integral (pequeña)",
+    "almuerzo": "Sardinas en aceite de oliva + ensalada de pepino y tomate",
+    "cena": "Pollo al horno con cúrcuma + coliflor al vapor"
+  },
+  {
+    "dia": "Viernes",
+    "desayuno": "Avena con canela + semillas de chía + frambuesas",
+    "almuerzo": "Wrap de lechuga con pollo + pico de gallo + aguacate",
+    "cena": "Bistec magro a la plancha + ensalada verde + vinagreta de limón"
+  },
+  {
+    "dia": "Sábado",
+    "desayuno": "Tortilla de 3 huevos con champiñones y cebolla",
+    "almuerzo": "Sopa de vegetales con pollo + ensalada de rúcula",
+    "cena": "Trucha al horno + judías verdes + papas pequeñas (media taza)"
+  },
+  {
+    "dia": "Domingo",
+    "desayuno": "Yogur griego + arándanos + almendras tostadas",
+    "almuerzo": "Ensalada grande: lechuga, pollo, aguacate, semillas de calabaza",
+    "cena": "Bacalao a la plancha + espinacas salteadas con ajo"
+  }
+]
