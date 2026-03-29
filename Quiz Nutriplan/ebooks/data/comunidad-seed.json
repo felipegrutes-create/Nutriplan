@@ -1,0 +1,162 @@
+[
+  {
+    "id": "1",
+    "nombre": "Ana María R.",
+    "avatar": "🌸",
+    "texto": "Llevo 3 semanas siguiendo el plan de 31 días y ya no siento esa fatiga horrible de las tardes. Mi esposo hasta me preguntó qué estoy haciendo diferente. Lo que más me ayudó fue cambiar el orden de los alimentos en cada comida, tal como dice la guía.",
+    "fecha": "2026-03-26T14:30:00",
+    "likes": 18,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Lucía F.",
+        "avatar": "🌻",
+        "texto": "¡Qué lindo, Ana! Yo también noté cambios en la energía desde la segunda semana. ¡Sigue así!",
+        "fecha": "2026-03-26T15:10:00"
+      },
+      {
+        "nombre": "Valentina M.",
+        "avatar": "🦋",
+        "texto": "Lo del orden de los alimentos es real. Yo empecé con las verduras primero y se nota la diferencia en cómo me siento después de comer.",
+        "fecha": "2026-03-26T16:45:00"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "nombre": "Carmen Lucía G.",
+    "avatar": "🌺",
+    "texto": "¿Alguien más ha probado las recetas de panes del volumen 2? Hice el pan de avena y almendras y quedó increíble. Mi familia ni notó que era saludable. Necesito más recetas así.",
+    "fecha": "2026-03-25T09:15:00",
+    "likes": 24,
+    "categoria": "receta",
+    "comentarios": [
+      {
+        "nombre": "Daniela P.",
+        "avatar": "💜",
+        "texto": "¡Sí! El de zanahoria y nuez es mi favorito. Lo hago cada domingo para toda la semana.",
+        "fecha": "2026-03-25T10:00:00"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "nombre": "María José T.",
+    "avatar": "🌷",
+    "texto": "Tengo una pregunta: ¿es normal sentir más hambre durante los primeros días del ciclo? Siento que como bien todo el mes y luego esos días no puedo parar. ¿A alguien más le pasa?",
+    "fecha": "2026-03-24T18:20:00",
+    "likes": 31,
+    "categoria": "pregunta",
+    "comentarios": [
+      {
+        "nombre": "Sofía C.",
+        "avatar": "🌿",
+        "texto": "¡Totalmente normal! La progesterona baja y el cuerpo pide más energía. En la guía de alimentos explican cómo adaptar la alimentación según la fase del ciclo.",
+        "fecha": "2026-03-24T19:05:00"
+      },
+      {
+        "nombre": "Isabella R.",
+        "avatar": "🍃",
+        "texto": "A mí me pasaba igual. Ahora esos días me preparo snacks con proteína y grasa buena y ya no siento esa ansiedad.",
+        "fecha": "2026-03-24T20:30:00"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "nombre": "Gabriela V.",
+    "avatar": "💚",
+    "texto": "Quiero compartir mi progreso: en 2 meses bajé 4 kilos sin hacer dieta extrema. Solo apliqué lo del plan de 31 días y las caminatas después de comer. Me siento con más energía y mi piel mejoró mucho. No puedo creer que algo tan simple funcione.",
+    "fecha": "2026-03-23T11:00:00",
+    "likes": 45,
+    "categoria": "progreso",
+    "comentarios": []
+  },
+  {
+    "id": "5",
+    "nombre": "Rosa Elena M.",
+    "avatar": "🌹",
+    "texto": "Estoy en perimenopausia y los bochornos me tenían desesperada. Empecé a incluir las semillas de linaza como recomiendan y a eliminar el café (eso fue lo más difícil). Van 3 semanas y los bochornos disminuyeron muchísimo.",
+    "fecha": "2026-03-22T07:45:00",
+    "likes": 37,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Patricia L.",
+        "avatar": "🌼",
+        "texto": "Rosa, ¿cada cuánto tomas la linaza? Yo estoy pasando por lo mismo y quiero intentar.",
+        "fecha": "2026-03-22T08:30:00"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "nombre": "Fernanda S.",
+    "avatar": "🦜",
+    "texto": "Les comparto una motivación: mi doctora me dijo que mis niveles de insulina mejoraron en mi último examen. Ella misma se sorprendió cuando le conté que solo cambié mi alimentación con estas guías. ¡Nunca es tarde para empezar, amigas!",
+    "fecha": "2026-03-21T16:00:00",
+    "likes": 42,
+    "categoria": "motivacion",
+    "comentarios": []
+  },
+  {
+    "id": "7",
+    "nombre": "Claudia Lorena H.",
+    "avatar": "🫶",
+    "texto": "¿Cuál jugo recomiendan para empezar la mañana? Vi que hay muchas opciones en el bono de jugos pero no sé por cuál empezar. Soy nueva aquí y quiero hacer las cosas bien.",
+    "fecha": "2026-03-20T08:10:00",
+    "likes": 12,
+    "categoria": "pregunta",
+    "comentarios": [
+      {
+        "nombre": "Ana María R.",
+        "avatar": "🌸",
+        "texto": "¡Bienvenida, Claudia! Yo empecé con el jugo verde de espinaca, pepino y limón. Es suave y te acostumbras rápido. Evita los que llevan mucha fruta al inicio.",
+        "fecha": "2026-03-20T08:45:00"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "nombre": "Alejandra N.",
+    "avatar": "🌟",
+    "texto": "Hoy completo 21 días sin refrescos ni jugos procesados. Jamás pensé que lo lograría. El truco que me salvó fue preparar agua de frutas natural cada noche para el día siguiente. Si yo pude, ustedes también pueden.",
+    "fecha": "2026-03-19T20:30:00",
+    "likes": 33,
+    "categoria": "motivacion",
+    "comentarios": []
+  },
+  {
+    "id": "9",
+    "nombre": "Mariana B.",
+    "avatar": "🍀",
+    "texto": "Hice las recetas de quema grasa de esta semana y la sopa de lentejas con cúrcuma es INCREÍBLE. Mi hija de 15 años hasta repitió plato. Cuando la comida saludable es rica, todo es más fácil.",
+    "fecha": "2026-03-18T13:15:00",
+    "likes": 28,
+    "categoria": "receta",
+    "comentarios": []
+  },
+  {
+    "id": "10",
+    "nombre": "Laura Beatriz D.",
+    "avatar": "🕊️",
+    "texto": "Quiero agradecer a esta comunidad. Llevo meses luchando con la resistencia a la insulina y me sentía muy sola. Encontrar este espacio donde todas compartimos lo mismo me da fuerza para seguir. Gracias por existir.",
+    "fecha": "2026-03-17T21:00:00",
+    "likes": 39,
+    "categoria": "motivacion",
+    "comentarios": [
+      {
+        "nombre": "Gabriela V.",
+        "avatar": "💚",
+        "texto": "¡Aquí estamos, Laura! No estás sola. Este camino es mejor cuando lo recorremos juntas. Un abrazo grande.",
+        "fecha": "2026-03-17T21:30:00"
+      },
+      {
+        "nombre": "Fernanda S.",
+        "avatar": "🦜",
+        "texto": "Todas pasamos por momentos difíciles. Lo importante es que ya diste el primer paso. ¡Cuenta con nosotras!",
+        "fecha": "2026-03-17T22:00:00"
+      }
+    ]
+  }
+]

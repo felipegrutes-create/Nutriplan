@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "tipo": "consejo",
+    "titulo": "Tu cortisol manda en la mañana",
+    "contenido": "El cortisol alcanza su punto más alto entre las 6 y las 8 de la mañana. Aprovecha ese pico natural para hacer ejercicio suave y desayunar con proteína. Así le das a tu cuerpo lo que necesita sin forzarlo.",
+    "emoji": "🌅",
+    "fecha": "2026-03-27",
+    "categoria": "hormonas",
+    "likes": 38
+  },
+  {
+    "id": 2,
+    "tipo": "motivacion",
+    "titulo": "Tu cuerpo no es tu enemigo",
+    "contenido": "Cada síntoma que sientes es tu cuerpo hablándote. No lo ignores ni lo castigues. Aprende a escucharlo y responderle con amor, buena alimentación y descanso. Eres más fuerte de lo que crees.",
+    "emoji": "💪",
+    "fecha": "2026-03-27",
+    "categoria": "bienestar",
+    "likes": 42
+  },
+  {
+    "id": 3,
+    "tipo": "receta_destacada",
+    "titulo": "Avena nocturna con canela y chía",
+    "contenido": "Mezcla 1/2 taza de avena, 1 cucharada de chía, leche de almendras y canela. Déjala en la nevera toda la noche. La canela ayuda a mejorar la sensibilidad a la insulina y la chía aporta omega-3 antiinflamatorio.",
+    "emoji": "🥣",
+    "fecha": "2026-03-26",
+    "categoria": "alimentacion",
+    "likes": 35
+  },
+  {
+    "id": 4,
+    "tipo": "articulo",
+    "titulo": "¿Por qué la resistencia a la insulina afecta más a las mujeres?",
+    "contenido": "Las fluctuaciones hormonales del ciclo menstrual influyen directamente en cómo tu cuerpo procesa la glucosa. Durante la fase lútea, la progesterona puede aumentar temporalmente la resistencia a la insulina. Conocer tu ciclo te ayuda a adaptar tu alimentación.",
+    "emoji": "🔬",
+    "fecha": "2026-03-26",
+    "categoria": "hormonas",
+    "likes": 29
+  },
+  {
+    "id": 5,
+    "tipo": "consejo",
+    "titulo": "Camina 10 minutos después de comer",
+    "contenido": "Una caminata corta después de cada comida principal puede reducir los picos de glucosa hasta un 30%. No necesitas ir al gimnasio: caminar alrededor de tu casa o tu cuadra es suficiente para activar tus músculos y mejorar tu metabolismo.",
+    "emoji": "🚶‍♀️",
+    "fecha": "2026-03-25",
+    "categoria": "ejercicio",
+    "likes": 41
+  },
+  {
+    "id": 6,
+    "tipo": "motivacion",
+    "titulo": "Cada día cuenta, aunque no lo sientas",
+    "contenido": "Tal vez hoy no notaste cambios. Pero cada comida balanceada, cada caminata, cada noche de buen sueño está reprogramando tu metabolismo. Los resultados hormonales se construyen con constancia, no con perfección.",
+    "emoji": "🌱",
+    "fecha": "2026-03-25",
+    "categoria": "bienestar",
+    "likes": 44
+  },
+  {
+    "id": 7,
+    "tipo": "articulo",
+    "titulo": "Estrógeno y grasa abdominal: la conexión oculta",
+    "contenido": "Cuando los niveles de estrógeno bajan (especialmente en la perimenopausia), el cuerpo tiende a acumular grasa en el abdomen. No es falta de voluntad, es biología. Ajustar la alimentación con más fibra y grasas saludables puede ayudar a contrarrestar este efecto.",
+    "emoji": "📊",
+    "fecha": "2026-03-24",
+    "categoria": "hormonas",
+    "likes": 33
+  },
+  {
+    "id": 8,
+    "tipo": "receta_destacada",
+    "titulo": "Batido verde antiinflamatorio",
+    "contenido": "Licúa 1 taza de espinaca, 1/2 pepino, jugo de 1 limón, jengibre rallado, 1/2 aguacate y agua. Este batido es rico en magnesio, potasio y grasas buenas que ayudan a reducir la inflamación y apoyar el equilibrio hormonal.",
+    "emoji": "🥤",
+    "fecha": "2026-03-24",
+    "categoria": "alimentacion",
+    "likes": 27
+  },
+  {
+    "id": 9,
+    "tipo": "consejo",
+    "titulo": "Desayuna proteína, no azúcar",
+    "contenido": "Un desayuno alto en azúcar (pan dulce, jugos procesados, cereales) dispara la insulina y genera hambre a las 2 horas. Empieza el día con huevos, aguacate o yogurt natural para mantener tu energía estable toda la mañana.",
+    "emoji": "🍳",
+    "fecha": "2026-03-23",
+    "categoria": "alimentacion",
+    "likes": 39
+  },
+  {
+    "id": 10,
+    "tipo": "consejo",
+    "titulo": "El sueño es medicina hormonal",
+    "contenido": "Dormir menos de 7 horas altera la leptina (hormona de saciedad) y aumenta la grelina (hormona del hambre). Si sientes que comes de más, antes de cambiar tu dieta revisa cuánto estás durmiendo.",
+    "emoji": "😴",
+    "fecha": "2026-03-23",
+    "categoria": "hormonas",
+    "likes": 36
+  },
+  {
+    "id": 11,
+    "tipo": "motivacion",
+    "titulo": "No compares tu proceso con el de nadie",
+    "contenido": "Tu cuerpo tiene su propio ritmo hormonal, su propia historia y sus propias necesidades. Lo que funcionó para otra persona puede no ser lo ideal para ti. Confía en tu proceso y celebra cada pequeño avance.",
+    "emoji": "✨",
+    "fecha": "2026-03-22",
+    "categoria": "bienestar",
+    "likes": 45
+  },
+  {
+    "id": 12,
+    "tipo": "articulo",
+    "titulo": "Magnesio: el mineral que tu cuerpo pide a gritos",
+    "contenido": "El magnesio participa en más de 300 reacciones enzimáticas. Ayuda a regular el azúcar en sangre, reduce el estrés, mejora el sueño y alivia calambres. Fuentes naturales: espinaca, almendras, chocolate oscuro (85%+) y aguacate.",
+    "emoji": "💊",
+    "fecha": "2026-03-22",
+    "categoria": "alimentacion",
+    "likes": 31
+  },
+  {
+    "id": 13,
+    "tipo": "receta_destacada",
+    "titulo": "Ensalada de lentejas con limón y cilantro",
+    "contenido": "Cocina 1 taza de lentejas. Mezcla con tomate picado, cebolla morada, cilantro, jugo de limón, aceite de oliva, sal y pimienta. Las lentejas son ricas en fibra y proteína vegetal, ideales para estabilizar la glucosa después de comer.",
+    "emoji": "🥗",
+    "fecha": "2026-03-21",
+    "categoria": "alimentacion",
+    "likes": 22
+  },
+  {
+    "id": 14,
+    "tipo": "consejo",
+    "titulo": "Vinagre de manzana antes de comer",
+    "contenido": "Una cucharada de vinagre de manzana diluida en agua antes de las comidas puede ayudar a reducir el pico de glucosa postprandial. No es magia, pero es un hábito sencillo que suma a tu estrategia de salud metabólica.",
+    "emoji": "🍎",
+    "fecha": "2026-03-21",
+    "categoria": "alimentacion",
+    "likes": 28
+  },
+  {
+    "id": 15,
+    "tipo": "articulo",
+    "titulo": "Tiroides lenta: señales que muchas ignoran",
+    "contenido": "Cansancio extremo, caída de cabello, piel seca, dificultad para bajar de peso y sensación de frío constante pueden ser señales de hipotiroidismo. Si te identificas con 3 o más síntomas, consulta a tu médico y pide un perfil tiroideo completo.",
+    "emoji": "🦋",
+    "fecha": "2026-03-20",
+    "categoria": "hormonas",
+    "likes": 37
+  },
+  {
+    "id": 16,
+    "tipo": "consejo",
+    "titulo": "Entrena fuerza, no solo cardio",
+    "contenido": "El músculo es el órgano metabólico más grande de tu cuerpo. Cada kilo de músculo que ganas mejora tu sensibilidad a la insulina. No necesitas pesas pesadas: sentadillas, flexiones y bandas elásticas en casa son un gran comienzo.",
+    "emoji": "🏋️‍♀️",
+    "fecha": "2026-03-20",
+    "categoria": "ejercicio",
+    "likes": 34
+  },
+  {
+    "id": 17,
+    "tipo": "motivacion",
+    "titulo": "Comer bien no es castigarte",
+    "contenido": "Alimentarte bien no significa dejar todo lo que te gusta. Significa aprender a combinar, a elegir mejor y a disfrutar sin culpa. La nutrición hormonal no es una dieta: es una forma de cuidarte para siempre.",
+    "emoji": "💚",
+    "fecha": "2026-03-19",
+    "categoria": "bienestar",
+    "likes": 40
+  },
+  {
+    "id": 18,
+    "tipo": "receta_destacada",
+    "titulo": "Salmón al horno con brócoli y limón",
+    "contenido": "Coloca un filete de salmón sobre brócoli en una bandeja. Rocía con aceite de oliva, limón, ajo y hierbas. Hornea 20 min a 180°C. El omega-3 del salmón es antiinflamatorio y el brócoli apoya la desintoxicación de estrógenos.",
+    "emoji": "🐟",
+    "fecha": "2026-03-19",
+    "categoria": "alimentacion",
+    "likes": 25
+  },
+  {
+    "id": 19,
+    "tipo": "consejo",
+    "titulo": "Reduce el azúcar, no la elimines de golpe",
+    "contenido": "Eliminar todo el azúcar de un día para otro genera ansiedad y atracones. Mejor ve reduciendo poco a poco: cambia el refresco por agua con fruta, el pan blanco por integral, y el postre por fruta con crema de cacahuate.",
+    "emoji": "🔄",
+    "fecha": "2026-03-18",
+    "categoria": "alimentacion",
+    "likes": 32
+  },
+  {
+    "id": 20,
+    "tipo": "articulo",
+    "titulo": "Estrés crónico y hormonas: un círculo vicioso",
+    "contenido": "El estrés constante eleva el cortisol, que a su vez aumenta la resistencia a la insulina, altera la tiroides y reduce la progesterona. Romper este círculo requiere estrategias conscientes: respiración profunda, caminatas en la naturaleza y límites sanos.",
+    "emoji": "🧘‍♀️",
+    "fecha": "2026-03-18",
+    "categoria": "hormonas",
+    "likes": 30
+  },
+  {
+    "id": 21,
+    "tipo": "consejo",
+    "titulo": "Come en orden: verduras primero",
+    "contenido": "Empezar tu comida con verduras y proteína antes de los carbohidratos puede reducir el pico de glucosa hasta un 40%. Es un truco simple que no requiere cambiar lo que comes, solo el orden.",
+    "emoji": "🥦",
+    "fecha": "2026-03-17",
+    "categoria": "alimentacion",
+    "likes": 26
+  },
+  {
+    "id": 22,
+    "tipo": "motivacion",
+    "titulo": "Eres la protagonista de tu salud",
+    "contenido": "Nadie más va a cuidar tu cuerpo por ti. Cada decisión que tomas hoy construye la mujer que serás mañana. No esperes el lunes, no esperes enero. Empieza ahora, con lo que tienes, donde estás.",
+    "emoji": "👑",
+    "fecha": "2026-03-17",
+    "categoria": "bienestar",
+    "likes": 43
+  },
+  {
+    "id": 23,
+    "tipo": "receta_destacada",
+    "titulo": "Panqueques de avena y banano sin azúcar",
+    "contenido": "Licúa 1 banano maduro, 1/2 taza de avena, 1 huevo y canela. Cocina en sartén antiadherente. Sirve con frutos rojos. Es un desayuno que estabiliza la glucosa, llena de energía y satisface el antojo de algo dulce sin azúcar añadida.",
+    "emoji": "🥞",
+    "fecha": "2026-03-16",
+    "categoria": "alimentacion",
+    "likes": 38
+  },
+  {
+    "id": 24,
+    "tipo": "articulo",
+    "titulo": "La inflamación silenciosa que engorda",
+    "contenido": "La inflamación crónica de bajo grado altera las señales hormonales de hambre y saciedad. Alimentos ultraprocesados, aceites refinados y azúcar son los principales culpables. Incluir cúrcuma, jengibre, omega-3 y verduras de hoja verde ayuda a combatirla.",
+    "emoji": "🔥",
+    "fecha": "2026-03-16",
+    "categoria": "hormonas",
+    "likes": 21
+  },
+  {
+    "id": 25,
+    "tipo": "consejo",
+    "titulo": "Hidrátate antes de sentir sed",
+    "contenido": "La deshidratación leve puede confundirse con hambre y afectar tu metabolismo. Toma al menos 8 vasos de agua al día. Un truco: lleva siempre una botella contigo y ponle rodajas de limón o pepino para hacerla más agradable.",
+    "emoji": "💧",
+    "fecha": "2026-03-15",
+    "categoria": "bienestar",
+    "likes": 19
+  },
+  {
+    "id": 26,
+    "tipo": "consejo",
+    "titulo": "Yoga para tu equilibrio hormonal",
+    "contenido": "Posturas como la cobra, el puente y las piernas en la pared estimulan las glándulas tiroides y suprarrenales. 15 minutos de yoga suave al día pueden reducir el cortisol y mejorar la calidad del sueño significativamente.",
+    "emoji": "🧘",
+    "fecha": "2026-03-14",
+    "categoria": "ejercicio",
+    "likes": 23
+  },
+  {
+    "id": 27,
+    "tipo": "receta_destacada",
+    "titulo": "Bowl de pollo con quinoa y aguacate",
+    "contenido": "Sirve quinoa cocida como base. Agrega pollo a la plancha en tiras, aguacate en rodajas, tomate cherry, pepino y un aderezo de limón con aceite de oliva. Proteína + grasa buena + carbohidrato complejo = comida que equilibra tus hormonas.",
+    "emoji": "🍗",
+    "fecha": "2026-03-14",
+    "categoria": "alimentacion",
+    "likes": 30
+  },
+  {
+    "id": 28,
+    "tipo": "motivacion",
+    "titulo": "Tu edad no define tus posibilidades",
+    "contenido": "Ya sea que tengas 30, 45 o 60 años, tu cuerpo tiene una capacidad increíble de sanar y adaptarse. La menopausia no es el fin, es una nueva etapa que puedes vivir con energía si le das las herramientas correctas.",
+    "emoji": "🌺",
+    "fecha": "2026-03-13",
+    "categoria": "bienestar",
+    "likes": 41
+  },
+  {
+    "id": 29,
+    "tipo": "articulo",
+    "titulo": "Ayuno intermitente: ¿sirve para todas?",
+    "contenido": "El ayuno intermitente puede beneficiar la sensibilidad a la insulina, pero no es para todas. Mujeres con ciclos irregulares, estrés alto o historial de trastornos alimentarios deben tener precaución. Consulta a un profesional antes de comenzar.",
+    "emoji": "⏰",
+    "fecha": "2026-03-12",
+    "categoria": "hormonas",
+    "likes": 15
+  },
+  {
+    "id": 30,
+    "tipo": "consejo",
+    "titulo": "Snacks inteligentes para media tarde",
+    "contenido": "Cuando llega el antojo de las 4 pm, elige opciones que no disparen tu insulina: un puñado de nueces, palitos de zanahoria con hummus, una manzana con crema de almendras o un yogurt natural con semillas. Tu cuerpo te lo agradecerá.",
+    "emoji": "🥜",
+    "fecha": "2026-03-11",
+    "categoria": "alimentacion",
+    "likes": 24
+  }
+]

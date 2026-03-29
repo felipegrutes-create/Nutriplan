@@ -16,10 +16,17 @@ fbq('track', 'PageView');
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'DM Sans',sans-serif;background:#0f1f15;color:#fff;min-height:100vh;overflow-x:hidden}
 .quiz-wrapper{max-width:480px;margin:0 auto;min-height:100vh;background:#0f1f15;position:relative;overflow:hidden}
-.quiz-header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#0f1f15;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;z-index:100;margin-top:38px}
+.quiz-header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#0f1f15;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;z-index:100;margin-top:38px;transition:margin-top .3s ease}
+.sticky-active .quiz-header{margin-top:56px}
 .btn-back{width:32px;height:32px;border:none;background:transparent;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:rgba(255,255,255,.4);transition:color .25s var(--ease-premium);flex-shrink:0}
 .btn-back:hover{color:#fff}
 .logo-text{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:#4ade80;letter-spacing:-0.3px}
+.sticky-checkout-bar{position:fixed;top:0;left:0;width:100%;z-index:300;background:rgba(15,31,21,.92);backdrop-filter:blur(12px);padding:12px 20px;display:none;align-items:center;justify-content:center;gap:20px;border-bottom:1px solid rgba(74,222,128,.15)}
+.sticky-checkout-bar.visible{display:flex}
+.sticky-timer{font-size:24px;font-weight:800;color:#fff;font-family:'DM Sans',sans-serif;letter-spacing:3px;min-width:65px;text-align:center}
+.sticky-timer-label{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px}
+.sticky-btn{padding:12px 28px;background:linear-gradient(135deg,#E8445A,#c93548);color:#fff;border:none;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;transition:all .2s;box-shadow:0 4px 16px rgba(232,68,90,.3)}
+.sticky-btn:hover{background:linear-gradient(135deg,#ff5068,#E8445A);box-shadow:0 6px 24px rgba(232,68,90,.4);transform:scale(1.02)}
 .progress-wrap{position:fixed;top:0;left:0;width:100%;z-index:200;padding:10px 20px 6px;background:#0f1f15}
 .progress-bar-outer{width:100%;height:8px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden}
 .progress-bar-inner{height:100%;background:linear-gradient(90deg,#4ade80,#2E7D52);border-radius:99px;transition:width .5s var(--ease-premium)}
@@ -217,6 +224,15 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
 @media(max-width:360px){.q-title{font-size:23px}.slider-value{font-size:44px}.body-type-card svg,.body-type-card img{height:60px}.body-type-grid{gap:8px}.body-type-card{padding:6px 16px}.zone-grid{gap:8px}.option-btn{padding:12px 14px}.slide{padding:24px 16px 100px}}</style>
 </head>
 <body>
+<div class="sticky-checkout-bar" id="stickyCheckoutBar">
+  <div style="display:flex;align-items:center;gap:8px">
+    <span style="font-size:16px">&#9203;</span>
+    <div style="display:flex;flex-direction:column;align-items:center">
+      <span class="sticky-timer" id="stickyTimer">10:00</span>
+    </div>
+  </div>
+  <a href="https://pay.hotmart.com/W98444762C?checkoutMode=10" target="_blank" class="sticky-btn">Obtener mi plan &#8594;</a>
+</div>
 <div class="quiz-wrapper" id="quizWrapper">
   <div class="quiz-header" id="quizHeader">
     <button class="btn-back" id="btnBack" onclick="goBack()">&#8592;</button>
@@ -233,7 +249,7 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
 
       <!-- HERO IMAGE — warm tinted overlay to neutralize red bricks -->
       <div style="width:100%; height:380px; position:relative; overflow:hidden;">
-        <img src="pexels-shvets-production-8972593.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 28%; display:block;">
+        <img src="assets/photos/pexels-shvets-production-8972593.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 28%; display:block;">
         <!-- warm green tint overlay — kills red bricks, unifies palette -->
         <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(46,125,82,0.08) 0%, rgba(46,125,82,0.04) 40%, rgba(244,241,236,0.3) 70%, #F4F1EC 100%); mix-blend-mode:normal;"></div>
         <!-- soft top shadow for depth -->
@@ -311,7 +327,7 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
 
       <!-- Group photo -->
       <div style="padding:0 28px; margin-bottom:28px; animation:fadeSlideIn .6s cubic-bezier(0.22, 1, 0.36, 1) .2s both;">
-        <img src="38511416-ai-gerado-grupo-do-mulheres-feliz-e-abraco-com-celebracao-rindo-amizade-objetivo-foto.jpeg" alt="" style="width:100%; border-radius:16px; display:block; object-fit:cover; height:320px; object-position:center 20%;">
+        <img src="assets/photos/38511416-ai-gerado-grupo-do-mulheres-feliz-e-abraco-com-celebracao-rindo-amizade-objetivo-foto.jpeg" alt="" style="width:100%; border-radius:16px; display:block; object-fit:cover; height:320px; object-position:center 20%;">
       </div>
 
       <!-- Tagline -->
@@ -389,23 +405,23 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
     <p class="q-sub">Selecciona la silueta m&#225;s parecida a ti</p>
     <div class="body-type-grid">
       <div class="body-type-card" onclick="selectBodyType(this,'regular')">
-        <img src="11111111.png" alt="Regular" style="height:80px;width:auto">
+        <img src="assets/body-types/11111111.png" alt="Regular" style="height:80px;width:auto">
         <div class="body-type-label">Regular</div>
       </div>
       <div class="body-type-card" onclick="selectBodyType(this,'flacido')">
-        <img src="2222222222222.png" alt="Fl&#225;cido" style="height:80px;width:auto">
+        <img src="assets/body-types/2222222222222.png" alt="Fl&#225;cido" style="height:80px;width:auto">
         <div class="body-type-label">Fl&#225;cido</div>
       </div>
       <div class="body-type-card" onclick="selectBodyType(this,'michelines')">
-        <img src="333333333333333.png" alt="Michelines" style="height:80px;width:auto">
+        <img src="assets/body-types/333333333333333.png" alt="Michelines" style="height:80px;width:auto">
         <div class="body-type-label">Michelines</div>
       </div>
       <div class="body-type-card" onclick="selectBodyType(this,'sobrepeso')">
-        <img src="44444444444444.png" alt="Sobrepeso" style="height:80px;width:auto">
+        <img src="assets/body-types/44444444444444.png" alt="Sobrepeso" style="height:80px;width:auto">
         <div class="body-type-label">Sobrepeso</div>
       </div>
       <div class="body-type-card" onclick="selectBodyType(this,'obeso')">
-        <img src="555555555555.png" alt="Obeso" style="height:80px;width:auto">
+        <img src="assets/body-types/555555555555.png" alt="Obeso" style="height:80px;width:auto">
         <div class="body-type-label">Obeso</div>
       </div>
     </div>
@@ -418,23 +434,23 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
     <p class="q-sub">Selecciona la silueta que m&#225;s te gustar&#237;a lograr</p>
     <div class="body-type-grid">
       <div class="body-type-card" onclick="selectIdealBody(this,'curvy')">
-        <img src="curvy.png" alt="Curvy" style="height:80px;width:auto">
+        <img src="assets/body-types/curvy.png" alt="Curvy" style="height:80px;width:auto">
         <div class="body-type-label">Curvy</div>
       </div>
       <div class="body-type-card" onclick="selectIdealBody(this,'regular')">
-        <img src="Regular.png" alt="Regular" style="height:80px;width:auto">
+        <img src="assets/body-types/Regular.png" alt="Regular" style="height:80px;width:auto">
         <div class="body-type-label">Regular</div>
       </div>
       <div class="body-type-card" onclick="selectIdealBody(this,'plano')">
-        <img src="Flat.png" alt="Flat" style="height:80px;width:auto">
+        <img src="assets/body-types/Flat.png" alt="Flat" style="height:80px;width:auto">
         <div class="body-type-label">Plano</div>
       </div>
       <div class="body-type-card" onclick="selectIdealBody(this,'fit')">
-        <img src="Fit.png" alt="Fit" style="height:80px;width:auto">
+        <img src="assets/body-types/Fit.png" alt="Fit" style="height:80px;width:auto">
         <div class="body-type-label">Fit</div>
       </div>
       <div class="body-type-card" onclick="selectIdealBody(this,'atletico')">
-        <img src="Athletic.png" alt="Atlético" style="height:80px;width:auto">
+        <img src="assets/body-types/Athletic.png" alt="Atlético" style="height:80px;width:auto">
         <div class="body-type-label">Atl&#233;tico</div>
       </div>
     </div>
@@ -446,13 +462,13 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
     <h2 class="q-title">&#191;Qu&#233; zonas quieres mejorar?</h2>
     <p class="q-sub">Selecciona todas las que apliquen</p>
     <div class="zone-grid">
-      <div class="zone-btn" onclick="selectZone(this,'brazos')"><span class="zone-check"></span><span class="zone-emoji">&#128170;</span>Brazos<img src="bodypart_1.png" class="zone-img" alt="Brazos"></div>
-      <div class="zone-btn" onclick="selectZone(this,'estomago')"><span class="zone-check"></span><span class="zone-emoji">&#127856;</span>Est&#243;mago<img src="bodypart_2.png" class="zone-img" alt="Estómago"></div>
-      <div class="zone-btn" onclick="selectZone(this,'espalda')"><span class="zone-check"></span><span class="zone-emoji">&#129703;</span>Espalda<img src="bodypart_3.png" class="zone-img" alt="Espalda"></div>
-      <div class="zone-btn" onclick="selectZone(this,'gluteos')"><span class="zone-check"></span><span class="zone-emoji">&#127351;</span>Gl&#250;teos<img src="bodypart_4.png" class="zone-img" alt="Glúteos"></div>
-      <div class="zone-btn" onclick="selectZone(this,'piernas')"><span class="zone-check"></span><span class="zone-emoji">&#129462;</span>Piernas<img src="bodypart_5.png" class="zone-img" alt="Piernas"></div>
-      <div class="zone-btn" onclick="selectZone(this,'caderas')"><span class="zone-check"></span><span class="zone-emoji">&#128131;</span>Caderas<img src="bodypart_6.png" class="zone-img" alt="Caderas"></div>
-      <div class="zone-btn zone-full" onclick="selectZone(this,'todo')"><span class="zone-check"></span><span class="zone-emoji">&#127775;</span>Todo el cuerpo<img src="bodypart_7.png" class="zone-img" alt="Todo el cuerpo"></div>
+      <div class="zone-btn" onclick="selectZone(this,'brazos')"><span class="zone-check"></span><span class="zone-emoji">&#128170;</span>Brazos<img src="assets/body-parts/bodypart_1.png" class="zone-img" alt="Brazos"></div>
+      <div class="zone-btn" onclick="selectZone(this,'estomago')"><span class="zone-check"></span><span class="zone-emoji">&#127856;</span>Est&#243;mago<img src="assets/body-parts/bodypart_2.png" class="zone-img" alt="Estómago"></div>
+      <div class="zone-btn" onclick="selectZone(this,'espalda')"><span class="zone-check"></span><span class="zone-emoji">&#129703;</span>Espalda<img src="assets/body-parts/bodypart_3.png" class="zone-img" alt="Espalda"></div>
+      <div class="zone-btn" onclick="selectZone(this,'gluteos')"><span class="zone-check"></span><span class="zone-emoji">&#127351;</span>Gl&#250;teos<img src="assets/body-parts/bodypart_4.png" class="zone-img" alt="Glúteos"></div>
+      <div class="zone-btn" onclick="selectZone(this,'piernas')"><span class="zone-check"></span><span class="zone-emoji">&#129462;</span>Piernas<img src="assets/body-parts/bodypart_5.png" class="zone-img" alt="Piernas"></div>
+      <div class="zone-btn" onclick="selectZone(this,'caderas')"><span class="zone-check"></span><span class="zone-emoji">&#128131;</span>Caderas<img src="assets/body-parts/bodypart_6.png" class="zone-img" alt="Caderas"></div>
+      <div class="zone-btn zone-full" onclick="selectZone(this,'todo')"><span class="zone-check"></span><span class="zone-emoji">&#127775;</span>Todo el cuerpo<img src="assets/body-parts/bodypart_7.png" class="zone-img" alt="Todo el cuerpo"></div>
     </div>
   </div>
 
@@ -596,7 +612,7 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
   <div class="slide" id="slide-15">
     <h2 class="q-title" style="font-size:24px;line-height:1.8;margin-bottom:12px;"><span style="background:#2E7D52; color:#FFFFFF; padding:3px 10px 5px; border-radius:4px; box-decoration-break:clone; -webkit-box-decoration-break:clone;">El 99.9% de los planes son efectivos para la poblaci&#243;n general</span></h2>
     <p style="font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px;">Sin embargo, casi ninguno est&#225; dise&#241;ado para mujeres <strong style="color:#fff;">mayores de 35 a&#241;os</strong> cuyos cambios hormonales alteran la se&#241;al de insulina. Nutriplan ofrece un enfoque integral para revertir la acumulaci&#243;n de grasa hormonal con <strong style="color:#4ade80;">0 alimentos prohibidos</strong>.</p>
-    <img src="pexels-ibidsy-14634934.jpg" alt="Mujer saludable" style="width:100%;border-radius:16px;margin-bottom:20px;object-fit:cover;max-height:480px;">
+    <img src="assets/photos/pexels-ibidsy-14634934.jpg" alt="Mujer saludable" style="width:100%;border-radius:16px;margin-bottom:20px;object-fit:cover;max-height:480px;">
     <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:20px;">Seg&#250;n tus respuestas, llevas <strong style="color:#fff;" id="personSlideTime">un tiempo</strong> luchando con tu peso, tu actividad f&#237;sica es <strong style="color:#fff;" id="personSlideActivity">limitada</strong>, y quieres mejorar especialmente en <strong style="color:#4ade80;" id="personSlideZones">zonas clave</strong>. Todo esto apunta a una <strong style="color:#fff;">se&#241;al de insulina desregulada</strong> &#8212; y es exactamente lo que Nutriplan corrige.</p>
     <div style="display:flex;gap:10px;margin-bottom:4px;">
       <div style="flex:1;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;text-align:center;">
@@ -816,11 +832,22 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
         <!-- Phone 2: Portal hero (center, larger) -->
         <div style="width:150px;flex-shrink:0;margin-bottom:8px">
           <div style="background:#1a1a1a;border-radius:20px;padding:4px;box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)">
-            <div style="background:#0f1f15;border-radius:16px;overflow:hidden;aspect-ratio:9/16;position:relative">
-              <iframe src="ebooks/portal.html" style="width:450px;height:800px;border:none;transform:scale(0.333);transform-origin:top left;pointer-events:none" tabindex="-1"></iframe>
+            <div style="border-radius:16px;overflow:hidden;aspect-ratio:9/16;position:relative;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.5));display:flex;flex-direction:column;align-items:center;justify-content:center">
+              <img src="assets/photos/Fundo Front.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:brightness(0.45)">
+              <div style="position:relative;z-index:1;text-align:center;padding:16px 8px">
+                <div style="font-size:7px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(201,146,42,.9);border:1px solid rgba(201,146,42,.4);padding:3px 8px;border-radius:20px;display:inline-block;margin-bottom:8px">&#10022; Acceso Exclusivo</div>
+                <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;line-height:1.2">El C&#243;digo</div>
+                <div style="font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#C9922A;line-height:1.2">Hormonal</div>
+                <div style="font-size:7px;color:rgba(255,255,255,.6);margin-top:8px;line-height:1.4">Tu Biblioteca Digital de Bienestar Hormonal</div>
+                <div style="display:flex;justify-content:center;gap:12px;margin-top:10px">
+                  <div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;font-style:italic;color:#C9922A">22</div><div style="font-size:6px;color:rgba(255,255,255,.5);text-transform:uppercase">Ebooks</div></div>
+                  <div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;font-style:italic;color:#C9922A">500+</div><div style="font-size:6px;color:rgba(255,255,255,.5);text-transform:uppercase">Recetas</div></div>
+                  <div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;font-style:italic;color:#C9922A">11</div><div style="font-size:6px;color:rgba(255,255,255,.5);text-transform:uppercase">Bonos</div></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div style="font-size:10px;color:#4ade80;margin-top:6px;font-weight:700">El Código Hormonal</div>
+          <div style="font-size:10px;color:#4ade80;margin-top:6px;font-weight:700">El C&#243;digo Hormonal</div>
         </div>
         <!-- Phone 3: Plan 31 Días -->
         <div style="width:130px;flex-shrink:0">
@@ -829,23 +856,57 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
               <iframe src="ebooks/plan-31-dias.html" style="width:390px;height:693px;border:none;transform:scale(0.333);transform-origin:top left;pointer-events:none" tabindex="-1"></iframe>
             </div>
           </div>
-          <div style="font-size:9px;color:rgba(255,255,255,.4);margin-top:6px">Protocolo 21 Días</div>
+          <div style="font-size:9px;color:rgba(255,255,255,.4);margin-top:6px">Protocolo de 21 D&#237;as</div>
         </div>
       </div>
     </div>
-    <div class="offer-timer-bar" id="offerTimerBar">&#9888;&#65039; Tu precio personalizado de US$9 expira en: <span class="offer-timer-num" id="offerTimer">10:00</span></div>
-    <div class="offer-wrap"><div class="offer-header"><div class="offer-header-badge">Tu plan personalizado</div><div class="offer-header-title">El Código Hormonal</div></div><div class="offer-body"><div class="offer-price-row"><span class="price-old">$37</span><span class="price-new"><small>US$</small>9</span></div><div class="price-desc">Acceso completo &#183; Garant&#237;a 60 d&#237;as &#183; Pago &#250;nico</div><div class="includes-list"><div class="include-item"><div class="include-check">&#10003;</div><span>+150 recetas metab&#243;licas en espa&#241;ol</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Protocolo de 3 semanas paso a paso</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Lista de activadores metab&#243;licos</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Plan diario de comidas incluido</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Acceso inmediato en tu celular</span></div></div><div style="background:rgba(201,146,42,.08);border:1px solid rgba(201,146,42,.15);border-radius:12px;padding:14px 16px;margin:16px 0;text-align:center"><div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.5">&#9888;&#65039; Sin intervenci&#243;n, la resistencia a la insulina se profundiza con los a&#241;os &#8212; <strong style="color:#C9922A">dificultando cada vez m&#225;s la p&#233;rdida de peso</strong></div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:6px">Por eso actuar hoy marca la diferencia.</div></div><div class="guarantee-row"><span class="guarantee-icon">&#128737;</span><span><strong>Garant&#237;a total de 60 d&#237;as.</strong> Si no ves resultados, te devolvemos el 100% sin preguntas.</span></div></div></div>
+
+    <!-- Benefits list -->
+    <div style="margin:20px 0;display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.1);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#2E7D52;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">&#9878;&#65039;</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.4">Peso saludable y sostenible, un cuerpo tonificado y nueva confianza en ti misma</div>
+      </div>
+      <div style="background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.1);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#2E7D52;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">&#10024;</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.4">M&#225;s energ&#237;a, mejor sue&#241;o y estado de &#225;nimo estable durante todo el d&#237;a</div>
+      </div>
+      <div style="background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.1);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#2E7D52;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">&#128139;</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.4">Protocolo dise&#241;ado para las necesidades hormonales de la mujer latina</div>
+      </div>
+      <div style="background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.1);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#2E7D52;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">&#127860;</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.4">M&#225;s de 500 recetas con la combinaci&#243;n ideal de macros para acelerar tu metabolismo</div>
+      </div>
+      <div style="background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.1);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#2E7D52;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">&#128197;</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.4">Plan de 31 d&#237;as paso a paso &#8212; solo elige, prepara y disfruta sin contar calor&#237;as</div>
+      </div>
+      <div style="background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.1);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#2E7D52;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">&#128241;</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.4">Acceso inmediato desde tu celular &#8212; empieza hoy mismo, sin esperas</div>
+      </div>
+      <div style="background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.1);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#2E7D52;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">&#127793;</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.4">11 bonos especiales con gu&#237;as de ejercicios, control emocional y desparasitaci&#243;n natural</div>
+      </div>
+    </div>
+
+    <div class="offer-timer-bar" id="offerTimerBar">&#9888;&#65039; Tu 60% de descuento expira en: <span class="offer-timer-num" id="offerTimer">10:00</span></div>
+    <div class="offer-wrap"><div class="offer-header"><div class="offer-header-badge">Tu plan personalizado</div><div class="offer-header-title">El Código Hormonal</div></div><div class="offer-body"><div class="offer-price-row"><span class="price-old">$23</span><span class="price-new"><small>US$</small>9</span></div><div class="price-desc">Acceso completo &#183; Garant&#237;a 60 d&#237;as &#183; Pago &#250;nico</div><div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px 14px;margin-top:10px;text-align:center"><span style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.4">&#127758; El valor se convierte autom&#225;ticamente a la moneda de tu pa&#237;s al momento del pago.</span></div><div class="includes-list"><div class="include-item"><div class="include-check">&#10003;</div><span>+500 recetas metab&#243;licas en espa&#241;ol</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Protocolo de 3 semanas paso a paso</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Lista de activadores metab&#243;licos</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Plan diario de comidas incluido</span></div><div class="include-item"><div class="include-check">&#10003;</div><span>Acceso inmediato en tu celular</span></div></div><div style="background:rgba(201,146,42,.08);border:1px solid rgba(201,146,42,.15);border-radius:12px;padding:14px 16px;margin:16px 0;text-align:center"><div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.5">&#9888;&#65039; Sin intervenci&#243;n, la resistencia a la insulina se profundiza con los a&#241;os &#8212; <strong style="color:#C9922A">dificultando cada vez m&#225;s la p&#233;rdida de peso</strong></div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:6px">Por eso actuar hoy marca la diferencia.</div></div><div class="guarantee-row"><span class="guarantee-icon">&#128737;</span><span><strong>Garant&#237;a total de 60 d&#237;as.</strong> Si no ves resultados, te devolvemos el 100% sin preguntas.</span></div><a href="https://pay.hotmart.com/W98444762C?checkoutMode=10" target="_blank" style="display:block;margin-top:16px;padding:16px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;text-align:center;border-radius:14px;font-size:16px;font-weight:800;text-decoration:none;letter-spacing:.5px;box-shadow:0 4px 20px rgba(74,222,128,.3);transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 6px 28px rgba(74,222,128,.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(74,222,128,.3)'">QUIERO MI PLAN POR US$9 &#8594;</a><div style="text-align:center;margin-top:8px;font-size:11px;color:rgba(255,255,255,.4)">Pago seguro &#183; Acceso inmediato &#183; 60 d&#237;as de garant&#237;a</div></div></div>
     <div class="section-divider"><div class="divider-line"></div><span class="divider-text">Lo que dicen ellas</span><div class="divider-line"></div></div>
     <div class="testimonial-card"><div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><div class="testi-text">"Prob&#233; 4 dietas en 2 a&#241;os. Nada. Con El Código Hormonal, en 3 semanas baj&#233; 4 kg sin dejar de comer lo que me gusta."</div><div class="testi-author"><img src="ebooks/img/testi-maria.png" alt="Mar&#237;a G." style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);flex-shrink:0"><div><div class="testi-name">Mar&#237;a G.</div><div class="testi-loc">Guadalajara, M&#233;xico</div></div></div></div>
     <div class="testimonial-card"><div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><div class="testi-text">"Mi doctora siempre me dec&#237;a &#8216;come menos&#8217;. Baj&#233; 6 kg en 30 d&#237;as comiendo M&#193;S &#8212; ella no pod&#237;a creerlo."</div><div class="testi-author"><img src="ebooks/img/testi-carolina.jpg.jpg" alt="Carmen V." style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);flex-shrink:0"><div><div class="testi-name">Carmen V.</div><div class="testi-loc">Lima, Per&#250;</div></div></div></div>
     <div class="testimonial-card"><div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><div class="testi-text">"20 a&#241;os luchando. Pens&#233; que era gen&#233;tica. En 5 semanas baj&#233; 8 kg y por primera vez me siento en control."</div><div class="testi-author"><img src="ebooks/img/testi-daniela.png" alt="Patricia L." style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);flex-shrink:0"><div><div class="testi-name">Patricia L.</div><div class="testi-loc">Buenos Aires, Argentina</div></div></div></div>
     <div class="section-divider"><div class="divider-line"></div><span class="divider-text">Preguntas frecuentes</span><div class="divider-line"></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;Qu&#233; pasa despu&#233;s de comprar? <span class="faq-q-icon">+</span></button><div class="faq-a">En solo unos minutos tendr&#225;s todo listo para empezar. Son 3 pasos simples:<br><br><strong>Paso 1:</strong> Recibe tu acceso y enlace directo despu&#233;s de la compra.<br><strong>Paso 2:</strong> Abre el enlace en tu celular para acceder a todo el programa.<br><strong>Paso 3:</strong> &#161;Comienza tu transformaci&#243;n hormonal hoy mismo!</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;Necesito experiencia en cocina? <span class="faq-q-icon">+</span></button><div class="faq-a">No. Todas las recetas son sencillas, con ingredientes comunes y preparaci&#243;n m&#225;ximo de 30 minutos.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;Funciona si tengo resistencia a la insulina? <span class="faq-q-icon">+</span></button><div class="faq-a">S&#237;. El protocolo est&#225; dise&#241;ado para mejorar el equilibrio hormonal y la respuesta insul&#237;nica. Siempre consulta a tu m&#233;dico.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;El precio est&#225; en d&#243;lares? <span class="faq-q-icon">+</span></button><div class="faq-a">S&#237;. US$9. Hotmart convierte autom&#225;ticamente a la moneda de tu pa&#237;s.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;C&#243;mo funciona la garant&#237;a? <span class="faq-q-icon">+</span></button><div class="faq-a">60 d&#237;as para pedir reembolso completo, sin preguntas. Solo escr&#237;benos.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">&#191;Tiene base cient&#237;fica?<span class="faq-q-icon">+</span></button><div class="faq-a">S&#237;. El m&#233;todo est&#225; basado en investigaci&#243;n publicada sobre resistencia insul&#237;nica y combinaci&#243;n de macronutrientes. La relaci&#243;n entre insulina y almacenamiento de grasa est&#225; documentada en m&#250;ltiples estudios endocrinol&#243;gicos. Nuestro protocolo aplica estos principios a combinaciones de alimentos espec&#237;ficas.</div></div>
-    <div class="disclaimer">Los resultados pueden variar. Este sitio no ofrece consejo m&#233;dico.</div>
+    <div class="disclaimer">Los resultados pueden variar. Este sitio no ofrece consejo m&#233;dico. Consulta a tu profesional de salud antes de iniciar cualquier programa alimenticio.</div>
   </div>
 
   <!-- CTA FIJO -->
@@ -956,6 +1017,7 @@ function showSlide(n){
   document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));
   document.getElementById('slide-'+n).classList.add('active');
   window.scrollTo(0,0);currentSlide=n;updateProgress();updateCta();
+  var stickyBar=document.getElementById('stickyCheckoutBar');if(stickyBar){stickyBar.classList.toggle('visible',n===24);document.getElementById('quizWrapper').classList.toggle('sticky-active',n===24);}
   // Reset slide 0 panels when leaving
   if(n>=1){document.getElementById('slide0-welcome').style.display='';document.getElementById('slide0-social').style.display='none';}
   if(n===1)fbq('trackCustom','QuizStarted');
@@ -1342,6 +1404,7 @@ function startOfferTimer(){
     const d=Math.floor(offerSeconds/60)+':'+String(offerSeconds%60).padStart(2,'0');
     const e1=document.getElementById('timerDisplay'),e2=document.getElementById('offerTimer');
     if(e1)e1.textContent=d;if(e2)e2.textContent=d;
+    var e3=document.getElementById('stickyTimer');if(e3)e3.textContent=d;
   },1000);
 }
 

@@ -6,6 +6,11 @@
 <title>El Código Hormonal — Tu Biblioteca Digital</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Código Hormonal">
+<meta name="theme-color" content="#2E7D52">
+<link rel="manifest" href="manifest.json">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -357,9 +362,81 @@ body::before{
   .ebook-card{break-inside:avoid;box-shadow:none;border:1px solid #ddd;opacity:1!important;transform:none!important}
   .app-banner{display:none}
 }
+
+/* Tab system */
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+body{padding-bottom:72px}
+
+/* Bottom navigation */
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:600px;height:64px;background:#fff;border-top:1px solid #e8e0d4;display:flex;align-items:stretch;z-index:9000;box-shadow:0 -2px 12px rgba(0,0,0,.06)}
+.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:none;border:none;cursor:pointer;color:#999;transition:color .2s}
+.nav-btn.active{color:var(--verde)}
+.nav-btn .nav-icon{font-size:22px}
+.nav-btn .nav-label{font-size:10px;font-weight:600;letter-spacing:.3px}
+
+/* Feed styles */
+.feed-header{padding:24px 20px 16px;text-align:center}
+.feed-filters{display:flex;gap:8px;overflow-x:auto;padding:0 20px 16px;-webkit-overflow-scrolling:touch}
+.feed-filter{padding:6px 16px;border-radius:50px;border:1px solid #e8e0d4;background:#fff;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;color:#666}
+.feed-filter.active{background:var(--verde);color:#fff;border-color:var(--verde)}
+.feed-card{background:#fff;border-radius:16px;padding:20px;margin:0 20px 12px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #f0e8db}
+.feed-card-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.feed-card-emoji{font-size:28px}
+.feed-card-cat{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:3px 8px;border-radius:50px}
+.feed-card-cat.hormonas{background:rgba(232,68,90,.08);color:var(--rosa)}
+.feed-card-cat.alimentacion{background:rgba(46,125,82,.08);color:var(--verde)}
+.feed-card-cat.bienestar{background:rgba(201,146,42,.08);color:var(--gold)}
+.feed-card-cat.ejercicio{background:rgba(100,100,255,.08);color:#6464ff}
+.feed-card h3{font-family:'DM Serif Display',serif;font-size:16px;margin-bottom:6px;color:#1a1a1a}
+.feed-card p{font-size:13px;color:#666;line-height:1.6}
+.feed-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid #f0e8db}
+.feed-like-btn{display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;font-size:13px;color:#999;transition:color .2s}
+.feed-like-btn.liked{color:var(--rosa)}
+.feed-date{font-size:11px;color:#bbb}
+
+/* Community styles */
+.com-header{padding:24px 20px 16px;text-align:center}
+.com-new-post{margin:0 20px 16px;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #f0e8db}
+.com-new-post textarea{width:100%;border:1px solid #e8e0d4;border-radius:10px;padding:12px;font-family:'DM Sans',sans-serif;font-size:13px;resize:none;min-height:60px;outline:none}
+.com-new-post textarea:focus{border-color:var(--verde)}
+.com-post-btn{margin-top:8px;padding:10px 20px;background:var(--verde);color:#fff;border:none;border-radius:50px;font-size:13px;font-weight:700;cursor:pointer;float:right}
+.com-cats{display:flex;gap:6px;margin-top:8px}
+.com-cat-btn{padding:4px 12px;border-radius:50px;border:1px solid #e8e0d4;background:#fff;font-size:11px;cursor:pointer;transition:all .2s}
+.com-cat-btn.active{background:var(--verde);color:#fff;border-color:var(--verde)}
+.com-post{background:#fff;border-radius:16px;padding:16px;margin:0 20px 10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #f0e8db}
+.com-post-author{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.com-post-avatar{font-size:28px}
+.com-post-name{font-weight:700;font-size:13px;color:#1a1a1a}
+.com-post-time{font-size:11px;color:#bbb}
+.com-post-text{font-size:13px;color:#444;line-height:1.6;margin-bottom:10px}
+.com-post-actions{display:flex;gap:16px;padding-top:8px;border-top:1px solid #f0e8db}
+.com-action-btn{display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;font-size:12px;color:#999}
+.com-comments{margin-top:10px;padding-top:8px;border-top:1px solid #f0e8db}
+.com-comment{padding:8px 0;font-size:12px;color:#555;border-bottom:1px solid #f5f0ea}
+.com-comment-author{font-weight:700;color:#1a1a1a}
+
+/* Profile styles */
+.profile-section{padding:24px 20px}
+.profile-card{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #f0e8db;text-align:center}
+.profile-avatar{font-size:56px;margin-bottom:8px}
+.profile-name{font-family:'DM Serif Display',serif;font-size:22px;color:#1a1a1a;margin-bottom:4px}
+.profile-days{font-size:13px;color:var(--verde);font-weight:600}
+.profile-field{background:#fff;border-radius:12px;padding:16px;margin-bottom:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #f0e8db}
+.profile-field label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#999;display:block;margin-bottom:6px}
+.profile-field input{width:100%;border:1px solid #e8e0d4;border-radius:8px;padding:10px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none}
+.profile-field input:focus{border-color:var(--verde)}
+.avatar-picker{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:8px}
+.avatar-option{font-size:28px;text-align:center;cursor:pointer;padding:6px;border-radius:8px;border:2px solid transparent;transition:all .2s}
+.avatar-option.selected{border-color:var(--verde);background:rgba(46,125,82,.06)}
+.profile-link{display:block;background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:8px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #f0e8db;text-decoration:none;color:#1a1a1a;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px}
+.profile-link:hover{border-color:var(--verde)}
+.install-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--verde),#1a5e3a);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:700;cursor:pointer;margin-top:16px}
 </style>
 </head>
 <body>
+
+<div id="tab-inicio" class="tab-panel active">
 
 <!-- ═══ HERO ═══ -->
 <header class="hero">
@@ -1878,6 +1955,325 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.card-grid').forEach(grid => observer.observe(grid));
+</script>
+
+</div><!-- /tab-inicio -->
+
+<!-- FEED TAB -->
+<div id="tab-feed" class="tab-panel">
+  <div class="feed-header">
+    <div class="section-tag" style="background:rgba(46,125,82,.08);color:var(--verde)">Tu feed diario</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:28px;margin-top:8px">Consejos y <span style="color:var(--rosa);font-style:italic">Motivación</span></h2>
+  </div>
+  <div class="feed-filters" id="feedFilters"></div>
+  <div id="feedList"></div>
+</div>
+
+<!-- COMMUNITY TAB -->
+<div id="tab-comunidad" class="tab-panel">
+  <div class="com-header">
+    <div class="section-tag" style="background:rgba(232,68,90,.08);color:var(--rosa)">Nuestra comunidad</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:28px;margin-top:8px">Mujeres que <span style="color:var(--rosa);font-style:italic">Transforman</span></h2>
+    <p style="font-size:13px;color:#8a8a7a;margin-top:4px">Comparte tu progreso y conecta con otras mujeres</p>
+  </div>
+  <div class="com-new-post" id="comNewPost">
+    <textarea id="comPostText" placeholder="¿Cómo te sientes hoy? Comparte tu progreso..."></textarea>
+    <div class="com-cats" id="comCats"></div>
+    <button class="com-post-btn" onclick="Comunidad.addPost()">Publicar</button>
+    <div style="clear:both"></div>
+  </div>
+  <div class="feed-filters" id="comFilters"></div>
+  <div id="comList"></div>
+</div>
+
+<!-- PROFILE TAB -->
+<div id="tab-perfil" class="tab-panel">
+  <div class="profile-section">
+    <div class="profile-card">
+      <div class="profile-avatar" id="profileAvatar">🌸</div>
+      <div class="profile-name" id="profileName">Tu Perfil</div>
+      <div class="profile-days" id="profileDays"></div>
+    </div>
+    <div class="profile-field">
+      <label>Tu nombre</label>
+      <input type="text" id="profileNameInput" placeholder="Tu nombre" oninput="Perfil.save()">
+    </div>
+    <div class="profile-field">
+      <label>Tu avatar</label>
+      <div class="avatar-picker" id="avatarPicker"></div>
+    </div>
+    <div class="profile-field">
+      <label>Mi meta personal</label>
+      <input type="text" id="profileGoal" placeholder="Ej: Sentirme con más energía" oninput="Perfil.save()">
+    </div>
+    <a href="../mi-codigo-app/index.html" class="profile-link">📱 Abrir App Mi Código</a>
+    <a href="#" onclick="document.getElementById('tab-inicio').scrollTop=0;PortalApp.navigate('inicio');return false" class="profile-link">📚 Ver todos mis ebooks</a>
+    <button class="install-btn" id="installBtn" style="display:none" onclick="Perfil.installApp()">📲 Instalar app en tu celular</button>
+  </div>
+</div>
+
+<nav class="bottom-nav" id="bottomNav">
+  <button class="nav-btn active" data-tab="inicio" onclick="PortalApp.navigate('inicio')">
+    <span class="nav-icon">🏠</span>
+    <span class="nav-label">Inicio</span>
+  </button>
+  <button class="nav-btn" data-tab="feed" onclick="PortalApp.navigate('feed')">
+    <span class="nav-icon">📰</span>
+    <span class="nav-label">Feed</span>
+  </button>
+  <button class="nav-btn" data-tab="comunidad" onclick="PortalApp.navigate('comunidad')">
+    <span class="nav-icon">👥</span>
+    <span class="nav-label">Comunidad</span>
+  </button>
+  <button class="nav-btn" data-tab="perfil" onclick="PortalApp.navigate('perfil')">
+    <span class="nav-icon">👤</span>
+    <span class="nav-label">Mi Perfil</span>
+  </button>
+</nav>
+
+<script>
+// ===== TAB NAVIGATION =====
+const PortalApp = (() => {
+  let currentTab = 'inicio';
+  function navigate(tab) {
+    currentTab = tab;
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+    window.scrollTo(0, 0);
+    if (tab === 'feed' && !Feed.loaded) Feed.init();
+    if (tab === 'comunidad' && !Comunidad.loaded) Comunidad.init();
+    if (tab === 'perfil') Perfil.render();
+  }
+  return { navigate };
+})();
+
+// ===== FEED MODULE =====
+const Feed = (() => {
+  let data = [], loaded = false, filter = 'todos';
+  const cats = ['todos','hormonas','alimentacion','bienestar','ejercicio'];
+  const catLabels = {todos:'Todos',hormonas:'Hormonas',alimentacion:'Alimentación',bienestar:'Bienestar',ejercicio:'Ejercicio'};
+
+  function init() {
+    fetch('data/feed.json').then(r=>r.json()).then(d => {
+      data = d.sort((a,b) => new Date(b.fecha) - new Date(a.fecha));
+      loaded = true;
+      renderFilters();
+      render();
+    }).catch(() => { document.getElementById('feedList').innerHTML = '<p style="text-align:center;color:#999;padding:40px">No se pudo cargar el feed</p>'; });
+  }
+
+  function renderFilters() {
+    const el = document.getElementById('feedFilters');
+    el.innerHTML = cats.map(c => '<button class="feed-filter' + (c===filter?' active':'') + '" onclick="Feed.setFilter(\'' + c + '\')">' + catLabels[c] + '</button>').join('');
+  }
+
+  function setFilter(c) { filter = c; renderFilters(); render(); }
+
+  function render() {
+    const likes = JSON.parse(localStorage.getItem('portal_feed_likes') || '{}');
+    const filtered = filter === 'todos' ? data : data.filter(i => i.categoria === filter);
+    const el = document.getElementById('feedList');
+    if (!filtered.length) { el.innerHTML = '<p style="text-align:center;color:#999;padding:40px">No hay publicaciones en esta categoría</p>'; return; }
+    el.innerHTML = filtered.map(item => {
+      const isLiked = likes[item.id];
+      const totalLikes = item.likes + (isLiked ? 1 : 0);
+      const dateStr = new Date(item.fecha).toLocaleDateString('es-MX', {day:'numeric',month:'short'});
+      return '<div class="feed-card">' +
+        '<div class="feed-card-header"><span class="feed-card-emoji">' + item.emoji + '</span><span class="feed-card-cat ' + item.categoria + '">' + catLabels[item.categoria] || item.categoria + '</span></div>' +
+        '<h3>' + item.titulo + '</h3>' +
+        '<p>' + item.contenido + '</p>' +
+        '<div class="feed-card-footer"><button class="feed-like-btn' + (isLiked?' liked':'') + '" onclick="Feed.toggleLike(' + item.id + ')">❤️ ' + totalLikes + '</button><span class="feed-date">' + dateStr + '</span></div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function toggleLike(id) {
+    const likes = JSON.parse(localStorage.getItem('portal_feed_likes') || '{}');
+    likes[id] = !likes[id];
+    localStorage.setItem('portal_feed_likes', JSON.stringify(likes));
+    render();
+  }
+
+  return { init, render, setFilter, toggleLike, get loaded() { return loaded; } };
+})();
+
+// ===== COMMUNITY MODULE =====
+const Comunidad = (() => {
+  let posts = [], loaded = false, filter = 'todo', postCat = 'progreso';
+  const cats = ['todo','progreso','pregunta','motivacion','receta'];
+  const catLabels = {todo:'Todo',progreso:'Progreso',pregunta:'Preguntas',motivacion:'Motivación',receta:'Recetas'};
+  const catEmojis = {progreso:'💪',pregunta:'❓',motivacion:'✨',receta:'🍽️'};
+
+  function init() {
+    const saved = localStorage.getItem('portal_comunidad');
+    if (saved) {
+      posts = JSON.parse(saved);
+      loaded = true;
+      renderAll();
+    } else {
+      fetch('data/comunidad-seed.json').then(r=>r.json()).then(d => {
+        posts = d;
+        localStorage.setItem('portal_comunidad', JSON.stringify(posts));
+        loaded = true;
+        renderAll();
+      }).catch(() => { posts = []; loaded = true; renderAll(); });
+    }
+  }
+
+  function renderAll() {
+    renderCatButtons();
+    renderFilters();
+    renderPosts();
+  }
+
+  function renderCatButtons() {
+    const el = document.getElementById('comCats');
+    el.innerHTML = Object.keys(catEmojis).map(c => '<button class="com-cat-btn' + (c===postCat?' active':'') + '" onclick="Comunidad.setPostCat(\'' + c + '\')">' + catEmojis[c] + ' ' + catLabels[c] + '</button>').join('');
+  }
+
+  function renderFilters() {
+    const el = document.getElementById('comFilters');
+    el.innerHTML = cats.map(c => '<button class="feed-filter' + (c===filter?' active':'') + '" onclick="Comunidad.setFilter(\'' + c + '\')">' + catLabels[c] + '</button>').join('');
+  }
+
+  function setFilter(c) { filter = c; renderFilters(); renderPosts(); }
+  function setPostCat(c) { postCat = c; renderCatButtons(); }
+
+  function renderPosts() {
+    const profile = JSON.parse(localStorage.getItem('portal_perfil') || '{}');
+    const filtered = filter === 'todo' ? posts : posts.filter(p => p.categoria === filter);
+    const el = document.getElementById('comList');
+    if (!filtered.length) { el.innerHTML = '<p style="text-align:center;color:#999;padding:40px">No hay publicaciones aún. ¡Sé la primera!</p>'; return; }
+    el.innerHTML = filtered.map((post, idx) => {
+      const dateStr = timeAgo(post.fecha);
+      const isOwn = post.nombre === (profile.nombre || '');
+      const commentsHtml = (post.comentarios || []).map(c =>
+        '<div class="com-comment"><span class="com-comment-author">' + c.avatar + ' ' + c.nombre + '</span> ' + c.texto + '</div>'
+      ).join('');
+      return '<div class="com-post" style="' + (isOwn?'border-left:3px solid var(--verde)':'') + '">' +
+        '<div class="com-post-author"><span class="com-post-avatar">' + post.avatar + '</span><div><div class="com-post-name">' + post.nombre + '</div><div class="com-post-time">' + dateStr + ' · ' + catEmojis[post.categoria] + ' ' + catLabels[post.categoria] + '</div></div></div>' +
+        '<div class="com-post-text">' + post.texto + '</div>' +
+        '<div class="com-post-actions"><button class="com-action-btn" onclick="Comunidad.likePost(' + idx + ')">❤️ ' + (post.likes||0) + '</button><button class="com-action-btn" onclick="Comunidad.toggleComments(' + idx + ')">💬 ' + (post.comentarios||[]).length + '</button></div>' +
+        '<div class="com-comments" id="comComments' + idx + '" style="display:none">' + commentsHtml +
+        '<div style="display:flex;gap:6px;margin-top:8px"><input type="text" id="comReply' + idx + '" placeholder="Escribe un comentario..." style="flex:1;border:1px solid #e8e0d4;border-radius:8px;padding:8px;font-size:12px;font-family:DM Sans,sans-serif;outline:none"><button onclick="Comunidad.addComment(' + idx + ')" style="background:var(--verde);color:#fff;border:none;border-radius:8px;padding:8px 12px;font-size:12px;cursor:pointer">Enviar</button></div>' +
+        '</div></div>';
+    }).join('');
+  }
+
+  function timeAgo(dateStr) {
+    const now = new Date(), d = new Date(dateStr);
+    const diff = Math.floor((now - d) / 60000);
+    if (diff < 60) return 'Hace ' + diff + ' min';
+    if (diff < 1440) return 'Hace ' + Math.floor(diff/60) + 'h';
+    return 'Hace ' + Math.floor(diff/1440) + ' días';
+  }
+
+  function addPost() {
+    const text = document.getElementById('comPostText').value.trim();
+    if (!text) return;
+    const profile = JSON.parse(localStorage.getItem('portal_perfil') || '{"nombre":"Anónima","avatar":"🌸"}');
+    posts.unshift({
+      id: Date.now().toString(),
+      nombre: profile.nombre || 'Anónima',
+      avatar: profile.avatar || '🌸',
+      texto: text,
+      fecha: new Date().toISOString(),
+      likes: 0,
+      categoria: postCat,
+      comentarios: []
+    });
+    localStorage.setItem('portal_comunidad', JSON.stringify(posts));
+    document.getElementById('comPostText').value = '';
+    renderPosts();
+  }
+
+  function likePost(idx) {
+    posts[idx].likes = (posts[idx].likes||0) + 1;
+    localStorage.setItem('portal_comunidad', JSON.stringify(posts));
+    renderPosts();
+  }
+
+  function toggleComments(idx) {
+    const el = document.getElementById('comComments' + idx);
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function addComment(idx) {
+    const input = document.getElementById('comReply' + idx);
+    const text = input.value.trim();
+    if (!text) return;
+    const profile = JSON.parse(localStorage.getItem('portal_perfil') || '{"nombre":"Anónima","avatar":"🌸"}');
+    if (!posts[idx].comentarios) posts[idx].comentarios = [];
+    posts[idx].comentarios.push({
+      nombre: profile.nombre || 'Anónima',
+      avatar: profile.avatar || '🌸',
+      texto: text,
+      fecha: new Date().toISOString()
+    });
+    localStorage.setItem('portal_comunidad', JSON.stringify(posts));
+    input.value = '';
+    renderPosts();
+    document.getElementById('comComments' + idx).style.display = 'block';
+  }
+
+  return { init, setFilter, setPostCat, addPost, likePost, toggleComments, addComment, get loaded() { return loaded; } };
+})();
+
+// ===== PROFILE MODULE =====
+const Perfil = (() => {
+  const avatars = ['🌸','🌺','🌻','🌷','💐','🦋','⭐','💜','🔥','🌙','🍀','💪'];
+  let deferredPrompt = null;
+
+  window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; const btn = document.getElementById('installBtn'); if(btn) btn.style.display = 'block'; });
+
+  function render() {
+    const data = JSON.parse(localStorage.getItem('portal_perfil') || '{}');
+    document.getElementById('profileAvatar').textContent = data.avatar || '🌸';
+    document.getElementById('profileName').textContent = data.nombre || 'Tu Perfil';
+    document.getElementById('profileNameInput').value = data.nombre || '';
+    document.getElementById('profileGoal').value = data.meta || '';
+    // Days
+    if (data.diaInicio) {
+      const days = Math.floor((new Date() - new Date(data.diaInicio)) / 86400000);
+      document.getElementById('profileDays').textContent = days + ' días en el programa';
+    } else {
+      document.getElementById('profileDays').textContent = '';
+    }
+    // Avatar picker
+    const picker = document.getElementById('avatarPicker');
+    picker.innerHTML = avatars.map(a => '<div class="avatar-option' + (a===(data.avatar||'🌸')?' selected':'') + '" onclick="Perfil.setAvatar(\'' + a + '\')">' + a + '</div>').join('');
+  }
+
+  function save() {
+    const data = JSON.parse(localStorage.getItem('portal_perfil') || '{}');
+    data.nombre = document.getElementById('profileNameInput').value;
+    data.meta = document.getElementById('profileGoal').value;
+    if (!data.diaInicio) data.diaInicio = new Date().toISOString().split('T')[0];
+    if (!data.avatar) data.avatar = '🌸';
+    localStorage.setItem('portal_perfil', JSON.stringify(data));
+    document.getElementById('profileAvatar').textContent = data.avatar;
+    document.getElementById('profileName').textContent = data.nombre || 'Tu Perfil';
+  }
+
+  function setAvatar(a) {
+    const data = JSON.parse(localStorage.getItem('portal_perfil') || '{}');
+    data.avatar = a;
+    localStorage.setItem('portal_perfil', JSON.stringify(data));
+    render();
+  }
+
+  function installApp() {
+    if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then(() => { deferredPrompt = null; document.getElementById('installBtn').style.display = 'none'; }); }
+  }
+
+  return { render, save, setAvatar, installApp };
+})();
+
+// ===== SERVICE WORKER REGISTRATION =====
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
 </script>
 </body>
 </html>
