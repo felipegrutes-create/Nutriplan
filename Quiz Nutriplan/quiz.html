@@ -1035,7 +1035,7 @@ window.addEventListener('beforeunload', function() {
       objetivo: String(answers.weightGoal || ''),
       motivacion: answers.motivation || '',
       situacion_peso: answers.weightSituation || '',
-      motivaciones: Array.isArray(answers.motivations) ? answers.motivations.join(', ') : (answers.motivations || ''),
+      motivaciones: answers.motivation || '',
       metodos_probados: Array.isArray(answers.methodsTried) ? answers.methodsTried.join(', ') : (answers.methodsTried || ''),
       tiempo_luchando: answers.timeFighting || '',
       actividad: answers.activityLevel || '',
@@ -1150,6 +1150,11 @@ function handleCta(){
   // Multi-select slides need at least 1 selected
   if([3,7,13].includes(currentSlide)){
     if(!document.querySelector('#slide-'+currentSlide+' .option-btn.selected, #slide-'+currentSlide+' .zone-btn.selected')){shakeCta();return;}
+    // Coletar respostas multi-select
+    if(currentSlide===3){
+      answers.methodsTried=[];
+      document.querySelectorAll('#slide-3 .option-btn.selected .opt-text-main').forEach(function(el){answers.methodsTried.push(el.textContent);});
+    }
     showSlide(currentSlide+1);return;
   }
   // Email slide
