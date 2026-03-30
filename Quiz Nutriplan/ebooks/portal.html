@@ -436,6 +436,45 @@ body{padding-bottom:72px}
 </head>
 <body>
 
+<!-- Welcome/Install screen -->
+<div id="welcomeScreen" style="display:none;position:fixed;inset:0;z-index:99999;background:#0f1f15;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;text-align:center">
+  <div style="width:80px;height:80px;background:#2E7D52;border-radius:20px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;box-shadow:0 8px 32px rgba(46,125,82,.4)">
+    <span style="font-size:40px">&#127807;</span>
+  </div>
+  <h1 style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#fff;margin-bottom:8px">El C&#243;digo Hormonal</h1>
+  <p style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:32px;line-height:1.5">Tu biblioteca de bienestar hormonal<br>siempre en tu bolsillo</p>
+
+  <!-- Install button (shown when PWA prompt available) -->
+  <button id="welcomeInstallBtn" onclick="doWelcomeInstall()" style="display:none;width:100%;max-width:320px;padding:16px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;border:none;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer;margin-bottom:12px;box-shadow:0 4px 20px rgba(74,222,128,.3)">
+    &#128242; Instalar app en mi celular
+  </button>
+
+  <!-- Manual instructions (shown when no PWA prompt) -->
+  <div id="welcomeManual" style="display:none;width:100%;max-width:320px;margin-bottom:20px">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;text-align:left">
+      <div style="font-size:13px;font-weight:700;color:#4ade80;margin-bottom:12px;text-align:center">&#128277; Instala en 3 pasos:</div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+        <div style="width:28px;height:28px;background:#2E7D52;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700;color:#fff">1</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.8)">Toca los <strong style="color:#fff">3 puntitos</strong> &#8942; arriba a la derecha</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+        <div style="width:28px;height:28px;background:#2E7D52;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700;color:#fff">2</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.8)">Selecciona <strong style="color:#fff">"Instalar app"</strong> o <strong style="color:#fff">"A&#241;adir a inicio"</strong></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:28px;height:28px;background:#2E7D52;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700;color:#fff">3</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.8)">&#161;Listo! El app aparecer&#225; en tu pantalla de inicio</div>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="closeWelcome()" style="width:100%;max-width:320px;padding:14px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.1);border-radius:50px;font-size:14px;cursor:pointer;margin-top:4px">
+    Continuar en el navegador &#8594;
+  </button>
+
+  <div style="margin-top:24px;font-size:11px;color:rgba(255,255,255,.3)">Acceso completo &#183; Sin descargas pesadas &#183; Funciona sin internet</div>
+</div>
+
 <div id="tab-inicio" class="tab-panel active">
 
 <!-- ═══ HERO ═══ -->
@@ -2244,6 +2283,12 @@ const Perfil = (() => {
   window.addEventListener('beforeinstallprompt', e => {
     e.preventDefault(); deferredPrompt = e;
     var btn = document.getElementById('installBtn'); if(btn) btn.style.display = 'block';
+    // Show install button on welcome screen
+    var wBtn = document.getElementById('welcomeInstallBtn');
+    if(wBtn) wBtn.style.display = 'block';
+    // Hide manual instructions if install prompt available
+    var wManual = document.getElementById('welcomeManual');
+    if(wManual) wManual.style.display = 'none';
     // Show install banner if not dismissed
     if(!localStorage.getItem('install_dismissed')){
       var banner = document.getElementById('installBanner');
@@ -2297,6 +2342,43 @@ const Perfil = (() => {
 // ===== SERVICE WORKER REGISTRATION =====
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// Welcome screen logic
+(function(){
+  // Show welcome screen only on first visit and if not installed as PWA
+  var isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+  if(!isStandalone && !localStorage.getItem('welcome_seen')){
+    var ws = document.getElementById('welcomeScreen');
+    if(ws) ws.style.display = 'flex';
+    // Show manual instructions after 1.5s if no install prompt fires
+    setTimeout(function(){
+      var wBtn = document.getElementById('welcomeInstallBtn');
+      if(wBtn && wBtn.style.display === 'none'){
+        var wManual = document.getElementById('welcomeManual');
+        if(wManual) wManual.style.display = 'block';
+      }
+    }, 1500);
+  }
+})();
+
+function closeWelcome(){
+  document.getElementById('welcomeScreen').style.display = 'none';
+  localStorage.setItem('welcome_seen','1');
+}
+
+function doWelcomeInstall(){
+  var prompt = Perfil.getDeferredPrompt();
+  if(prompt){
+    prompt.prompt();
+    prompt.userChoice.then(function(result){
+      Perfil.clearPrompt();
+      if(result.outcome === 'accepted'){
+        closeWelcome();
+        localStorage.setItem('install_dismissed','1');
+      }
+    });
+  }
 }
 
 function installFromBanner() {
