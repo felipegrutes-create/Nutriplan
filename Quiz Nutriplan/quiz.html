@@ -1027,11 +1027,24 @@ window.addEventListener('beforeunload', function() {
       fecha: new Date().toISOString(),
       nombre: answers.userName || '',
       email: answers.email || '',
-      peso: '',
-      meta: '',
-      altura: '',
-      edad: '',
+      peso: answers.weight ? answers.weight + ' ' + (answers.weightUnit||'kg') : '',
+      meta: answers.targetWeight ? answers.targetWeight + ' ' + (answers.weightUnit||'kg') : '',
+      altura: answers.height || '',
+      edad: answers.age || '',
       perfil: '',
+      objetivo: answers.weightGoal || '',
+      motivacion: answers.motivation || '',
+      tiempo_luchando: answers.timeFighting || '',
+      actividad: answers.activityLevel || '',
+      tipo_cuerpo: answers.bodyType || '',
+      cuerpo_ideal: answers.idealBody || '',
+      zonas: (answers.targetZones||[]).join(', '),
+      sueno: answers.sleepHours || '',
+      agua: answers.waterIntake || '',
+      dieta: answers.dietType || '',
+      cocina_para: answers.cooksFor || '',
+      hora_cena: answers.dinnerTime || '',
+      tiempo_cocina: answers.cookingTime || '',
       etapa: 'Abandono_Step' + currentSlide + '_' + name
     }));
   }
@@ -1140,10 +1153,25 @@ function handleCta(){
     const email=document.getElementById('emailInput').value;
     if(!isValidEmail(email)){shakeCta();return;}
     userEmail=email;fbq('track','Lead',{content_name:'QuizEmail'});
+    answers.email = userEmail;
     sendToSheets({
       fecha: new Date().toISOString(),
       nombre: answers.userName || '',
       email: userEmail,
+      peso: '',meta: '',altura: '',edad: '',perfil: '',
+      objetivo: answers.weightGoal || '',
+      motivacion: answers.motivation || '',
+      tiempo_luchando: answers.timeFighting || '',
+      actividad: answers.activityLevel || '',
+      tipo_cuerpo: answers.bodyType || '',
+      cuerpo_ideal: answers.idealBody || '',
+      zonas: (answers.targetZones||[]).join(', '),
+      sueno: answers.sleepHours || '',
+      agua: answers.waterIntake || '',
+      dieta: answers.dietType || '',
+      cocina_para: answers.cooksFor || '',
+      hora_cena: answers.dinnerTime || '',
+      tiempo_cocina: answers.cookingTime || '',
       etapa: 'Email_Capturado'
     });
     showSlide(23);return;
@@ -1448,6 +1476,19 @@ function populateResult(){
     altura: answers.height || '',
     edad: answers.age || '',
     perfil: resolvedProfile || '',
+    objetivo: answers.weightGoal || '',
+    motivacion: answers.motivation || '',
+    tiempo_luchando: answers.timeFighting || '',
+    actividad: answers.activityLevel || '',
+    tipo_cuerpo: answers.bodyType || '',
+    cuerpo_ideal: answers.idealBody || '',
+    zonas: (answers.targetZones||[]).join(', '),
+    sueno: answers.sleepHours || '',
+    agua: answers.waterIntake || '',
+    dieta: answers.dietType || '',
+    cocina_para: answers.cooksFor || '',
+    hora_cena: answers.dinnerTime || '',
+    tiempo_cocina: answers.cookingTime || '',
     etapa: 'Completado'
   });
 }
