@@ -1182,6 +1182,8 @@ function handleCta(){
   if(currentSlide===0){
     const socialPanel=document.getElementById('slide0-social');
     if(socialPanel&&socialPanel.style.display!=='none'){showSlide(1);return;}
+    // Não deixar avançar sem selecionar peso
+    if(!answers.weightGoal){shakeCta();return;}
     showSlide(1);return;
   }
   // Multi-select slides need at least 1 selected
