@@ -1019,39 +1019,46 @@ function trackStep(n) {
 }
 
 // Registrar última etapa quando pessoa sai da página
-window.addEventListener('beforeunload', function() {
-  if(currentSlide > 0 && currentSlide < 24) {
-    var stepNames = {0:'Bienvenida',1:'Objetivo',2:'Motivacion',3:'Tiempo',4:'Actividad',5:'TipoCuerpo',6:'CuerpoIdeal',7:'Zonas',8:'Break',9:'Peso',10:'PesoMeta',11:'Altura',12:'Edad',13:'Metabolismo',14:'Dietas',15:'Perfil',16:'Habitos',17:'Agua',18:'Sueno',19:'Compromiso',20:'BMI',21:'Grafico',22:'Email',23:'Loading',24:'Resultado'};
-    var name = stepNames[currentSlide] || 'Step_'+currentSlide;
-    navigator.sendBeacon(SHEETS_WEBHOOK, JSON.stringify({
-      fecha: new Date().toISOString(),
-      nombre: answers.userName || '',
-      email: answers.email || '',
-      peso: answers.weight ? answers.weight + ' ' + (answers.weightUnit||'kg') : '',
-      meta: answers.targetWeight ? answers.targetWeight + ' ' + (answers.weightUnit||'kg') : '',
-      altura: answers.height || '',
-      edad: answers.age || '',
-      perfil: '',
-      objetivo: String(answers.weightGoal || ''),
-      motivacion: answers.motivation || '',
-      situacion_peso: answers.weightSituation || '',
-      motivaciones: answers.motivation || '',
-      metodos_probados: Array.isArray(answers.methodsTried) ? answers.methodsTried.join(', ') : (answers.methodsTried || ''),
-      tiempo_luchando: answers.timeFighting || '',
-      actividad: answers.activityLevel || '',
-      tipo_cuerpo: answers.bodyType || '',
-      cuerpo_ideal: answers.idealBody || '',
-      zonas: Array.isArray(answers.targetZones) ? answers.targetZones.join(', ') : (answers.targetZones || ''),
-      alergias: Array.isArray(answers.allergies) ? answers.allergies.join(', ') : (answers.allergies || ''),
-      sueno: answers.sleepHours || '',
-      agua: answers.waterIntake || '',
-      dieta: answers.dietType || '',
-      cocina_para: answers.cooksFor || '',
-      hora_cena: answers.dinnerTime || '',
-      tiempo_cocina: answers.cookingTime || '',
-      etapa: 'Abandono_Step' + currentSlide + '_' + name
-    }));
-  }
+var abandonSent = false;
+function sendAbandon() {
+  if(abandonSent || currentSlide <= 0 || currentSlide >= 24) return;
+  abandonSent = true;
+  var stepNames = {0:'Bienvenida',1:'Objetivo',2:'Motivacion',3:'Tiempo',4:'Actividad',5:'TipoCuerpo',6:'CuerpoIdeal',7:'Zonas',8:'Break',9:'Peso',10:'PesoMeta',11:'Altura',12:'Edad',13:'Metabolismo',14:'Dietas',15:'Perfil',16:'Habitos',17:'Agua',18:'Sueno',19:'Compromiso',20:'BMI',21:'Grafico',22:'Email',23:'Loading',24:'Resultado'};
+  var name = stepNames[currentSlide] || 'Step_'+currentSlide;
+  var payload = JSON.stringify({
+    fecha: new Date().toISOString(),
+    nombre: answers.userName || '',
+    email: answers.email || '',
+    peso: answers.weight ? answers.weight + ' ' + (answers.weightUnit||'kg') : '',
+    meta: answers.targetWeight ? answers.targetWeight + ' ' + (answers.weightUnit||'kg') : '',
+    altura: answers.height || '',
+    edad: answers.age || '',
+    perfil: '',
+    objetivo: String(answers.weightGoal || ''),
+    motivacion: answers.motivation || '',
+    situacion_peso: answers.weightSituation || '',
+    motivaciones: answers.motivation || '',
+    metodos_probados: Array.isArray(answers.methodsTried) ? answers.methodsTried.join(', ') : (answers.methodsTried || ''),
+    tiempo_luchando: answers.timeFighting || '',
+    actividad: answers.activityLevel || '',
+    tipo_cuerpo: answers.bodyType || '',
+    cuerpo_ideal: answers.idealBody || '',
+    zonas: Array.isArray(answers.targetZones) ? answers.targetZones.join(', ') : (answers.targetZones || ''),
+    alergias: Array.isArray(answers.allergies) ? answers.allergies.join(', ') : (answers.allergies || ''),
+    sueno: answers.sleepHours || '',
+    agua: answers.waterIntake || '',
+    dieta: answers.dietType || '',
+    cocina_para: answers.cooksFor || '',
+    hora_cena: answers.dinnerTime || '',
+    tiempo_cocina: answers.cookingTime || '',
+    etapa: 'Abandono_Step' + currentSlide + '_' + name
+  });
+  navigator.sendBeacon(SHEETS_WEBHOOK, payload);
+}
+window.addEventListener('beforeunload', sendAbandon);
+window.addEventListener('pagehide', sendAbandon);
+document.addEventListener('visibilitychange', function() {
+  if(document.visibilityState === 'hidden') sendAbandon();
 });
 
 function showSlide(n){
