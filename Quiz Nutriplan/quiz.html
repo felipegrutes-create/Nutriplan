@@ -197,6 +197,22 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
 .section-divider{display:flex;align-items:center;gap:10px;margin:20px 0 16px}
 .divider-line{flex:1;height:1px;background:rgba(255,255,255,.1)}
 .divider-text{font-size:12px;color:rgba(255,255,255,.45);font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+/* Phone mockup showcase */
+.phone-showcase{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:8px;align-items:end;padding:0 8px;max-width:400px;margin:0 auto}
+.phone-side,.phone-center{text-align:center}
+.phone-center{margin-bottom:8px}
+.phone-frame{background:#1a1a1a;border-radius:16px;padding:3px;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.phone-frame-hero{border-radius:18px;padding:4px;box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
+.phone-screen{border-radius:13px;overflow:hidden;aspect-ratio:9/16;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.phone-screen-light{background:#FFFDF8}
+.phone-iframe{position:absolute;top:0;left:0;width:390px;height:693px;border:none;transform-origin:top left;pointer-events:none;transform:scale(var(--phone-scale,0.28))}
+.phone-label{font-size:9px;color:rgba(255,255,255,.4);margin-top:6px}
+@media(max-width:480px){
+  .phone-showcase{max-width:100%;padding:0 4px;gap:5px}
+  .phone-frame{border-radius:12px;padding:2px}
+  .phone-frame-hero{border-radius:14px;padding:3px}
+  .phone-screen{border-radius:10px}
+}
 .offer-timer-bar{background:#E8445A;color:#fff;text-align:center;padding:12px;font-size:13px;font-weight:600;border-radius:var(--radius-sm);margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:8px}
 .offer-timer-num{background:rgba(255,255,255,0.2);border-radius:6px;padding:3px 10px;font-family:'Playfair Display',serif;font-size:18px;font-weight:700}
 .sp-avatars{display:none}
@@ -825,21 +841,21 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
     <div style="margin:24px 0;text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px 16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
       <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4ade80;margin-bottom:8px">Lo que recibes</div>
       <div style="font-size:18px;font-weight:800;color:#fff;margin-bottom:16px;font-family:'Playfair Display',serif">Tu programa completo en tu celular</div>
-      <div style="display:flex;justify-content:center;gap:6px;align-items:flex-end;padding:0 12px">
+      <div class="phone-showcase">
         <!-- Phone 1: Bonos Especiales -->
-        <div style="flex:1;max-width:110px">
-          <div style="background:#1a1a1a;border-radius:18px;padding:4px;box-shadow:0 8px 32px rgba(0,0,0,.4)">
-            <div style="background:#FFFDF8;border-radius:14px;overflow:hidden;aspect-ratio:9/16;position:relative">
-              <iframe src="ebooks/preview-bonos.html" style="width:390px;height:693px;border:none;transform:scale(0.333);transform-origin:top left;pointer-events:none" tabindex="-1"></iframe>
+        <div class="phone-side">
+          <div class="phone-frame">
+            <div class="phone-screen phone-screen-light">
+              <iframe src="ebooks/preview-bonos.html" class="phone-iframe" tabindex="-1"></iframe>
             </div>
           </div>
-          <div style="font-size:9px;color:rgba(255,255,255,.4);margin-top:6px">11 Bonos Extra</div>
+          <div class="phone-label">11 Bonos Extra</div>
         </div>
         <!-- Phone 2: Portal hero (center, larger) -->
-        <div style="flex:1.2;max-width:130px;margin-bottom:8px">
-          <div style="background:#1a1a1a;border-radius:20px;padding:4px;box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)">
-            <div style="border-radius:16px;overflow:hidden;aspect-ratio:9/16;position:relative;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.5));display:flex;flex-direction:column;align-items:center;justify-content:center">
-              <img src="assets/photos/Fundo Front.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:brightness(0.45)">
+        <div class="phone-center">
+          <div class="phone-frame phone-frame-hero">
+            <div class="phone-screen" style="background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.5))">
+              <img src="assets/photos/Fundo Front.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.45)">
               <div style="position:relative;z-index:1;text-align:center;padding:16px 8px">
                 <div style="font-size:7px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(201,146,42,.9);border:1px solid rgba(201,146,42,.4);padding:3px 8px;border-radius:20px;display:inline-block;margin-bottom:8px">&#10022; Acceso Exclusivo</div>
                 <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;line-height:1.2">El C&#243;digo</div>
@@ -853,16 +869,16 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
               </div>
             </div>
           </div>
-          <div style="font-size:10px;color:#4ade80;margin-top:6px;font-weight:700">El C&#243;digo Hormonal</div>
+          <div class="phone-label" style="color:#4ade80;font-weight:700;font-size:10px">El C&#243;digo Hormonal</div>
         </div>
         <!-- Phone 3: Plan 21 Días -->
-        <div style="flex:1;max-width:110px">
-          <div style="background:#1a1a1a;border-radius:18px;padding:4px;box-shadow:0 8px 32px rgba(0,0,0,.4)">
-            <div style="background:#FFFDF8;border-radius:14px;overflow:hidden;aspect-ratio:9/16;position:relative">
-              <iframe src="ebooks/plan-31-dias.html" style="width:390px;height:693px;border:none;transform:scale(0.333);transform-origin:top left;pointer-events:none" tabindex="-1"></iframe>
+        <div class="phone-side">
+          <div class="phone-frame">
+            <div class="phone-screen phone-screen-light">
+              <iframe src="ebooks/plan-31-dias.html" class="phone-iframe" tabindex="-1"></iframe>
             </div>
           </div>
-          <div style="font-size:9px;color:rgba(255,255,255,.4);margin-top:6px">Protocolo de 21 D&#237;as</div>
+          <div class="phone-label">Protocolo de 21 D&#237;as</div>
         </div>
       </div>
     </div>
@@ -1045,6 +1061,19 @@ function trackStep(n) {
 
 // Registrar última etapa quando pessoa sai da página
 var abandonSent = false;
+// Scale phone iframes to fit their containers
+function scalePhoneIframes(){
+  document.querySelectorAll('.phone-screen').forEach(function(screen){
+    var iframe=screen.querySelector('.phone-iframe');
+    if(!iframe)return;
+    var w=screen.offsetWidth;
+    if(w>0){iframe.style.transform='scale('+(w/390)+')';}
+  });
+}
+window.addEventListener('resize',scalePhoneIframes);
+setTimeout(scalePhoneIframes,500);
+setTimeout(scalePhoneIframes,2000);
+
 function sendAbandon() {
   if(abandonSent || currentSlide <= 0 || currentSlide >= 24) return;
   abandonSent = true;
@@ -1137,7 +1166,7 @@ function showSlide(n){
   if(n===20)calculateAndShowBMI();
   if(n===21){populateChart();animateChart();}
   if(n===22)populateEmailSlide();
-  if(n===24)populateResult();
+  if(n===24){populateResult();setTimeout(scalePhoneIframes,300);}
   // Name personalization (Change 2)
   if(n===8){
     var name = answers.userName || '';
