@@ -449,8 +449,8 @@ body{padding-bottom:72px}
     &#128242; Instalar app en mi celular
   </button>
 
-  <!-- Manual instructions (shown when no PWA prompt) -->
-  <div id="welcomeManual" style="display:none;width:100%;max-width:320px;margin-bottom:20px">
+  <!-- Manual instructions (always shown) -->
+  <div id="welcomeManual" style="width:100%;max-width:320px;margin-bottom:20px">
     <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;text-align:left">
       <div style="font-size:13px;font-weight:700;color:#4ade80;margin-bottom:12px;text-align:center">&#128277; Instala en 3 pasos:</div>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
@@ -2351,14 +2351,6 @@ if ('serviceWorker' in navigator) {
   if(!isStandalone && !localStorage.getItem('welcome_seen')){
     var ws = document.getElementById('welcomeScreen');
     if(ws) ws.style.display = 'flex';
-    // Show manual instructions after 1.5s if no install prompt fires
-    setTimeout(function(){
-      var wBtn = document.getElementById('welcomeInstallBtn');
-      if(wBtn && wBtn.style.display === 'none'){
-        var wManual = document.getElementById('welcomeManual');
-        if(wManual) wManual.style.display = 'block';
-      }
-    }, 1500);
   }
 })();
 
