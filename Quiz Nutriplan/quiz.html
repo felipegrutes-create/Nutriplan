@@ -11,6 +11,12 @@
 fbq('init', '2145233352888094');
 fbq('track', 'PageView');
 </script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XS35RZ6KBW"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-XS35RZ6KBW');
+</script>
 <style>
 :root{--verde:#2E7D52;--verde-light:rgba(74,222,128,.08);--creme:rgba(255,255,255,.05);--creme-dark:rgba(255,255,255,.06);--dourado:#C9922A;--texto:#fff;--texto-sub:rgba(255,255,255,.5);--branco:rgba(255,255,255,.05);--borda:rgba(255,255,255,.1);--rosa:#E8445A;--radius:12px;--radius-sm:8px;--ease-premium:cubic-bezier(0.22, 1, 0.36, 1)}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -985,6 +991,33 @@ function showInsight(text, emoji, callback) {
   };
 }
 
+var SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbyctvZ2IGeIb6eybcfpOSahPROAuCa3Z6wk_HXYCTZOr3bZKSE6MGYDLzuhkAezAAXcCw/exec';
+
+function sendToSheets(data) {
+  if(!SHEETS_WEBHOOK) return;
+  fetch(SHEETS_WEBHOOK, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  }).catch(function(){});
+}
+
+function trackStep(n) {
+  var stepNames = {
+    0:'Bienvenida',1:'Objetivo',2:'Motivacion',3:'Tiempo',4:'Actividad',
+    5:'TipoCuerpo',6:'CuerpoIdeal',7:'Zonas',8:'Break',9:'Peso',
+    10:'PesoMeta',11:'Altura',12:'Edad',13:'Metabolismo',14:'Dietas',
+    15:'Perfil',16:'Habitos',17:'Agua',18:'Sueno',19:'Compromiso',
+    20:'BMI',21:'Grafico',22:'Email',23:'Loading',24:'Resultado'
+  };
+  var name = stepNames[n] || 'Step_'+n;
+  // Google Analytics
+  if(typeof gtag==='function') gtag('event','quiz_step',{step_number:n,step_name:name});
+  // Facebook Pixel
+  if(typeof fbq==='function') fbq('trackCustom','QuizStep',{step:n,name:name});
+}
+
 function showSlide(n){
   // Insight intercepts (Change 4)
   if(n === 5 && !window._insight5Shown) {
@@ -1016,7 +1049,7 @@ function showSlide(n){
 
   document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));
   document.getElementById('slide-'+n).classList.add('active');
-  window.scrollTo(0,0);currentSlide=n;updateProgress();updateCta();
+  window.scrollTo(0,0);currentSlide=n;trackStep(n);updateProgress();updateCta();
   var stickyBar=document.getElementById('stickyCheckoutBar');if(stickyBar){stickyBar.classList.toggle('visible',n===24);document.getElementById('quizWrapper').classList.toggle('sticky-active',n===24);}
   // Reset slide 0 panels when leaving
   if(n>=1){document.getElementById('slide0-welcome').style.display='';document.getElementById('slide0-social').style.display='none';}
@@ -1087,7 +1120,14 @@ function handleCta(){
   if(currentSlide===22){
     const email=document.getElementById('emailInput').value;
     if(!isValidEmail(email)){shakeCta();return;}
-    userEmail=email;fbq('track','Lead',{content_name:'QuizEmail'});showSlide(23);return;
+    userEmail=email;fbq('track','Lead',{content_name:'QuizEmail'});
+    sendToSheets({
+      fecha: new Date().toISOString(),
+      nombre: answers.userName || '',
+      email: userEmail,
+      etapa: 'Email_Capturado'
+    });
+    showSlide(23);return;
   }
   // Checkout
   if(currentSlide===24){goToCheckout();return;}
@@ -1379,6 +1419,18 @@ function populateResult(){
   if(timeText)fullDesc+=' '+timeText+', pero eso termina hoy.';
   if(zoneText)fullDesc+=' '+zoneText;
   document.getElementById('resultProfileDesc').textContent=fullDesc;
+  // Send data to Google Sheets
+  sendToSheets({
+    fecha: new Date().toISOString(),
+    nombre: answers.userName || '',
+    email: userEmail || '',
+    peso: (answers.weight || '') + ' ' + (answers.weightUnit || 'kg'),
+    meta: (answers.targetWeight || '') + ' ' + (answers.weightUnit || 'kg'),
+    altura: answers.height || '',
+    edad: answers.age || '',
+    perfil: resolvedProfile || '',
+    etapa: 'Completado'
+  });
 }
 
 function runLoadingAnimation(){
