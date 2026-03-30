@@ -1018,6 +1018,25 @@ function trackStep(n) {
   if(typeof fbq==='function') fbq('trackCustom','QuizStep',{step:n,name:name});
 }
 
+// Registrar última etapa quando pessoa sai da página
+window.addEventListener('beforeunload', function() {
+  if(currentSlide > 0 && currentSlide < 24) {
+    var stepNames = {0:'Bienvenida',1:'Objetivo',2:'Motivacion',3:'Tiempo',4:'Actividad',5:'TipoCuerpo',6:'CuerpoIdeal',7:'Zonas',8:'Break',9:'Peso',10:'PesoMeta',11:'Altura',12:'Edad',13:'Metabolismo',14:'Dietas',15:'Perfil',16:'Habitos',17:'Agua',18:'Sueno',19:'Compromiso',20:'BMI',21:'Grafico',22:'Email',23:'Loading',24:'Resultado'};
+    var name = stepNames[currentSlide] || 'Step_'+currentSlide;
+    navigator.sendBeacon(SHEETS_WEBHOOK, JSON.stringify({
+      fecha: new Date().toISOString(),
+      nombre: answers.userName || '',
+      email: answers.email || '',
+      peso: '',
+      meta: '',
+      altura: '',
+      edad: '',
+      perfil: '',
+      etapa: 'Abandono_Step' + currentSlide + '_' + name
+    }));
+  }
+});
+
 function showSlide(n){
   // Insight intercepts (Change 4)
   if(n === 5 && !window._insight5Shown) {
