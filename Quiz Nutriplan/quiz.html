@@ -993,6 +993,31 @@ function showInsight(text, emoji, callback) {
 
 var SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbyctvZ2IGeIb6eybcfpOSahPROAuCa3Z6wk_HXYCTZOr3bZKSE6MGYDLzuhkAezAAXcCw/exec';
 
+// Capturar UTMs da URL
+var urlParams = new URLSearchParams(window.location.search);
+var utmData = {
+  source: urlParams.get('utm_source') || '',
+  medium: urlParams.get('utm_medium') || '',
+  campaign: urlParams.get('utm_campaign') || ''
+};
+var quizStartTime = Date.now();
+
+function getDevice() {
+  var w = window.innerWidth;
+  return w <= 768 ? 'Mobile' : w <= 1024 ? 'Tablet' : 'Desktop';
+}
+
+function getCountry() {
+  return Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+}
+
+function getQuizDuration() {
+  var secs = Math.round((Date.now() - quizStartTime) / 1000);
+  var min = Math.floor(secs / 60);
+  var sec = secs % 60;
+  return min + ':' + String(sec).padStart(2, '0');
+}
+
 function sendToSheets(data) {
   if(!SHEETS_WEBHOOK) return;
   fetch(SHEETS_WEBHOOK, {
@@ -1050,6 +1075,12 @@ function sendAbandon() {
     cocina_para: answers.cooksFor || '',
     hora_cena: answers.dinnerTime || '',
     tiempo_cocina: answers.cookingTime || '',
+    utm_source: utmData.source,
+    utm_medium: utmData.medium,
+    utm_campaign: utmData.campaign,
+    dispositivo: getDevice(),
+    pais: getCountry(),
+    duracion: getQuizDuration(),
     etapa: 'Abandono_Step' + currentSlide + '_' + name
   });
   navigator.sendBeacon(SHEETS_WEBHOOK, payload);
@@ -1487,6 +1518,12 @@ function populateResult(){
     cocina_para: answers.cooksFor || '',
     hora_cena: answers.dinnerTime || '',
     tiempo_cocina: answers.cookingTime || '',
+    utm_source: utmData.source,
+    utm_medium: utmData.medium,
+    utm_campaign: utmData.campaign,
+    dispositivo: getDevice(),
+    pais: getCountry(),
+    duracion: getQuizDuration(),
     etapa: 'Completado'
   });
 }
@@ -1522,6 +1559,40 @@ function isValidEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
 function validateEmail(){document.getElementById('mainCta').disabled=!isValidEmail(document.getElementById('emailInput').value);}
 function goToCheckout(){
   if(typeof fbq === 'function') fbq('track','InitiateCheckout');
+  if(typeof gtag==='function') gtag('event','begin_checkout');
+  sendToSheets({
+    fecha: new Date().toISOString(),
+    nombre: answers.userName || '',
+    email: answers.email || userEmail || '',
+    peso: (answers.weight || '') + ' ' + (answers.weightUnit || 'kg'),
+    meta: (answers.targetWeight || '') + ' ' + (answers.weightUnit || 'kg'),
+    altura: answers.height || '',
+    edad: answers.age || '',
+    perfil: resolvedProfile || '',
+    objetivo: String(answers.weightGoal || ''),
+    motivacion: answers.motivation || '',
+    situacion_peso: answers.weightSituation || '',
+    metodos_probados: Array.isArray(answers.methodsTried) ? answers.methodsTried.join(', ') : (answers.methodsTried || ''),
+    tiempo_luchando: answers.timeFighting || '',
+    actividad: answers.activityLevel || '',
+    tipo_cuerpo: answers.bodyType || '',
+    cuerpo_ideal: answers.idealBody || '',
+    zonas: Array.isArray(answers.targetZones) ? answers.targetZones.join(', ') : (answers.targetZones || ''),
+    alergias: Array.isArray(answers.allergies) ? answers.allergies.join(', ') : (answers.allergies || ''),
+    sueno: answers.sleepHours || '',
+    agua: answers.waterIntake || '',
+    dieta: answers.dietType || '',
+    cocina_para: answers.cooksFor || '',
+    hora_cena: answers.dinnerTime || '',
+    tiempo_cocina: answers.cookingTime || '',
+    utm_source: utmData.source,
+    utm_medium: utmData.medium,
+    utm_campaign: utmData.campaign,
+    dispositivo: getDevice(),
+    pais: getCountry(),
+    duracion: getQuizDuration(),
+    etapa: 'Checkout_Clicado'
+  });
   const params = new URLSearchParams();
   if(!userEmail) console.warn('[goToCheckout] userEmail is empty — email param will be omitted');
   if(userEmail) params.set('email', userEmail);
