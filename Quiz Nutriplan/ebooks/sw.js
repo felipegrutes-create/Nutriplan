@@ -1,4 +1,4 @@
-const CACHE = 'codigo-hormonal-v9';
+const CACHE = 'codigo-hormonal-v10';
 
 self.addEventListener('install', e => {
   e.waitUntil(
