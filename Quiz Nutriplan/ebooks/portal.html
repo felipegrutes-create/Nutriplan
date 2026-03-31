@@ -364,7 +364,7 @@ body::before{
 }
 
 /* Tab system */
-.tab-panel{display:none}
+.tab-panel{display:none;padding-bottom:80px}
 .tab-panel.active{display:block}
 body{padding-bottom:72px}
 
@@ -2159,12 +2159,12 @@ const Feed = (() => {
   const catLabels = {todos:'Todos',hormonas:'Hormonas',alimentacion:'Alimentación',bienestar:'Bienestar',ejercicio:'Ejercicio'};
 
   function init() {
-    fetch('data/feed.json').then(r=>r.json()).then(d => {
-      data = d.sort((a,b) => new Date(b.fecha) - new Date(a.fecha));
+    fetch('data/feed.json').then(function(r){ return r.json(); }).then(function(d) {
+      data = d.sort(function(a,b){ return new Date(b.fecha) - new Date(a.fecha); });
       loaded = true;
       renderFilters();
       render();
-    }).catch(() => { document.getElementById('feedList').innerHTML = '<p style="text-align:center;color:#999;padding:40px">No se pudo cargar el feed</p>'; });
+    }).catch(function(err) { console.error('Feed error:', err); document.getElementById('feedList').innerHTML = '<p style="text-align:center;color:#999;padding:40px">No se pudo cargar el feed</p>'; });
   }
 
   function renderFilters() {
@@ -2179,17 +2179,19 @@ const Feed = (() => {
     const filtered = filter === 'todos' ? data : data.filter(i => i.categoria === filter);
     const el = document.getElementById('feedList');
     if (!filtered.length) { el.innerHTML = '<p style="text-align:center;color:#999;padding:40px">No hay publicaciones en esta categoría</p>'; return; }
-    el.innerHTML = filtered.map(item => {
-      const isLiked = likes[item.id];
-      const totalLikes = item.likes + (isLiked ? 1 : 0);
-      const dateStr = new Date(item.fecha).toLocaleDateString('es-MX', {day:'numeric',month:'short'});
+    el.innerHTML = filtered.map(function(item) {
+      var isLiked = likes[item.id];
+      var totalLikes = (item.likes||0) + (isLiked ? 1 : 0);
+      var dateStr = new Date(item.fecha).toLocaleDateString('es-MX', {day:'numeric',month:'short'});
+      var catLabel = catLabels[item.categoria] || item.categoria;
       return '<div class="feed-card">' +
-        '<div class="feed-card-header"><span class="feed-card-emoji">' + item.emoji + '</span><span class="feed-card-cat ' + item.categoria + '">' + catLabels[item.categoria] || item.categoria + '</span></div>' +
-        '<h3>' + item.titulo + '</h3>' +
-        '<p>' + item.contenido + '</p>' +
+        '<div class="feed-card-header"><span class="feed-card-emoji">' + (item.emoji||'🌿') + '</span><span class="feed-card-cat ' + item.categoria + '">' + catLabel + '</span></div>' +
+        '<h3>' + (item.titulo||'') + '</h3>' +
+        '<p>' + (item.contenido||'') + '</p>' +
         '<div class="feed-card-footer"><button class="feed-like-btn' + (isLiked?' liked':'') + '" onclick="Feed.toggleLike(' + item.id + ')">❤️ ' + totalLikes + '</button><span class="feed-date">' + dateStr + '</span></div>' +
       '</div>';
     }).join('');
+    el.innerHTML += '<div style="height:80px"></div>';
   }
 
   function toggleLike(id) {
