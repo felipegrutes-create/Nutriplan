@@ -1,30 +1,20 @@
-const CACHE = 'codigo-hormonal-v13';
-
-self.addEventListener('install', function(e) {
+// Self-destroying service worker - clears all caches and unregisters
+self.addEventListener('install', function() {
   self.skipWaiting();
 });
 
 self.addEventListener('activate', function(e) {
   e.waitUntil(
-    caches.keys().then(function(keys) {
-      return Promise.all(keys.filter(function(k) { return k !== CACHE; }).map(function(k) { return caches.delete(k); }));
+    caches.keys().then(function(names) {
+      return Promise.all(names.map(function(name) { return caches.delete(name); }));
+    }).then(function() {
+      return self.clients.claim();
+    }).then(function() {
+      return self.clients.matchAll();
+    }).then(function(clients) {
+      clients.forEach(function(client) { client.navigate(client.url); });
     })
   );
-  self.clients.claim();
 });
 
-self.addEventListener('fetch', function(e) {
-  e.respondWith(
-    fetch(e.request).then(function(res) {
-      if (res.ok && e.request.method === 'GET') {
-        var clone = res.clone();
-        caches.open(CACHE).then(function(c) { c.put(e.request, clone); });
-      }
-      return res;
-    }).catch(function() {
-      return caches.match(e.request).then(function(r) {
-        return r || caches.match('./portal.html');
-      });
-    })
-  );
-});
+// NO fetch handler = browser uses network directly
