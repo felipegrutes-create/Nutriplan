@@ -434,8 +434,69 @@ body{padding-bottom:72px}
 .profile-link:hover{border-color:var(--verde)}
 .install-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--verde),#1a5e3a);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:700;cursor:pointer;margin-top:16px}
 
-/* Mi Codigo tab */
-.mc-upsell{padding:0}
+/* Mi Codigo Premium Environment */
+#mcOverlay{font-family:'DM Sans',sans-serif}
+.mc-top-header{position:fixed;top:0;left:0;right:0;z-index:10001;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:linear-gradient(180deg,#0a0a0a,rgba(10,10,10,.95));backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,146,42,.15)}
+.mc-back-btn{background:none;border:none;color:#C9922A;font-size:22px;cursor:pointer;padding:4px 8px}
+.mc-top-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#C9922A;letter-spacing:1px}
+.mc-top-star{font-size:18px}
+.mc-bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:10001;height:64px;background:#0a0a0a;border-top:1px solid rgba(201,146,42,.2);display:flex;align-items:stretch}
+.mc-nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.4);transition:color .2s}
+.mc-nav-btn.active{color:#C9922A}
+.mc-nav-icon{font-size:20px}
+.mc-nav-label{font-size:9px;font-weight:600;letter-spacing:.3px}
+#micodigoContent{padding-top:60px;min-height:100vh}
+
+/* MC Cards - dark premium */
+.mc-section{padding:16px 20px}
+.mc-card{background:#141414;border-radius:16px;padding:16px;margin-bottom:12px;border:1px solid rgba(201,146,42,.1);box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.mc-card h3{font-size:15px;font-weight:700;margin-bottom:8px;color:#fff}
+.mc-card p{color:rgba(255,255,255,.6);font-size:13px;line-height:1.5}
+.mc-stats-row{display:flex;gap:8px;margin-bottom:16px}
+.mc-stat{flex:1;text-align:center;background:#141414;border-radius:12px;padding:12px 8px;border:1px solid rgba(201,146,42,.1)}
+.mc-stat-num{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#C9922A}
+.mc-stat-label{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px}
+.mc-meal-card{background:#1a1a1a;border-radius:12px;padding:12px;margin-bottom:8px;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px}
+.mc-meal-icon{font-size:24px}
+.mc-meal-info h4{font-size:13px;font-weight:600;margin-bottom:2px;color:#fff}
+.mc-meal-info p{font-size:11px;color:rgba(255,255,255,.4)}
+.mc-water-bar{display:flex;gap:4px;margin:12px 0}
+.mc-water-drop{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s;border:1px solid rgba(255,255,255,.08)}
+.mc-water-drop.filled{background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.3)}
+
+/* MC Form elements - dark */
+.mc-energy-slider{width:100%;-webkit-appearance:none;height:8px;border-radius:4px;background:linear-gradient(90deg,#E8445A,#FFB347,#4ade80);outline:none}
+.mc-energy-slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#C9922A;border:3px solid #0a0a0a;cursor:pointer;box-shadow:0 2px 8px rgba(201,146,42,.4)}
+.mc-toggle{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);font-size:13px}
+.mc-toggle-switch{width:48px;height:26px;border-radius:13px;background:rgba(255,255,255,.1);position:relative;cursor:pointer;transition:background .2s}
+.mc-toggle-switch.on{background:#C9922A}
+.mc-toggle-switch::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.mc-toggle-switch.on::after{transform:translateX(22px)}
+.mc-sleep-control{display:flex;align-items:center;gap:16px;justify-content:center;margin:12px 0}
+.mc-sleep-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(201,146,42,.3);background:#141414;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#C9922A}
+.mc-sleep-val{font-size:28px;font-weight:700;color:#C9922A;min-width:60px;text-align:center}
+.mc-symptom-grid{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.mc-symptom-btn{padding:6px 12px;border-radius:50px;border:1px solid rgba(255,255,255,.1);background:#141414;font-size:11px;cursor:pointer;transition:all .2s;color:rgba(255,255,255,.5)}
+.mc-symptom-btn.active{background:#E8445A;color:#fff;border-color:#E8445A}
+.mc-cycle-grid{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.mc-cycle-btn{padding:8px 14px;border-radius:50px;border:1px solid rgba(201,146,42,.2);background:#141414;font-size:11px;cursor:pointer;transition:all .2s;color:rgba(255,255,255,.5)}
+.mc-cycle-btn.active{background:#C9922A;color:#fff;border-color:#C9922A}
+.mc-progress-bar{height:12px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden;margin:8px 0}
+.mc-progress-fill{height:100%;background:linear-gradient(90deg,#C9922A,#e6b84d);border-radius:6px;transition:width .5s}
+.mc-recipe-detail{display:none;padding:12px;background:#1a1a1a;border-radius:8px;margin-top:8px;color:rgba(255,255,255,.6);font-size:12px;line-height:1.6}
+.mc-recipe-detail.show{display:block}
+.mc-fav-btn{background:none;border:none;font-size:18px;cursor:pointer;padding:4px}
+.mc-cat-filter{display:flex;gap:6px;overflow-x:auto;margin-bottom:16px;-webkit-overflow-scrolling:touch}
+.mc-cat-pill{padding:6px 14px;border-radius:50px;border:1px solid rgba(201,146,42,.2);background:#141414;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;color:rgba(255,255,255,.5)}
+.mc-cat-pill.active{background:#C9922A;color:#fff;border-color:#C9922A}
+.mc-add-item{display:flex;gap:8px;margin-bottom:16px}
+.mc-add-item input{flex:1;padding:10px;border:1px solid rgba(201,146,42,.2);border-radius:8px;font-size:13px;font-family:'DM Sans',sans-serif;background:#141414;color:#fff}
+.mc-add-item button{padding:10px 16px;background:#C9922A;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer}
+.mc-lesson-content{display:none;padding:12px;background:#1a1a1a;border-radius:8px;margin-top:8px;font-size:13px;color:rgba(255,255,255,.6);line-height:1.6}
+.mc-lesson-content.show{display:block}
+
+/* MC Upsell - keep light theme */
+.mc-upsell{padding:0;background:#FFFDF8}
 .mc-upsell-hero{background:linear-gradient(135deg,#1B5E3A,#2E7D52);color:#fff;padding:48px 24px 32px;text-align:center;position:relative;overflow:hidden}
 .mc-upsell-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(to bottom,transparent,#FFFDF8)}
 .mc-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px}
@@ -450,57 +511,11 @@ body{padding-bottom:72px}
 .mc-include-list{padding:0 20px 20px;list-style:none}
 .mc-include-list li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #e8e0d4;font-size:13px;color:#444}
 .mc-include-list li::before{content:'✓';color:#2E7D52;font-weight:700;font-size:16px}
-.mc-subnav{display:flex;gap:6px;overflow-x:auto;padding:12px 20px;-webkit-overflow-scrolling:touch;border-bottom:1px solid #e8e0d4;background:#fff;position:sticky;top:0;z-index:10}
-.mc-subnav-btn{padding:8px 16px;border-radius:50px;border:1px solid #e8e0d4;background:#fff;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;color:#666;font-family:'DM Sans',sans-serif}
-.mc-subnav-btn.active{background:var(--verde);color:#fff;border-color:var(--verde)}
-.mc-section{padding:20px}
-.mc-card{background:#fff;border-radius:16px;padding:16px;margin-bottom:12px;border:1px solid #e8e0d4;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.mc-card h3{font-size:15px;font-weight:700;margin-bottom:8px;color:#1a1a1a}
-.mc-stats-row{display:flex;gap:8px;margin-bottom:16px}
-.mc-stat{flex:1;text-align:center;background:#fff;border-radius:12px;padding:12px 8px;border:1px solid #e8e0d4}
-.mc-stat-num{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--verde)}
-.mc-stat-label{font-size:10px;color:#8a8a7a;text-transform:uppercase;letter-spacing:.5px}
-.mc-meal-card{background:#fff;border-radius:12px;padding:12px;margin-bottom:8px;border:1px solid #e8e0d4;display:flex;align-items:center;gap:12px}
-.mc-meal-icon{font-size:24px}
-.mc-meal-info h4{font-size:13px;font-weight:600;margin-bottom:2px}
-.mc-meal-info p{font-size:11px;color:#8a8a7a}
-.mc-water-bar{display:flex;gap:4px;margin:12px 0}
-.mc-water-drop{width:32px;height:32px;border-radius:50%;background:#e8e0d4;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s}
-.mc-water-drop.filled{background:rgba(59,130,246,.15)}
 .mc-activate-link{display:block;margin-top:16px;font-size:13px;color:var(--verde);text-decoration:underline;cursor:pointer}
 .mc-key-input{display:none;margin-top:12px}
 .mc-key-input.show{display:flex;gap:8px}
 .mc-key-input input{flex:1;padding:10px;border:1px solid #e8e0d4;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif}
 .mc-key-input button{padding:10px 20px;background:var(--verde);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer}
-.mc-energy-slider{width:100%;-webkit-appearance:none;height:8px;border-radius:4px;background:linear-gradient(90deg,#E8445A,#FFB347,#4ade80);outline:none}
-.mc-energy-slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--verde);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-.mc-toggle{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #f0e8db}
-.mc-toggle-switch{width:48px;height:26px;border-radius:13px;background:#e8e0d4;position:relative;cursor:pointer;transition:background .2s}
-.mc-toggle-switch.on{background:#4ade80}
-.mc-toggle-switch::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
-.mc-toggle-switch.on::after{transform:translateX(22px)}
-.mc-sleep-control{display:flex;align-items:center;gap:16px;justify-content:center;margin:12px 0}
-.mc-sleep-btn{width:36px;height:36px;border-radius:50%;border:1px solid #e8e0d4;background:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.mc-sleep-val{font-size:28px;font-weight:700;color:var(--verde);min-width:60px;text-align:center}
-.mc-symptom-grid{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
-.mc-symptom-btn{padding:6px 12px;border-radius:50px;border:1px solid #e8e0d4;background:#fff;font-size:11px;cursor:pointer;transition:all .2s}
-.mc-symptom-btn.active{background:var(--rosa);color:#fff;border-color:var(--rosa)}
-.mc-cycle-grid{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
-.mc-cycle-btn{padding:8px 14px;border-radius:50px;border:1px solid #e8e0d4;background:#fff;font-size:11px;cursor:pointer;transition:all .2s}
-.mc-cycle-btn.active{background:var(--verde);color:#fff;border-color:var(--verde)}
-.mc-progress-bar{height:12px;background:#e8e0d4;border-radius:6px;overflow:hidden;margin:8px 0}
-.mc-progress-fill{height:100%;background:linear-gradient(90deg,#4ade80,#2E7D52);border-radius:6px;transition:width .5s}
-.mc-recipe-detail{display:none;padding:12px;background:#f9f7f2;border-radius:8px;margin-top:8px}
-.mc-recipe-detail.show{display:block}
-.mc-fav-btn{background:none;border:none;font-size:18px;cursor:pointer;padding:4px}
-.mc-cat-filter{display:flex;gap:6px;overflow-x:auto;margin-bottom:16px;-webkit-overflow-scrolling:touch}
-.mc-cat-pill{padding:6px 14px;border-radius:50px;border:1px solid #e8e0d4;background:#fff;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap}
-.mc-cat-pill.active{background:var(--verde);color:#fff;border-color:var(--verde)}
-.mc-add-item{display:flex;gap:8px;margin-bottom:16px}
-.mc-add-item input{flex:1;padding:10px;border:1px solid #e8e0d4;border-radius:8px;font-size:13px;font-family:'DM Sans',sans-serif}
-.mc-add-item button{padding:10px 16px;background:var(--verde);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer}
-.mc-lesson-content{display:none;padding:12px;background:#f9f7f2;border-radius:8px;margin-top:8px;font-size:13px;color:#444;line-height:1.6}
-.mc-lesson-content.show{display:block}
 @media(display-mode:standalone){#welcomeScreen{display:none!important}}
 </style>
 </head>
@@ -589,7 +604,7 @@ body{padding-bottom:72px}
             <span style="font-size:12px;display:flex;align-items:center;gap:8px"><span style="color:#4ade80;font-size:14px">&#10003;</span> Lista de compras autom&#225;tica</span>
             <span style="font-size:12px;display:flex;align-items:center;gap:8px"><span style="color:#4ade80;font-size:14px">&#10003;</span> Tracker de progreso</span>
           </div>
-          <div><a onclick="PortalApp.navigate('micodigo')" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;border-radius:50px;font-size:15px;font-weight:700;text-decoration:none;font-family:'DM Sans',sans-serif;box-shadow:0 4px 16px rgba(74,222,128,.3);cursor:pointer">Descubrir Mi C&#243;digo &#9733;</a></div>
+          <div><a onclick="MiCodigo.open()" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;border-radius:50px;font-size:15px;font-weight:700;text-decoration:none;font-family:'DM Sans',sans-serif;box-shadow:0 4px 16px rgba(74,222,128,.3);cursor:pointer">Descubrir Mi C&#243;digo &#9733;</a></div>
         </div>
       </div>
 
@@ -2094,9 +2109,34 @@ document.querySelectorAll('.card-grid').forEach(grid => observer.observe(grid));
   <div id="comList"></div>
 </div>
 
-<!-- MI CODIGO TAB -->
-<div id="tab-micodigo" class="tab-panel">
-  <div id="micodigoContent"></div>
+<!-- MI CODIGO OVERLAY -->
+<div id="mcOverlay" style="display:none;position:fixed;inset:0;z-index:10000;background:#0a0a0a;overflow-y:auto">
+  <!-- MC Top Header -->
+  <div class="mc-top-header">
+    <button class="mc-back-btn" onclick="MiCodigo.close()">←</button>
+    <div class="mc-top-title">Mi Código</div>
+    <div class="mc-top-star">⭐</div>
+  </div>
+  <!-- MC Content -->
+  <div id="micodigoContent" style="padding-bottom:80px"></div>
+  <!-- MC Bottom Nav -->
+  <div class="mc-bottom-nav" id="mcBottomNav">
+    <button class="mc-nav-btn active" data-section="home" onclick="MiCodigo.navigate('home')">
+      <span class="mc-nav-icon">🏠</span><span class="mc-nav-label">Home</span>
+    </button>
+    <button class="mc-nav-btn" data-section="midia" onclick="MiCodigo.navigate('midia')">
+      <span class="mc-nav-icon">📅</span><span class="mc-nav-label">Mi Día</span>
+    </button>
+    <button class="mc-nav-btn" data-section="recetas" onclick="MiCodigo.navigate('recetas')">
+      <span class="mc-nav-icon">🍽️</span><span class="mc-nav-label">Recetas</span>
+    </button>
+    <button class="mc-nav-btn" data-section="progreso" onclick="MiCodigo.navigate('progreso')">
+      <span class="mc-nav-icon">📊</span><span class="mc-nav-label">Progreso</span>
+    </button>
+    <button class="mc-nav-btn" data-section="mas" onclick="MiCodigo.navigate('mas')">
+      <span class="mc-nav-icon">📚</span><span class="mc-nav-label">Más</span>
+    </button>
+  </div>
 </div>
 
 <!-- PROFILE TAB -->
@@ -2154,7 +2194,7 @@ document.querySelectorAll('.card-grid').forEach(grid => observer.observe(grid));
     <span class="nav-icon">👥</span>
     <span class="nav-label">Comunidad</span>
   </button>
-  <button class="nav-btn" data-tab="micodigo" onclick="PortalApp.navigate('micodigo')">
+  <button class="nav-btn" data-tab="micodigo" onclick="MiCodigo.open()">
     <span class="nav-icon">⭐</span>
     <span class="nav-label">Mi Código</span>
   </button>
@@ -2169,6 +2209,7 @@ document.querySelectorAll('.card-grid').forEach(grid => observer.observe(grid));
 const PortalApp = (() => {
   let currentTab = 'inicio';
   function navigate(tab) {
+    if (tab === 'micodigo') { MiCodigo.open(); return; }
     currentTab = tab;
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.getElementById('tab-' + tab).classList.add('active');
@@ -2176,7 +2217,6 @@ const PortalApp = (() => {
     window.scrollTo(0, 0);
     if (tab === 'feed' && !Feed.loaded) Feed.init();
     if (tab === 'comunidad' && !Comunidad.loaded) Comunidad.init();
-    if (tab === 'micodigo') MiCodigo.render();
     if (tab === 'perfil') Perfil.render();
   }
   return { navigate };
@@ -2705,7 +2745,7 @@ const MiCodigo = (function() {
   function activate(key) {
     if (key === VALID_KEY) {
       localStorage.setItem(AUTH_KEY, JSON.stringify({autenticado:true, activatedAt:Date.now()}));
-      render();
+      open();
       return true;
     }
     return false;
@@ -2721,6 +2761,41 @@ const MiCodigo = (function() {
       renderUpsell(el);
     }
   }
+
+  function open() {
+    var overlay = document.getElementById('mcOverlay');
+    if (!overlay) return;
+    history.pushState({mc: true}, '');
+    if (isPremium()) {
+      overlay.style.display = 'block';
+      overlay.style.background = '#0a0a0a';
+      document.getElementById('mcBottomNav').style.display = 'flex';
+      document.querySelector('.mc-top-header').style.display = 'flex';
+      if (!loaded) { loadData().then(function(){ loaded = true; renderPremium(document.getElementById('micodigoContent')); }); }
+      else { renderPremium(document.getElementById('micodigoContent')); }
+    } else {
+      overlay.style.display = 'block';
+      overlay.style.background = '#FFFDF8';
+      document.getElementById('mcBottomNav').style.display = 'none';
+      document.querySelector('.mc-top-header').style.display = 'flex';
+      renderUpsell(document.getElementById('micodigoContent'));
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    document.getElementById('mcOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+    // Return to inicio tab
+    PortalApp.navigate('inicio');
+  }
+
+  // Handle browser back button
+  window.addEventListener('popstate', function() {
+    if (document.getElementById('mcOverlay').style.display === 'block') {
+      close();
+    }
+  });
 
   function loadData() {
     var files = ['plano','recetas','dicas','curso','exercicios','suplementos','mensajes','categorias-compras'];
@@ -2795,13 +2870,8 @@ const MiCodigo = (function() {
   }
 
   function renderPremium(el) {
-    var subnav = '<div class="mc-subnav">';
-    sections.forEach(function(s){
-      subnav += '<button class="mc-subnav-btn' + (s===currentSection?' active':'') + '" onclick="MiCodigo.navigate(\'' + s + '\')">' + sectionIcons[s] + ' ' + sectionLabels[s] + '</button>';
-    });
-    subnav += '</div>';
     var content = '<div class="mc-section" id="mcSectionContent"></div>';
-    el.innerHTML = subnav + content;
+    el.innerHTML = content;
 
     var sc = document.getElementById('mcSectionContent');
     if (currentSection === 'home') renderHome(sc);
@@ -2814,8 +2884,12 @@ const MiCodigo = (function() {
 
   function navigate(section) {
     currentSection = section;
+    // Update bottom nav
+    document.querySelectorAll('.mc-nav-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.section === section); });
     var el = document.getElementById('micodigoContent');
     if (el) renderPremium(el);
+    // Scroll to top
+    document.getElementById('mcOverlay').scrollTo(0, 0);
   }
 
   // ════════════════════════════════════════════════════════════
@@ -3935,13 +4009,13 @@ const MiCodigo = (function() {
     if (k && !isPremium()) {
       if (activate(k)) {
         // Auto-navigate to Mi Codigo tab
-        setTimeout(function(){ PortalApp.navigate('micodigo'); }, 500);
+        setTimeout(function(){ MiCodigo.open(); }, 500);
       }
     }
   })();
 
   return {
-    render: render, navigate: navigate, showKeyInput: showKeyInput, tryActivate: tryActivate,
+    render: render, open: open, close: close, navigate: navigate, showKeyInput: showKeyInput, tryActivate: tryActivate,
     isPremium: isPremium,
     // Mi Dia actions
     selectMood: selectMood, setWater: setWater, toggleMeal: toggleMeal,
