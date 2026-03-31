@@ -432,6 +432,45 @@ body{padding-bottom:72px}
 .profile-link{display:block;background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:8px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #f0e8db;text-decoration:none;color:#1a1a1a;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px}
 .profile-link:hover{border-color:var(--verde)}
 .install-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--verde),#1a5e3a);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:700;cursor:pointer;margin-top:16px}
+
+/* Mi Codigo tab */
+.mc-upsell{padding:0}
+.mc-upsell-hero{background:linear-gradient(135deg,#1B5E3A,#2E7D52);color:#fff;padding:48px 24px 32px;text-align:center;position:relative;overflow:hidden}
+.mc-upsell-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(to bottom,transparent,#FFFDF8)}
+.mc-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px}
+.mc-feature-card{background:#fff;border-radius:16px;padding:16px;text-align:center;border:1px solid #e8e0d4;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.mc-feature-card .mc-feat-icon{font-size:32px;margin-bottom:8px}
+.mc-feature-card h4{font-size:13px;font-weight:700;margin-bottom:4px;color:#1a1a1a}
+.mc-feature-card p{font-size:11px;color:#8a8a7a}
+.mc-feature-card.locked{position:relative}
+.mc-feature-card.locked::after{content:'🔒';position:absolute;top:8px;right:8px;font-size:14px}
+.mc-cta-section{padding:20px;text-align:center}
+.mc-cta-btn{display:block;width:100%;padding:16px;background:linear-gradient(135deg,#C9922A,#a67820);color:#fff;border:none;border-radius:50px;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 20px rgba(201,146,42,.4);font-family:'DM Sans',sans-serif;text-decoration:none}
+.mc-include-list{padding:0 20px 20px;list-style:none}
+.mc-include-list li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #e8e0d4;font-size:13px;color:#444}
+.mc-include-list li::before{content:'✓';color:#2E7D52;font-weight:700;font-size:16px}
+.mc-subnav{display:flex;gap:6px;overflow-x:auto;padding:12px 20px;-webkit-overflow-scrolling:touch;border-bottom:1px solid #e8e0d4;background:#fff;position:sticky;top:0;z-index:10}
+.mc-subnav-btn{padding:8px 16px;border-radius:50px;border:1px solid #e8e0d4;background:#fff;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;color:#666;font-family:'DM Sans',sans-serif}
+.mc-subnav-btn.active{background:var(--verde);color:#fff;border-color:var(--verde)}
+.mc-section{padding:20px}
+.mc-card{background:#fff;border-radius:16px;padding:16px;margin-bottom:12px;border:1px solid #e8e0d4;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.mc-card h3{font-size:15px;font-weight:700;margin-bottom:8px;color:#1a1a1a}
+.mc-stats-row{display:flex;gap:8px;margin-bottom:16px}
+.mc-stat{flex:1;text-align:center;background:#fff;border-radius:12px;padding:12px 8px;border:1px solid #e8e0d4}
+.mc-stat-num{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--verde)}
+.mc-stat-label{font-size:10px;color:#8a8a7a;text-transform:uppercase;letter-spacing:.5px}
+.mc-meal-card{background:#fff;border-radius:12px;padding:12px;margin-bottom:8px;border:1px solid #e8e0d4;display:flex;align-items:center;gap:12px}
+.mc-meal-icon{font-size:24px}
+.mc-meal-info h4{font-size:13px;font-weight:600;margin-bottom:2px}
+.mc-meal-info p{font-size:11px;color:#8a8a7a}
+.mc-water-bar{display:flex;gap:4px;margin:12px 0}
+.mc-water-drop{width:32px;height:32px;border-radius:50%;background:#e8e0d4;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s}
+.mc-water-drop.filled{background:rgba(59,130,246,.15)}
+.mc-activate-link{display:block;margin-top:16px;font-size:13px;color:var(--verde);text-decoration:underline;cursor:pointer}
+.mc-key-input{display:none;margin-top:12px}
+.mc-key-input.show{display:flex;gap:8px}
+.mc-key-input input{flex:1;padding:10px;border:1px solid #e8e0d4;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif}
+.mc-key-input button{padding:10px 20px;background:var(--verde);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer}
 </style>
 </head>
 <body>
@@ -2025,6 +2064,11 @@ document.querySelectorAll('.card-grid').forEach(grid => observer.observe(grid));
   <div id="comList"></div>
 </div>
 
+<!-- MI CODIGO TAB -->
+<div id="tab-micodigo" class="tab-panel">
+  <div id="micodigoContent"></div>
+</div>
+
 <!-- PROFILE TAB -->
 <div id="tab-perfil" class="tab-panel">
   <div class="profile-section">
@@ -2080,6 +2124,10 @@ document.querySelectorAll('.card-grid').forEach(grid => observer.observe(grid));
     <span class="nav-icon">👥</span>
     <span class="nav-label">Comunidad</span>
   </button>
+  <button class="nav-btn" data-tab="micodigo" onclick="PortalApp.navigate('micodigo')">
+    <span class="nav-icon">⭐</span>
+    <span class="nav-label">Mi Código</span>
+  </button>
   <button class="nav-btn" data-tab="perfil" onclick="PortalApp.navigate('perfil')">
     <span class="nav-icon">👤</span>
     <span class="nav-label">Mi Perfil</span>
@@ -2098,6 +2146,7 @@ const PortalApp = (() => {
     window.scrollTo(0, 0);
     if (tab === 'feed' && !Feed.loaded) Feed.init();
     if (tab === 'comunidad' && !Comunidad.loaded) Comunidad.init();
+    if (tab === 'micodigo') MiCodigo.render();
     if (tab === 'perfil') Perfil.render();
   }
   return { navigate };
@@ -2337,6 +2386,371 @@ const Perfil = (() => {
   }
 
   return { render, save, setAvatar, installApp, getDeferredPrompt: function(){ return deferredPrompt; }, clearPrompt: function(){ deferredPrompt = null; } };
+})();
+
+// ===== MI CODIGO MODULE =====
+const MiCodigo = (() => {
+  let data = {};
+  let loaded = false;
+  let currentSection = 'home';
+  const AUTH_KEY = 'mc_auth';
+  const DATA_BASE = '../mi-codigo-app/data/';
+  const VALID_KEY = 'codigo-marco-2026';
+  const sections = ['home','midia','recetas','compras','progreso','mas'];
+  const sectionLabels = {home:'Inicio',midia:'Mi Día',recetas:'Recetas',compras:'Compras',progreso:'Progreso',mas:'Más'};
+  const sectionIcons = {home:'🏠',midia:'📅',recetas:'🍽️',compras:'🛒',progreso:'📊',mas:'📚'};
+
+  function isPremium() {
+    try { var d = JSON.parse(localStorage.getItem(AUTH_KEY)||'null'); return d && d.autenticado === true; }
+    catch(e) { return false; }
+  }
+
+  function activate(key) {
+    if (key === VALID_KEY) {
+      localStorage.setItem(AUTH_KEY, JSON.stringify({autenticado:true, activatedAt:Date.now()}));
+      render();
+      return true;
+    }
+    return false;
+  }
+
+  function render() {
+    var el = document.getElementById('micodigoContent');
+    if (!el) return;
+    if (isPremium()) {
+      if (!loaded) { loadData().then(function(){ loaded = true; renderPremium(el); }); }
+      else { renderPremium(el); }
+    } else {
+      renderUpsell(el);
+    }
+  }
+
+  function loadData() {
+    var files = ['plano','recetas','dicas','curso','exercicios','suplementos','mensajes','categorias-compras'];
+    return Promise.all(files.map(function(f){
+      return fetch(DATA_BASE + (f === 'recetas' ? 'recetas' : f) + '.json')
+        .then(function(r){ return r.json(); })
+        .then(function(d){ data[f] = d; })
+        .catch(function(){ data[f] = []; });
+    }));
+  }
+
+  function renderUpsell(el) {
+    el.innerHTML = '<div class="mc-upsell">' +
+      '<div class="mc-upsell-hero">' +
+        '<div style="font-size:48px;margin-bottom:16px">⭐</div>' +
+        '<h2 style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;margin-bottom:8px">Mi Código</h2>' +
+        '<p style="font-size:14px;opacity:.8;line-height:1.5;max-width:300px;margin:0 auto">Tu compañera de bienestar hormonal personalizada — cada día, en tu bolsillo</p>' +
+      '</div>' +
+      '<div style="padding:20px 20px 0;text-align:center">' +
+        '<div class="section-tag" style="background:rgba(201,146,42,.08);color:var(--gold);display:inline-block">Acceso Premium</div>' +
+        '<h3 style="font-family:Cormorant Garamond,serif;font-size:24px;margin-top:8px;color:#1a1a1a">Todo lo que incluye</h3>' +
+      '</div>' +
+      '<div class="mc-feature-grid">' +
+        '<div class="mc-feature-card locked"><div class="mc-feat-icon">📅</div><h4>Menú Diario</h4><p>Plan alimenticio día por día personalizado</p></div>' +
+        '<div class="mc-feature-card locked"><div class="mc-feat-icon">🍽️</div><h4>500+ Recetas</h4><p>Buscador con filtros por comida y categoría</p></div>' +
+        '<div class="mc-feature-card locked"><div class="mc-feat-icon">📊</div><h4>Mi Progreso</h4><p>Registro de peso, medidas y fotos de avance</p></div>' +
+        '<div class="mc-feature-card locked"><div class="mc-feat-icon">🛒</div><h4>Lista de Compras</h4><p>Generada automáticamente según tu menú</p></div>' +
+        '<div class="mc-feature-card locked"><div class="mc-feat-icon">🎓</div><h4>Mini-Curso</h4><p>Lecciones sobre salud hormonal y nutrición</p></div>' +
+        '<div class="mc-feature-card locked"><div class="mc-feat-icon">💪</div><h4>Ejercicios</h4><p>Rutinas diseñadas para equilibrio hormonal</p></div>' +
+      '</div>' +
+      '<ul class="mc-include-list">' +
+        '<li>Plan alimenticio personalizado de 21 días</li>' +
+        '<li>Check-in diario con seguimiento de agua y comidas</li>' +
+        '<li>Tracker de ciclo hormonal</li>' +
+        '<li>Mensajes motivacionales diarios</li>' +
+        '<li>Lista de compras automática semanal</li>' +
+        '<li>Registro fotográfico de progreso</li>' +
+        '<li>Acceso a comunidad exclusiva</li>' +
+      '</ul>' +
+      '<div style="padding:0 20px;text-align:center;margin-bottom:12px">' +
+        '<div style="font-size:11px;color:#8a8a7a;margin-bottom:4px">+2,000 mujeres ya transforman su salud</div>' +
+        '<div style="display:flex;justify-content:center;gap:-4px;margin-bottom:16px">' +
+          '<span style="font-size:14px">⭐⭐⭐⭐⭐</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="mc-cta-section">' +
+        '<a href="https://pay.hotmart.com/W98444762C?checkoutMode=10" target="_blank" class="mc-cta-btn">Desbloquear Mi Código ⭐</a>' +
+        '<div style="font-size:11px;color:#8a8a7a;margin-top:8px">Pago único · Acceso inmediato · 60 días de garantía</div>' +
+        '<a onclick="MiCodigo.showKeyInput()" class="mc-activate-link">Ya tengo acceso →</a>' +
+        '<div class="mc-key-input" id="mcKeyInput">' +
+          '<input type="text" id="mcKeyField" placeholder="Tu código de acceso">' +
+          '<button onclick="MiCodigo.tryActivate()">Activar</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function showKeyInput() {
+    document.getElementById('mcKeyInput').classList.toggle('show');
+    document.getElementById('mcKeyField').focus();
+  }
+
+  function tryActivate() {
+    var key = document.getElementById('mcKeyField').value.trim();
+    if (activate(key)) {
+      // success
+    } else {
+      document.getElementById('mcKeyField').style.borderColor = '#E8445A';
+      document.getElementById('mcKeyField').value = '';
+      document.getElementById('mcKeyField').placeholder = 'Código incorrecto';
+    }
+  }
+
+  function renderPremium(el) {
+    var subnav = '<div class="mc-subnav">';
+    sections.forEach(function(s){
+      subnav += '<button class="mc-subnav-btn' + (s===currentSection?' active':'') + '" onclick="MiCodigo.navigate(\'' + s + '\')">' + sectionIcons[s] + ' ' + sectionLabels[s] + '</button>';
+    });
+    subnav += '</div>';
+
+    var content = '<div class="mc-section" id="mcSectionContent"></div>';
+    el.innerHTML = subnav + content;
+
+    var sc = document.getElementById('mcSectionContent');
+    if (currentSection === 'home') renderHome(sc);
+    else if (currentSection === 'midia') renderMiDia(sc);
+    else if (currentSection === 'recetas') renderRecetas(sc);
+    else if (currentSection === 'compras') renderCompras(sc);
+    else if (currentSection === 'progreso') renderProgreso(sc);
+    else if (currentSection === 'mas') renderMas(sc);
+  }
+
+  function navigate(section) {
+    currentSection = section;
+    var el = document.getElementById('micodigoContent');
+    if (el) renderPremium(el);
+  }
+
+  // ---- HOME ----
+  function renderHome(el) {
+    var profile = JSON.parse(localStorage.getItem('portal_perfil') || '{}');
+    var name = profile.nombre || 'amiga';
+    var water = parseInt(localStorage.getItem('mc_water') || '0');
+    var tip = data.dicas && data.dicas.length > 0 ? data.dicas[new Date().getDate() % data.dicas.length] : null;
+    var msg = data.mensajes && data.mensajes.length > 0 ? data.mensajes[new Date().getDate() % data.mensajes.length] : null;
+
+    var html = '<h2 style="font-family:Cormorant Garamond,serif;font-size:24px;margin-bottom:16px">¡Buenos días, ' + name + '!</h2>';
+
+    // Stats
+    html += '<div class="mc-stats-row">' +
+      '<div class="mc-stat"><div class="mc-stat-num">' + water + '/8</div><div class="mc-stat-label">Agua</div></div>' +
+      '<div class="mc-stat"><div class="mc-stat-num">💯</div><div class="mc-stat-label">Racha</div></div>' +
+      '<div class="mc-stat"><div class="mc-stat-num">0/7</div><div class="mc-stat-label">Día</div></div>' +
+    '</div>';
+
+    // Water tracker
+    html += '<div class="mc-card"><h3>💧 Tu agua de hoy</h3><div class="mc-water-bar">';
+    for (var i = 0; i < 8; i++) {
+      html += '<div class="mc-water-drop' + (i < water ? ' filled' : '') + '" onclick="MiCodigo.addWater(' + (i+1) + ')">💧</div>';
+    }
+    html += '</div></div>';
+
+    // Daily menu preview
+    if (data.plano && data.plano.length > 0) {
+      var today = data.plano[new Date().getDate() % data.plano.length];
+      var meals = today.comidas || today.meals || [];
+      html += '<div class="mc-card"><h3>🍽️ Tu Menú de Hoy</h3>';
+      if (Array.isArray(meals)) {
+        var mealIcons = ['🌅','☀️','🌙','🍎'];
+        var mealNames = ['Desayuno','Almuerzo','Cena','Snack'];
+        meals.slice(0,4).forEach(function(m, i){
+          var name = typeof m === 'string' ? m : (m.nombre || m.name || mealNames[i]);
+          html += '<div class="mc-meal-card"><div class="mc-meal-icon">' + mealIcons[i] + '</div><div class="mc-meal-info"><h4>' + mealNames[i] + '</h4><p>' + name + '</p></div></div>';
+        });
+      }
+      html += '<button onclick="MiCodigo.navigate(\'midia\')" style="width:100%;padding:10px;background:var(--verde);color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;margin-top:8px">Ver plan completo →</button></div>';
+    }
+
+    // Daily tip
+    if (tip) {
+      html += '<div class="mc-card" style="background:linear-gradient(135deg,rgba(46,125,82,.06),rgba(74,222,128,.03))">' +
+        '<h3>🌿 Consejo del día</h3>' +
+        '<p style="font-size:13px;color:#444;line-height:1.6">' + (tip.texto || tip.contenido || tip) + '</p></div>';
+    }
+
+    // Motivational message
+    if (msg) {
+      html += '<div class="mc-card" style="background:linear-gradient(135deg,rgba(201,146,42,.06),rgba(201,146,42,.02));text-align:center">' +
+        '<div style="font-size:28px;margin-bottom:8px">✨</div>' +
+        '<p style="font-size:14px;color:#444;line-height:1.6;font-style:italic">"' + (msg.texto || msg.contenido || msg) + '"</p></div>';
+    }
+
+    el.innerHTML = html;
+  }
+
+  function addWater(n) {
+    localStorage.setItem('mc_water', n);
+    var el = document.getElementById('mcSectionContent');
+    if (el) renderHome(el);
+  }
+
+  // ---- MI DIA ----
+  function renderMiDia(el) {
+    var html = '<h2 style="font-family:Cormorant Garamond,serif;font-size:24px;margin-bottom:16px">Mi Día</h2>';
+    if (data.plano && data.plano.length > 0) {
+      var today = data.plano[new Date().getDate() % data.plano.length];
+      html += '<div class="mc-card"><h3>' + (today.titulo || today.nombre || 'Día ' + (new Date().getDate())) + '</h3>';
+      var meals = today.comidas || today.meals || [];
+      var mealIcons = ['🌅','☀️','🌙','🍎','🥤'];
+      var mealNames = ['Desayuno','Almuerzo','Cena','Snack','Bebida'];
+      if (Array.isArray(meals)) {
+        meals.forEach(function(m, i){
+          var name = typeof m === 'string' ? m : (m.nombre || m.name || mealNames[i] || '');
+          var desc = typeof m === 'object' ? (m.descripcion || m.ingredientes || '') : '';
+          html += '<div class="mc-meal-card"><div class="mc-meal-icon">' + (mealIcons[i]||'🍽️') + '</div><div class="mc-meal-info"><h4>' + (mealNames[i]||'Comida') + '</h4><p>' + name + '</p>' + (desc ? '<p style="font-size:10px;color:#aaa;margin-top:2px">' + desc + '</p>' : '') + '</div></div>';
+        });
+      }
+      html += '</div>';
+    } else {
+      html += '<div class="mc-card"><p style="color:#8a8a7a;text-align:center">Cargando plan...</p></div>';
+    }
+    el.innerHTML = html;
+  }
+
+  // ---- RECETAS ----
+  function renderRecetas(el) {
+    var html = '<h2 style="font-family:Cormorant Garamond,serif;font-size:24px;margin-bottom:16px">Recetas</h2>';
+    html += '<input type="text" id="mcRecetaSearch" placeholder="Buscar receta..." oninput="MiCodigo.filterRecetas()" style="width:100%;padding:12px 16px;border:1px solid #e8e0d4;border-radius:50px;font-size:14px;margin-bottom:16px;font-family:DM Sans,sans-serif;outline:none">';
+    html += '<div id="mcRecetaList"></div>';
+    el.innerHTML = html;
+    filterRecetas();
+  }
+
+  function filterRecetas() {
+    var search = (document.getElementById('mcRecetaSearch') || {}).value || '';
+    search = search.toLowerCase();
+    var recipes = data.recetas || [];
+    if (!Array.isArray(recipes)) recipes = [];
+    var filtered = search ? recipes.filter(function(r){ return (r.nombre||r.name||'').toLowerCase().indexOf(search) !== -1; }) : recipes.slice(0, 20);
+    var list = document.getElementById('mcRecetaList');
+    if (!list) return;
+    if (filtered.length === 0) { list.innerHTML = '<p style="text-align:center;color:#8a8a7a;padding:20px">No se encontraron recetas</p>'; return; }
+    list.innerHTML = filtered.slice(0, 20).map(function(r){
+      return '<div class="mc-meal-card" style="cursor:pointer"><div class="mc-meal-icon">🍽️</div><div class="mc-meal-info"><h4>' + (r.nombre||r.name||'Receta') + '</h4><p>' + (r.categoria||r.category||'') + '</p></div></div>';
+    }).join('');
+  }
+
+  // ---- COMPRAS ----
+  function renderCompras(el) {
+    var html = '<h2 style="font-family:Cormorant Garamond,serif;font-size:24px;margin-bottom:16px">Lista de Compras</h2>';
+    var cats = data['categorias-compras'] || [];
+    if (Array.isArray(cats) && cats.length > 0) {
+      cats.forEach(function(cat){
+        html += '<div class="mc-card"><h3>' + (cat.emoji||'🛒') + ' ' + (cat.nombre||cat.name||'Categoría') + '</h3>';
+        var items = cat.items || cat.productos || [];
+        if (Array.isArray(items)) {
+          items.forEach(function(item){
+            var name = typeof item === 'string' ? item : (item.nombre || item.name || '');
+            html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #f0e8db"><input type="checkbox" style="width:18px;height:18px;accent-color:var(--verde)"><span style="font-size:13px;color:#444">' + name + '</span></div>';
+          });
+        }
+        html += '</div>';
+      });
+    } else {
+      html += '<div class="mc-card"><p style="color:#8a8a7a;text-align:center">La lista se genera según tu menú semanal</p></div>';
+    }
+    el.innerHTML = html;
+  }
+
+  // ---- PROGRESO ----
+  function renderProgreso(el) {
+    var checkins = JSON.parse(localStorage.getItem('mc_checkin') || '[]');
+    var html = '<h2 style="font-family:Cormorant Garamond,serif;font-size:24px;margin-bottom:16px">Mi Progreso</h2>';
+
+    // Check-in form
+    html += '<div class="mc-card"><h3>📝 Check-in de hoy</h3>' +
+      '<div style="margin-bottom:12px"><label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:4px">Peso (kg)</label>' +
+      '<input type="number" id="mcCheckinPeso" placeholder="Ej: 72" style="width:100%;padding:10px;border:1px solid #e8e0d4;border-radius:8px;font-size:14px"></div>' +
+      '<div style="margin-bottom:12px"><label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:4px">¿Cómo te sientes hoy?</label>' +
+      '<div style="display:flex;gap:8px">' +
+        '<button onclick="MiCodigo.setMood(this,\'😊\')" class="mc-mood-btn" style="flex:1;padding:10px;border:1px solid #e8e0d4;border-radius:8px;font-size:20px;background:#fff;cursor:pointer">😊</button>' +
+        '<button onclick="MiCodigo.setMood(this,\'😐\')" class="mc-mood-btn" style="flex:1;padding:10px;border:1px solid #e8e0d4;border-radius:8px;font-size:20px;background:#fff;cursor:pointer">😐</button>' +
+        '<button onclick="MiCodigo.setMood(this,\'😔\')" class="mc-mood-btn" style="flex:1;padding:10px;border:1px solid #e8e0d4;border-radius:8px;font-size:20px;background:#fff;cursor:pointer">😔</button>' +
+        '<button onclick="MiCodigo.setMood(this,\'💪\')" class="mc-mood-btn" style="flex:1;padding:10px;border:1px solid #e8e0d4;border-radius:8px;font-size:20px;background:#fff;cursor:pointer">💪</button>' +
+      '</div></div>' +
+      '<button onclick="MiCodigo.saveCheckin()" style="width:100%;padding:12px;background:var(--verde);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Guardar check-in</button></div>';
+
+    // History
+    if (checkins.length > 0) {
+      html += '<div class="mc-card"><h3>📈 Historial</h3>';
+      checkins.slice(-10).reverse().forEach(function(c){
+        html += '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0e8db;font-size:13px"><span style="color:#8a8a7a">' + new Date(c.fecha).toLocaleDateString('es-MX',{day:'numeric',month:'short'}) + '</span><span style="font-weight:600">' + (c.peso||'--') + ' kg</span><span>' + (c.animo||'') + '</span></div>';
+      });
+      html += '</div>';
+    }
+
+    el.innerHTML = html;
+  }
+
+  var selectedMood = '';
+  function setMood(btn, mood) {
+    selectedMood = mood;
+    document.querySelectorAll('.mc-mood-btn').forEach(function(b){ b.style.borderColor = '#e8e0d4'; b.style.background = '#fff'; });
+    btn.style.borderColor = '#2E7D52';
+    btn.style.background = 'rgba(46,125,82,.06)';
+  }
+
+  function saveCheckin() {
+    var peso = document.getElementById('mcCheckinPeso').value;
+    if (!peso) return;
+    var checkins = JSON.parse(localStorage.getItem('mc_checkin') || '[]');
+    checkins.push({ fecha: new Date().toISOString(), peso: peso, animo: selectedMood });
+    localStorage.setItem('mc_checkin', JSON.stringify(checkins));
+    selectedMood = '';
+    var el = document.getElementById('mcSectionContent');
+    if (el) renderProgreso(el);
+  }
+
+  // ---- MAS ----
+  function renderMas(el) {
+    var html = '<h2 style="font-family:Cormorant Garamond,serif;font-size:24px;margin-bottom:16px">Más Recursos</h2>';
+
+    // Course
+    if (data.curso && data.curso.length > 0) {
+      html += '<div class="mc-card"><h3>🎓 Mini-Curso Hormonal</h3>';
+      data.curso.slice(0, 5).forEach(function(lesson, i){
+        html += '<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f0e8db;cursor:pointer">' +
+          '<div style="width:28px;height:28px;background:var(--verde);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;flex-shrink:0">' + (i+1) + '</div>' +
+          '<div><div style="font-size:13px;font-weight:600">' + (lesson.titulo || lesson.nombre || 'Lección ' + (i+1)) + '</div></div></div>';
+      });
+      html += '</div>';
+    }
+
+    // Exercises
+    if (data.exercicios && data.exercicios.length > 0) {
+      html += '<div class="mc-card"><h3>💪 Ejercicios</h3>';
+      data.exercicios.slice(0, 5).forEach(function(ex){
+        html += '<div style="padding:8px 0;border-bottom:1px solid #f0e8db;font-size:13px">' + (ex.emoji||'🏃') + ' ' + (ex.nombre || ex.titulo || ex) + '</div>';
+      });
+      html += '</div>';
+    }
+
+    // Supplements
+    if (data.suplementos && data.suplementos.length > 0) {
+      html += '<div class="mc-card"><h3>💊 Suplementos Recomendados</h3>';
+      data.suplementos.slice(0, 5).forEach(function(s){
+        html += '<div style="padding:8px 0;border-bottom:1px solid #f0e8db;font-size:13px">' + (s.emoji||'💊') + ' <strong>' + (s.nombre || s) + '</strong>' + (s.beneficio ? ' — ' + s.beneficio : '') + '</div>';
+      });
+      html += '</div>';
+    }
+
+    el.innerHTML = html;
+  }
+
+  // Check URL params for auto-activation
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var k = params.get('k');
+    if (k && !isPremium()) {
+      if (activate(k)) {
+        // Auto-navigate to Mi Codigo tab
+        setTimeout(function(){ PortalApp.navigate('micodigo'); }, 500);
+      }
+    }
+  })();
+
+  return { render, navigate, showKeyInput, tryActivate, filterRecetas, addWater, setMood: setMood, saveCheckin, isPremium };
 })();
 
 // ===== SERVICE WORKER REGISTRATION =====
