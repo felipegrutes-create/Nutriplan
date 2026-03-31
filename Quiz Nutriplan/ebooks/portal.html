@@ -2159,7 +2159,7 @@ document.querySelectorAll('.card-grid').forEach(grid => observer.observe(grid));
       <label>Mi meta personal</label>
       <input type="text" id="profileGoal" placeholder="Ej: Sentirme con más energía" oninput="Perfil.save()">
     </div>
-    <a href="../mi-codigo-app/index.html" class="profile-link">📱 Abrir App Mi Código</a>
+    <a onclick="MiCodigo.open()" class="profile-link" style="cursor:pointer">⭐ Abrir Mi Código</a>
     <a href="#" onclick="document.getElementById('tab-inicio').scrollTop=0;PortalApp.navigate('inicio');return false" class="profile-link">📚 Ver todos mis ebooks</a>
     <button class="install-btn" id="installBtn" style="display:none" onclick="Perfil.installApp()">📲 Instalar app en tu celular</button>
   </div>
