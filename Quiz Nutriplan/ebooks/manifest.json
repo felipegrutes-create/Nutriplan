@@ -2,7 +2,7 @@
   "name": "El Código Hormonal",
   "short_name": "Código Hormonal",
   "description": "Tu biblioteca completa de salud hormonal y recetas",
-  "start_url": "./portal.html",
+  "start_url": "./portal.html?standalone=1",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#FFFDF8",

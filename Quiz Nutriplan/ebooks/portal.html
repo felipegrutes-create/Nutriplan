@@ -2761,7 +2761,7 @@ if ('serviceWorker' in navigator) {
 // Welcome screen logic
 (function(){
   // Show welcome screen only on first visit and if not installed as PWA
-  var isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+  var isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone || document.referrer.includes('android-app://') || window.location.search.includes('standalone=1');
   if(!isStandalone && !localStorage.getItem('welcome_seen')){
     var ws = document.getElementById('welcomeScreen');
     if(ws) ws.style.display = 'flex';
