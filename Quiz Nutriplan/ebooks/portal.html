@@ -2221,18 +2221,23 @@ const Comunidad = (() => {
   const catEmojis = {progreso:'💪',pregunta:'❓',motivacion:'✨',receta:'🍽️'};
 
   function init() {
+    // Force reload seed v2 (with avatar images)
+    if (!localStorage.getItem('comunidad_v2')) {
+      localStorage.removeItem('portal_comunidad');
+      localStorage.setItem('comunidad_v2', '1');
+    }
     const saved = localStorage.getItem('portal_comunidad');
     if (saved) {
       posts = JSON.parse(saved);
       loaded = true;
       renderAll();
     } else {
-      fetch('data/comunidad-seed.json').then(r=>r.json()).then(d => {
+      fetch('data/comunidad-seed.json').then(function(r){ return r.json(); }).then(function(d) {
         posts = d;
         localStorage.setItem('portal_comunidad', JSON.stringify(posts));
         loaded = true;
         renderAll();
-      }).catch(() => { posts = []; loaded = true; renderAll(); });
+      }).catch(function() { posts = []; loaded = true; renderAll(); });
     }
   }
 
