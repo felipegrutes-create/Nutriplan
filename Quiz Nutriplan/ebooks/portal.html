@@ -3061,10 +3061,10 @@ const MiCodigo = (function() {
     // Peso
     html += '<div class="mc-card" style="display:flex;justify-content:space-between;align-items:center">' +
       '<div><div style="font-size:13px;font-weight:600">Peso</div>' +
-      '<div style="font-size:11px;color:#8a8a7a">Ultimo: ' + (lastWeight ? lastWeight + ' kg' : '--') + '</div></div>' +
+      '<div style="font-size:11px;color:rgba(255,255,255,.4)">Ultimo: ' + (lastWeight ? lastWeight + ' kg' : '--') + '</div></div>' +
       '<div style="display:flex;align-items:center;gap:6px">' +
-        '<input type="number" id="mcPeso" step="0.1" min="30" max="300" value="' + (_peso || (lastWeight ? lastWeight : '')) + '" placeholder="Tu peso" style="background:#fff;border:1px solid #e8e0d4;border-radius:8px;padding:6px 12px;font-size:16px;font-weight:700;width:80px;text-align:center;font-family:DM Sans,sans-serif">' +
-        '<span style="font-size:12px;color:#8a8a7a">kg</span>' +
+        '<input type="number" id="mcPeso" step="0.1" min="30" max="300" value="' + (_peso || (lastWeight ? lastWeight : '')) + '" placeholder="Tu peso" style="background:#1a1a1a;color:#fff;border:1px solid rgba(201,146,42,.2);border-radius:8px;padding:6px 12px;font-size:16px;font-weight:700;width:80px;text-align:center;font-family:DM Sans,sans-serif">' +
+        '<span style="font-size:12px;color:rgba(255,255,255,.4)">kg</span>' +
       '</div></div>';
 
     // Energia
@@ -3083,9 +3083,9 @@ const MiCodigo = (function() {
       '<div style="display:flex;gap:8px;justify-content:center" id="mcMoodGroup">';
     moods.forEach(function(m) {
       var active = _selectedMood === m.val;
-      html += '<button data-mood="' + m.val + '" onclick="MiCodigo.selectMood(\'' + m.val + '\')" style="text-align:center;padding:8px 12px;border-radius:12px;border:2px solid ' + (active ? 'var(--verde)' : '#e8e0d4') + ';background:' + (active ? 'rgba(46,125,82,.08)' : '#fff') + ';cursor:pointer">' +
+      html += '<button data-mood="' + m.val + '" onclick="MiCodigo.selectMood(\'' + m.val + '\')" style="text-align:center;padding:8px 12px;border-radius:12px;border:2px solid ' + (active ? 'var(--verde)' : 'rgba(255,255,255,.08)') + ';background:' + (active ? 'rgba(46,125,82,.08)' : 'rgba(255,255,255,.04)') + ';cursor:pointer">' +
         '<div style="font-size:24px">' + m.emoji + '</div>' +
-        '<div style="font-size:10px;color:' + (active ? 'var(--verde)' : '#8a8a7a') + ';font-weight:' + (active ? '700' : '400') + ';margin-top:2px">' + m.val + '</div>' +
+        '<div style="font-size:10px;color:' + (active ? 'var(--verde)' : 'rgba(255,255,255,.5)') + ';font-weight:' + (active ? '700' : '400') + ';margin-top:2px">' + m.val + '</div>' +
       '</button>';
     });
     html += '</div></div>';
@@ -3102,7 +3102,7 @@ const MiCodigo = (function() {
       '<div style="display:flex;gap:6px;flex-wrap:wrap">';
     for (var wi = 0; wi < waterGoal; wi++) {
       var filled = wi < water;
-      html += '<button onclick="MiCodigo.setWater(' + (wi+1) + ')" style="width:32px;height:32px;border-radius:8px;border:none;cursor:pointer;font-size:16px;background:' + (filled ? 'var(--verde)' : '#e8e0d4') + ';opacity:' + (filled ? '1' : '.4') + '">💧</button>';
+      html += '<button onclick="MiCodigo.setWater(' + (wi+1) + ')" style="width:32px;height:32px;border-radius:8px;border:none;cursor:pointer;font-size:16px;background:' + (filled ? 'var(--verde)' : 'rgba(255,255,255,.08)') + ';opacity:' + (filled ? '1' : '.4') + '">💧</button>';
     }
     html += '</div></div>';
 
@@ -3114,7 +3114,7 @@ const MiCodigo = (function() {
       '<div style="display:flex;flex-wrap:wrap;gap:6px">';
     mealNames.forEach(function(m) {
       var done = meals[m];
-      html += '<button data-meal="' + m + '" onclick="MiCodigo.toggleMeal(\'' + m + '\')" style="padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid ' + (done ? 'rgba(46,125,82,.2)' : '#e8e0d4') + ';background:' + (done ? 'rgba(46,125,82,.08)' : '#fff') + ';color:' + (done ? 'var(--verde)' : '#8a8a7a') + '">' + (done ? '✅' : '⬜') + ' ' + mealLabels[m] + '</button>';
+      html += '<button data-meal="' + m + '" onclick="MiCodigo.toggleMeal(\'' + m + '\')" style="padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid ' + (done ? 'rgba(46,125,82,.2)' : 'rgba(255,255,255,.08)') + ';background:' + (done ? 'rgba(46,125,82,.08)' : 'rgba(255,255,255,.04)') + ';color:' + (done ? 'var(--verde)' : 'rgba(255,255,255,.5)') + '">' + (done ? '✅' : '⬜') + ' ' + mealLabels[m] + '</button>';
     });
     html += '</div></div>';
 
@@ -3123,12 +3123,12 @@ const MiCodigo = (function() {
       '<div class="mc-card" style="flex:1;text-align:center;cursor:pointer;margin-bottom:0" onclick="MiCodigo.toggleSupp()">' +
         '<div style="font-size:24px;margin-bottom:4px">💊</div>' +
         '<div style="font-size:12px;font-weight:600">Suplemento</div>' +
-        '<div style="margin-top:6px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;background:' + (supp ? 'rgba(46,125,82,.08)' : '#f5f0e8') + ';color:' + (supp ? 'var(--verde)' : '#8a8a7a') + '">' + (supp ? '✅ Tomado' : '⬜ Pendiente') + '</div>' +
+        '<div style="margin-top:6px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;background:' + (supp ? 'rgba(46,125,82,.08)' : 'rgba(255,255,255,.06)') + ';color:' + (supp ? 'var(--verde)' : 'rgba(255,255,255,.5)') + '">' + (supp ? '✅ Tomado' : '⬜ Pendiente') + '</div>' +
       '</div>' +
       '<div class="mc-card" style="flex:1;text-align:center;cursor:pointer;margin-bottom:0" onclick="MiCodigo.toggleExercise()">' +
         '<div style="font-size:24px;margin-bottom:4px">🏃‍♀️</div>' +
         '<div style="font-size:12px;font-weight:600">Ejercicio</div>' +
-        '<div style="margin-top:6px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;background:' + (exercise ? 'rgba(46,125,82,.08)' : '#f5f0e8') + ';color:' + (exercise ? 'var(--verde)' : '#8a8a7a') + '">' + (exercise ? '✅ Hecho' : '⬜ Pendiente') + '</div>' +
+        '<div style="margin-top:6px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;background:' + (exercise ? 'rgba(46,125,82,.08)' : 'rgba(255,255,255,.06)') + ';color:' + (exercise ? 'var(--verde)' : 'rgba(255,255,255,.5)') + '">' + (exercise ? '✅ Hecho' : '⬜ Pendiente') + '</div>' +
       '</div>' +
     '</div>';
 
@@ -3187,8 +3187,8 @@ const MiCodigo = (function() {
     var btns = document.querySelectorAll('#mcMoodGroup button');
     btns.forEach(function(b) {
       var active = b.getAttribute('data-mood') === val;
-      b.style.border = '2px solid ' + (active ? 'var(--verde)' : '#e8e0d4');
-      b.style.background = active ? 'rgba(46,125,82,.08)' : '#fff';
+      b.style.border = '2px solid ' + (active ? 'var(--verde)' : 'rgba(255,255,255,.08)');
+      b.style.background = active ? 'rgba(46,125,82,.08)' : 'rgba(255,255,255,.04)';
     });
   }
 
@@ -3314,7 +3314,7 @@ const MiCodigo = (function() {
 
     // Search
     html += '<div style="position:relative;margin-bottom:12px">' +
-      '<input type="search" id="mcRecetaSearch" placeholder="Buscar receta o ingrediente..." value="' + (_recipeSearch || '') + '" oninput="MiCodigo.onRecipeSearch(this.value)" style="width:100%;padding:10px 12px 10px 36px;border:1px solid #e8e0d4;border-radius:50px;font-size:14px;font-family:DM Sans,sans-serif;outline:none">' +
+      '<input type="search" id="mcRecetaSearch" placeholder="Buscar receta o ingrediente..." value="' + (_recipeSearch || '') + '" oninput="MiCodigo.onRecipeSearch(this.value)" style="width:100%;padding:10px 12px 10px 36px;border:1px solid rgba(201,146,42,.2);border-radius:50px;font-size:14px;font-family:DM Sans,sans-serif;outline:none;background:#1a1a1a;color:#fff">' +
       '<span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:16px;pointer-events:none">🔍</span>' +
     '</div>';
 
@@ -3343,13 +3343,13 @@ const MiCodigo = (function() {
     }
 
     // Count
-    html += '<div style="font-size:12px;color:#8a8a7a;font-weight:600;margin-bottom:8px">' + filtered.length + ' receta' + (filtered.length !== 1 ? 's' : '') + '</div>';
+    html += '<div style="font-size:12px;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:8px">' + filtered.length + ' receta' + (filtered.length !== 1 ? 's' : '') + '</div>';
 
     // Recipe cards
     if (filtered.length === 0) {
-      html += '<div style="text-align:center;padding:32px 16px;color:#8a8a7a">' +
+      html += '<div style="text-align:center;padding:32px 16px;color:rgba(255,255,255,.5)">' +
         '<div style="font-size:32px;margin-bottom:8px">' + (_recipeFilter === 'favs' ? '💛' : '🔍') + '</div>' +
-        '<div style="font-size:14px;font-weight:700;margin-bottom:4px">' + (_recipeFilter === 'favs' ? 'Sin favoritos aun' : 'Sin resultados') + '</div>' +
+        '<div style="font-size:14px;font-weight:700;margin-bottom:4px;color:#fff">' + (_recipeFilter === 'favs' ? 'Sin favoritos aun' : 'Sin resultados') + '</div>' +
         '<div style="font-size:12px">' + (_recipeFilter === 'favs' ? 'Toca el corazon en cualquier receta para guardarla' : 'Prueba con otra palabra') + '</div>' +
       '</div>';
     } else {
@@ -3364,8 +3364,8 @@ const MiCodigo = (function() {
               '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">' +
                 '<span style="font-size:9px;font-weight:700;color:#fff;background:' + getCatColor(r.categoria) + ';padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap">' + getCatLabel(r.categoria) + '</span>' +
               '</div>' +
-              '<div style="font-weight:700;font-size:13px;line-height:1.3;margin-bottom:2px">' + r.nombre + '</div>' +
-              '<div style="font-size:11px;color:#8a8a7a">' + meta + '</div>' +
+              '<div style="font-weight:700;font-size:13px;line-height:1.3;margin-bottom:2px;color:#fff">' + r.nombre + '</div>' +
+              '<div style="font-size:11px;color:rgba(255,255,255,.4)">' + meta + '</div>' +
             '</div>' +
             '<button onclick="event.stopPropagation();MiCodigo.toggleRecipeFav(' + r.id + ')" class="mc-fav-btn">' + (fav ? '❤️' : '🤍') + '</button>' +
           '</div>' +
@@ -3406,20 +3406,20 @@ const MiCodigo = (function() {
     var modal = document.createElement('div');
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
-    modal.style.cssText = 'position:fixed;inset:0;background:#fff;z-index:300;overflow-y:auto;max-width:480px;margin:0 auto';
+    modal.style.cssText = 'position:fixed;inset:0;background:#0a0a0a;z-index:300;overflow-y:auto;max-width:480px;margin:0 auto';
 
     var modalHtml = '<div style="padding:20px">' +
       '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">' +
-        '<button onclick="this.closest(\'[role=dialog]\').remove()" style="background:none;border:none;font-size:24px;cursor:pointer;color:#1a1a1a">←</button>' +
+        '<button onclick="this.closest(\'[role=dialog]\').remove()" style="background:none;border:none;font-size:24px;cursor:pointer;color:#fff">←</button>' +
         '<button onclick="MiCodigo.toggleFavInDetail(' + id + ',this)" style="background:none;border:none;font-size:24px;cursor:pointer">' + (fav ? '❤️' : '🤍') + '</button>' +
       '</div>' +
       '<span style="font-size:10px;font-weight:700;color:#fff;background:' + getCatColor(r.categoria) + ';padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px">' + getCatLabel(r.categoria) + '</span>' +
-      '<h2 style="font-size:20px;font-weight:800;margin:12px 0 16px">' + r.nombre + '</h2>';
+      '<h2 style="font-size:20px;font-weight:800;margin:12px 0 16px;color:#fff">' + r.nombre + '</h2>';
 
     if (hasIngredients) {
       modalHtml += '<div style="margin-bottom:20px">' +
         '<div style="font-size:12px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Ingredientes</div>' +
-        '<ul style="padding-left:20px;font-size:14px;line-height:1.8;color:#1a1a1a">';
+        '<ul style="padding-left:20px;font-size:14px;line-height:1.8;color:rgba(255,255,255,.7)">';
       r.ingredientes.forEach(function(ing) { modalHtml += '<li>' + ing + '</li>'; });
       modalHtml += '</ul></div>';
     }
@@ -3427,15 +3427,15 @@ const MiCodigo = (function() {
     if (hasSteps) {
       modalHtml += '<div style="margin-bottom:20px">' +
         '<div style="font-size:12px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Preparacion</div>' +
-        '<ol style="padding-left:20px;font-size:14px;line-height:1.8;color:#1a1a1a">';
+        '<ol style="padding-left:20px;font-size:14px;line-height:1.8;color:rgba(255,255,255,.7)">';
       r.preparacion.forEach(function(step) { modalHtml += '<li style="margin-bottom:6px">' + step + '</li>'; });
       modalHtml += '</ol></div>';
     }
 
     if (r.consejo) {
-      modalHtml += '<div class="mc-card" style="background:#FFFBEB;border-color:#FDE68A">' +
-        '<div style="font-size:12px;font-weight:700;color:#92400E;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Consejo Nutricional</div>' +
-        '<div style="font-size:13px;color:#78350F;line-height:1.6">' + r.consejo + '</div>' +
+      modalHtml += '<div class="mc-card" style="background:rgba(201,146,42,.1);border-color:rgba(201,146,42,.2)">' +
+        '<div style="font-size:12px;font-weight:700;color:#C9922A;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Consejo Nutricional</div>' +
+        '<div style="font-size:13px;color:rgba(255,255,255,.7);line-height:1.6">' + r.consejo + '</div>' +
       '</div>';
     }
 
@@ -3491,7 +3491,7 @@ const MiCodigo = (function() {
       despensa: {emoji:'🏪', label:'Despensa', color:'var(--gold)'},
       lacteos: {emoji:'🥛', label:'Lacteos', color:'#3b82f6'},
       condimentos: {emoji:'🧂', label:'Condimentos', color:'#8b5cf6'},
-      otros: {emoji:'📦', label:'Otros', color:'#8a8a7a'}
+      otros: {emoji:'📦', label:'Otros', color:'rgba(255,255,255,.5)'}
     };
 
     var html = '';
@@ -3504,10 +3504,10 @@ const MiCodigo = (function() {
 
     if (total > 0) {
       html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">' +
-        '<span style="font-size:12px;color:#8a8a7a">' + (total - checked) + ' por comprar · ' + checked + ' comprados</span>' +
+        '<span style="font-size:12px;color:rgba(255,255,255,.4)">' + (total - checked) + ' por comprar · ' + checked + ' comprados</span>' +
         '<div style="display:flex;gap:8px">' +
-          '<button onclick="MiCodigo.shareShoppingList()" style="background:none;border:1px solid #e8e0d4;border-radius:8px;padding:4px 8px;font-size:11px;cursor:pointer">📤 Compartir</button>' +
-          '<button onclick="MiCodigo.clearCheckedShopping()" style="background:none;border:1px solid #e8e0d4;border-radius:8px;padding:4px 8px;font-size:11px;cursor:pointer">🗑️ Limpiar</button>' +
+          '<button onclick="MiCodigo.shareShoppingList()" style="background:none;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:4px 8px;font-size:11px;cursor:pointer;color:rgba(255,255,255,.7)">📤 Compartir</button>' +
+          '<button onclick="MiCodigo.clearCheckedShopping()" style="background:none;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:4px 8px;font-size:11px;cursor:pointer;color:rgba(255,255,255,.7)">🗑️ Limpiar</button>' +
         '</div>' +
       '</div>';
 
@@ -3530,22 +3530,22 @@ const MiCodigo = (function() {
         html += '<div style="margin-bottom:14px">' +
           '<div style="font-size:11px;font-weight:700;color:' + meta.color + ';margin-bottom:6px;letter-spacing:.5px;display:flex;align-items:center;gap:6px">' +
             meta.emoji + ' ' + meta.label.toUpperCase() +
-            ' <span style="background:#f5f0e8;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600">' + list.length + '</span>' +
+            ' <span style="background:rgba(255,255,255,.06);padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;color:rgba(255,255,255,.5)">' + list.length + '</span>' +
           '</div>';
         list.forEach(function(item) {
           var ch = item.checked;
-          html += '<div onclick="MiCodigo.toggleShoppingItem(\'' + item.id + '\')" style="background:#fff;border-radius:10px;padding:10px 12px;margin-bottom:4px;border:1px solid #e8e0d4;display:flex;align-items:center;gap:10px;cursor:pointer;' + (ch ? 'opacity:.5;' : '') + '">' +
-            '<div style="width:22px;height:22px;border-radius:6px;border:' + (ch ? 'none' : '2px solid #D1D5DB') + ';background:' + (ch ? 'var(--verde)' : 'transparent') + ';flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff">' + (ch ? '✓' : '') + '</div>' +
-            '<span style="font-size:13px;color:#1a1a1a;' + (ch ? 'text-decoration:line-through;color:#8a8a7a;' : '') + 'flex:1">' + item.name + '</span>' +
-            (item.source ? '<span style="font-size:10px;background:#f5f0e8;color:#8a8a7a;padding:2px 6px;border-radius:8px;white-space:nowrap;max-width:80px;overflow:hidden;text-overflow:ellipsis">📖 ' + item.source + '</span>' : '') +
+          html += '<div onclick="MiCodigo.toggleShoppingItem(\'' + item.id + '\')" style="background:#141414;border-radius:10px;padding:10px 12px;margin-bottom:4px;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:10px;cursor:pointer;' + (ch ? 'opacity:.5;' : '') + '">' +
+            '<div style="width:22px;height:22px;border-radius:6px;border:' + (ch ? 'none' : '2px solid rgba(255,255,255,.2)') + ';background:' + (ch ? 'var(--verde)' : 'transparent') + ';flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff">' + (ch ? '✓' : '') + '</div>' +
+            '<span style="font-size:13px;color:#fff;' + (ch ? 'text-decoration:line-through;color:rgba(255,255,255,.4);' : '') + 'flex:1">' + item.name + '</span>' +
+            (item.source ? '<span style="font-size:10px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.4);padding:2px 6px;border-radius:8px;white-space:nowrap;max-width:80px;overflow:hidden;text-overflow:ellipsis">📖 ' + item.source + '</span>' : '') +
           '</div>';
         });
         html += '</div>';
       });
     } else {
-      html += '<div style="text-align:center;padding:40px 20px;color:#8a8a7a">' +
+      html += '<div style="text-align:center;padding:40px 20px;color:rgba(255,255,255,.5)">' +
         '<div style="font-size:40px;margin-bottom:8px">🛒</div>' +
-        '<div style="font-size:14px;font-weight:700;margin-bottom:4px">Tu lista esta vacia</div>' +
+        '<div style="font-size:14px;font-weight:700;margin-bottom:4px;color:#fff">Tu lista esta vacia</div>' +
         '<div style="font-size:12px">Agrega items manualmente o desde tus recetas</div>' +
       '</div>';
     }
@@ -3615,12 +3615,12 @@ const MiCodigo = (function() {
     modal.setAttribute('role', 'dialog');
     modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:400;display:flex;align-items:center;justify-content:center;padding:20px';
     modal.onclick = function(e) { if (e.target === modal) modal.remove(); };
-    modal.innerHTML = '<div style="background:#fff;border-radius:16px;padding:20px;max-width:400px;width:100%;max-height:80vh;overflow-y:auto">' +
+    modal.innerHTML = '<div style="background:#141414;border-radius:16px;padding:20px;max-width:400px;width:100%;max-height:80vh;overflow-y:auto;border:1px solid rgba(255,255,255,.08)">' +
       '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">' +
-        '<h3 style="font-size:16px;font-weight:700">📋 Tu lista de compras</h3>' +
-        '<button onclick="this.closest(\'[role=dialog]\').remove()" style="background:none;border:none;font-size:20px;cursor:pointer">✕</button>' +
+        '<h3 style="font-size:16px;font-weight:700;color:#fff">📋 Tu lista de compras</h3>' +
+        '<button onclick="this.closest(\'[role=dialog]\').remove()" style="background:none;border:none;font-size:20px;cursor:pointer;color:#fff">✕</button>' +
       '</div>' +
-      '<textarea id="mcShareText" readonly style="width:100%;height:300px;border:1px solid #e8e0d4;border-radius:10px;padding:12px;font-size:13px;font-family:inherit;resize:none">' + text + '</textarea>' +
+      '<textarea id="mcShareText" readonly style="width:100%;height:300px;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px;font-size:13px;font-family:inherit;resize:none;background:#1a1a1a;color:#fff">' + text + '</textarea>' +
       '<button onclick="document.getElementById(\'mcShareText\').select();document.execCommand(\'copy\');alert(\'✅ Copiado!\')" style="width:100%;margin-top:10px;padding:12px;background:var(--verde);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">📋 Copiar lista</button>' +
     '</div>';
     document.body.appendChild(modal);
@@ -3660,25 +3660,25 @@ const MiCodigo = (function() {
     var html = '';
 
     // Period filter
-    html += '<div style="display:flex;background:#fff;border-radius:10px;padding:3px;margin-bottom:16px;border:1px solid #e8e0d4">';
+    html += '<div style="display:flex;background:#1a1a1a;border-radius:10px;padding:3px;margin-bottom:16px;border:1px solid rgba(255,255,255,.08)">';
     periods.forEach(function(p) {
-      html += '<div onclick="MiCodigo.setProgressPeriod(' + p.val + ')" style="flex:1;text-align:center;padding:6px;font-size:12px;cursor:pointer;border-radius:8px;' + (_progressPeriod === p.val ? 'color:#fff;background:var(--verde);font-weight:700' : 'color:#8a8a7a') + '">' + p.label + '</div>';
+      html += '<div onclick="MiCodigo.setProgressPeriod(' + p.val + ')" style="flex:1;text-align:center;padding:6px;font-size:12px;cursor:pointer;border-radius:8px;' + (_progressPeriod === p.val ? 'color:#fff;background:var(--verde);font-weight:700' : 'color:rgba(255,255,255,.5)') + '">' + p.label + '</div>';
     });
     html += '</div>';
 
     // Weight summary
     html += '<div class="mc-card" style="padding:16px">' +
       '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">' +
-        '<span style="font-size:15px;font-weight:800">⚖️ Tu Peso</span>' +
+        '<span style="font-size:15px;font-weight:800;color:#fff">⚖️ Tu Peso</span>' +
         (lost > 0 ? '<span style="background:rgba(46,125,82,.08);color:var(--verde);font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px">🎉 −' + lost + ' kg</span>' : '') +
       '</div>' +
       '<div style="display:flex;gap:0;margin-bottom:16px;text-align:center">' +
-        '<div style="flex:1;padding:10px 0;border-right:1px solid #e8e0d4">' +
-          '<div style="font-size:10px;color:#8a8a7a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Inicio</div>' +
-          '<div style="font-size:22px;font-weight:800;color:#1a1a1a">' + (startWeight || '--') + '</div>' +
-          '<div style="font-size:10px;color:#8a8a7a">kg</div>' +
+        '<div style="flex:1;padding:10px 0;border-right:1px solid rgba(255,255,255,.06)">' +
+          '<div style="font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Inicio</div>' +
+          '<div style="font-size:22px;font-weight:800;color:#fff">' + (startWeight || '--') + '</div>' +
+          '<div style="font-size:10px;color:rgba(255,255,255,.4)">kg</div>' +
         '</div>' +
-        '<div style="flex:1;padding:10px 0;border-right:1px solid #e8e0d4">' +
+        '<div style="flex:1;padding:10px 0;border-right:1px solid rgba(255,255,255,.06)">' +
           '<div style="font-size:10px;color:var(--verde);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;font-weight:700">Actual</div>' +
           '<div style="font-size:28px;font-weight:800;color:var(--verde)">' + (lastWeight || '--') + '</div>' +
           '<div style="font-size:10px;color:var(--verde)">kg</div>' +
@@ -3703,15 +3703,15 @@ const MiCodigo = (function() {
         : '🎉 ¡Alcanzaste tu meta! ¡Felicidades!';
       html += '<div style="margin-bottom:14px">' +
         '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">' +
-          '<span style="font-size:11px;color:#8a8a7a">Progreso hacia tu meta</span>' +
+          '<span style="font-size:11px;color:rgba(255,255,255,.4)">Progreso hacia tu meta</span>' +
           '<span style="font-size:12px;font-weight:800;color:var(--verde)">' + pct + '%</span>' +
         '</div>' +
         '<div class="mc-progress-bar"><div class="mc-progress-fill" style="width:' + pct + '%"></div></div>' +
         '<div style="text-align:center;margin-top:8px;font-size:12px;font-weight:600;color:var(--gold)">' + motivMsg + '</div>' +
       '</div>';
     } else if (!goalWeight && lastWeight) {
-      html += '<div style="background:#fffbeb;border-radius:10px;padding:10px;text-align:center;margin-bottom:14px">' +
-        '<div style="font-size:12px;color:#92400e">Define tu <strong>peso meta</strong> en Mas → Mi Perfil para ver tu progreso visual</div>' +
+      html += '<div style="background:rgba(201,146,42,.1);border-radius:10px;padding:10px;text-align:center;margin-bottom:14px">' +
+        '<div style="font-size:12px;color:rgba(255,255,255,.5)">Define tu <strong>peso meta</strong> en Mas → Mi Perfil para ver tu progreso visual</div>' +
       '</div>';
     }
     html += '</div>';
@@ -3720,15 +3720,15 @@ const MiCodigo = (function() {
     var dates = Object.keys(checkins).sort().reverse().slice(0, 10);
     if (dates.length > 0) {
       html += '<div class="mc-card">' +
-        '<div style="font-size:13px;font-weight:700;margin-bottom:8px">📝 Ultimos check-ins</div>';
+        '<div style="font-size:13px;font-weight:700;margin-bottom:8px;color:#fff">📝 Ultimos check-ins</div>';
       dates.forEach(function(d) {
         var c = checkins[d];
         var moodEmojis = {Genial:'🤩', Bien:'😊', Regular:'😐', Mal:'😢'};
         var dateLabel = new Date(d + 'T12:00:00').toLocaleDateString('es', {day:'numeric', month:'short'});
-        html += '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0e8db;font-size:13px">' +
-          '<span style="color:#8a8a7a">' + dateLabel + '</span>' +
-          '<span style="font-weight:600">' + (c.peso ? c.peso + ' kg' : '--') + '</span>' +
-          '<span>' + (moodEmojis[c.humor] || '😐') + ' ' + (c.humor || '--') + '</span>' +
+        html += '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:13px">' +
+          '<span style="color:rgba(255,255,255,.4)">' + dateLabel + '</span>' +
+          '<span style="font-weight:600;color:#fff">' + (c.peso ? c.peso + ' kg' : '--') + '</span>' +
+          '<span style="color:rgba(255,255,255,.7)">' + (moodEmojis[c.humor] || '😐') + ' ' + (c.humor || '--') + '</span>' +
         '</div>';
       });
       html += '</div>';
@@ -3740,7 +3740,7 @@ const MiCodigo = (function() {
       var waterAvg = (waterDates.reduce(function(s, d) { return s + (water[d] || 0); }, 0) / waterDates.length).toFixed(1);
       html += '<div class="mc-card">' +
         '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">' +
-          '<span style="font-size:13px;font-weight:700">💧 Agua</span>' +
+          '<span style="font-size:13px;font-weight:700;color:#fff">💧 Agua</span>' +
           '<span style="font-size:11px;color:#3b82f6;font-weight:600">' + waterAvg + ' vasos/dia</span>' +
         '</div>' +
         '<div style="display:flex;gap:4px;align-items:flex-end;height:60px">';
@@ -3750,7 +3750,7 @@ const MiCodigo = (function() {
         var dayLabel = new Date(d + 'T12:00:00').toLocaleDateString('es', {weekday:'short'});
         html += '<div style="flex:1;text-align:center">' +
           '<div style="background:#93c5fd;border-radius:4px;height:' + h + 'px;margin:0 auto;width:20px"></div>' +
-          '<div style="font-size:9px;color:#8a8a7a;margin-top:2px">' + dayLabel + '</div>' +
+          '<div style="font-size:9px;color:rgba(255,255,255,.4);margin-top:2px">' + dayLabel + '</div>' +
         '</div>';
       });
       html += '</div></div>';
@@ -3763,25 +3763,25 @@ const MiCodigo = (function() {
     if (Object.keys(moodCounts).length > 0) {
       var moodEmojis2 = {Genial:'🤩', Bien:'😊', Regular:'😐', Mal:'😢'};
       html += '<div class="mc-card">' +
-        '<div style="font-size:13px;font-weight:700;margin-bottom:8px">😊 Humor</div>' +
+        '<div style="font-size:13px;font-weight:700;margin-bottom:8px;color:#fff">😊 Humor</div>' +
         '<div style="display:flex;gap:8px;flex-wrap:wrap">';
       Object.keys(moodCounts).sort(function(a, b) { return moodCounts[b] - moodCounts[a]; }).forEach(function(mood) {
         var pctM = entries.length > 0 ? Math.round((moodCounts[mood] / entries.length) * 100) : 0;
         html += '<div style="text-align:center;flex:1;min-width:60px">' +
           '<div style="font-size:24px">' + (moodEmojis2[mood] || '😐') + '</div>' +
           '<div style="font-size:14px;font-weight:800;color:var(--verde)">' + pctM + '%</div>' +
-          '<div style="font-size:10px;color:#8a8a7a">' + mood + '</div>' +
+          '<div style="font-size:10px;color:rgba(255,255,255,.4)">' + mood + '</div>' +
         '</div>';
       });
       html += '</div></div>';
     }
 
     // Streak card
-    html += '<div class="mc-card" style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:rgba(201,146,42,.2)">' +
-      '<div style="font-size:13px;font-weight:700;color:#78350f;margin-bottom:8px">🔥 Racha y Constancia</div>' +
+    html += '<div class="mc-card" style="background:linear-gradient(135deg,rgba(201,146,42,.15),rgba(201,146,42,.05));border-color:rgba(201,146,42,.2)">' +
+      '<div style="font-size:13px;font-weight:700;color:#C9922A;margin-bottom:8px">🔥 Racha y Constancia</div>' +
       '<div style="display:flex;gap:12px">' +
-        '<div style="text-align:center"><div style="font-size:24px;font-weight:800;color:var(--gold)">' + streak + '</div><div style="font-size:10px;color:#92400e">dias seguidos</div></div>' +
-        '<div style="text-align:center"><div style="font-size:24px;font-weight:800;color:var(--gold)">' + bestStr + '</div><div style="font-size:10px;color:#92400e">mejor racha</div></div>' +
+        '<div style="text-align:center"><div style="font-size:24px;font-weight:800;color:var(--gold)">' + streak + '</div><div style="font-size:10px;color:rgba(255,255,255,.5)">dias seguidos</div></div>' +
+        '<div style="text-align:center"><div style="font-size:24px;font-weight:800;color:var(--gold)">' + bestStr + '</div><div style="font-size:10px;color:rgba(255,255,255,.5)">mejor racha</div></div>' +
       '</div>' +
     '</div>';
 
@@ -3801,19 +3801,19 @@ const MiCodigo = (function() {
     var html = '';
 
     function masItem(emoji, title, subtitle, onclick, isLast) {
-      return '<div style="padding:12px 14px;display:flex;align-items:center;gap:10px;' + (isLast ? '' : 'border-bottom:1px solid #f3f4f6;') + (onclick ? 'cursor:pointer' : 'opacity:.5') + '" ' +
+      return '<div style="padding:12px 14px;display:flex;align-items:center;gap:10px;' + (isLast ? '' : 'border-bottom:1px solid rgba(255,255,255,.06);') + (onclick ? 'cursor:pointer' : 'opacity:.5') + '" ' +
         (onclick ? 'onclick="' + onclick + '"' : '') + '>' +
         '<span style="font-size:18px">' + emoji + '</span>' +
-        '<div style="flex:1"><div style="font-size:13px;font-weight:600">' + title + '</div><div style="font-size:11px;color:#8a8a7a">' + subtitle + '</div></div>' +
-        (onclick ? '<span style="color:#8a8a7a">›</span>' : '') +
+        '<div style="flex:1"><div style="font-size:13px;font-weight:600;color:#fff">' + title + '</div><div style="font-size:11px;color:rgba(255,255,255,.4)">' + subtitle + '</div></div>' +
+        (onclick ? '<span style="color:rgba(255,255,255,.4)">›</span>' : '') +
       '</div>';
     }
 
     // Profile card
     html += '<div class="mc-card" style="display:flex;align-items:center;gap:12px;cursor:pointer" onclick="MiCodigo.showProfile()">' +
       '<div style="width:44px;height:44px;background:linear-gradient(135deg,var(--verde),#1a4a31);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff">👩</div>' +
-      '<div style="flex:1"><div style="font-size:14px;font-weight:700">Mi Perfil</div><div style="font-size:11px;color:#8a8a7a">Peso meta, datos personales</div></div>' +
-      '<span style="color:#8a8a7a">›</span>' +
+      '<div style="flex:1"><div style="font-size:14px;font-weight:700;color:#fff">Mi Perfil</div><div style="font-size:11px;color:rgba(255,255,255,.4)">Peso meta, datos personales</div></div>' +
+      '<span style="color:rgba(255,255,255,.4)">›</span>' +
     '</div>';
 
     // CONTENIDO section
@@ -3832,7 +3832,7 @@ const MiCodigo = (function() {
     '</div>';
 
     // AJUSTES section
-    html += '<div style="font-size:11px;font-weight:700;color:#8a8a7a;text-transform:uppercase;letter-spacing:1px;margin:16px 0 8px">AJUSTES</div>';
+    html += '<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin:16px 0 8px">AJUSTES</div>';
     html += '<div class="mc-card" style="padding:0;overflow:hidden">' +
       masItem('💾', 'Exportar datos', 'Descargar backup de tus datos', "MiCodigo.exportData()") +
       masItem('ℹ️', 'Sobre Mi Codigo', 'v2.0 · El Codigo Hormonal', "MiCodigo.showAbout()", true) +
@@ -3844,16 +3844,16 @@ const MiCodigo = (function() {
   function showMasCurso() {
     var sc = document.getElementById('mcSectionContent');
     if (!sc) return;
-    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#1a1a1a">←</button>';
-    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px">🎓 Mini-Curso</h2>';
+    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#fff">←</button>';
+    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px;color:#fff">🎓 Mini-Curso</h2>';
     var curso = data.curso || [];
     curso.forEach(function(lesson, i) {
       html += '<div class="mc-card" style="cursor:pointer" onclick="MiCodigo.toggleLesson(' + i + ')">' +
         '<div style="display:flex;align-items:center;gap:12px">' +
           '<div style="background:var(--verde);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">' + (i+1) + '</div>' +
-          '<div style="flex:1"><div style="font-weight:700;font-size:13px">' + (lesson.titulo || 'Leccion ' + (i+1)) + '</div>' +
-          '<div style="font-size:11px;color:#8a8a7a">' + (lesson.duracion || '5 min') + '</div></div>' +
-          '<span style="color:#8a8a7a">›</span>' +
+          '<div style="flex:1"><div style="font-weight:700;font-size:13px;color:#fff">' + (lesson.titulo || 'Leccion ' + (i+1)) + '</div>' +
+          '<div style="font-size:11px;color:rgba(255,255,255,.4)">' + (lesson.duracion || '5 min') + '</div></div>' +
+          '<span style="color:rgba(255,255,255,.4)">›</span>' +
         '</div>' +
         '<div class="mc-lesson-content" id="mcLesson' + i + '">' + (lesson.contenido || '').replace(/\n/g, '<br>') + '</div>' +
       '</div>';
@@ -3869,13 +3869,13 @@ const MiCodigo = (function() {
   function showMasSuplementos() {
     var sc = document.getElementById('mcSectionContent');
     if (!sc) return;
-    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#1a1a1a">←</button>';
-    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px">💊 Suplementos</h2>';
+    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#fff">←</button>';
+    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px;color:#fff">💊 Suplementos</h2>';
     var sups = data.suplementos || [];
     sups.forEach(function(s) {
       html += '<div class="mc-card" style="padding:12px">' +
-        '<div style="font-weight:700;font-size:13px;margin-bottom:4px">' + (s.nombre || s) + '</div>' +
-        (s.beneficio ? '<div style="font-size:12px;color:#8a8a7a;margin-bottom:4px">' + s.beneficio + '</div>' : '') +
+        '<div style="font-weight:700;font-size:13px;margin-bottom:4px;color:#fff">' + (s.nombre || s) + '</div>' +
+        (s.beneficio ? '<div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:4px">' + s.beneficio + '</div>' : '') +
         (s.dosis ? '<div style="font-size:11px;color:var(--verde);font-weight:600">Dosis: ' + s.dosis + '</div>' : '') +
       '</div>';
     });
@@ -3885,13 +3885,13 @@ const MiCodigo = (function() {
   function showMasPlano() {
     var sc = document.getElementById('mcSectionContent');
     if (!sc) return;
-    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#1a1a1a">←</button>';
-    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px">📅 Plan Semanal</h2>';
+    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#fff">←</button>';
+    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px;color:#fff">📅 Plan Semanal</h2>';
     var plano = data.plano || [];
     plano.forEach(function(day) {
       html += '<div class="mc-card" style="padding:12px">' +
         '<div style="font-weight:700;font-size:13px;color:var(--verde);margin-bottom:6px">' + (day.dia || day.titulo || '') + '</div>' +
-        '<div style="font-size:12px;color:#8a8a7a">' + (day.desayuno || '') + (day.almuerzo ? ' · ' + day.almuerzo : '') + (day.cena ? ' · ' + day.cena : '') + '</div>' +
+        '<div style="font-size:12px;color:rgba(255,255,255,.5)">' + (day.desayuno || '') + (day.almuerzo ? ' · ' + day.almuerzo : '') + (day.cena ? ' · ' + day.cena : '') + '</div>' +
       '</div>';
     });
     sc.innerHTML = html;
@@ -3900,16 +3900,16 @@ const MiCodigo = (function() {
   function showMasEjercicios() {
     var sc = document.getElementById('mcSectionContent');
     if (!sc) return;
-    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#1a1a1a">←</button>';
-    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px">🏋️ Ejercicios</h2>';
+    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#fff">←</button>';
+    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px;color:#fff">🏋️ Ejercicios</h2>';
     var ejercicios = data.exercicios || [];
     ejercicios.forEach(function(e) {
       html += '<div class="mc-card" style="padding:12px">' +
         '<div style="display:flex;align-items:center;gap:10px">' +
           '<div style="font-size:20px">' + (e.emoji || '🧘‍♀️') + '</div>' +
-          '<div style="flex:1"><div style="font-weight:700;font-size:13px">' + (e.nombre || e.titulo || '') + '</div>' +
-          '<div style="font-size:11px;color:#8a8a7a">' + (e.duracion || '') + (e.nivel ? ' · ' + e.nivel : '') + '</div>' +
-          (e.descripcion ? '<div style="font-size:11px;color:#444;margin-top:4px">' + e.descripcion + '</div>' : '') + '</div>' +
+          '<div style="flex:1"><div style="font-weight:700;font-size:13px;color:#fff">' + (e.nombre || e.titulo || '') + '</div>' +
+          '<div style="font-size:11px;color:rgba(255,255,255,.4)">' + (e.duracion || '') + (e.nivel ? ' · ' + e.nivel : '') + '</div>' +
+          (e.descripcion ? '<div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:4px">' + e.descripcion + '</div>' : '') + '</div>' +
           (e.url ? '<a href="' + e.url + '" target="_blank" rel="noopener noreferrer" style="color:var(--verde);font-size:16px;text-decoration:none" onclick="event.stopPropagation()">▶</a>' : '') +
         '</div>' +
       '</div>';
@@ -3922,23 +3922,23 @@ const MiCodigo = (function() {
     if (!sc) return;
     var ud = getUserData();
     var settings = JSON.parse(localStorage.getItem('mc_settings') || '{}');
-    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#1a1a1a">←</button>';
-    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px">👩 Mi Perfil</h2>';
+    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#fff">←</button>';
+    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px;color:#fff">👩 Mi Perfil</h2>';
 
     html += '<div class="mc-card">' +
-      '<div style="font-size:12px;font-weight:600;color:#666;margin-bottom:4px">Peso meta (kg)</div>' +
-      '<input type="number" id="mcProfileGoalWeight" step="0.1" min="30" max="300" value="' + (ud.goalWeight || '') + '" placeholder="ej: 65.0" style="width:100%;border:1px solid #e8e0d4;border-radius:8px;padding:12px;font-size:16px;font-family:DM Sans,sans-serif">' +
+      '<div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px">Peso meta (kg)</div>' +
+      '<input type="number" id="mcProfileGoalWeight" step="0.1" min="30" max="300" value="' + (ud.goalWeight || '') + '" placeholder="ej: 65.0" style="width:100%;border:1px solid rgba(201,146,42,.2);border-radius:8px;padding:12px;font-size:16px;font-family:DM Sans,sans-serif;background:#1a1a1a;color:#fff">' +
     '</div>';
 
     html += '<div class="mc-card">' +
-      '<div style="font-size:12px;font-weight:600;color:#666;margin-bottom:4px">Meta de agua (vasos/dia)</div>' +
-      '<input type="number" id="mcProfileWaterGoal" min="4" max="16" value="' + (settings.waterGoal || 8) + '" placeholder="8" style="width:100%;border:1px solid #e8e0d4;border-radius:8px;padding:12px;font-size:16px;font-family:DM Sans,sans-serif">' +
+      '<div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px">Meta de agua (vasos/dia)</div>' +
+      '<input type="number" id="mcProfileWaterGoal" min="4" max="16" value="' + (settings.waterGoal || 8) + '" placeholder="8" style="width:100%;border:1px solid rgba(201,146,42,.2);border-radius:8px;padding:12px;font-size:16px;font-family:DM Sans,sans-serif;background:#1a1a1a;color:#fff">' +
     '</div>';
 
     if (isMenopause()) {
       html += '<div class="mc-card">' +
-        '<div style="font-size:12px;font-weight:600;color:#666;margin-bottom:4px">Menopausia</div>' +
-        '<p style="font-size:13px;color:#8a8a7a;margin-bottom:8px">Tienes "Menopausia" activada. Esto oculta las otras fases del ciclo en Mi Dia.</p>' +
+        '<div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px">Menopausia</div>' +
+        '<p style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:8px">Tienes "Menopausia" activada. Esto oculta las otras fases del ciclo en Mi Dia.</p>' +
         '<button onclick="MiCodigo.clearMeno()" style="background:var(--rosa);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer">Desactivar menopausia</button>' +
       '</div>';
     }
@@ -3993,12 +3993,12 @@ const MiCodigo = (function() {
     var sc = document.getElementById('mcSectionContent');
     if (!sc) return;
     sc.innerHTML = '<div style="text-align:center;padding-top:40px">' +
-      '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;position:absolute;left:20px;top:20px;color:#1a1a1a">←</button>' +
+      '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;position:absolute;left:20px;top:20px;color:#fff">←</button>' +
       '<div style="font-size:48px;margin-bottom:12px">🧬</div>' +
-      '<h2 style="font-size:22px;font-weight:800;margin-bottom:4px">Mi Codigo</h2>' +
-      '<p style="font-size:13px;color:#8a8a7a;margin-bottom:4px">v2.0 · El Codigo Hormonal</p>' +
-      '<p style="font-size:12px;color:#8a8a7a">Tu compañera diaria para el equilibrio hormonal</p>' +
-      '<div style="margin-top:32px;font-size:12px;color:#8a8a7a">© 2026 El Codigo Hormonal</div>' +
+      '<h2 style="font-size:22px;font-weight:800;margin-bottom:4px;color:#fff">Mi Codigo</h2>' +
+      '<p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:4px">v2.0 · El Codigo Hormonal</p>' +
+      '<p style="font-size:12px;color:rgba(255,255,255,.4)">Tu compañera diaria para el equilibrio hormonal</p>' +
+      '<div style="margin-top:32px;font-size:12px;color:rgba(255,255,255,.4)">© 2026 El Codigo Hormonal</div>' +
     '</div>';
   }
 
