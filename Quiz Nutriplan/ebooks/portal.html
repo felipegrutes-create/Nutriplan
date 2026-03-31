@@ -406,7 +406,8 @@ body{padding-bottom:72px}
 .com-cat-btn.active{background:var(--verde);color:#fff;border-color:var(--verde)}
 .com-post{background:#fff;border-radius:16px;padding:16px;margin:0 20px 10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #f0e8db}
 .com-post-author{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.com-post-avatar{font-size:28px}
+.com-post-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.com-post-avatar-emoji{font-size:28px;width:36px;height:36px;display:flex;align-items:center;justify-content:center}
 .com-post-name{font-weight:700;font-size:13px;color:#1a1a1a}
 .com-post-time{font-size:11px;color:#bbb}
 .com-post-text{font-size:13px;color:#444;line-height:1.6;margin-bottom:10px}
@@ -2205,6 +2206,14 @@ const Feed = (() => {
 })();
 
 // ===== COMMUNITY MODULE =====
+function renderAvatar(avatar, size) {
+  var s = size || 36;
+  if (avatar && avatar.indexOf('img/') === 0) {
+    return '<img src="' + avatar + '" class="com-post-avatar" style="width:' + s + 'px;height:' + s + 'px" alt="">';
+  }
+  return '<span class="com-post-avatar-emoji" style="width:' + s + 'px;height:' + s + 'px;font-size:' + Math.round(s*0.7) + 'px">' + (avatar||'🌸') + '</span>';
+}
+
 const Comunidad = (() => {
   let posts = [], loaded = false, filter = 'todo', postCat = 'progreso';
   const cats = ['todo','progreso','pregunta','motivacion','receta'];
@@ -2255,10 +2264,10 @@ const Comunidad = (() => {
       const dateStr = timeAgo(post.fecha);
       const isOwn = post.nombre === (profile.nombre || '');
       const commentsHtml = (post.comentarios || []).map(c =>
-        '<div class="com-comment"><span class="com-comment-author">' + c.avatar + ' ' + c.nombre + '</span> ' + c.texto + '</div>'
+        '<div class="com-comment" style="display:flex;align-items:flex-start;gap:8px">' + renderAvatar(c.avatar, 24) + '<div><span class="com-comment-author">' + c.nombre + '</span> ' + c.texto + '</div></div>'
       ).join('');
       return '<div class="com-post" style="' + (isOwn?'border-left:3px solid var(--verde)':'') + '">' +
-        '<div class="com-post-author"><span class="com-post-avatar">' + post.avatar + '</span><div><div class="com-post-name">' + post.nombre + '</div><div class="com-post-time">' + dateStr + ' · ' + catEmojis[post.categoria] + ' ' + catLabels[post.categoria] + '</div></div></div>' +
+        '<div class="com-post-author">' + renderAvatar(post.avatar) + '<div><div class="com-post-name">' + post.nombre + '</div><div class="com-post-time">' + dateStr + ' · ' + catEmojis[post.categoria] + ' ' + catLabels[post.categoria] + '</div></div></div>' +
         '<div class="com-post-text">' + post.texto + '</div>' +
         '<div class="com-post-actions"><button class="com-action-btn" onclick="Comunidad.likePost(' + idx + ')">❤️ ' + (post.likes||0) + '</button><button class="com-action-btn" onclick="Comunidad.toggleComments(' + idx + ')">💬 ' + (post.comentarios||[]).length + '</button></div>' +
         '<div class="com-comments" id="comComments' + idx + '" style="display:none">' + commentsHtml +
