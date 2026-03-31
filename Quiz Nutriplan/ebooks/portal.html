@@ -3060,7 +3060,7 @@ const MiCodigo = (function() {
 
     // Peso
     html += '<div class="mc-card" style="display:flex;justify-content:space-between;align-items:center">' +
-      '<div><div style="font-size:13px;font-weight:600">Peso</div>' +
+      '<div><div style="font-size:13px;font-weight:600;color:#fff">Peso</div>' +
       '<div style="font-size:11px;color:rgba(255,255,255,.4)">Ultimo: ' + (lastWeight ? lastWeight + ' kg' : '--') + '</div></div>' +
       '<div style="display:flex;align-items:center;gap:6px">' +
         '<input type="number" id="mcPeso" step="0.1" min="30" max="300" value="' + (_peso || (lastWeight ? lastWeight : '')) + '" placeholder="Tu peso" style="background:#1a1a1a;color:#fff;border:1px solid rgba(201,146,42,.2);border-radius:8px;padding:6px 12px;font-size:16px;font-weight:700;width:80px;text-align:center;font-family:DM Sans,sans-serif">' +
@@ -3070,7 +3070,7 @@ const MiCodigo = (function() {
     // Energia
     html += '<div class="mc-card">' +
       '<div style="display:flex;justify-content:space-between;margin-bottom:8px">' +
-        '<span style="font-size:13px;font-weight:600">Energia</span>' +
+        '<span style="font-size:13px;font-weight:600;color:#fff">Energia</span>' +
         '<span id="mcEnergiaVal" style="font-size:13px;font-weight:700;color:var(--verde)">' + _energia + '/10</span>' +
       '</div>' +
       '<input type="range" id="mcEnergia" min="1" max="10" value="' + _energia + '" class="mc-energy-slider">' +
@@ -3079,7 +3079,7 @@ const MiCodigo = (function() {
     // Humor
     var moods = [{val:'Mal',emoji:'😢'},{val:'Regular',emoji:'😐'},{val:'Bien',emoji:'😊'},{val:'Genial',emoji:'🤩'}];
     html += '<div class="mc-card">' +
-      '<div style="font-size:13px;font-weight:600;margin-bottom:8px">¿Como te sientes?</div>' +
+      '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#fff">¿Como te sientes?</div>' +
       '<div style="display:flex;gap:8px;justify-content:center" id="mcMoodGroup">';
     moods.forEach(function(m) {
       var active = _selectedMood === m.val;
@@ -3110,7 +3110,7 @@ const MiCodigo = (function() {
     var mealNames = ['desayuno','almuerzo','cena','snack'];
     var mealLabels = {desayuno:'Desayuno',almuerzo:'Almuerzo',cena:'Cena',snack:'Snack'};
     html += '<div class="mc-card">' +
-      '<div style="font-size:13px;font-weight:600;margin-bottom:8px">🍽️ Comidas del Plan</div>' +
+      '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#fff">🍽️ Comidas del Plan</div>' +
       '<div style="display:flex;flex-wrap:wrap;gap:6px">';
     mealNames.forEach(function(m) {
       var done = meals[m];
@@ -3122,12 +3122,12 @@ const MiCodigo = (function() {
     html += '<div style="display:flex;gap:8px;margin-bottom:12px">' +
       '<div class="mc-card" style="flex:1;text-align:center;cursor:pointer;margin-bottom:0" onclick="MiCodigo.toggleSupp()">' +
         '<div style="font-size:24px;margin-bottom:4px">💊</div>' +
-        '<div style="font-size:12px;font-weight:600">Suplemento</div>' +
+        '<div style="font-size:12px;font-weight:600;color:#fff">Suplemento</div>' +
         '<div style="margin-top:6px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;background:' + (supp ? 'rgba(46,125,82,.08)' : 'rgba(255,255,255,.06)') + ';color:' + (supp ? 'var(--verde)' : 'rgba(255,255,255,.5)') + '">' + (supp ? '✅ Tomado' : '⬜ Pendiente') + '</div>' +
       '</div>' +
       '<div class="mc-card" style="flex:1;text-align:center;cursor:pointer;margin-bottom:0" onclick="MiCodigo.toggleExercise()">' +
         '<div style="font-size:24px;margin-bottom:4px">🏃‍♀️</div>' +
-        '<div style="font-size:12px;font-weight:600">Ejercicio</div>' +
+        '<div style="font-size:12px;font-weight:600;color:#fff">Ejercicio</div>' +
         '<div style="margin-top:6px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;background:' + (exercise ? 'rgba(46,125,82,.08)' : 'rgba(255,255,255,.06)') + ';color:' + (exercise ? 'var(--verde)' : 'rgba(255,255,255,.5)') + '">' + (exercise ? '✅ Hecho' : '⬜ Pendiente') + '</div>' +
       '</div>' +
     '</div>';
@@ -3137,7 +3137,7 @@ const MiCodigo = (function() {
 
     // Sleep hours
     html += '<div class="mc-card">' +
-      '<div style="font-size:13px;font-weight:600;margin-bottom:8px">Horas de sueño</div>' +
+      '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#fff">Horas de sueño</div>' +
       '<div class="mc-sleep-control">' +
         '<button class="mc-sleep-btn" onclick="MiCodigo.adjustSleep(-0.5)">−</button>' +
         '<div class="mc-sleep-val" id="mcSleepVal">' + _sleepHours + 'h</div>' +
@@ -3150,7 +3150,7 @@ const MiCodigo = (function() {
 
     // Phase
     html += '<div class="mc-card">' +
-      '<div style="font-size:13px;font-weight:600;margin-bottom:8px">Fase actual</div>' +
+      '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#fff">Fase actual</div>' +
       '<div class="mc-cycle-grid">';
     PHASES.forEach(function(p) {
       var active = isMeno ? p.id === 'menopausia' : cycleToday.phase === p.id;
@@ -3161,7 +3161,7 @@ const MiCodigo = (function() {
 
     // Symptoms
     html += '<div class="mc-card">' +
-      '<div style="font-size:13px;font-weight:600;margin-bottom:8px">Sintomas hoy</div>' +
+      '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#fff">Sintomas hoy</div>' +
       '<div class="mc-symptom-grid">';
     SYMPTOMS.forEach(function(s) {
       var active = (_symptoms || []).indexOf(s) !== -1;
