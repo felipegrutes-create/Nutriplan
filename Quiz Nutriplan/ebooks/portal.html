@@ -4041,7 +4041,16 @@ const MiCodigo = (function() {
 
 // ===== SERVICE WORKER REGISTRATION =====
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+  // Force update: unregister old SW, clear all caches, then register fresh
+  caches.keys().then(function(names) {
+    names.forEach(function(name) { caches.delete(name); });
+  });
+  navigator.serviceWorker.getRegistrations().then(function(regs) {
+    regs.forEach(function(reg) { reg.unregister(); });
+    setTimeout(function() {
+      navigator.serviceWorker.register('sw.js').then(function(reg) { reg.update(); });
+    }, 500);
+  });
 }
 
 // Welcome screen logic
