@@ -2905,7 +2905,8 @@ const MiCodigo = (function() {
   // ════════════════════════════════════════════════════════════
   function renderHome(el) {
     var profile = JSON.parse(localStorage.getItem('portal_perfil') || '{}');
-    var nombre = profile.nombre || 'amiga';
+    var ud0 = getUserData();
+    var nombre = ud0.nombre || profile.nombre || 'amiga';
     var today = todayKey();
     var checkin = getCheckins()[today] || {};
     var waterToday = getWaterToday();
@@ -2988,6 +2989,23 @@ const MiCodigo = (function() {
         '</div>';
       }
     }
+
+    // Mi Perfil card
+    var _ud = getUserData();
+    var _settings0 = JSON.parse(localStorage.getItem('mc_settings') || '{}');
+    var _avatar = _settings0.avatarPhoto || _settings0.avatar || '👩';
+    var _avatarIsPhoto = _avatar.startsWith('data:');
+    var _avatarHtml = _avatarIsPhoto
+      ? '<img src="' + _avatar + '" style="width:44px;height:44px;border-radius:50%;object-fit:cover">'
+      : '<div style="width:44px;height:44px;background:linear-gradient(135deg,var(--verde),#1a4a31);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px">' + _avatar + '</div>';
+    html += '<div class="mc-card" style="display:flex;align-items:center;gap:12px;cursor:pointer" onclick="MiCodigo.showProfile()">' +
+      _avatarHtml +
+      '<div style="flex:1">' +
+        '<div style="font-size:14px;font-weight:700;color:#fff">' + (_ud.nombre ? _ud.nombre : 'Mi Perfil') + '</div>' +
+        '<div style="font-size:11px;color:rgba(255,255,255,.4)">' + (_ud.nombre ? 'Editar perfil y datos personales' : 'Agrega tu nombre y foto') + '</div>' +
+      '</div>' +
+      '<span style="color:rgba(255,255,255,.4)">›</span>' +
+    '</div>';
 
     el.innerHTML = html;
   }
@@ -3958,8 +3976,33 @@ const MiCodigo = (function() {
     var ud = getUserData();
     var settings = JSON.parse(localStorage.getItem('mc_settings') || '{}');
     var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#fff">←</button>';
-    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:16px;color:#fff">👩 Mi Perfil</h2>';
+    var html = backBtn + '<h2 style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:800;margin-bottom:20px;color:#fff">👩 Mi Perfil</h2>';
 
+    // Avatar display
+    var currentAvatar = settings.avatarPhoto || settings.avatar || '👩';
+    var isPhoto = currentAvatar.startsWith('data:');
+    var avatarPreview = isPhoto
+      ? '<img id="mcAvatarPreview" src="' + currentAvatar + '" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid #C9922A">'
+      : '<div id="mcAvatarPreview" style="width:80px;height:80px;background:linear-gradient(135deg,var(--verde),#1a4a31);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:40px;border:3px solid #C9922A">' + currentAvatar + '</div>';
+    var avatarEmojis = ['👩','👩‍🦱','👩‍🦰','👩‍🦳','👩‍🦲','🧕','👩‍💼','🧘‍♀️','💪','🌸','⭐','🦋'];
+    var avatarBtns = avatarEmojis.map(function(em) {
+      return '<button onclick="MiCodigo._setAvatarEmoji(\'' + em + '\')" style="font-size:24px;width:42px;height:42px;border-radius:10px;border:2px solid ' + (currentAvatar === em ? '#C9922A' : 'rgba(255,255,255,.1)') + ';background:rgba(255,255,255,.04);cursor:pointer">' + em + '</button>';
+    }).join('');
+
+    html += '<div class="mc-card" style="text-align:center">' +
+      '<div style="display:flex;justify-content:center;margin-bottom:12px">' + avatarPreview + '</div>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:12px" id="mcAvatarGrid">' + avatarBtns + '</div>' +
+      '<label style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid rgba(255,255,255,.15);border-radius:20px;font-size:12px;font-weight:600;color:rgba(255,255,255,.7);cursor:pointer">📷 Usar foto<input type="file" accept="image/*" onchange="MiCodigo._setAvatarPhoto(this)" style="display:none"></label>' +
+    '</div>';
+
+    // Name
+    html += '<div class="mc-card">' +
+      '<div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:8px">Tu nombre</div>' +
+      '<input type="text" id="mcProfileNombre" value="' + (ud.nombre || '') + '" placeholder="ej: María José" maxlength="30" style="width:100%;border:1px solid rgba(201,146,42,.2);border-radius:8px;padding:12px;font-size:16px;font-family:DM Sans,sans-serif;background:#1a1a1a;color:#fff">' +
+      '<div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:6px">Aparecerá en el saludo al abrir la app</div>' +
+    '</div>';
+
+    // Goal weight & water
     html += '<div class="mc-card">' +
       '<div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px">Peso meta (kg)</div>' +
       '<input type="number" id="mcProfileGoalWeight" step="0.1" min="30" max="300" value="' + (ud.goalWeight || '') + '" placeholder="ej: 65.0" style="width:100%;border:1px solid rgba(201,146,42,.2);border-radius:8px;padding:12px;font-size:16px;font-family:DM Sans,sans-serif;background:#1a1a1a;color:#fff">' +
@@ -3978,24 +4021,44 @@ const MiCodigo = (function() {
       '</div>';
     }
 
-    html += '<button onclick="MiCodigo.saveProfile()" style="width:100%;padding:12px;background:var(--verde);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif">Guardar perfil</button>';
+    html += '<button onclick="MiCodigo.saveProfile()" style="width:100%;padding:14px;background:linear-gradient(135deg,var(--verde),#1a4a31);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif;box-shadow:0 4px 15px rgba(46,125,82,.3)">💾 Guardar perfil</button>';
 
     sc.innerHTML = html;
+  }
+
+  // Avatar helpers (called from inline onclick)
+  function _setAvatarEmoji(em) {
+    var settings = JSON.parse(localStorage.getItem('mc_settings') || '{}');
+    delete settings.avatarPhoto;
+    settings.avatar = em;
+    localStorage.setItem('mc_settings', JSON.stringify(settings));
+    showProfile();
+  }
+
+  function _setAvatarPhoto(input) {
+    if (!input.files || !input.files[0]) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var settings = JSON.parse(localStorage.getItem('mc_settings') || '{}');
+      settings.avatarPhoto = e.target.result;
+      localStorage.setItem('mc_settings', JSON.stringify(settings));
+      showProfile();
+    };
+    reader.readAsDataURL(input.files[0]);
   }
 
   function saveProfile() {
     var goalWeight = parseFloat((document.getElementById('mcProfileGoalWeight') || {}).value) || null;
     var waterGoal = parseInt((document.getElementById('mcProfileWaterGoal') || {}).value, 10) || 8;
-    if (goalWeight) {
-      var ud = getUserData();
-      ud.goalWeight = goalWeight;
-      localStorage.setItem(AUTH_KEY, JSON.stringify(ud));
-    }
+    var nombre = ((document.getElementById('mcProfileNombre') || {}).value || '').trim();
+    var ud = getUserData();
+    if (goalWeight) ud.goalWeight = goalWeight;
+    if (nombre) ud.nombre = nombre; else delete ud.nombre;
+    localStorage.setItem(AUTH_KEY, JSON.stringify(ud));
     var settings = JSON.parse(localStorage.getItem('mc_settings') || '{}');
     settings.waterGoal = waterGoal;
     localStorage.setItem('mc_settings', JSON.stringify(settings));
-    alert('✅ Perfil guardado');
-    navigate('mas');
+    navigate('home');
   }
 
   function clearMeno() {
@@ -4070,6 +4133,7 @@ const MiCodigo = (function() {
     showMasSuplementos: showMasSuplementos, showMasPlano: showMasPlano,
     showMasEjercicios: showMasEjercicios, showProfile: showProfile,
     saveProfile: saveProfile, clearMeno: clearMeno,
+    _setAvatarEmoji: _setAvatarEmoji, _setAvatarPhoto: _setAvatarPhoto,
     exportData: exportData, showAbout: showAbout
   };
 })();
