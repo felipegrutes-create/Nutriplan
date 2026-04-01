@@ -3619,20 +3619,38 @@ const MiCodigo = (function() {
     });
     text += '— Mi Codigo App';
 
-    // Show copy modal
-    var modal = document.createElement('div');
-    modal.setAttribute('role', 'dialog');
-    modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:400;display:flex;align-items:center;justify-content:center;padding:20px';
-    modal.onclick = function(e) { if (e.target === modal) modal.remove(); };
-    modal.innerHTML = '<div style="background:#141414;border-radius:16px;padding:20px;max-width:400px;width:100%;max-height:80vh;overflow-y:auto;border:1px solid rgba(255,255,255,.08)">' +
-      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">' +
-        '<h3 style="font-size:16px;font-weight:700;color:#fff">📋 Tu lista de compras</h3>' +
-        '<button onclick="this.closest(\'[role=dialog]\').remove()" style="background:none;border:none;font-size:20px;cursor:pointer;color:#fff">✕</button>' +
-      '</div>' +
-      '<textarea id="mcShareText" readonly style="width:100%;height:300px;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px;font-size:13px;font-family:inherit;resize:none;background:#1a1a1a;color:#fff">' + text + '</textarea>' +
-      '<button onclick="document.getElementById(\'mcShareText\').select();document.execCommand(\'copy\');alert(\'✅ Copiado!\')" style="width:100%;margin-top:10px;padding:12px;background:var(--verde);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">📋 Copiar lista</button>' +
-    '</div>';
-    document.body.appendChild(modal);
+    // Use native share sheet (Android/iOS) if available — opens WhatsApp directly
+    if (navigator.share) {
+      navigator.share({ text: text }).catch(function() {});
+      return;
+    }
+
+    // Fallback: copy to clipboard + show toast
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        showToast('✅ Lista copiada — pégala en WhatsApp');
+      }).catch(function() { fallbackCopy(); });
+    } else {
+      fallbackCopy();
+    }
+
+    function fallbackCopy() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;top:-9999px;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); showToast('✅ Lista copiada — pégala en WhatsApp'); } catch(e) {}
+      document.body.removeChild(ta);
+    }
+
+    function showToast(msg) {
+      var t = document.createElement('div');
+      t.textContent = msg;
+      t.style.cssText = 'position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:12px 20px;border-radius:50px;font-size:13px;font-weight:600;z-index:20001;white-space:nowrap;border:1px solid rgba(255,255,255,.1);box-shadow:0 4px 20px rgba(0,0,0,.5)';
+      document.body.appendChild(t);
+      setTimeout(function() { t.remove(); }, 3000);
+    }
   }
 
   // ════════════════════════════════════════════════════════════
