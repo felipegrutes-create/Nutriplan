@@ -3040,9 +3040,12 @@ const MiCodigo = (function() {
       '</div>';
     mealItems.forEach(function(item) {
       var r = item.recipe;
-      var emoji = r.emoji || getCatEmoji(r.categoria);
+      var recImg = r.imagen || '';
+      var recImgHtml = recImg
+        ? '<img src="' + recImg + '" style="width:36px;height:36px;border-radius:8px;object-fit:cover;flex-shrink:0" loading="lazy">'
+        : '<div style="font-size:22px;width:36px;text-align:center;flex-shrink:0">' + (r.emoji || getCatEmoji(r.categoria)) + '</div>';
       html += '<div onclick="MiCodigo.showRecipeDetail(' + r.id + ')" style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer">' +
-        '<div style="font-size:22px;width:32px;text-align:center">' + emoji + '</div>' +
+        recImgHtml +
         '<div style="flex:1;min-width:0">' +
           '<div style="font-size:10px;color:#C9922A;font-weight:700;text-transform:uppercase;letter-spacing:.5px">' + item.meal.label + '</div>' +
           '<div style="font-size:13px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + r.nombre + '</div>' +
@@ -3403,10 +3406,13 @@ const MiCodigo = (function() {
         var cal = r.calorias ? r.calorias + ' kcal' : '';
         var ingCount = (r.ingredientes && r.ingredientes.length) ? r.ingredientes.length + ' ingr.' : '';
         var meta = [cal, ingCount].filter(Boolean).join(' · ');
-        var emoji = r.emoji || getCatEmoji(r.categoria);
+        var rImg = r.imagen || '';
+        var rImgHtml = rImg
+          ? '<img src="' + rImg + '" style="width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0" loading="lazy">'
+          : '<div style="width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">' + (r.emoji || getCatEmoji(r.categoria)) + '</div>';
         html += '<div class="mc-card" style="padding:12px;cursor:pointer;position:relative" onclick="MiCodigo.showRecipeDetail(' + r.id + ')">' +
           '<div style="display:flex;align-items:center;gap:10px">' +
-            '<div style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">' + emoji + '</div>' +
+            rImgHtml +
             '<div style="flex:1;min-width:0">' +
               '<div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">' +
                 '<span style="font-size:9px;font-weight:700;color:#fff;background:' + getCatColor(r.categoria) + ';padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap">' + getCatLabel(r.categoria) + '</span>' +
@@ -3464,7 +3470,7 @@ const MiCodigo = (function() {
         '<span style="font-size:10px;font-weight:700;color:#fff;background:' + getCatColor(r.categoria) + ';padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px">' + getCatLabel(r.categoria) + '</span>' +
         (r.calorias ? '<span style="font-size:10px;font-weight:700;color:#C9922A;background:rgba(201,146,42,.1);padding:3px 8px;border-radius:4px">🔥 ' + r.calorias + ' kcal</span>' : '') +
       '</div>' +
-      '<div style="text-align:center;font-size:48px;margin-bottom:8px">' + (r.emoji || getCatEmoji(r.categoria)) + '</div>' +
+      (r.imagen ? '<img src="' + r.imagen + '" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:12px" loading="lazy">' : '<div style="text-align:center;font-size:48px;margin-bottom:8px">' + (r.emoji || getCatEmoji(r.categoria)) + '</div>') +
       '<h2 style="font-size:20px;font-weight:800;margin:0 0 16px;color:#fff;text-align:center">' + r.nombre + '</h2>';
 
     if (hasIngredients) {

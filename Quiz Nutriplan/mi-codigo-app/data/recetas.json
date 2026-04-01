@@ -24,7 +24,8 @@
     ],
     "consejo": "",
     "calorias": 330,
-    "emoji": "🧁"
+    "emoji": "🧁",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 2,
@@ -48,7 +49,8 @@
     ],
     "consejo": "",
     "calorias": 380,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 3,
@@ -74,7 +76,8 @@
     ],
     "consejo": "",
     "calorias": 375,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg"
   },
   {
     "id": 4,
@@ -105,7 +108,8 @@
     ],
     "consejo": "",
     "calorias": 365,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 5,
@@ -117,7 +121,8 @@
     ],
     "consejo": "Los huevos son una excelente fuente de proteínas. Los vegetales aportan vitaminas, minerales y fibra.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 6,
@@ -129,7 +134,8 @@
     ],
     "consejo": "Las claras de huevo son bajas en grasa y colesterol. El queso feta aporta calcio.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/yvpuuy1511797244.jpg"
   },
   {
     "id": 7,
@@ -141,7 +147,8 @@
     ],
     "consejo": "El aguacate aporta grasas saludables y fibra.",
     "calorias": 150,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 8,
@@ -153,7 +160,8 @@
     ],
     "consejo": "Los huevos duros son una opción práctica y portátil para el desayuno.",
     "calorias": 240,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 9,
@@ -165,7 +173,8 @@
     ],
     "consejo": "Esta receta es una forma fácil de incluir vegetales en el desayuno.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 10,
@@ -177,7 +186,8 @@
     ],
     "consejo": "Esta es una opción práctica y portátil para el desayuno.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 11,
@@ -189,7 +199,8 @@
     ],
     "consejo": "El yogur griego es rico en proteínas. La granola casera te permite controlar los ingredientes y el azúcar.",
     "calorias": 280,
-    "emoji": "🥣"
+    "emoji": "🥣",
+    "imagen": "https://www.themealdb.com/images/media/meals/c400ok1764439058.jpg"
   },
   {
     "id": 12,
@@ -201,7 +212,8 @@
     ],
     "consejo": "Las frutas aportan vitaminas y minerales. Las semillas añaden fibra y omega-3.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 13,
@@ -213,7 +225,8 @@
     ],
     "consejo": "Las nueces aportan grasas saludables y fibra. La miel debe consumirse con moderación.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 14,
@@ -225,7 +238,8 @@
     ],
     "consejo": "Esta es una forma visualmente atractiva de disfrutar de un desayuno saludable.",
     "calorias": 280,
-    "emoji": "🥣"
+    "emoji": "🥣",
+    "imagen": "https://www.themealdb.com/images/media/meals/c400ok1764439058.jpg"
   },
   {
     "id": 15,
@@ -237,7 +251,8 @@
     ],
     "consejo": "Los batidos son una forma fácil de obtener una gran cantidad de nutrientes en el desayuno.",
     "calorias": 180,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 16,
@@ -249,7 +264,8 @@
     ],
     "consejo": "Este desayuno es rápido, fácil y nutritivo",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 17,
@@ -261,7 +277,8 @@
     ],
     "consejo": "Esta tostada es una excelente fuente de grasas saludables, proteínas y fibra.",
     "calorias": 150,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 18,
@@ -273,7 +290,8 @@
     ],
     "consejo": "El salmón ahumado aporta omega-3.",
     "calorias": 260,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/1548772327.jpg"
   },
   {
     "id": 19,
@@ -285,7 +303,8 @@
     ],
     "consejo": "Esta tostada es sencilla pero deliciosa y nutritiva",
     "calorias": 280,
-    "emoji": "🍞"
+    "emoji": "🍞",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 20,
@@ -297,7 +316,8 @@
     ],
     "consejo": "La mantequilla de almendras aporta grasas saludables y proteínas.",
     "calorias": 280,
-    "emoji": "🍞"
+    "emoji": "🍞",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 21,
@@ -309,7 +329,8 @@
     ],
     "consejo": "El hummus es una buena fuente de proteínas y fibra.",
     "calorias": 280,
-    "emoji": "🍞"
+    "emoji": "🍞",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 22,
@@ -321,7 +342,8 @@
     ],
     "consejo": "Esta tostada es una buena fuente de grasas saludables y fibra.",
     "calorias": 150,
-    "emoji": "🍞"
+    "emoji": "🍞",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 23,
@@ -346,7 +368,8 @@
     ],
     "consejo": "",
     "calorias": 330,
-    "emoji": "🍞"
+    "emoji": "🍞",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 24,
@@ -358,7 +381,8 @@
     ],
     "consejo": "Este batido es una excelente opción para después del ejercicio o para un desayuno rápido y nutritivo.",
     "calorias": 180,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 25,
@@ -370,7 +394,8 @@
     ],
     "consejo": "Los vegetales de hoja verde son ricos en vitaminas y minerales. El limón ayuda a mejorar la absorción del hierro.",
     "calorias": 180,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 26,
@@ -382,7 +407,8 @@
     ],
     "consejo": "El aguacate aporta grasas saludables y el pepino es refrescante y bajo en calorías",
     "calorias": 150,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 27,
@@ -394,7 +420,8 @@
     ],
     "consejo": "La zanahoria es rica en betacaroteno, un antioxidante importante para la salud ocular.",
     "calorias": 180,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 28,
@@ -406,7 +433,8 @@
     ],
     "consejo": "Los frutos rojos son ricos en antioxidantes y las semillas aportan fibra y omega-3.",
     "calorias": 180,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 29,
@@ -430,7 +458,8 @@
     ],
     "consejo": "",
     "calorias": 180,
-    "emoji": "🥣"
+    "emoji": "🥣",
+    "imagen": "https://www.themealdb.com/images/media/meals/c400ok1764439058.jpg"
   },
   {
     "id": 30,
@@ -454,7 +483,8 @@
     ],
     "consejo": "",
     "calorias": 340,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/yvpuuy1511797244.jpg"
   },
   {
     "id": 31,
@@ -466,7 +496,8 @@
     ],
     "consejo": "La harina de almendras es baja en carbohidratos y rica en proteínas y grasas saludables.",
     "calorias": 280,
-    "emoji": "🧁"
+    "emoji": "🧁",
+    "imagen": "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg"
   },
   {
     "id": 32,
@@ -478,7 +509,8 @@
     ],
     "consejo": "Estos muffins son una excelente opción para un desayuno rápido y fácil de llevar.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 33,
@@ -490,7 +522,8 @@
     ],
     "consejo": "La frittata es una excelente manera de incluir una variedad de vegetales en el desayuno.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/yvpuuy1511797244.jpg"
   },
   {
     "id": 34,
@@ -517,7 +550,8 @@
     ],
     "consejo": "",
     "calorias": 370,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 35,
@@ -529,7 +563,8 @@
     ],
     "consejo": "Esta es una opción refrescante y nutritiva para el desayuno.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 36,
@@ -541,7 +576,8 @@
     ],
     "consejo": "Las semillas de chía son ricas en fibra y omega-3.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 37,
@@ -553,7 +589,8 @@
     ],
     "consejo": "Este tazón es una excelente manera de obtener una gran cantidad de nutrientes en el desayuno.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 38,
@@ -565,7 +602,8 @@
     ],
     "consejo": "Este wrap es una opción fácil de llevar para el desayuno.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 39,
@@ -577,7 +615,8 @@
     ],
     "consejo": "Esta ensalada es una opción refrescante y nutritiva para el desayuno.",
     "calorias": 240,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 40,
@@ -600,7 +639,8 @@
     ],
     "consejo": "",
     "calorias": 400,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 41,
@@ -612,7 +652,8 @@
     ],
     "consejo": "Este sándwich es una excelente opción para un desayuno completo y equilibrado.",
     "calorias": 280,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 42,
@@ -624,7 +665,8 @@
     ],
     "consejo": "Estos panqueques son una alternativa baja en carbohidratos a los panqueques tradicionales.",
     "calorias": 280,
-    "emoji": "🧁"
+    "emoji": "🧁",
+    "imagen": "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg"
   },
   {
     "id": 43,
@@ -636,7 +678,8 @@
     ],
     "consejo": "El açaí es rico en antioxidantes y la granola casera te permite controlar los ingredientes.",
     "calorias": 280,
-    "emoji": "🥣"
+    "emoji": "🥣",
+    "imagen": "https://www.themealdb.com/images/media/meals/c400ok1764439058.jpg"
   },
   {
     "id": 44,
@@ -674,7 +717,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg"
   },
   {
     "id": 45,
@@ -686,7 +730,8 @@
     ],
     "consejo": "El salmón es rico en omega-3 y la quinua es un grano integral con alto contenido de fibra y proteína.",
     "calorias": 340,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/1549542994.jpg"
   },
   {
     "id": 46,
@@ -698,7 +743,8 @@
     ],
     "consejo": "Las lentejas son una excelente fuente de proteína vegetal y fibra.",
     "calorias": 340,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 47,
@@ -730,7 +776,8 @@
     ],
     "consejo": "",
     "calorias": 460,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg"
   },
   {
     "id": 48,
@@ -742,7 +789,8 @@
     ],
     "consejo": "Esta ensalada es baja en carbohidratos y calorías, pero rica en sabor.",
     "calorias": 340,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 49,
@@ -754,7 +802,8 @@
     ],
     "consejo": "El pollo a la parrilla es una excelente fuente de proteína magra. Los vegetales asados aportan fibra y vitaminas.",
     "calorias": 380,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 50,
@@ -766,7 +815,8 @@
     ],
     "consejo": "Esta receta es baja en grasa y calorías, pero llena de sabor.",
     "calorias": 380,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 51,
@@ -800,7 +850,8 @@
     ],
     "consejo": "",
     "calorias": 455,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 52,
@@ -823,7 +874,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/swo87v1763595282.jpg"
   },
   {
     "id": 53,
@@ -856,7 +908,8 @@
     ],
     "consejo": "",
     "calorias": 555,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg"
   },
   {
     "id": 54,
@@ -877,7 +930,8 @@
     ],
     "consejo": "",
     "calorias": 505,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/1548772327.jpg"
   },
   {
     "id": 55,
@@ -889,7 +943,8 @@
     ],
     "consejo": "El atún es una buena fuente de proteínas y omega-3",
     "calorias": 340,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg"
   },
   {
     "id": 56,
@@ -911,7 +966,8 @@
     ],
     "consejo": "",
     "calorias": 455,
-    "emoji": "🦐"
+    "emoji": "🦐",
+    "imagen": "https://www.themealdb.com/images/media/meals/1529445434.jpg"
   },
   {
     "id": 57,
@@ -941,7 +997,8 @@
     ],
     "consejo": "",
     "calorias": 455,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/7n8su21699013057.jpg"
   },
   {
     "id": 58,
@@ -953,7 +1010,8 @@
     ],
     "consejo": "El pulpo es una buena fuente de proteínas y minerales. M ARISCOS",
     "calorias": 340,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 59,
@@ -981,7 +1039,8 @@
     ],
     "consejo": "",
     "calorias": 510,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/44bzep1761848278.jpg"
   },
   {
     "id": 60,
@@ -993,7 +1052,8 @@
     ],
     "consejo": "Los tacos vegetarianos son una opción sabrosa y nutritiva para el almuerzo.",
     "calorias": 380,
-    "emoji": "🌮"
+    "emoji": "🌮",
+    "imagen": "https://www.themealdb.com/images/media/meals/jyylmo1763790808.jpg"
   },
   {
     "id": 61,
@@ -1022,7 +1082,8 @@
     ],
     "consejo": "",
     "calorias": 450,
-    "emoji": "🍝"
+    "emoji": "🍝",
+    "imagen": "https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg"
   },
   {
     "id": 62,
@@ -1051,7 +1112,8 @@
     ],
     "consejo": "",
     "calorias": 445,
-    "emoji": "🍚"
+    "emoji": "🍚",
+    "imagen": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg"
   },
   {
     "id": 63,
@@ -1076,7 +1138,8 @@
     ],
     "consejo": "",
     "calorias": 350,
-    "emoji": "🍲"
+    "emoji": "🍲",
+    "imagen": "https://www.themealdb.com/images/media/meals/stpuws1511191310.jpg"
   },
   {
     "id": 64,
@@ -1102,7 +1165,8 @@
     ],
     "consejo": "",
     "calorias": 400,
-    "emoji": "🦃"
+    "emoji": "🦃",
+    "imagen": "https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg"
   },
   {
     "id": 65,
@@ -1123,7 +1187,8 @@
     ],
     "consejo": "",
     "calorias": 455,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 66,
@@ -1145,7 +1210,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 67,
@@ -1166,7 +1232,8 @@
     ],
     "consejo": "",
     "calorias": 380,
-    "emoji": "🌯"
+    "emoji": "🌯",
+    "imagen": "https://www.themealdb.com/images/media/meals/swo87v1763595282.jpg"
   },
   {
     "id": 68,
@@ -1189,7 +1256,8 @@
     ],
     "consejo": "",
     "calorias": 345,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 69,
@@ -1211,7 +1279,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg"
   },
   {
     "id": 70,
@@ -1236,7 +1305,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/7n8su21699013057.jpg"
   },
   {
     "id": 71,
@@ -1256,7 +1326,8 @@
     ],
     "consejo": "",
     "calorias": 495,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 72,
@@ -1282,7 +1353,8 @@
     ],
     "consejo": "",
     "calorias": 380,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg"
   },
   {
     "id": 73,
@@ -1302,7 +1374,8 @@
     ],
     "consejo": "",
     "calorias": 350,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/7kb44y1763589084.jpg"
   },
   {
     "id": 74,
@@ -1326,7 +1399,8 @@
     ],
     "consejo": "",
     "calorias": 515,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 75,
@@ -1346,7 +1420,8 @@
     ],
     "consejo": "",
     "calorias": 420,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 76,
@@ -1371,7 +1446,8 @@
     ],
     "consejo": "",
     "calorias": 425,
-    "emoji": "🦐"
+    "emoji": "🦐",
+    "imagen": "https://www.themealdb.com/images/media/meals/1529445434.jpg"
   },
   {
     "id": 77,
@@ -1395,7 +1471,8 @@
     ],
     "consejo": "",
     "calorias": 420,
-    "emoji": "🦃"
+    "emoji": "🦃",
+    "imagen": "https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg"
   },
   {
     "id": 78,
@@ -1420,7 +1497,8 @@
     ],
     "consejo": "",
     "calorias": 445,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/1548772327.jpg"
   },
   {
     "id": 79,
@@ -1445,7 +1523,8 @@
     ],
     "consejo": "",
     "calorias": 410,
-    "emoji": "🥒"
+    "emoji": "🥒",
+    "imagen": "https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg"
   },
   {
     "id": 80,
@@ -1469,7 +1548,8 @@
     ],
     "consejo": "",
     "calorias": 490,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg"
   },
   {
     "id": 81,
@@ -1492,7 +1572,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🥒"
+    "emoji": "🥒",
+    "imagen": "https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg"
   },
   {
     "id": 82,
@@ -1517,7 +1598,8 @@
     ],
     "consejo": "",
     "calorias": 395,
-    "emoji": "🥒"
+    "emoji": "🥒",
+    "imagen": "https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg"
   },
   {
     "id": 83,
@@ -1543,7 +1625,8 @@
     ],
     "consejo": "",
     "calorias": 435,
-    "emoji": "🦐"
+    "emoji": "🦐",
+    "imagen": "https://www.themealdb.com/images/media/meals/1529445434.jpg"
   },
   {
     "id": 84,
@@ -1565,7 +1648,8 @@
     ],
     "consejo": "",
     "calorias": 430,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 85,
@@ -1590,7 +1674,8 @@
     ],
     "consejo": "",
     "calorias": 395,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 86,
@@ -1614,7 +1699,8 @@
     ],
     "consejo": "",
     "calorias": 395,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 87,
@@ -1640,7 +1726,8 @@
     ],
     "consejo": "",
     "calorias": 395,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 88,
@@ -1664,7 +1751,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/swo87v1763595282.jpg"
   },
   {
     "id": 89,
@@ -1687,7 +1775,8 @@
     ],
     "consejo": "",
     "calorias": 425,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg"
   },
   {
     "id": 90,
@@ -1709,7 +1798,8 @@
     ],
     "consejo": "",
     "calorias": 390,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 91,
@@ -1733,7 +1823,8 @@
     ],
     "consejo": "",
     "calorias": 430,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg"
   },
   {
     "id": 92,
@@ -1756,7 +1847,8 @@
     ],
     "consejo": "",
     "calorias": 385,
-    "emoji": "🦐"
+    "emoji": "🦐",
+    "imagen": "https://www.themealdb.com/images/media/meals/1529445434.jpg"
   },
   {
     "id": 93,
@@ -1780,7 +1872,8 @@
     ],
     "consejo": "",
     "calorias": 415,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/7n8su21699013057.jpg"
   },
   {
     "id": 94,
@@ -1804,7 +1897,8 @@
     ],
     "consejo": "",
     "calorias": 315,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 95,
@@ -1828,7 +1922,8 @@
     ],
     "consejo": "",
     "calorias": 415,
-    "emoji": "🍔"
+    "emoji": "🍔",
+    "imagen": "https://www.themealdb.com/images/media/meals/44bzep1761848278.jpg"
   },
   {
     "id": 96,
@@ -1849,7 +1944,8 @@
     ],
     "consejo": "",
     "calorias": 415,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 97,
@@ -1869,7 +1965,8 @@
     ],
     "consejo": "",
     "calorias": 420,
-    "emoji": "🍝"
+    "emoji": "🍝",
+    "imagen": "https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg"
   },
   {
     "id": 98,
@@ -1890,7 +1987,8 @@
     ],
     "consejo": "",
     "calorias": 465,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 99,
@@ -1910,7 +2008,8 @@
     ],
     "consejo": "",
     "calorias": 385,
-    "emoji": "🍽️"
+    "emoji": "🍽️",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 100,
@@ -1934,7 +2033,8 @@
     ],
     "consejo": "",
     "calorias": 435,
-    "emoji": "🍽️"
+    "emoji": "🍽️",
+    "imagen": "https://www.themealdb.com/images/media/meals/1549542994.jpg"
   },
   {
     "id": 101,
@@ -1956,7 +2056,8 @@
     ],
     "consejo": "",
     "calorias": 305,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 102,
@@ -1981,7 +2082,8 @@
     ],
     "consejo": "",
     "calorias": 405,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 103,
@@ -2001,7 +2103,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🍽️"
+    "emoji": "🍽️",
+    "imagen": "https://www.themealdb.com/images/media/meals/yvpuuy1511797244.jpg"
   },
   {
     "id": 104,
@@ -2013,7 +2116,8 @@
     ],
     "consejo": "Esta lasaña es más baja en carbohidratos y calorías que la lasaña tradicional.",
     "calorias": 390,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 105,
@@ -2025,7 +2129,8 @@
     ],
     "consejo": "Esta es una comida completa y nutritiva, fácil de preparar.",
     "calorias": 340,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 106,
@@ -2048,7 +2153,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/7n8su21699013057.jpg"
   },
   {
     "id": 107,
@@ -2060,7 +2166,8 @@
     ],
     "consejo": "Esta receta es una opción baja en carbohidratos y calorías, pero rica en proteínas y fibra.",
     "calorias": 340,
-    "emoji": "🦃"
+    "emoji": "🦃",
+    "imagen": "https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg"
   },
   {
     "id": 108,
@@ -2085,7 +2192,8 @@
     ],
     "consejo": "",
     "calorias": 430,
-    "emoji": "🍞"
+    "emoji": "🍞",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 109,
@@ -2097,7 +2205,8 @@
     ],
     "consejo": "Esta receta es una excelente fuente de omega-3,Proteínas,fibra y grasas saludables.",
     "calorias": 150,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/1549542994.jpg"
   },
   {
     "id": 110,
@@ -2109,7 +2218,8 @@
     ],
     "consejo": "Los tacos de lentejas son una opción vegetariana y nutritiva para la cena.",
     "calorias": 340,
-    "emoji": "🌮"
+    "emoji": "🌮",
+    "imagen": "https://www.themealdb.com/images/media/meals/jyylmo1763790808.jpg"
   },
   {
     "id": 111,
@@ -2121,7 +2231,8 @@
     ],
     "consejo": "El arroz de coliflor es una excelente alternativa baja en carbohidratos al arroz tradicional.",
     "calorias": 340,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg"
   },
   {
     "id": 112,
@@ -2133,7 +2244,8 @@
     ],
     "consejo": "Esta es una opción rápida y sabrosa para una cena entre semana.",
     "calorias": 340,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 113,
@@ -2155,7 +2267,8 @@
     ],
     "consejo": "",
     "calorias": 465,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/1548772327.jpg"
   },
   {
     "id": 114,
@@ -2167,7 +2280,8 @@
     ],
     "consejo": "Esta ensalada es una opción fresca y nutritiva para la cena, rica en proteínas, fibra y vitaminas.",
     "calorias": 300,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg"
   },
   {
     "id": 115,
@@ -2179,7 +2293,8 @@
     ],
     "consejo": "Esta receta es una excelente opción para una cena festiva o especial, rica en proteínas, fibra y vitaminas.",
     "calorias": 340,
-    "emoji": "🦃"
+    "emoji": "🦃",
+    "imagen": "https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg"
   },
   {
     "id": 116,
@@ -2199,7 +2314,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg"
   },
   {
     "id": 117,
@@ -2221,7 +2337,8 @@
     ],
     "consejo": "",
     "calorias": 395,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 118,
@@ -2244,7 +2361,8 @@
     ],
     "consejo": "",
     "calorias": 400,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg"
   },
   {
     "id": 119,
@@ -2267,7 +2385,8 @@
     ],
     "consejo": "",
     "calorias": 480,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg"
   },
   {
     "id": 120,
@@ -2289,7 +2408,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 121,
@@ -2312,7 +2432,8 @@
     ],
     "consejo": "",
     "calorias": 405,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/1548772327.jpg"
   },
   {
     "id": 122,
@@ -2335,7 +2456,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 123,
@@ -2356,7 +2478,8 @@
     ],
     "consejo": "",
     "calorias": 470,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 124,
@@ -2378,7 +2501,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🍽️"
+    "emoji": "🍽️",
+    "imagen": "https://www.themealdb.com/images/media/meals/yvpuuy1511797244.jpg"
   },
   {
     "id": 125,
@@ -2400,7 +2524,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 126,
@@ -2422,7 +2547,8 @@
     ],
     "consejo": "",
     "calorias": 390,
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 127,
@@ -2445,7 +2571,8 @@
     ],
     "consejo": "",
     "calorias": 385,
-    "emoji": "🦐"
+    "emoji": "🦐",
+    "imagen": "https://www.themealdb.com/images/media/meals/1529445434.jpg"
   },
   {
     "id": 128,
@@ -2463,7 +2590,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/44bzep1761848278.jpg"
   },
   {
     "id": 129,
@@ -2484,7 +2612,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/1549542994.jpg"
   },
   {
     "id": 130,
@@ -2507,7 +2636,8 @@
     ],
     "consejo": "",
     "calorias": 450,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg"
   },
   {
     "id": 131,
@@ -2533,7 +2663,8 @@
     ],
     "consejo": "",
     "calorias": 430,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg"
   },
   {
     "id": 132,
@@ -2555,7 +2686,8 @@
     ],
     "consejo": "",
     "calorias": 390,
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "imagen": "https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg"
   },
   {
     "id": 133,
@@ -2576,7 +2708,8 @@
     ],
     "consejo": "",
     "calorias": 415,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 134,
@@ -2588,7 +2721,8 @@
     ],
     "consejo": "La manzana aporta fibra y la mantequilla de almendras, grasas saludables y proteínas.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 135,
@@ -2600,7 +2734,8 @@
     ],
     "consejo": "Las zanahorias son ricas en betacaroteno y el hummus aporta proteínas y fibra.",
     "calorias": 160,
-    "emoji": "🫕"
+    "emoji": "🫕",
+    "imagen": "https://www.themealdb.com/images/media/meals/1549542994.jpg"
   },
   {
     "id": 136,
@@ -2612,7 +2747,8 @@
     ],
     "consejo": "Esta combinación es fresca, baja en calorías y rica en nutrientes.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 137,
@@ -2624,7 +2760,8 @@
     ],
     "consejo": "Las fresas son bajas en azúcar y ricas en antioxidantes. La crema de coco aporta grasas saludables.",
     "calorias": 140,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 138,
@@ -2636,7 +2773,8 @@
     ],
     "consejo": "Los pimientos son ricos en vitamina C y el guacamole aporta grasas saludables y fibra.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 139,
@@ -2648,7 +2786,8 @@
     ],
     "consejo": "Las almendras son ricas en grasas saludables, Proteínas y fibras.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 140,
@@ -2660,7 +2799,8 @@
     ],
     "consejo": "Las nueces de Brasil son ricas en selenio, un mineral esencial.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 141,
@@ -2672,7 +2812,8 @@
     ],
     "consejo": "Las semillas de chía son ricas en fibra y omega-3.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 142,
@@ -2684,7 +2825,8 @@
     ],
     "consejo": "Las semillas de calabaza son ricas en magnesio y zinc.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 143,
@@ -2696,7 +2838,8 @@
     ],
     "consejo": "Esta mezcla te proporciona una variedad de nutrientes y grasas saludables.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 144,
@@ -2708,7 +2851,8 @@
     ],
     "consejo": "El yogur griego es rico en proteínas y las bayas son bajas en azúcar y ricas en antioxidantes.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 145,
@@ -2720,7 +2864,8 @@
     ],
     "consejo": "La canela puede ayudar a mejorar la sensibilidad a la insulina.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 146,
@@ -2732,7 +2877,8 @@
     ],
     "consejo": "Las semillas aportan fibra y omega-3.Las frutas deshidratadas son una buena opción si se consumen con moderación.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 147,
@@ -2744,7 +2890,8 @@
     ],
     "consejo": "Los batidos son una forma fácil de obtener una gran cantidad de nutrientes en un snack.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 148,
@@ -2756,7 +2903,8 @@
     ],
     "consejo": "Esta es una forma visualmente atractiva de disfrutar de un snack saludable.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 149,
@@ -2768,7 +2916,8 @@
     ],
     "consejo": "Este snack es rico en proteínas y bajo en carbohidratos.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 150,
@@ -2780,7 +2929,8 @@
     ],
     "consejo": "El edamame es una excelente fuente de proteína vegetal y fibra.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 151,
@@ -2792,7 +2942,8 @@
     ],
     "consejo": "Estas mini frittatas son una excelente manera de obtener proteínas y vegetales en un snack.",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 152,
@@ -2804,7 +2955,8 @@
     ],
     "consejo": "",
     "calorias": 160,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 153,
@@ -2816,7 +2968,8 @@
     ],
     "consejo": "Esta tostada es una buena fuente de grasas saludables y fibra +20+20 SALUDABLESJUGOS SALUDABLES BEBIDAS SALUDABLES Y ENERGETICAS",
     "calorias": 80,
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "imagen": "https://www.themealdb.com/images/media/meals/1543774956.jpg"
   },
   {
     "id": 154,
@@ -2828,7 +2981,8 @@
     ],
     "consejo": "Este jugo es rico en vitaminas, minerales y antioxidantes.",
     "calorias": 120,
-    "emoji": "🥬"
+    "emoji": "🥬",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 155,
@@ -2840,7 +2994,8 @@
     ],
     "consejo": "Este smoothie es rico en grasas saludables, vitaminas y minerales.",
     "calorias": 50,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 156,
@@ -2852,7 +3007,8 @@
     ],
     "consejo": "La horchata de chufa es una bebida tradicional española refrescante y nutritiva.",
     "calorias": 120,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 157,
@@ -2864,7 +3020,8 @@
     ],
     "consejo": "Refrescante y baja en calorías.",
     "calorias": 50,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 158,
@@ -2876,7 +3033,8 @@
     ],
     "consejo": "El hibisco puede ayudar a reducir la presión arterial.",
     "calorias": 120,
-    "emoji": "🍵"
+    "emoji": "🍵",
+    "imagen": "https://www.themealdb.com/images/media/meals/63mnho1763422152.jpg"
   },
   {
     "id": 159,
@@ -2888,7 +3046,8 @@
     ],
     "consejo": "La remolacha puede ayudar a mejorar la circulación sanguínea y la zanahoria es rica en betacaroteno.",
     "calorias": 120,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 160,
@@ -2900,7 +3059,8 @@
     ],
     "consejo": "Este smoothie es rico en proteínas, antioxidantes y fibra.",
     "calorias": 120,
-    "emoji": "🍓"
+    "emoji": "🍓",
+    "imagen": "https://www.themealdb.com/images/media/meals/uttuxy1511382180.jpg"
   },
   {
     "id": 161,
@@ -2912,7 +3072,8 @@
     ],
     "consejo": "Este batido es rico en proteínas, grasas saludables y fibra.",
     "calorias": 50,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 162,
@@ -2924,7 +3085,8 @@
     ],
     "consejo": "Refrescante y sin calorías.",
     "calorias": 120,
-    "emoji": "🍵"
+    "emoji": "🍵",
+    "imagen": "https://www.themealdb.com/images/media/meals/63mnho1763422152.jpg"
   },
   {
     "id": 163,
@@ -2936,7 +3098,8 @@
     ],
     "consejo": "Refrescante y baja en calorías.",
     "calorias": 120,
-    "emoji": "🍋"
+    "emoji": "🍋",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 164,
@@ -2948,7 +3111,8 @@
     ],
     "consejo": "Refrescante y baja en calorías.",
     "calorias": 50,
-    "emoji": "🍋"
+    "emoji": "🍋",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 165,
@@ -2960,7 +3124,8 @@
     ],
     "consejo": "La leche de coco casera es rica en grasas saludables.",
     "calorias": 120,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 166,
@@ -2972,7 +3137,8 @@
     ],
     "consejo": "La leche de almendras casera es baja en calorías y carbohidratos.",
     "calorias": 120,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 167,
@@ -2984,7 +3150,8 @@
     ],
     "consejo": "Este smoothie es rico en proteínas, fibra y calcio.",
     "calorias": 120,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 168,
@@ -2996,7 +3163,8 @@
     ],
     "consejo": "Los frutos rojos son ricos en antioxidantes y las semillas aportan fibra y omega-3.",
     "calorias": 120,
-    "emoji": "🍓"
+    "emoji": "🍓",
+    "imagen": "https://www.themealdb.com/images/media/meals/uttuxy1511382180.jpg"
   },
   {
     "id": 169,
@@ -3008,7 +3176,8 @@
     ],
     "consejo": "El aguacate aporta grasas saludables y el pepino es refrescante y bajo en calorías.",
     "calorias": 50,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 170,
@@ -3020,7 +3189,8 @@
     ],
     "consejo": "Los vegetales de hoja verde son ricos en vitaminas y minerales.",
     "calorias": 120,
-    "emoji": "🥬"
+    "emoji": "🥬",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 171,
@@ -3032,7 +3202,8 @@
     ],
     "consejo": "Este batido es una excelente opción para después del ejercicio o para un snack rápido y nutritivo.",
     "calorias": 120,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 172,
@@ -3044,7 +3215,8 @@
     ],
     "consejo": "La remolacha puede ayudar a mejorar la circulación sanguínea.",
     "calorias": 120,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 173,
@@ -3056,7 +3228,8 @@
     ],
     "consejo": "Este jugo es bajo en calorías y refrescante.",
     "calorias": 120,
-    "emoji": "🍋"
+    "emoji": "🍋",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 174,
@@ -3068,7 +3241,8 @@
     ],
     "consejo": "El kale es rico en calcio y la zanahoria en betacaroteno.",
     "calorias": 120,
-    "emoji": "🥕"
+    "emoji": "🥕",
+    "imagen": "https://www.themealdb.com/images/media/meals/jcr46d1614763831.jpg"
   },
   {
     "id": 175,
@@ -3080,7 +3254,8 @@
     ],
     "consejo": "Este jugo es rico en vitaminas, minerales y fibra.",
     "calorias": 120,
-    "emoji": "🥬"
+    "emoji": "🥬",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 176,
@@ -3092,7 +3267,8 @@
     ],
     "consejo": "El jengibre tiene propiedades antiinflamatorias y puede ayudar a mejorar la digestión.",
     "calorias": 120,
-    "emoji": "🍵"
+    "emoji": "🍵",
+    "imagen": "https://www.themealdb.com/images/media/meals/63mnho1763422152.jpg"
   },
   {
     "id": 177,
@@ -3104,7 +3280,8 @@
     ],
     "consejo": "La manzanilla tiene propiedades relajantes y puede ayudar a mejorar el sueño.",
     "calorias": 120,
-    "emoji": "🍵"
+    "emoji": "🍵",
+    "imagen": "https://www.themealdb.com/images/media/meals/63mnho1763422152.jpg"
   },
   {
     "id": 178,
@@ -3116,7 +3293,8 @@
     ],
     "consejo": "El té verde es rico en antioxidantes y puede ayudar a mejorar la sensibilidad a la insulina.",
     "calorias": 120,
-    "emoji": "🥬"
+    "emoji": "🥬",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 179,
@@ -3128,7 +3306,8 @@
     ],
     "consejo": "Las bayas son bajas en azúcar y ricas en antioxidantes.",
     "calorias": 50,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 180,
@@ -3140,7 +3319,8 @@
     ],
     "consejo": "El limón es rico en vitamina C y el jengibre tiene propiedades antiinflamatorias.",
     "calorias": 50,
-    "emoji": "🍋"
+    "emoji": "🍋",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 181,
@@ -3152,7 +3332,8 @@
     ],
     "consejo": "Refrescante y baja en calorías. El pepino y la menta aportan sabor sin añadir azúcar.",
     "calorias": 50,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 182,
@@ -3164,7 +3345,8 @@
     ],
     "consejo": "",
     "calorias": 80,
-    "emoji": "🍵"
+    "emoji": "🍵",
+    "imagen": "https://www.themealdb.com/images/media/meals/63mnho1763422152.jpg"
   },
   {
     "id": 183,
@@ -3176,7 +3358,8 @@
     ],
     "consejo": "Esta limonada es una alternativa saludable a las limonadas comerciales.",
     "calorias": 120,
-    "emoji": "🍋"
+    "emoji": "🍋",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 184,
@@ -3188,7 +3371,8 @@
     ],
     "consejo": "El café puede ayudar a mejorar la concentración y el estado de ánimo.",
     "calorias": 120,
-    "emoji": "🥤"
+    "emoji": "🥤",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 185,
@@ -3200,7 +3384,8 @@
     ],
     "consejo": "La zanahoria es rica en betacaroteno y la naranja en vitamina C.",
     "calorias": 120,
-    "emoji": "🥕"
+    "emoji": "🥕",
+    "imagen": "https://www.themealdb.com/images/media/meals/jcr46d1614763831.jpg"
   },
   {
     "id": 186,
@@ -3212,7 +3397,8 @@
     ],
     "consejo": "El limón es rico en vitamina C y el jengibre tiene propiedades antiinflamatorias.",
     "calorias": 50,
-    "emoji": "🍋"
+    "emoji": "🍋",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 187,
@@ -3224,7 +3410,8 @@
     ],
     "consejo": "El mango es rico en vitamina C y antioxidantes.",
     "calorias": 120,
-    "emoji": "🥬"
+    "emoji": "🥬",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 188,
@@ -3236,7 +3423,8 @@
     ],
     "consejo": "El kale es rico en calcio y el jengibre tiene propiedades antiinflamatorias.",
     "calorias": 120,
-    "emoji": "🥬"
+    "emoji": "🥬",
+    "imagen": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg"
   },
   {
     "id": 189,
@@ -3260,7 +3448,8 @@
     ],
     "consejo": "",
     "calorias": 500,
-    "emoji": "🦐"
+    "emoji": "🦐",
+    "imagen": "https://www.themealdb.com/images/media/meals/1529445434.jpg"
   },
   {
     "id": 190,
@@ -3284,7 +3473,8 @@
     ],
     "consejo": "",
     "calorias": 485,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 191,
@@ -3306,7 +3496,8 @@
     ],
     "consejo": "",
     "calorias": 385,
-    "emoji": "🦐"
+    "emoji": "🦐",
+    "imagen": "https://www.themealdb.com/images/media/meals/1529445434.jpg"
   },
   {
     "id": 192,
@@ -3329,7 +3520,8 @@
     ],
     "consejo": "",
     "calorias": 385,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg"
   },
   {
     "id": 193,
@@ -3351,7 +3543,8 @@
     ],
     "consejo": "",
     "calorias": 445,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 194,
@@ -3374,7 +3567,8 @@
     ],
     "consejo": "",
     "calorias": 355,
-    "emoji": "🍲"
+    "emoji": "🍲",
+    "imagen": "https://www.themealdb.com/images/media/meals/tvvxpv1511191952.jpg"
   },
   {
     "id": 195,
@@ -3398,7 +3592,8 @@
     ],
     "consejo": "",
     "calorias": 150,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/swo87v1763595282.jpg"
   },
   {
     "id": 196,
@@ -3421,7 +3616,8 @@
     ],
     "consejo": "",
     "calorias": 370,
-    "emoji": "🍽️"
+    "emoji": "🍽️",
+    "imagen": "https://www.themealdb.com/images/media/meals/1548772327.jpg"
   },
   {
     "id": 197,
@@ -3443,7 +3639,8 @@
     ],
     "consejo": "",
     "calorias": 415,
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "imagen": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"
   },
   {
     "id": 198,
@@ -3463,7 +3660,8 @@
     ],
     "consejo": "",
     "calorias": 430,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   },
   {
     "id": 199,
@@ -3486,7 +3684,8 @@
     ],
     "consejo": "",
     "calorias": 395,
-    "emoji": "🍽️"
+    "emoji": "🍽️",
+    "imagen": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
   },
   {
     "id": 200,
@@ -3507,7 +3706,8 @@
     ],
     "consejo": "",
     "calorias": 380,
-    "emoji": "🍄"
+    "emoji": "🍄",
+    "imagen": "https://www.themealdb.com/images/media/meals/1548772327.jpg"
   },
   {
     "id": 201,
@@ -3528,6 +3728,7 @@
     ],
     "consejo": "",
     "calorias": 430,
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "imagen": "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
   }
 ]
