@@ -2792,6 +2792,11 @@ const MiCodigo = (function() {
 
   // Handle browser back button
   window.addEventListener('popstate', function() {
+    var modal = document.querySelector('[role=dialog]');
+    if (modal) {
+      modal.remove();
+      return;
+    }
     if (document.getElementById('mcOverlay').style.display === 'block') {
       close();
     }
@@ -3447,6 +3452,7 @@ const MiCodigo = (function() {
     modalHtml += '</div>';
     modal.innerHTML = modalHtml;
     document.body.appendChild(modal);
+    history.pushState({mc: true, recipeModal: true}, '');
   }
 
   function toggleFavInDetail(id, btn) {
