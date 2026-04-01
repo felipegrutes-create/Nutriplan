@@ -3471,13 +3471,16 @@ const MiCodigo = (function() {
     var items = getShoppingItems();
     var catMap = data['categorias-compras'] || {};
     r.ingredientes.forEach(function(ing) {
-      if (ing.trim().length < 4) return;
-      var exists = items.some(function(item) { return item.name.toLowerCase() === ing.toLowerCase(); });
+      var t = ing.trim();
+      if (t.length < 4) return;
+      // Skip section headers (e.g. "Para la base:", "Para el relleno:")
+      if (t.endsWith(':') || /^para (la|el|los|las)\b/i.test(t) || /^(base|relleno|salsa|masa)\b/i.test(t)) return;
+      var exists = items.some(function(item) { return item.name.toLowerCase() === t.toLowerCase(); });
       if (!exists) {
         items.push({
           id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
-          name: ing,
-          category: categorizeIngredient(ing, catMap),
+          name: t,
+          category: categorizeIngredient(t, catMap),
           checked: false,
           source: r.nombre
         });
