@@ -3473,8 +3473,14 @@ const MiCodigo = (function() {
     r.ingredientes.forEach(function(ing) {
       var t = ing.trim();
       if (t.length < 4) return;
-      // Skip section headers (e.g. "Para la base:", "Para el relleno:")
-      if (t.endsWith(':') || /^para (la|el|los|las)\b/i.test(t) || /^(base|relleno|salsa|masa)\b/i.test(t)) return;
+      // Skip section headers and sentence fragments
+      if (t.endsWith(':')) return;
+      if (/^para (la|el|los|las)\b/i.test(t)) return;
+      if (/^(base|relleno|salsa|masa)\b/i.test(t)) return;
+      // Skip fragments: ends with ) but doesn't start with ( or have a number/unit
+      if (t.endsWith(')') && !t.startsWith('(') && !/\d/.test(t)) return;
+      // Skip lines that are clearly sentence continuations (no number, no unit word, very generic)
+      if (/^(opcional|al gusto|segun|según|para dar|para lograr|para obtener)\b/i.test(t)) return;
       var exists = items.some(function(item) { return item.name.toLowerCase() === t.toLowerCase(); });
       if (!exists) {
         items.push({
@@ -3591,9 +3597,8 @@ const MiCodigo = (function() {
   }
 
   function clearCheckedShopping() {
-    if (!confirm('¿Eliminar todos los items comprados?')) return;
-    var items = getShoppingItems().filter(function(i) { return !i.checked; });
-    saveShoppingItems(items);
+    if (!confirm('¿Limpiar toda la lista?')) return;
+    saveShoppingItems([]);
     var sc = document.getElementById('mcSectionContent');
     if (sc) renderCompras(sc);
   }
