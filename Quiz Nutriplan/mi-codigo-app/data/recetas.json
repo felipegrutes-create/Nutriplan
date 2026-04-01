@@ -22,7 +22,9 @@
       "Hornea 20-25 minutos, hasta que estén firmes.",
       "Retira, coloca más mozzarella por encima y hornea 5 minutos más hasta gratinar."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 330,
+    "emoji": "🧁"
   },
   {
     "id": 2,
@@ -44,7 +46,9 @@
       "Tapa con otra capa fina de pollo y sella bien los bordes usando los dedos húmedos.",
       "Cocina en la air fryer a 180 °C por 15–18 minutos o hasta que esté dorada por fuera y bien cocida por dentro. ¡Alta en proteína y sin harinas que eleven la glucosa!"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 380,
+    "emoji": "🍗"
   },
   {
     "id": 3,
@@ -68,7 +72,9 @@
       "Cubre con otra capa fina de pollo, sella los bordes con cuidado.",
       "Lleva a la air fryer a 180 °C por 15–18 minutos, girando a la mitad del tiempo si es necesario."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 375,
+    "emoji": "🍗"
   },
   {
     "id": 4,
@@ -97,7 +103,9 @@
       "Déjalos enfriar un poco, abre por la mitad como si fuera un pan de sándwich.",
       "Rellena con la mezcla de pollo o atún + yogur/queso y especias. Pan Saludable Relleno con Proteína"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 365,
+    "emoji": "🍗"
   },
   {
     "id": 5,
@@ -107,7 +115,9 @@
     "preparacion": [
       "Revuelve 2 huevos con una variedad de vegetales picados (tomate, cebolla, pimiento, espinacas)."
     ],
-    "consejo": "Los huevos son una excelente fuente de proteínas. Los vegetales aportan vitaminas, minerales y fibra."
+    "consejo": "Los huevos son una excelente fuente de proteínas. Los vegetales aportan vitaminas, minerales y fibra.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 6,
@@ -117,7 +127,9 @@
     "preparacion": [
       "Bate 3 claras de huevo con sal y pimienta. Cocina en una sartén antiadherente. Rellena con espinacas frescas y queso feta desmenuzado."
     ],
-    "consejo": "Las claras de huevo son bajas en grasa y colesterol. El queso feta aporta calcio."
+    "consejo": "Las claras de huevo son bajas en grasa y colesterol. El queso feta aporta calcio.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 7,
@@ -127,7 +139,9 @@
     "preparacion": [
       "Cocina 2 huevos pochados. Sirve sobre una tostada integral con aguacate en rodajas."
     ],
-    "consejo": "El aguacate aporta grasas saludables y fibra."
+    "consejo": "El aguacate aporta grasas saludables y fibra.",
+    "calorias": 150,
+    "emoji": "🍳"
   },
   {
     "id": 8,
@@ -137,7 +151,9 @@
     "preparacion": [
       "Cocina 2 huevos duros. Acompáñalos con una ensalada fresca con lechuga, tomate, pepino y aderezo ligero (aceite de oliva y limón)."
     ],
-    "consejo": "Los huevos duros son una opción práctica y portátil para el desayuno."
+    "consejo": "Los huevos duros son una opción práctica y portátil para el desayuno.",
+    "calorias": 240,
+    "emoji": "🥗"
   },
   {
     "id": 9,
@@ -147,7 +163,9 @@
     "preparacion": [
       "Precalienta el horno a 180°C. En ramequines individuales, coloca vegetales picados (pimientos, cebolla, champiñones) y un huevo en cada uno. Hornea durante 15-20 minutos."
     ],
-    "consejo": "Esta receta es una forma fácil de incluir vegetales en el desayuno."
+    "consejo": "Esta receta es una forma fácil de incluir vegetales en el desayuno.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 10,
@@ -157,7 +175,9 @@
     "preparacion": [
       "Cocina 2 huevos duros. Acompáñalos con una porción de fruta fresca."
     ],
-    "consejo": "Esta es una opción práctica y portátil para el desayuno."
+    "consejo": "Esta es una opción práctica y portátil para el desayuno.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 11,
@@ -167,7 +187,9 @@
     "preparacion": [
       "Mezcla 1 taza de yogur griego natural sin azúcar añadida con 1/2 taza de bayas frescas y 1/4 taza de granola casera sin azúcar."
     ],
-    "consejo": "El yogur griego es rico en proteínas. La granola casera te permite controlar los ingredientes y el azúcar."
+    "consejo": "El yogur griego es rico en proteínas. La granola casera te permite controlar los ingredientes y el azúcar.",
+    "calorias": 280,
+    "emoji": "🥣"
   },
   {
     "id": 12,
@@ -177,7 +199,9 @@
     "preparacion": [
       "Mezcla 1 taza de yogur natural con trozos de frutas frescas (arandanos, fresas, kiwi) y 1 cucharada de semillas de chía o lino."
     ],
-    "consejo": "Las frutas aportan vitaminas y minerales. Las semillas añaden fibra y omega-3."
+    "consejo": "Las frutas aportan vitaminas y minerales. Las semillas añaden fibra y omega-3.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 13,
@@ -187,7 +211,9 @@
     "preparacion": [
       "Mezcla 1 taza de yogur griego con 1/4 taza de nueces picadas"
     ],
-    "consejo": "Las nueces aportan grasas saludables y fibra. La miel debe consumirse con moderación."
+    "consejo": "Las nueces aportan grasas saludables y fibra. La miel debe consumirse con moderación.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 14,
@@ -197,7 +223,9 @@
     "preparacion": [
       "En un vaso, alterna capas de yogur, frutas y granola."
     ],
-    "consejo": "Esta es una forma visualmente atractiva de disfrutar de un desayuno saludable."
+    "consejo": "Esta es una forma visualmente atractiva de disfrutar de un desayuno saludable.",
+    "calorias": 280,
+    "emoji": "🥣"
   },
   {
     "id": 15,
@@ -207,7 +235,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1 taza de yogurt, 1/2 taza de frutas (fresas, plátano) y 1/2 taza de vegetales (espinacas, pepino)."
     ],
-    "consejo": "Los batidos son una forma fácil de obtener una gran cantidad de nutrientes en el desayuno."
+    "consejo": "Los batidos son una forma fácil de obtener una gran cantidad de nutrientes en el desayuno.",
+    "calorias": 180,
+    "emoji": "🍳"
   },
   {
     "id": 16,
@@ -217,7 +247,9 @@
     "preparacion": [
       "Mezcla 1 taza de yogurt natural con 1/2 taza de frutas frescas y 1/4 taza de nueces picadas."
     ],
-    "consejo": "Este desayuno es rápido, fácil y nutritivo"
+    "consejo": "Este desayuno es rápido, fácil y nutritivo",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 17,
@@ -227,7 +259,9 @@
     "preparacion": [
       "Unta 1/2 aguacate en rodajas sobre una tostada de pan integral. Cubre con un huevo pochado o revuelto."
     ],
-    "consejo": "Esta tostada es una excelente fuente de grasas saludables, proteínas y fibra."
+    "consejo": "Esta tostada es una excelente fuente de grasas saludables, proteínas y fibra.",
+    "calorias": 150,
+    "emoji": "🍳"
   },
   {
     "id": 18,
@@ -237,7 +271,9 @@
     "preparacion": [
       "Unta queso crema bajo en grasa sobre una tostada de pan integral. Cubre con salmón ahumado."
     ],
-    "consejo": "El salmón ahumado aporta omega-3."
+    "consejo": "El salmón ahumado aporta omega-3.",
+    "calorias": 260,
+    "emoji": "🐟"
   },
   {
     "id": 19,
@@ -247,7 +283,9 @@
     "preparacion": [
       "Coloca rodajas de tomate y hojas de albahaca fresca sobre una tostada de pan integral. Aliña con un chorrito de aceite de oliva y sal."
     ],
-    "consejo": "Esta tostada es sencilla pero deliciosa y nutritiva"
+    "consejo": "Esta tostada es sencilla pero deliciosa y nutritiva",
+    "calorias": 280,
+    "emoji": "🍞"
   },
   {
     "id": 20,
@@ -257,7 +295,9 @@
     "preparacion": [
       "Unta mantequilla de almendras sobre una tostada de pan integral."
     ],
-    "consejo": "La mantequilla de almendras aporta grasas saludables y proteínas."
+    "consejo": "La mantequilla de almendras aporta grasas saludables y proteínas.",
+    "calorias": 280,
+    "emoji": "🍞"
   },
   {
     "id": 21,
@@ -267,7 +307,9 @@
     "preparacion": [
       "Unta hummus sobre una tostada de pan integral. Cubre con vegetales picados (zanahoria, pepino, pimiento)."
     ],
-    "consejo": "El hummus es una buena fuente de proteínas y fibra."
+    "consejo": "El hummus es una buena fuente de proteínas y fibra.",
+    "calorias": 280,
+    "emoji": "🍞"
   },
   {
     "id": 22,
@@ -277,7 +319,9 @@
     "preparacion": [
       "Unta 1/2 aguacate en rodajas sobre una tostada de pan integral."
     ],
-    "consejo": "Esta tostada es una buena fuente de grasas saludables y fibra."
+    "consejo": "Esta tostada es una buena fuente de grasas saludables y fibra.",
+    "calorias": 150,
+    "emoji": "🍞"
   },
   {
     "id": 23,
@@ -300,7 +344,9 @@
       "Vierte la mezcla en el molde y hornea durante 40-50 minutos o hasta que esté dorado y al insertar un palillo, salga limpio.",
       "Deja enfriar antes de servir."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 330,
+    "emoji": "🍞"
   },
   {
     "id": 24,
@@ -310,7 +356,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1 scoop de proteína en polvo (whey protein o proteína vegetal), 1/2 taza de leche de almendras sin azúcar, 1/2 taza de bayas congeladas (fresas, arándanos) y 1/2 taza de espinacas."
     ],
-    "consejo": "Este batido es una excelente opción para después del ejercicio o para un desayuno rápido y nutritivo."
+    "consejo": "Este batido es una excelente opción para después del ejercicio o para un desayuno rápido y nutritivo.",
+    "calorias": 180,
+    "emoji": "🍳"
   },
   {
     "id": 25,
@@ -320,7 +368,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1 taza de espinacas frescas, 1/2 manzana verde, 1/2 plátano, 1/2 taza de leche de almendras y jugo de 1/2 limón."
     ],
-    "consejo": "Los vegetales de hoja verde son ricos en vitaminas y minerales. El limón ayuda a mejorar la absorción del hierro."
+    "consejo": "Los vegetales de hoja verde son ricos en vitaminas y minerales. El limón ayuda a mejorar la absorción del hierro.",
+    "calorias": 180,
+    "emoji": "🍳"
   },
   {
     "id": 26,
@@ -330,7 +380,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1/2 aguacate, 1/2 pepino, jugo de 1/2 limón, 1/2 taza de agua y sal y pimienta al gusto."
     ],
-    "consejo": "El aguacate aporta grasas saludables y el pepino es refrescante y bajo en calorías"
+    "consejo": "El aguacate aporta grasas saludables y el pepino es refrescante y bajo en calorías",
+    "calorias": 150,
+    "emoji": "🍳"
   },
   {
     "id": 27,
@@ -340,7 +392,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1 zanahoria mediana, 1 naranja pelada, 1/2 pulgada de jengibre fresco y 1/2 taza de agua."
     ],
-    "consejo": "La zanahoria es rica en betacaroteno, un antioxidante importante para la salud ocular."
+    "consejo": "La zanahoria es rica en betacaroteno, un antioxidante importante para la salud ocular.",
+    "calorias": 180,
+    "emoji": "🍳"
   },
   {
     "id": 28,
@@ -350,7 +404,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1/2 taza de frutos rojos congelados (fresas, frambuesas, arándanos), 1 cucharada de semillas de chía o lino y 1/2 taza de leche de almendras sin azúcar."
     ],
-    "consejo": "Los frutos rojos son ricos en antioxidantes y las semillas aportan fibra y omega-3."
+    "consejo": "Los frutos rojos son ricos en antioxidantes y las semillas aportan fibra y omega-3.",
+    "calorias": 180,
+    "emoji": "🍳"
   },
   {
     "id": 29,
@@ -372,7 +428,9 @@
       "Licúa hasta obtener una textura cremosa y uniforme.",
       "Sirve frío"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 180,
+    "emoji": "🥣"
   },
   {
     "id": 30,
@@ -394,7 +452,9 @@
       "Calienta una sartén antiadherente y vierte la mezcla.",
       "Cocina a fuego medio por ambos lados hasta que esté firme y dorada."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 340,
+    "emoji": "🍳"
   },
   {
     "id": 31,
@@ -404,7 +464,9 @@
     "preparacion": [
       "Mezcla 1/4 taza de harina de almendras, 1 huevo, 1/4 taza de leche de almendras y 1/2 cucharadita de polvo para hornear. Cocina en una sartén antiadherente."
     ],
-    "consejo": "La harina de almendras es baja en carbohidratos y rica en proteínas y grasas saludables."
+    "consejo": "La harina de almendras es baja en carbohidratos y rica en proteínas y grasas saludables.",
+    "calorias": 280,
+    "emoji": "🧁"
   },
   {
     "id": 32,
@@ -414,7 +476,9 @@
     "preparacion": [
       "Bate 6 huevos con sal y pimienta. Mezcla con 1 taza de vegetales picados (pimientos, cebolla, champiñones). Vierte en moldes para muffins y hornea a 180°C durante 20-25 minutos."
     ],
-    "consejo": "Estos muffins son una excelente opción para un desayuno rápido y fácil de llevar."
+    "consejo": "Estos muffins son una excelente opción para un desayuno rápido y fácil de llevar.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 33,
@@ -424,7 +488,9 @@
     "preparacion": [
       "Bate 6 huevos con sal y pimienta. Sofríe 1 taza de vegetales picados en una sartén. Vierte los huevos sobre los vegetales y cocina hasta que estén firmes."
     ],
-    "consejo": "La frittata es una excelente manera de incluir una variedad de vegetales en el desayuno."
+    "consejo": "La frittata es una excelente manera de incluir una variedad de vegetales en el desayuno.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 34,
@@ -449,7 +515,9 @@
     "preparacion": [
       "Lava ½ taza de quinua bajo agua fría. Cocina la quinua lavada con 1 taza de agua (o caldo) a fuego bajo y tapada por 15-20 minutos, hasta que se absorba el líquido. Prepara ½ taza de frutas frescas picadas y ¼ taza de nueces picadas. Mezcla la quinua cocida con las frutas y las nueces. Opcional: Añade vainilla, canela o ralladura de cítricos para saborizar. Sirve inmediatamente, tibio o frío."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 370,
+    "emoji": "🥩"
   },
   {
     "id": 35,
@@ -459,7 +527,9 @@
     "preparacion": [
       "Corta 1 taza de fruta fresca en trozos. Acompáñala con 1/2 taza de queso cottage bajo en grasa."
     ],
-    "consejo": "Esta es una opción refrescante y nutritiva para el desayuno."
+    "consejo": "Esta es una opción refrescante y nutritiva para el desayuno.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 36,
@@ -469,7 +539,9 @@
     "preparacion": [
       "Mezcla 2 cucharadas de semillas de chía con 1 taza de leche de almendras y 1/2 cucharadita de extracto de vainilla. Refrigera durante la noche. Cubre con frutas y nueces al gusto."
     ],
-    "consejo": "Las semillas de chía son ricas en fibra y omega-3."
+    "consejo": "Las semillas de chía son ricas en fibra y omega-3.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 37,
@@ -479,7 +551,9 @@
     "preparacion": [
       "Coloca en un recipiente 1 taza de vegetales de hoja verde (espinacas, kale), 1 huevo pochado y 1/4 aguacate en rodajas."
     ],
-    "consejo": "Este tazón es una excelente manera de obtener una gran cantidad de nutrientes en el desayuno."
+    "consejo": "Este tazón es una excelente manera de obtener una gran cantidad de nutrientes en el desayuno.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 38,
@@ -489,7 +563,9 @@
     "preparacion": [
       "Revuelve 2 huevos con sal y pimienta. Rellena una tortilla integral con los huevos y 1/2 taza de vegetales picados."
     ],
-    "consejo": "Este wrap es una opción fácil de llevar para el desayuno."
+    "consejo": "Este wrap es una opción fácil de llevar para el desayuno.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 39,
@@ -499,7 +575,9 @@
     "preparacion": [
       "Mezcla 1 taza de frutas frescas cortadas en trozos con 1/2 taza de yogurt natural sin azúcar añadida."
     ],
-    "consejo": "Esta ensalada es una opción refrescante y nutritiva para el desayuno."
+    "consejo": "Esta ensalada es una opción refrescante y nutritiva para el desayuno.",
+    "calorias": 240,
+    "emoji": "🥗"
   },
   {
     "id": 40,
@@ -520,7 +598,9 @@
       "Cocina: Cocina durante 1-2 minutos por cada lado, o hasta que esté ligeramente dorada.",
       "Rellena y sirve: Retira la crepa de la sartén y colócala en un plato. Repite el proceso con el resto de la masa"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 400,
+    "emoji": "🥩"
   },
   {
     "id": 41,
@@ -530,7 +610,9 @@
     "preparacion": [
       "En un sartén integral, coloca 1 huevo revuelto, 1/4 de aguacate en rodajas, lechuga y tomate."
     ],
-    "consejo": "Este sándwich es una excelente opción para un desayuno completo y equilibrado."
+    "consejo": "Este sándwich es una excelente opción para un desayuno completo y equilibrado.",
+    "calorias": 280,
+    "emoji": "🍳"
   },
   {
     "id": 42,
@@ -540,7 +622,9 @@
     "preparacion": [
       "Ralla 1 taza de coliflor. Mezcla con 2 huevos,1/4 taza de harina de almendras y sal y pimienta al gusto. Cocina en una sartén antiadherente."
     ],
-    "consejo": "Estos panqueques son una alternativa baja en carbohidratos a los panqueques tradicionales."
+    "consejo": "Estos panqueques son una alternativa baja en carbohidratos a los panqueques tradicionales.",
+    "calorias": 280,
+    "emoji": "🧁"
   },
   {
     "id": 43,
@@ -550,7 +634,9 @@
     "preparacion": [
       "Mezcla de açaí congelado con leche de almendras hasta obtener una consistencia suave. Vierta en un tazón y cubre con granola casera sin azúcar y frutos rojos."
     ],
-    "consejo": "El açaí es rico en antioxidantes y la granola casera te permite controlar los ingredientes."
+    "consejo": "El açaí es rico en antioxidantes y la granola casera te permite controlar los ingredientes.",
+    "calorias": 280,
+    "emoji": "🥣"
   },
   {
     "id": 44,
@@ -586,7 +672,9 @@
       "Ensambla: Base de hojas, pollo, aguacate, vegetales.",
       "Adereza: Vierte sobre la ensalada."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🍗"
   },
   {
     "id": 45,
@@ -596,7 +684,9 @@
     "preparacion": [
       "Mezcla de quinoa cocida, salmón a la parrilla en trozos, espinacas, pepino, tomate cherry y aderezo ligero (yogur griego y hierbas)."
     ],
-    "consejo": "El salmón es rico en omega-3 y la quinua es un grano integral con alto contenido de fibra y proteína."
+    "consejo": "El salmón es rico en omega-3 y la quinua es un grano integral con alto contenido de fibra y proteína.",
+    "calorias": 340,
+    "emoji": "🐟"
   },
   {
     "id": 46,
@@ -606,7 +696,9 @@
     "preparacion": [
       "Mezcla lentejas cocidas, zanahoria rallada, apio picado, cebolla roja, pepino y pimiento. Aliña con una vinagreta casera (aceite de oliva, vinagre, mostaza y miel)."
     ],
-    "consejo": "Las lentejas son una excelente fuente de proteína vegetal y fibra."
+    "consejo": "Las lentejas son una excelente fuente de proteína vegetal y fibra.",
+    "calorias": 340,
+    "emoji": "🥗"
   },
   {
     "id": 47,
@@ -636,7 +728,9 @@
     "preparacion": [
       "Cocina el Atún: Luego deja enfriar y desmenuza con un tenedor. Cuece los Huevos: Luego enfría, pela y corta en cuartos. Prepara Vegetales: Lava y corta las hojas verdes, los tomates, el pepino, el pimiento y la cebolla. Corta las aceitunas. Haz el Aderezo: Mezcla el vinagre de manzana, aceite de oliva, mostaza, hierbas picadas, sal y pimienta. Ensambla: En un plato, coloca las hojas verdes, luego el atún desmenuzado, los huevos y los vegetales."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 460,
+    "emoji": "🐟"
   },
   {
     "id": 48,
@@ -646,7 +740,9 @@
     "preparacion": [
       "Alternar rodajas de tomate y mozzarella fresca. Decora con hojas de albahaca fresca y aliña con aceite de oliva y vinagre balsámico."
     ],
-    "consejo": "Esta ensalada es baja en carbohidratos y calorías, pero rica en sabor."
+    "consejo": "Esta ensalada es baja en carbohidratos y calorías, pero rica en sabor.",
+    "calorias": 340,
+    "emoji": "🥗"
   },
   {
     "id": 49,
@@ -656,7 +752,9 @@
     "preparacion": [
       "Marina la pechuga de pollo con hierbas y especias. Asa a la parrilla y acompaña con vegetales asados (pimientos, cebolla, calabacín)."
     ],
-    "consejo": "El pollo a la parrilla es una excelente fuente de proteína magra. Los vegetales asados aportan fibra y vitaminas."
+    "consejo": "El pollo a la parrilla es una excelente fuente de proteína magra. Los vegetales asados aportan fibra y vitaminas.",
+    "calorias": 380,
+    "emoji": "🍗"
   },
   {
     "id": 50,
@@ -666,7 +764,9 @@
     "preparacion": [
       "Marina el pollo con jugo de limón, hierbas frescas (romero, tomillo) y especias. Hornea hasta que esté cocido y jugoso."
     ],
-    "consejo": "Esta receta es baja en grasa y calorías, pero llena de sabor."
+    "consejo": "Esta receta es baja en grasa y calorías, pero llena de sabor.",
+    "calorias": 380,
+    "emoji": "🍗"
   },
   {
     "id": 51,
@@ -698,7 +798,9 @@
       "Mezcla los ingredientes de la salsa y agrégala al sartén.",
       "Cocina 2 minutos más y listo."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 455,
+    "emoji": "🍗"
   },
   {
     "id": 52,
@@ -719,7 +821,9 @@
       "Agrega el aderezo, sal y pimienta.",
       "Enrolla y sirve. Ideal para almuerzo ligero o cena saludable."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🍗"
   },
   {
     "id": 53,
@@ -750,7 +854,9 @@
       "Saltea el arroz de coliflor con sal y cúrcuma en otra sartén.",
       "Sirve el curry sobre el arroz de coliflor."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 555,
+    "emoji": "🍗"
   },
   {
     "id": 54,
@@ -769,7 +875,9 @@
       "Rocía con aceite, limón y especias.",
       "Hornea por 15–20 minutos hasta que el salmón esté cocido y jugoso."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 505,
+    "emoji": "🐟"
   },
   {
     "id": 55,
@@ -779,7 +887,9 @@
     "preparacion": [
       "Asa el atún a la parrilla y sirve con una ensalada mixta de lechuga, tomate, pepino y aguacate."
     ],
-    "consejo": "El atún es una buena fuente de proteínas y omega-3"
+    "consejo": "El atún es una buena fuente de proteínas y omega-3",
+    "calorias": 340,
+    "emoji": "🐟"
   },
   {
     "id": 56,
@@ -799,7 +909,9 @@
       "En otra sartén, saltea el arroz de coliflor con cúrcuma y sal.",
       "Sirve todo junto y disfruta caliente. MARISCOS"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 455,
+    "emoji": "🦐"
   },
   {
     "id": 57,
@@ -827,7 +939,9 @@
       "Sazona el bacalao: Salpimienta el bacalao y riega con el resto del aceite de oliva. Opcionalmente, coloca unas rodajas de limón encima y espolvorea un poco de pimentón dulce.",
       "Hornea el bacalao, hasta que el bacalao esté opaco y se desmenuce fácilmente con un tenedor. M ARISCOS"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 455,
+    "emoji": "🥩"
   },
   {
     "id": 58,
@@ -837,7 +951,9 @@
     "preparacion": [
       "Mezcla pulpo cocido en trozos con pimientos rojos y verdes asados, cebolla morada y aceitunas. Aliña con una vinagreta casera."
     ],
-    "consejo": "El pulpo es una buena fuente de proteínas y minerales. M ARISCOS"
+    "consejo": "El pulpo es una buena fuente de proteínas y minerales. M ARISCOS",
+    "calorias": 340,
+    "emoji": "🥗"
   },
   {
     "id": 59,
@@ -863,7 +979,9 @@
       "Cocina: Calienta el aceite de oliva en una sartén a fuego medio. Cocina las hamburguesas por 4-5 minutos por cada lado, hasta que estén doradas y calientes.",
       "Sirve: Sirve las hamburguesas en los panes integrales con tus vegetales frescos favoritos."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 510,
+    "emoji": "🥩"
   },
   {
     "id": 60,
@@ -873,7 +991,9 @@
     "preparacion": [
       "Rellena tortillas integrales con frijoles negros refritos, vegetales salteados (pimiento, cebolla, champiñones) y salsa."
     ],
-    "consejo": "Los tacos vegetarianos son una opción sabrosa y nutritiva para el almuerzo."
+    "consejo": "Los tacos vegetarianos son una opción sabrosa y nutritiva para el almuerzo.",
+    "calorias": 380,
+    "emoji": "🌮"
   },
   {
     "id": 61,
@@ -900,7 +1020,9 @@
       "Monta: Salsa, lasaña, queso, verduras (repite). Termina con salsa y parmesano (opcional).",
       "Hornea: 180°C (350°F) 30 min tapado, 15-20 min sin tapar."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 450,
+    "emoji": "🍝"
   },
   {
     "id": 62,
@@ -927,7 +1049,9 @@
       "Finaliza: Limón, cilantro.",
       "Sirve: Con arroz de coliflor."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 445,
+    "emoji": "🍚"
   },
   {
     "id": 63,
@@ -950,7 +1074,9 @@
       "Cocina: Hasta que las lentejas estén tiernas.",
       "Sazona: Sal, pimienta."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 350,
+    "emoji": "🍲"
   },
   {
     "id": 64,
@@ -974,7 +1100,9 @@
       "Cuece: Agrega albóndigas. Cocina hasta listas.",
       "Sazona: Sal, pimienta."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 400,
+    "emoji": "🦃"
   },
   {
     "id": 65,
@@ -993,7 +1121,9 @@
       "Agrega el brócoli y el calabacín. Cocina 5–6 minutos.",
       "Ajusta sal y pimienta al gusto. Sirve caliente."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 455,
+    "emoji": "🥩"
   },
   {
     "id": 66,
@@ -1013,7 +1143,9 @@
       "Agrega los pimientos y cocina 5 minutos hasta que estén suaves.",
       "Sirve con rodajas de aguacate por encima."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🥩"
   },
   {
     "id": 67,
@@ -1032,7 +1164,9 @@
       "Enrolla: Cierra el wrap.",
       "Corta: (Opcional) por la mitad. RAPIDAS"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 380,
+    "emoji": "🌯"
   },
   {
     "id": 68,
@@ -1053,7 +1187,9 @@
       "Adereza: Jugo de limón, aceite de oliva, sal, pimienta.",
       "Mezcla: Sirve. RAPIDAS"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 345,
+    "emoji": "🥗"
   },
   {
     "id": 69,
@@ -1073,7 +1209,9 @@
       "Mezcla: Revuelve suavemente para combinar todos los ingredientes.",
       "Sirve: Disfruta inmediatamente. Puedes servirlo solo o sobre hojas de lechuga RAPIDAS"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🐟"
   },
   {
     "id": 70,
@@ -1096,7 +1234,9 @@
       "Salsa: Machaca aguacate. Mezcla con cebolla, cilantro, limón, sal, pimienta.",
       "Tacos: Calienta tortillas. Rellena con pescado y salsa RAPIDAS"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🐟"
   },
   {
     "id": 71,
@@ -1114,7 +1254,9 @@
       "Agrega la auyama cocida y mezcla por 2–3 minutos.",
       "Sirve caliente con cilantro por encima."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 495,
+    "emoji": "🍗"
   },
   {
     "id": 72,
@@ -1138,7 +1280,9 @@
       "Hornea: Hasta que los pimientos estén tiernos.",
       "Sazona: Sal, pimienta. RAPIDAS"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 380,
+    "emoji": "🥗"
   },
   {
     "id": 73,
@@ -1156,7 +1300,9 @@
       "Sazona: Sal, pimienta.",
       "Sirve RAPIDAS Al hacer cualquier tipo de sopas, añade solo una clase de verduras. Si combinas por ejemplo, apio con ocumo, ello dispara la glucosa. Por lo tanto solo añade a tu sola UNA CLASE DE VERDURA"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 350,
+    "emoji": "🍗"
   },
   {
     "id": 74,
@@ -1178,7 +1324,9 @@
       "Monta: Salsa, calabacín, ricotta, carne (repite). Termina con salsa y parmesano.",
       "Hornea: Hasta dorar. RAPIDAS Hamburguesa sin pan (envuelta en lechuga) INGREDIENTES: 1 hoja grande de lechuga romana o iceberg (firme y entera) 1 hamburguesa de pollo o carne (a la plancha, sin pan rallado) 1 huevo cocido o a la plancha 1 cda de chicharrón triturado 2 rodajas de tomate 1 rodaja de aguacate PREPARACION: Cocina la hamburguesa a la plancha con sal y especias al gusto. Cocina el huevo a tu gusto Coloca sobre la hoja de lechuga: tomate, hamburguesa, huevo, aguacate y chicharrón. Cierra con otra hoja de lechuga si quieres más firmeza. ¡Enrolla con papel o envuelve como “wrap” y disfruta sin culpa! RECETA EXTRA"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 515,
+    "emoji": "🥩"
   },
   {
     "id": 75,
@@ -1196,7 +1344,9 @@
       "Mezcla: Combina el espagueti de calabacín con el pollo y el pesto.",
       "Sirve: (Opcional: añade tomates cherry)."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 420,
+    "emoji": "🍗"
   },
   {
     "id": 76,
@@ -1219,7 +1369,9 @@
       "Sazona: Sal, pimienta.",
       "Sirve: Espolvorea perejil."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 425,
+    "emoji": "🦐"
   },
   {
     "id": 77,
@@ -1241,7 +1393,9 @@
       "Salsa: Calienta la salsa de tomate con un poco de manteca de cerdo",
       "Combina: Sirve el espagueti con las albóndigas y la salsa. Espolvorea perejil."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 420,
+    "emoji": "🦃"
   },
   {
     "id": 78,
@@ -1264,7 +1418,9 @@
       "Sazona: Sal, pimienta.",
       "Sirve: (Opcional: limón)."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 445,
+    "emoji": "🐟"
   },
   {
     "id": 79,
@@ -1287,7 +1443,9 @@
       "Cocina: Brevemente hasta que esté tierno.",
       "Sirve: Espolvorea semillas de sésamo"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 410,
+    "emoji": "🥒"
   },
   {
     "id": 80,
@@ -1309,7 +1467,9 @@
       "Sazona: Hierbas, sal, pimienta.",
       "Sirve: La pasta con la salsa."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 490,
+    "emoji": "🐟"
   },
   {
     "id": 81,
@@ -1330,7 +1490,9 @@
       "Mezcla: Con el calabacín.",
       "Sirve."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🥒"
   },
   {
     "id": 82,
@@ -1353,7 +1515,9 @@
       "Cocina: Brevemente.",
       "Sirve."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 395,
+    "emoji": "🥒"
   },
   {
     "id": 83,
@@ -1377,7 +1541,9 @@
       "Mezcla: Espagueti, camarones, salsa.",
       "Sirve: Con perejil."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 435,
+    "emoji": "🦐"
   },
   {
     "id": 84,
@@ -1397,7 +1563,9 @@
       "Combina: Espagueti, pollo, salsa.",
       "Sirve. RECETA EXTRA. Pasta de Calabaza con INGREDIENTES: Ingredientes: 1 taza de calabaza en cubos 100g de carne molida magra 1 diente de ajo picado 1 cda de cebolla picada Sal y pimienta al gusto 1 cda de aceite de oliva Hierbas (orégano, perejil) al gusto PREPARACION: Cocina la calabaza hasta que esté suave y tritúrala hasta formar un puré. En otra sartén, sofríe el ajo y la cebolla en el aceite de oliva. Agrega la carne molida, sal, pimenta y cocina bien. Mezcla el puré de calabaza con la carne, añade hierbas y sirve caliente."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 430,
+    "emoji": "🍗"
   },
   {
     "id": 85,
@@ -1420,7 +1588,9 @@
       "Asa al horno (180 °C) por 15–20 minutos o en sartén hasta que estén tiernos.",
       "Sirve el pollo con los vegetales asados como acompañante. baja en carbohidratos y con grasas saludables."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 395,
+    "emoji": "🍗"
   },
   {
     "id": 86,
@@ -1442,7 +1612,9 @@
       "Coloca en una bandeja y hornea por 25– 30 minutos, o hasta que esté bien cocido.",
       "Sirve con vegetales al vapor o ensalada fresca."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 395,
+    "emoji": "🍗"
   },
   {
     "id": 87,
@@ -1466,7 +1638,9 @@
       "Sirve caliente, ¡y disfruta sin miedo al azúcar!",
       "Pollo Salteado con Vegetales y Salsa Agridulce Casera: azúcar, rica en proteína y fibra, con un toque de sabor balanceado."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 395,
+    "emoji": "🍗"
   },
   {
     "id": 88,
@@ -1488,7 +1662,9 @@
       "Sirve fresco como almuerzo o merienda ligera.",
       "Wrap de Pollo con Aguacate y Vegetales: Ideal para diabéticos: Rico en proteína, grasas buenas y fibra. Sin harinas refinadas ni picos de glucosa."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🍗"
   },
   {
     "id": 89,
@@ -1509,7 +1685,9 @@
       "Añade sal y pimienta al gusto.",
       "Sirve el salteado de curry sobre una porción de arroz integral caliente. Apto para diabéticos: Combina proteína magra, carbohidrato complejo y fibra, ideal para almuerzos balanceados."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 425,
+    "emoji": "🍗"
   },
   {
     "id": 90,
@@ -1529,7 +1707,9 @@
       "Cocina en sartén antiadherente a fuego medio.",
       "Sirve con rodajas de tomate frescas encima. EXTRA"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 390,
+    "emoji": "🍗"
   },
   {
     "id": 91,
@@ -1551,7 +1731,9 @@
       "Mezcla los vegetales, añade el aguacate y adereza con aceite de oliva y limón.",
       "Sirve el atún sobre la ensalada"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 430,
+    "emoji": "🐟"
   },
   {
     "id": 92,
@@ -1572,7 +1754,9 @@
       "Condimenta con sal, pimienta y cúrcuma.",
       "Sirve caliente, solo o con una porción de arroz integral."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 385,
+    "emoji": "🦐"
   },
   {
     "id": 93,
@@ -1594,7 +1778,9 @@
       "Hornea por 20–25 minutos o hasta que el pescado esté tierno.",
       "Sirve caliente, con ensalada fresca si deseas. Apto para diabéticos: Rico en proteína, bajo en carbohidratos, con fibra y grasas saludables. dejar de comer sabroso."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 415,
+    "emoji": "🥩"
   },
   {
     "id": 94,
@@ -1616,7 +1802,9 @@
       "Vierte la vinagreta sobre la ensalada y mezcla bien.",
       "Refrigera por 15 minutos antes de servir para potenciar el sabor."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 315,
+    "emoji": "🥗"
   },
   {
     "id": 95,
@@ -1638,7 +1826,9 @@
       "Forma una hamburguesa y cocina en sartén antiadherente con unas gotas de aceite.",
       "Sirve envuelta en lechuga con aguacate o vegetales frescos."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 415,
+    "emoji": "🍔"
   },
   {
     "id": 96,
@@ -1657,7 +1847,9 @@
       "Calienta las tortillas y rellénalas con frijoles y vegetales.",
       "Agrega repollo fresco encima y un chorrito de limón. Apto para diabéticos: Alto en fibra, sin azúcar, con proteína vegetal y saciante."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 415,
+    "emoji": "🍗"
   },
   {
     "id": 97,
@@ -1675,7 +1867,9 @@
       "En un molde pequeño, arma capas con zucchini, vegetales y queso.",
       "Hornea por 15–20 min a 180 °C hasta que el queso gratine."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 420,
+    "emoji": "🍝"
   },
   {
     "id": 98,
@@ -1694,7 +1888,9 @@
       "La masa la ponemos sobre un papel vegetal en una bandeja y encima de esta masa pondremos el queso",
       "Precalentamos el horno a 180° y horneamos arriba y abajo hasta que veamos que está hecha"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 465,
+    "emoji": "🍗"
   },
   {
     "id": 99,
@@ -1712,7 +1908,9 @@
       "Usar un huevo frito como base para cada \"sándwich\". Colocar el jamón/pastrami/fiambres apilados y luego añadir el queso. Cubrir cada montón con un huevo frito. Dejar en la sartén con el fuego suave si quieres que se derrita el queso.",
       "Servir de inmediato."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 385,
+    "emoji": "🍽️"
   },
   {
     "id": 100,
@@ -1734,7 +1932,9 @@
       "Agrega mayonesa o yogur y condimenta.",
       "Cierra el sándwich y disfruta frío. Ideal para diabéticos: Sin harinas, rico en grasas saludables, proteína y fibra. Perfecto para desayuno o cena ligera sin picos de glucosa."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 435,
+    "emoji": "🍽️"
   },
   {
     "id": 101,
@@ -1754,7 +1954,9 @@
       "Agrega el aceite, jugo de limón y condimenta al gusto.",
       "Sirve fría como almuerzo o cena ligera."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 305,
+    "emoji": "🥗"
   },
   {
     "id": 102,
@@ -1777,7 +1979,9 @@
       "Coloca una porción del relleno en cada hoja de lechuga y enrolla como taco o burrito.",
       "Sirve frío o ligeramente tibio."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 405,
+    "emoji": "🥩"
   },
   {
     "id": 103,
@@ -1795,7 +1999,9 @@
       "Cocina en sartén con el aceite y añade la espinaca.",
       "Sirve con aguacate por encima."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🍽️"
   },
   {
     "id": 104,
@@ -1805,7 +2011,9 @@
     "preparacion": [
       "Reemplazar las láminas de pasta con láminas de calabacín. Arma la lasaña con carne magra de res o pavo, queso ricotta, salsa de tomate casera y especias."
     ],
-    "consejo": "Esta lasaña es más baja en carbohidratos y calorías que la lasaña tradicional."
+    "consejo": "Esta lasaña es más baja en carbohidratos y calorías que la lasaña tradicional.",
+    "calorias": 390,
+    "emoji": "🥩"
   },
   {
     "id": 105,
@@ -1815,7 +2023,9 @@
     "preparacion": [
       "Pollo marino con hierbas y especias. Hornea junto con brócoli y coliflor en floretes."
     ],
-    "consejo": "Esta es una comida completa y nutritiva, fácil de preparar."
+    "consejo": "Esta es una comida completa y nutritiva, fácil de preparar.",
+    "calorias": 340,
+    "emoji": "🍗"
   },
   {
     "id": 106,
@@ -1836,7 +2046,9 @@
       "Aparte, saltea los espárragos 3–4 minutos en sartén.",
       "Sirve el pescado con espárragos y rodajas de aguacate por encima."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🐟"
   },
   {
     "id": 107,
@@ -1846,7 +2058,9 @@
     "preparacion": [
       "Prepara albóndigas de pavo caseras con carne magra de pavo, sartén rallada integral, huevo y especias. Cocina en salsa de tomate casera y sirve con calabacín en espiral o rallado."
     ],
-    "consejo": "Esta receta es una opción baja en carbohidratos y calorías, pero rica en proteínas y fibra."
+    "consejo": "Esta receta es una opción baja en carbohidratos y calorías, pero rica en proteínas y fibra.",
+    "calorias": 340,
+    "emoji": "🦃"
   },
   {
     "id": 108,
@@ -1869,7 +2083,9 @@
     "preparacion": [
       "Lava muy bien el brócoli y triturarlo en una procesadora con los otros vegetales, después le agregas huevos, harina y todos los demás ingredientes Cuando tengas una mezcla parecida a una masa la colocas en una bandeja con papel encerado Hornear a 350• por 25 minutos aproximadamente, coloca el queso amarillo y las semillas de ajonjolí o sésamo, al estilo sándwich"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 430,
+    "emoji": "🍞"
   },
   {
     "id": 109,
@@ -1879,7 +2095,9 @@
     "preparacion": [
       "Cocina quinua según las instrucciones del paquete. Mezcla con pepino, tomate, cebolla morada y aguacate en cubos. Aliña con una vinagreta ligera de limón y hierbas. Cocina salmón a la plancha y sirve sobre la ensalada de quinua."
     ],
-    "consejo": "Esta receta es una excelente fuente de omega-3,Proteínas,fibra y grasas saludables."
+    "consejo": "Esta receta es una excelente fuente de omega-3,Proteínas,fibra y grasas saludables.",
+    "calorias": 150,
+    "emoji": "🐟"
   },
   {
     "id": 110,
@@ -1889,7 +2107,9 @@
     "preparacion": [
       "Cocina lentejas según las instrucciones del paquete. Saltea vegetales picados (pimiento, cebolla, champiñones) en aceite de oliva. Tortillas rellenas integrales con lentejas, vegetales salteados y salsa."
     ],
-    "consejo": "Los tacos de lentejas son una opción vegetariana y nutritiva para la cena."
+    "consejo": "Los tacos de lentejas son una opción vegetariana y nutritiva para la cena.",
+    "calorias": 340,
+    "emoji": "🌮"
   },
   {
     "id": 111,
@@ -1899,7 +2119,9 @@
     "preparacion": [
       "Cocina un curry de pollo con leche de coco light, vegetales (zanahoria, Patata, guisantes) y especias. Ralla coliflor y saltea en una sartén con un poco de aceite de oliva hasta que esté tierno. Sirve el curry de pollo sobre el arroz de coliflor."
     ],
-    "consejo": "El arroz de coliflor es una excelente alternativa baja en carbohidratos al arroz tradicional."
+    "consejo": "El arroz de coliflor es una excelente alternativa baja en carbohidratos al arroz tradicional.",
+    "calorias": 340,
+    "emoji": "🍗"
   },
   {
     "id": 112,
@@ -1909,7 +2131,9 @@
     "preparacion": [
       "Saltea carne de res en tiras con vegetales variados (pimiento, cebolla, champiñones, calabacín) y salsa de soja baja en sodio."
     ],
-    "consejo": "Esta es una opción rápida y sabrosa para una cena entre semana."
+    "consejo": "Esta es una opción rápida y sabrosa para una cena entre semana.",
+    "calorias": 340,
+    "emoji": "🥩"
   },
   {
     "id": 113,
@@ -1929,7 +2153,9 @@
       "Tritura la batata con un poco de sal y unas gotas de aceite de oliva para hacer el puré.",
       "Sirve todo junto y añade limón al salmón si deseas."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 465,
+    "emoji": "🐟"
   },
   {
     "id": 114,
@@ -1939,7 +2165,9 @@
     "preparacion": [
       "Cocina pechuga de pollo a la parrilla y corta en tiras. Mezcla lechuga, tomate, pepino, pimiento, cebolla roja y aguacate en cubos. Prepara un aderezo de sin azúcar añadida, hierbas frescas picadas (eneldo, perejil, cilantro), jugo de limón y especias. Sirve la ensalada con el pollo a la parrilla y el aderezo de yogur griego."
     ],
-    "consejo": "Esta ensalada es una opción fresca y nutritiva para la cena, rica en proteínas, fibra y vitaminas."
+    "consejo": "Esta ensalada es una opción fresca y nutritiva para la cena, rica en proteínas, fibra y vitaminas.",
+    "calorias": 300,
+    "emoji": "🍗"
   },
   {
     "id": 115,
@@ -1949,7 +2177,9 @@
     "preparacion": [
       "Rellena pechuga de pavo con una mezcla de pan integral rallado, cebolla, apio, hierbas y especias. Hornea el pavo hasta que esté cocido. Prepara una salsa de cranberry casera sin azúcar añadida cocinando cranberries frescas con un poco de jugo de naranja y especias. Sirve el pavo relleno con vegetales al vapor o asados y salsa de cranberry casera."
     ],
-    "consejo": "Esta receta es una excelente opción para una cena festiva o especial, rica en proteínas, fibra y vitaminas."
+    "consejo": "Esta receta es una excelente opción para una cena festiva o especial, rica en proteínas, fibra y vitaminas.",
+    "calorias": 340,
+    "emoji": "🦃"
   },
   {
     "id": 116,
@@ -1967,7 +2197,9 @@
     "preparacion": [
       "Tritura el aguacate con limón, sal y ajo en polvo (esto será tu mayonesa natural). Mezcla el atún con la “mayonesa” de aguacate. Agrega los vegetales y mezcla bien. Sirve fría, sola o sobre hojas de lechuga."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🐟"
   },
   {
     "id": 117,
@@ -1987,7 +2219,9 @@
       "Tritura la calabaza cocida con sal y orégano para hacer el puré.",
       "Sirve el pollo con champiñones sobre una base de puré caliente."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 395,
+    "emoji": "🍗"
   },
   {
     "id": 118,
@@ -2008,7 +2242,9 @@
       "En un bowl, mezcla la lechuga, los vegetales y el atún en trozos.",
       "Aliña con vinagre balsámico, aceite de oliva y orégano."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 400,
+    "emoji": "🐟"
   },
   {
     "id": 119,
@@ -2029,7 +2265,9 @@
       "Agrega hojas de albahaca y rocía con aceite de oliva.",
       "Sirve fría o tibia."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 480,
+    "emoji": "🍗"
   },
   {
     "id": 120,
@@ -2049,7 +2287,9 @@
       "Mezcla con la coliflor tibia o fría.",
       "Agrega cilantro por encima si deseas y sirve como plato principal o acompañante."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🥩"
   },
   {
     "id": 121,
@@ -2070,7 +2310,9 @@
       "Tritura la coliflor con un poco de sal y aceite de oliva hasta hacer un puré suave.",
       "Sirve el salmón con el puré y el brócoli al lado."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 405,
+    "emoji": "🐟"
   },
   {
     "id": 122,
@@ -2091,7 +2333,9 @@
       "Rellena cada hoja de lechuga con la mezcla y decora con cilantro si deseas.",
       "Sirve frío como snack o cena ligera."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🥩"
   },
   {
     "id": 123,
@@ -2110,7 +2354,9 @@
       "Rellena la pechuga con esta mezcla y ciérrala con palillos.",
       "Sazona con sal, pimienta y ajo, y cocina en sartén o al horno hasta que esté dorada y bien cocida."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 470,
+    "emoji": "🍗"
   },
   {
     "id": 124,
@@ -2130,7 +2376,9 @@
       "En una sartén con aceite, cocina la mezcla a fuego medio hasta que esté firme.",
       "Sirve con rodajas de aguacate por encima."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🍽️"
   },
   {
     "id": 125,
@@ -2150,7 +2398,9 @@
       "En un bowl, coloca la base de quinoa, agrega la espinaca, el pollo y el aguacate.",
       "Rocía con aceite de oliva y jugo de limón antes de servir."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🍗"
   },
   {
     "id": 126,
@@ -2170,7 +2420,9 @@
       "Tritura el aguacate con el limón, sal y ajo para hacer el guacamole.",
       "Sirve los huevos con los vegetales y el guacamole como dip."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 390,
+    "emoji": "🍳"
   },
   {
     "id": 127,
@@ -2191,7 +2443,9 @@
       "Añade sal, perejil y un chorrito de limón al gusto.",
       "Sirve caliente."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 385,
+    "emoji": "🦐"
   },
   {
     "id": 128,
@@ -2207,7 +2461,9 @@
     "preparacion": [
       "Mezcla la carne molida con la cebolla, el ajo y las especias. Forma hamburguesas y cocina a la parrilla o en una sartén hasta que estén bien cocidas. Sirve en platos con aguacate en rodajas y una ensalada fresca."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🥩"
   },
   {
     "id": 129,
@@ -2226,7 +2482,9 @@
       "Mezcla la quinoa con el aguacate, pepino, tomate, aceite de oliva, limón y sal.",
       "Sirve el salmón con la ensalada como acompañante."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🐟"
   },
   {
     "id": 130,
@@ -2247,7 +2505,9 @@
       "Prepara el aderezo combinando la mostaza, vinagre y aceite de oliva.",
       "Añade el aderezo a la ensalada y sirve con el pollo caliente."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 450,
+    "emoji": "🍗"
   },
   {
     "id": 131,
@@ -2271,7 +2531,9 @@
       "Prepara el aderezo mezclando el yogur, aceite, mostaza, limón y sal.",
       "Agrega el pollo a la ensalada, espolvorea el queso y vierte el aderezo por encima."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 430,
+    "emoji": "🍗"
   },
   {
     "id": 132,
@@ -2291,7 +2553,9 @@
       "Mezcla los vegetales en un bowl y aliña con limón, aceite de oliva y una pizca de sal.",
       "Sirve el atún sobre la ensalada fresca."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 390,
+    "emoji": "🐟"
   },
   {
     "id": 133,
@@ -2310,7 +2574,9 @@
       "Asa las berenjenas en la parrilla o sartén con unas gotas de aceite hasta que estén doradas y tiernas.",
       "Sirve la carne caliente junto con las berenjenas. Puedes rociar con un poco de jugo de limón. EXTRA: POLLO CON SALSA DE KIW I INGREDIENTES: Ingredientes: 2 pechugas de pollo sin piel 1 kiwi maduro 1 cucharada de aceite de oliva 2 dientes de ajo picados 1/4 taza de caldo de pollo bajo en sodio Jugo de 1/2 limón Sal y pimienta al gusto PREPARACION: Cocina el pollo: Salpimienta las pechugas de dorarse y estar bien cocidas (6-7 minutos por lado). Retira y reserva. Haz la salsa: En la misma sartén, cocina el ajo, luego agrega el kiwi picado, el caldo de pollo y el jugo de limón. Cocina 3-4 minutos hasta que el kiwi se deshaga y se forme una salsa espesa. Finaliza: Coloca el pollo en la sartén con la salsa y cocina 2-3 minutos más. Ajusta sal y pimienta. Servir: Sirve el pollo con la salsa y acompáñalo con ensalada o vegetales al vapor. EXTRA: POLLO CON SALSA DE KIW I Beneficios: Proteína magra, antioxidantes, y fibra para mantener tu azúcar en sangre estable. ¡Una cena deliciosa y saludable! CHICHARRON Cochino Asado con Ensalada de Aguacate y Tomate INGREDIENTES: 1 porción de cochino asado al horno 1/2 aguacate en cubos Tomate, cebolla y cilantro picados Limón, sal y pimienta PREPARACION: Sirve el cochino con la ensalada fresca de aguacate y tomate. Rocía con limón y listo. Cochino Asado con Brócoli al Vapor y Aguacate INGREDIENTES: 1 porción de cochino asado 1 taza de brócoli cocido al vapor 1/4 de aguacate Aceite de oliva y sal al gusto PREPARACION: Acompaña el cochino con brócoli y aguacate. Agrega un chorrito de aceite de oliva. Ensalada tibia de Cochino Asado con Espinaca y Aguacate INGREDIENTES: Tiras de cochino asado 1 taza de espinaca fresca 1/2 aguacate en rodajas Mostaza y limón para aderezo PREPARACION: Calienta el cochino y mezcla con la espinaca y aguacate. Aliña con mostaza y limón. Cochino Asado con Calabacín Salteado y Aguacate INGREDIENTES: 1 porción de cochino asado 1/2 calabacín en tiras 1/4 de aguacate Ajo y orégano al gusto PREPARACION: Saltea el calabacín en sartén antiadherente con ajo. Sirve junto al cochino y aguacate. Aguacate, Lechuga y Pepino INGREDIENTES: 1 porción de cochino asado en cubos 1 taza de lechuga 1/2 aguacate Pepino en rodajas, limón y sal PREPARACION: Arma un bowl fresco con todos los ingredientes. Sirve frío o tibio según prefieras buenas 20 INTELIGENTES: COM BATE LOS ANTOJOS SIN AFECTAR"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 415,
+    "emoji": "🥩"
   },
   {
     "id": 134,
@@ -2320,7 +2586,9 @@
     "preparacion": [
       "Corta una manzana en rodajas y úntalas con 1 cucharada de mantequilla de almendras naturales."
     ],
-    "consejo": "La manzana aporta fibra y la mantequilla de almendras, grasas saludables y proteínas."
+    "consejo": "La manzana aporta fibra y la mantequilla de almendras, grasas saludables y proteínas.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 135,
@@ -2330,7 +2598,9 @@
     "preparacion": [
       "Disfruta de zanahorias baby crudas con 2 cucharadas de hummus casero o bajo en sodio."
     ],
-    "consejo": "Las zanahorias son ricas en betacaroteno y el hummus aporta proteínas y fibra."
+    "consejo": "Las zanahorias son ricas en betacaroteno y el hummus aporta proteínas y fibra.",
+    "calorias": 160,
+    "emoji": "🫕"
   },
   {
     "id": 136,
@@ -2340,7 +2610,9 @@
     "preparacion": [
       "Corta pepino y tomates cherry en trozos. Mezcla con queso feta desmenuzado y un chorrito de aceite de oliva y hierbas."
     ],
-    "consejo": "Esta combinación es fresca, baja en calorías y rica en nutrientes."
+    "consejo": "Esta combinación es fresca, baja en calorías y rica en nutrientes.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 137,
@@ -2350,7 +2622,9 @@
     "preparacion": [
       "Disfruta de fresas frescas con una cucharada de crema de coco sin azúcar añadida."
     ],
-    "consejo": "Las fresas son bajas en azúcar y ricas en antioxidantes. La crema de coco aporta grasas saludables."
+    "consejo": "Las fresas son bajas en azúcar y ricas en antioxidantes. La crema de coco aporta grasas saludables.",
+    "calorias": 140,
+    "emoji": "🥗"
   },
   {
     "id": 138,
@@ -2360,7 +2634,9 @@
     "preparacion": [
       "Corta pimientos rojos y amarillos en tiras y sírvelos con guacamole casero(aguacate, cebolla, tomate, cilantro, limón)."
     ],
-    "consejo": "Los pimientos son ricos en vitamina C y el guacamole aporta grasas saludables y fibra."
+    "consejo": "Los pimientos son ricos en vitamina C y el guacamole aporta grasas saludables y fibra.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 139,
@@ -2370,7 +2646,9 @@
     "preparacion": [
       "Disfrute de un puñado de almendras crudas (alrededor de 15-20 almendras)."
     ],
-    "consejo": "Las almendras son ricas en grasas saludables, Proteínas y fibras."
+    "consejo": "Las almendras son ricas en grasas saludables, Proteínas y fibras.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 140,
@@ -2380,7 +2658,9 @@
     "preparacion": [
       "Disfruta de 2-3 nueces de Brasil."
     ],
-    "consejo": "Las nueces de Brasil son ricas en selenio, un mineral esencial."
+    "consejo": "Las nueces de Brasil son ricas en selenio, un mineral esencial.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 141,
@@ -2390,7 +2670,9 @@
     "preparacion": [
       "Mezcla 1 cucharada de semillas de chía con 1/2 taza de yogur griego natural sin azúcar añadida."
     ],
-    "consejo": "Las semillas de chía son ricas en fibra y omega-3."
+    "consejo": "Las semillas de chía son ricas en fibra y omega-3.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 142,
@@ -2400,7 +2682,9 @@
     "preparacion": [
       "Tuesta semillas de calabaza crudas en una sartén o en el horno hasta que estén doradas."
     ],
-    "consejo": "Las semillas de calabaza son ricas en magnesio y zinc."
+    "consejo": "Las semillas de calabaza son ricas en magnesio y zinc.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 143,
@@ -2410,7 +2694,9 @@
     "preparacion": [
       "Mezcla de almendras, nueces, semillas de calabaza, semillas de girasol y arándanos deshidratados sin azúcar añadida."
     ],
-    "consejo": "Esta mezcla te proporciona una variedad de nutrientes y grasas saludables."
+    "consejo": "Esta mezcla te proporciona una variedad de nutrientes y grasas saludables.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 144,
@@ -2420,7 +2706,9 @@
     "preparacion": [
       "Mezcla 1/2 taza de yogur griego natural sin azúcar añadida con 1/2 taza de bayas frescas o congeladas."
     ],
-    "consejo": "El yogur griego es rico en proteínas y las bayas son bajas en azúcar y ricas en antioxidantes."
+    "consejo": "El yogur griego es rico en proteínas y las bayas son bajas en azúcar y ricas en antioxidantes.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 145,
@@ -2430,7 +2718,9 @@
     "preparacion": [
       "Mezcla 1/2 taza de yogurt natural con 1/4 cucharadita de canela y 1/4 taza de nueces picadas."
     ],
-    "consejo": "La canela puede ayudar a mejorar la sensibilidad a la insulina."
+    "consejo": "La canela puede ayudar a mejorar la sensibilidad a la insulina.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 146,
@@ -2440,7 +2730,9 @@
     "preparacion": [
       "Mezcla 1/2 taza de yogurt natural con 1 cucharada de semillas de chía o lino y 1/4 taza de frutas deshidratadas sin azúcar añadida (pasas, Arándanos, orejones)."
     ],
-    "consejo": "Las semillas aportan fibra y omega-3.Las frutas deshidratadas son una buena opción si se consumen con moderación."
+    "consejo": "Las semillas aportan fibra y omega-3.Las frutas deshidratadas son una buena opción si se consumen con moderación.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 147,
@@ -2450,7 +2742,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1/2 taza de yogurt,1/2 taza de frutas (fresas, plátano) y 1/2 taza de vegetales (espinacas, pepino)."
     ],
-    "consejo": "Los batidos son una forma fácil de obtener una gran cantidad de nutrientes en un snack."
+    "consejo": "Los batidos son una forma fácil de obtener una gran cantidad de nutrientes en un snack.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 148,
@@ -2460,7 +2754,9 @@
     "preparacion": [
       "En un vaso, alternar capas de yogur, frutas y granola casera sin azúcar añadida."
     ],
-    "consejo": "Esta es una forma visualmente atractiva de disfrutar de un snack saludable."
+    "consejo": "Esta es una forma visualmente atractiva de disfrutar de un snack saludable.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 149,
@@ -2470,7 +2766,9 @@
     "preparacion": [
       "Envuelve rodajas de pavo magro con queso bajo en grasa."
     ],
-    "consejo": "Este snack es rico en proteínas y bajo en carbohidratos."
+    "consejo": "Este snack es rico en proteínas y bajo en carbohidratos.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 150,
@@ -2480,7 +2778,9 @@
     "preparacion": [
       "Cocina edamame al vapor o hervido y sazona con sal."
     ],
-    "consejo": "El edamame es una excelente fuente de proteína vegetal y fibra."
+    "consejo": "El edamame es una excelente fuente de proteína vegetal y fibra.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 151,
@@ -2490,7 +2790,9 @@
     "preparacion": [
       "Bate huevos con vegetales picados (espinacas, champiñones, pimientos) y hornea en moldes para muffins."
     ],
-    "consejo": "Estas mini frittatas son una excelente manera de obtener proteínas y vegetales en un snack."
+    "consejo": "Estas mini frittatas son una excelente manera de obtener proteínas y vegetales en un snack.",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 152,
@@ -2500,7 +2802,9 @@
     "preparacion": [
       "Precalienta el horno a 180°C. En un recipiente grande , mezcle la avena, las nueces, las semillas y las frutas secas. En una olla pequeña, combina la miel, la mantequilla de maní o almendra s, el aceite de coco, el extracto de vainilla y la sal. Calienta a fuego medio, revolviendo constantemente, hasta que la mezcla esté suave y homog énea. Vierta la mezcla líquida sobre los ingredientes secos y revuelve bien para que todos los ingredientes queden cubiertos. Transfiere la mezcla a un molde cuadrado de 20x20 cm previamente engrasado y presiona firmemente con una espátula o las manos. Horne a durante 25-30 minutos, o hasta que las barras estén doradas. Deja enfriar completamente antes de cortar en barras"
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 160,
+    "emoji": "🥗"
   },
   {
     "id": 153,
@@ -2510,7 +2814,9 @@
     "preparacion": [
       "Unta aguacate en rodajas sobre tostadas de pan integral."
     ],
-    "consejo": "Esta tostada es una buena fuente de grasas saludables y fibra +20+20 SALUDABLESJUGOS SALUDABLES BEBIDAS SALUDABLES Y ENERGETICAS"
+    "consejo": "Esta tostada es una buena fuente de grasas saludables y fibra +20+20 SALUDABLESJUGOS SALUDABLES BEBIDAS SALUDABLES Y ENERGETICAS",
+    "calorias": 80,
+    "emoji": "🥗"
   },
   {
     "id": 154,
@@ -2520,7 +2826,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1 taza de espinacas, 1/2 pepino, 1/2 manzana verde, jugo de 1/2 limón y 1/2 taza de agua."
     ],
-    "consejo": "Este jugo es rico en vitaminas, minerales y antioxidantes."
+    "consejo": "Este jugo es rico en vitaminas, minerales y antioxidantes.",
+    "calorias": 120,
+    "emoji": "🥬"
   },
   {
     "id": 155,
@@ -2530,7 +2838,9 @@
     "preparacion": [
       "Mezcla en una licuadora aguacate, kale, jugo de limón y agua."
     ],
-    "consejo": "Este smoothie es rico en grasas saludables, vitaminas y minerales."
+    "consejo": "Este smoothie es rico en grasas saludables, vitaminas y minerales.",
+    "calorias": 50,
+    "emoji": "🥤"
   },
   {
     "id": 156,
@@ -2540,7 +2850,9 @@
     "preparacion": [
       "Remoja chufas secas en agua durante la noche. Cuela las chufas y mezcla el líquido resultante con agua fresca y un poco de stevia (un edulcorante natural sin calorías)."
     ],
-    "consejo": "La horchata de chufa es una bebida tradicional española refrescante y nutritiva."
+    "consejo": "La horchata de chufa es una bebida tradicional española refrescante y nutritiva.",
+    "calorias": 120,
+    "emoji": "🥤"
   },
   {
     "id": 157,
@@ -2550,7 +2862,9 @@
     "preparacion": [
       "Hierve flores de jamaica secas en agua. Deja enfriar y sirve con hielo."
     ],
-    "consejo": "Refrescante y baja en calorías."
+    "consejo": "Refrescante y baja en calorías.",
+    "calorias": 50,
+    "emoji": "🥤"
   },
   {
     "id": 158,
@@ -2560,7 +2874,9 @@
     "preparacion": [
       "Prepara té de hibisco caliente o frío según las instrucciones del paquete."
     ],
-    "consejo": "El hibisco puede ayudar a reducir la presión arterial."
+    "consejo": "El hibisco puede ayudar a reducir la presión arterial.",
+    "calorias": 120,
+    "emoji": "🍵"
   },
   {
     "id": 159,
@@ -2570,7 +2886,9 @@
     "preparacion": [
       "Mezcla en un extractor de jugos remolacha y zanahoria."
     ],
-    "consejo": "La remolacha puede ayudar a mejorar la circulación sanguínea y la zanahoria es rica en betacaroteno."
+    "consejo": "La remolacha puede ayudar a mejorar la circulación sanguínea y la zanahoria es rica en betacaroteno.",
+    "calorias": 120,
+    "emoji": "🥤"
   },
   {
     "id": 160,
@@ -2580,7 +2898,9 @@
     "preparacion": [
       "Mezcla en una licuadora yogur griego natural sin azúcar añadida, frutos rojos congelados y semillas de chía o lino."
     ],
-    "consejo": "Este smoothie es rico en proteínas, antioxidantes y fibra."
+    "consejo": "Este smoothie es rico en proteínas, antioxidantes y fibra.",
+    "calorias": 120,
+    "emoji": "🍓"
   },
   {
     "id": 161,
@@ -2590,7 +2910,9 @@
     "preparacion": [
       "Mezcla en una licuadora proteína en polvo (whey protein o proteína vegetal), aguacate, espinacas y leche de almendras sin azúcar."
     ],
-    "consejo": "Este batido es rico en proteínas, grasas saludables y fibra."
+    "consejo": "Este batido es rico en proteínas, grasas saludables y fibra.",
+    "calorias": 50,
+    "emoji": "🥤"
   },
   {
     "id": 162,
@@ -2600,7 +2922,9 @@
     "preparacion": [
       "Prepara té de hierbas (menta, hierbabuena, manzanilla) y deja enfriar. Sirve con hielo y limón."
     ],
-    "consejo": "Refrescante y sin calorías."
+    "consejo": "Refrescante y sin calorías.",
+    "calorias": 120,
+    "emoji": "🍵"
   },
   {
     "id": 163,
@@ -2610,7 +2934,9 @@
     "preparacion": [
       "Mezcla jugo de limón fresco con agua y stevia (un edulcorante natural sin calorías)."
     ],
-    "consejo": "Refrescante y baja en calorías."
+    "consejo": "Refrescante y baja en calorías.",
+    "calorias": 120,
+    "emoji": "🍋"
   },
   {
     "id": 164,
@@ -2620,7 +2946,9 @@
     "preparacion": [
       "Mezcla agua con gas con jugo de limón fresco."
     ],
-    "consejo": "Refrescante y baja en calorías."
+    "consejo": "Refrescante y baja en calorías.",
+    "calorias": 50,
+    "emoji": "🍋"
   },
   {
     "id": 165,
@@ -2630,7 +2958,9 @@
     "preparacion": [
       "Mezcla carne de coco fresca con agua y cuela."
     ],
-    "consejo": "La leche de coco casera es rica en grasas saludables."
+    "consejo": "La leche de coco casera es rica en grasas saludables.",
+    "calorias": 120,
+    "emoji": "🥤"
   },
   {
     "id": 166,
@@ -2640,7 +2970,9 @@
     "preparacion": [
       "Remoja almendras crudas en agua durante la noche. Cuela las almendras y mezcla el líquido resultante con agua fresca."
     ],
-    "consejo": "La leche de almendras casera es baja en calorías y carbohidratos."
+    "consejo": "La leche de almendras casera es baja en calorías y carbohidratos.",
+    "calorias": 120,
+    "emoji": "🥤"
   },
   {
     "id": 167,
@@ -2650,7 +2982,9 @@
     "preparacion": [
       "Mezcla en una licuadora yogur griego natural sin azúcar añadida, bayas frescas o congeladas y avena."
     ],
-    "consejo": "Este smoothie es rico en proteínas, fibra y calcio."
+    "consejo": "Este smoothie es rico en proteínas, fibra y calcio.",
+    "calorias": 120,
+    "emoji": "🥤"
   },
   {
     "id": 168,
@@ -2660,7 +2994,9 @@
     "preparacion": [
       "Mezcla en una licuadora frutos rojos congelados (fresas, frambuesas, arándanos), semillas de chía o lino y leche de almendras sin azúcar."
     ],
-    "consejo": "Los frutos rojos son ricos en antioxidantes y las semillas aportan fibra y omega-3."
+    "consejo": "Los frutos rojos son ricos en antioxidantes y las semillas aportan fibra y omega-3.",
+    "calorias": 120,
+    "emoji": "🍓"
   },
   {
     "id": 169,
@@ -2670,7 +3006,9 @@
     "preparacion": [
       "Mezcla en una licuadora aguacate, pepino, jugo de limón y agua."
     ],
-    "consejo": "El aguacate aporta grasas saludables y el pepino es refrescante y bajo en calorías."
+    "consejo": "El aguacate aporta grasas saludables y el pepino es refrescante y bajo en calorías.",
+    "calorias": 50,
+    "emoji": "🥤"
   },
   {
     "id": 170,
@@ -2680,7 +3018,9 @@
     "preparacion": [
       "Mezcla en una licuadora espinacas frescas, frutas (manzana, plátano) y leche de almendras."
     ],
-    "consejo": "Los vegetales de hoja verde son ricos en vitaminas y minerales."
+    "consejo": "Los vegetales de hoja verde son ricos en vitaminas y minerales.",
+    "calorias": 120,
+    "emoji": "🥬"
   },
   {
     "id": 171,
@@ -2690,7 +3030,9 @@
     "preparacion": [
       "Mezcla en una licuadora proteína en polvo (whey protein o proteína vegetal), leche de almendras sin azúcar, bayas congeladas y espinacas."
     ],
-    "consejo": "Este batido es una excelente opción para después del ejercicio o para un snack rápido y nutritivo."
+    "consejo": "Este batido es una excelente opción para después del ejercicio o para un snack rápido y nutritivo.",
+    "calorias": 120,
+    "emoji": "🥤"
   },
   {
     "id": 172,
@@ -2700,7 +3042,9 @@
     "preparacion": [
       "Mezcla en un extractor de jugos remolacha, zanahoria y manzana."
     ],
-    "consejo": "La remolacha puede ayudar a mejorar la circulación sanguínea."
+    "consejo": "La remolacha puede ayudar a mejorar la circulación sanguínea.",
+    "calorias": 120,
+    "emoji": "🥤"
   },
   {
     "id": 173,
@@ -2710,7 +3054,9 @@
     "preparacion": [
       "Mezcla en un extractor de jugos apio, pepino y limón."
     ],
-    "consejo": "Este jugo es bajo en calorías y refrescante."
+    "consejo": "Este jugo es bajo en calorías y refrescante.",
+    "calorias": 120,
+    "emoji": "🍋"
   },
   {
     "id": 174,
@@ -2720,7 +3066,9 @@
     "preparacion": [
       "Mezcla en un extractor de jugos kale, zanahoria y naranja."
     ],
-    "consejo": "El kale es rico en calcio y la zanahoria en betacaroteno."
+    "consejo": "El kale es rico en calcio y la zanahoria en betacaroteno.",
+    "calorias": 120,
+    "emoji": "🥕"
   },
   {
     "id": 175,
@@ -2730,7 +3078,9 @@
     "preparacion": [
       "Mezcla en un extractor de jugos espinacas, pepino y manzana verde."
     ],
-    "consejo": "Este jugo es rico en vitaminas, minerales y fibra."
+    "consejo": "Este jugo es rico en vitaminas, minerales y fibra.",
+    "calorias": 120,
+    "emoji": "🥬"
   },
   {
     "id": 176,
@@ -2740,7 +3090,9 @@
     "preparacion": [
       "Prepara té de jengibre caliente rallando jengibre fresco y añadiéndolo a agua caliente."
     ],
-    "consejo": "El jengibre tiene propiedades antiinflamatorias y puede ayudar a mejorar la digestión."
+    "consejo": "El jengibre tiene propiedades antiinflamatorias y puede ayudar a mejorar la digestión.",
+    "calorias": 120,
+    "emoji": "🍵"
   },
   {
     "id": 177,
@@ -2750,7 +3102,9 @@
     "preparacion": [
       "Prepara té de manzanilla caliente según las instrucciones del paquete."
     ],
-    "consejo": "La manzanilla tiene propiedades relajantes y puede ayudar a mejorar el sueño."
+    "consejo": "La manzanilla tiene propiedades relajantes y puede ayudar a mejorar el sueño.",
+    "calorias": 120,
+    "emoji": "🍵"
   },
   {
     "id": 178,
@@ -2760,7 +3114,9 @@
     "preparacion": [
       "Prepara té verde caliente o frío según las instrucciones del paquete."
     ],
-    "consejo": "El té verde es rico en antioxidantes y puede ayudar a mejorar la sensibilidad a la insulina."
+    "consejo": "El té verde es rico en antioxidantes y puede ayudar a mejorar la sensibilidad a la insulina.",
+    "calorias": 120,
+    "emoji": "🥬"
   },
   {
     "id": 179,
@@ -2770,7 +3126,9 @@
     "preparacion": [
       "Añade bayas frescas o congeladas (fresas, arándanos, frambuesas) a una jarra de agua. Refrigera por al menos 2 horas antes de servir."
     ],
-    "consejo": "Las bayas son bajas en azúcar y ricas en antioxidantes."
+    "consejo": "Las bayas son bajas en azúcar y ricas en antioxidantes.",
+    "calorias": 50,
+    "emoji": "🥤"
   },
   {
     "id": 180,
@@ -2780,7 +3138,9 @@
     "preparacion": [
       "Añade rodajas de limón y jengibre fresco a una jarra de agua. Refrigera por al menos 2 horas antes de servir."
     ],
-    "consejo": "El limón es rico en vitamina C y el jengibre tiene propiedades antiinflamatorias."
+    "consejo": "El limón es rico en vitamina C y el jengibre tiene propiedades antiinflamatorias.",
+    "calorias": 50,
+    "emoji": "🍋"
   },
   {
     "id": 181,
@@ -2790,7 +3150,9 @@
     "preparacion": [
       "Añade rodajas de pepino y hojas de menta fresca a una jarra de agua. Refrigera por al menos 2 horas antes de servir."
     ],
-    "consejo": "Refrescante y baja en calorías. El pepino y la menta aportan sabor sin añadir azúcar."
+    "consejo": "Refrescante y baja en calorías. El pepino y la menta aportan sabor sin añadir azúcar.",
+    "calorias": 50,
+    "emoji": "🥤"
   },
   {
     "id": 182,
@@ -2800,7 +3162,9 @@
     "preparacion": [
       "Prepare una infusión con frutas del bosque congeladas o deshidratadas sin azúcar añadida."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 80,
+    "emoji": "🍵"
   },
   {
     "id": 183,
@@ -2810,7 +3174,9 @@
     "preparacion": [
       "Mezcla jugo de limón fresco con agua y stevia o eritritol al gusto."
     ],
-    "consejo": "Esta limonada es una alternativa saludable a las limonadas comerciales."
+    "consejo": "Esta limonada es una alternativa saludable a las limonadas comerciales.",
+    "calorias": 120,
+    "emoji": "🍋"
   },
   {
     "id": 184,
@@ -2820,7 +3186,9 @@
     "preparacion": [
       "Prepare café negro sin azúcar ni leche."
     ],
-    "consejo": "El café puede ayudar a mejorar la concentración y el estado de ánimo."
+    "consejo": "El café puede ayudar a mejorar la concentración y el estado de ánimo.",
+    "calorias": 120,
+    "emoji": "🥤"
   },
   {
     "id": 185,
@@ -2830,7 +3198,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1 zanahoria,1 naranja pelada,1/2 pulgada de jengibre y 1/2 taza de agua."
     ],
-    "consejo": "La zanahoria es rica en betacaroteno y la naranja en vitamina C."
+    "consejo": "La zanahoria es rica en betacaroteno y la naranja en vitamina C.",
+    "calorias": 120,
+    "emoji": "🥕"
   },
   {
     "id": 186,
@@ -2840,7 +3210,9 @@
     "preparacion": [
       "Agregue rodajas de limón y trozos de jengibre frescos a una jarra de agua. Déjelo reposar en el refrigerador durante al menos 2 horas."
     ],
-    "consejo": "El limón es rico en vitamina C y el jengibre tiene propiedades antiinflamatorias."
+    "consejo": "El limón es rico en vitamina C y el jengibre tiene propiedades antiinflamatorias.",
+    "calorias": 50,
+    "emoji": "🍋"
   },
   {
     "id": 187,
@@ -2850,7 +3222,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1 taza de espinacas,1/2 mango,1/4 piña, jugo de 1/2 limón y 1/2 taza de agua."
     ],
-    "consejo": "El mango es rico en vitamina C y antioxidantes."
+    "consejo": "El mango es rico en vitamina C y antioxidantes.",
+    "calorias": 120,
+    "emoji": "🥬"
   },
   {
     "id": 188,
@@ -2860,7 +3234,9 @@
     "preparacion": [
       "Mezcla en una licuadora 1 taza de kale,1/2 zanahoria,1/2 manzana,1/2 pulgada de jengibre y 1/2 taza de agua."
     ],
-    "consejo": "El kale es rico en calcio y el jengibre tiene propiedades antiinflamatorias."
+    "consejo": "El kale es rico en calcio y el jengibre tiene propiedades antiinflamatorias.",
+    "calorias": 120,
+    "emoji": "🥬"
   },
   {
     "id": 189,
@@ -2882,7 +3258,9 @@
       "Licúa la albahaca, ajo, nueces, parmesano, jugo de limón y 1 cda. de aceite hasta formar el pesto.",
       "Agrega el espagueti de calabacín a la sartén, mezcla con el pesto y los camarones."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 500,
+    "emoji": "🦐"
   },
   {
     "id": 190,
@@ -2904,7 +3282,9 @@
       "Arma capas: berenjena, carne, ricotta, repite.",
       "Hornea 25 min a 180 °C y sirve caliente."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 485,
+    "emoji": "🥩"
   },
   {
     "id": 191,
@@ -2924,7 +3304,9 @@
       "Condimenta con salsa de soya, sal y pimienta.",
       "Sirve caliente como cena ligera."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 385,
+    "emoji": "🦐"
   },
   {
     "id": 192,
@@ -2945,7 +3327,9 @@
       "Agrega el pollo en tiras.",
       "Aliña con aceite, limón, sal y pimienta."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 385,
+    "emoji": "🍗"
   },
   {
     "id": 193,
@@ -2965,7 +3349,9 @@
       "Rellena los pimientos con la mezcla y hornea 20-25 min a 180 °C.",
       "Sirve caliente como plato principal."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 445,
+    "emoji": "🥩"
   },
   {
     "id": 194,
@@ -2986,7 +3372,9 @@
       "Condimenta con sal, pimienta y hierbas.",
       "Sirve caliente como entrada o plato principal."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 355,
+    "emoji": "🍲"
   },
   {
     "id": 195,
@@ -3008,7 +3396,9 @@
       "Añade yogur o aderezo, sal y pimienta al gusto.",
       "Enrolla y sirve como snack o cena ligera."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 150,
+    "emoji": "🍗"
   },
   {
     "id": 196,
@@ -3029,7 +3419,9 @@
       "Mezcla la salsa de soya, vinagre y miel; incorpora al salteado.",
       "Cocina 2-3 min más, ajusta sal y pimienta, y sirve caliente."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 370,
+    "emoji": "🍽️"
   },
   {
     "id": 197,
@@ -3049,7 +3441,9 @@
       "Rellena los champiñones con la mezcla y hornea 15-20 min a 180 °C.",
       "Sirve calientes como aperitivo o plato principal."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 415,
+    "emoji": "🥩"
   },
   {
     "id": 198,
@@ -3067,7 +3461,9 @@
     "preparacion": [
       "Cocina la pasta de lentejas según las instrucciones del paquete. Saltea el pollo en aceite hasta dorarlo. Agrega ajo, brócoli y pimiento; cocina 3-4 minutos hasta que los vegetales estén tiernos. Mezcla la pasta con el salteado, ajusta sal, pimienta y hierbas. Sirve caliente y disfruta de un plato saciante y bajo en carbohidratos simples."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 430,
+    "emoji": "🍗"
   },
   {
     "id": 199,
@@ -3088,7 +3484,9 @@
       "Agrega la salsa de tomate y las albóndigas.",
       "Sirve caliente."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 395,
+    "emoji": "🍽️"
   },
   {
     "id": 200,
@@ -3107,7 +3505,9 @@
       "Mezcla con queso parmesano, sal y pimienta.",
       "Sirve como guarnición o plato principal."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 380,
+    "emoji": "🍄"
   },
   {
     "id": 201,
@@ -3126,6 +3526,8 @@
       "Añade el pollo en tiras.",
       "Sirve caliente. te sean útiles y te ayuden a disfrutar de comidas deliciosas y saludables."
     ],
-    "consejo": ""
+    "consejo": "",
+    "calorias": 430,
+    "emoji": "🍗"
   }
 ]
