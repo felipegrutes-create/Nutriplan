@@ -2710,6 +2710,348 @@ const MiCodigo = (function() {
   }
   function isFav(id) { return getFavs().indexOf(id) !== -1; }
 
+  // ════════════════════════════════════════════════════════════
+  // INSIGHTS ENGINE — "Tus Descubrimientos"
+  // ════════════════════════════════════════════════════════════
+  var _cachedInsights = null;
+  var _insightsCacheDay = '';
+
+  function getInsightsLevel() {
+    var days = Object.keys(getCheckins()).length;
+    if (days >= 30) return 4;
+    if (days >= 14) return 3;
+    if (days >= 7) return 2;
+    if (days >= 3) return 1;
+    return 0;
+  }
+
+  function getCheckinDays() {
+    return Object.keys(getCheckins()).length;
+  }
+
+  function calcWeightTrend() {
+    var checkins = getCheckins();
+    var dates = Object.keys(checkins).sort().reverse();
+    var recent = [], prev = [];
+    for (var i = 0; i < dates.length && recent.length < 7; i++) {
+      if (checkins[dates[i]].peso) recent.push(checkins[dates[i]].peso);
+    }
+    for (var j = recent.length; j < dates.length && prev.length < 7; j++) {
+      if (checkins[dates[j]].peso) prev.push(checkins[dates[j]].peso);
+    }
+    if (recent.length < 2 || prev.length < 2) return null;
+    var avgRecent = recent.reduce(function(s,v){return s+v;},0) / recent.length;
+    var avgPrev = prev.reduce(function(s,v){return s+v;},0) / prev.length;
+    var diff = Math.round((avgRecent - avgPrev) * 10) / 10;
+    return {
+      id: 'weight_trend', found: true,
+      positive: diff <= 0, emoji: '⚖️', title: 'Tu Peso',
+      diff: diff, avgRecent: Math.round(avgRecent * 10) / 10
+    };
+  }
+
+  function calcWaterEnergy() {
+    var water = getStore('mc_water');
+    var checkins = getCheckins();
+    var dates = Object.keys(checkins);
+    var highE = [], lowE = [];
+    dates.forEach(function(d) {
+      var w = water[d] || 0;
+      var e = checkins[d].energia;
+      if (typeof e !== 'number') return;
+      if (w >= 8) highE.push(e);
+      else if (w <= 5) lowE.push(e);
+    });
+    if (highE.length < 3 || lowE.length < 3) return null;
+    var avgHigh = Math.round(highE.reduce(function(s,v){return s+v;},0) / highE.length * 10) / 10;
+    var avgLow = Math.round(lowE.reduce(function(s,v){return s+v;},0) / lowE.length * 10) / 10;
+    var pct = avgLow > 0 ? Math.round((avgHigh - avgLow) / avgLow * 100) : 0;
+    if (Math.abs(pct) < 20) return null;
+    return {
+      id: 'water_energy', found: true,
+      positive: pct > 0, emoji: '💧', title: 'Agua y Energia',
+      avgHigh: avgHigh, avgLow: avgLow, pct: Math.abs(pct)
+    };
+  }
+
+  function calcExerciseMood() {
+    var exercise = getStore('mc_exercise');
+    var checkins = getCheckins();
+    var dates = Object.keys(checkins);
+    var withEx = 0, withExGood = 0, noEx = 0, noExGood = 0;
+    dates.forEach(function(d) {
+      var mood = checkins[d].humor;
+      if (!mood) return;
+      var good = (mood === 'Genial' || mood === 'Bien') ? 1 : 0;
+      if (exercise[d]) { withEx++; withExGood += good; }
+      else { noEx++; noExGood += good; }
+    });
+    if (withEx < 3 || noEx < 3) return null;
+    var pctWith = Math.round(withExGood / withEx * 100);
+    var pctNo = Math.round(noExGood / noEx * 100);
+    var diff = pctWith - pctNo;
+    if (Math.abs(diff) < 20) return null;
+    return {
+      id: 'exercise_mood', found: true,
+      positive: diff > 0, emoji: '🏃‍♀️', title: 'Ejercicio y Humor',
+      pctWith: pctWith, pctNo: pctNo, diff: Math.abs(diff)
+    };
+  }
+
+  function calcMealsEnergy() {
+    var meals = getStore('mc_meals');
+    var checkins = getCheckins();
+    var dates = Object.keys(checkins);
+    var fullE = [], partE = [];
+    dates.forEach(function(d) {
+      var e = checkins[d].energia;
+      if (typeof e !== 'number') return;
+      var m = meals[d] || {};
+      var count = (m.desayuno?1:0) + (m.almuerzo?1:0) + (m.cena?1:0) + (m.snack?1:0);
+      if (count >= 4) fullE.push(e);
+      else if (count <= 2) partE.push(e);
+    });
+    if (fullE.length < 3 || partE.length < 3) return null;
+    var avgFull = Math.round(fullE.reduce(function(s,v){return s+v;},0) / fullE.length * 10) / 10;
+    var avgPart = Math.round(partE.reduce(function(s,v){return s+v;},0) / partE.length * 10) / 10;
+    var pct = avgPart > 0 ? Math.round((avgFull - avgPart) / avgPart * 100) : 0;
+    if (Math.abs(pct) < 20) return null;
+    return {
+      id: 'meals_energy', found: true,
+      positive: pct > 0, emoji: '🍽️', title: 'Comidas y Energia',
+      avgFull: avgFull, avgPart: avgPart, pct: Math.abs(pct)
+    };
+  }
+
+  function calcSleepMood() {
+    var sleep = getStore('mc_sleep');
+    var checkins = getCheckins();
+    var dates = Object.keys(checkins);
+    var goodSleep = 0, goodSleepGood = 0, badSleep = 0, badSleepGood = 0;
+    dates.forEach(function(d) {
+      var mood = checkins[d].humor;
+      var h = sleep[d] && sleep[d].hours;
+      if (!mood || !h) return;
+      var good = (mood === 'Genial' || mood === 'Bien') ? 1 : 0;
+      if (h >= 7) { goodSleep++; goodSleepGood += good; }
+      else if (h < 6) { badSleep++; badSleepGood += good; }
+    });
+    if (goodSleep < 3 || badSleep < 3) return null;
+    var pctGood = Math.round(goodSleepGood / goodSleep * 100);
+    var pctBad = Math.round(badSleepGood / badSleep * 100);
+    var diff = pctGood - pctBad;
+    if (Math.abs(diff) < 20) return null;
+    return {
+      id: 'sleep_mood', found: true,
+      positive: diff > 0, emoji: '🌙', title: 'Sueno y Humor',
+      pctGood: pctGood, pctBad: pctBad, diff: Math.abs(diff)
+    };
+  }
+
+  function calcSleepSymptoms() {
+    var sleep = getStore('mc_sleep');
+    var cycle = getCycleAll();
+    var dates = Object.keys(cycle);
+    var badNights = {}, goodNights = {};
+    dates.forEach(function(d) {
+      var h = sleep[d] && sleep[d].hours;
+      var syms = cycle[d] && cycle[d].symptoms;
+      if (!h || !syms || !syms.length) return;
+      var bucket = h < 6 ? badNights : (h >= 7 ? goodNights : null);
+      if (!bucket) return;
+      syms.forEach(function(s) { bucket[s] = (bucket[s] || 0) + 1; });
+    });
+    var badDays = dates.filter(function(d) { return sleep[d] && sleep[d].hours && sleep[d].hours < 6; }).length;
+    var goodDays = dates.filter(function(d) { return sleep[d] && sleep[d].hours && sleep[d].hours >= 7; }).length;
+    if (badDays < 3 || goodDays < 3) return null;
+    var worst = null, worstRatio = 0;
+    Object.keys(badNights).forEach(function(s) {
+      var rateBad = badNights[s] / badDays;
+      var rateGood = (goodNights[s] || 0) / goodDays;
+      var ratio = rateGood > 0 ? rateBad / rateGood : (rateBad > 0 ? 3 : 0);
+      if (ratio > worstRatio) { worst = s; worstRatio = ratio; }
+    });
+    if (!worst || worstRatio < 1.5) return null;
+    return {
+      id: 'sleep_symptoms', found: true,
+      positive: false, emoji: '😴', title: 'Sueno y Sintomas',
+      symptom: worst, ratio: Math.round(worstRatio * 10) / 10
+    };
+  }
+
+  function calcSupplementSymptoms() {
+    var supps = getStore('mc_supplements');
+    var cycle = getCycleAll();
+    var dates = Object.keys(cycle);
+    var withSupp = {}, noSupp = {}, withDays = 0, noDays = 0;
+    dates.forEach(function(d) {
+      var syms = cycle[d] && cycle[d].symptoms;
+      if (!syms || !syms.length) return;
+      var took = supps[d] === true;
+      if (took) { withDays++; syms.forEach(function(s) { withSupp[s] = (withSupp[s]||0)+1; }); }
+      else { noDays++; syms.forEach(function(s) { noSupp[s] = (noSupp[s]||0)+1; }); }
+    });
+    if (withDays < 3 || noDays < 3) return null;
+    var best = null, bestReduction = 0;
+    Object.keys(noSupp).forEach(function(s) {
+      var rateNo = noSupp[s] / noDays;
+      var rateWith = (withSupp[s] || 0) / withDays;
+      var reduction = rateNo > 0 ? Math.round((1 - rateWith / rateNo) * 100) : 0;
+      if (reduction > bestReduction) { best = s; bestReduction = reduction; }
+    });
+    if (!best || bestReduction < 20) return null;
+    return {
+      id: 'supplement_symptoms', found: true,
+      positive: true, emoji: '💊', title: 'Suplemento y Sintomas',
+      symptom: best, reduction: bestReduction
+    };
+  }
+
+  function calcCycleWeight() {
+    var cycle = getCycleAll();
+    var checkins = getCheckins();
+    var phaseWeights = {};
+    Object.keys(checkins).forEach(function(d) {
+      var p = cycle[d] && cycle[d].phase;
+      var w = checkins[d].peso;
+      if (!p || !w) return;
+      if (!phaseWeights[p]) phaseWeights[p] = [];
+      phaseWeights[p].push(w);
+    });
+    var phases = Object.keys(phaseWeights);
+    if (phases.length < 2) return null;
+    var totalEntries = 0;
+    phases.forEach(function(p) { totalEntries += phaseWeights[p].length; });
+    if (totalEntries < 10) return null;
+    var avgs = {};
+    phases.forEach(function(p) {
+      avgs[p] = Math.round(phaseWeights[p].reduce(function(s,v){return s+v;},0) / phaseWeights[p].length * 10) / 10;
+    });
+    var vals = Object.values(avgs);
+    var maxW = Math.max.apply(null, vals);
+    var minW = Math.min.apply(null, vals);
+    var variation = Math.round((maxW - minW) * 10) / 10;
+    if (variation < 0.3) return null;
+    var heaviestPhase = '';
+    phases.forEach(function(p) { if (avgs[p] === maxW) heaviestPhase = p; });
+    return {
+      id: 'cycle_weight', found: true,
+      positive: true, emoji: '🌸', title: 'Ciclo y Peso',
+      variation: variation, heaviestPhase: heaviestPhase, avgs: avgs
+    };
+  }
+
+  function generateInsights() {
+    var today = todayKey();
+    if (_cachedInsights && _insightsCacheDay === today) return _cachedInsights;
+
+    var level = getInsightsLevel();
+    var results = [];
+
+    if (level >= 1) {
+      var wt = calcWeightTrend();
+      if (wt) {
+        var text, bg;
+        if (wt.diff < -0.05) {
+          text = 'Esta semana: ' + wt.diff + ' kg. Ritmo saludable! La constancia es tu mejor aliada.';
+          bg = 'gold';
+        } else if (wt.diff > 0.05) {
+          text = '+' + wt.diff + ' kg esta semana — puede ser retencion, ciclo o variacion normal. Mira la tendencia, no el dia a dia.';
+          bg = 'purple';
+        } else {
+          text = 'Tu peso se mantuvo estable esta semana. Constancia es progreso.';
+          bg = 'gold';
+        }
+        results.push({id: wt.id, emoji: wt.emoji, title: wt.title, text: text, bg: bg, positive: wt.positive});
+      }
+    }
+
+    if (level >= 2) {
+      var we = calcWaterEnergy();
+      if (we) {
+        results.push({
+          id: we.id, emoji: we.emoji, title: we.title, bg: we.positive ? 'gold' : 'purple',
+          positive: we.positive,
+          text: we.positive
+            ? 'Buen hallazgo! Los dias con 8+ vasos de agua, tu energia promedio fue ' + we.avgHigh + ' vs ' + we.avgLow + '. Tu cuerpo te lo agradece!'
+            : 'Los dias con menos agua, tu energia baja un ' + we.pct + '%. Un vaso mas puede hacer diferencia.'
+        });
+      }
+
+      var em = calcExerciseMood();
+      if (em) {
+        results.push({
+          id: em.id, emoji: em.emoji, title: em.title, bg: em.positive ? 'gold' : 'purple',
+          positive: em.positive,
+          text: em.positive
+            ? 'Cuando haces ejercicio, tu humor es "Genial" o "Bien" el ' + em.pctWith + '% de las veces. Sigue asi!'
+            : 'Los dias sin ejercicio, tu humor tiende a bajar. Hasta 10 minutos de caminata pueden ayudar.'
+        });
+      }
+
+      var me = calcMealsEnergy();
+      if (me) {
+        results.push({
+          id: me.id, emoji: me.emoji, title: me.title, bg: me.positive ? 'gold' : 'purple',
+          positive: me.positive,
+          text: me.positive
+            ? 'Cuando completas tus 4 comidas, tu energia sube un ' + me.pct + '%. La constancia alimentaria te sienta bien!'
+            : 'Saltarte comidas se asocia con ' + me.pct + '% menos energia. Tu cuerpo necesita combustible regular.'
+        });
+      }
+
+      var sm = calcSleepMood();
+      if (sm) {
+        results.push({
+          id: sm.id, emoji: sm.emoji, title: sm.title, bg: sm.positive ? 'gold' : 'purple',
+          positive: sm.positive,
+          text: sm.positive
+            ? 'Noches de 7h+: ' + sm.pctGood + '% de tus dias con humor positivo. El descanso es tu superpoder.'
+            : 'Cuando duermes menos de 6h, tu humor tiende a caer. Priorizar el sueno es autocuidado.'
+        });
+      }
+    }
+
+    if (level >= 3) {
+      var ss = calcSleepSymptoms();
+      if (ss) {
+        results.push({
+          id: ss.id, emoji: ss.emoji, title: ss.title, bg: 'purple', positive: false,
+          text: 'Las noches cortas (<6h) se asocian con ' + ss.ratio + 'x mas ' + ss.symptom + '. Hablalo con tu medico si persiste.'
+        });
+      }
+
+      var su = calcSupplementSymptoms();
+      if (su) {
+        results.push({
+          id: su.id, emoji: su.emoji, title: su.title, bg: 'gold', positive: true,
+          text: 'Las semanas que tomaste suplemento, tuviste ' + su.reduction + '% menos ' + su.symptom + '. Vale la pena la constancia!'
+        });
+      }
+    }
+
+    if (level >= 4) {
+      var cw = calcCycleWeight();
+      if (cw) {
+        results.push({
+          id: cw.id, emoji: cw.emoji, title: cw.title, bg: 'gold', positive: true,
+          text: 'Tu peso varia hasta ' + cw.variation + ' kg segun la fase del ciclo. Es completamente normal.'
+        });
+      }
+    }
+
+    results.sort(function(a, b) {
+      if (a.positive !== b.positive) return a.positive ? -1 : 1;
+      return a.id < b.id ? -1 : 1;
+    });
+
+    results = results.slice(0, 3);
+
+    _cachedInsights = results;
+    _insightsCacheDay = today;
+    return results;
+  }
+
   // ── Recipe category helpers ──
   function getCatLabel(cat) {
     var labels = {desayuno:'Desayuno',almuerzo:'Almuerzo',cena:'Cena',snack:'Snack',jugo:'Jugo'};
