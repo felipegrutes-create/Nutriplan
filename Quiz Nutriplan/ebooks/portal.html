@@ -3524,17 +3524,32 @@ const MiCodigo = (function() {
 
     var html = '';
 
+    // ── Status badge: saved today? ──
+    var savedToday = !!(getCheckins()[todayKey()]);
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding:10px 14px;border-radius:10px;background:' + (savedToday ? 'rgba(46,125,82,.1)' : 'rgba(201,146,42,.08)') + ';border:1px solid ' + (savedToday ? 'rgba(46,125,82,.2)' : 'rgba(201,146,42,.15)') + '">' +
+      '<span style="font-size:18px">' + (savedToday ? '✅' : '📝') + '</span>' +
+      '<div>' +
+        '<div style="font-size:12px;font-weight:700;color:' + (savedToday ? 'var(--verde)' : '#C9922A') + '">' + (savedToday ? 'Dia guardado' : 'Dia pendiente') + '</div>' +
+        '<div style="font-size:10px;color:rgba(255,255,255,.4)">' + (savedToday ? 'Puedes actualizar y guardar de nuevo' : 'Completa y guarda para registrar tu progreso') + '</div>' +
+      '</div>' +
+    '</div>';
+
     // ── CUERPO section ──
     html += '<div style="font-size:11px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">⚖️ CUERPO</div>';
 
-    // Peso
-    html += '<div class="mc-card" style="display:flex;justify-content:space-between;align-items:center">' +
-      '<div><div style="font-size:13px;font-weight:600;color:#fff">Peso</div>' +
-      '<div style="font-size:11px;color:rgba(255,255,255,.4)">Ultimo: ' + (lastWeight ? lastWeight + ' kg' : '--') + '</div></div>' +
-      '<div style="display:flex;align-items:center;gap:6px">' +
-        '<input type="number" id="mcPeso" step="0.1" min="30" max="300" value="' + (_peso || (lastWeight ? lastWeight : '')) + '" placeholder="Tu peso" style="background:#1a1a1a;color:#fff;border:1px solid rgba(201,146,42,.2);border-radius:8px;padding:6px 12px;font-size:16px;font-weight:700;width:80px;text-align:center;font-family:DM Sans,sans-serif">' +
-        '<span style="font-size:12px;color:rgba(255,255,255,.4)">kg</span>' +
-      '</div></div>';
+    // Peso (slider + display)
+    var pesoVal = _peso || lastWeight || 70;
+    html += '<div class="mc-card">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">' +
+        '<div style="font-size:13px;font-weight:600;color:#fff">Peso</div>' +
+        '<div style="display:flex;align-items:baseline;gap:4px">' +
+          '<span id="mcPesoDisplay" style="font-size:24px;font-weight:900;color:#C9922A">' + pesoVal + '</span>' +
+          '<span style="font-size:12px;color:rgba(255,255,255,.4)">kg</span>' +
+        '</div>' +
+      '</div>' +
+      '<input type="range" id="mcPeso" min="40" max="150" step="0.5" value="' + pesoVal + '" style="width:100%;accent-color:#C9922A" oninput="document.getElementById(\'mcPesoDisplay\').textContent=this.value">' +
+      '<div style="display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.3);margin-top:4px"><span>40 kg</span><span>150 kg</span></div>' +
+    '</div>';
 
     // Energia
     html += '<div class="mc-card">' +
@@ -3643,7 +3658,7 @@ const MiCodigo = (function() {
     html += '</div></div>';
 
     // Save button
-    html += '<button onclick="MiCodigo.saveMiDia()" style="width:100%;padding:16px;background:linear-gradient(135deg,var(--verde),#1a4a31);color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif;box-shadow:0 4px 15px rgba(46,125,82,.3);margin-top:8px">💾 Guardar Mi Dia</button>';
+    html += '<button id="mcSaveBtn" onclick="MiCodigo.saveMiDia()" style="width:100%;padding:16px;background:linear-gradient(135deg,var(--verde),#1a4a31);color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif;box-shadow:0 4px 15px rgba(46,125,82,.3);margin-top:8px">' + (savedToday ? '🔄 Actualizar Mi Dia' : '💾 Guardar Mi Dia') + '</button>';
 
     el.innerHTML = html;
 
@@ -3760,14 +3775,16 @@ const MiCodigo = (function() {
 
     // Cycle already saved on each interaction
 
-    // Success feedback
-    var btn = document.querySelector('#mcSectionContent button[onclick*="saveMiDia"]');
-    if (btn) {
-      btn.textContent = '✓ ¡Guardado!';
-      btn.style.background = '#1a4a31';
-      btn.disabled = true;
-    }
-    setTimeout(function() { navigate('home'); }, 1200);
+    // Success feedback — show toast + re-render to update status badge
+    var toast = document.createElement('div');
+    toast.textContent = '✅ ¡Dia guardado!';
+    toast.style.cssText = 'position:fixed;top:70px;left:50%;transform:translateX(-50%);background:#1a4a31;color:#fff;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;z-index:20001;box-shadow:0 4px 20px rgba(0,0,0,.4);border:1px solid rgba(46,125,82,.3)';
+    document.body.appendChild(toast);
+    setTimeout(function() { toast.remove(); }, 2500);
+
+    // Re-render Mi Dia to show updated "Dia guardado" badge
+    var sc = document.getElementById('mcSectionContent');
+    if (sc) renderMiDia(sc);
   }
 
   // ════════════════════════════════════════════════════════════
