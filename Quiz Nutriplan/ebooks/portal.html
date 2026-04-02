@@ -3740,6 +3740,8 @@ const MiCodigo = (function() {
   }
 
   function saveMiDia() {
+    _cachedInsights = null;
+    _insightsCacheDay = '';
     var today = todayKey();
     var pesoInput = document.getElementById('mcPeso');
     var pesoVal = pesoInput ? pesoInput.value.trim() : '';
@@ -4590,7 +4592,8 @@ const MiCodigo = (function() {
     showMasEjercicios: showMasEjercicios, showProfile: showProfile,
     saveProfile: saveProfile, clearMeno: clearMeno,
     _setAvatarEmoji: _setAvatarEmoji, _setAvatarPhoto: _setAvatarPhoto,
-    exportData: exportData, showAbout: showAbout
+    exportData: exportData, showAbout: showAbout,
+    generateInsights: generateInsights
   };
 })();
 
