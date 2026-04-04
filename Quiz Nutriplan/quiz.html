@@ -681,6 +681,40 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
     <div class="slider-wrap"><div class="slider-display"><span class="slider-value" id="ageVal">42</span><span class="slider-unit">a&#241;os</span></div><div class="slider-label-row"><span>25 a&#241;os</span><span>75 a&#241;os</span></div><input type="range" id="ageSlider" min="25" max="75" value="42" step="1" oninput="updateSlider('age')" style="--pct:34%"></div>
   </div>
 
+  <!-- SLIDE 19b — Etapa hormonal -->
+  <div class="slide" id="slide-19b">
+    <div class="q-label">Personalizaci&#243;n hormonal</div>
+    <h2 class="q-title">&#191;En qu&#233; etapa hormonal te encuentras?</h2>
+    <p class="q-sub">Esto nos permite adaptar tu plan a tu biolog&#237;a actual</p>
+    <div class="options-grid single">
+      <button class="option-btn" onclick="selectHormonalStage(this,'pre')">
+        <div style="font-size:22px;margin-bottom:6px">&#127793;</div>
+        <div style="font-weight:700;margin-bottom:4px">Pre-menopausia</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.4">Ciclos regulares. A&#250;n no notas cambios hormonales significativos.</div>
+      </button>
+      <button class="option-btn" onclick="selectHormonalStage(this,'peri')">
+        <div style="font-size:22px;margin-bottom:6px">&#127774;</div>
+        <div style="font-weight:700;margin-bottom:4px">Perimenopausia</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.4">Ciclos irregulares, bochornos, cambios de humor, dificultad para perder peso.</div>
+      </button>
+      <button class="option-btn" onclick="selectHormonalStage(this,'meno')">
+        <div style="font-size:22px;margin-bottom:6px">&#128308;</div>
+        <div style="font-weight:700;margin-bottom:4px">Menopausia</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.4">Llevas 12+ meses sin menstruaci&#243;n. Bochornos, insomnio, grasa abdominal.</div>
+      </button>
+      <button class="option-btn" onclick="selectHormonalStage(this,'post')">
+        <div style="font-size:22px;margin-bottom:6px">&#128156;</div>
+        <div style="font-weight:700;margin-bottom:4px">Post-menopausia</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.4">Ya pasaste la menopausia. Buscas mantener peso y energ&#237;a.</div>
+      </button>
+      <button class="option-btn" onclick="selectHormonalStage(this,'noseguro')">
+        <div style="font-size:22px;margin-bottom:6px">&#128300;</div>
+        <div style="font-weight:700;margin-bottom:4px">No estoy segura</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.4">No te preocupes &#8212; adaptaremos el plan seg&#250;n tu edad y s&#237;ntomas.</div>
+      </button>
+    </div>
+  </div>
+
   <!-- SLIDE 20 — Perfil / Resumen -->
   <div class="slide" id="slide-20">
     <div class="q-label">Tu perfil personal</div>
@@ -948,7 +982,8 @@ const answers={
   dietType:null,allergies:[],cooksFor:null,
   dinnerTime:'',cookingTime:'',
   height:162,weight:72,targetWeight:60,age:42,
-  heightUnit:'cm',weightUnit:'kg',weightGoal:null
+  heightUnit:'cm',weightUnit:'kg',weightGoal:null,
+  hormonalStage:null
 };
 
 const bodyTypeLabels={regular:'Regular',flacido:'Flácido',michelines:'Michelines',sobrepeso:'Sobrepeso',obeso:'Obeso'};
@@ -1145,6 +1180,13 @@ function showSlide(n){
   if(n === 15 && !answers.dinnerTime) {
     document.querySelectorAll('.slide').forEach(function(s){s.classList.remove('active');});
     document.getElementById('slide-14b').classList.add('active');
+    window.scrollTo(0,0);
+    return;
+  }
+  // Intercept slide 20 to show hormonal stage question first
+  if(n === 20 && !answers.hormonalStage) {
+    document.querySelectorAll('.slide').forEach(function(s){s.classList.remove('active');});
+    document.getElementById('slide-19b').classList.add('active');
     window.scrollTo(0,0);
     return;
   }
@@ -1648,7 +1690,7 @@ function selectSingleCustom(btn, slideId, key, val) {
   document.getElementById('slide-' + slideId).querySelectorAll('.option-btn').forEach(function(b){b.classList.remove('selected');});
   btn.classList.add('selected');
   answers[key] = val;
-  var nextMap = { '14b': '14c', '14c': '15' };
+  var nextMap = { '14b': '14c', '14c': '15', '19b': '20' };
   var next = nextMap[slideId];
   setTimeout(function() {
     if (next && next.match(/^\d+$/)) {
@@ -1660,6 +1702,10 @@ function selectSingleCustom(btn, slideId, key, val) {
       window.scrollTo(0, 0);
     }
   }, 400);
+}
+
+function selectHormonalStage(btn, val) {
+  selectSingleCustom(btn, '19b', 'hormonalStage', val);
 }
 
 // Dynamic social proof counter animation (Change 3)

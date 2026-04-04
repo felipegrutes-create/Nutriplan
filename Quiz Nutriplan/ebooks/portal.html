@@ -587,7 +587,8 @@ body{padding-bottom:72px}
   var ud = {};
   try { ud = JSON.parse(localStorage.getItem('mc_auth') || '{}'); } catch(e) {}
   var nombre = ud.nombre || quiz.userName || '';
-  var phase = quiz.age >= 55 ? 'Post-menopausia' : quiz.age >= 45 ? 'Perimenopausia' : quiz.age >= 40 ? 'Pre-perimenopausia' : 'Equilibrio hormonal';
+  var stageLabels = {pre:'Pre-menopausia',peri:'Perimenopausia',meno:'Menopausia',post:'Post-menopausia',noseguro:'Equilibrio hormonal'};
+  var phase = quiz.hormonalStage ? (stageLabels[quiz.hormonalStage] || 'Equilibrio hormonal') : (quiz.age >= 55 ? 'Post-menopausia' : quiz.age >= 45 ? 'Perimenopausia' : quiz.age >= 40 ? 'Pre-perimenopausia' : 'Equilibrio hormonal');
   var goalKg = (quiz.weight && quiz.targetWeight) ? Math.round(quiz.weight - quiz.targetWeight) : null;
   var el = document.getElementById('quizProfileCardHero');
   if (!el) return;
@@ -3410,11 +3411,8 @@ const MiCodigo = (function() {
     // Personalized quiz profile card (shows only if quiz data exists)
     if (quiz && quiz.age) {
       var goalKg = quiz.weight && quiz.targetWeight ? Math.round(quiz.weight - quiz.targetWeight) : null;
-      var phaseLabel = '';
-      if (quiz.age >= 55) phaseLabel = 'Post-menopausia';
-      else if (quiz.age >= 45) phaseLabel = 'Perimenopausia';
-      else if (quiz.age >= 40) phaseLabel = 'Pre-perimenopausia';
-      else phaseLabel = 'Equilibrio hormonal';
+      var stageLbls = {pre:'Pre-menopausia',peri:'Perimenopausia',meno:'Menopausia',post:'Post-menopausia',noseguro:'Equilibrio hormonal'};
+      var phaseLabel = quiz.hormonalStage ? (stageLbls[quiz.hormonalStage] || 'Equilibrio hormonal') : (quiz.age >= 55 ? 'Post-menopausia' : quiz.age >= 45 ? 'Perimenopausia' : quiz.age >= 40 ? 'Pre-perimenopausia' : 'Equilibrio hormonal');
 
       html += '<div class="mc-card" style="background:linear-gradient(135deg,rgba(201,146,42,.12),rgba(201,146,42,.04));border-color:rgba(201,146,42,.2)">' +
         '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">' +
