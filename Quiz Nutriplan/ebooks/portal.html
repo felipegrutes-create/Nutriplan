@@ -4931,10 +4931,15 @@ const MiCodigo = (function() {
   }
 
   function clearDemoData() {
-    if (!confirm('¿Borrar TODOS los datos de seguimiento?')) return;
-    ['mc_checkins','mc_water','mc_exercise','mc_sleep','mc_meals','mc_supplements','mc_cycle','mc_insights_levels_seen'].forEach(function(k) { localStorage.removeItem(k); });
+    if (!confirm('¿Borrar TODOS los datos incluyendo perfil y nombre?')) return;
+    ['mc_checkins','mc_water','mc_exercise','mc_sleep','mc_meals','mc_supplements','mc_cycle','mc_insights_levels_seen','mc_fasting','mc_fasting_history','mc_shopping','mc_favs','mc_settings','mc_quiz_imported','quiz_answers','portal_perfil'].forEach(function(k) { localStorage.removeItem(k); });
+    // Reset auth but keep premium active
+    var wasAuth = localStorage.getItem('mc_auth');
+    if (wasAuth) {
+      try { var auth = JSON.parse(wasAuth); localStorage.setItem('mc_auth', JSON.stringify({autenticado: auth.autenticado, activatedAt: auth.activatedAt})); } catch(e) {}
+    }
     _cachedInsights = null; _insightsCacheDay = '';
-    alert('🗑️ Datos borrados');
+    alert('🗑️ Todo borrado — nombre, perfil, datos. Listo para empezar de cero.');
     navigate('home');
   }
 
