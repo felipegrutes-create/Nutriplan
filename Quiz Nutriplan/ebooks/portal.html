@@ -4874,36 +4874,55 @@ const MiCodigo = (function() {
       '<div style="margin-top:32px;font-size:12px;color:rgba(255,255,255,.4)">© 2026 El Codigo Hormonal</div>' +
       '<div style="margin-top:40px;border-top:1px solid rgba(255,255,255,.08);padding-top:20px">' +
         '<div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:8px">MODO DEMO (temporal)</div>' +
-        '<button onclick="MiCodigo.loadDemoData()" style="padding:10px 20px;background:rgba(201,146,42,.15);color:#C9922A;border:1px solid rgba(201,146,42,.3);border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif">📊 Cargar 15 dias de datos demo</button>' +
+        '<button onclick="MiCodigo.loadDemoData()" style="padding:10px 20px;background:rgba(201,146,42,.15);color:#C9922A;border:1px solid rgba(201,146,42,.3);border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif">📊 Cargar 30 dias de datos demo</button>' +
         '<button onclick="MiCodigo.clearDemoData()" style="margin-top:8px;padding:10px 20px;background:rgba(232,68,90,.1);color:var(--rosa);border:1px solid rgba(232,68,90,.2);border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif;display:block;margin-left:auto;margin-right:auto">🗑️ Limpiar datos demo</button>' +
       '</div>' +
     '</div>';
   }
 
   function loadDemoData() {
-    var humors = ['Genial','Bien','Regular','Mal'];
+    var humors = ['Genial','Bien','Regular','Mal','Bien','Genial'];
     var symptoms = ['Bochornos','Fatiga','Insomnio','Dolor de cabeza','Hinchazón','Irritabilidad'];
-    var phases = ['menstruacion','folicular','ovulacion','lutea'];
-    for (var i = 0; i < 15; i++) {
+    var phases = ['menstruacion','menstruacion','folicular','folicular','folicular','folicular','folicular','ovulacion','ovulacion','ovulacion','lutea','lutea','lutea','lutea','menstruacion','menstruacion','folicular','folicular','folicular','folicular','folicular','ovulacion','ovulacion','ovulacion','lutea','lutea','lutea','lutea','lutea','lutea'];
+    // Simulate quiz data
+    localStorage.setItem('quiz_answers', JSON.stringify({userName:'María José', age:47, weight:78, targetWeight:68, height:162, activityLevel:'light', dietType:'standard', waterIntake:'medium', sleepHours:'6-7', bodyType:'michelines', idealBody:'regular'}));
+    // Set profile
+    var ud = getUserData();
+    ud.nombre = ud.nombre || 'María José';
+    ud.goalWeight = ud.goalWeight || 68;
+    ud.startWeight = ud.startWeight || 78;
+    localStorage.setItem(AUTH_KEY, JSON.stringify(ud));
+    for (var i = 0; i < 30; i++) {
       var d = new Date();
       d.setDate(d.getDate() - i);
       var k = d.toISOString().split('T')[0];
+      var weightTrend = 76 - i * 0.08 + (Math.random() * 0.4 - 0.2);
       var c = getCheckins();
-      c[k] = {peso: parseFloat((76 - i*0.15 + Math.random()*0.6 - 0.3).toFixed(1)), humor: humors[i%4], energia: Math.floor(4 + Math.random()*5)};
+      c[k] = {peso: parseFloat(weightTrend.toFixed(1)), humor: humors[i % humors.length], energia: Math.floor(3 + Math.random() * 6)};
+      // Add fasting data for some days
+      if (i % 3 === 0) { c[k].ayuno = true; c[k].ayunoHours = 16; }
       localStorage.setItem('mc_checkins', JSON.stringify(c));
       var w = getStore('mc_water'); w[k] = i%3===0 ? 4 : i%2===0 ? 9 : 6; setStore('mc_water', w);
       var ex = getStore('mc_exercise'); ex[k] = i%2===0; setStore('mc_exercise', ex);
-      var sl = getStore('mc_sleep'); sl[k] = {hours: i%4===0 ? 5 : i%3===0 ? 6 : 7.5}; setStore('mc_sleep', sl);
+      var sl = getStore('mc_sleep'); sl[k] = {hours: i%4===0 ? 5 : i%3===0 ? 5.5 : (7 + Math.random())}; setStore('mc_sleep', sl);
       var ml = getStore('mc_meals'); ml[k] = i%2===0 ? {desayuno:true,almuerzo:true,cena:true,snack:true} : {desayuno:true,almuerzo:i%3!==0}; setStore('mc_meals', ml);
       var sp = getStore('mc_supplements'); sp[k] = i%2===0; setStore('mc_supplements', sp);
       var cy = getCycleAll(); var syms = [];
       if (sl[k].hours < 6) { syms.push(symptoms[0]); syms.push(symptoms[2]); }
       if (i%3===0) syms.push(symptoms[1]);
-      cy[k] = {phase: phases[i%4], symptoms: syms};
+      if (i%5===0) syms.push(symptoms[3]);
+      cy[k] = {phase: phases[i % phases.length], symptoms: syms};
       localStorage.setItem('mc_cycle', JSON.stringify(cy));
+      // Fasting history
+      if (i % 3 === 0) {
+        var fh = getStore('mc_fasting_history');
+        fh[k] = {protocol: 'f16_8', label: '16:8', completed: true, hours: 16};
+        setStore('mc_fasting_history', fh);
+      }
     }
     _cachedInsights = null; _insightsCacheDay = '';
-    alert('✅ 15 dias de datos demo cargados');
+    localStorage.removeItem('mc_insights_levels_seen');
+    alert('✅ 30 dias de datos demo cargados');
     navigate('home');
   }
 
