@@ -3405,9 +3405,9 @@ const MiCodigo = (function() {
   // AYUNO INTERMITENTE — Fasting Timer
   // ════════════════════════════════════════════════════════════
   var FASTING_PROTOCOLS = [
-    {id: '16:8', label: '16:8', fastHours: 16, eatHours: 8, desc: 'Popular y efectivo'},
-    {id: '14:10', label: '14:10', fastHours: 14, eatHours: 10, desc: 'Ideal para empezar'},
-    {id: '12:12', label: '12:12', fastHours: 12, eatHours: 12, desc: 'Suave y sostenible'}
+    {id: 'f16_8', label: '16:8', fastHours: 16, eatHours: 8, desc: 'Popular y efectivo'},
+    {id: 'f14_10', label: '14:10', fastHours: 14, eatHours: 10, desc: 'Ideal para empezar'},
+    {id: 'f12_12', label: '12:12', fastHours: 12, eatHours: 12, desc: 'Suave y sostenible'}
   ];
 
   function getFastingState() {
@@ -3447,7 +3447,7 @@ const MiCodigo = (function() {
       var color = done ? 'var(--verde)' : '#C9922A';
 
       html += '<div class="mc-card" style="text-align:center;padding:20px">' +
-        '<div style="font-size:11px;font-weight:700;color:#C9922A;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">⏱️ AYUNO ' + state.protocol + '</div>' +
+        '<div style="font-size:11px;font-weight:700;color:#C9922A;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">⏱️ AYUNO ' + state.label + '</div>' +
         '<div style="position:relative;width:120px;height:120px;margin:0 auto 12px">' +
           '<svg width="120" height="120" style="transform:rotate(-90deg)">' +
             '<circle cx="60" cy="60" r="' + radius + '" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="8"/>' +
@@ -3500,6 +3500,7 @@ const MiCodigo = (function() {
     saveFastingState({
       active: true,
       protocol: protocol.id,
+      label: protocol.label,
       fastHours: protocol.fastHours,
       startTime: Date.now()
     });
