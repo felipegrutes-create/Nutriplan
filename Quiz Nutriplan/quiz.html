@@ -1149,6 +1149,9 @@ function showSlide(n){
     return;
   }
 
+  // Save quiz answers on every slide change (ensures data is available for portal)
+  try{localStorage.setItem('quiz_answers',JSON.stringify(answers));}catch(e){}
+
   document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));
   document.getElementById('slide-'+n).classList.add('active');
   window.scrollTo(0,0);currentSlide=n;trackStep(n);updateProgress();updateCta();
