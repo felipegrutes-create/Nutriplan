@@ -43,7 +43,7 @@ body::before{
 .hero{
   position:relative;min-height:100vh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;
-  padding:3rem 1.5rem;overflow:hidden;
+  padding:1.5rem 1.5rem 3rem;overflow:hidden;
   background:url('../assets/photos/Fundo Front.jpg') center center / cover no-repeat;
 }
 .hero::before{
@@ -110,12 +110,12 @@ body::before{
 
 .hero-scroll{
   position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  color:rgba(255,255,255,.5);font-size:.75rem;text-transform:uppercase;
+  color:rgba(255,255,255,.85);font-size:.85rem;font-weight:700;text-transform:uppercase;
   letter-spacing:.1em;display:flex;flex-direction:column;align-items:center;gap:.5rem;
   animation:fadeDown .8s .6s ease-out both;
 }
 .hero-scroll::after{
-  content:'';width:1px;height:30px;background:rgba(255,255,255,.3);
+  content:'';width:2px;height:36px;background:rgba(255,255,255,.6);
   animation:scrollPulse 2s ease-in-out infinite;
 }
 
@@ -575,7 +575,7 @@ body{padding-bottom:72px}
       <div class="hero-stat"><strong>11</strong><span>Bonos</span></div>
     </div>
   </div>
-  <div class="hero-scroll">Explorar<br></div>
+  <div class="hero-scroll">Explorar ↓</div>
 </header>
 
 <!-- Quiz Profile Card script (renders into hero) -->
