@@ -2941,6 +2941,28 @@ const MiCodigo = (function() {
     };
   }
 
+  function calcFastingEnergy() {
+    var checkins = getCheckins();
+    var dates = Object.keys(checkins);
+    var withFast = [], noFast = [];
+    dates.forEach(function(d) {
+      var e = checkins[d].energia;
+      if (typeof e !== 'number') return;
+      if (checkins[d].ayuno) withFast.push(e);
+      else noFast.push(e);
+    });
+    if (withFast.length < 3 || noFast.length < 3) return null;
+    var avgWith = Math.round(withFast.reduce(function(s,v){return s+v;},0) / withFast.length * 10) / 10;
+    var avgNo = Math.round(noFast.reduce(function(s,v){return s+v;},0) / noFast.length * 10) / 10;
+    var pct = avgNo > 0 ? Math.round((avgWith - avgNo) / avgNo * 100) : 0;
+    if (Math.abs(pct) < 15) return null;
+    return {
+      id: 'fasting_energy', found: true,
+      positive: pct > 0, emoji: '⏱️', title: 'Ayuno y Energia',
+      avgWith: avgWith, avgNo: avgNo, pct: Math.abs(pct)
+    };
+  }
+
   function generateInsights() {
     var today = todayKey();
     if (_cachedInsights && _insightsCacheDay === today) return _cachedInsights;
@@ -3008,6 +3030,17 @@ const MiCodigo = (function() {
           text: sm.positive
             ? 'Noches de 7h+: ' + sm.pctGood + '% de tus dias con humor positivo. El descanso es tu superpoder.'
             : 'Cuando duermes menos de 6h, tu humor tiende a caer. Priorizar el sueno es autocuidado.'
+        });
+      }
+
+      var fe = calcFastingEnergy();
+      if (fe) {
+        results.push({
+          id: fe.id, emoji: fe.emoji, title: fe.title, bg: fe.positive ? 'gold' : 'purple',
+          positive: fe.positive,
+          text: fe.positive
+            ? 'Los dias de ayuno, tu energia promedio fue ' + fe.avgWith + ' vs ' + fe.avgNo + '. El ayuno intermitente te sienta bien!'
+            : 'Los dias de ayuno tu energia baja un ' + fe.pct + '%. Prueba un protocolo mas suave o consulta a tu medico.'
         });
       }
     }
@@ -3511,11 +3544,14 @@ const MiCodigo = (function() {
     if (!confirm('¿Terminar el ayuno actual?')) return;
     var state = getFastingState();
     if (state) {
+      var hrs = Math.round((Date.now() - state.startTime) / 3600000 * 10) / 10;
       var history = getFastingHistory();
-      history[todayKey()] = {protocol: state.protocol, completed: false, hours: Math.round((Date.now() - state.startTime) / 3600000 * 10) / 10};
+      history[todayKey()] = {protocol: state.protocol, label: state.label, completed: false, hours: hrs};
       setStore('mc_fasting_history', history);
+      saveCheckinEntry(todayKey(), {ayuno: false, ayunoHours: hrs});
     }
     saveFastingState(null);
+    _cachedInsights = null; _insightsCacheDay = '';
     navigate('home');
   }
 
@@ -3523,11 +3559,13 @@ const MiCodigo = (function() {
     var state = getFastingState();
     if (state) {
       var history = getFastingHistory();
-      history[todayKey()] = {protocol: state.protocol, completed: true, hours: state.fastHours};
+      history[todayKey()] = {protocol: state.protocol, label: state.label, completed: true, hours: state.fastHours};
       setStore('mc_fasting_history', history);
+      // Save to checkin so Progreso and Insights can use it
+      saveCheckinEntry(todayKey(), {ayuno: true, ayunoHours: state.fastHours, ayunoProtocol: state.label || state.protocol});
     }
     saveFastingState(null);
-    // Show toast
+    _cachedInsights = null; _insightsCacheDay = '';
     var toast = document.createElement('div');
     toast.textContent = '🎉 ¡Ayuno completado!';
     toast.style.cssText = 'position:fixed;top:70px;left:50%;transform:translateX(-50%);background:#1a4a31;color:#fff;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;z-index:20001;box-shadow:0 4px 20px rgba(0,0,0,.4)';
@@ -3535,6 +3573,7 @@ const MiCodigo = (function() {
     setTimeout(function() { toast.remove(); }, 2500);
     navigate('home');
   }
+
 
   function renderInsightsSection() {
     var level = getInsightsLevel();
@@ -4490,6 +4529,31 @@ const MiCodigo = (function() {
         '</div>';
       });
       html += '</div></div>';
+    }
+
+    // Fasting history
+    var fastHistory = filterByPeriod(getStore('mc_fasting_history'), _progressPeriod);
+    var fastDates = Object.keys(fastHistory).sort().reverse();
+    if (fastDates.length > 0) {
+      var completedCount = fastDates.filter(function(d) { return fastHistory[d].completed; }).length;
+      var totalFastHours = fastDates.reduce(function(s, d) { return s + (fastHistory[d].hours || 0); }, 0);
+      html += '<div class="mc-card">' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">' +
+          '<span style="font-size:13px;font-weight:700;color:#fff">⏱️ Ayuno Intermitente</span>' +
+          '<span style="font-size:11px;color:#C9922A;font-weight:600">' + completedCount + '/' + fastDates.length + ' completados</span>' +
+        '</div>';
+      fastDates.slice(0, 7).forEach(function(d) {
+        var f = fastHistory[d];
+        var dateLabel = new Date(d + 'T12:00:00').toLocaleDateString('es', {day:'numeric', month:'short'});
+        html += '<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px">' +
+          '<span style="color:rgba(255,255,255,.4)">' + dateLabel + '</span>' +
+          '<span style="color:#C9922A;font-weight:600">' + (f.label || f.protocol || '--') + '</span>' +
+          '<span style="color:rgba(255,255,255,.5)">' + f.hours + 'h</span>' +
+          '<span>' + (f.completed ? '✅' : '❌') + '</span>' +
+        '</div>';
+      });
+      html += '<div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,.4);text-align:center">' + Math.round(totalFastHours) + ' horas totales de ayuno</div>' +
+      '</div>';
     }
 
     // Streak card
