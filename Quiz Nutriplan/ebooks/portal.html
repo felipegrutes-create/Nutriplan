@@ -61,6 +61,7 @@ body::before{
 }
 
 .hero-content{position:relative;z-index:2;max-width:680px;margin-top:auto;margin-bottom:auto}
+#quizProfileCardHero{position:absolute;top:1.5rem;left:1.5rem;right:1.5rem;z-index:3}
 
 .hero-badge{
   display:inline-flex;align-items:center;gap:.5rem;
@@ -591,7 +592,7 @@ body{padding-bottom:72px}
   var goalKg = (quiz.weight && quiz.targetWeight) ? Math.round(quiz.weight - quiz.targetWeight) : null;
   var el = document.getElementById('quizProfileCardHero');
   if (!el) return;
-  el.innerHTML = '<div style="padding:12px 16px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:14px;margin-bottom:16px;margin-top:-2rem">' +
+  el.innerHTML = '<div style="padding:12px 16px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:14px">' +
     '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">' +
       '<div style="width:36px;height:36px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px">👋</div>' +
       '<div>' +
