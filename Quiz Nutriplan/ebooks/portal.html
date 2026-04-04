@@ -3882,7 +3882,14 @@ const MiCodigo = (function() {
   function onRecipeSearch(val) {
     _recipeSearch = val.trim();
     var sc = document.getElementById('mcSectionContent');
-    if (sc) renderRecetas(sc);
+    if (sc) {
+      renderRecetas(sc);
+      var input = document.getElementById('mcRecetaSearch');
+      if (input) {
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length);
+      }
+    }
   }
 
   function toggleRecipeFav(id) {
