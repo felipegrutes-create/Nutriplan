@@ -3245,10 +3245,15 @@ const MiCodigo = (function() {
   // ════════════════════════════════════════════════════════════
   // HOME TAB - Full Dashboard
   // ════════════════════════════════════════════════════════════
+  function getQuizData() {
+    try { return JSON.parse(localStorage.getItem('quiz_answers') || 'null'); } catch(e) { return null; }
+  }
+
   function renderHome(el) {
     var profile = JSON.parse(localStorage.getItem('portal_perfil') || '{}');
     var ud0 = getUserData();
-    var nombre = ud0.nombre || profile.nombre || 'amiga';
+    var quiz = getQuizData();
+    var nombre = ud0.nombre || (quiz && quiz.userName) || profile.nombre || 'amiga';
     var today = todayKey();
     var checkin = getCheckins()[today] || {};
     var waterToday = getWaterToday();
@@ -3281,6 +3286,31 @@ const MiCodigo = (function() {
       '<div style="font-size:20px;font-weight:800;color:#fff">☀️ ¡' + greeting + ', ' + nombre + '!</div>' +
       '<div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:2px">' + dateStr + '</div>' +
     '</div>';
+
+    // Personalized quiz profile card (shows only if quiz data exists)
+    if (quiz && quiz.age) {
+      var goalKg = quiz.weight && quiz.targetWeight ? Math.round(quiz.weight - quiz.targetWeight) : null;
+      var phaseLabel = '';
+      if (quiz.age >= 55) phaseLabel = 'Post-menopausia';
+      else if (quiz.age >= 45) phaseLabel = 'Perimenopausia';
+      else if (quiz.age >= 40) phaseLabel = 'Pre-perimenopausia';
+      else phaseLabel = 'Equilibrio hormonal';
+
+      html += '<div class="mc-card" style="background:linear-gradient(135deg,rgba(201,146,42,.12),rgba(201,146,42,.04));border-color:rgba(201,146,42,.2)">' +
+        '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">' +
+          '<div style="width:36px;height:36px;background:rgba(201,146,42,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px">🧬</div>' +
+          '<div>' +
+            '<div style="font-size:13px;font-weight:700;color:#C9922A">Tu Protocolo Personalizado</div>' +
+            '<div style="font-size:11px;color:rgba(255,255,255,.4)">' + quiz.age + ' anos · ' + phaseLabel + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+          (goalKg ? '<span style="font-size:10px;padding:4px 8px;border-radius:20px;background:rgba(46,125,82,.1);color:var(--verde);font-weight:600">Meta: -' + goalKg + ' kg</span>' : '') +
+          (quiz.activityLevel ? '<span style="font-size:10px;padding:4px 8px;border-radius:20px;background:rgba(99,102,241,.1);color:#818cf8;font-weight:600">' + (quiz.activityLevel === 'sedentary' ? 'Sedentaria' : quiz.activityLevel === 'light' ? 'Actividad leve' : quiz.activityLevel === 'moderate' ? 'Actividad moderada' : 'Activa') + '</span>' : '') +
+          (quiz.dietType ? '<span style="font-size:10px;padding:4px 8px;border-radius:20px;background:rgba(232,68,90,.1);color:var(--rosa);font-weight:600">' + (quiz.dietType === 'standard' ? 'Dieta clasica' : quiz.dietType === 'vegetarian' ? 'Vegetariana' : quiz.dietType === 'vegan' ? 'Vegana' : quiz.dietType === 'keto' ? 'Keto' : quiz.dietType) + '</span>' : '') +
+        '</div>' +
+      '</div>';
+    }
 
     // Quick stats cards
     html += '<div class="mc-stats-row">' +

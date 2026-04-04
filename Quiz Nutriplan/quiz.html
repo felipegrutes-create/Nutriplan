@@ -1571,7 +1571,10 @@ function runLoadingAnimation(){
   },80);
   let i=0;const items=['ai1','ai2','ai3','ai4'],iv=setInterval(()=>{
     if(i<items.length){const el=document.getElementById(items[i]);el.classList.add('show');const doneIdx=i;setTimeout(()=>document.getElementById(items[doneIdx]).querySelector('.ai-done').textContent='✅',600);i++;}
-    else{clearInterval(iv);setTimeout(()=>showSlide(24),800);}
+    else{clearInterval(iv);
+      // Save quiz answers to localStorage for Mi Código personalization
+      try{localStorage.setItem('quiz_answers',JSON.stringify(answers));}catch(e){}
+      setTimeout(()=>showSlide(24),800);}
   },1000);
 }
 
