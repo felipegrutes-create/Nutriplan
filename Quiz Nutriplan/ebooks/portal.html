@@ -4884,19 +4884,23 @@ const MiCodigo = (function() {
     var humors = ['Genial','Bien','Regular','Mal','Bien','Genial'];
     var symptoms = ['Bochornos','Fatiga','Insomnio','Dolor de cabeza','Hinchazón','Irritabilidad'];
     var phases = ['menstruacion','menstruacion','folicular','folicular','folicular','folicular','folicular','ovulacion','ovulacion','ovulacion','lutea','lutea','lutea','lutea','menstruacion','menstruacion','folicular','folicular','folicular','folicular','folicular','ovulacion','ovulacion','ovulacion','lutea','lutea','lutea','lutea','lutea','lutea'];
-    // Simulate quiz data
-    localStorage.setItem('quiz_answers', JSON.stringify({userName:'María José', age:47, weight:78, targetWeight:68, height:162, activityLevel:'light', dietType:'standard', waterIntake:'medium', sleepHours:'6-7', bodyType:'michelines', idealBody:'regular'}));
-    // Set profile
+    // Use existing quiz data if available, otherwise create demo profile
+    var existingQuiz = getQuizData();
+    if (!existingQuiz) {
+      localStorage.setItem('quiz_answers', JSON.stringify({userName:'María José', age:47, weight:78, targetWeight:68, height:162, activityLevel:'light', dietType:'standard', waterIntake:'medium', sleepHours:'6-7', bodyType:'michelines', idealBody:'regular'}));
+    }
+    var quiz = getQuizData();
+    var baseWeight = quiz.weight || 78;
     var ud = getUserData();
-    ud.nombre = ud.nombre || 'María José';
-    ud.goalWeight = ud.goalWeight || 68;
-    ud.startWeight = ud.startWeight || 78;
+    ud.nombre = ud.nombre || quiz.userName || 'María José';
+    ud.goalWeight = ud.goalWeight || quiz.targetWeight || 68;
+    ud.startWeight = ud.startWeight || baseWeight;
     localStorage.setItem(AUTH_KEY, JSON.stringify(ud));
     for (var i = 0; i < 30; i++) {
       var d = new Date();
       d.setDate(d.getDate() - i);
       var k = d.toISOString().split('T')[0];
-      var weightTrend = 76 - i * 0.08 + (Math.random() * 0.4 - 0.2);
+      var weightTrend = (baseWeight - 2) - i * 0.08 + (Math.random() * 0.4 - 0.2);
       var c = getCheckins();
       c[k] = {peso: parseFloat(weightTrend.toFixed(1)), humor: humors[i % humors.length], energia: Math.floor(3 + Math.random() * 6)};
       // Add fasting data for some days
