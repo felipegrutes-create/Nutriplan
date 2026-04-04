@@ -3140,9 +3140,57 @@ const MiCodigo = (function() {
     }
   }
 
+  // Import quiz data into Mi Código profile on first open
+  function importQuizData() {
+    var imported = localStorage.getItem('mc_quiz_imported');
+    if (imported) return; // already imported
+    var quiz = getQuizData();
+    if (!quiz || !quiz.age) return;
+
+    // Set profile name
+    var ud = getUserData();
+    if (quiz.userName && !ud.nombre) {
+      ud.nombre = quiz.userName;
+    }
+    // Set goal weight
+    if (quiz.targetWeight && !ud.goalWeight) {
+      ud.goalWeight = quiz.targetWeight;
+    }
+    // Set start weight
+    if (quiz.weight && !ud.startWeight) {
+      ud.startWeight = quiz.weight;
+    }
+    localStorage.setItem(AUTH_KEY, JSON.stringify(ud));
+
+    // Set initial weight in checkin if no checkin exists
+    if (quiz.weight && Object.keys(getCheckins()).length === 0) {
+      saveCheckinEntry(todayKey(), {peso: quiz.weight, energia: 5, humor: 'Bien'});
+    }
+
+    // Configure settings based on quiz
+    var settings = JSON.parse(localStorage.getItem('mc_settings') || '{}');
+    if (quiz.age >= 50 && !settings.menopause) {
+      // Auto-suggest menopause mode for 50+
+    }
+    if (quiz.waterIntake === 'low') {
+      settings.waterGoal = settings.waterGoal || 10;
+    }
+    localStorage.setItem('mc_settings', JSON.stringify(settings));
+
+    // Set cycle phase based on age
+    if (quiz.age >= 55) {
+      saveCycleEntry(todayKey(), {phase: 'menopausia'});
+      settings.menopause = true;
+      localStorage.setItem('mc_settings', JSON.stringify(settings));
+    }
+
+    localStorage.setItem('mc_quiz_imported', 'true');
+  }
+
   function open() {
     var overlay = document.getElementById('mcOverlay');
     if (!overlay) return;
+    importQuizData();
     history.pushState({mc: true}, '');
     if (isPremium()) {
       overlay.style.display = 'block';

@@ -1592,6 +1592,8 @@ function startOfferTimer(){
 function isValidEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
 function validateEmail(){document.getElementById('mainCta').disabled=!isValidEmail(document.getElementById('emailInput').value);}
 function goToCheckout(){
+  // Ensure quiz data is saved for Mi Código personalization
+  try{localStorage.setItem('quiz_answers',JSON.stringify(answers));}catch(e){}
   if(typeof fbq === 'function') fbq('track','InitiateCheckout');
   if(typeof gtag==='function') gtag('event','begin_checkout');
   sendToSheets({
