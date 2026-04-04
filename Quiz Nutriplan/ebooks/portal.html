@@ -2465,6 +2465,14 @@ const Perfil = (() => {
 
   function render() {
     const data = JSON.parse(localStorage.getItem('portal_perfil') || '{}');
+    // Import quiz data if profile is empty
+    var quiz = null;
+    try { quiz = JSON.parse(localStorage.getItem('quiz_answers')); } catch(e) {}
+    if (quiz && !data.nombre && quiz.userName) {
+      data.nombre = quiz.userName;
+      if (!data.diaInicio) data.diaInicio = new Date().toISOString().split('T')[0];
+      localStorage.setItem('portal_perfil', JSON.stringify(data));
+    }
     document.getElementById('profileAvatar').textContent = data.avatar || '🌸';
     document.getElementById('profileName').textContent = data.nombre || 'Tu Perfil';
     document.getElementById('profileNameInput').value = data.nombre || '';
