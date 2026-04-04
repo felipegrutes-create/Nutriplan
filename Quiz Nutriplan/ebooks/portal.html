@@ -3310,6 +3310,9 @@ const MiCodigo = (function() {
       '</div>' +
     '</div>';
 
+    // Fasting timer card
+    html += renderFastingCard();
+
     // ── Insights: Tus Descubrimientos ──
     html += renderInsightsSection();
 
@@ -3353,6 +3356,153 @@ const MiCodigo = (function() {
     '</div>';
 
     el.innerHTML = html;
+
+    // Auto-refresh fasting timer every 60s
+    if (getFastingState() && getFastingState().active) {
+      if (window._fastingInterval) clearInterval(window._fastingInterval);
+      window._fastingInterval = setInterval(function() {
+        if (currentSection === 'home') {
+          var sc = document.getElementById('mcSectionContent');
+          if (sc) renderHome(sc);
+        } else {
+          clearInterval(window._fastingInterval);
+        }
+      }, 60000);
+    }
+  }
+
+  // ════════════════════════════════════════════════════════════
+  // AYUNO INTERMITENTE — Fasting Timer
+  // ════════════════════════════════════════════════════════════
+  var FASTING_PROTOCOLS = [
+    {id: '16:8', label: '16:8', fastHours: 16, eatHours: 8, desc: 'Popular y efectivo'},
+    {id: '14:10', label: '14:10', fastHours: 14, eatHours: 10, desc: 'Ideal para empezar'},
+    {id: '12:12', label: '12:12', fastHours: 12, eatHours: 12, desc: 'Suave y sostenible'}
+  ];
+
+  function getFastingState() {
+    try { return JSON.parse(localStorage.getItem('mc_fasting') || 'null'); } catch(e) { return null; }
+  }
+
+  function saveFastingState(state) {
+    localStorage.setItem('mc_fasting', JSON.stringify(state));
+  }
+
+  function getFastingHistory() {
+    return getStore('mc_fasting_history');
+  }
+
+  function renderFastingCard() {
+    var state = getFastingState();
+    var html = '';
+
+    if (state && state.active) {
+      var now = Date.now();
+      var elapsed = now - state.startTime;
+      var totalMs = state.fastHours * 3600000;
+      var remaining = Math.max(0, totalMs - elapsed);
+      var pct = Math.min(100, Math.round(elapsed / totalMs * 100));
+      var done = remaining <= 0;
+
+      var remH = Math.floor(remaining / 3600000);
+      var remM = Math.floor((remaining % 3600000) / 60000);
+
+      var elH = Math.floor(elapsed / 3600000);
+      var elM = Math.floor((elapsed % 3600000) / 60000);
+
+      // Circular progress
+      var radius = 50;
+      var circumference = 2 * Math.PI * radius;
+      var offset = circumference - (pct / 100) * circumference;
+      var color = done ? 'var(--verde)' : '#C9922A';
+
+      html += '<div class="mc-card" style="text-align:center;padding:20px">' +
+        '<div style="font-size:11px;font-weight:700;color:#C9922A;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">⏱️ AYUNO ' + state.protocol + '</div>' +
+        '<div style="position:relative;width:120px;height:120px;margin:0 auto 12px">' +
+          '<svg width="120" height="120" style="transform:rotate(-90deg)">' +
+            '<circle cx="60" cy="60" r="' + radius + '" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="8"/>' +
+            '<circle cx="60" cy="60" r="' + radius + '" fill="none" stroke="' + color + '" stroke-width="8" stroke-linecap="round" stroke-dasharray="' + circumference + '" stroke-dashoffset="' + offset + '" style="transition:stroke-dashoffset .5s"/>' +
+          '</svg>' +
+          '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">' +
+            (done
+              ? '<div style="font-size:24px">🎉</div><div style="font-size:12px;font-weight:700;color:var(--verde)">Completado!</div>'
+              : '<div style="font-size:24px;font-weight:900;color:#fff">' + remH + 'h ' + remM + 'm</div><div style="font-size:10px;color:rgba(255,255,255,.4)">restantes</div>'
+            ) +
+          '</div>' +
+        '</div>' +
+        '<div style="font-size:11px;color:rgba(255,255,255,.5);margin-bottom:12px">' + elH + 'h ' + elM + 'm de ' + state.fastHours + 'h completadas · ' + pct + '%</div>' +
+        (done
+          ? '<button onclick="MiCodigo.completeFasting()" style="padding:10px 20px;background:var(--verde);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif">✅ Registrar ayuno completado</button>'
+          : '<button onclick="MiCodigo.stopFasting()" style="padding:8px 16px;background:rgba(232,68,90,.1);color:var(--rosa);border:1px solid rgba(232,68,90,.2);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">Terminar ayuno</button>'
+        ) +
+      '</div>';
+    } else {
+      // Not fasting — show start options
+      html += '<div class="mc-card">' +
+        '<div style="font-size:11px;font-weight:700;color:#C9922A;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">⏱️ AYUNO INTERMITENTE</div>' +
+        '<div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px">Elige tu protocolo y comienza</div>' +
+        '<div style="display:flex;gap:8px">';
+      FASTING_PROTOCOLS.forEach(function(p) {
+        html += '<button onclick="MiCodigo.startFasting(\'' + p.id + '\')" style="flex:1;padding:10px 6px;background:rgba(201,146,42,.08);border:1px solid rgba(201,146,42,.15);border-radius:10px;cursor:pointer;text-align:center">' +
+          '<div style="font-size:16px;font-weight:900;color:#C9922A">' + p.label + '</div>' +
+          '<div style="font-size:9px;color:rgba(255,255,255,.4);margin-top:2px">' + p.desc + '</div>' +
+        '</button>';
+      });
+      html += '</div>';
+
+      // Show last fast if exists
+      var history = getFastingHistory();
+      var dates = Object.keys(history).sort().reverse();
+      if (dates.length > 0) {
+        var last = history[dates[0]];
+        html += '<div style="margin-top:10px;font-size:11px;color:rgba(255,255,255,.4);text-align:center">Ultimo ayuno: ' + dates[0] + ' · ' + last.protocol + ' · ' + (last.completed ? '✅' : '❌') + '</div>';
+      }
+
+      html += '</div>';
+    }
+
+    return html;
+  }
+
+  function startFasting(protocolId) {
+    var protocol = FASTING_PROTOCOLS.filter(function(p) { return p.id === protocolId; })[0];
+    if (!protocol) return;
+    saveFastingState({
+      active: true,
+      protocol: protocol.id,
+      fastHours: protocol.fastHours,
+      startTime: Date.now()
+    });
+    navigate('home');
+  }
+
+  function stopFasting() {
+    if (!confirm('¿Terminar el ayuno actual?')) return;
+    var state = getFastingState();
+    if (state) {
+      var history = getFastingHistory();
+      history[todayKey()] = {protocol: state.protocol, completed: false, hours: Math.round((Date.now() - state.startTime) / 3600000 * 10) / 10};
+      setStore('mc_fasting_history', history);
+    }
+    saveFastingState(null);
+    navigate('home');
+  }
+
+  function completeFasting() {
+    var state = getFastingState();
+    if (state) {
+      var history = getFastingHistory();
+      history[todayKey()] = {protocol: state.protocol, completed: true, hours: state.fastHours};
+      setStore('mc_fasting_history', history);
+    }
+    saveFastingState(null);
+    // Show toast
+    var toast = document.createElement('div');
+    toast.textContent = '🎉 ¡Ayuno completado!';
+    toast.style.cssText = 'position:fixed;top:70px;left:50%;transform:translateX(-50%);background:#1a4a31;color:#fff;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;z-index:20001;box-shadow:0 4px 20px rgba(0,0,0,.4)';
+    document.body.appendChild(toast);
+    setTimeout(function() { toast.remove(); }, 2500);
+    navigate('home');
   }
 
   function renderInsightsSection() {
@@ -4658,7 +4808,8 @@ const MiCodigo = (function() {
     _setAvatarEmoji: _setAvatarEmoji, _setAvatarPhoto: _setAvatarPhoto,
     exportData: exportData, showAbout: showAbout,
     generateInsights: generateInsights,
-    loadDemoData: loadDemoData, clearDemoData: clearDemoData
+    loadDemoData: loadDemoData, clearDemoData: clearDemoData,
+    startFasting: startFasting, stopFasting: stopFasting, completeFasting: completeFasting
   };
 })();
 
