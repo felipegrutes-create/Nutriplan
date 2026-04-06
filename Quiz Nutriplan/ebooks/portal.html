@@ -5116,52 +5116,92 @@ const MiCodigo = (function() {
   }
 
   function loadDemoData() {
-    var humors = ['Genial','Bien','Regular','Mal','Bien','Genial'];
-    var symptoms = ['Bochornos','Fatiga','Insomnio','Dolor de cabeza','Hinchazón','Irritabilidad'];
-    var phases = ['menstruacion','menstruacion','folicular','folicular','folicular','folicular','folicular','ovulacion','ovulacion','ovulacion','lutea','lutea','lutea','lutea','menstruacion','menstruacion','folicular','folicular','folicular','folicular','folicular','ovulacion','ovulacion','ovulacion','lutea','lutea','lutea','lutea','lutea','lutea'];
-    // Use existing quiz data if available, otherwise create demo profile
-    var existingQuiz = getQuizData();
-    if (!existingQuiz) {
-      localStorage.setItem('quiz_answers', JSON.stringify({userName:'María José', age:47, weight:78, targetWeight:68, height:162, activityLevel:'light', dietType:'standard', waterIntake:'medium', sleepHours:'6-7', bodyType:'michelines', idealBody:'regular'}));
-    }
-    var quiz = getQuizData();
-    var baseWeight = quiz.weight || 78;
+    // Historia: Valentina, 49 años, perimenopausia
+    // Semana 1: luchando (humor bajo, poca agua, sin ejercicio, mal sueño)
+    // Semana 2: empezando a mejorar (más agua, algo de ejercicio)
+    // Semana 3: progreso real (humor sube, peso baja consistente)
+    // Semana 4: transformación (hábitos consolidados, energía alta)
+    localStorage.setItem('quiz_answers', JSON.stringify({
+      userName:'Valentina', age:49, weight:82, targetWeight:72, height:165,
+      activityLevel:'light', dietType:'standard', waterIntake:'low',
+      sleepHours:'5-6', bodyType:'michelines', idealBody:'regular',
+      hormonalStage:'peri', weightSituation:'subiendo',
+      motivations:['energia','autoestima'], timeFighting:'3a5'
+    }));
     var ud = getUserData();
-    ud.nombre = ud.nombre || quiz.userName || 'María José';
-    ud.goalWeight = ud.goalWeight || quiz.targetWeight || 68;
-    ud.startWeight = ud.startWeight || baseWeight;
+    ud.nombre = 'Valentina'; ud.goalWeight = 72; ud.startWeight = 82;
     localStorage.setItem(AUTH_KEY, JSON.stringify(ud));
+
+    // Day-by-day scripted data (i=0 is today, i=29 is 30 days ago)
+    var script = [
+      // i, peso, humor, energia, agua, ejercicio, sueño, supp, comidas4, ayuno, fase, sintomas
+      // --- Semana 1 (dias 29-23): inicio difícil ---
+      {w:82.0,h:'Regular',e:3,a:4,ex:false,sl:5,sp:false,m:2,ay:false,ph:'lutea',sy:['Bochornos','Fatiga','Insomnio']},
+      {w:82.2,h:'Mal',e:2,a:3,ex:false,sl:4.5,sp:false,m:1,ay:false,ph:'lutea',sy:['Bochornos','Irritabilidad','Insomnio']},
+      {w:81.8,h:'Regular',e:3,a:5,ex:false,sl:5.5,sp:false,m:2,ay:false,ph:'lutea',sy:['Fatiga','Hinchazón']},
+      {w:82.1,h:'Mal',e:2,a:4,ex:false,sl:5,sp:false,m:2,ay:false,ph:'menstruacion',sy:['Bochornos','Dolor de cabeza','Fatiga']},
+      {w:81.7,h:'Regular',e:4,a:5,ex:false,sl:6,sp:true,m:3,ay:false,ph:'menstruacion',sy:['Bochornos','Fatiga']},
+      {w:81.5,h:'Regular',e:4,a:6,ex:true,sl:6,sp:true,m:3,ay:false,ph:'menstruacion',sy:['Fatiga']},
+      {w:81.3,h:'Bien',e:5,a:6,ex:true,sl:6.5,sp:true,m:3,ay:true,ph:'folicular',sy:['Fatiga']},
+      // --- Semana 2 (dias 22-16): empezando a mejorar ---
+      {w:81.0,h:'Bien',e:5,a:7,ex:true,sl:6.5,sp:true,m:3,ay:false,ph:'folicular',sy:[]},
+      {w:81.2,h:'Regular',e:4,a:6,ex:false,sl:5.5,sp:true,m:3,ay:false,ph:'folicular',sy:['Hinchazón']},
+      {w:80.8,h:'Bien',e:6,a:7,ex:true,sl:7,sp:true,m:4,ay:true,ph:'folicular',sy:[]},
+      {w:80.5,h:'Bien',e:6,a:8,ex:true,sl:7,sp:true,m:4,ay:false,ph:'folicular',sy:[]},
+      {w:80.3,h:'Genial',e:7,a:8,ex:true,sl:7.5,sp:true,m:4,ay:false,ph:'ovulacion',sy:[]},
+      {w:80.6,h:'Bien',e:5,a:7,ex:false,sl:6,sp:true,m:3,ay:false,ph:'ovulacion',sy:['Hinchazón']},
+      {w:80.1,h:'Bien',e:6,a:8,ex:true,sl:7,sp:true,m:4,ay:true,ph:'ovulacion',sy:[]},
+      // --- Semana 3 (dias 15-9): progreso real ---
+      {w:79.8,h:'Genial',e:7,a:8,ex:true,sl:7,sp:true,m:4,ay:false,ph:'ovulacion',sy:[]},
+      {w:79.5,h:'Genial',e:7,a:9,ex:true,sl:7.5,sp:true,m:4,ay:true,ph:'lutea',sy:[]},
+      {w:79.2,h:'Bien',e:6,a:8,ex:true,sl:7,sp:true,m:4,ay:false,ph:'lutea',sy:['Hinchazón']},
+      {w:79.5,h:'Regular',e:5,a:7,ex:false,sl:6,sp:true,m:3,ay:false,ph:'lutea',sy:['Bochornos','Hinchazón']},
+      {w:79.0,h:'Bien',e:7,a:8,ex:true,sl:7,sp:true,m:4,ay:true,ph:'lutea',sy:[]},
+      {w:78.7,h:'Genial',e:8,a:9,ex:true,sl:7.5,sp:true,m:4,ay:false,ph:'menstruacion',sy:[]},
+      {w:78.5,h:'Bien',e:6,a:8,ex:true,sl:7,sp:true,m:4,ay:false,ph:'menstruacion',sy:['Fatiga']},
+      // --- Semana 4 (dias 8-0): transformación ---
+      {w:78.2,h:'Genial',e:8,a:9,ex:true,sl:7.5,sp:true,m:4,ay:true,ph:'folicular',sy:[]},
+      {w:77.9,h:'Genial',e:8,a:9,ex:true,sl:7.5,sp:true,m:4,ay:false,ph:'folicular',sy:[]},
+      {w:78.1,h:'Bien',e:7,a:8,ex:true,sl:7,sp:true,m:4,ay:false,ph:'folicular',sy:[]},
+      {w:77.6,h:'Genial',e:8,a:9,ex:true,sl:8,sp:true,m:4,ay:true,ph:'folicular',sy:[]},
+      {w:77.3,h:'Genial',e:9,a:9,ex:true,sl:7.5,sp:true,m:4,ay:false,ph:'ovulacion',sy:[]},
+      {w:77.0,h:'Bien',e:7,a:8,ex:false,sl:7,sp:true,m:4,ay:false,ph:'ovulacion',sy:[]},
+      {w:76.8,h:'Genial',e:8,a:9,ex:true,sl:8,sp:true,m:4,ay:true,ph:'ovulacion',sy:[]},
+      {w:76.5,h:'Genial',e:9,a:9,ex:true,sl:8,sp:true,m:4,ay:false,ph:'ovulacion',sy:[]},
+      {w:76.7,h:'Genial',e:8,a:9,ex:true,sl:7.5,sp:true,m:4,ay:true,ph:'ovulacion',sy:[]}
+    ];
+
     for (var i = 0; i < 30; i++) {
-      var d = new Date();
-      d.setDate(d.getDate() - i);
+      var d = new Date(); d.setDate(d.getDate() - (29 - i));
       var k = d.toISOString().split('T')[0];
-      var weightTrend = (baseWeight - 2) - i * 0.08 + (Math.random() * 0.4 - 0.2);
+      var s = script[i];
       var c = getCheckins();
-      c[k] = {peso: parseFloat(weightTrend.toFixed(1)), humor: humors[i % humors.length], energia: Math.floor(3 + Math.random() * 6)};
-      // Add fasting data for some days
-      if (i % 3 === 0) { c[k].ayuno = true; c[k].ayunoHours = 16; }
+      c[k] = {peso:s.w, humor:s.h, energia:s.e};
+      if (s.ay) { c[k].ayuno = true; c[k].ayunoHours = 16; }
       localStorage.setItem('mc_checkins', JSON.stringify(c));
-      var w = getStore('mc_water'); w[k] = i%3===0 ? 4 : i%2===0 ? 9 : 6; setStore('mc_water', w);
-      var ex = getStore('mc_exercise'); ex[k] = i%2===0; setStore('mc_exercise', ex);
-      var sl = getStore('mc_sleep'); sl[k] = {hours: i%4===0 ? 5 : i%3===0 ? 5.5 : (7 + Math.random())}; setStore('mc_sleep', sl);
-      var ml = getStore('mc_meals'); ml[k] = i%2===0 ? {desayuno:true,almuerzo:true,cena:true,snack:true} : {desayuno:true,almuerzo:i%3!==0}; setStore('mc_meals', ml);
-      var sp = getStore('mc_supplements'); sp[k] = i%2===0; setStore('mc_supplements', sp);
-      var cy = getCycleAll(); var syms = [];
-      if (sl[k].hours < 6) { syms.push(symptoms[0]); syms.push(symptoms[2]); }
-      if (i%3===0) syms.push(symptoms[1]);
-      if (i%5===0) syms.push(symptoms[3]);
-      cy[k] = {phase: phases[i % phases.length], symptoms: syms};
+      var wt = getStore('mc_water'); wt[k] = s.a; setStore('mc_water', wt);
+      var ex = getStore('mc_exercise'); ex[k] = s.ex; setStore('mc_exercise', ex);
+      var sl = getStore('mc_sleep'); sl[k] = {hours: s.sl}; setStore('mc_sleep', sl);
+      var sp = getStore('mc_supplements'); sp[k] = s.sp; setStore('mc_supplements', sp);
+      var ml = getStore('mc_meals');
+      ml[k] = s.m >= 4 ? {desayuno:true,almuerzo:true,cena:true,snack:true}
+            : s.m >= 3 ? {desayuno:true,almuerzo:true,cena:true}
+            : s.m >= 2 ? {desayuno:true,almuerzo:true}
+            : {desayuno:true};
+      setStore('mc_meals', ml);
+      var cy = getCycleAll();
+      cy[k] = {phase: s.ph, symptoms: s.sy};
       localStorage.setItem('mc_cycle', JSON.stringify(cy));
-      // Fasting history
-      if (i % 3 === 0) {
+      if (s.ay) {
         var fh = getStore('mc_fasting_history');
-        fh[k] = {protocol: 'f16_8', label: '16:8', completed: true, hours: 16};
+        fh[k] = {protocol:'f16_8', label:'16:8', completed:true, hours:16};
         setStore('mc_fasting_history', fh);
       }
     }
     _cachedInsights = null; _insightsCacheDay = '';
     localStorage.removeItem('mc_insights_levels_seen');
-    alert('✅ 30 dias de datos demo cargados');
+    localStorage.removeItem('mc_quiz_imported');
+    alert('✅ 30 dias — Historia de Valentina cargada');
     navigate('home');
   }
 
