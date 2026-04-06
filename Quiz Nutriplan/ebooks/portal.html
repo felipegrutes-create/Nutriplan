@@ -4896,42 +4896,36 @@ const MiCodigo = (function() {
     var stageLbls = {pre:'Pre-menopausia',peri:'Perimenopausia',meno:'Menopausia',post:'Post-menopausia',noseguro:'No especificado'};
     var fase = quiz && quiz.hormonalStage ? (stageLbls[quiz.hormonalStage] || '') : '';
 
-    // Build weight history
-    var weightRows = '';
+    // Build daily cards
+    var dayCards = '';
     dates.forEach(function(d) {
       var c = checkins[d];
       var w = water[d] || 0;
       var sl = sleep[d] ? sleep[d].hours : '--';
-      var ex = exercise[d] ? 'Si' : 'No';
-      var sup = supplements[d] ? 'Si' : 'No';
+      var ex = exercise[d] ? '✅' : '—';
+      var sup = supplements[d] ? '✅' : '—';
       var m = meals[d] || {};
       var mCount = (m.desayuno?1:0)+(m.almuerzo?1:0)+(m.cena?1:0)+(m.snack?1:0);
       var cy = cycle[d] || {};
-      var syms = (cy.symptoms || []).join(', ') || '--';
+      var syms = (cy.symptoms || []).join(', ') || '';
       var moodMap = {Genial:'🤩',Bien:'😊',Regular:'😐',Mal:'😢'};
-      var dateLabel = new Date(d+'T12:00:00').toLocaleDateString('es',{day:'numeric',month:'short',year:'numeric'});
-      weightRows += '<tr>' +
-        '<td>'+dateLabel+'</td>' +
-        '<td style="font-weight:700">'+(c.peso||'--')+' kg</td>' +
-        '<td>'+(c.energia||'--')+'/10</td>' +
-        '<td>'+(moodMap[c.humor]||'')+' '+(c.humor||'--')+'</td>' +
-        '<td>'+w+' vasos</td>' +
-        '<td>'+sl+'h</td>' +
-        '<td>'+ex+'</td>' +
-        '<td>'+sup+'</td>' +
-        '<td>'+mCount+'/4</td>' +
-        '<td style="font-size:10px">'+syms+'</td>' +
-      '</tr>';
+      var dateLabel = new Date(d+'T12:00:00').toLocaleDateString('es',{weekday:'short',day:'numeric',month:'short'});
+      dayCards += '<div class="day-card">' +
+        '<div class="day-header"><span class="day-date">'+dateLabel+'</span><span class="day-weight">'+(c.peso?c.peso+' kg':'—')+'</span></div>' +
+        '<div class="day-grid">' +
+          '<div class="day-item"><span class="day-label">Humor</span><span>'+(moodMap[c.humor]||'😐')+' '+(c.humor||'—')+'</span></div>' +
+          '<div class="day-item"><span class="day-label">Energia</span><span>'+(c.energia||'—')+'/10</span></div>' +
+          '<div class="day-item"><span class="day-label">Agua</span><span>'+w+' vasos</span></div>' +
+          '<div class="day-item"><span class="day-label">Sueno</span><span>'+sl+'h</span></div>' +
+          '<div class="day-item"><span class="day-label">Ejercicio</span><span>'+ex+'</span></div>' +
+          '<div class="day-item"><span class="day-label">Suplemento</span><span>'+sup+'</span></div>' +
+          '<div class="day-item"><span class="day-label">Comidas</span><span>'+mCount+'/4</span></div>' +
+          (syms ? '<div class="day-item" style="grid-column:1/-1"><span class="day-label">Sintomas</span><span>'+syms+'</span></div>' : '') +
+        '</div>' +
+      '</div>';
     });
 
-    // Fasting history
-    var fastRows = '';
     var fastDates = Object.keys(fastHistory).sort();
-    fastDates.forEach(function(d) {
-      var f = fastHistory[d];
-      var dateLabel = new Date(d+'T12:00:00').toLocaleDateString('es',{day:'numeric',month:'short'});
-      fastRows += '<tr><td>'+dateLabel+'</td><td>'+(f.label||f.protocol||'--')+'</td><td>'+f.hours+'h</td><td>'+(f.completed?'Completado':'Interrumpido')+'</td></tr>';
-    });
 
     // Insights
     var insights = generateInsights();
@@ -4967,13 +4961,17 @@ const MiCodigo = (function() {
         '.stat-box{flex:1;min-width:120px;background:#f8f5f0;border-radius:8px;padding:12px;text-align:center;border:1px solid #e8e0d4}' +
         '.stat-box .num{font-size:24px;font-weight:700;color:#C9922A}' +
         '.stat-box .label{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.5px}' +
-        'table{width:100%;border-collapse:collapse;font-size:11px;margin:12px 0}' +
-        'th{background:#2E7D52;color:#fff;padding:6px 8px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.5px}' +
-        'td{padding:5px 8px;border-bottom:1px solid #eee}' +
-        'tr:nth-child(even){background:#fafafa}' +
+        '.day-card{background:#f8f5f0;border:1px solid #e8e0d4;border-radius:10px;padding:12px;margin-bottom:10px}' +
+        '.day-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8e0d4}' +
+        '.day-date{font-weight:700;font-size:13px;color:#2E7D52}' +
+        '.day-weight{font-size:16px;font-weight:800;color:#C9922A}' +
+        '.day-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}' +
+        '.day-item{display:flex;justify-content:space-between;font-size:12px;padding:2px 0}' +
+        '.day-label{color:#888;font-size:11px}' +
+        '.fast-card{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#f8f5f0;border:1px solid #e8e0d4;border-radius:8px;margin-bottom:6px;font-size:12px}' +
         '.disclaimer{margin-top:24px;padding:12px;background:#fff8f0;border:1px solid #e8e0d4;border-radius:8px;font-size:11px;color:#888;text-align:center}' +
         '.print-btn{display:block;margin:20px auto;padding:12px 32px;background:#2E7D52;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer}' +
-        '@media print{.print-btn{display:none} body{padding:10px} .header{background:#f8f5f0 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact} th{background:#2E7D52 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}' +
+        '@media print{.print-btn{display:none} body{padding:10px} .day-card,.header,.stat-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}}' +
       '</style></head><body>' +
 
       '<div class="header">' +
@@ -4998,11 +4996,13 @@ const MiCodigo = (function() {
       (insightRows ? '<h2>💡 Descubrimientos Personalizados</h2><p style="font-size:12px;color:#888">Correlaciones detectadas en tus datos:</p>'+insightRows : '') +
 
       '<h2>📅 Historial Diario</h2>' +
-      '<table><thead><tr><th>Fecha</th><th>Peso</th><th>Energia</th><th>Humor</th><th>Agua</th><th>Sueno</th><th>Ejercicio</th><th>Suplemento</th><th>Comidas</th><th>Sintomas</th></tr></thead><tbody>' +
-      weightRows +
-      '</tbody></table>' +
+      dayCards +
 
-      (fastRows ? '<h2>⏱️ Historial de Ayuno</h2><table><thead><tr><th>Fecha</th><th>Protocolo</th><th>Duracion</th><th>Estado</th></tr></thead><tbody>'+fastRows+'</tbody></table>' : '') +
+      (fastDates.length > 0 ? '<h2>⏱️ Historial de Ayuno</h2>' + fastDates.map(function(d) {
+        var f = fastHistory[d];
+        var dl = new Date(d+'T12:00:00').toLocaleDateString('es',{day:'numeric',month:'short'});
+        return '<div class="fast-card"><span style="font-weight:700;color:#2E7D52">'+dl+'</span><span style="color:#C9922A;font-weight:600">'+(f.label||f.protocol)+'</span><span>'+f.hours+'h</span><span>'+(f.completed?'✅':'❌')+'</span></div>';
+      }).join('') : '') +
 
       '<div class="disclaimer">' +
         '⚠️ Este reporte es informativo y no sustituye el consejo medico profesional.<br>' +
