@@ -4948,7 +4948,84 @@ const MiCodigo = (function() {
     var exDays = dates.filter(function(d){return exercise[d];}).length;
     var fastCompleted = fastDates.filter(function(d){return fastHistory[d].completed;}).length;
 
-    // Variables used by the modal rendering below
+    // Build SVG charts
+    function buildLineChart(title, dataPoints, color, unit, chartW, chartH) {
+      if (dataPoints.length < 2) return '';
+      var padL = 36, padR = 8, padT = 8, padB = 20;
+      var w = chartW - padL - padR;
+      var h = chartH - padT - padB;
+      var vals = dataPoints.map(function(p) { return p.v; });
+      var minV = Math.min.apply(null, vals);
+      var maxV = Math.max.apply(null, vals);
+      var range = maxV - minV || 1;
+      minV -= range * 0.1;
+      maxV += range * 0.1;
+      range = maxV - minV;
+
+      var points = dataPoints.map(function(p, i) {
+        var x = padL + (i / (dataPoints.length - 1)) * w;
+        var y = padT + h - ((p.v - minV) / range) * h;
+        return {x: x, y: y, v: p.v, label: p.label};
+      });
+
+      var pathD = points.map(function(p, i) { return (i === 0 ? 'M' : 'L') + p.x.toFixed(1) + ',' + p.y.toFixed(1); }).join(' ');
+
+      var svg = '<div style="margin:12px 0">' +
+        '<div style="font-size:13px;font-weight:700;color:#2E7D52;margin-bottom:6px">' + title + '</div>' +
+        '<svg width="100%" viewBox="0 0 ' + chartW + ' ' + chartH + '" style="background:#fafaf5;border-radius:8px;border:1px solid #e8e0d4">';
+
+      // Y-axis labels
+      for (var g = 0; g <= 4; g++) {
+        var yVal = minV + (g / 4) * range;
+        var yPos = padT + h - (g / 4) * h;
+        svg += '<line x1="' + padL + '" y1="' + yPos + '" x2="' + (chartW - padR) + '" y2="' + yPos + '" stroke="#e8e0d4" stroke-width="0.5"/>';
+        svg += '<text x="' + (padL - 4) + '" y="' + (yPos + 3) + '" font-size="8" fill="#999" text-anchor="end">' + yVal.toFixed(1) + '</text>';
+      }
+
+      // Line
+      svg += '<path d="' + pathD + '" fill="none" stroke="' + color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+
+      // Dots + X labels (show max 10 labels)
+      var labelStep = Math.max(1, Math.floor(points.length / 8));
+      points.forEach(function(p, i) {
+        svg += '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="3" fill="' + color + '"/>';
+        if (i % labelStep === 0 || i === points.length - 1) {
+          svg += '<text x="' + p.x.toFixed(1) + '" y="' + (chartH - 4) + '" font-size="7" fill="#999" text-anchor="middle">' + p.label + '</text>';
+        }
+      });
+
+      // First and last values
+      var first = points[0], last = points[points.length - 1];
+      svg += '<text x="' + first.x.toFixed(1) + '" y="' + (first.y - 6) + '" font-size="9" fill="' + color + '" font-weight="700" text-anchor="start">' + first.v + unit + '</text>';
+      svg += '<text x="' + last.x.toFixed(1) + '" y="' + (last.y - 6) + '" font-size="9" fill="' + color + '" font-weight="700" text-anchor="end">' + last.v + unit + '</text>';
+
+      svg += '</svg></div>';
+      return svg;
+    }
+
+    // Weight chart data
+    var weightChartData = dates.filter(function(d) { return checkins[d].peso; }).map(function(d) {
+      return {v: checkins[d].peso, label: new Date(d + 'T12:00:00').toLocaleDateString('es', {day: 'numeric', month: 'short'})};
+    });
+    var weightChart = buildLineChart('⚖️ Evolucion de Peso', weightChartData, '#C9922A', ' kg', 320, 160);
+
+    // Energy chart data
+    var energyChartData = dates.filter(function(d) { return typeof checkins[d].energia === 'number'; }).map(function(d) {
+      return {v: checkins[d].energia, label: new Date(d + 'T12:00:00').toLocaleDateString('es', {day: 'numeric', month: 'short'})};
+    });
+    var energyChart = buildLineChart('⚡ Evolucion de Energia', energyChartData, '#2E7D52', '/10', 320, 140);
+
+    // Water chart data
+    var waterChartData = dates.map(function(d) {
+      return {v: water[d] || 0, label: new Date(d + 'T12:00:00').toLocaleDateString('es', {day: 'numeric', month: 'short'})};
+    });
+    var waterChart = buildLineChart('💧 Consumo de Agua', waterChartData, '#3b82f6', ' v', 320, 140);
+
+    // Sleep chart data
+    var sleepChartData = dates.filter(function(d) { return sleep[d] && sleep[d].hours; }).map(function(d) {
+      return {v: sleep[d].hours, label: new Date(d + 'T12:00:00').toLocaleDateString('es', {day: 'numeric', month: 'short'})};
+    });
+    var sleepChart = buildLineChart('🌙 Horas de Sueno', sleepChartData, '#6366f1', 'h', 320, 140);
 
     // Render as fullscreen modal inside the app
     var modal = document.createElement('div');
@@ -4995,6 +5072,9 @@ const MiCodigo = (function() {
         '<div class="r-stat"><div class="num">'+exDays+'</div><div class="label">Dias ejercicio</div></div>' +
         (fastCompleted > 0 ? '<div class="r-stat"><div class="num">'+fastCompleted+'</div><div class="label">Ayunos completados</div></div>' : '') +
       '</div>' +
+
+      '<h2>📈 Graficos de Evolucion</h2>' +
+      weightChart + energyChart + waterChart + sleepChart +
 
       (insightRows ? '<h2>💡 Descubrimientos</h2><p style="font-size:12px;color:#888">Correlaciones detectadas:</p>'+insightRows.replace(/padding:8px 12px;background:#f8f5f0;border-left:3px solid #C9922A;margin-bottom:8px;border-radius:4px/g,'').replace(/<div style="/g,'<div class="r-insight" style="') : '') +
 
