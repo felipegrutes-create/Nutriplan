@@ -2524,6 +2524,7 @@ const MiCodigo = (function() {
   var AUTH_KEY = 'mc_auth';
   var DATA_BASE = '../mi-codigo-app/data/';
   var VALID_KEY = 'codigo-marco-2026';
+  var VERIFY_URL = 'https://script.google.com/macros/s/AKfycbyctvZ2IGeIb6eybcfpOSahPROAuCa3Z6wk_HXYCTZOr3bZKSE6MGYDLzuhkAezAAXcCw/exec';
   var sections = ['home','midia','recetas','compras','progreso','mas'];
   var sectionLabels = {home:'Inicio',midia:'Mi Dia',recetas:'Recetas',compras:'Compras',progreso:'Progreso',mas:'Mas'};
   var sectionIcons = {home:'🏠',midia:'☀️',recetas:'🍽️',compras:'🛒',progreso:'📊',mas:'📚'};
@@ -3169,6 +3170,38 @@ const MiCodigo = (function() {
     return false;
   }
 
+  function activateByEmail(email) {
+    var btn = document.getElementById('mcEmailBtn');
+    var input = document.getElementById('mcEmailField');
+    if (btn) { btn.textContent = 'Verificando...'; btn.disabled = true; }
+
+    fetch(VERIFY_URL + '?action=verify&email=' + encodeURIComponent(email))
+      .then(function(r) { return r.json(); })
+      .then(function(result) {
+        if (result.authorized) {
+          localStorage.setItem(AUTH_KEY, JSON.stringify({autenticado:true, activatedAt:Date.now(), email:email}));
+          open();
+        } else {
+          if (input) {
+            input.style.borderColor = '#E8445A';
+            input.value = '';
+            input.placeholder = 'Email no encontrado — verifica tu compra';
+          }
+          if (btn) { btn.textContent = 'Activar'; btn.disabled = false; }
+        }
+      })
+      .catch(function() {
+        // Fallback to fixed key if network fails
+        if (email === VALID_KEY) {
+          localStorage.setItem(AUTH_KEY, JSON.stringify({autenticado:true, activatedAt:Date.now()}));
+          open();
+        } else {
+          if (input) { input.placeholder = 'Error de conexión — intenta de nuevo'; }
+          if (btn) { btn.textContent = 'Activar'; btn.disabled = false; }
+        }
+      });
+  }
+
   function render() {
     var el = document.getElementById('micodigoContent');
     if (!el) return;
@@ -3327,10 +3360,10 @@ const MiCodigo = (function() {
       '<div class="mc-cta-section">' +
         '<a href="https://pay.hotmart.com/W98444762C?checkoutMode=10" target="_blank" class="mc-cta-btn">Desbloquear Mi Codigo ⭐</a>' +
         '<div style="font-size:11px;color:#8a8a7a;margin-top:8px">Pago único · Acceso inmediato · 60 días de garantía</div>' +
-        '<a onclick="MiCodigo.showKeyInput()" class="mc-activate-link">Ya tengo acceso →</a>' +
+        '<a onclick="MiCodigo.showKeyInput()" class="mc-activate-link">Ya compré — activar con mi email →</a>' +
         '<div class="mc-key-input" id="mcKeyInput">' +
-          '<input type="text" id="mcKeyField" placeholder="Tu codigo de acceso">' +
-          '<button onclick="MiCodigo.tryActivate()">Activar</button>' +
+          '<input type="email" id="mcEmailField" placeholder="Email de tu compra" style="text-transform:lowercase">' +
+          '<button id="mcEmailBtn" onclick="MiCodigo.tryActivateEmail()">Activar</button>' +
         '</div>' +
       '</div>' +
     '</div>';
@@ -3338,19 +3371,19 @@ const MiCodigo = (function() {
 
   function showKeyInput() {
     document.getElementById('mcKeyInput').classList.toggle('show');
-    document.getElementById('mcKeyField').focus();
+    var el = document.getElementById('mcEmailField');
+    if (el) el.focus();
   }
 
-  function tryActivate() {
-    var key = document.getElementById('mcKeyField').value.trim();
-    if (activate(key)) {
-      // success
-    } else {
-      document.getElementById('mcKeyField').style.borderColor = '#E8445A';
-      document.getElementById('mcKeyField').value = '';
-      document.getElementById('mcKeyField').placeholder = 'Codigo incorrecto';
-    }
+  function tryActivateEmail() {
+    var el = document.getElementById('mcEmailField');
+    var email = el ? el.value.trim().toLowerCase() : '';
+    if (!email) { el.placeholder = 'Ingresa tu email de compra'; return; }
+    activateByEmail(email);
   }
+
+  // Keep old tryActivate for URL param activation
+  function tryActivate() { tryActivateEmail(); }
 
   function renderPremium(el) {
     var content = '<div class="mc-section" id="mcSectionContent"></div>';
@@ -5412,7 +5445,7 @@ const MiCodigo = (function() {
   })();
 
   return {
-    render: render, open: open, close: close, goBack: goBack, navigate: navigate, showKeyInput: showKeyInput, tryActivate: tryActivate,
+    render: render, open: open, close: close, goBack: goBack, navigate: navigate, showKeyInput: showKeyInput, tryActivate: tryActivate, tryActivateEmail: tryActivateEmail,
     isPremium: isPremium,
     // Mi Dia actions
     selectMood: selectMood, setWater: setWater, toggleMeal: toggleMeal,
