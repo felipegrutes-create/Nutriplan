@@ -4948,33 +4948,38 @@ const MiCodigo = (function() {
     var exDays = dates.filter(function(d){return exercise[d];}).length;
     var fastCompleted = fastDates.filter(function(d){return fastHistory[d].completed;}).length;
 
-    var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
-      '<title>Mi Reporte - El Codigo Hormonal</title>' +
-      '<style>' +
-        'body{font-family:Georgia,serif;max-width:800px;margin:0 auto;padding:20px;color:#1a1a1a;background:#fff}' +
-        'h1{color:#C9922A;font-size:24px;border-bottom:2px solid #C9922A;padding-bottom:8px}' +
-        'h2{color:#2E7D52;font-size:18px;margin-top:24px;border-bottom:1px solid #e0e0e0;padding-bottom:4px}' +
-        '.header{text-align:center;margin-bottom:24px;padding:20px;background:linear-gradient(135deg,#f8f5f0,#fff);border-radius:12px;border:1px solid #e8e0d4}' +
-        '.header h1{border:none;margin:0}' +
-        '.header p{color:#888;margin:4px 0}' +
-        '.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}' +
-        '.stat-box{flex:1;min-width:120px;background:#f8f5f0;border-radius:8px;padding:12px;text-align:center;border:1px solid #e8e0d4}' +
-        '.stat-box .num{font-size:24px;font-weight:700;color:#C9922A}' +
-        '.stat-box .label{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.5px}' +
-        '.day-card{background:#f8f5f0;border:1px solid #e8e0d4;border-radius:10px;padding:12px;margin-bottom:10px}' +
-        '.day-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8e0d4}' +
-        '.day-date{font-weight:700;font-size:13px;color:#2E7D52}' +
-        '.day-weight{font-size:16px;font-weight:800;color:#C9922A}' +
-        '.day-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}' +
-        '.day-item{display:flex;justify-content:space-between;font-size:12px;padding:2px 0}' +
-        '.day-label{color:#888;font-size:11px}' +
-        '.fast-card{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#f8f5f0;border:1px solid #e8e0d4;border-radius:8px;margin-bottom:6px;font-size:12px}' +
-        '.disclaimer{margin-top:24px;padding:12px;background:#fff8f0;border:1px solid #e8e0d4;border-radius:8px;font-size:11px;color:#888;text-align:center}' +
-        '.print-btn{display:block;margin:20px auto;padding:12px 32px;background:#2E7D52;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer}' +
-        '@media print{.print-btn{display:none} body{padding:10px} .day-card,.header,.stat-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}}' +
-      '</style></head><body>' +
+    // Variables used by the modal rendering below
 
-      '<div class="header">' +
+    // Render as fullscreen modal inside the app
+    var modal = document.createElement('div');
+    modal.setAttribute('role', 'dialog');
+    modal.style.cssText = 'position:fixed;inset:0;background:#fff;z-index:30000;overflow-y:auto;-webkit-overflow-scrolling:touch';
+    modal.innerHTML = '<div style="position:sticky;top:0;z-index:1;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #e8e0d4">' +
+      '<button onclick="this.closest(\'[role=dialog]\').remove()" style="background:none;border:none;font-size:20px;cursor:pointer;color:#1a1a1a;padding:4px">← Volver</button>' +
+      '<button onclick="var c=this.closest(\'[role=dialog]\');var p=window.open(\'\',\'_blank\');p.document.write(c.querySelector(\'.report-body\').outerHTML.replace(/<button[^>]*>[^<]*<\\/button>/g,\'\'));p.document.close();p.print()" style="background:#2E7D52;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer">🖨️ PDF</button>' +
+    '</div>' +
+    '<div class="report-body" style="font-family:Georgia,serif;padding:16px;color:#1a1a1a;background:#fff">' +
+      '<style>' +
+        'h1{color:#C9922A;font-size:20px;border-bottom:2px solid #C9922A;padding-bottom:8px}' +
+        'h2{color:#2E7D52;font-size:16px;margin-top:20px;border-bottom:1px solid #e0e0e0;padding-bottom:4px}' +
+        '.r-header{text-align:center;margin-bottom:20px;padding:16px;background:linear-gradient(135deg,#f8f5f0,#fff);border-radius:12px;border:1px solid #e8e0d4}' +
+        '.r-header h1{border:none;margin:0}' +
+        '.r-header p{color:#888;margin:4px 0}' +
+        '.r-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}' +
+        '.r-stat{background:#f8f5f0;border-radius:8px;padding:10px;text-align:center;border:1px solid #e8e0d4}' +
+        '.r-stat .num{font-size:22px;font-weight:700;color:#C9922A}' +
+        '.r-stat .label{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px}' +
+        '.r-insight{padding:10px 12px;background:#f8f5f0;border-left:3px solid #C9922A;margin-bottom:8px;border-radius:4px}' +
+        '.r-day{background:#f8f5f0;border:1px solid #e8e0d4;border-radius:10px;padding:12px;margin-bottom:8px}' +
+        '.r-day-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e8e0d4}' +
+        '.r-day-g{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}' +
+        '.r-day-i{display:flex;justify-content:space-between;font-size:13px;padding:2px 0}' +
+        '.r-day-l{color:#888;font-size:12px}' +
+        '.r-fast{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#f8f5f0;border:1px solid #e8e0d4;border-radius:8px;margin-bottom:6px;font-size:13px}' +
+        '.r-disc{margin-top:20px;padding:12px;background:#fff8f0;border:1px solid #e8e0d4;border-radius:8px;font-size:12px;color:#888;text-align:center}' +
+      '</style>' +
+
+      '<div class="r-header">' +
         '<h1>📋 Mi Reporte de Salud</h1>' +
         '<p style="font-size:18px;font-weight:700;color:#1a1a1a;margin:8px 0">'+nombre+'</p>' +
         (edad ? '<p>'+edad+' anos'+(fase?' · '+fase:'')+'</p>' : '') +
@@ -4982,38 +4987,34 @@ const MiCodigo = (function() {
         '<p style="font-size:11px;color:#aaa">El Codigo Hormonal · Mi Codigo v2.0</p>' +
       '</div>' +
 
-      '<button class="print-btn" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>' +
-
       '<h2>📊 Resumen General</h2>' +
-      '<div class="stats">' +
-        '<div class="stat-box"><div class="num">'+totalDays+'</div><div class="label">Dias registrados</div></div>' +
-        '<div class="stat-box"><div class="num">'+(weightChange > 0 ? '+' : '')+weightChange+'</div><div class="label">Cambio de peso (kg)</div></div>' +
-        '<div class="stat-box"><div class="num">'+avgWater+'</div><div class="label">Agua promedio/dia</div></div>' +
-        '<div class="stat-box"><div class="num">'+exDays+'</div><div class="label">Dias con ejercicio</div></div>' +
-        (fastCompleted > 0 ? '<div class="stat-box"><div class="num">'+fastCompleted+'</div><div class="label">Ayunos completados</div></div>' : '') +
+      '<div class="r-stats">' +
+        '<div class="r-stat"><div class="num">'+totalDays+'</div><div class="label">Dias registrados</div></div>' +
+        '<div class="r-stat"><div class="num">'+(weightChange > 0 ? '+' : '')+weightChange+'</div><div class="label">Cambio peso (kg)</div></div>' +
+        '<div class="r-stat"><div class="num">'+avgWater+'</div><div class="label">Agua prom/dia</div></div>' +
+        '<div class="r-stat"><div class="num">'+exDays+'</div><div class="label">Dias ejercicio</div></div>' +
+        (fastCompleted > 0 ? '<div class="r-stat"><div class="num">'+fastCompleted+'</div><div class="label">Ayunos completados</div></div>' : '') +
       '</div>' +
 
-      (insightRows ? '<h2>💡 Descubrimientos Personalizados</h2><p style="font-size:12px;color:#888">Correlaciones detectadas en tus datos:</p>'+insightRows : '') +
+      (insightRows ? '<h2>💡 Descubrimientos</h2><p style="font-size:12px;color:#888">Correlaciones detectadas:</p>'+insightRows.replace(/padding:8px 12px;background:#f8f5f0;border-left:3px solid #C9922A;margin-bottom:8px;border-radius:4px/g,'').replace(/<div style="/g,'<div class="r-insight" style="') : '') +
 
       '<h2>📅 Historial Diario</h2>' +
-      dayCards +
+      dayCards.replace(/day-card/g,'r-day').replace(/day-header/g,'r-day-h').replace(/day-grid/g,'r-day-g').replace(/day-item/g,'r-day-i').replace(/day-label/g,'r-day-l').replace(/day-date/g,'r-day-h').replace(/day-weight/g,'r-day-h') +
 
       (fastDates.length > 0 ? '<h2>⏱️ Historial de Ayuno</h2>' + fastDates.map(function(d) {
         var f = fastHistory[d];
         var dl = new Date(d+'T12:00:00').toLocaleDateString('es',{day:'numeric',month:'short'});
-        return '<div class="fast-card"><span style="font-weight:700;color:#2E7D52">'+dl+'</span><span style="color:#C9922A;font-weight:600">'+(f.label||f.protocol)+'</span><span>'+f.hours+'h</span><span>'+(f.completed?'✅':'❌')+'</span></div>';
+        return '<div class="r-fast"><span style="font-weight:700;color:#2E7D52">'+dl+'</span><span style="color:#C9922A;font-weight:600">'+(f.label||f.protocol)+'</span><span>'+f.hours+'h</span><span>'+(f.completed?'✅':'❌')+'</span></div>';
       }).join('') : '') +
 
-      '<div class="disclaimer">' +
+      '<div class="r-disc">' +
         '⚠️ Este reporte es informativo y no sustituye el consejo medico profesional.<br>' +
         'Comparte estos datos con tu medico o nutricionista para una evaluacion personalizada.' +
       '</div>' +
+    '</div>';
 
-      '</body></html>';
-
-    var w = window.open('', '_blank');
-    w.document.write(html);
-    w.document.close();
+    document.body.appendChild(modal);
+    history.pushState({report: true}, '');
   }
 
   function showAbout() {
