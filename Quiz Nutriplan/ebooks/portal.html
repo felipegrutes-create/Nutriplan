@@ -4718,8 +4718,9 @@ const MiCodigo = (function() {
     // AJUSTES section
     html += '<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin:16px 0 8px">AJUSTES</div>';
     html += '<div class="mc-card" style="padding:0;overflow:hidden">' +
-      masItem('📋', 'Mi Reporte', 'Generar reporte para tu medico', "MiCodigo.exportData()") +
-      masItem('ℹ️', 'Sobre Mi Codigo', 'v2.0 · El Codigo Hormonal', "MiCodigo.showAbout()", true) +
+      masItem('📋', 'Mi Reporte', 'Generar reporte para tu médico', "MiCodigo.exportData()") +
+      masItem('💬', 'Sugerencias', 'Ayúdanos a mejorar tu experiencia', "MiCodigo.showSugerencias()") +
+      masItem('ℹ️', 'Sobre Mi Código', 'v2.0 · El Código Hormonal', "MiCodigo.showAbout()", true) +
     '</div>';
 
     el.innerHTML = html;
@@ -5178,6 +5179,105 @@ const MiCodigo = (function() {
     history.pushState({report: true}, '');
   }
 
+  function showSugerencias() {
+    var sc = document.getElementById('mcSectionContent');
+    if (!sc) return;
+    var ud = getUserData();
+    var nombre = ud.nombre || '';
+    var backBtn = '<button onclick="MiCodigo.navigate(\'mas\')" style="background:none;border:none;font-size:24px;cursor:pointer;margin-bottom:16px;color:#fff">←</button>';
+    sc.innerHTML = backBtn +
+      '<div style="text-align:center;margin-bottom:20px">' +
+        '<div style="font-size:36px;margin-bottom:8px">💬</div>' +
+        '<h2 style="font-family:Cormorant Garamond,serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:4px">Tus Sugerencias</h2>' +
+        '<p style="font-size:12px;color:rgba(255,255,255,.5)">Tu opinión nos ayuda a mejorar. Cuéntanos qué te gustaría ver en la app.</p>' +
+      '</div>' +
+
+      '<div class="mc-card">' +
+        '<div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:6px">Tu nombre</div>' +
+        '<input type="text" id="sugName" value="' + nombre + '" placeholder="Tu nombre" style="width:100%;border:1px solid rgba(201,146,42,.2);border-radius:8px;padding:10px;font-size:14px;font-family:DM Sans,sans-serif;background:#1a1a1a;color:#fff;margin-bottom:12px">' +
+
+        '<div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:6px">Tipo de mensaje</div>' +
+        '<div id="sugTypeGroup" style="display:flex;gap:6px;margin-bottom:12px">' +
+          '<button onclick="MiCodigo._setSugType(this,\'mejora\')" class="sug-type-btn" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(201,146,42,.2);background:rgba(201,146,42,.08);color:#C9922A;font-size:11px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif">💡 Mejora</button>' +
+          '<button onclick="MiCodigo._setSugType(this,\'problema\')" class="sug-type-btn" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:11px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif">🐛 Problema</button>' +
+          '<button onclick="MiCodigo._setSugType(this,\'elogio\')" class="sug-type-btn" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:11px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif">⭐ Elogio</button>' +
+        '</div>' +
+
+        '<div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:6px">Tu mensaje</div>' +
+        '<textarea id="sugMessage" rows="5" placeholder="Escribe aquí tu sugerencia, idea o comentario..." style="width:100%;border:1px solid rgba(201,146,42,.2);border-radius:8px;padding:10px;font-size:14px;font-family:DM Sans,sans-serif;background:#1a1a1a;color:#fff;resize:none"></textarea>' +
+
+        '<button onclick="MiCodigo.sendSugerencia()" style="width:100%;margin-top:12px;padding:14px;background:linear-gradient(135deg,var(--verde),#1a4a31);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:DM Sans,sans-serif;box-shadow:0 4px 15px rgba(46,125,82,.3)">📩 Enviar sugerencia</button>' +
+      '</div>' +
+
+      '<div style="text-align:center;margin-top:12px;font-size:11px;color:rgba(255,255,255,.3)">Tu mensaje llegará directamente a nuestro equipo</div>';
+  }
+
+  var _sugType = 'mejora';
+  function _setSugType(btn, type) {
+    _sugType = type;
+    var btns = document.getElementById('sugTypeGroup').querySelectorAll('button');
+    btns.forEach(function(b) {
+      b.style.border = '1px solid rgba(255,255,255,.08)';
+      b.style.background = 'rgba(255,255,255,.04)';
+      b.style.color = 'rgba(255,255,255,.5)';
+    });
+    btn.style.border = '1px solid rgba(201,146,42,.2)';
+    btn.style.background = 'rgba(201,146,42,.08)';
+    btn.style.color = '#C9922A';
+  }
+
+  function sendSugerencia() {
+    var nombre = (document.getElementById('sugName') || {}).value || '';
+    var mensaje = (document.getElementById('sugMessage') || {}).value || '';
+    if (!mensaje.trim()) {
+      alert('Escribe tu mensaje antes de enviar');
+      return;
+    }
+    var payload = {
+      fecha: new Date().toISOString(),
+      nombre: nombre.trim(),
+      email: 'sugerencia@app',
+      perfil: '',
+      objetivo: '',
+      motivacion: '',
+      situacion_peso: _sugType,
+      metodos_probados: mensaje.trim(),
+      tiempo_luchando: '',
+      actividad: '',
+      tipo_cuerpo: '',
+      cuerpo_ideal: '',
+      zonas: '',
+      alergias: '',
+      sueno: '',
+      agua: '',
+      dieta: '',
+      cocina_para: '',
+      hora_cena: '',
+      tiempo_cocina: '',
+      etapa_hormonal: '',
+      utm_source: '',
+      utm_medium: '',
+      utm_campaign: '',
+      dispositivo: navigator.userAgent.indexOf('Mobile') !== -1 ? 'Mobile' : 'Desktop',
+      pais: '',
+      duracion: '',
+      etapa: 'Sugerencia_' + _sugType
+    };
+    fetch('https://script.google.com/macros/s/AKfycbyctvZ2IGeIb6eybcfpOSahPROAuCa3Z6wk_HXYCTZOr3bZKSE6MGYDLzuhkAezAAXcCw/exec', {
+      method: 'POST', mode: 'no-cors',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    }).catch(function(){});
+
+    // Show success
+    var toast = document.createElement('div');
+    toast.textContent = '💬 ¡Gracias! Tu sugerencia fue enviada';
+    toast.style.cssText = 'position:fixed;top:70px;left:50%;transform:translateX(-50%);background:#1a4a31;color:#fff;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;z-index:20001;box-shadow:0 4px 20px rgba(0,0,0,.4)';
+    document.body.appendChild(toast);
+    setTimeout(function() { toast.remove(); }, 3000);
+    navigate('mas');
+  }
+
   function showAbout() {
     var sc = document.getElementById('mcSectionContent');
     if (!sc) return;
@@ -5333,7 +5433,7 @@ const MiCodigo = (function() {
     showMasEjercicios: showMasEjercicios, showProfile: showProfile,
     saveProfile: saveProfile, clearMeno: clearMeno,
     _setAvatarEmoji: _setAvatarEmoji, _setAvatarPhoto: _setAvatarPhoto,
-    exportData: exportData, showAbout: showAbout,
+    exportData: exportData, showSugerencias: showSugerencias, _setSugType: _setSugType, sendSugerencia: sendSugerencia, showAbout: showAbout,
     generateInsights: generateInsights,
     loadDemoData: loadDemoData, clearDemoData: clearDemoData,
     startFasting: startFasting, stopFasting: stopFasting, completeFasting: completeFasting
