@@ -678,8 +678,8 @@ body{padding-bottom:72px}
     </div>
 
     <!-- Nav arrows -->
-    <button onclick="moveBanner(-1)" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);border:none;font-size:18px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.2);z-index:2;display:flex;align-items:center;justify-content:center">‹</button>
-    <button onclick="moveBanner(1)" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);border:none;font-size:18px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.2);z-index:2;display:flex;align-items:center;justify-content:center">›</button>
+    <button onclick="moveBanner(-1)" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.15);border:none;font-size:16px;color:rgba(255,255,255,.5);cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)">‹</button>
+    <button onclick="moveBanner(1)" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.15);border:none;font-size:16px;color:rgba(255,255,255,.5);cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)">›</button>
 
     <!-- Dots -->
     <div id="bannerDots" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2">
@@ -710,7 +710,7 @@ function _updateBanner() {
 }
 function _resetBannerTimer() {
   clearInterval(_bannerTimer);
-  _bannerTimer = setInterval(function() { moveBanner(1); }, 8000);
+  _bannerTimer = setInterval(function() { moveBanner(1); }, 12000);
 }
 _resetBannerTimer();
 
