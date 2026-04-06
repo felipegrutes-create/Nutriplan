@@ -2145,7 +2145,7 @@ document.querySelectorAll('.card-grid').forEach(grid => observer.observe(grid));
 <div id="mcOverlay" style="display:none;position:fixed;inset:0;z-index:10000;background:#0a0a0a;overflow-y:auto">
   <!-- MC Top Header -->
   <div class="mc-top-header">
-    <button class="mc-back-btn" onclick="MiCodigo.close()">←</button>
+    <button class="mc-back-btn" onclick="MiCodigo.goBack()">←</button>
     <div class="mc-top-title">Mi Código</div>
     <div class="mc-top-star">⭐</div>
   </div>
@@ -3256,15 +3256,27 @@ const MiCodigo = (function() {
     PortalApp.navigate('inicio');
   }
 
-  // Handle browser back button
-  window.addEventListener('popstate', function() {
+  function goBack() {
+    // If a modal (recipe detail, report) is open, close it
     var modal = document.querySelector('[role=dialog]');
     if (modal) {
       modal.remove();
       return;
     }
+    // If not on Home, go to Home
+    if (currentSection !== 'home') {
+      navigate('home');
+      return;
+    }
+    // On Home → close Mi Código overlay
+    close();
+  }
+
+  // Handle browser back button
+  window.addEventListener('popstate', function() {
     if (document.getElementById('mcOverlay').style.display === 'block') {
-      close();
+      goBack();
+      return;
     }
   });
 
@@ -3354,6 +3366,10 @@ const MiCodigo = (function() {
   }
 
   function navigate(section) {
+    // Push history for back button navigation (only when moving away from home)
+    if (section !== 'home' && currentSection === 'home') {
+      history.pushState({mc: true, section: section}, '');
+    }
     currentSection = section;
     // Update bottom nav
     document.querySelectorAll('.mc-nav-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.section === section); });
@@ -5231,7 +5247,7 @@ const MiCodigo = (function() {
   })();
 
   return {
-    render: render, open: open, close: close, navigate: navigate, showKeyInput: showKeyInput, tryActivate: tryActivate,
+    render: render, open: open, close: close, goBack: goBack, navigate: navigate, showKeyInput: showKeyInput, tryActivate: tryActivate,
     isPremium: isPremium,
     // Mi Dia actions
     selectMood: selectMood, setWater: setWater, toggleMeal: toggleMeal,
