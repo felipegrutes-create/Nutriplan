@@ -4699,7 +4699,7 @@ const MiCodigo = (function() {
     // AJUSTES section
     html += '<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin:16px 0 8px">AJUSTES</div>';
     html += '<div class="mc-card" style="padding:0;overflow:hidden">' +
-      masItem('💾', 'Exportar datos', 'Descargar backup de tus datos', "MiCodigo.exportData()") +
+      masItem('📋', 'Mi Reporte', 'Generar reporte para tu medico', "MiCodigo.exportData()") +
       masItem('ℹ️', 'Sobre Mi Codigo', 'v2.0 · El Codigo Hormonal', "MiCodigo.showAbout()", true) +
     '</div>';
 
@@ -4879,24 +4879,141 @@ const MiCodigo = (function() {
   }
 
   function exportData() {
-    var keys = ['mc_checkins','mc_water','mc_meals','mc_supplements','mc_exercise','mc_sleep','mc_cycle','mc_settings','mc_favs','mc_shopping','mc_auth'];
-    var backup = {};
-    keys.forEach(function(k) {
-      var val = localStorage.getItem(k);
-      if (val) backup[k] = JSON.parse(val);
+    var ud = getUserData();
+    var quiz = getQuizData();
+    var checkins = getCheckins();
+    var water = getStore('mc_water');
+    var sleep = getStore('mc_sleep');
+    var exercise = getStore('mc_exercise');
+    var supplements = getStore('mc_supplements');
+    var cycle = getCycleAll();
+    var meals = getStore('mc_meals');
+    var fastHistory = getStore('mc_fasting_history');
+    var settings = JSON.parse(localStorage.getItem('mc_settings') || '{}');
+    var nombre = ud.nombre || (quiz && quiz.userName) || 'Usuaria';
+    var edad = (quiz && quiz.age) || '';
+    var dates = Object.keys(checkins).sort();
+    var stageLbls = {pre:'Pre-menopausia',peri:'Perimenopausia',meno:'Menopausia',post:'Post-menopausia',noseguro:'No especificado'};
+    var fase = quiz && quiz.hormonalStage ? (stageLbls[quiz.hormonalStage] || '') : '';
+
+    // Build weight history
+    var weightRows = '';
+    dates.forEach(function(d) {
+      var c = checkins[d];
+      var w = water[d] || 0;
+      var sl = sleep[d] ? sleep[d].hours : '--';
+      var ex = exercise[d] ? 'Si' : 'No';
+      var sup = supplements[d] ? 'Si' : 'No';
+      var m = meals[d] || {};
+      var mCount = (m.desayuno?1:0)+(m.almuerzo?1:0)+(m.cena?1:0)+(m.snack?1:0);
+      var cy = cycle[d] || {};
+      var syms = (cy.symptoms || []).join(', ') || '--';
+      var moodMap = {Genial:'🤩',Bien:'😊',Regular:'😐',Mal:'😢'};
+      var dateLabel = new Date(d+'T12:00:00').toLocaleDateString('es',{day:'numeric',month:'short',year:'numeric'});
+      weightRows += '<tr>' +
+        '<td>'+dateLabel+'</td>' +
+        '<td style="font-weight:700">'+(c.peso||'--')+' kg</td>' +
+        '<td>'+(c.energia||'--')+'/10</td>' +
+        '<td>'+(moodMap[c.humor]||'')+' '+(c.humor||'--')+'</td>' +
+        '<td>'+w+' vasos</td>' +
+        '<td>'+sl+'h</td>' +
+        '<td>'+ex+'</td>' +
+        '<td>'+sup+'</td>' +
+        '<td>'+mCount+'/4</td>' +
+        '<td style="font-size:10px">'+syms+'</td>' +
+      '</tr>';
     });
-    backup._exportDate = new Date().toISOString();
-    backup._version = '2.0';
-    var blob = new Blob([JSON.stringify(backup, null, 2)], {type: 'application/json'});
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = 'mi-codigo-backup-' + todayKey() + '.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    alert('✅ Backup descargado');
+
+    // Fasting history
+    var fastRows = '';
+    var fastDates = Object.keys(fastHistory).sort();
+    fastDates.forEach(function(d) {
+      var f = fastHistory[d];
+      var dateLabel = new Date(d+'T12:00:00').toLocaleDateString('es',{day:'numeric',month:'short'});
+      fastRows += '<tr><td>'+dateLabel+'</td><td>'+(f.label||f.protocol||'--')+'</td><td>'+f.hours+'h</td><td>'+(f.completed?'Completado':'Interrumpido')+'</td></tr>';
+    });
+
+    // Insights
+    var insights = generateInsights();
+    var insightRows = '';
+    insights.forEach(function(ins) {
+      insightRows += '<div style="padding:8px 12px;background:#f8f5f0;border-left:3px solid #C9922A;margin-bottom:8px;border-radius:4px">' +
+        '<strong>'+ins.emoji+' '+ins.title+'</strong><br>' +
+        '<span style="font-size:12px;color:#555">'+ins.text+'</span></div>';
+    });
+
+    // Summary stats
+    var totalDays = dates.length;
+    var weights = dates.map(function(d){return checkins[d].peso;}).filter(Boolean);
+    var firstWeight = weights.length > 0 ? weights[0] : null;
+    var lastWeight = weights.length > 0 ? weights[weights.length-1] : null;
+    var weightChange = (firstWeight && lastWeight) ? (lastWeight - firstWeight).toFixed(1) : '--';
+    var avgWater = 0;
+    dates.forEach(function(d){avgWater += (water[d]||0);});
+    avgWater = totalDays > 0 ? (avgWater/totalDays).toFixed(1) : '--';
+    var exDays = dates.filter(function(d){return exercise[d];}).length;
+    var fastCompleted = fastDates.filter(function(d){return fastHistory[d].completed;}).length;
+
+    var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
+      '<title>Mi Reporte - El Codigo Hormonal</title>' +
+      '<style>' +
+        'body{font-family:Georgia,serif;max-width:800px;margin:0 auto;padding:20px;color:#1a1a1a;background:#fff}' +
+        'h1{color:#C9922A;font-size:24px;border-bottom:2px solid #C9922A;padding-bottom:8px}' +
+        'h2{color:#2E7D52;font-size:18px;margin-top:24px;border-bottom:1px solid #e0e0e0;padding-bottom:4px}' +
+        '.header{text-align:center;margin-bottom:24px;padding:20px;background:linear-gradient(135deg,#f8f5f0,#fff);border-radius:12px;border:1px solid #e8e0d4}' +
+        '.header h1{border:none;margin:0}' +
+        '.header p{color:#888;margin:4px 0}' +
+        '.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}' +
+        '.stat-box{flex:1;min-width:120px;background:#f8f5f0;border-radius:8px;padding:12px;text-align:center;border:1px solid #e8e0d4}' +
+        '.stat-box .num{font-size:24px;font-weight:700;color:#C9922A}' +
+        '.stat-box .label{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.5px}' +
+        'table{width:100%;border-collapse:collapse;font-size:11px;margin:12px 0}' +
+        'th{background:#2E7D52;color:#fff;padding:6px 8px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.5px}' +
+        'td{padding:5px 8px;border-bottom:1px solid #eee}' +
+        'tr:nth-child(even){background:#fafafa}' +
+        '.disclaimer{margin-top:24px;padding:12px;background:#fff8f0;border:1px solid #e8e0d4;border-radius:8px;font-size:11px;color:#888;text-align:center}' +
+        '.print-btn{display:block;margin:20px auto;padding:12px 32px;background:#2E7D52;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer}' +
+        '@media print{.print-btn{display:none} body{padding:10px} .header{background:#f8f5f0 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact} th{background:#2E7D52 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}' +
+      '</style></head><body>' +
+
+      '<div class="header">' +
+        '<h1>📋 Mi Reporte de Salud</h1>' +
+        '<p style="font-size:18px;font-weight:700;color:#1a1a1a;margin:8px 0">'+nombre+'</p>' +
+        (edad ? '<p>'+edad+' anos'+(fase?' · '+fase:'')+'</p>' : '') +
+        '<p>Generado el '+new Date().toLocaleDateString('es',{day:'numeric',month:'long',year:'numeric'})+'</p>' +
+        '<p style="font-size:11px;color:#aaa">El Codigo Hormonal · Mi Codigo v2.0</p>' +
+      '</div>' +
+
+      '<button class="print-btn" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>' +
+
+      '<h2>📊 Resumen General</h2>' +
+      '<div class="stats">' +
+        '<div class="stat-box"><div class="num">'+totalDays+'</div><div class="label">Dias registrados</div></div>' +
+        '<div class="stat-box"><div class="num">'+(weightChange > 0 ? '+' : '')+weightChange+'</div><div class="label">Cambio de peso (kg)</div></div>' +
+        '<div class="stat-box"><div class="num">'+avgWater+'</div><div class="label">Agua promedio/dia</div></div>' +
+        '<div class="stat-box"><div class="num">'+exDays+'</div><div class="label">Dias con ejercicio</div></div>' +
+        (fastCompleted > 0 ? '<div class="stat-box"><div class="num">'+fastCompleted+'</div><div class="label">Ayunos completados</div></div>' : '') +
+      '</div>' +
+
+      (insightRows ? '<h2>💡 Descubrimientos Personalizados</h2><p style="font-size:12px;color:#888">Correlaciones detectadas en tus datos:</p>'+insightRows : '') +
+
+      '<h2>📅 Historial Diario</h2>' +
+      '<table><thead><tr><th>Fecha</th><th>Peso</th><th>Energia</th><th>Humor</th><th>Agua</th><th>Sueno</th><th>Ejercicio</th><th>Suplemento</th><th>Comidas</th><th>Sintomas</th></tr></thead><tbody>' +
+      weightRows +
+      '</tbody></table>' +
+
+      (fastRows ? '<h2>⏱️ Historial de Ayuno</h2><table><thead><tr><th>Fecha</th><th>Protocolo</th><th>Duracion</th><th>Estado</th></tr></thead><tbody>'+fastRows+'</tbody></table>' : '') +
+
+      '<div class="disclaimer">' +
+        '⚠️ Este reporte es informativo y no sustituye el consejo medico profesional.<br>' +
+        'Comparte estos datos con tu medico o nutricionista para una evaluacion personalizada.' +
+      '</div>' +
+
+      '</body></html>';
+
+    var w = window.open('', '_blank');
+    w.document.write(html);
+    w.document.close();
   }
 
   function showAbout() {
