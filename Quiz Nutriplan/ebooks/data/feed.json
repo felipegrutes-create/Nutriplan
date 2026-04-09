@@ -298,5 +298,205 @@
     "fecha": "2026-03-11",
     "categoria": "alimentacion",
     "likes": 24
+  },
+  {
+    "id": 31,
+    "tipo": "articulo",
+    "titulo": "Perimenopausia: qué esperar y cómo prepararte",
+    "contenido": "La perimenopausia puede comenzar hasta 10 años antes de la menopausia. Los síntomas incluyen ciclos irregulares, cambios de humor, calores y dificultad para dormir. Saber qué está pasando en tu cuerpo te da poder para actuar con calma, no con miedo.",
+    "emoji": "🌸",
+    "fecha": "2026-03-10",
+    "categoria": "hormonas",
+    "likes": 52
+  },
+  {
+    "id": 32,
+    "tipo": "consejo",
+    "titulo": "Duerme para bajar de peso, en serio",
+    "contenido": "Cuando duermes mal, tu cuerpo produce más grelina (la hormona del hambre) y menos leptina (la de saciedad). Esto significa que al día siguiente comerás más sin poder evitarlo. Priorizar 7-8 horas de sueño es una estrategia de pérdida de peso tan válida como la dieta.",
+    "emoji": "🌙",
+    "fecha": "2026-03-10",
+    "categoria": "bienestar",
+    "likes": 47
+  },
+  {
+    "id": 33,
+    "tipo": "articulo",
+    "titulo": "Cortisol alto: por qué la panza no desaparece",
+    "contenido": "El cortisol crónico activa receptores especiales en las células grasas del abdomen, ordenándoles que almacenen más grasa. Reducir el estrés no es un lujo, es una necesidad metabólica. Técnicas como la respiración 4-7-8, los paseos al aire libre y los límites sanos bajan el cortisol de verdad.",
+    "emoji": "🎯",
+    "fecha": "2026-03-09",
+    "categoria": "hormonas",
+    "likes": 61
+  },
+  {
+    "id": 34,
+    "tipo": "consejo",
+    "titulo": "Ayuno intermitente suave para mujeres de 40+",
+    "contenido": "Si tienes más de 40 años, empieza con una ventana de ayuno de 12 horas (por ejemplo, de 8 pm a 8 am) en lugar de las populares 16 horas. Este ritmo ayuda a la sensibilidad a la insulina sin estresar el eje hormonal. Escucha cómo responde tu cuerpo antes de avanzar.",
+    "emoji": "⏳",
+    "fecha": "2026-03-09",
+    "categoria": "hormonas",
+    "likes": 44
+  },
+  {
+    "id": 35,
+    "tipo": "motivacion",
+    "titulo": "La comida no es tu única fuente de consuelo",
+    "contenido": "Comer por emociones no es debilidad: es un mecanismo aprendido desde la infancia. El primer paso es reconocerlo sin juzgarte. Antes de abrir la nevera por ansiedad, pregúntate qué emoción estás sintiendo. Una llamada, un paseo o escribir en un diario pueden llenar ese vacío de otra forma.",
+    "emoji": "💛",
+    "fecha": "2026-03-08",
+    "categoria": "bienestar",
+    "likes": 58
+  },
+  {
+    "id": 36,
+    "tipo": "consejo",
+    "titulo": "Ejercicio que cuida tus articulaciones",
+    "contenido": "Después de los 40, el cartílago articular necesita más cuidado. Opta por ejercicios de bajo impacto como natación, bicicleta estática, yoga y caminatas. Si quieres entrenar fuerza, usa bandas de resistencia o mancuernas ligeras en lugar de cargas muy pesadas.",
+    "emoji": "🏊‍♀️",
+    "fecha": "2026-03-08",
+    "categoria": "ejercicio",
+    "likes": 39
+  },
+  {
+    "id": 37,
+    "tipo": "articulo",
+    "titulo": "Suplementos que realmente funcionan para mujeres de 40+",
+    "contenido": "La evidencia respalda principalmente: magnesio glicinato (sueño y estrés), vitamina D3 (inmunidad y huesos), omega-3 (antiinflamatorio) y colágeno hidrolizado (articulaciones y piel). Antes de gastar en otros, asegúrate de tener estos cubiertos. Siempre consulta a tu médico antes de iniciar cualquier suplemento.",
+    "emoji": "💊",
+    "fecha": "2026-03-07",
+    "categoria": "bienestar",
+    "likes": 65
+  },
+  {
+    "id": 38,
+    "tipo": "articulo",
+    "titulo": "Tiroides y metabolismo lento: la conexión real",
+    "contenido": "La tiroides regula la velocidad a la que tu cuerpo quema energía. Cuando funciona lento, todo se vuelve más difícil: subir de peso sin razón, sentir frío, cansancio que no mejora con dormir. Asegúrate de que tu médico pida TSH, T3 libre y T4 libre, no solo la TSH.",
+    "emoji": "🦋",
+    "fecha": "2026-03-07",
+    "categoria": "hormonas",
+    "likes": 48
+  },
+  {
+    "id": 39,
+    "tipo": "consejo",
+    "titulo": "Agua y energía: la relación que ignoras",
+    "contenido": "Una deshidratación del 2% ya reduce tu energía, concentración y rendimiento físico. Si a las 3 pm sientes un bajón, antes de comer algo toma 2 vasos de agua y espera 10 minutos. Muchas veces esa fatiga desaparece sola. Tu cuerpo confunde sed con cansancio.",
+    "emoji": "💧",
+    "fecha": "2026-03-06",
+    "categoria": "bienestar",
+    "likes": 36
+  },
+  {
+    "id": 40,
+    "tipo": "receta_destacada",
+    "titulo": "Preparación semanal en 1 hora: proteínas y verduras",
+    "contenido": "Los domingos cocina en tandas: hornea pechugas de pollo sazonadas, hierve huevos, corta verduras crudas y cocina una olla de legumbres. Guárdalos en recipientes en la nevera. Con esto listo, armar comidas nutritivas en 10 minutos es fácil aunque tengas un día agitado.",
+    "emoji": "🥡",
+    "fecha": "2026-03-06",
+    "categoria": "alimentacion",
+    "likes": 55
+  },
+  {
+    "id": 41,
+    "tipo": "receta_destacada",
+    "titulo": "Snack hormonal: nueces, moras y cacao",
+    "contenido": "Mezcla un puñado de nueces, un puñado de moras frescas o congeladas y una cucharadita de cacao puro en polvo. Las nueces aportan omega-3, las moras antioxidantes y el cacao magnesio. Es el snack perfecto para la tarde: sacia, no dispara la insulina y cuida tus hormonas.",
+    "emoji": "🫐",
+    "fecha": "2026-03-05",
+    "categoria": "alimentacion",
+    "likes": 43
+  },
+  {
+    "id": 42,
+    "tipo": "consejo",
+    "titulo": "Niebla mental: cómo despejarla con comida",
+    "contenido": "La neblina mental (dificultad para concentrarse, olvidos frecuentes) puede ser señal de inflamación o glucosa inestable. Añade más grasas saludables a tu dieta: aguacate, aceite de oliva, salmón y nueces son combustible de alta calidad para el cerebro.",
+    "emoji": "🧠",
+    "fecha": "2026-03-05",
+    "categoria": "alimentacion",
+    "likes": 50
+  },
+  {
+    "id": 43,
+    "tipo": "articulo",
+    "titulo": "Sudores nocturnos: por qué ocurren y cómo mejorarlos",
+    "contenido": "Los calores nocturnos son causados por la fluctuación del estrógeno, que afecta el termostato interno del cerebro. Evitar alcohol, cafeína después del mediodía y comidas picantes puede reducirlos. Dormir en un cuarto fresco (entre 18 y 20°C) y con ropa de materiales naturales también marca una gran diferencia.",
+    "emoji": "🌡️",
+    "fecha": "2026-03-04",
+    "categoria": "hormonas",
+    "likes": 46
+  },
+  {
+    "id": 44,
+    "tipo": "articulo",
+    "titulo": "Proteína después de los 40: más importante que nunca",
+    "contenido": "Después de los 40, el cuerpo pierde masa muscular más rápido (sarcopenia). Para frenar este proceso necesitas al menos 1.2 gramos de proteína por kilo de peso corporal al día. Huevos, pollo, legumbres, yogurt griego y tofu son tus aliados. Distribuye la proteína en todas las comidas, no solo en la cena.",
+    "emoji": "💪",
+    "fecha": "2026-03-04",
+    "categoria": "alimentacion",
+    "likes": 59
+  },
+  {
+    "id": 45,
+    "tipo": "consejo",
+    "titulo": "Fibra: tu aliada para el intestino y las hormonas",
+    "contenido": "La fibra alimenta las bacterias buenas de tu intestino, que a su vez ayudan a eliminar el exceso de estrógeno del cuerpo. Apunta a 25-30 gramos de fibra al día: verduras, frutas con cáscara, legumbres y semillas de linaza molida son excelentes fuentes.",
+    "emoji": "🌾",
+    "fecha": "2026-03-03",
+    "categoria": "alimentacion",
+    "likes": 33
+  },
+  {
+    "id": 46,
+    "tipo": "motivacion",
+    "titulo": "El estrés también es una decisión (en parte)",
+    "contenido": "No puedes eliminar el estrés de tu vida, pero sí puedes cambiar cómo respondes a él. Dedicar 5 minutos al día a respirar profundo, escribir lo que agradeces o simplemente alejarte del celular es un acto de amor propio con impacto real en tus hormonas.",
+    "emoji": "🌿",
+    "fecha": "2026-03-03",
+    "categoria": "bienestar",
+    "likes": 41
+  },
+  {
+    "id": 47,
+    "tipo": "consejo",
+    "titulo": "Tu comunidad también adelgaza contigo",
+    "contenido": "Estudios muestran que las mujeres que se rodean de personas con hábitos saludables tienen más probabilidades de alcanzar sus metas. Comparte tu proceso con una amiga, únete a un grupo de apoyo o busca una comunidad en línea. El camino es más fácil y más divertido acompañada.",
+    "emoji": "👭",
+    "fecha": "2026-04-01",
+    "categoria": "bienestar",
+    "likes": 53
+  },
+  {
+    "id": 48,
+    "tipo": "articulo",
+    "titulo": "Azúcar en sangre estable: la clave del peso y la energía",
+    "contenido": "Mantener la glucosa estable durante el día previene los antojos, los bajones de energía y la acumulación de grasa. La fórmula básica: proteína + fibra + grasa saludable en cada comida. Evitar comer solo carbohidratos (fruta sola, pan solo) es el cambio más impactante que puedes hacer hoy.",
+    "emoji": "📈",
+    "fecha": "2026-04-02",
+    "categoria": "hormonas",
+    "likes": 62
+  },
+  {
+    "id": 49,
+    "tipo": "receta_destacada",
+    "titulo": "Caldo antiinflamatorio de cúrcuma y jengibre",
+    "contenido": "Hierve 4 tazas de agua con 1 cucharadita de cúrcuma, 1 cucharadita de jengibre fresco rallado, pimienta negra, sal y jugo de medio limón. Cuela y bebe tibio. La pimienta negra activa la curcumina hasta 2000%. Ideal para tomar por la mañana o antes de dormir para reducir la inflamación.",
+    "emoji": "🍵",
+    "fecha": "2026-04-03",
+    "categoria": "alimentacion",
+    "likes": 38
+  },
+  {
+    "id": 50,
+    "tipo": "motivacion",
+    "titulo": "Celebra cada pequeño logro, en serio",
+    "contenido": "¿Tomaste agua en lugar de refresco? Eso cuenta. ¿Caminaste 10 minutos hoy? Eso también cuenta. Tu cerebro aprende a repetir comportamientos que se asocian con recompensa y orgullo. No esperes el resultado final para celebrar: celebra el proceso todos los días.",
+    "emoji": "🎉",
+    "fecha": "2026-04-04",
+    "categoria": "bienestar",
+    "likes": 67
   }
 ]

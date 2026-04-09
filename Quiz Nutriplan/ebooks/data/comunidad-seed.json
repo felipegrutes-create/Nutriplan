@@ -158,5 +158,217 @@
         "fecha": "2026-03-17T22:00:00"
       }
     ]
+  },
+  {
+    "id": "11",
+    "nombre": "Valentina S.",
+    "avatar": "img/avatars/IM1.png",
+    "texto": "Amigas, ¡no lo puedo creer! Fui al médico hoy y en solo 3 semanas bajé 4 kilos. Mi doctora me preguntó qué estaba haciendo porque mis análisis también mejoraron. Le expliqué sobre el plan hormonal y la secuencia de alimentos y me dijo que siguiera así. ¡Nunca esperé resultados tan rápido y sin pasar hambre!",
+    "fecha": "2026-03-28T17:00:00",
+    "likes": 52,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Carmen V.",
+        "avatar": "img/avatars/IM3.png",
+        "texto": "¡Felicidades, Valentina! Qué satisfacción cuando el médico mismo se sorprende, ¿verdad? Eso me pasó a mí también. Sigue adelante, vas genial.",
+        "fecha": "2026-03-28T17:45:00"
+      },
+      {
+        "nombre": "Adriana M.",
+        "avatar": "img/avatars/IM5.png",
+        "texto": "Qué motivador leer esto. Yo también empecé hace dos semanas y me da esperanza ver tus resultados. ¡Gracias por compartir!",
+        "fecha": "2026-03-28T18:30:00"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "nombre": "Lucía B.",
+    "avatar": "img/avatars/IM2.png",
+    "texto": "Hola chicas, tengo una pregunta que me da un poco de vergüenza pero sé que aquí me entienden. Estoy en plena perimenopausia y los bochornos aparecen principalmente después de comer. ¿Hay alguna relación entre lo que comemos y los bochornos? ¿Alguna ha logrado controlarlos con alimentación?",
+    "fecha": "2026-03-29T11:20:00",
+    "likes": 38,
+    "categoria": "pregunta",
+    "comentarios": [
+      {
+        "nombre": "Rosa E.",
+        "avatar": "img/avatars/IM5.png",
+        "texto": "¡Lucía, no te dé vergüenza! Yo tuve la misma experiencia. El azúcar y los carbohidratos refinados me disparaban los bochornos inmediatamente. Desde que los reduje y agregué linaza molida todos los días, bajaron como un 70%. El cuerpo responde increíblemente bien al cambio.",
+        "fecha": "2026-03-29T12:00:00"
+      },
+      {
+        "nombre": "Isabel C.",
+        "avatar": "img/avatars/IM4.png",
+        "texto": "El café y el alcohol también son grandes disparadores, Lucía. A mí me costó dejar el café pero valió totalmente la pena. También ayuda mucho comer en horarios regulares para no estresar las hormonas.",
+        "fecha": "2026-03-29T12:45:00"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "nombre": "Carmen V.",
+    "avatar": "img/avatars/IM3.png",
+    "texto": "Les comparto mi truco de desayuno express para los días de prisa. Omelette de 2 huevos con un puñado grande de espinaca fresca, sal y pimienta. Lista en 5 minutos. Proteína para arrancar el día, sin picos de glucosa, y me mantiene satisfecha hasta las 2 de la tarde. Desde que dejé los cereales del súper para el desayuno, cambió todo. ¿Alguien más ha notado la diferencia al cambiar el desayuno?",
+    "fecha": "2026-03-30T08:05:00",
+    "likes": 44,
+    "categoria": "receta",
+    "comentarios": [
+      {
+        "nombre": "Gabriela O.",
+        "avatar": "img/avatars/IM7.png",
+        "texto": "¡Sí! Yo hago algo muy parecido. A veces le agrego medio aguacate al lado y es un desayuno completo y delicioso. Los cereales del súper nos han engañado por años con eso de 'nutritivo'.",
+        "fecha": "2026-03-30T08:50:00"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "nombre": "Isabel C.",
+    "avatar": "img/avatars/IM4.png",
+    "texto": "Quiero ser honesta: cuando empecé hace dos meses era muy escéptica. Pensé que era otro programa más que prometía milagros. Pero hoy me veo al espejo y no me reconozco, ¡y lo digo en el buen sentido! Más delgada, sí, pero sobre todo con una energía y una claridad mental que no tenía hace años. Mi familia nota la diferencia. Mis amigas me preguntan qué hago. A veces me arrepiento de haber esperado tanto tiempo para empezar.",
+    "fecha": "2026-03-31T19:30:00",
+    "likes": 55,
+    "categoria": "motivacion",
+    "comentarios": [
+      {
+        "nombre": "Patricia N.",
+        "avatar": "img/avatars/IM9.png",
+        "texto": "Isabel, tu mensaje me llegó al alma. Yo también dudé mucho antes de empezar. Gracias por recordarnos que el cuerpo sí responde cuando le damos lo que necesita. ¡Inspiras mucho!",
+        "fecha": "2026-03-31T20:15:00"
+      },
+      {
+        "nombre": "Daniela R.",
+        "avatar": "img/avatars/IM8.png",
+        "texto": "Ese 'me arrepiento de haber esperado tanto' lo siento igual. Pero como dicen, el mejor momento fue antes y el segundo mejor es ahora. ¡Adelante!",
+        "fecha": "2026-03-31T21:00:00"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "nombre": "Adriana M.",
+    "avatar": "img/avatars/IM5.png",
+    "texto": "Comparto algo que me tiene muy emocionada: fui a mi control médico y mis niveles de azúcar en sangre bajaron significativamente. Mi doctor, que siempre fue muy cauteloso, me dijo que si sigo así podría reducir la dosis de mi medicamento el próximo mes. Llevo 6 semanas con el plan y nunca pensé que la alimentación pudiera tener un impacto tan directo y tan rápido.",
+    "fecha": "2026-04-01T15:00:00",
+    "likes": 48,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Fernanda S.",
+        "avatar": "img/avatars/IM6.png",
+        "texto": "¡Adriana, qué noticia tan maravillosa! La alimentación es medicina de verdad. Me alegra mucho que tu médico también lo esté viendo. ¡Sigue así!",
+        "fecha": "2026-04-01T15:40:00"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "nombre": "Rosa E.",
+    "avatar": "img/avatars/IM5.png",
+    "texto": "Tengo una pregunta para las que están en perimenopausia o menopausia: ¿han intentado el ayuno intermitente? Leí que puede ayudar mucho con el peso hormonal pero también vi que algunas expertas dicen que no es ideal para mujeres en esta etapa. Estoy confundida. ¿Cuál ha sido su experiencia?",
+    "fecha": "2026-04-02T10:30:00",
+    "likes": 35,
+    "categoria": "pregunta",
+    "comentarios": [
+      {
+        "nombre": "Carmen V.",
+        "avatar": "img/avatars/IM3.png",
+        "texto": "Rosa, yo probé el ayuno 16:8 y al principio me fue bien, pero después de unas semanas empecé a sentir más ansiedad y se me alteró el sueño. Consulté y me dijeron que ventanas de 12 horas son más suaves y funcionales para nuestras hormonas. Cada cuerpo es diferente, pero vale la pena empezar suave.",
+        "fecha": "2026-04-02T11:15:00"
+      },
+      {
+        "nombre": "Isabel C.",
+        "avatar": "img/avatars/IM4.png",
+        "texto": "Igual que Carmen. Con 12 horas me fue mucho mejor. No estresar el cortisol es clave en esta etapa. La clave es escuchar el cuerpo y no forzar protocolos diseñados para hombres.",
+        "fecha": "2026-04-02T12:00:00"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "nombre": "Gabriela O.",
+    "avatar": "img/avatars/IM7.png",
+    "texto": "Comparto mi receta de leche dorada antiinflamatoria que preparo cada noche antes de dormir. En una taza de leche vegetal caliente (yo uso de avena) agrego: 1 cucharadita de cúrcuma, pizca de pimienta negra, pizca de jengibre, pizca de canela y una pizca de cardamomo. Endulzo con unas gotitas de stevia. La pimienta negra es clave porque activa la curcumina. Llevo 3 semanas tomándola y duermo mucho mejor y la inflamación en mis rodillas bajó notablemente.",
+    "fecha": "2026-04-03T21:00:00",
+    "likes": 41,
+    "categoria": "receta",
+    "comentarios": [
+      {
+        "nombre": "Mariana B.",
+        "avatar": "img/avatars/IM9.png",
+        "texto": "¡Gracias, Gabriela! Lo de la pimienta negra con la cúrcuma es algo que muchas no sabemos. Voy a empezar esta noche mismo. Yo también tengo mucha inflamación.",
+        "fecha": "2026-04-03T21:30:00"
+      },
+      {
+        "nombre": "Lucía B.",
+        "avatar": "img/avatars/IM2.png",
+        "texto": "Qué receta tan completa. ¿Puedo usar leche de coco en vez de avena? Soy intolerante a la avena.",
+        "fecha": "2026-04-03T22:00:00"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "nombre": "Patricia N.",
+    "avatar": "img/avatars/IM9.png",
+    "texto": "Tengo 58 años y hoy caminé mis primeros 5 kilómetros completos. Tuve que sentarme a escribirles esto porque siento que el corazón me va a estallar de felicidad. Hace 4 meses no podía subir las escaleras de mi edificio sin quedarme sin aire. El cambio en la alimentación me dio la energía para moverme, y el movimiento me dio fuerza para seguir mejorando. Nunca, nunca es tarde. Si yo pude a los 58, ustedes también pueden.",
+    "fecha": "2026-04-04T18:45:00",
+    "likes": 53,
+    "categoria": "motivacion",
+    "comentarios": [
+      {
+        "nombre": "Valentina S.",
+        "avatar": "img/avatars/IM1.png",
+        "texto": "Patricia, ¡me hiciste llorar! Esto es exactamente el tipo de mensaje que necesito leer. ¡Eres una inspiración enorme para todas!",
+        "fecha": "2026-04-04T19:20:00"
+      },
+      {
+        "nombre": "Alejandra N.",
+        "avatar": "img/avatars/IM8.png",
+        "texto": "¡Qué hermoso logro! De las escaleras a 5K en 4 meses. Eso demuestra lo que el cuerpo puede hacer cuando le damos lo que necesita. ¡Felicidades!",
+        "fecha": "2026-04-04T20:00:00"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "nombre": "Daniela R.",
+    "avatar": "img/avatars/IM8.png",
+    "texto": "Algo que nadie me había dicho y que cambió mi vida: el sueño mejoró dramáticamente. Yo llevaba más de un año despertándome a las 3am sin poder volver a dormir. Ahora duermo de corrido 7 horas. Lo único que cambié fue la alimentación con este plan. Sin pastillas, sin nada extra. Mi médico dice que la resistencia a la insulina afecta el sueño mucho más de lo que pensamos.",
+    "fecha": "2026-04-05T09:00:00",
+    "likes": 46,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Rosa E.",
+        "avatar": "img/avatars/IM5.png",
+        "texto": "Daniela, ¡exactamente igual me pasó a mí! Los despertares nocturnos son una señal hormonal que nadie nos explica. Me alegra tanto que hayas recuperado el sueño. Es transformador.",
+        "fecha": "2026-04-05T09:45:00"
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "nombre": "Mariana B.",
+    "avatar": "img/avatars/IM9.png",
+    "texto": "Necesito su ayuda, chicas. Últimamente tengo mucha niebla mental: olvido cosas, me cuesta concentrarme, a veces en medio de una conversación pierdo el hilo. Tengo 47 años y sé que puede ser hormonal, pero ¿han tomado algún suplemento que realmente funcione para esto? No quiero gastar dinero en cosas que no sirven.",
+    "fecha": "2026-04-06T14:15:00",
+    "likes": 40,
+    "categoria": "pregunta",
+    "comentarios": [
+      {
+        "nombre": "Gabriela O.",
+        "avatar": "img/avatars/IM7.png",
+        "texto": "Mariana, lo primero que me ayudó fue el magnesio glicinato antes de dormir, mejoró mi sueño y con eso la claridad mental. También el omega-3 de buena calidad es fundamental para el cerebro. Pero lo más impactante fue reducir el azúcar: la glucosa inestable nubla el pensamiento muchísimo.",
+        "fecha": "2026-04-06T15:00:00"
+      },
+      {
+        "nombre": "Patricia N.",
+        "avatar": "img/avatars/IM9.png",
+        "texto": "Yo tomé vitamina B12 y D3 porque ambas estaban muy bajas en mis análisis. La diferencia fue notable en pocas semanas. Te recomiendo hacerte análisis primero para saber qué te falta específicamente, en vez de tomar todo a ciegas.",
+        "fecha": "2026-04-06T15:45:00"
+      }
+    ]
   }
 ]
