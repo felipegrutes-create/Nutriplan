@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/", "destination": "/ebooks/portal.html", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/ebooks/portal.html",
