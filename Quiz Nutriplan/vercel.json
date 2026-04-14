@@ -2,6 +2,12 @@
   "redirects": [
     { "source": "/", "destination": "/ebooks/portal.html", "permanent": true }
   ],
+  "rewrites": [
+    {
+      "source": "/api/hotmart-webhook",
+      "destination": "https://script.google.com/macros/s/AKfycbyctvZ2IGeIb6eybcfpOSahPROAuCa3Z6wk_HXYCTZOr3bZKSE6MGYDLzuhkAezAAXcCw/exec"
+    }
+  ],
   "headers": [
     {
       "source": "/ebooks/portal.html",
