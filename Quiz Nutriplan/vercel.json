@@ -1,6 +1,6 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/ebooks/portal.html", "permanent": true }
+    { "source": "/", "destination": "/quiz.html", "permanent": false }
   ],
   "headers": [
     {
