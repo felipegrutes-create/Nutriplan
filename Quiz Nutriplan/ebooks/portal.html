@@ -521,6 +521,129 @@ body{padding-bottom:72px}
 </head>
 <body>
 
+<!-- ═══ PORTAL AUTH SCREEN ═══ -->
+<div id="portalAuthScreen" style="display:none;position:fixed;inset:0;z-index:99998;background:linear-gradient(135deg,#0f1f15 0%,#1a0a0a 100%);flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;text-align:center;overflow-y:auto">
+  <div style="width:72px;height:72px;background:linear-gradient(135deg,#2E7D52,#4ade80);border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;box-shadow:0 8px 32px rgba(46,125,82,.4)">
+    <span style="font-size:36px">&#128274;</span>
+  </div>
+  <h1 style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;margin-bottom:8px;font-weight:600">Acceso Exclusivo</h1>
+  <p style="font-size:14px;color:rgba(255,255,255,.6);margin-bottom:28px;line-height:1.5;max-width:320px">Ingresa el email que usaste en tu compra para acceder a tu biblioteca</p>
+
+  <div style="width:100%;max-width:340px;margin-bottom:16px">
+    <input type="email" id="portalAuthEmail" placeholder="tu@email.com" autocomplete="email" style="width:100%;padding:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;color:#fff;font-size:15px;font-family:'DM Sans',sans-serif;text-transform:lowercase;box-sizing:border-box" onkeypress="if(event.key==='Enter')PortalAuth.verify()">
+  </div>
+
+  <button id="portalAuthBtn" onclick="PortalAuth.verify()" style="width:100%;max-width:340px;padding:16px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:16px;box-shadow:0 4px 20px rgba(74,222,128,.3);font-family:'DM Sans',sans-serif">
+    Acceder a mi biblioteca &#8594;
+  </button>
+
+  <div id="portalAuthMsg" style="min-height:20px;font-size:13px;color:#E8445A;margin-bottom:16px;max-width:320px"></div>
+
+  <div style="font-size:12px;color:rgba(255,255,255,.4);max-width:300px;line-height:1.5;margin-bottom:24px">
+    &#191;Todav&#237;a no compraste? <a href="/quiz.html" style="color:#4ade80;text-decoration:none;font-weight:700">Hac&#233; el quiz gratuito &#8594;</a>
+  </div>
+
+  <div style="font-size:11px;color:rgba(255,255,255,.3);max-width:300px;line-height:1.5">
+    Tu email es tu llave de acceso. Si tienes problemas, escr&#237;benos.
+  </div>
+</div>
+
+<script>
+const PortalAuth = (function() {
+  var VERIFY_URL = 'https://script.google.com/macros/s/AKfycbyctvZ2IGeIb6eybcfpOSahPROAuCa3Z6wk_HXYCTZOr3bZKSE6MGYDLzuhkAezAAXcCw/exec';
+  var AUTH_KEY = 'portal_auth';
+  var BYPASS_KEYS = ['codigo-marco-2026', 'admin-test-2026'];
+
+  function isAuthenticated() {
+    try {
+      var d = JSON.parse(localStorage.getItem(AUTH_KEY) || 'null');
+      return d && d.authorized === true;
+    } catch (e) { return false; }
+  }
+
+  function getAuth() {
+    try { return JSON.parse(localStorage.getItem(AUTH_KEY) || '{}'); }
+    catch (e) { return {}; }
+  }
+
+  function setAuth(data) {
+    localStorage.setItem(AUTH_KEY, JSON.stringify(data));
+  }
+
+  function showScreen() {
+    document.getElementById('portalAuthScreen').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hideScreen() {
+    document.getElementById('portalAuthScreen').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function showMsg(text, color) {
+    var el = document.getElementById('portalAuthMsg');
+    if (el) { el.style.color = color || '#E8445A'; el.textContent = text; }
+  }
+
+  function verify() {
+    var input = document.getElementById('portalAuthEmail');
+    var btn = document.getElementById('portalAuthBtn');
+    var email = (input.value || '').toLowerCase().trim();
+
+    if (!email || email.indexOf('@') === -1) {
+      showMsg('Ingresa un email v\u00e1lido');
+      return;
+    }
+
+    // Bypass keys for testing/admin
+    if (BYPASS_KEYS.indexOf(email) !== -1) {
+      setAuth({ authorized: true, email: email, at: Date.now(), bypass: true });
+      hideScreen();
+      return;
+    }
+
+    btn.textContent = 'Verificando...';
+    btn.disabled = true;
+    showMsg('', '#fff');
+
+    fetch(VERIFY_URL + '?action=verify&email=' + encodeURIComponent(email))
+      .then(function(r) { return r.json(); })
+      .then(function(result) {
+        if (result.authorized) {
+          setAuth({ authorized: true, email: email, at: Date.now() });
+          hideScreen();
+        } else {
+          showMsg('Email no encontrado. Verific\u00e1 tu compra o prob\u00e1 con otro email.');
+          btn.textContent = 'Acceder a mi biblioteca \u2192';
+          btn.disabled = false;
+        }
+      })
+      .catch(function() {
+        showMsg('Error de conexi\u00f3n. Intent\u00e1 de nuevo.');
+        btn.textContent = 'Acceder a mi biblioteca \u2192';
+        btn.disabled = false;
+      });
+  }
+
+  function logout() {
+    localStorage.removeItem(AUTH_KEY);
+    localStorage.removeItem('mc_auth');
+    location.reload();
+  }
+
+  function init() {
+    if (!isAuthenticated()) {
+      showScreen();
+    }
+  }
+
+  // Run immediately
+  init();
+
+  return { verify: verify, logout: logout, isAuthenticated: isAuthenticated, getAuth: getAuth };
+})();
+</script>
+
 <!-- Welcome/Install screen -->
 <div id="welcomeScreen" style="display:none;position:fixed;inset:0;z-index:99999;background:#0f1f15;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;text-align:center">
   <div style="width:80px;height:80px;background:#2E7D52;border-radius:20px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;box-shadow:0 8px 32px rgba(46,125,82,.4)">
@@ -4738,6 +4861,7 @@ const MiCodigo = (function() {
     html += '<div class="mc-card" style="padding:0;overflow:hidden">' +
       masItem('📋', 'Mi Reporte', 'Generar reporte para tu médico', "MiCodigo.exportData()") +
       masItem('💬', 'Sugerencias', 'Ayúdanos a mejorar tu experiencia', "MiCodigo.showSugerencias()") +
+      masItem('🚪', 'Cerrar sesión', 'Salir de mi cuenta', "PortalAuth.logout()") +
       masItem('ℹ️', 'Sobre Mi Código', 'v2.0 · El Código Hormonal', "MiCodigo.showAbout()", true) +
     '</div>';
 
