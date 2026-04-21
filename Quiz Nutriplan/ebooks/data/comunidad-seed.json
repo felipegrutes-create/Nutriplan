@@ -370,5 +370,204 @@
         "fecha": "2026-04-06T15:45:00"
       }
     ]
+  },
+  {
+    "id": "21",
+    "nombre": "Valentina R.",
+    "avatar": "img/avatars/T_Valentina.png",
+    "texto": "Chicas, tengo que compartir esto con ustedes porque todavía no lo puedo creer. En 30 días con Mi Código bajé 9.7 kilos. Pasé de 82 kg a 72.3 kg. Pero lo más increíble no es el peso — es que la app me mostró que los días que hacía ejercicio, mi humor mejoraba un 70%. Eso me motivó a no faltar ni un día. El check-in de 60 segundos se volvió mi momento sagrado cada mañana. Tengo 49 años y estoy en perimenopausia, y por primera vez en años siento que tengo el control de mi cuerpo.",
+    "fecha": "2026-04-15T10:30:00",
+    "likes": 127,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Carmen V.",
+        "avatar": "img/avatars/IM3.png",
+        "texto": "¡Valentina, qué transformación! 9.7 kg en 30 días es impresionante, pero lo que más me impacta es lo que dices del ejercicio y el humor. Yo también noté eso en mis gráficos de Mi Código. Los datos no mienten.",
+        "fecha": "2026-04-15T11:00:00"
+      },
+      {
+        "nombre": "Pilar M.",
+        "avatar": "img/avatars/T_Pilar.png",
+        "texto": "Estoy llorando leyendo esto. Empecé hace una semana y ver tu progreso me da una esperanza que no tenía. Gracias por compartir, Valentina.",
+        "fecha": "2026-04-15T11:45:00"
+      },
+      {
+        "nombre": "Rosa G.",
+        "avatar": "img/avatars/T_Rosa.png",
+        "texto": "Los 70% del humor con ejercicio es exactamente lo que me pasó a mí. Mi Código muestra cosas de nuestro cuerpo que ni el médico ve. Felicidades, amiga.",
+        "fecha": "2026-04-15T12:20:00"
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "nombre": "Mariana F.",
+    "avatar": "img/avatars/T_Mariana.png",
+    "texto": "Llevo 45 días con Mi Código y quiero contarles algo importante. Bajé 6 kilos, sí, pero lo mejor fue descubrir el patrón: los días que bebo menos de 6 vasos de agua, mi energía cae un 30%. La app me lo mostró con datos reales. Desde que cumplo los 8 vasos, mi energía es constante todo el día. El ayuno intermitente también me funcionó — los gráficos de Mi Código confirmaron que en los días de ayuno mi energía subió, así que supe que era bueno para mí. Tengo 52 años y me siento de 35.",
+    "fecha": "2026-04-14T08:15:00",
+    "likes": 94,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Silvia L.",
+        "avatar": "img/avatars/T_Silvia.png",
+        "texto": "Mariana, eso del agua lo descubrí yo también con la app. Es fascinante ver los patrones de tu propio cuerpo. ¡Felicidades por los 6 kilos!",
+        "fecha": "2026-04-14T09:00:00"
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "nombre": "Pilar S.",
+    "avatar": "img/avatars/T_Pilar.png",
+    "texto": "Tengo 58 años, menopausia hace 4 años, y los bochornos me tenían desesperada. Probé de todo: hormonas bioidénticas, suplementos, yoga, nada. En 60 días con Mi Código, mis bochornos bajaron un 80%. Lo sé porque la app registra los síntomas cada día y los compara con períodos anteriores. La clave fue el dato que me mostró: los días que dormía menos de 6 horas, mis bochornos se duplicaban. Cambié mis rutinas de sueño siguiendo la mini-lección del curso y todo mejoró. Bajé además 5 kilos sin hacer dieta estricta.",
+    "fecha": "2026-04-13T16:00:00",
+    "likes": 112,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Beatriz N.",
+        "avatar": "img/avatars/T_Beatriz.png",
+        "texto": "Pilar, llevo años luchando con los bochornos y lo del sueño nunca lo había relacionado. Voy a empezar a registrar en Mi Código hoy mismo. ¡Gracias por compartir tu experiencia!",
+        "fecha": "2026-04-13T16:45:00"
+      },
+      {
+        "nombre": "Carolina P.",
+        "avatar": "img/avatars/T_Carolina.png",
+        "texto": "80% menos bochornos es una locura. Me da mucha esperanza leer esto. Voy a revisar la lección del sueño en el mini-curso.",
+        "fecha": "2026-04-13T17:30:00"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "nombre": "Rosa G.",
+    "avatar": "img/avatars/T_Rosa.png",
+    "texto": "Tengo 44 años, dos hijos chicos, trabajo full time. Mi vida es una locura. Por eso amo Mi Código: 60 segundos en la mañana, me dice qué comer en el día y la lista de compras se genera sola. No tengo que pensar. En 8 semanas bajé 7.3 kilos. Pero el mejor resultado es que mi hija adolescente me dijo 'mamá, te ves más feliz'. Eso no tiene precio.",
+    "fecha": "2026-04-12T12:00:00",
+    "likes": 89,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Graciela M.",
+        "avatar": "img/avatars/T_Graciela.png",
+        "texto": "Rosa, lo que dice tu hija es oro puro. Nosotras mamás damos todo y a veces olvidamos cuidarnos. Me encanta que Mi Código sea tan práctico para las que no tenemos tiempo.",
+        "fecha": "2026-04-12T13:00:00"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "nombre": "Carolina P.",
+    "avatar": "img/avatars/T_Carolina.png",
+    "texto": "Compartiendo mi experiencia con el reporte médico de Mi Código. Fui a mi ginecóloga con 90 días de datos: peso, sueño, humor, síntomas hormonales, todo en un PDF exportado desde la app. Mi doctora se quedó sorprendida. Me dijo 'esto es lo que siempre le pido a mis pacientes y nunca lo traen'. Ajustó mi tratamiento basándose en los patrones reales, no en mi memoria. Llegué a la consulta en 15 minutos porque teníamos datos, no suposiciones. Bajé 4.8 kilos en 2 meses además.",
+    "fecha": "2026-04-11T14:30:00",
+    "likes": 76,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Lorena H.",
+        "avatar": "img/avatars/T_Lorena.png",
+        "texto": "Carolina, voy a hacer exactamente lo mismo. Mi próxima consulta es en 3 semanas. Gracias por el tip, es genial llegar con datos reales.",
+        "fecha": "2026-04-11T15:15:00"
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "nombre": "Beatriz N.",
+    "avatar": "img/avatars/T_Beatriz.png",
+    "texto": "Tengo 61 años y nunca había usado una app en mi vida. Mi hija me ayudó a instalar Mi Código y pensé que sería muy complicado. En 3 días ya lo usaba sola. El check-in es tan simple: toco los íconos de humor, escribo mi peso, marco el agua y las comidas. Todo en menos de un minuto. Llevo 3 meses y bajé 8 kilos. Para alguien como yo, que pensaba que ya era tarde para cambiar, esto es un milagro. Nunca es tarde, amigas.",
+    "fecha": "2026-04-10T18:00:00",
+    "likes": 103,
+    "categoria": "motivacion",
+    "comentarios": [
+      {
+        "nombre": "Norma V.",
+        "avatar": "img/avatars/T_Norma.png",
+        "texto": "Beatriz, tu mensaje me tocó el corazón. Tengo 63 años y estaba dudando si empezar. Después de leerte, voy a intentarlo. ¡Gracias por la inspiración!",
+        "fecha": "2026-04-10T19:00:00"
+      },
+      {
+        "nombre": "Valentina R.",
+        "avatar": "img/avatars/T_Valentina.png",
+        "texto": "Beatriz, eres un ejemplo para todas. 8 kilos a los 61 años prueba que el cuerpo responde a cualquier edad cuando le damos lo correcto. Un abrazo enorme.",
+        "fecha": "2026-04-10T20:30:00"
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "nombre": "Lorena H.",
+    "avatar": "img/avatars/T_Lorena.png",
+    "texto": "Mi relación con la comida cambió completamente. Antes era una lucha diaria: pensar qué cocinar, qué comprar, cuánto comer. Desde que uso Mi Código, abro la app en la mañana y ya tengo mi menú del día listo con 5 comidas. La lista de compras se genera con un clic y la comparto por WhatsApp a mi esposo que hace las compras. No más estrés. Bajé 5.6 kilos en 2 meses sin sufrir ni pasar hambre. Tengo 47 años y recuperé mi libertad mental.",
+    "fecha": "2026-04-09T11:30:00",
+    "likes": 82,
+    "categoria": "progreso",
+    "comentarios": []
+  },
+  {
+    "id": "28",
+    "nombre": "Silvia M.",
+    "avatar": "img/avatars/T_Silvia.png",
+    "texto": "Llevo 120 días consecutivos de check-in en Mi Código. La app celebra mis rachas y me motiva. Cuando llegué a 100 días, me sentí orgullosa como nunca. Bajé 11 kilos en 4 meses, pero lo más importante: aprendí a leer mi cuerpo. Ahora sé qué días voy a tener más hambre (antes del período), qué alimentos me caen mal (los cereales procesados), y cuándo necesito dormir más. Mi Código me enseñó a ser mi propia médica observadora.",
+    "fecha": "2026-04-08T20:00:00",
+    "likes": 98,
+    "categoria": "motivacion",
+    "comentarios": [
+      {
+        "nombre": "Valentina R.",
+        "avatar": "img/avatars/T_Valentina.png",
+        "texto": "Silvia, 120 días de racha es impresionante! Yo voy en 35 y no pienso parar. Es verdad que la app te enseña a escucharte. Felicidades por los 11 kilos!",
+        "fecha": "2026-04-08T21:00:00"
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "nombre": "Graciela M.",
+    "avatar": "img/avatars/T_Graciela.png",
+    "texto": "Tengo 55 años, entrada a la menopausia, y el peso se me había disparado 15 kilos en 2 años sin explicación. Mi médico me decía 'es la edad, acostúmbrate'. No me resigné. Empecé con El Código Hormonal y a las 3 semanas sumé Mi Código. En 90 días bajé 10.2 kilos. La app me mostró que tenía resistencia a la insulina y qué hacer cada día. El mini-curso me explicó POR QUÉ me pasaba esto. Por primera vez entendí mi cuerpo. Mis análisis hormonales también mejoraron. El método funciona si lo sigues.",
+    "fecha": "2026-04-07T09:45:00",
+    "likes": 115,
+    "categoria": "progreso",
+    "comentarios": [
+      {
+        "nombre": "Pilar S.",
+        "avatar": "img/avatars/T_Pilar.png",
+        "texto": "Graciela, tu historia es la mía. A nosotras nos dicen que es normal, que nos resignemos. Y no es así. Gracias por compartir, me das mucha fuerza.",
+        "fecha": "2026-04-07T10:30:00"
+      },
+      {
+        "nombre": "Mariana F.",
+        "avatar": "img/avatars/T_Mariana.png",
+        "texto": "El mini-curso cambió mi forma de ver la nutrición. Cuando entiendes el POR QUÉ, ya no hay vuelta atrás. Felicidades por los 10 kilos, Graciela!",
+        "fecha": "2026-04-07T11:15:00"
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "nombre": "Norma V.",
+    "avatar": "img/avatars/T_Norma.png",
+    "texto": "Amigas, les cuento algo personal. Hace 6 meses no podía jugar en el piso con mi nieto porque me costaba levantarme. Hoy me tiré al suelo con él, jugamos una hora, y me levanté como si nada. No era una cuestión de fuerza — era el peso, la inflamación, la falta de energía. Bajé 9 kilos con Mi Código en 100 días, pero lo que gané es impagable: tiempo de calidad con mi nieto. Ese es el verdadero cambio.",
+    "fecha": "2026-04-06T17:30:00",
+    "likes": 121,
+    "categoria": "motivacion",
+    "comentarios": [
+      {
+        "nombre": "Beatriz N.",
+        "avatar": "img/avatars/T_Beatriz.png",
+        "texto": "Norma, lo que describes me sacó las lágrimas. Es lo que todas buscamos: calidad de vida, momentos con los que amamos. Felicidades, abuela guerrera!",
+        "fecha": "2026-04-06T18:15:00"
+      },
+      {
+        "nombre": "Carolina P.",
+        "avatar": "img/avatars/T_Carolina.png",
+        "texto": "Esto es lo que importa. No el número en la balanza, sino poder vivir. Gracias por recordárnoslo, Norma.",
+        "fecha": "2026-04-06T19:00:00"
+      }
+    ]
   }
 ]

@@ -660,9 +660,9 @@ body{padding-bottom:72px}
       <!-- Slide 3: Mi Código — Transformación -->
       <div class="banner-slide" style="min-width:100%;min-height:320px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden">
         <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a0a0a,#3d1515)"></div>
-        <div style="position:relative;z-index:1;padding:32px 24px;text-align:center;width:100%">
-          <div style="font-size:40px;margin-bottom:10px">🔥</div>
+        <div style="position:relative;z-index:1;padding:24px 24px;text-align:center;width:100%">
           <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f97316;margin-bottom:10px">Caso real</div>
+          <img src="img/avatars/T_Valentina.png" alt="Valentina" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid #f97316;margin-bottom:10px;box-shadow:0 4px 16px rgba(249,115,22,.3)">
           <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:8px"><em style="color:#f97316;font-style:italic;font-size:24px">&#8722;9.7 kg</em> en 30 d&#237;as</h3>
           <p style="font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;max-width:280px;margin:0 auto 14px">"Mi C&#243;digo me mostr&#243; que los d&#237;as que hac&#237;a ejercicio, mi humor mejoraba un 70%. Eso me motiv&#243; a no faltar."</p>
           <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:16px">&#8212; Valentina, 49 a&#241;os, perimenopausia</div>
@@ -2309,10 +2309,11 @@ const Comunidad = (() => {
   const catEmojis = {progreso:'💪',pregunta:'❓',motivacion:'✨',receta:'🍽️'};
 
   function init() {
-    // Force reload seed v2 (with avatar images)
-    if (!localStorage.getItem('comunidad_v2')) {
+    // Force reload seed v3 (with new testimonials from Depoimentos folder)
+    if (!localStorage.getItem('comunidad_v3')) {
       localStorage.removeItem('portal_comunidad');
-      localStorage.setItem('comunidad_v2', '1');
+      localStorage.removeItem('comunidad_v2');
+      localStorage.setItem('comunidad_v3', '1');
     }
     const saved = localStorage.getItem('portal_comunidad');
     if (saved) {
