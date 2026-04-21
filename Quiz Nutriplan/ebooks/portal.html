@@ -590,15 +590,15 @@ const PortalAuth = (function() {
     var btn = document.getElementById('portalAuthBtn');
     var email = (input.value || '').toLowerCase().trim();
 
-    if (!email || email.indexOf('@') === -1) {
-      showMsg('Ingresa un email v\u00e1lido');
-      return;
-    }
-
-    // Bypass keys for testing/admin
+    // Bypass keys for testing/admin (check before email validation)
     if (BYPASS_KEYS.indexOf(email) !== -1) {
       setAuth({ authorized: true, email: email, at: Date.now(), bypass: true });
       hideScreen();
+      return;
+    }
+
+    if (!email || email.indexOf('@') === -1) {
+      showMsg('Ingresa un email v\u00e1lido');
       return;
     }
 
