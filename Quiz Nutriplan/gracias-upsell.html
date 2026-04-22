@@ -56,7 +56,8 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
 .price-box .period{color:rgba(255,255,255,.6);font-size:12px;margin-top:4px}
 
 /* Trust elements */
-.trust-list{background:rgba(255,255,255,.04);border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.trust-list{background:rgba(255,255,255,.04);border-radius:12px;padding:20px;margin-bottom:20px}
+.trust-title{font-size:12px;font-weight:800;color:#4ade80;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px;text-align:center;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)}
 .trust-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:13px;color:rgba(255,255,255,.85);line-height:1.5}
 .trust-item:not(:last-child){border-bottom:1px solid rgba(255,255,255,.06)}
 .trust-item .icon{color:#4ade80;font-size:16px;flex-shrink:0;margin-top:1px}
@@ -127,7 +128,8 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
   </div>
 
   <!-- Trust List -->
-  <div class="trust-list">
+  <div class="trust-list" id="trustList">
+    <div class="trust-title">Funcionalidades de Mi Código</div>
     <div class="trust-item"><span class="icon">✓</span><span>+500 recetas hormonales con buscador personalizado según tus preferencias</span></div>
     <div class="trust-item"><span class="icon">✓</span><span>Menú diario generado para tu cuerpo, tu fase hormonal y tus objetivos</span></div>
     <div class="trust-item"><span class="icon">✓</span><span>Lista de compras automática con TUS recetas de la semana</span></div>
@@ -157,21 +159,32 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
 </div>
 
 <script>
-// Show CTA only after 90 seconds of VSL (ARMA methodology)
-// Comment this block out if you want button visible immediately
+// Progressive reveal (ARMA methodology):
+// - CTA + No gracias at 90s (1:30)
+// - Trust list (Funcionalidades) at 110s (1:50)
 (function() {
   var ctaSection = document.getElementById('ctaSection');
   var noThanks = document.querySelector('.no-thanks');
-  if (ctaSection) {
-    ctaSection.style.display = 'none';
-    noThanks.style.display = 'none';
-    setTimeout(function() {
+  var trustList = document.getElementById('trustList');
+
+  // Hide all initially
+  if (ctaSection) ctaSection.style.display = 'none';
+  if (noThanks) noThanks.style.display = 'none';
+  if (trustList) trustList.style.display = 'none';
+
+  // Show CTA + No gracias at 1:30
+  setTimeout(function() {
+    if (ctaSection) {
       ctaSection.style.display = 'block';
-      noThanks.style.display = 'block';
-      // Smooth scroll to CTA
       ctaSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 90000); // 90 seconds
-  }
+    }
+    if (noThanks) noThanks.style.display = 'block';
+  }, 90000);
+
+  // Show Trust list (Funcionalidades) at 1:50
+  setTimeout(function() {
+    if (trustList) trustList.style.display = 'block';
+  }, 110000);
 })();
 </script>
 
