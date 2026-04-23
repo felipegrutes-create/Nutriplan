@@ -143,7 +143,7 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
       <div class="period">Primer mes · luego US$37/mes · Cancelás cuando quieras</div>
     </div>
 
-    <a href="https://pay.hotmart.com/K105364940W?off=fx2q5siw&checkoutMode=10" class="cta-btn" id="ctaBtn">
+    <a href="https://pay.hotmart.com/K105364940W?off=fx2q5siw&checkoutMode=10" class="cta-btn" id="ctaBtn" data-base-url="https://pay.hotmart.com/K105364940W?off=fx2q5siw&checkoutMode=10">
       Sí, quiero Mi Código con 1 clic →
     </a>
 
@@ -176,6 +176,23 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
 </div>
 
 <script>
+// ── One-click: forward Hotmart bid/transaction params to upsell URL ──
+(function() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var forwardKeys = ['bid', 'hottok', 'transaction', 'off_hot', 'buyer_id', 'xcod'];
+  var extras = [];
+  forwardKeys.forEach(function(k) {
+    var v = urlParams.get(k);
+    if (v) extras.push(k + '=' + encodeURIComponent(v));
+  });
+
+  var ctaBtn = document.getElementById('ctaBtn');
+  if (ctaBtn && extras.length > 0) {
+    var baseUrl = ctaBtn.getAttribute('data-base-url') || ctaBtn.href;
+    ctaBtn.href = baseUrl + '&' + extras.join('&');
+  }
+})();
+
 // Progressive reveal (ARMA methodology):
 // - CTA + No gracias at 90s (1:30)
 // - Trust list (Funcionalidades) at 110s (1:50)
