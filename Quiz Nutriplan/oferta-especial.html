@@ -1306,7 +1306,8 @@ body::before{
 // ═══ BKRD EM CAMADAS — máximo 5 tentativas de Voltar ═══
 // Usa URLs únicas (via hash invisível) para que o navegador não agrupe os estados.
 (function() {
-  var MAX_BLOCKS = 4;  // 4 re-pushes + 1 inicial = 5 tentativas totais
+  var MAX_TOTAL_BLOCKS = 5;   // total de Voltar que ficarão presos
+  var INITIAL_BUFFER = 3;     // estados empilhados no load
   var blocked = 0;
   var counter = 0;
   var basePath = location.pathname + location.search;
@@ -1316,17 +1317,23 @@ body::before{
     history.pushState({bkrd: counter}, '', basePath + '#_' + counter);
   }
 
-  // Buffer inicial: apenas 1 estado (para capturar o primeiro Voltar)
-  pushOne();
+  // Buffer inicial profundo — navegadores podem pular múltiplos estados
+  for (var i = 0; i < INITIAL_BUFFER; i++) pushOne();
 
   window.addEventListener('popstate', function() {
-    if (blocked >= MAX_BLOCKS) {
+    if (blocked >= MAX_TOTAL_BLOCKS) {
       // Libera após limite — deixa o usuário sair da página
       return;
     }
     blocked++;
-    // Empurra 1 novo estado para capturar a próxima tentativa
-    pushOne();
+    // Usa rAF duplo para garantir que o navegador processou o popstate antes
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        // Empurra 2 estados para refill — compensa eventual "salto" do browser
+        pushOne();
+        pushOne();
+      });
+    });
   });
 })();
 
