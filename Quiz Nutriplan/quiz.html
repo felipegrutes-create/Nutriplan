@@ -251,13 +251,11 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
 (() => {
   /* =============== CONFIG =============== */
   const TARGET = '/oferta-especial.html';
-  const PUSH_DEPTH = 3;
-  const MIN_TIME_MS = 10000; // só ativa após 10s na página (evita bounce instantâneo)
+  const MIN_TIME_MS = 3000; // 3s antes de ativar (evita bounce instantâneo)
   /* ====================================== */
 
-  // Não dispara se já veio da oferta-especial (evita loop)
+  // Não dispara se já estiver na oferta-especial (evita loop)
   if (location.pathname.indexOf('oferta-especial') !== -1) return;
-  if (sessionStorage.getItem('bkrd_fired')) return;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init, { once: true });
@@ -267,55 +265,69 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
 
   function init() {
     var loadedAt = Date.now();
+    var basePath = location.pathname + location.search;
+    var counter = 0;
 
-    /* 1. Armadilha do botão Voltar */
-    for (let i = 0; i < PUSH_DEPTH; i++) history.pushState({}, '', location.href);
-    addEv(window, 'popstate', () => {
-      if (Date.now() - loadedAt < MIN_TIME_MS) { history.pushState({}, '', location.href); return; }
+    // Empilha estados com hash único (navegadores agrupam pushStates com URL idêntica)
+    function pushTrap() {
+      counter++;
+      history.pushState({bkrd: counter}, '', basePath + '#_bkrd' + counter);
+    }
+
+    /* 1. Armadilha do botão Voltar — 3 estados iniciais */
+    pushTrap();
+    pushTrap();
+    pushTrap();
+
+    addEv(window, 'popstate', function() {
+      if (Date.now() - loadedAt < MIN_TIME_MS) {
+        // Ainda muito cedo — re-empurra estado e não dispara
+        pushTrap();
+        return;
+      }
       handleNav();
     });
 
     /* 2. Exit-intent (mouse sai pelo topo) */
-    addEv(document, 'mouseout', e => {
+    addEv(document, 'mouseout', function(e) {
       if (e.clientY <= 0 && Date.now() - loadedAt > MIN_TIME_MS) handleNav();
     });
 
     /* 3. WebView Facebook/Instagram: dispara quando user "fecha" a view */
-    const isMetaWV = /FBAN|FB_IAB|Instagram/.test(navigator.userAgent);
-    if (isMetaWV) addEv(document, 'visibilitychange', () => {
+    var isMetaWV = /FBAN|FB_IAB|Instagram/.test(navigator.userAgent);
+    if (isMetaWV) addEv(document, 'visibilitychange', function() {
       if (document.visibilityState === 'hidden' && Date.now() - loadedAt > MIN_TIME_MS) handleNav();
     });
   }
 
-  let fired = false;
+  var fired = false;
   function handleNav() {
     if (fired) return;
     fired = true;
-    sessionStorage.setItem('bkrd_fired', '1');
     removeAll();
 
     var url = mergeQuery(TARGET, location.search);
-    raf(() => raf(() => {
+    raf(function() { raf(function() {
       try { location.replace(url); }
-      catch { location.assign(url); }
-    }));
+      catch (e) { location.assign(url); }
+    }); });
   }
 
   function mergeQuery(base, q) {
     try {
       var u = new URL(base, location.origin);
       var cur = new URLSearchParams(q);
-      cur.forEach((v, k) => u.searchParams.append(k, v));
+      cur.forEach(function(v, k) { u.searchParams.append(k, v); });
       return u.toString();
-    } catch {
+    } catch (e) {
       return base + (q ? (base.indexOf('?') > -1 ? '&' : '?') + q.replace(/^\?/, '') : '');
     }
   }
 
   var listeners = [];
   function addEv(t, e, f, o) { t.addEventListener(e, f, o || false); listeners.push([t, e, f]); }
-  function removeAll() { listeners.forEach(([t, e, f]) => t.removeEventListener(e, f)); }
-  var raf = cb => requestAnimationFrame(() => requestAnimationFrame(cb));
+  function removeAll() { listeners.forEach(function(x) { x[0].removeEventListener(x[1], x[2]); }); }
+  var raf = function(cb) { return requestAnimationFrame(function() { requestAnimationFrame(cb); }); };
 })();
 </script>
 
