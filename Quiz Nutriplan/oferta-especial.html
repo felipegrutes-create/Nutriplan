@@ -1304,36 +1304,41 @@ body::before{
 
 <script>
 // ═══ BKRD EM CAMADAS — máximo 5 tentativas de Voltar ═══
-// Usa URLs únicas (via hash invisível) para que o navegador não agrupe os estados.
+// Usa URLs únicas (via hash invisível) + buffer agressivo para prevenir saltos do browser.
 (function() {
-  var MAX_TOTAL_BLOCKS = 5;   // total de Voltar que ficarão presos
-  var INITIAL_BUFFER = 3;     // estados empilhados no load
+  var MAX_TOTAL_BLOCKS = 5;
+  var INITIAL_BUFFER = 15;   // buffer profundo inicial
+  var REFILL = 8;             // cada popstate empurra 8 estados
   var blocked = 0;
   var counter = 0;
   var basePath = location.pathname + location.search;
+  var loadedAt = Date.now();
 
   function pushOne() {
     counter++;
     history.pushState({bkrd: counter}, '', basePath + '#_' + counter);
   }
 
-  // Buffer inicial profundo — navegadores podem pular múltiplos estados
-  for (var i = 0; i < INITIAL_BUFFER; i++) pushOne();
+  function pushMany(n) {
+    for (var i = 0; i < n; i++) pushOne();
+  }
+
+  // Buffer inicial agressivo
+  pushMany(INITIAL_BUFFER);
 
   window.addEventListener('popstate', function() {
+    // Ignora popstate spurious nos primeiros 150ms do load
+    if (Date.now() - loadedAt < 150) {
+      pushOne();
+      return;
+    }
     if (blocked >= MAX_TOTAL_BLOCKS) {
-      // Libera após limite — deixa o usuário sair da página
+      // Libera após limite
       return;
     }
     blocked++;
-    // Usa rAF duplo para garantir que o navegador processou o popstate antes
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        // Empurra 2 estados para refill — compensa eventual "salto" do browser
-        pushOne();
-        pushOne();
-      });
-    });
+    // Push IMEDIATO, sem rAF — mais agressivo
+    pushMany(REFILL);
   });
 })();
 
