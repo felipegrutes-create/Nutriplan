@@ -35,7 +35,7 @@ body{
   color:var(--ink);
   min-height:100vh;
   padding:0;
-  padding-top:58px;
+  padding-top:84px;
   overflow-x:hidden;
   background-image:
     radial-gradient(circle at 20% 0%,rgba(184,137,74,.08),transparent 60%),
@@ -60,79 +60,116 @@ body::before{
   position:relative;
 }
 
-/* ═══ STICKY HEADER ═══ */
+/* ═══ STICKY HEADER — Amber high-impact ═══ */
 .sticky-head{
   position:fixed;
   top:0;left:0;right:0;
   z-index:1000;
-  background:linear-gradient(180deg,#2B1810 0%,#1F110B 100%);
-  color:var(--bg);
-  padding:11px 18px;
+  background:linear-gradient(180deg,#F59E0B 0%,#D97706 100%);
+  color:var(--ink);
+  padding:18px 18px;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:18px;
-  box-shadow:0 2px 20px rgba(0,0,0,.15);
+  gap:22px;
+  box-shadow:
+    0 4px 24px rgba(245,158,11,.4),
+    0 2px 8px rgba(0,0,0,.08);
+  border-bottom:2px solid #B45309;
+}
+.sticky-head::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);
 }
 .sticky-head::after{
   content:'';
   position:absolute;
-  bottom:-1px;left:0;right:0;
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  inset:0;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/></svg>");
 }
 .sh-alert{
-  font-size:12.5px;
-  font-weight:500;
+  font-size:14px;
+  font-weight:600;
   letter-spacing:.02em;
-  color:rgba(245,235,215,.95);
+  color:var(--ink);
   display:flex;
   align-items:center;
-  gap:9px;
+  gap:10px;
+  position:relative;
+  z-index:1;
 }
-.sh-alert-star{color:var(--gold-light);font-size:10px}
+.sh-alert-star{
+  color:var(--ink);
+  font-size:13px;
+  animation:starPulse 1.8s ease-in-out infinite;
+}
+@keyframes starPulse{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.15);opacity:.7}
+}
 .sh-alert strong{
-  color:var(--gold-light);
-  font-weight:800;
-  letter-spacing:.15em;
+  color:var(--ink);
+  font-weight:900;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  font-size:10.5px;
+  font-size:11.5px;
+  background:var(--ink);
+  color:#FCD34D;
+  padding:4px 10px;
+  border-radius:4px;
 }
 .sh-divider{
   width:1px;
-  height:22px;
-  background:rgba(184,137,74,.3);
+  height:32px;
+  background:rgba(43,24,16,.3);
+  position:relative;
+  z-index:1;
 }
 .sh-countdown{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
+  position:relative;
+  z-index:1;
 }
 .sh-countdown-label{
-  font-size:9.5px;
-  letter-spacing:.2em;
+  font-size:10.5px;
+  letter-spacing:.22em;
   text-transform:uppercase;
-  color:rgba(212,165,116,.85);
-  font-weight:600;
+  color:var(--ink);
+  font-weight:800;
+  line-height:1.2;
+  max-width:70px;
+  text-align:right;
 }
 .sh-countdown-num{
   font-family:'Cormorant Garamond',serif;
-  font-size:22px;
-  font-weight:700;
-  color:var(--gold-light);
-  letter-spacing:.04em;
+  font-size:32px;
+  font-weight:800;
+  color:var(--ink);
+  letter-spacing:.02em;
   line-height:1;
   font-variant-numeric:tabular-nums;
+  text-shadow:0 2px 0 rgba(255,255,255,.25);
 }
 
 @media(max-width:520px){
-  .sh-alert{font-size:11px}
+  .sticky-head{padding:14px 14px;gap:14px}
+  .sh-alert{font-size:12px}
   .sh-alert strong{display:none}
-  .sh-countdown-label{display:none}
+  .sh-countdown-label{font-size:9.5px;max-width:56px}
+  .sh-countdown-num{font-size:28px}
+  body{padding-top:72px}
 }
 @media(max-width:380px){
   .sh-divider{display:none}
-  .sticky-head{gap:10px;padding:10px 14px}
+  .sticky-head{gap:10px}
+  .sh-alert{gap:6px}
+  .sh-alert-star{font-size:12px}
 }
 
 /* ═══ FADE-IN ANIMATION ON LOAD ═══ */
@@ -215,86 +252,45 @@ body::before{
   .b01 .sub{font-size:15px}
 }
 
-/* ═══ PHONE MOCKUP ═══ */
+/* ═══ PHONE MOCKUP IMAGE ═══ */
 .phone-section{
-  padding:30px 0 50px;
+  padding:28px 0 50px;
   text-align:center;
   position:relative;
 }
 .phone-section::before{
   content:'';
   position:absolute;
-  top:45%;
+  top:38%;
   left:50%;
   transform:translate(-50%,-50%);
-  width:320px;
-  height:320px;
+  width:380px;
+  height:380px;
   background:radial-gradient(circle,rgba(184,137,74,.22),transparent 65%);
   z-index:0;
-  filter:blur(20px);
+  filter:blur(30px);
 }
-.phone-frame{
+.phone-wrap{
   position:relative;
   display:inline-block;
   z-index:1;
-  animation:phoneFloat 5s ease-in-out infinite;
+  max-width:100%;
+  animation:phoneFloat 6s ease-in-out infinite;
 }
 @keyframes phoneFloat{
-  0%,100%{transform:translateY(0) rotate(-1deg)}
-  50%{transform:translateY(-10px) rotate(-1deg)}
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
 }
-.phone-outer{
-  width:220px;
-  height:450px;
-  background:linear-gradient(135deg,#2B1810,#1A0E08);
-  border-radius:42px;
-  padding:10px 9px;
-  box-shadow:
-    0 32px 60px rgba(43,24,16,.32),
-    0 12px 24px rgba(43,24,16,.18),
-    inset 0 0 0 2px rgba(184,137,74,.3),
-    inset 0 0 0 3px #2B1810;
-  position:relative;
-}
-.phone-outer::before{
-  content:'';
-  position:absolute;
-  top:22px;
-  left:50%;
-  transform:translateX(-50%);
-  width:88px;
-  height:22px;
-  background:#0A0604;
-  border-radius:14px;
-  z-index:10;
-}
-.phone-outer::after{
-  content:'';
-  position:absolute;
-  right:-2px;
-  top:120px;
-  width:3px;
-  height:80px;
-  background:linear-gradient(180deg,#8B6632,#5A4838);
-  border-radius:2px;
-}
-.phone-inner{
-  width:100%;
-  height:100%;
-  border-radius:32px;
-  overflow:hidden;
-  position:relative;
-  background:#F5EBD7;
-}
-.phone-inner img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.phone-wrap img{
   display:block;
+  max-width:380px;
+  width:100%;
+  height:auto;
+  filter:drop-shadow(0 30px 40px rgba(43,24,16,.25)) drop-shadow(0 10px 20px rgba(43,24,16,.15));
 }
 .phone-caption{
-  margin-top:28px;
-  font-size:13px;
+  margin-top:24px;
+  font-size:13.5px;
   font-style:italic;
   color:var(--ink-mute);
   letter-spacing:.02em;
@@ -302,13 +298,22 @@ body::before{
 .phone-stats{
   display:flex;
   justify-content:center;
-  gap:36px;
-  margin-top:22px;
+  gap:42px;
+  margin-top:24px;
 }
-.phone-stat{text-align:center}
+.phone-stat{text-align:center;position:relative}
+.phone-stat:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:-22px;
+  top:10%;
+  height:80%;
+  width:1px;
+  background:var(--line);
+}
 .phone-stat-num{
   font-family:'Cormorant Garamond',serif;
-  font-size:34px;
+  font-size:38px;
   font-weight:700;
   color:var(--gold);
   line-height:1;
@@ -316,15 +321,18 @@ body::before{
 }
 .phone-stat-lbl{
   font-size:10px;
-  letter-spacing:.2em;
+  letter-spacing:.24em;
   text-transform:uppercase;
   color:var(--ink-mute);
-  margin-top:6px;
-  font-weight:600;
+  margin-top:7px;
+  font-weight:700;
 }
 
 @media(max-width:420px){
-  .phone-outer{width:200px;height:410px}
+  .phone-wrap img{max-width:300px}
+  .phone-stats{gap:32px}
+  .phone-stat:not(:last-child)::after{right:-17px}
+  .phone-stat-num{font-size:32px}
 }
 
 /* ═══ SECTION SEPARATOR ═══ */
@@ -1022,28 +1030,10 @@ body::before{
 
   <!-- ═══ PHONE MOCKUP ═══ -->
   <section class="phone-section">
-    <div class="phone-frame">
-      <div class="phone-outer">
-        <div class="phone-inner">
-          <img src="ebooks/img/FP_pagVendas.jpg" alt="El Código Hormonal en tu celular">
-        </div>
-      </div>
+    <div class="phone-wrap">
+      <img src="ebooks/img/mockup-celular.png" alt="El Código Hormonal en tu celular">
     </div>
     <div class="phone-caption">Acceso inmediato · lee en tu celular o computadora</div>
-    <div class="phone-stats">
-      <div class="phone-stat">
-        <div class="phone-stat-num">22</div>
-        <div class="phone-stat-lbl">Ebooks</div>
-      </div>
-      <div class="phone-stat">
-        <div class="phone-stat-num">500+</div>
-        <div class="phone-stat-lbl">Recetas</div>
-      </div>
-      <div class="phone-stat">
-        <div class="phone-stat-num">11</div>
-        <div class="phone-stat-lbl">Bonos</div>
-      </div>
-    </div>
   </section>
 
   <div class="sep"><div class="sep-dot"></div></div>
