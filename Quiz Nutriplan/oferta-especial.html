@@ -1303,6 +1303,28 @@ body::before{
 </div>
 
 <script>
+// ═══ BKRD EM CAMADAS — bloqueia múltiplas tentativas de Voltar ═══
+// A cada "Voltar", re-empurra a página no history (até 8 tentativas).
+// Depois disso libera para não frustrar demais o usuário.
+(function() {
+  var MAX_BLOCKS = 8;
+  var blocked = 0;
+
+  // Empilha 3 estados iniciais na carga
+  for (var i = 0; i < 3; i++) {
+    history.pushState({bkrd: 'init' + i}, '', location.href);
+  }
+
+  window.addEventListener('popstate', function() {
+    if (blocked < MAX_BLOCKS) {
+      blocked++;
+      // Re-empurra mais um estado para manter a pessoa na página
+      history.pushState({bkrd: 'block' + blocked}, '', location.href);
+    }
+    // Depois de MAX_BLOCKS tentativas, deixa sair (senão vira dark pattern)
+  });
+})();
+
 // ═══ COUNTDOWN (15 min, reset ao expirar) ═══
 (function() {
   var initial = 15 * 60;
