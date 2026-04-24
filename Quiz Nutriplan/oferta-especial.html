@@ -1304,33 +1304,35 @@ body::before{
 
 <script>
 // ═══ BKRD EM CAMADAS — bloqueia múltiplas tentativas de Voltar ═══
-// A cada "Voltar", re-empurra a página no history.
-// Usa técnica de buffer empilhado para segurar 8+ tentativas.
+// Usa URLs únicas (via hash invisível) para que navegador não agrupe os estados.
+// Empurra buffer profundo + re-push agressivo no popstate.
 (function() {
   var MAX_BLOCKS = 8;
   var blocked = 0;
-  var pageUrl = location.href;
+  var counter = 0;
+  var basePath = location.pathname + location.search;
 
-  // Empilha MUITOS estados iniciais (buffer profundo)
-  function pushBuffer(n) {
-    for (var i = 0; i < n; i++) {
-      history.pushState({bkrd: Date.now() + '-' + i}, '', pageUrl);
-    }
+  function pushOne() {
+    counter++;
+    // Hash invisível garante URL única para cada estado
+    history.pushState({bkrd: counter}, '', basePath + '#_' + counter);
   }
 
-  pushBuffer(15);
+  function pushMany(n) {
+    for (var i = 0; i < n; i++) pushOne();
+  }
+
+  // Buffer inicial profundo de 30 estados
+  pushMany(30);
 
   window.addEventListener('popstate', function() {
-    if (blocked >= MAX_BLOCKS) return; // libera após MAX_BLOCKS
-
+    if (blocked >= MAX_BLOCKS) {
+      // Libera após limite — não frustrar demais
+      return;
+    }
     blocked++;
-    // Re-empurra múltiplos estados para manter o buffer cheio
-    // Usa rAF duplo para garantir que o browser processou o popstate antes
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        pushBuffer(3);
-      });
-    });
+    // Re-empurra 5 estados por tentativa (mantém buffer cheio)
+    pushMany(5);
   });
 })();
 
