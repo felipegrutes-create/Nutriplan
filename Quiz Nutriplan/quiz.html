@@ -244,6 +244,81 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
 .progress-chart{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:20px;margin-bottom:14px}
 /* Responsive */
 @media(max-width:360px){.q-title{font-size:23px}.slider-value{font-size:44px}.body-type-card svg,.body-type-card img{height:60px}.body-type-grid{gap:8px}.body-type-card{padding:6px 16px}.zone-grid{gap:8px}.option-btn{padding:12px 14px}.slide{padding:24px 16px 100px}}</style>
+
+<!-- ═══ BACKREDIRECT PRO ═══ -->
+<!-- Captura intent de saída e redireciona para oferta-especial.html (metodologia ARMA Academy) -->
+<script>
+(() => {
+  /* =============== CONFIG =============== */
+  const TARGET = '/oferta-especial.html';
+  const PUSH_DEPTH = 3;
+  const MIN_TIME_MS = 10000; // só ativa após 10s na página (evita bounce instantâneo)
+  /* ====================================== */
+
+  // Não dispara se já veio da oferta-especial (evita loop)
+  if (location.pathname.indexOf('oferta-especial') !== -1) return;
+  if (sessionStorage.getItem('bkrd_fired')) return;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+
+  function init() {
+    var loadedAt = Date.now();
+
+    /* 1. Armadilha do botão Voltar */
+    for (let i = 0; i < PUSH_DEPTH; i++) history.pushState({}, '', location.href);
+    addEv(window, 'popstate', () => {
+      if (Date.now() - loadedAt < MIN_TIME_MS) { history.pushState({}, '', location.href); return; }
+      handleNav();
+    });
+
+    /* 2. Exit-intent (mouse sai pelo topo) */
+    addEv(document, 'mouseout', e => {
+      if (e.clientY <= 0 && Date.now() - loadedAt > MIN_TIME_MS) handleNav();
+    });
+
+    /* 3. WebView Facebook/Instagram: dispara quando user "fecha" a view */
+    const isMetaWV = /FBAN|FB_IAB|Instagram/.test(navigator.userAgent);
+    if (isMetaWV) addEv(document, 'visibilitychange', () => {
+      if (document.visibilityState === 'hidden' && Date.now() - loadedAt > MIN_TIME_MS) handleNav();
+    });
+  }
+
+  let fired = false;
+  function handleNav() {
+    if (fired) return;
+    fired = true;
+    sessionStorage.setItem('bkrd_fired', '1');
+    removeAll();
+
+    var url = mergeQuery(TARGET, location.search);
+    raf(() => raf(() => {
+      try { location.replace(url); }
+      catch { location.assign(url); }
+    }));
+  }
+
+  function mergeQuery(base, q) {
+    try {
+      var u = new URL(base, location.origin);
+      var cur = new URLSearchParams(q);
+      cur.forEach((v, k) => u.searchParams.append(k, v));
+      return u.toString();
+    } catch {
+      return base + (q ? (base.indexOf('?') > -1 ? '&' : '?') + q.replace(/^\?/, '') : '');
+    }
+  }
+
+  var listeners = [];
+  function addEv(t, e, f, o) { t.addEventListener(e, f, o || false); listeners.push([t, e, f]); }
+  function removeAll() { listeners.forEach(([t, e, f]) => t.removeEventListener(e, f)); }
+  var raf = cb => requestAnimationFrame(() => requestAnimationFrame(cb));
+})();
+</script>
+
 </head>
 <body>
 <div class="sticky-checkout-bar" id="stickyCheckoutBar">
