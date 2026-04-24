@@ -8,160 +8,1045 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --bg: #F5EBD7;
+  --bg-soft: #FAF4E8;
+  --bg-card: #FFFBF2;
+  --ink: #2B1810;
+  --ink-soft: #5A4838;
+  --ink-mute: #8B7355;
+  --gold: #B8894A;
+  --gold-light: #D4A574;
+  --gold-dark: #8B6632;
+  --accent-red: #C7532B;
+  --accent-sage: #4A6B4E;
+  --line: rgba(43,24,16,.1);
+  --line-soft: rgba(43,24,16,.06);
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 0%,#1a0a0a 100%);color:#fff;min-height:100vh;padding:0}
-.wrap{max-width:640px;margin:0 auto;padding:0 18px 60px}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  min-height:100vh;
+  padding:0;
+  padding-top:58px;
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 20% 0%,rgba(184,137,74,.08),transparent 60%),
+    radial-gradient(circle at 80% 40%,rgba(184,137,74,.05),transparent 50%);
+}
 
-/* ── ALERT BANNER (top) ── */
-.alert-bar{background:linear-gradient(90deg,#C9922A,#E8445A);padding:10px 18px;text-align:center;font-size:13px;font-weight:700;letter-spacing:.02em;color:#fff;box-shadow:0 2px 12px rgba(232,68,90,.3)}
-.alert-bar strong{font-weight:900}
+/* Subtle noise texture for warmth */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.35;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/></svg>");
+}
 
-/* ── COUNTDOWN ── */
-.countdown-wrap{background:rgba(232,68,90,.08);border-bottom:1px solid rgba(232,68,90,.2);padding:14px 18px;text-align:center;margin-bottom:28px}
-.countdown-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px}
-.countdown{font-family:'DM Sans',sans-serif;font-size:28px;font-weight:900;color:#E8445A;letter-spacing:.05em}
+.wrap{
+  max-width:680px;
+  margin:0 auto;
+  padding:0 22px 60px;
+  position:relative;
+}
 
-/* ── BLOCO 01: HEADLINE ── */
-.b01{text-align:center;margin:20px 0 32px}
-.b01 .eyebrow{display:inline-block;background:rgba(232,68,90,.15);border:1px solid rgba(232,68,90,.3);color:#E8445A;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:18px}
-.b01 h1{font-family:'Cormorant Garamond',serif;font-size:34px;line-height:1.15;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:-.01em}
-.b01 h1 em{font-style:italic;color:#C9922A}
-.b01 .sub{font-size:15px;line-height:1.6;color:rgba(255,255,255,.85);max-width:520px;margin:0 auto;font-weight:400}
-.b01 .sub strong{color:#fff;font-weight:700}
+/* ═══ STICKY HEADER ═══ */
+.sticky-head{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1000;
+  background:linear-gradient(180deg,#2B1810 0%,#1F110B 100%);
+  color:var(--bg);
+  padding:11px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  box-shadow:0 2px 20px rgba(0,0,0,.15);
+}
+.sticky-head::after{
+  content:'';
+  position:absolute;
+  bottom:-1px;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.sh-alert{
+  font-size:12.5px;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:rgba(245,235,215,.95);
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.sh-alert-star{color:var(--gold-light);font-size:10px}
+.sh-alert strong{
+  color:var(--gold-light);
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  font-size:10.5px;
+}
+.sh-divider{
+  width:1px;
+  height:22px;
+  background:rgba(184,137,74,.3);
+}
+.sh-countdown{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sh-countdown-label{
+  font-size:9.5px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(212,165,116,.85);
+  font-weight:600;
+}
+.sh-countdown-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-weight:700;
+  color:var(--gold-light);
+  letter-spacing:.04em;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
 
-/* ── BLOCO 02: IDENTIFICAÇÃO ── */
-.b02{padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
-.b02 .mirror{background:rgba(255,255,255,.04);border-left:3px solid #C9922A;padding:20px 22px;border-radius:4px;margin-bottom:20px}
-.b02 .mirror p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.9);margin-bottom:12px}
-.b02 .mirror p:last-child{margin-bottom:0}
-.b02 .mirror em{color:#C9922A;font-style:italic;font-weight:600}
-.b02 .contrast{font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1.25;font-weight:600;color:#fff;text-align:center;margin:28px 0 16px}
-.b02 .contrast em{color:#4ade80;font-style:italic}
-.b02 .transition{font-size:14px;line-height:1.6;color:rgba(255,255,255,.75);text-align:center;max-width:480px;margin:0 auto}
+@media(max-width:520px){
+  .sh-alert{font-size:11px}
+  .sh-alert strong{display:none}
+  .sh-countdown-label{display:none}
+}
+@media(max-width:380px){
+  .sh-divider{display:none}
+  .sticky-head{gap:10px;padding:10px 14px}
+}
 
-/* ── BLOCO 03: PROVAS ── */
-.b03{padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
-.b03 h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;text-align:center;margin-bottom:22px;color:#fff}
-.b03 h2 em{color:#C9922A;font-style:italic}
-.proof-intro{text-align:center;font-size:14px;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:22px}
-.testis{display:flex;flex-direction:column;gap:14px}
-.testi{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px}
-.testi-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.testi-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,146,42,.4);flex-shrink:0}
-.testi-meta{flex:1}
-.testi-name{font-size:14px;font-weight:700;color:#fff}
-.testi-stars{font-size:12px;color:#FFD700}
-.testi-text{font-size:14px;line-height:1.6;color:rgba(255,255,255,.85);font-style:italic}
+/* ═══ FADE-IN ANIMATION ON LOAD ═══ */
+.fade{opacity:0;transform:translateY(10px);animation:fadeUp .8s ease-out forwards}
+.fade.d1{animation-delay:.1s}
+.fade.d2{animation-delay:.25s}
+.fade.d3{animation-delay:.4s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
-/* ── BLOCO 04: BULLETS ── */
-.b04{padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
-.b04 h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;text-align:center;margin-bottom:20px;color:#fff}
-.b04 h2 em{color:#C9922A;font-style:italic}
-.bullets{display:flex;flex-direction:column;gap:12px}
-.bullet{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.03);border-radius:10px;padding:14px 16px}
-.bullet-arrow{color:#4ade80;font-size:18px;font-weight:900;flex-shrink:0;line-height:1.4}
-.bullet-text{font-size:14px;line-height:1.5;color:rgba(255,255,255,.9)}
-.bullet-text strong{color:#fff;font-weight:700}
+/* ═══ BLOCO 01: HEADLINE ═══ */
+.b01{
+  padding:48px 0 28px;
+  text-align:center;
+  position:relative;
+}
+.ornament{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:24px;
+}
+.ornament-line{
+  width:38px;
+  height:1px;
+  background:var(--gold);
+}
+.ornament-dot{
+  width:5px;
+  height:5px;
+  background:var(--gold);
+  transform:rotate(45deg);
+}
 
-/* ── CTA BUTTON (reusable) ── */
-.cta-block{margin:32px 0;text-align:center}
-.cta-btn{display:block;width:100%;max-width:480px;margin:0 auto;padding:20px 28px;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;border:none;border-radius:16px;font-size:17px;font-weight:900;cursor:pointer;text-decoration:none;box-shadow:0 8px 28px rgba(74,222,128,.35);font-family:'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:.04em;transition:transform .15s;animation:pulse 2.2s infinite;line-height:1.3}
-.cta-btn:hover{transform:translateY(-2px)}
-@keyframes pulse{0%,100%{box-shadow:0 8px 28px rgba(74,222,128,.35)}50%{box-shadow:0 12px 40px rgba(74,222,128,.6)}}
-.cta-sub{font-size:12px;color:rgba(255,255,255,.55);margin-top:10px;line-height:1.5}
+.eyebrow{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  margin-bottom:24px;
+  padding:7px 20px;
+  border:1px solid var(--gold);
+  border-radius:50px;
+  background:rgba(184,137,74,.06);
+}
 
-/* ── BLOCO 05: EXCLUSIVIDAD ── */
-.b05{padding:28px 0;border-top:1px solid rgba(255,255,255,.08);text-align:center}
-.b05 h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:16px;color:#fff}
-.b05 h2 em{color:#C9922A;font-style:italic}
-.b05 p{font-size:15px;line-height:1.6;color:rgba(255,255,255,.85);max-width:500px;margin:0 auto 12px}
+.b01 h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:44px;
+  line-height:1.08;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:24px;
+  letter-spacing:-.02em;
+}
+.b01 h1 em{
+  font-style:italic;
+  color:var(--gold);
+  font-weight:600;
+}
 
-/* ── BLOCO 06: ENTREGÁVEIS ── */
-.b06{padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
-.b06 h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;text-align:center;margin-bottom:22px;color:#fff}
-.b06 h2 em{color:#C9922A;font-style:italic}
-.deliverables{background:rgba(201,146,42,.06);border:1px solid rgba(201,146,42,.2);border-radius:14px;padding:20px}
-.deliv-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
-.deliv-item:last-child{border-bottom:none}
-.deliv-check{color:#4ade80;font-size:18px;font-weight:900;flex-shrink:0;line-height:1.4}
-.deliv-text{flex:1}
-.deliv-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
-.deliv-desc{font-size:13px;line-height:1.5;color:rgba(255,255,255,.7)}
-
-/* ── BLOCO 07: ANCORAGEM / PREÇO ── */
-.b07{padding:32px 0;border-top:1px solid rgba(255,255,255,.08);text-align:center}
-.b07 h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;margin-bottom:10px;color:#fff}
-.b07 h2 em{color:#C9922A;font-style:italic}
-.b07 .intro{font-size:14px;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
-.price-card{background:linear-gradient(135deg,rgba(74,222,128,.1),rgba(46,125,82,.15));border:2px solid rgba(74,222,128,.35);border-radius:18px;padding:28px 22px;max-width:480px;margin:0 auto;box-shadow:0 12px 40px rgba(74,222,128,.15)}
-.price-oldbox{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:4px}
-.price-old{text-decoration:line-through;font-weight:600;color:rgba(255,255,255,.6)}
-.price-newbox{margin:8px 0 12px}
-.price-label{font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#4ade80;margin-bottom:4px}
-.price-big{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:#fff;line-height:1;letter-spacing:-.02em}
-.price-big em{font-style:italic;color:#4ade80}
-.price-cents{font-size:16px;color:rgba(255,255,255,.7);margin-top:6px}
-.price-save{display:inline-block;background:#4ade80;color:#0f1f15;font-size:13px;font-weight:900;padding:6px 14px;border-radius:50px;margin-top:14px;letter-spacing:.05em}
-
-/* ── BLOCO 08: GARANTIA ── */
-.b08{padding:32px 0;border-top:1px solid rgba(255,255,255,.08)}
-.guarantee{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:26px 22px;text-align:center;max-width:560px;margin:0 auto}
-.guarantee-badge{display:inline-block;background:linear-gradient(135deg,#4ade80,#2E7D52);color:#fff;font-size:13px;font-weight:900;padding:8px 18px;border-radius:50px;margin-bottom:16px;letter-spacing:.08em;text-transform:uppercase}
-.guarantee h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:12px;color:#fff}
-.guarantee h3 em{color:#4ade80;font-style:italic}
-.guarantee p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.85);margin-bottom:10px}
-.guarantee p:last-child{margin-bottom:0}
-.guarantee strong{color:#fff;font-weight:700}
-
-/* ── BLOCO 09: FAQ ── */
-.b09{padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
-.b09 h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;text-align:center;margin-bottom:22px;color:#fff}
-.faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px 18px;margin-bottom:10px}
-.faq-q{font-size:14px;font-weight:700;color:#C9922A;margin-bottom:8px;line-height:1.4}
-.faq-a{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.8)}
-
-/* ── BLOCO 10: ÚLTIMO CHAMADO ── */
-.b10{padding:32px 0;border-top:1px solid rgba(255,255,255,.08);text-align:center}
-.b10 h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;line-height:1.2;margin-bottom:14px;color:#fff}
-.b10 h2 em{font-style:italic;color:#E8445A}
-.b10 .final-sub{font-size:15px;line-height:1.6;color:rgba(255,255,255,.85);max-width:500px;margin:0 auto 20px}
-
-/* ── FOOTER ── */
-.foot{text-align:center;padding:30px 18px 40px;border-top:1px solid rgba(255,255,255,.06);margin-top:20px;font-size:11px;color:rgba(255,255,255,.35);line-height:1.6}
-.foot a{color:rgba(255,255,255,.55);text-decoration:none}
+.b01 .sub{
+  font-size:16px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  max-width:540px;
+  margin:0 auto;
+  font-weight:400;
+}
+.b01 .sub strong{
+  color:var(--ink);
+  font-weight:600;
+}
 
 @media(max-width:480px){
-  .b01 h1{font-size:28px}
-  .b02 .contrast{font-size:22px}
-  .price-big{font-size:48px}
-  .b10 h2{font-size:26px}
+  .b01 h1{font-size:33px;letter-spacing:-.015em}
+  .b01{padding:32px 0 22px}
+  .b01 .sub{font-size:15px}
+}
+
+/* ═══ PHONE MOCKUP ═══ */
+.phone-section{
+  padding:30px 0 50px;
+  text-align:center;
+  position:relative;
+}
+.phone-section::before{
+  content:'';
+  position:absolute;
+  top:45%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:320px;
+  height:320px;
+  background:radial-gradient(circle,rgba(184,137,74,.22),transparent 65%);
+  z-index:0;
+  filter:blur(20px);
+}
+.phone-frame{
+  position:relative;
+  display:inline-block;
+  z-index:1;
+  animation:phoneFloat 5s ease-in-out infinite;
+}
+@keyframes phoneFloat{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-10px) rotate(-1deg)}
+}
+.phone-outer{
+  width:220px;
+  height:450px;
+  background:linear-gradient(135deg,#2B1810,#1A0E08);
+  border-radius:42px;
+  padding:10px 9px;
+  box-shadow:
+    0 32px 60px rgba(43,24,16,.32),
+    0 12px 24px rgba(43,24,16,.18),
+    inset 0 0 0 2px rgba(184,137,74,.3),
+    inset 0 0 0 3px #2B1810;
+  position:relative;
+}
+.phone-outer::before{
+  content:'';
+  position:absolute;
+  top:22px;
+  left:50%;
+  transform:translateX(-50%);
+  width:88px;
+  height:22px;
+  background:#0A0604;
+  border-radius:14px;
+  z-index:10;
+}
+.phone-outer::after{
+  content:'';
+  position:absolute;
+  right:-2px;
+  top:120px;
+  width:3px;
+  height:80px;
+  background:linear-gradient(180deg,#8B6632,#5A4838);
+  border-radius:2px;
+}
+.phone-inner{
+  width:100%;
+  height:100%;
+  border-radius:32px;
+  overflow:hidden;
+  position:relative;
+  background:#F5EBD7;
+}
+.phone-inner img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.phone-caption{
+  margin-top:28px;
+  font-size:13px;
+  font-style:italic;
+  color:var(--ink-mute);
+  letter-spacing:.02em;
+}
+.phone-stats{
+  display:flex;
+  justify-content:center;
+  gap:36px;
+  margin-top:22px;
+}
+.phone-stat{text-align:center}
+.phone-stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  font-weight:700;
+  color:var(--gold);
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.phone-stat-lbl{
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink-mute);
+  margin-top:6px;
+  font-weight:600;
+}
+
+@media(max-width:420px){
+  .phone-outer{width:200px;height:410px}
+}
+
+/* ═══ SECTION SEPARATOR ═══ */
+.sep{
+  margin:42px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+}
+.sep::before,.sep::after{
+  content:'';
+  width:70px;
+  height:1px;
+  background:var(--line);
+}
+.sep-dot{
+  width:5px;
+  height:5px;
+  background:var(--gold);
+  border-radius:50%;
+}
+
+/* ═══ BLOCO 02: IDENTIFICAÇÃO ═══ */
+.b02{padding:8px 0 20px}
+.mirror{
+  background:var(--bg-card);
+  border-left:3px solid var(--gold);
+  padding:30px 30px 30px 32px;
+  border-radius:0 10px 10px 0;
+  box-shadow:0 2px 16px rgba(43,24,16,.04);
+  position:relative;
+}
+.mirror::before{
+  content:'"';
+  position:absolute;
+  top:-6px;
+  right:22px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:96px;
+  line-height:1;
+  color:var(--gold);
+  opacity:.22;
+  font-style:italic;
+  font-weight:700;
+}
+.mirror p{
+  font-size:15.5px;
+  line-height:1.78;
+  color:var(--ink-soft);
+  margin-bottom:14px;
+  position:relative;
+}
+.mirror p:last-child{margin-bottom:0}
+.mirror em{
+  color:var(--gold-dark);
+  font-style:italic;
+  font-weight:500;
+}
+.mirror strong{color:var(--ink);font-weight:600}
+
+.contrast{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  line-height:1.22;
+  font-weight:600;
+  color:var(--ink);
+  text-align:center;
+  margin:40px auto 20px;
+  max-width:540px;
+  letter-spacing:-.018em;
+}
+.contrast em{
+  color:var(--accent-sage);
+  font-style:italic;
+}
+.transition{
+  font-size:15px;
+  line-height:1.72;
+  color:var(--ink-soft);
+  text-align:center;
+  max-width:520px;
+  margin:0 auto;
+}
+.transition strong{color:var(--ink);font-weight:600}
+
+@media(max-width:480px){
+  .contrast{font-size:26px}
+  .mirror{padding:24px 20px}
+}
+
+/* ═══ CTA BLOCK ═══ */
+.cta-block{
+  margin:48px 0;
+  text-align:center;
+  position:relative;
+}
+.cta-btn{
+  display:inline-block;
+  width:100%;
+  max-width:480px;
+  padding:22px 28px;
+  background:linear-gradient(135deg,#2B1810 0%,#3D2418 100%);
+  color:#F5EBD7;
+  border:none;
+  border-radius:6px;
+  font-size:14.5px;
+  font-weight:800;
+  cursor:pointer;
+  text-decoration:none;
+  box-shadow:
+    0 12px 30px rgba(43,24,16,.25),
+    0 4px 10px rgba(43,24,16,.15),
+    inset 0 1px 0 rgba(184,137,74,.3);
+  font-family:'DM Sans',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  transition:transform .2s,box-shadow .2s;
+  line-height:1.3;
+  position:relative;
+  overflow:hidden;
+}
+.cta-btn::before{
+  content:'';
+  position:absolute;
+  top:0;left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(212,165,116,.25),transparent);
+  transition:left .7s;
+}
+.cta-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 18px 40px rgba(43,24,16,.3),
+    0 6px 14px rgba(43,24,16,.18),
+    inset 0 1px 0 rgba(184,137,74,.35);
+}
+.cta-btn:hover::before{left:100%}
+.cta-btn-arrow{
+  color:var(--gold-light);
+  margin-left:8px;
+  display:inline-block;
+  transition:transform .2s;
+}
+.cta-btn:hover .cta-btn-arrow{transform:translateX(3px)}
+.cta-sub{
+  font-size:12px;
+  color:var(--ink-mute);
+  margin-top:14px;
+  letter-spacing:.04em;
+  font-style:italic;
+}
+.cta-sub-sep{color:var(--gold);font-style:normal}
+
+/* Gold CTA — emphasis */
+.cta-btn.gold{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
+  color:#FFFBF2;
+  box-shadow:
+    0 12px 30px rgba(184,137,74,.38),
+    0 4px 10px rgba(184,137,74,.22),
+    inset 0 1px 0 rgba(255,251,242,.25);
+  animation:pulseGold 2.4s ease-in-out infinite;
+}
+.cta-btn.gold:hover{
+  box-shadow:
+    0 18px 40px rgba(184,137,74,.48),
+    0 6px 14px rgba(184,137,74,.28),
+    inset 0 1px 0 rgba(255,251,242,.3);
+}
+@keyframes pulseGold{
+  0%,100%{box-shadow:0 12px 30px rgba(184,137,74,.38),0 4px 10px rgba(184,137,74,.22),inset 0 1px 0 rgba(255,251,242,.25)}
+  50%{box-shadow:0 16px 42px rgba(184,137,74,.52),0 6px 16px rgba(184,137,74,.3),inset 0 1px 0 rgba(255,251,242,.3)}
+}
+
+/* ═══ BLOCO 03: PROVAS ═══ */
+.b03{padding:20px 0}
+.sec-head{text-align:center;margin-bottom:32px}
+.sec-head h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  line-height:1.2;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+  letter-spacing:-.015em;
+}
+.sec-head h2 em{color:var(--gold);font-style:italic}
+.sec-head .intro{
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--ink-mute);
+  max-width:480px;
+  margin:0 auto;
+  font-style:italic;
+}
+
+.testis{display:flex;flex-direction:column;gap:18px}
+.testi{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:22px 22px 20px;
+  box-shadow:0 2px 10px rgba(43,24,16,.04);
+  position:relative;
+  transition:transform .3s cubic-bezier(.2,.9,.3,1.1),box-shadow .3s;
+}
+.testi:nth-child(odd){transform:rotate(-.4deg)}
+.testi:nth-child(even){transform:rotate(.5deg)}
+.testi:hover{transform:rotate(0);box-shadow:0 10px 28px rgba(43,24,16,.1)}
+.testi-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.testi-avatar{
+  width:52px;height:52px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--gold);
+  box-shadow:0 4px 10px rgba(43,24,16,.14);
+  flex-shrink:0;
+}
+.testi-meta{flex:1}
+.testi-name{font-size:14.5px;font-weight:700;color:var(--ink);letter-spacing:.01em}
+.testi-loc{font-size:12px;color:var(--ink-mute);font-style:italic}
+.testi-stars{font-size:13px;color:var(--gold);letter-spacing:.15em;margin-top:3px}
+.testi-text{
+  font-size:14.5px;
+  line-height:1.72;
+  color:var(--ink-soft);
+  font-style:italic;
+  padding-left:14px;
+  border-left:2px solid var(--gold-light);
+}
+
+/* ═══ BLOCO 04: BULLETS ═══ */
+.b04{padding:20px 0}
+.bullets{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.bullet{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  background:var(--bg-card);
+  border-radius:8px;
+  padding:16px 20px;
+  border-left:2px solid var(--gold);
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.bullet:hover{
+  transform:translateX(4px);
+  border-left-color:var(--gold-dark);
+  box-shadow:0 4px 12px rgba(43,24,16,.05);
+}
+.bullet-mark{
+  color:var(--gold);
+  font-size:16px;
+  font-weight:700;
+  flex-shrink:0;
+  line-height:1.55;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+}
+.bullet-text{
+  font-size:14.5px;
+  line-height:1.62;
+  color:var(--ink-soft);
+}
+.bullet-text strong{color:var(--ink);font-weight:600}
+
+/* ═══ BLOCO 05: EXCLUSIVIDAD ═══ */
+.b05{
+  text-align:center;
+  background:linear-gradient(135deg,rgba(184,137,74,.08),rgba(184,137,74,.14));
+  border:1px solid rgba(184,137,74,.2);
+  border-radius:16px;
+  margin:32px 0;
+  padding:40px 28px;
+  position:relative;
+  overflow:hidden;
+}
+.b05::before{
+  content:'';
+  position:absolute;
+  top:-40px;right:-40px;
+  width:160px;height:160px;
+  background:radial-gradient(circle,rgba(184,137,74,.22),transparent 65%);
+  pointer-events:none;
+}
+.b05 h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:14px;
+  letter-spacing:-.01em;
+  position:relative;
+}
+.b05 h2 em{color:var(--gold);font-style:italic}
+.b05 p{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  max-width:520px;
+  margin:0 auto 10px;
+  position:relative;
+}
+.b05 strong{color:var(--ink);font-weight:600}
+
+@media(max-width:480px){.b05 h2{font-size:25px}}
+
+/* ═══ BLOCO 06: ENTREGÁVEIS ═══ */
+.b06{padding:20px 0}
+.deliverables{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:26px 26px;
+  box-shadow:0 4px 20px rgba(43,24,16,.05);
+}
+.deliv-item{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:16px 0;
+  border-bottom:1px dashed var(--line);
+}
+.deliv-item:last-child{border-bottom:none}
+.deliv-check{
+  width:30px;height:30px;
+  border-radius:50%;
+  background:rgba(184,137,74,.14);
+  border:1px solid var(--gold);
+  color:var(--gold);
+  font-size:14px;
+  font-weight:900;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.deliv-item.bonus .deliv-check{
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  border-color:var(--gold-dark);
+  color:#FFFBF2;
+  box-shadow:0 4px 10px rgba(184,137,74,.3);
+}
+.deliv-text{flex:1}
+.deliv-title{
+  font-size:14.5px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:4px;
+  line-height:1.38;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.bonus-tag{
+  display:inline-block;
+  font-size:9.5px;
+  font-weight:800;
+  letter-spacing:.14em;
+  background:var(--gold);
+  color:#FFFBF2;
+  padding:3px 9px;
+  border-radius:4px;
+  vertical-align:middle;
+  text-transform:uppercase;
+  line-height:1;
+}
+.deliv-desc{
+  font-size:13px;
+  line-height:1.62;
+  color:var(--ink-mute);
+}
+.deliv-desc strong{color:var(--gold-dark);font-weight:700}
+
+/* ═══ BLOCO 07: ANCORAGEM / PREÇO ═══ */
+.b07{
+  padding:44px 0 30px;
+  text-align:center;
+  scroll-margin-top:80px;
+}
+.b07 h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:14px;
+  letter-spacing:-.018em;
+}
+.b07 h2 em{color:var(--gold);font-style:italic}
+.b07 .intro{
+  font-size:14.5px;
+  color:var(--ink-soft);
+  line-height:1.7;
+  margin-bottom:32px;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.price-card{
+  background:linear-gradient(135deg,#FFFBF2 0%,#F5EBD7 100%);
+  border:2px solid var(--gold);
+  border-radius:20px;
+  padding:36px 28px 32px;
+  max-width:480px;
+  margin:0 auto;
+  box-shadow:
+    0 20px 50px rgba(184,137,74,.22),
+    0 8px 20px rgba(184,137,74,.12);
+  position:relative;
+  overflow:hidden;
+}
+.price-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--gold-light),var(--gold),var(--gold-dark),var(--gold),var(--gold-light));
+}
+.price-card::after{
+  content:'';
+  position:absolute;
+  bottom:-50px;right:-50px;
+  width:140px;height:140px;
+  background:radial-gradient(circle,rgba(184,137,74,.2),transparent 60%);
+  pointer-events:none;
+}
+
+.price-oldbox{
+  font-size:14px;
+  color:var(--ink-mute);
+  margin-bottom:4px;
+  letter-spacing:.04em;
+}
+.price-old{
+  text-decoration:line-through;
+  text-decoration-thickness:1.5px;
+  text-decoration-color:var(--accent-red);
+  font-weight:600;
+  color:var(--ink-mute);
+}
+.price-newbox{margin:12px 0 18px}
+.price-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  margin-bottom:6px;
+}
+.price-big{
+  font-family:'Cormorant Garamond',serif;
+  font-size:84px;
+  font-weight:700;
+  color:var(--ink);
+  line-height:1;
+  letter-spacing:-.04em;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:4px;
+}
+.price-big .currency{
+  font-size:32px;
+  font-weight:600;
+  color:var(--gold);
+  margin-top:14px;
+}
+.price-big em{font-style:italic;color:var(--gold)}
+.price-cents{
+  font-size:13.5px;
+  color:var(--ink-mute);
+  margin-top:12px;
+  letter-spacing:.04em;
+  font-style:italic;
+}
+.price-save{
+  display:inline-block;
+  background:var(--ink);
+  color:var(--gold-light);
+  font-size:11.5px;
+  font-weight:800;
+  padding:9px 20px;
+  border-radius:50px;
+  margin-top:20px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+@media(max-width:480px){
+  .price-big{font-size:68px}
+  .price-big .currency{font-size:26px;margin-top:12px}
+  .b07 h2{font-size:28px}
+}
+
+/* ═══ BLOCO 08: GARANTIA ═══ */
+.b08{padding:32px 0}
+.guarantee{
+  display:flex;
+  align-items:center;
+  gap:26px;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:30px 28px;
+  max-width:620px;
+  margin:0 auto;
+  box-shadow:0 4px 16px rgba(43,24,16,.04);
+}
+.guarantee-seal{
+  flex-shrink:0;
+  width:116px;
+  height:116px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 30%,rgba(255,251,242,.45),transparent 55%),
+    linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#FFFBF2;
+  box-shadow:
+    0 10px 22px rgba(184,137,74,.32),
+    inset 0 0 0 4px rgba(255,251,242,.18);
+  position:relative;
+}
+.guarantee-seal::before{
+  content:'';
+  position:absolute;
+  inset:9px;
+  border-radius:50%;
+  border:1px dashed rgba(255,251,242,.45);
+}
+.guarantee-seal-days{
+  font-family:'Cormorant Garamond',serif;
+  font-size:46px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.guarantee-seal-label{
+  font-size:9px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  margin-top:3px;
+  font-weight:700;
+}
+.guarantee-content{flex:1}
+.guarantee-content h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+  letter-spacing:-.01em;
+}
+.guarantee-content h3 em{color:var(--gold);font-style:italic}
+.guarantee-content p{
+  font-size:14px;
+  line-height:1.68;
+  color:var(--ink-soft);
+  margin-bottom:10px;
+}
+.guarantee-content p:last-child{margin-bottom:0}
+.guarantee-content strong{color:var(--ink);font-weight:600}
+
+@media(max-width:560px){
+  .guarantee{flex-direction:column;text-align:center;align-items:center;gap:20px}
+}
+
+/* ═══ BLOCO 09: FAQ ═══ */
+.b09{padding:30px 0}
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.faq-item{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:20px 22px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.faq-item:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 14px rgba(184,137,74,.1);
+}
+.faq-q{
+  font-size:15px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+  line-height:1.4;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+.faq-q::before{
+  content:'—';
+  color:var(--gold);
+  font-weight:400;
+  flex-shrink:0;
+}
+.faq-a{
+  font-size:14px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  padding-left:22px;
+}
+.faq-a strong{color:var(--ink);font-weight:600}
+
+/* ═══ BLOCO 10: ÚLTIMO CHAMADO ═══ */
+.b10{
+  padding:48px 0 20px;
+  text-align:center;
+  margin-top:24px;
+}
+.b10 h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40px;
+  font-weight:700;
+  line-height:1.12;
+  color:var(--ink);
+  margin-bottom:18px;
+  letter-spacing:-.022em;
+}
+.b10 h2 em{font-style:italic;color:var(--accent-red)}
+.b10 .final-sub{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  max-width:520px;
+  margin:0 auto 32px;
+}
+
+@media(max-width:480px){.b10 h2{font-size:30px}}
+
+/* ═══ FOOTER ═══ */
+.foot{
+  text-align:center;
+  padding:40px 22px 28px;
+  border-top:1px solid var(--line);
+  margin-top:44px;
+  font-size:12px;
+  color:var(--ink-mute);
+  line-height:1.8;
+}
+.foot a{
+  color:var(--ink-soft);
+  text-decoration:underline;
+  text-decoration-color:var(--gold);
+  text-underline-offset:3px;
+  text-decoration-thickness:1px;
+}
+.foot-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:4px;
+  letter-spacing:.02em;
 }
 </style>
 </head>
 <body>
 
-<!-- ═══ ALERT BANNER ═══ -->
-<div class="alert-bar">
-  🚨 <strong>¡ATENCIÓN!</strong> Has desbloqueado un descuento exclusivo
-</div>
-
-<!-- ═══ COUNTDOWN ═══ -->
-<div class="countdown-wrap">
-  <div class="countdown-label">Esta oferta expira en</div>
-  <div class="countdown" id="countdown">15:00</div>
+<!-- ═══ STICKY HEADER ═══ -->
+<div class="sticky-head">
+  <div class="sh-alert">
+    <span class="sh-alert-star">✦</span>
+    <strong>Atención</strong>
+    <span>Desbloqueaste un descuento exclusivo</span>
+  </div>
+  <div class="sh-divider"></div>
+  <div class="sh-countdown">
+    <span class="sh-countdown-label">Expira en</span>
+    <span class="sh-countdown-num" id="countdown">15:00</span>
+  </div>
 </div>
 
 <div class="wrap">
 
   <!-- ═══ BLOCO 01: HEADLINE ═══ -->
   <section class="b01">
-    <div class="eyebrow">Solo para quien llegó hasta acá</div>
-    <h1>¡Espera! Acabás de desbloquear una <em>oferta única</em> que no vas a ver en ningún otro lugar</h1>
-    <p class="sub">Por haber llegado hasta este punto, liberamos el acceso completo a <strong>El Código Hormonal</strong> con <strong>casi la mitad de descuento</strong> — y además sumamos 2 bonos especiales que no están disponibles en la oferta regular.</p>
+    <div class="ornament fade">
+      <div class="ornament-line"></div>
+      <div class="ornament-dot"></div>
+      <div class="ornament-line"></div>
+    </div>
+    <div class="eyebrow fade d1">Solo para quien llegó hasta acá</div>
+    <h1 class="fade d2">¡Espera! Acabás de desbloquear una <em>oferta única</em> que no vas a ver en ningún otro lugar</h1>
+    <p class="sub fade d3">Por haber llegado hasta este punto, liberamos el acceso completo a <strong>El Código Hormonal</strong> con <strong>casi la mitad de descuento</strong> — y además sumamos <strong>2 bonos especiales</strong> que no están disponibles en la oferta regular.</p>
   </section>
+
+  <!-- ═══ PHONE MOCKUP ═══ -->
+  <section class="phone-section">
+    <div class="phone-frame">
+      <div class="phone-outer">
+        <div class="phone-inner">
+          <img src="ebooks/img/FP_pagVendas.jpg" alt="El Código Hormonal en tu celular">
+        </div>
+      </div>
+    </div>
+    <div class="phone-caption">Acceso inmediato · lee en tu celular o computadora</div>
+    <div class="phone-stats">
+      <div class="phone-stat">
+        <div class="phone-stat-num">22</div>
+        <div class="phone-stat-lbl">Ebooks</div>
+      </div>
+      <div class="phone-stat">
+        <div class="phone-stat-num">500+</div>
+        <div class="phone-stat-lbl">Recetas</div>
+      </div>
+      <div class="phone-stat">
+        <div class="phone-stat-num">11</div>
+        <div class="phone-stat-lbl">Bonos</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"><div class="sep-dot"></div></div>
 
   <!-- ═══ BLOCO 02: IDENTIFICAÇÃO + DESEJO ═══ -->
   <section class="b02">
@@ -178,74 +1063,89 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
 
   <!-- ═══ CTA 1 ═══ -->
   <div class="cta-block">
-    <a href="#precio" class="cta-btn" onclick="scrollToPrice(event)">Sí, quiero mi precio especial →</a>
-    <p class="cta-sub">Garantía de 60 días · Acceso inmediato</p>
+    <a href="#precio" class="cta-btn" onclick="scrollToPrice(event)">
+      Sí, quiero mi precio especial <span class="cta-btn-arrow">→</span>
+    </a>
+    <p class="cta-sub">Garantía de 60 días <span class="cta-sub-sep">·</span> Acceso inmediato</p>
   </div>
+
+  <div class="sep"><div class="sep-dot"></div></div>
 
   <!-- ═══ BLOCO 03: PROVAS ═══ -->
   <section class="b03">
-    <h2>Mujeres reales que ya <em>descubrieron su código</em></h2>
-    <p class="proof-intro">Mujeres de toda LATAM ya aplicaron el método — no es teoría, es protocolo validado.</p>
+    <div class="sec-head">
+      <h2>Mujeres reales que ya <em>descubrieron su código</em></h2>
+      <p class="intro">Mujeres de toda LATAM ya aplicaron el método — no es teoría, es protocolo validado.</p>
+    </div>
 
     <div class="testis">
       <div class="testi">
         <div class="testi-head">
           <img src="ebooks/img/avatars/T_Valentina.png" alt="Valentina" class="testi-avatar">
           <div class="testi-meta">
-            <div class="testi-name">Valentina R. · México</div>
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-name">Valentina R.</div>
+            <div class="testi-loc">México</div>
+            <div class="testi-stars">★ ★ ★ ★ ★</div>
           </div>
         </div>
-        <p class="testi-text">"Por primera vez entendí POR QUÉ me pasaba lo que me pasaba. No es una dieta más — es entender tu propio cuerpo. Mi energía volvió y mi humor mejoró desde la primera semana."</p>
+        <p class="testi-text">Por primera vez entendí POR QUÉ me pasaba lo que me pasaba. No es una dieta más — es entender tu propio cuerpo. Mi energía volvió y mi humor mejoró desde la primera semana.</p>
       </div>
 
       <div class="testi">
         <div class="testi-head">
           <img src="ebooks/img/avatars/T_Carolina.png" alt="Carolina" class="testi-avatar">
           <div class="testi-meta">
-            <div class="testi-name">Carolina P. · Colombia</div>
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-name">Carolina P.</div>
+            <div class="testi-loc">Colombia</div>
+            <div class="testi-stars">★ ★ ★ ★ ★</div>
           </div>
         </div>
-        <p class="testi-text">"Llegué con cero confianza después de tantos métodos fallidos. Lo que me convenció fue la lógica del método — estabilizar la glucosa para reactivar las hormonas. Por fin algo con sentido."</p>
+        <p class="testi-text">Llegué con cero confianza después de tantos métodos fallidos. Lo que me convenció fue la lógica del método — estabilizar la glucosa para reactivar las hormonas. Por fin algo con sentido.</p>
       </div>
 
       <div class="testi">
         <div class="testi-head">
           <img src="ebooks/img/avatars/T_Beatriz.png" alt="Beatriz" class="testi-avatar">
           <div class="testi-meta">
-            <div class="testi-name">Beatriz N. · Argentina</div>
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-name">Beatriz N.</div>
+            <div class="testi-loc">Argentina</div>
+            <div class="testi-stars">★ ★ ★ ★ ★</div>
           </div>
         </div>
-        <p class="testi-text">"Tengo 61 años y pensé que ya era tarde. Las recetas son simples, con ingredientes que encuentro en mi mercado. Nunca es tarde para empezar a cuidar tu salud hormonal."</p>
+        <p class="testi-text">Tengo 61 años y pensé que ya era tarde. Las recetas son simples, con ingredientes que encuentro en mi mercado. Nunca es tarde para empezar a cuidar tu salud hormonal.</p>
       </div>
     </div>
   </section>
 
+  <div class="sep"><div class="sep-dot"></div></div>
+
   <!-- ═══ BLOCO 04: BULLETS ═══ -->
   <section class="b04">
-    <h2>Lo que está <em>escondido</em> en El Código Hormonal</h2>
+    <div class="sec-head">
+      <h2>Lo que está <em>escondido</em> en El Código Hormonal</h2>
+    </div>
     <div class="bullets">
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">La razón real por la que <strong>el metabolismo femenino cambia después de los 40</strong> — y no tiene nada que ver con comer menos</span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">Las <strong>4 reglas de combinación alimentaria</strong> que reducen picos de glucosa hasta un 40% (la base de todo)</span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">Por qué el estrógeno, la insulina y el cortisol forman <strong>el triángulo que descontrola tu cuerpo</strong> — y cómo equilibrarlo en 3 semanas</span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">El protocolo Reset → Activación → Consolidación: <strong>la hoja de ruta paso a paso</strong> que usan miles de mujeres LATAM</span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">+500 recetas con <strong>ingredientes de tu propio mercado</strong> — nada de aguas importadas ni superalimentos caros</span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">Cómo adaptar el método según tu fase: <strong>premenopausia, perimenopausia o menopausia</strong></span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">Los <strong>6 suplementos</strong> que la ciencia respalda (y los que son puro marketing caro)</span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">Qué ejercicios hacer <strong>sin destruir tus rodillas ni tu espalda</strong> — rutinas pensadas para mujeres 40+</span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">Por qué dormir mal <strong>duplica tus bochornos</strong> (y el protocolo exacto para recuperar el sueño profundo)</span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">Cómo hacer ayuno intermitente sin disparar el cortisol — el error que el <strong>97% comete</strong></span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">La guía de índice glucémico aplicada a <strong>ingredientes regionales latinoamericanos</strong></span></div>
-      <div class="bullet"><span class="bullet-arrow">→</span><span class="bullet-text">Y mucho más en las 22 guías completas…</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">La razón real por la que <strong>el metabolismo femenino cambia después de los 40</strong> — y no tiene nada que ver con comer menos</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">Las <strong>4 reglas de combinación alimentaria</strong> que reducen picos de glucosa hasta un 40% (la base de todo)</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">Por qué el estrógeno, la insulina y el cortisol forman <strong>el triángulo que descontrola tu cuerpo</strong> — y cómo equilibrarlo en 3 semanas</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">El protocolo Reset → Activación → Consolidación: <strong>la hoja de ruta paso a paso</strong> que usan miles de mujeres LATAM</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">+500 recetas con <strong>ingredientes de tu propio mercado</strong> — nada de aguas importadas ni superalimentos caros</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">Cómo adaptar el método según tu fase: <strong>premenopausia, perimenopausia o menopausia</strong></span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">Los <strong>6 suplementos</strong> que la ciencia respalda (y los que son puro marketing caro)</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">Qué ejercicios hacer <strong>sin destruir tus rodillas ni tu espalda</strong> — rutinas pensadas para mujeres 40+</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">Por qué dormir mal <strong>duplica tus bochornos</strong> (y el protocolo exacto para recuperar el sueño profundo)</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">Cómo hacer ayuno intermitente sin disparar el cortisol — el error que el <strong>97% comete</strong></span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">La guía de índice glucémico aplicada a <strong>ingredientes regionales latinoamericanos</strong></span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text">Y mucho más en las 22 guías completas…</span></div>
     </div>
   </section>
 
   <!-- ═══ CTA 2 ═══ -->
   <div class="cta-block">
-    <a href="#precio" class="cta-btn" onclick="scrollToPrice(event)">Quiero acceso completo por solo US$9 →</a>
-    <p class="cta-sub">Garantía de 60 días · Devolución del 100%</p>
+    <a href="#precio" class="cta-btn" onclick="scrollToPrice(event)">
+      Quiero acceso completo por solo US$9 <span class="cta-btn-arrow">→</span>
+    </a>
+    <p class="cta-sub">Garantía de 60 días <span class="cta-sub-sep">·</span> Devolución del 100%</p>
   </div>
 
   <!-- ═══ BLOCO 05: EXCLUSIVIDAD ═══ -->
@@ -257,7 +1157,9 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
 
   <!-- ═══ BLOCO 06: ENTREGÁVEIS ═══ -->
   <section class="b06">
-    <h2>Todo lo que <em>recibís hoy</em></h2>
+    <div class="sec-head">
+      <h2>Todo lo que <em>recibís hoy</em></h2>
+    </div>
     <div class="deliverables">
       <div class="deliv-item">
         <span class="deliv-check">✓</span>
@@ -280,17 +1182,17 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
           <div class="deliv-desc">Ayuno intermitente, cortisol, suplementos, ejercicios para 40+, manejo emocional, tabla IG, y más</div>
         </div>
       </div>
-      <div class="deliv-item">
-        <span class="deliv-check">✓</span>
+      <div class="deliv-item bonus">
+        <span class="deliv-check">★</span>
         <div class="deliv-text">
-          <div class="deliv-title">🎁 BONO EXTRA DESBLOQUEADO: Plan de 31 Días</div>
+          <div class="deliv-title"><span class="bonus-tag">Bono Extra</span>Plan de 31 Días</div>
           <div class="deliv-desc">Tu calendario alimentario completo mes a mes — <strong>solo en esta oferta especial</strong></div>
         </div>
       </div>
-      <div class="deliv-item">
-        <span class="deliv-check">✓</span>
+      <div class="deliv-item bonus">
+        <span class="deliv-check">★</span>
         <div class="deliv-text">
-          <div class="deliv-title">🎁 BONO EXTRA DESBLOQUEADO: Checklist Diario + Tabla IG</div>
+          <div class="deliv-title"><span class="bonus-tag">Bono Extra</span>Checklist Diario + Tabla IG</div>
           <div class="deliv-desc">Tus herramientas de consulta rápida para no perderte ningún día — <strong>solo en esta oferta especial</strong></div>
         </div>
       </div>
@@ -313,78 +1215,91 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
       <div class="price-oldbox">De <span class="price-old">US$17</span></div>
       <div class="price-newbox">
         <div class="price-label">Tu precio hoy</div>
-        <div class="price-big"><em>US$9</em></div>
+        <div class="price-big"><span class="currency">US$</span><em>9</em></div>
         <div class="price-cents">Pago único · Acceso de por vida</div>
       </div>
       <div class="price-save">Ahorrás US$8 + 2 bonos extra</div>
     </div>
   </section>
 
-  <!-- ═══ CTA 3 ═══ -->
+  <!-- ═══ CTA 3 (gold emphasis) ═══ -->
   <div class="cta-block">
-    <a href="https://pay.hotmart.com/I105301966C?checkoutMode=6&off=0i326z9k&offDiscount=PRECIO-ESPECIAL-9" class="cta-btn" id="ctaMain">SÍ, QUIERO MI PRECIO ESPECIAL →</a>
-    <p class="cta-sub">Pago 100% seguro · Acceso inmediato · 60 días de garantía</p>
+    <a href="https://pay.hotmart.com/I105301966C?checkoutMode=6&off=0i326z9k&offDiscount=PRECIO-ESPECIAL-9" class="cta-btn gold" id="ctaMain">
+      Sí, quiero mi precio especial <span class="cta-btn-arrow">→</span>
+    </a>
+    <p class="cta-sub">Pago 100% seguro <span class="cta-sub-sep">·</span> Acceso inmediato <span class="cta-sub-sep">·</span> 60 días de garantía</p>
   </div>
 
   <!-- ═══ BLOCO 08: GARANTIA ═══ -->
   <section class="b08">
     <div class="guarantee">
-      <div class="guarantee-badge">Garantía Blindada</div>
-      <h3>60 días para <em>probar sin riesgo</em></h3>
-      <p>Sé que todavía podés tener dudas. Por eso, la ley te protege con 7 días de reembolso — pero <strong>yo te doy 60 días</strong>.</p>
-      <p>Aplicá el método, cociná las recetas, seguí el protocolo por 2 meses completos. Si no sentís que tu cuerpo responde, escribime <strong>un email</strong> y te devuelvo el 100% del dinero. Sin preguntas, sin formularios, sin burocracia.</p>
-      <p><strong>Todo el riesgo es mío. Lo único que vos arriesgás es quedarte con dudas.</strong></p>
+      <div class="guarantee-seal">
+        <div class="guarantee-seal-days">60</div>
+        <div class="guarantee-seal-label">Días</div>
+      </div>
+      <div class="guarantee-content">
+        <h3>Garantía <em>blindada</em> de 60 días</h3>
+        <p>Sé que todavía podés tener dudas. Por eso, la ley te protege con 7 días de reembolso — pero <strong>yo te doy 60 días</strong>.</p>
+        <p>Aplicá el método, cociná las recetas, seguí el protocolo por 2 meses completos. Si no sentís que tu cuerpo responde, escribime un email y te devuelvo el <strong>100% del dinero</strong>. Sin preguntas, sin formularios.</p>
+      </div>
     </div>
   </section>
 
   <!-- ═══ CTA 4 ═══ -->
   <div class="cta-block">
-    <a href="https://pay.hotmart.com/I105301966C?checkoutMode=6&off=0i326z9k&offDiscount=PRECIO-ESPECIAL-9" class="cta-btn">Activar mi código ahora por US$9 →</a>
+    <a href="https://pay.hotmart.com/I105301966C?checkoutMode=6&off=0i326z9k&offDiscount=PRECIO-ESPECIAL-9" class="cta-btn">
+      Desbloquear mi acceso por US$9 <span class="cta-btn-arrow">→</span>
+    </a>
   </div>
 
   <!-- ═══ BLOCO 09: FAQ ═══ -->
   <section class="b09">
-    <h2>Preguntas frecuentes</h2>
-
-    <div class="faq-item">
-      <div class="faq-q">¿Cuándo recibo el acceso?</div>
-      <div class="faq-a">Inmediatamente después del pago confirmado, recibís un email con todos los archivos y el link de acceso al portal completo.</div>
+    <div class="sec-head">
+      <h2>Preguntas <em>frecuentes</em></h2>
     </div>
-
-    <div class="faq-item">
-      <div class="faq-q">¿Funciona si nunca probé nada similar?</div>
-      <div class="faq-a">Sí. El protocolo está pensado paso a paso para mujeres sin experiencia previa. Semana 1 te explica todo desde cero.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">¿Qué pasa si no me funciona?</div>
-      <div class="faq-a">Tenés <strong>60 días completos</strong> para probar. Si no te convence, me escribís un email y te devolvemos el 100% del valor. Sin preguntas.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">¿Necesito comprar ingredientes especiales o caros?</div>
-      <div class="faq-a">No. Las +500 recetas usan ingredientes regionales que encontrás en tu mercado o almacén de barrio. Nada importado.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">¿Sirve si estoy en perimenopausia o menopausia?</div>
-      <div class="faq-a">Sí — hay módulos específicos para cada fase hormonal (premenopausia, perimenopausia y menopausia).</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">¿Es una suscripción mensual?</div>
-      <div class="faq-a">No. Es un pago único de US$9 y el acceso queda tuyo para siempre.</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">¿Cuándo recibo el acceso?</div>
+        <div class="faq-a">Inmediatamente después del pago confirmado, recibís un email con todos los archivos y el link de acceso al portal completo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Funciona si nunca probé nada similar?</div>
+        <div class="faq-a">Sí. El protocolo está pensado paso a paso para mujeres sin experiencia previa. Semana 1 te explica todo desde cero.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Qué pasa si no me funciona?</div>
+        <div class="faq-a">Tenés <strong>60 días completos</strong> para probar. Si no te convence, me escribís un email y te devolvemos el 100% del valor. Sin preguntas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Necesito comprar ingredientes especiales o caros?</div>
+        <div class="faq-a">No. Las +500 recetas usan ingredientes regionales que encontrás en tu mercado o almacén de barrio. Nada importado.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Sirve si estoy en perimenopausia o menopausia?</div>
+        <div class="faq-a">Sí — hay módulos específicos para cada fase hormonal (premenopausia, perimenopausia y menopausia).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Es una suscripción mensual?</div>
+        <div class="faq-a">No. Es un pago único de US$9 y el acceso queda tuyo para siempre.</div>
+      </div>
     </div>
   </section>
 
   <!-- ═══ BLOCO 10: ÚLTIMO CHAMADO ═══ -->
   <section class="b10">
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-dot"></div>
+      <div class="ornament-line"></div>
+    </div>
     <h2>Esta oferta <em>no vuelve</em> si salís ahora</h2>
     <p class="final-sub">Cuando cierres esta página, el precio vuelve a US$17 y los bonos extras se desactivan. No es un recurso de marketing — es la forma de que este acceso quede solo para quien realmente lo valora.</p>
 
-    <div class="cta-block">
-      <a href="https://pay.hotmart.com/I105301966C?checkoutMode=6&off=0i326z9k&offDiscount=PRECIO-ESPECIAL-9" class="cta-btn">SÍ, ACTIVAR MI CÓDIGO POR US$9 →</a>
-      <p class="cta-sub">60 días de garantía · Acceso inmediato · Pago único</p>
+    <div class="cta-block" style="margin:0">
+      <a href="https://pay.hotmart.com/I105301966C?checkoutMode=6&off=0i326z9k&offDiscount=PRECIO-ESPECIAL-9" class="cta-btn gold">
+        Quiero El Código Hormonal por US$9 <span class="cta-btn-arrow">→</span>
+      </a>
+      <p class="cta-sub">60 días de garantía <span class="cta-sub-sep">·</span> Acceso inmediato <span class="cta-sub-sep">·</span> Pago único</p>
     </div>
   </section>
 
@@ -392,14 +1307,15 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
 
 <!-- ═══ FOOTER ═══ -->
 <div class="foot">
-  El Código Hormonal · <a href="https://www.elcodigohormonal.com">www.elcodigohormonal.com</a><br>
+  <div class="foot-brand">El Código Hormonal</div>
+  <a href="https://www.elcodigohormonal.com">www.elcodigohormonal.com</a> ·
   ¿Dudas? <a href="mailto:soporte@elcodigohormonal.com">soporte@elcodigohormonal.com</a>
 </div>
 
 <script>
-// ═══ COUNTDOWN (15 min, reset quando expira) ═══
+// ═══ COUNTDOWN (15 min, reset ao expirar) ═══
 (function() {
-  var initial = 15 * 60; // 15 min em segundos
+  var initial = 15 * 60;
   var stored = localStorage.getItem('bkrd_countdown_start');
   var now = Math.floor(Date.now() / 1000);
   var start = stored ? parseInt(stored, 10) : now;
@@ -413,7 +1329,6 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
     var remaining = initial - elapsed;
 
     if (remaining <= 0) {
-      // Reset quando expira para não mostrar "oferta finalizada"
       localStorage.removeItem('bkrd_countdown_start');
       location.reload();
       return;
@@ -438,7 +1353,7 @@ function scrollToPrice(e) {
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ═══ Forward URL params (bid, transaction, utm) para o checkout ═══
+// ═══ Forward URL params ═══
 (function() {
   var params = new URLSearchParams(window.location.search);
   var forwardKeys = ['bid','hottok','transaction','xcod','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
