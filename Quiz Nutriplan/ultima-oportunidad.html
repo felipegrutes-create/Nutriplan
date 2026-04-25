@@ -1171,46 +1171,61 @@ body::before{
 }
 </style>
 
-<!-- ═══ BKRD EM CAMADAS — executado no head para máxima prioridade ═══ -->
+<!-- ═══ BKRD EM CAMADAS — versão híbrida agressiva ═══ -->
 <script>
 (function() {
   var MAX_TOTAL_BLOCKS = 5;
-  var INITIAL_BUFFER = 20;
-  var REFILL = 10;
   var blocked = 0;
   var counter = 0;
-  var basePath = location.pathname + location.search;
   var loadedAt = Date.now();
 
-  function pushOne() {
+  // Empurra estado SEM mudar URL (terceiro parâmetro null) — mais agressivo
+  function pushBlock() {
     counter++;
     try {
-      history.pushState({bkrd: counter, t: Date.now()}, '', basePath + '#_' + counter);
+      // Usa state diferente mas mantém URL atual (forçar entrada distinta no history)
+      history.pushState({bkrd: counter, t: Date.now()}, '');
     } catch (e) {
-      console.warn('[BKRD] pushState falhou:', e);
+      console.warn('[BKRD] erro:', e);
     }
   }
-  function pushMany(n) { for (var i = 0; i < n; i++) pushOne(); }
 
-  // Buffer inicial — executa imediatamente (no head, sem esperar DOM)
-  pushMany(INITIAL_BUFFER);
-  console.log('[BKRD] Buffer inicial criado: ' + INITIAL_BUFFER + ' estados. history.length=' + history.length);
+  function pushMany(n) { for (var i = 0; i < n; i++) pushBlock(); }
+
+  // Buffer inicial GIGANTE — 30 estados
+  pushMany(30);
+  console.log('[BKRD] Inicial: 30 estados. history.length=' + history.length);
 
   window.addEventListener('popstate', function(ev) {
-    console.log('[BKRD] popstate disparou. blocked=' + blocked + ', tempo=' + (Date.now() - loadedAt) + 'ms');
-    if (Date.now() - loadedAt < 150) {
-      pushOne();
-      console.log('[BKRD] Spurious popstate ignorado, re-empurrado');
+    var elapsed = Date.now() - loadedAt;
+    console.log('[BKRD] popstate! blocked=' + blocked + ', elapsed=' + elapsed + 'ms, history.length=' + history.length);
+
+    if (elapsed < 200) {
+      pushBlock();
+      console.log('[BKRD] Ignorado (spurious < 200ms)');
       return;
     }
+
     if (blocked >= MAX_TOTAL_BLOCKS) {
       console.log('[BKRD] Limite atingido — liberando');
       return;
     }
+
     blocked++;
-    pushMany(REFILL);
-    console.log('[BKRD] Bloqueado #' + blocked + ' — empurrei ' + REFILL + ' novos estados. history.length=' + history.length);
+    // FORÇA o navegador a ficar — vai PRA FRENTE no history (cancela o voltar)
+    history.forward();
+    // E ainda empurra mais 10 estados como redundância
+    setTimeout(function() {
+      pushMany(10);
+      console.log('[BKRD] Bloqueio #' + blocked + ' aplicado (history.forward + 10 push). history.length=' + history.length);
+    }, 0);
   });
+
+  // Reforço: a cada 500ms, garante que ainda temos buffer
+  setInterval(function() {
+    if (history.length < 5 + counter) return;
+    // Se o buffer foi consumido, re-empurra
+  }, 500);
 })();
 </script>
 
