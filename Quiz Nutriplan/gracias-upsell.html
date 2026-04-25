@@ -96,6 +96,81 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
   .cta-btn{font-size:14px;padding:16px 20px}
 }
 </style>
+
+<!-- ═══ BACKREDIRECT PRO — captura intent de saída → ultima-oportunidad.html ═══ -->
+<script>
+(() => {
+  const TARGET = '/ultima-oportunidad.html';
+  const MIN_TIME_MS = 3000;
+
+  // Não dispara se já estiver na página de destino (evita loop)
+  if (location.pathname.indexOf('ultima-oportunidad') !== -1) return;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+
+  function init() {
+    var loadedAt = Date.now();
+    var basePath = location.pathname + location.search;
+    var counter = 0;
+
+    function pushTrap() {
+      counter++;
+      history.pushState({bkrd: counter}, '', basePath + '#_bkrd' + counter);
+    }
+
+    pushTrap(); pushTrap(); pushTrap();
+
+    addEv(window, 'popstate', function() {
+      if (Date.now() - loadedAt < MIN_TIME_MS) {
+        pushTrap();
+        return;
+      }
+      handleNav();
+    });
+
+    addEv(document, 'mouseout', function(e) {
+      if (e.clientY <= 0 && Date.now() - loadedAt > MIN_TIME_MS) handleNav();
+    });
+
+    var isMetaWV = /FBAN|FB_IAB|Instagram/.test(navigator.userAgent);
+    if (isMetaWV) addEv(document, 'visibilitychange', function() {
+      if (document.visibilityState === 'hidden' && Date.now() - loadedAt > MIN_TIME_MS) handleNav();
+    });
+  }
+
+  var fired = false;
+  function handleNav() {
+    if (fired) return;
+    fired = true;
+    removeAll();
+    var url = mergeQuery(TARGET, location.search);
+    raf(function() { raf(function() {
+      try { location.replace(url); } catch (e) { location.assign(url); }
+    }); });
+  }
+
+  function mergeQuery(base, q) {
+    try {
+      var u = new URL(base, location.origin);
+      var cur = new URLSearchParams(q);
+      cur.forEach(function(v, k) { u.searchParams.append(k, v); });
+      return u.toString();
+    } catch (e) {
+      return base + (q ? (base.indexOf('?') > -1 ? '&' : '?') + q.replace(/^\?/, '') : '');
+    }
+  }
+
+  var listeners = [];
+  function addEv(t, e, f, o) { t.addEventListener(e, f, o || false); listeners.push([t, e, f]); }
+  function removeAll() { listeners.forEach(function(x) { x[0].removeEventListener(x[1], x[2]); }); }
+  var raf = function(cb) { return requestAnimationFrame(function() { requestAnimationFrame(cb); }); };
+})();
+</script>
+
 </head>
 <body>
 
@@ -165,7 +240,7 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#0f1f15 
 
   <!-- No thanks link (will lead to downsell in Phase 2) -->
   <div class="no-thanks">
-    <a href="/gracias-final.html">No gracias, continuar solo con El Código</a>
+    <a href="/ultima-oportunidad.html">No gracias, continuar solo con El Código</a>
   </div>
 
   <div class="footer">
