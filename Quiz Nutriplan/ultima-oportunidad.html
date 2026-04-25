@@ -347,6 +347,126 @@ body::before{
   color:var(--ink-mute);
   letter-spacing:.02em;
 }
+
+/* ═══ Seta pulsante guiando para baixo ═══ */
+.phone-arrow{
+  position:absolute;
+  right:-30px;
+  top:50%;
+  transform:translateY(-30%);
+  z-index:2;
+  pointer-events:none;
+  filter:drop-shadow(0 4px 12px rgba(245,158,11,.4));
+  animation:arrowBob 1.6s ease-in-out infinite;
+}
+@keyframes arrowBob{
+  0%,100%{transform:translateY(-30%)}
+  50%{transform:translateY(-15%)}
+}
+@media(max-width:520px){
+  .phone-arrow{right:-12px;width:42px}
+  .phone-arrow svg{width:42px;height:84px}
+}
+
+/* ═══ ANTES E DEPOIS ═══ */
+.aed-section{
+  padding:32px 0 20px;
+  text-align:center;
+}
+.aed-headline{margin-bottom:28px}
+.aed-eyebrow{
+  display:inline-block;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--accent-sage);
+  background:rgba(74,107,78,.1);
+  padding:6px 16px;
+  border-radius:50px;
+  margin-bottom:18px;
+}
+.aed-headline h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  line-height:1.22;
+  font-weight:700;
+  color:var(--ink);
+  letter-spacing:-.015em;
+  max-width:520px;
+  margin:0 auto;
+}
+.aed-headline h2 em{
+  font-style:italic;
+  color:var(--gold);
+}
+@media(max-width:480px){
+  .aed-headline h2{font-size:24px}
+}
+
+.aed-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-bottom:22px;
+}
+@media(max-width:600px){
+  .aed-grid{grid-template-columns:1fr;gap:18px;max-width:340px;margin-left:auto;margin-right:auto}
+}
+
+.aed-card{
+  position:relative;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(43,24,16,.08);
+  transition:transform .3s,box-shadow .3s;
+}
+.aed-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 28px rgba(43,24,16,.14);
+}
+.aed-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1/1.2;
+  object-fit:cover;
+}
+.aed-tags{
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:6px;
+  pointer-events:none;
+}
+.aed-tag{
+  font-size:9.5px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  background:rgba(43,24,16,.85);
+  color:#FFFBF2;
+  padding:5px 11px;
+  border-radius:50px;
+  backdrop-filter:blur(4px);
+}
+.aed-tag-after{
+  background:linear-gradient(135deg,#16A34A,#15803D);
+}
+
+.aed-disclaimer{
+  font-size:11px;
+  font-style:italic;
+  color:var(--ink-mute);
+  max-width:520px;
+  margin:0 auto;
+  line-height:1.55;
+  letter-spacing:.01em;
+}
 .phone-stats{
   display:flex;
   justify-content:center;
@@ -1084,8 +1204,54 @@ body::before{
   <section class="phone-section">
     <div class="phone-wrap">
       <img src="ebooks/img/mockup-mi-codigo.png" alt="Mi Código en tu celular">
+      <!-- Seta pulsante guiando para baixo -->
+      <div class="phone-arrow" aria-hidden="true">
+        <svg viewBox="0 0 60 120" width="60" height="120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#D97706" stop-opacity="1"/>
+            </linearGradient>
+          </defs>
+          <path d="M30 5 Q45 30 30 60 Q15 80 30 110 L30 110 M22 100 L30 115 L38 100" stroke="url(#arrowGrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
     </div>
     <div class="phone-caption">Acceso inmediato · lee en tu celular o computadora</div>
+  </section>
+
+  <!-- ═══ ANTES E DEPOIS — Transformaciones reales ═══ -->
+  <section class="aed-section">
+    <div class="aed-headline">
+      <div class="aed-eyebrow">Resultados verificados</div>
+      <h2>El control personalizado de Mi Código genera <em>transformaciones reales</em></h2>
+    </div>
+
+    <div class="aed-grid">
+      <div class="aed-card">
+        <img src="ebooks/img/AeD1.png" alt="Transformación 1">
+        <div class="aed-tags">
+          <span class="aed-tag">Antes</span>
+          <span class="aed-tag aed-tag-after">Después</span>
+        </div>
+      </div>
+      <div class="aed-card">
+        <img src="ebooks/img/AeD2.png" alt="Transformación 2">
+        <div class="aed-tags">
+          <span class="aed-tag">Antes</span>
+          <span class="aed-tag aed-tag-after">Después</span>
+        </div>
+      </div>
+      <div class="aed-card">
+        <img src="ebooks/img/AeD3.png" alt="Transformación 3">
+        <div class="aed-tags">
+          <span class="aed-tag">Antes</span>
+          <span class="aed-tag aed-tag-after">Después</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="aed-disclaimer">*Los resultados son individuales y reflejan experiencias personales — pueden variar según constancia, alimentación y biología de cada mujer.</p>
   </section>
 
   <div class="sep"><div class="sep-dot"></div></div>
