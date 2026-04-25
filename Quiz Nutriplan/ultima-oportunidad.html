@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>¡Última oportunidad! Mi Código primer mes a US$9</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #F5EBD7;
+  --bg-soft: #FAF4E8;
+  --bg-card: #FFFBF2;
+  --ink: #2B1810;
+  --ink-soft: #5A4838;
+  --ink-mute: #8B7355;
+  --gold: #B8894A;
+  --gold-light: #D4A574;
+  --gold-dark: #8B6632;
+  --accent-red: #C7532B;
+  --accent-sage: #4A6B4E;
+  --line: rgba(43,24,16,.1);
+  --line-soft: rgba(43,24,16,.06);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  min-height:100vh;
+  padding:0;
+  padding-top:84px;
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 20% 0%,rgba(184,137,74,.08),transparent 60%),
+    radial-gradient(circle at 80% 40%,rgba(184,137,74,.05),transparent 50%);
+}
+
+/* Subtle noise texture for warmth */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.35;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/></svg>");
+}
+
+.wrap{
+  max-width:680px;
+  margin:0 auto;
+  padding:0 22px 60px;
+  position:relative;
+}
+
+/* ═══ STICKY HEADER — Amber high-impact ═══ */
+.sticky-head{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1000;
+  background:linear-gradient(180deg,#F59E0B 0%,#D97706 100%);
+  color:var(--ink);
+  padding:18px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  box-shadow:
+    0 4px 24px rgba(245,158,11,.4),
+    0 2px 8px rgba(0,0,0,.08);
+  border-bottom:2px solid #B45309;
+}
+.sticky-head::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);
+}
+.sticky-head::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/></svg>");
+}
+.sh-alert{
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.02em;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  position:relative;
+  z-index:1;
+}
+.sh-alert-star{
+  color:var(--ink);
+  font-size:13px;
+  animation:starPulse 1.8s ease-in-out infinite;
+}
+@keyframes starPulse{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.15);opacity:.7}
+}
+.sh-alert strong{
+  color:var(--ink);
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:11.5px;
+  background:var(--ink);
+  color:#FCD34D;
+  padding:4px 10px;
+  border-radius:4px;
+}
+.sh-divider{
+  width:1px;
+  height:32px;
+  background:rgba(43,24,16,.3);
+  position:relative;
+  z-index:1;
+}
+.sh-countdown{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  position:relative;
+  z-index:1;
+}
+.sh-countdown-label{
+  font-size:10.5px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ink);
+  font-weight:800;
+  line-height:1.2;
+  max-width:70px;
+  text-align:right;
+}
+.sh-countdown-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  font-weight:800;
+  color:var(--ink);
+  letter-spacing:.02em;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+  text-shadow:0 2px 0 rgba(255,255,255,.25);
+}
+
+@media(max-width:520px){
+  .sticky-head{padding:14px 14px;gap:14px}
+  .sh-alert{font-size:12px}
+  .sh-alert strong{display:none}
+  .sh-countdown-label{font-size:9.5px;max-width:56px}
+  .sh-countdown-num{font-size:28px}
+  body{padding-top:72px}
+}
+@media(max-width:380px){
+  .sh-divider{display:none}
+  .sticky-head{gap:10px}
+  .sh-alert{gap:6px}
+  .sh-alert-star{font-size:12px}
+}
+
+/* ═══ FADE-IN ANIMATION ON LOAD ═══ */
+.fade{opacity:0;transform:translateY(10px);animation:fadeUp .8s ease-out forwards}
+.fade.d1{animation-delay:.1s}
+.fade.d2{animation-delay:.25s}
+.fade.d3{animation-delay:.4s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* ═══ BLOCO 01: HEADLINE ═══ */
+.b01{
+  padding:48px 0 28px;
+  text-align:center;
+  position:relative;
+}
+.ornament{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:24px;
+}
+.ornament-line{
+  width:38px;
+  height:1px;
+  background:var(--gold);
+}
+.ornament-dot{
+  width:5px;
+  height:5px;
+  background:var(--gold);
+  transform:rotate(45deg);
+}
+
+.eyebrow{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  margin-bottom:24px;
+  padding:7px 20px;
+  border:1px solid var(--gold);
+  border-radius:50px;
+  background:rgba(184,137,74,.06);
+}
+
+.b01 h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:44px;
+  line-height:1.08;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:24px;
+  letter-spacing:-.02em;
+}
+.b01 h1 em{
+  font-style:italic;
+  color:var(--gold);
+  font-weight:600;
+}
+
+.b01 .sub{
+  font-size:16px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  max-width:540px;
+  margin:0 auto;
+  font-weight:400;
+}
+.b01 .sub strong{
+  color:var(--ink);
+  font-weight:600;
+}
+
+@media(max-width:480px){
+  .b01 h1{font-size:33px;letter-spacing:-.015em}
+  .b01{padding:32px 0 22px}
+  .b01 .sub{font-size:15px}
+}
+
+/* ═══ PHONE MOCKUP IMAGE ═══ */
+.phone-section{
+  padding:28px 0 50px;
+  text-align:center;
+  position:relative;
+}
+.phone-section::before{
+  content:'';
+  position:absolute;
+  top:38%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:380px;
+  height:380px;
+  background:radial-gradient(circle,rgba(184,137,74,.22),transparent 65%);
+  z-index:0;
+  filter:blur(30px);
+}
+.phone-wrap{
+  position:relative;
+  display:inline-block;
+  z-index:1;
+  max-width:100%;
+  animation:phoneFloat 6s ease-in-out infinite;
+}
+@keyframes phoneFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+.phone-wrap img{
+  display:block;
+  max-width:380px;
+  width:100%;
+  height:auto;
+  filter:drop-shadow(0 30px 40px rgba(43,24,16,.25)) drop-shadow(0 10px 20px rgba(43,24,16,.15));
+}
+.phone-caption{
+  margin-top:24px;
+  font-size:13.5px;
+  font-style:italic;
+  color:var(--ink-mute);
+  letter-spacing:.02em;
+}
+.phone-stats{
+  display:flex;
+  justify-content:center;
+  gap:42px;
+  margin-top:24px;
+}
+.phone-stat{text-align:center;position:relative}
+.phone-stat:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:-22px;
+  top:10%;
+  height:80%;
+  width:1px;
+  background:var(--line);
+}
+.phone-stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;
+  font-weight:700;
+  color:var(--gold);
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.phone-stat-lbl{
+  font-size:10px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ink-mute);
+  margin-top:7px;
+  font-weight:700;
+}
+
+@media(max-width:420px){
+  .phone-wrap img{max-width:300px}
+  .phone-stats{gap:32px}
+  .phone-stat:not(:last-child)::after{right:-17px}
+  .phone-stat-num{font-size:32px}
+}
+
+/* ═══ SECTION SEPARATOR ═══ */
+.sep{
+  margin:42px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+}
+.sep::before,.sep::after{
+  content:'';
+  width:70px;
+  height:1px;
+  background:var(--line);
+}
+.sep-dot{
+  width:5px;
+  height:5px;
+  background:var(--gold);
+  border-radius:50%;
+}
+
+/* ═══ BLOCO 02: IDENTIFICAÇÃO ═══ */
+.b02{padding:8px 0 20px}
+.mirror{
+  background:var(--bg-card);
+  border-left:3px solid var(--gold);
+  padding:30px 30px 30px 32px;
+  border-radius:0 10px 10px 0;
+  box-shadow:0 2px 16px rgba(43,24,16,.04);
+  position:relative;
+}
+.mirror::before{
+  content:'"';
+  position:absolute;
+  top:-6px;
+  right:22px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:96px;
+  line-height:1;
+  color:var(--gold);
+  opacity:.22;
+  font-style:italic;
+  font-weight:700;
+}
+.mirror p{
+  font-size:15.5px;
+  line-height:1.78;
+  color:var(--ink-soft);
+  margin-bottom:14px;
+  position:relative;
+}
+.mirror p:last-child{margin-bottom:0}
+.mirror em{
+  color:var(--gold-dark);
+  font-style:italic;
+  font-weight:500;
+}
+.mirror strong{color:var(--ink);font-weight:600}
+
+.contrast{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  line-height:1.22;
+  font-weight:600;
+  color:var(--ink);
+  text-align:center;
+  margin:40px auto 20px;
+  max-width:540px;
+  letter-spacing:-.018em;
+}
+.contrast em{
+  color:var(--accent-sage);
+  font-style:italic;
+}
+.transition{
+  font-size:15px;
+  line-height:1.72;
+  color:var(--ink-soft);
+  text-align:center;
+  max-width:520px;
+  margin:0 auto;
+}
+.transition strong{color:var(--ink);font-weight:600}
+
+@media(max-width:480px){
+  .contrast{font-size:26px}
+  .mirror{padding:24px 20px}
+}
+
+/* ═══ CTA BLOCK ═══ */
+.cta-block{
+  margin:48px 0;
+  text-align:center;
+  position:relative;
+}
+.cta-btn{
+  display:inline-block;
+  width:100%;
+  max-width:480px;
+  padding:22px 28px;
+  background:linear-gradient(135deg,#2B1810 0%,#3D2418 100%);
+  color:#F5EBD7;
+  border:none;
+  border-radius:6px;
+  font-size:14.5px;
+  font-weight:800;
+  cursor:pointer;
+  text-decoration:none;
+  box-shadow:
+    0 12px 30px rgba(43,24,16,.25),
+    0 4px 10px rgba(43,24,16,.15),
+    inset 0 1px 0 rgba(184,137,74,.3);
+  font-family:'DM Sans',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  transition:transform .2s,box-shadow .2s;
+  line-height:1.3;
+  position:relative;
+  overflow:hidden;
+}
+.cta-btn::before{
+  content:'';
+  position:absolute;
+  top:0;left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(212,165,116,.25),transparent);
+  transition:left .7s;
+}
+.cta-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 18px 40px rgba(43,24,16,.3),
+    0 6px 14px rgba(43,24,16,.18),
+    inset 0 1px 0 rgba(184,137,74,.35);
+}
+.cta-btn:hover::before{left:100%}
+.cta-btn-arrow{
+  color:var(--gold-light);
+  margin-left:8px;
+  display:inline-block;
+  transition:transform .2s;
+}
+.cta-btn:hover .cta-btn-arrow{transform:translateX(3px)}
+.cta-sub{
+  font-size:12px;
+  color:var(--ink-mute);
+  margin-top:14px;
+  letter-spacing:.04em;
+  font-style:italic;
+}
+.cta-sub-sep{color:var(--gold);font-style:normal}
+
+/* Gold CTA — emphasis */
+.cta-btn.gold{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
+  color:#FFFBF2;
+  box-shadow:
+    0 12px 30px rgba(184,137,74,.38),
+    0 4px 10px rgba(184,137,74,.22),
+    inset 0 1px 0 rgba(255,251,242,.25);
+  animation:pulseGold 2.4s ease-in-out infinite;
+}
+.cta-btn.gold:hover{
+  box-shadow:
+    0 18px 40px rgba(184,137,74,.48),
+    0 6px 14px rgba(184,137,74,.28),
+    inset 0 1px 0 rgba(255,251,242,.3);
+}
+@keyframes pulseGold{
+  0%,100%{box-shadow:0 12px 30px rgba(184,137,74,.38),0 4px 10px rgba(184,137,74,.22),inset 0 1px 0 rgba(255,251,242,.25)}
+  50%{box-shadow:0 16px 42px rgba(184,137,74,.52),0 6px 16px rgba(184,137,74,.3),inset 0 1px 0 rgba(255,251,242,.3)}
+}
+
+/* ═══ BLOCO 03: PROVAS ═══ */
+.b03{padding:20px 0}
+.sec-head{text-align:center;margin-bottom:32px}
+.sec-head h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  line-height:1.2;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+  letter-spacing:-.015em;
+}
+.sec-head h2 em{color:var(--gold);font-style:italic}
+.sec-head .intro{
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--ink-mute);
+  max-width:480px;
+  margin:0 auto;
+  font-style:italic;
+}
+
+.testis{display:flex;flex-direction:column;gap:18px}
+.testi{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:22px 22px 20px;
+  box-shadow:0 2px 10px rgba(43,24,16,.04);
+  position:relative;
+  transition:transform .3s cubic-bezier(.2,.9,.3,1.1),box-shadow .3s;
+}
+.testi:nth-child(odd){transform:rotate(-.4deg)}
+.testi:nth-child(even){transform:rotate(.5deg)}
+.testi:hover{transform:rotate(0);box-shadow:0 10px 28px rgba(43,24,16,.1)}
+.testi-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.testi-avatar{
+  width:52px;height:52px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--gold);
+  box-shadow:0 4px 10px rgba(43,24,16,.14);
+  flex-shrink:0;
+}
+.testi-meta{flex:1}
+.testi-name{font-size:14.5px;font-weight:700;color:var(--ink);letter-spacing:.01em}
+.testi-loc{font-size:12px;color:var(--ink-mute);font-style:italic}
+.testi-stars{font-size:13px;color:var(--gold);letter-spacing:.15em;margin-top:3px}
+.testi-text{
+  font-size:14.5px;
+  line-height:1.72;
+  color:var(--ink-soft);
+  font-style:italic;
+  padding-left:14px;
+  border-left:2px solid var(--gold-light);
+}
+
+/* ═══ BLOCO 04: BULLETS ═══ */
+.b04{padding:20px 0}
+.bullets{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.bullet{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  background:var(--bg-card);
+  border-radius:8px;
+  padding:16px 20px;
+  border-left:2px solid var(--gold);
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.bullet:hover{
+  transform:translateX(4px);
+  border-left-color:var(--gold-dark);
+  box-shadow:0 4px 12px rgba(43,24,16,.05);
+}
+.bullet-mark{
+  color:var(--gold);
+  font-size:16px;
+  font-weight:700;
+  flex-shrink:0;
+  line-height:1.55;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+}
+.bullet-text{
+  font-size:14.5px;
+  line-height:1.62;
+  color:var(--ink-soft);
+}
+.bullet-text strong{color:var(--ink);font-weight:600}
+
+/* ═══ BLOCO 05: EXCLUSIVIDAD ═══ */
+.b05{
+  text-align:center;
+  background:linear-gradient(135deg,rgba(184,137,74,.08),rgba(184,137,74,.14));
+  border:1px solid rgba(184,137,74,.2);
+  border-radius:16px;
+  margin:32px 0;
+  padding:40px 28px;
+  position:relative;
+  overflow:hidden;
+}
+.b05::before{
+  content:'';
+  position:absolute;
+  top:-40px;right:-40px;
+  width:160px;height:160px;
+  background:radial-gradient(circle,rgba(184,137,74,.22),transparent 65%);
+  pointer-events:none;
+}
+.b05 h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:14px;
+  letter-spacing:-.01em;
+  position:relative;
+}
+.b05 h2 em{color:var(--gold);font-style:italic}
+.b05 p{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  max-width:520px;
+  margin:0 auto 10px;
+  position:relative;
+}
+.b05 strong{color:var(--ink);font-weight:600}
+
+@media(max-width:480px){.b05 h2{font-size:25px}}
+
+/* ═══ BLOCO 06: ENTREGÁVEIS ═══ */
+.b06{padding:20px 0}
+.deliverables{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:26px 26px;
+  box-shadow:0 4px 20px rgba(43,24,16,.05);
+}
+.deliv-item{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:16px 0;
+  border-bottom:1px dashed var(--line);
+}
+.deliv-item:last-child{border-bottom:none}
+.deliv-check{
+  width:30px;height:30px;
+  border-radius:50%;
+  background:rgba(184,137,74,.14);
+  border:1px solid var(--gold);
+  color:var(--gold);
+  font-size:14px;
+  font-weight:900;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.deliv-item.bonus .deliv-check{
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  border-color:var(--gold-dark);
+  color:#FFFBF2;
+  box-shadow:0 4px 10px rgba(184,137,74,.3);
+}
+.deliv-text{flex:1}
+.deliv-title{
+  font-size:14.5px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:4px;
+  line-height:1.38;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.bonus-tag{
+  display:inline-block;
+  font-size:9.5px;
+  font-weight:800;
+  letter-spacing:.14em;
+  background:var(--gold);
+  color:#FFFBF2;
+  padding:3px 9px;
+  border-radius:4px;
+  vertical-align:middle;
+  text-transform:uppercase;
+  line-height:1;
+}
+.deliv-desc{
+  font-size:13px;
+  line-height:1.62;
+  color:var(--ink-mute);
+}
+.deliv-desc strong{color:var(--gold-dark);font-weight:700}
+
+/* ═══ BLOCO 07: ANCORAGEM / PREÇO ═══ */
+.b07{
+  padding:44px 0 30px;
+  text-align:center;
+  scroll-margin-top:80px;
+}
+.b07 h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:14px;
+  letter-spacing:-.018em;
+}
+.b07 h2 em{color:var(--gold);font-style:italic}
+.b07 .intro{
+  font-size:14.5px;
+  color:var(--ink-soft);
+  line-height:1.7;
+  margin-bottom:32px;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.price-card{
+  background:linear-gradient(135deg,#FFFBF2 0%,#F5EBD7 100%);
+  border:2px solid var(--gold);
+  border-radius:20px;
+  padding:36px 28px 32px;
+  max-width:480px;
+  margin:0 auto;
+  box-shadow:
+    0 20px 50px rgba(184,137,74,.22),
+    0 8px 20px rgba(184,137,74,.12);
+  position:relative;
+  overflow:hidden;
+}
+.price-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--gold-light),var(--gold),var(--gold-dark),var(--gold),var(--gold-light));
+}
+.price-card::after{
+  content:'';
+  position:absolute;
+  bottom:-50px;right:-50px;
+  width:140px;height:140px;
+  background:radial-gradient(circle,rgba(184,137,74,.2),transparent 60%);
+  pointer-events:none;
+}
+
+.price-oldbox{
+  font-size:14px;
+  color:var(--ink-mute);
+  margin-bottom:4px;
+  letter-spacing:.04em;
+}
+.price-old{
+  text-decoration:line-through;
+  text-decoration-thickness:1.5px;
+  text-decoration-color:var(--accent-red);
+  font-weight:600;
+  color:var(--ink-mute);
+}
+.price-newbox{margin:12px 0 18px}
+.price-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  margin-bottom:6px;
+}
+.price-big{
+  font-family:'Cormorant Garamond',serif;
+  font-size:84px;
+  font-weight:700;
+  color:var(--ink);
+  line-height:1;
+  letter-spacing:-.04em;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:4px;
+}
+.price-big .currency{
+  font-size:32px;
+  font-weight:600;
+  color:var(--gold);
+  margin-top:14px;
+}
+.price-big em{font-style:italic;color:var(--gold)}
+.price-cents{
+  font-size:13.5px;
+  color:var(--ink-mute);
+  margin-top:12px;
+  letter-spacing:.04em;
+  font-style:italic;
+}
+.price-save{
+  display:inline-block;
+  background:var(--ink);
+  color:var(--gold-light);
+  font-size:11.5px;
+  font-weight:800;
+  padding:9px 20px;
+  border-radius:50px;
+  margin-top:20px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+@media(max-width:480px){
+  .price-big{font-size:68px}
+  .price-big .currency{font-size:26px;margin-top:12px}
+  .b07 h2{font-size:28px}
+}
+
+/* ═══ BLOCO 08: GARANTIA ═══ */
+.b08{padding:32px 0}
+.guarantee{
+  display:flex;
+  align-items:center;
+  gap:26px;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:30px 28px;
+  max-width:620px;
+  margin:0 auto;
+  box-shadow:0 4px 16px rgba(43,24,16,.04);
+}
+.guarantee-seal{
+  flex-shrink:0;
+  width:116px;
+  height:116px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 30%,rgba(255,251,242,.45),transparent 55%),
+    linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#FFFBF2;
+  box-shadow:
+    0 10px 22px rgba(184,137,74,.32),
+    inset 0 0 0 4px rgba(255,251,242,.18);
+  position:relative;
+}
+.guarantee-seal::before{
+  content:'';
+  position:absolute;
+  inset:9px;
+  border-radius:50%;
+  border:1px dashed rgba(255,251,242,.45);
+}
+.guarantee-seal-days{
+  font-family:'Cormorant Garamond',serif;
+  font-size:46px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.guarantee-seal-label{
+  font-size:9px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  margin-top:3px;
+  font-weight:700;
+}
+.guarantee-content{flex:1}
+.guarantee-content h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+  letter-spacing:-.01em;
+}
+.guarantee-content h3 em{color:var(--gold);font-style:italic}
+.guarantee-content p{
+  font-size:14px;
+  line-height:1.68;
+  color:var(--ink-soft);
+  margin-bottom:10px;
+}
+.guarantee-content p:last-child{margin-bottom:0}
+.guarantee-content strong{color:var(--ink);font-weight:600}
+
+@media(max-width:560px){
+  .guarantee{flex-direction:column;text-align:center;align-items:center;gap:20px}
+}
+
+/* ═══ BLOCO 09: FAQ ═══ */
+.b09{padding:30px 0}
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.faq-item{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:20px 22px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.faq-item:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 14px rgba(184,137,74,.1);
+}
+.faq-q{
+  font-size:15px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+  line-height:1.4;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+.faq-q::before{
+  content:'—';
+  color:var(--gold);
+  font-weight:400;
+  flex-shrink:0;
+}
+.faq-a{
+  font-size:14px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  padding-left:22px;
+}
+.faq-a strong{color:var(--ink);font-weight:600}
+
+/* ═══ BLOCO 10: ÚLTIMO CHAMADO ═══ */
+.b10{
+  padding:48px 0 20px;
+  text-align:center;
+  margin-top:24px;
+}
+.b10 h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40px;
+  font-weight:700;
+  line-height:1.12;
+  color:var(--ink);
+  margin-bottom:18px;
+  letter-spacing:-.022em;
+}
+.b10 h2 em{font-style:italic;color:var(--accent-red)}
+.b10 .final-sub{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  max-width:520px;
+  margin:0 auto 32px;
+}
+
+@media(max-width:480px){.b10 h2{font-size:30px}}
+
+/* ═══ FOOTER ═══ */
+.foot{
+  text-align:center;
+  padding:40px 22px 28px;
+  border-top:1px solid var(--line);
+  margin-top:44px;
+  font-size:12px;
+  color:var(--ink-mute);
+  line-height:1.8;
+}
+.foot a{
+  color:var(--ink-soft);
+  text-decoration:underline;
+  text-decoration-color:var(--gold);
+  text-underline-offset:3px;
+  text-decoration-thickness:1px;
+}
+.foot-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:4px;
+  letter-spacing:.02em;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ STICKY HEADER ═══ -->
+<div class="sticky-head">
+  <div class="sh-alert">
+    <span class="sh-alert-star">✦</span>
+    <strong>Atención</strong>
+    <span>Desbloqueaste un descuento exclusivo</span>
+  </div>
+  <div class="sh-divider"></div>
+  <div class="sh-countdown">
+    <span class="sh-countdown-label">Expira en</span>
+    <span class="sh-countdown-num" id="countdown">15:00</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ═══ BLOCO 01: HEADLINE ═══ -->
+  <section class="b01">
+    <div class="ornament fade">
+      <div class="ornament-line"></div>
+      <div class="ornament-dot"></div>
+      <div class="ornament-line"></div>
+    </div>
+    <div class="eyebrow fade d1">Última oportunidad — solo para vos</div>
+    <h1 class="fade d2">¡Espera! Probá Mi Código por solo <em>US$9</em> el primer mes</h1>
+    <p class="sub fade d3">Antes de irte, te damos <strong>casi la mitad de descuento</strong> en tu primer mes de Mi Código. Probá la app completa por <strong>30 días</strong> — si no te enamora, cancelás con 1 clic. Sin letra chica.</p>
+  </section>
+
+  <!-- ═══ PHONE MOCKUP ═══ -->
+  <section class="phone-section">
+    <div class="phone-wrap">
+      <img src="ebooks/img/mockup-celular.png" alt="El Código Hormonal en tu celular">
+    </div>
+    <div class="phone-caption">Acceso inmediato · lee en tu celular o computadora</div>
+  </section>
+
+  <div class="sep"><div class="sep-dot"></div></div>
+
+  <!-- ═══ BLOCO 02: IDENTIFICAÇÃO + DESEJO ═══ -->
+  <section class="b02">
+    <div class="mirror">
+      <p>Ya tenés El Código Hormonal — el método. Y eso es enorme.</p>
+      <p>Pero seamos honestas: <em>el método solo funciona si lo aplicás todos los días</em>. Y la vida real no siempre coopera. El trabajo, la familia, el cansancio… empezás con todas las ganas y al tercer día ya estás improvisando.</p>
+      <p>Por eso creé <strong>Mi Código</strong>. Es el método aplicado por vos, sin que tengas que pensar. Cada mañana abrís la app y ya tenés tu menú del día, tu lista de compras lista, tus check-ins de 60 segundos, los insights que muestran qué está funcionando — y qué no.</p>
+    </div>
+
+    <div class="contrast">El método sin la app es un libro. <em>Con la app es una transformación.</em></div>
+
+    <p class="transition">Imagina abrir tu celular cada mañana y saber exactamente qué cocinar, qué tomar, cómo te sentís hoy y por qué. <strong>Sin pensar, sin perderte, sin soltar el método</strong>. Eso es Mi Código — todos los días, en tu bolsillo.</p>
+  </section>
+
+  <!-- ═══ CTA 1 ═══ -->
+  <div class="cta-block">
+    <a href="#precio" class="cta-btn" onclick="scrollToPrice(event)">
+      Sí, quiero Mi Código por US$9 <span class="cta-btn-arrow">→</span>
+    </a>
+    <p class="cta-sub">30 días para probar <span class="cta-sub-sep">·</span> Cancelás con 1 clic</p>
+  </div>
+
+  <div class="sep"><div class="sep-dot"></div></div>
+
+  <!-- ═══ BLOCO 03: PROVAS ═══ -->
+  <section class="b03">
+    <div class="sec-head">
+      <h2>Mujeres que <em>ya están usando</em> Mi Código</h2>
+      <p class="intro">Las que más resultados tienen no son las que más saben — son las que aplican el método todos los días.</p>
+    </div>
+
+    <div class="testis">
+      <div class="testi">
+        <div class="testi-head">
+          <img src="ebooks/img/avatars/T_Valentina.png" alt="Valentina" class="testi-avatar">
+          <div class="testi-meta">
+            <div class="testi-name">Valentina R.</div>
+            <div class="testi-loc">México</div>
+            <div class="testi-stars">★ ★ ★ ★ ★</div>
+          </div>
+        </div>
+        <p class="testi-text">El check-in diario de 60 segundos cambió todo para mí. Veo en el gráfico de Mi Código exactamente qué días tengo más energía y qué hábito está funcionando. Es como tener un nutricionista en el bolsillo.</p>
+      </div>
+
+      <div class="testi">
+        <div class="testi-head">
+          <img src="ebooks/img/avatars/T_Carolina.png" alt="Carolina" class="testi-avatar">
+          <div class="testi-meta">
+            <div class="testi-name">Carolina P.</div>
+            <div class="testi-loc">Colombia</div>
+            <div class="testi-stars">★ ★ ★ ★ ★</div>
+          </div>
+        </div>
+        <p class="testi-text">Lo que más me sorprendió fue la lista de compras automática. Selecciono las recetas de la semana y la lista se arma sola. Voy al mercado sin pensar y ya regreso con todo lo que necesito.</p>
+      </div>
+
+      <div class="testi">
+        <div class="testi-head">
+          <img src="ebooks/img/avatars/T_Beatriz.png" alt="Beatriz" class="testi-avatar">
+          <div class="testi-meta">
+            <div class="testi-name">Beatriz N.</div>
+            <div class="testi-loc">Argentina</div>
+            <div class="testi-stars">★ ★ ★ ★ ★</div>
+          </div>
+        </div>
+        <p class="testi-text">Tengo 61 años y pensé que no me iba a entender con una app. Mi hija me ayudó a instalarla y al tercer día ya la usaba sola. Es muy simple — y los insights me explican mi cuerpo como nadie.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"><div class="sep-dot"></div></div>
+
+  <!-- ═══ BLOCO 04: BULLETS ═══ -->
+  <section class="b04">
+    <div class="sec-head">
+      <h2>Lo que <em>Mi Código</em> hace por vos cada día</h2>
+    </div>
+    <div class="bullets">
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>Menú diario automático</strong> — abrís la app y ya sabés qué cocinar (5 comidas, sin pensar)</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>Lista de compras inteligente</strong> que se arma sola con las recetas de la semana — la compartís por WhatsApp</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>Check-in de 60 segundos</strong>: humor, energía, peso, sueño y síntomas — todo en una pantalla</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>8 insights automáticos</strong> que cruzan tus datos: por ejemplo, cuándo dormir mal te duplica los bochornos</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>+500 recetas con buscador</strong>, filtros por categoría y favoritos — siempre a un clic</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>Rastreo de tu ciclo hormonal</strong> con 8 síntomas y comparación entre períodos</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>Monitor de ayuno intermitente</strong> que te muestra si te está funcionando — con TUS datos</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>Mini-curso de 10 lecciones</strong> de salud hormonal explicadas para vos</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>Guía de 6 suplementos</strong> con dosis exactas respaldadas por ciencia</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>10 rutinas de ejercicio</strong> curadas para mujeres 40+ (sin impacto, sin destruir rodillas)</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>Reporte médico exportable</strong> en PDF — llegás a la consulta con datos reales, no con suposiciones</span></div>
+      <div class="bullet"><span class="bullet-mark">→</span><span class="bullet-text"><strong>Gamificación con rachas</strong> que te motivan a no faltar ni un día (3, 7, 21, 90, 365 días)</span></div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA 2 ═══ -->
+  <div class="cta-block">
+    <a href="#precio" class="cta-btn" onclick="scrollToPrice(event)">
+      Quiero Mi Código por solo US$9 <span class="cta-btn-arrow">→</span>
+    </a>
+    <p class="cta-sub">Garantía de 60 días <span class="cta-sub-sep">·</span> Devolución del 100%</p>
+  </div>
+
+  <!-- ═══ BLOCO 05: EXCLUSIVIDAD ═══ -->
+  <section class="b05">
+    <h2>Esta condición <em>no aparece</em> en otro lugar</h2>
+    <p>Acabás de comprar El Código Hormonal — eso ya muestra que estás comprometida con tu salud. Por eso te damos esta oportunidad única.</p>
+    <p>Probá Mi Código por <strong>casi la mitad del precio</strong> el primer mes. Si después de 30 días no sentís que la app cambió tu rutina, cancelás con 1 clic. Sin preguntas, sin compromiso.</p>
+  </section>
+
+  <!-- ═══ BLOCO 06: ENTREGÁVEIS ═══ -->
+  <section class="b06">
+    <div class="sec-head">
+      <h2>Todo lo que <em>tenés en Mi Código</em></h2>
+    </div>
+    <div class="deliverables">
+      <div class="deliv-item">
+        <span class="deliv-check">✓</span>
+        <div class="deliv-text">
+          <div class="deliv-title">App Mi Código completa (web + móvil)</div>
+          <div class="deliv-desc">Funciona en tu celular o computadora — sin instalación, accedés desde cualquier lugar</div>
+        </div>
+      </div>
+      <div class="deliv-item">
+        <span class="deliv-check">✓</span>
+        <div class="deliv-text">
+          <div class="deliv-title">+500 Recetas con buscador inteligente</div>
+          <div class="deliv-desc">Filtros por comida, categoría y favoritos — siempre encontrás lo que buscás</div>
+        </div>
+      </div>
+      <div class="deliv-item">
+        <span class="deliv-check">✓</span>
+        <div class="deliv-text">
+          <div class="deliv-title">Menú diario automático + Lista de compras</div>
+          <div class="deliv-desc">5 comidas pensadas para vos cada día. Lista de compras se arma sola</div>
+        </div>
+      </div>
+      <div class="deliv-item">
+        <span class="deliv-check">✓</span>
+        <div class="deliv-text">
+          <div class="deliv-title">Check-in diario + 8 insights personalizados</div>
+          <div class="deliv-desc">La app cruza tus datos y te muestra qué funciona — algo que ni tu médico ve</div>
+        </div>
+      </div>
+      <div class="deliv-item">
+        <span class="deliv-check">✓</span>
+        <div class="deliv-text">
+          <div class="deliv-title">Mini-curso, suplementos, ejercicios y reporte médico</div>
+          <div class="deliv-desc">10 lecciones, 6 suplementos con dosis, 10 rutinas para 40+, PDF exportable</div>
+        </div>
+      </div>
+      <div class="deliv-item bonus">
+        <span class="deliv-check">★</span>
+        <div class="deliv-text">
+          <div class="deliv-title"><span class="bonus-tag">Bono BKRD</span>30 días para probar sin riesgo</div>
+          <div class="deliv-desc">Si no sentís que la app cambió tu rutina, cancelás con 1 clic — <strong>solo en esta oferta</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BLOCO 07: ANCORAGEM / PREÇO ═══ -->
+  <section class="b07" id="precio">
+    <h2>Tu precio <em>de prueba</em> de Mi Código</h2>
+    <p class="intro">El primer mes regular son US$17 y después US$37/mes. En esta condición especial, probás el primer mes por casi la mitad — y cancelás cuando quieras.</p>
+
+    <div class="price-card">
+      <div class="price-oldbox">Primer mes regular: <span class="price-old">US$17</span></div>
+      <div class="price-newbox">
+        <div class="price-label">Tu primer mes hoy</div>
+        <div class="price-big"><span class="currency">US$</span><em>9</em></div>
+        <div class="price-cents">Después US$37/mes · Cancelás cuando quieras</div>
+      </div>
+      <div class="price-save">Ahorrás US$8 en tu primer mes</div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA 3 (gold emphasis) ═══ -->
+  <div class="cta-block">
+    <a href="https://pay.hotmart.com/K105364940W?checkoutMode=6&off=fx2q5siw&offDiscount=PRIMER-MES-9" class="cta-btn gold" id="ctaMain">
+      Sí, quiero Mi Código por US$9 <span class="cta-btn-arrow">→</span>
+    </a>
+    <p class="cta-sub">Pago 100% seguro <span class="cta-sub-sep">·</span> Activación inmediata <span class="cta-sub-sep">·</span> Cancelás cuando quieras</p>
+  </div>
+
+  <!-- ═══ BLOCO 08: GARANTIA ═══ -->
+  <section class="b08">
+    <div class="guarantee">
+      <div class="guarantee-seal">
+        <div class="guarantee-seal-days">30</div>
+        <div class="guarantee-seal-label">Días</div>
+      </div>
+      <div class="guarantee-content">
+        <h3>Cancelás <em>cuando quieras</em></h3>
+        <p>Sé que probar una app nueva genera dudas. Por eso te doy 30 días completos para usarla todos los días, ver tus insights, cocinar las recetas y sentir si Mi Código realmente cambia tu rutina.</p>
+        <p>Si no te enamora — <strong>cancelás con 1 clic dentro de la app</strong>. Sin formularios, sin preguntas, sin compromiso. Y si pediste reembolso del primer mes, te devuelvo el 100%.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA 4 ═══ -->
+  <div class="cta-block">
+    <a href="https://pay.hotmart.com/K105364940W?checkoutMode=6&off=fx2q5siw&offDiscount=PRIMER-MES-9" class="cta-btn">
+      Activar Mi Código por US$9 <span class="cta-btn-arrow">→</span>
+    </a>
+  </div>
+
+  <!-- ═══ BLOCO 09: FAQ ═══ -->
+  <section class="b09">
+    <div class="sec-head">
+      <h2>Preguntas <em>frecuentes</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">¿Cuándo accedo a Mi Código?</div>
+        <div class="faq-a">Inmediatamente después del pago. Recibís un email con tu acceso y la app abre en tu celular o computadora — no necesitás instalar nada.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo funciona el primer mes con descuento?</div>
+        <div class="faq-a">Pagás <strong>US$9 ahora</strong> por tu primer mes. Después de 30 días, la suscripción continúa a US$37/mes — pero podés cancelar antes con 1 clic.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo cancelo si no me funciona?</div>
+        <div class="faq-a">Dentro de la app, hay un botón "Cancelar suscripción". Tocás, confirmás y listo. Sin formularios, sin preguntas. Y si pediste reembolso del primer mes, te devuelvo el 100%.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Necesito instalar algo en mi celular?</div>
+        <div class="faq-a">No. Mi Código funciona en cualquier navegador (Chrome, Safari). Si querés, podés guardar el acceso directo en tu pantalla de inicio para que parezca una app — pero no es obligatorio.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Funciona si soy poco amigable con la tecnología?</div>
+        <div class="faq-a">Sí — la app fue pensada para mujeres 40+ que no usan tecnología compleja. El check-in es de 60 segundos, todo es a un toque. Tu hija o nieta puede ayudarte a configurar el primer día.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Mi Código reemplaza El Código Hormonal?</div>
+        <div class="faq-a">No — los dos se complementan. El Código Hormonal es el método (los ebooks). Mi Código es la app que aplica ese método todos los días por vos.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BLOCO 10: ÚLTIMO CHAMADO ═══ -->
+  <section class="b10">
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-dot"></div>
+      <div class="ornament-line"></div>
+    </div>
+    <h2>Esta condición <em>no vuelve</em> si salís ahora</h2>
+    <p class="final-sub">Cuando cierres esta página, el primer mes vuelve a US$17 — y la oportunidad de probar Mi Código a casi la mitad del precio se cierra para siempre.</p>
+
+    <div class="cta-block" style="margin:0">
+      <a href="https://pay.hotmart.com/K105364940W?checkoutMode=6&off=fx2q5siw&offDiscount=PRIMER-MES-9" class="cta-btn gold">
+        Quiero Mi Código por US$9 <span class="cta-btn-arrow">→</span>
+      </a>
+      <p class="cta-sub">30 días para probar <span class="cta-sub-sep">·</span> Cancelás cuando quieras</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="foot">
+  <div class="foot-brand">El Código Hormonal</div>
+  <a href="https://www.elcodigohormonal.com">www.elcodigohormonal.com</a> ·
+  ¿Dudas? <a href="mailto:soporte@elcodigohormonal.com">soporte@elcodigohormonal.com</a>
+</div>
+
+<script>
+// ═══ BKRD EM CAMADAS — máximo 5 tentativas de Voltar ═══
+// Usa URLs únicas (via hash invisível) + buffer agressivo para prevenir saltos do browser.
+(function() {
+  var MAX_TOTAL_BLOCKS = 5;
+  var INITIAL_BUFFER = 15;   // buffer profundo inicial
+  var REFILL = 8;             // cada popstate empurra 8 estados
+  var blocked = 0;
+  var counter = 0;
+  var basePath = location.pathname + location.search;
+  var loadedAt = Date.now();
+
+  function pushOne() {
+    counter++;
+    history.pushState({bkrd: counter}, '', basePath + '#_' + counter);
+  }
+
+  function pushMany(n) {
+    for (var i = 0; i < n; i++) pushOne();
+  }
+
+  // Buffer inicial agressivo
+  pushMany(INITIAL_BUFFER);
+
+  window.addEventListener('popstate', function() {
+    // Ignora popstate spurious nos primeiros 150ms do load
+    if (Date.now() - loadedAt < 150) {
+      pushOne();
+      return;
+    }
+    if (blocked >= MAX_TOTAL_BLOCKS) {
+      // Libera após limite
+      return;
+    }
+    blocked++;
+    // Push IMEDIATO, sem rAF — mais agressivo
+    pushMany(REFILL);
+  });
+})();
+
+// ═══ COUNTDOWN (15 min, reset ao expirar) ═══
+(function() {
+  var initial = 15 * 60;
+  var stored = localStorage.getItem('bkrd_countdown_start');
+  var now = Math.floor(Date.now() / 1000);
+  var start = stored ? parseInt(stored, 10) : now;
+
+  if (!stored) {
+    localStorage.setItem('bkrd_countdown_start', start);
+  }
+
+  function updateCountdown() {
+    var elapsed = Math.floor(Date.now() / 1000) - start;
+    var remaining = initial - elapsed;
+
+    if (remaining <= 0) {
+      localStorage.removeItem('bkrd_countdown_start');
+      location.reload();
+      return;
+    }
+
+    var mm = Math.floor(remaining / 60);
+    var ss = remaining % 60;
+    var el = document.getElementById('countdown');
+    if (el) el.textContent =
+      (mm < 10 ? '0' + mm : mm) + ':' +
+      (ss < 10 ? '0' + ss : ss);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
+
+// ═══ Smooth scroll para o preço ═══
+function scrollToPrice(e) {
+  e.preventDefault();
+  var el = document.getElementById('precio');
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ═══ Forward URL params ═══
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var forwardKeys = ['bid','hottok','transaction','xcod','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var extras = [];
+  forwardKeys.forEach(function(k) {
+    var v = params.get(k);
+    if (v) extras.push(k + '=' + encodeURIComponent(v));
+  });
+
+  if (extras.length > 0) {
+    var btns = document.querySelectorAll('.cta-btn[href^="https://pay.hotmart.com"]');
+    btns.forEach(function(b) {
+      var url = b.href;
+      var sep = url.indexOf('?') > -1 ? '&' : '?';
+      b.href = url + sep + extras.join('&');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
