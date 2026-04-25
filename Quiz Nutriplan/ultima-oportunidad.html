@@ -1170,6 +1170,50 @@ body::before{
   letter-spacing:.02em;
 }
 </style>
+
+<!-- ═══ BKRD EM CAMADAS — executado no head para máxima prioridade ═══ -->
+<script>
+(function() {
+  var MAX_TOTAL_BLOCKS = 5;
+  var INITIAL_BUFFER = 20;
+  var REFILL = 10;
+  var blocked = 0;
+  var counter = 0;
+  var basePath = location.pathname + location.search;
+  var loadedAt = Date.now();
+
+  function pushOne() {
+    counter++;
+    try {
+      history.pushState({bkrd: counter, t: Date.now()}, '', basePath + '#_' + counter);
+    } catch (e) {
+      console.warn('[BKRD] pushState falhou:', e);
+    }
+  }
+  function pushMany(n) { for (var i = 0; i < n; i++) pushOne(); }
+
+  // Buffer inicial — executa imediatamente (no head, sem esperar DOM)
+  pushMany(INITIAL_BUFFER);
+  console.log('[BKRD] Buffer inicial criado: ' + INITIAL_BUFFER + ' estados. history.length=' + history.length);
+
+  window.addEventListener('popstate', function(ev) {
+    console.log('[BKRD] popstate disparou. blocked=' + blocked + ', tempo=' + (Date.now() - loadedAt) + 'ms');
+    if (Date.now() - loadedAt < 150) {
+      pushOne();
+      console.log('[BKRD] Spurious popstate ignorado, re-empurrado');
+      return;
+    }
+    if (blocked >= MAX_TOTAL_BLOCKS) {
+      console.log('[BKRD] Limite atingido — liberando');
+      return;
+    }
+    blocked++;
+    pushMany(REFILL);
+    console.log('[BKRD] Bloqueado #' + blocked + ' — empurrei ' + REFILL + ' novos estados. history.length=' + history.length);
+  });
+})();
+</script>
+
 </head>
 <body>
 
@@ -1527,45 +1571,6 @@ body::before{
 </div>
 
 <script>
-// ═══ BKRD EM CAMADAS — máximo 5 tentativas de Voltar ═══
-// Usa URLs únicas (via hash invisível) + buffer agressivo para prevenir saltos do browser.
-(function() {
-  var MAX_TOTAL_BLOCKS = 5;
-  var INITIAL_BUFFER = 15;   // buffer profundo inicial
-  var REFILL = 8;             // cada popstate empurra 8 estados
-  var blocked = 0;
-  var counter = 0;
-  var basePath = location.pathname + location.search;
-  var loadedAt = Date.now();
-
-  function pushOne() {
-    counter++;
-    history.pushState({bkrd: counter}, '', basePath + '#_' + counter);
-  }
-
-  function pushMany(n) {
-    for (var i = 0; i < n; i++) pushOne();
-  }
-
-  // Buffer inicial agressivo
-  pushMany(INITIAL_BUFFER);
-
-  window.addEventListener('popstate', function() {
-    // Ignora popstate spurious nos primeiros 150ms do load
-    if (Date.now() - loadedAt < 150) {
-      pushOne();
-      return;
-    }
-    if (blocked >= MAX_TOTAL_BLOCKS) {
-      // Libera após limite
-      return;
-    }
-    blocked++;
-    // Push IMEDIATO, sem rAF — mais agressivo
-    pushMany(REFILL);
-  });
-})();
-
 // ═══ COUNTDOWN (15 min, reset ao expirar) ═══
 (function() {
   var initial = 15 * 60;
