@@ -348,24 +348,25 @@ body::before{
   letter-spacing:.02em;
 }
 
-/* ═══ Seta pulsante guiando para baixo ═══ */
-.phone-arrow{
-  position:absolute;
-  right:-30px;
-  top:50%;
-  transform:translateY(-30%);
-  z-index:2;
+/* ═══ Seta verde em arco — bridge do celular até as fotos ═══ */
+.arrow-bridge{
+  margin:14px auto 0;
+  display:block;
+  text-align:center;
   pointer-events:none;
-  filter:drop-shadow(0 4px 12px rgba(245,158,11,.4));
-  animation:arrowBob 1.6s ease-in-out infinite;
+  filter:drop-shadow(0 8px 18px rgba(22,163,74,.32));
+  animation:arrowBob 2s ease-in-out infinite;
 }
+.arrow-bridge svg{display:block;margin:0 auto;max-width:100%;height:auto}
 @keyframes arrowBob{
-  0%,100%{transform:translateY(-30%)}
-  50%{transform:translateY(-15%)}
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(6px) scale(1.02)}
 }
 @media(max-width:520px){
-  .phone-arrow{right:-12px;width:42px}
-  .phone-arrow svg{width:42px;height:84px}
+  .arrow-bridge svg{width:220px;height:auto}
+}
+@media(max-width:380px){
+  .arrow-bridge svg{width:180px;height:auto}
 }
 
 /* ═══ ANTES E DEPOIS ═══ */
@@ -1204,20 +1205,25 @@ body::before{
   <section class="phone-section">
     <div class="phone-wrap">
       <img src="ebooks/img/mockup-mi-codigo.png" alt="Mi Código en tu celular">
-      <!-- Seta pulsante guiando para baixo -->
-      <div class="phone-arrow" aria-hidden="true">
-        <svg viewBox="0 0 60 120" width="60" height="120" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#D97706" stop-opacity="1"/>
-            </linearGradient>
-          </defs>
-          <path d="M30 5 Q45 30 30 60 Q15 80 30 110 L30 110 M22 100 L30 115 L38 100" stroke="url(#arrowGrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
     </div>
     <div class="phone-caption">Acceso inmediato · lee en tu celular o computadora</div>
+
+    <!-- Seta verde em arco — guia do celular até as fotos -->
+    <div class="arrow-bridge" aria-hidden="true">
+      <svg viewBox="0 0 280 180" width="280" height="180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#16A34A" stop-opacity="0.4"/>
+            <stop offset="50%" stop-color="#16A34A" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#15803D" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+        <!-- Arco que sai do topo-esquerda e curva até embaixo no centro -->
+        <path d="M30 20 Q 240 30 140 150" stroke="url(#arrowGrad)" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- Ponta da seta apontando para baixo -->
+        <path d="M122 138 L140 158 L158 138" stroke="#15803D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
   </section>
 
   <!-- ═══ ANTES E DEPOIS — Transformaciones reales ═══ -->
