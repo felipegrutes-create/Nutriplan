@@ -229,21 +229,25 @@ body::before{
 }
 .b01 h1 em{
   font-style:italic;
-  color:var(--gold-dark);
+  color:#1A0F08;
   font-weight:700;
-  background:linear-gradient(180deg,transparent 55%,rgba(245,158,11,.45) 55%,rgba(245,158,11,.45) 92%,transparent 92%);
-  padding:0 6px;
+  background:rgba(245,158,11,.85);
+  padding:4px 10px;
+  border-radius:4px;
   display:inline;
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
+  box-shadow:0 4px 14px rgba(245,158,11,.35);
   animation:headlineGlow 2.4s ease-in-out infinite;
 }
 @keyframes headlineGlow{
   0%,100%{
-    background:linear-gradient(180deg,transparent 55%,rgba(245,158,11,.45) 55%,rgba(245,158,11,.45) 92%,transparent 92%);
+    background:rgba(245,158,11,.85);
+    box-shadow:0 4px 14px rgba(245,158,11,.35);
   }
   50%{
-    background:linear-gradient(180deg,transparent 50%,rgba(245,158,11,.7) 50%,rgba(245,158,11,.7) 95%,transparent 95%);
+    background:rgba(245,158,11,1);
+    box-shadow:0 6px 20px rgba(245,158,11,.55);
   }
 }
 
