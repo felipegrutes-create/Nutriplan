@@ -220,7 +220,7 @@ body::before{
 
 .b01 h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:44px;
+  font-size:46px;
   line-height:1.08;
   font-weight:700;
   color:var(--ink);
@@ -229,8 +229,26 @@ body::before{
 }
 .b01 h1 em{
   font-style:italic;
-  color:var(--gold);
-  font-weight:600;
+  color:#1A0F08;
+  font-weight:700;
+  background:rgba(245,158,11,.85);
+  padding:4px 10px;
+  border-radius:4px;
+  display:inline;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+  box-shadow:0 4px 14px rgba(245,158,11,.35);
+  animation:headlineGlow 2.4s ease-in-out infinite;
+}
+@keyframes headlineGlow{
+  0%,100%{
+    background:rgba(245,158,11,.85);
+    box-shadow:0 4px 14px rgba(245,158,11,.35);
+  }
+  50%{
+    background:rgba(245,158,11,1);
+    box-shadow:0 6px 20px rgba(245,158,11,.55);
+  }
 }
 
 .b01 .sub{
@@ -244,6 +262,32 @@ body::before{
 .b01 .sub strong{
   color:var(--ink);
   font-weight:600;
+}
+.b01 .sub .highlight-green{
+  display:inline-block;
+  font-weight:900;
+  color:#FFFBF2;
+  background:linear-gradient(135deg,#16A34A,#15803D);
+  padding:4px 11px;
+  border-radius:6px;
+  letter-spacing:.02em;
+  font-size:17px;
+  box-shadow:
+    0 6px 16px rgba(22,163,74,.4),
+    0 2px 6px rgba(22,163,74,.25),
+    inset 0 1px 0 rgba(255,255,255,.2);
+  animation:pricePulse 1.6s ease-in-out infinite;
+  vertical-align:baseline;
+}
+@keyframes pricePulse{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 6px 16px rgba(22,163,74,.4),0 2px 6px rgba(22,163,74,.25),inset 0 1px 0 rgba(255,255,255,.2);
+  }
+  50%{
+    transform:scale(1.04);
+    box-shadow:0 10px 24px rgba(22,163,74,.55),0 4px 10px rgba(22,163,74,.35),inset 0 1px 0 rgba(255,255,255,.25);
+  }
 }
 
 @media(max-width:480px){
@@ -564,6 +608,27 @@ body::before{
   font-style:italic;
   padding-left:14px;
   border-left:2px solid var(--gold-light);
+}
+
+/* ═══ Seta verde em arco — bridge do celular até as fotos ═══ */
+.arrow-bridge{
+  margin:14px auto 0;
+  display:block;
+  text-align:center;
+  pointer-events:none;
+  filter:drop-shadow(0 8px 18px rgba(22,163,74,.32));
+  animation:arrowBob 2s ease-in-out infinite;
+}
+.arrow-bridge svg{display:block;margin:0 auto;max-width:100%;height:auto}
+@keyframes arrowBob{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(6px) scale(1.02)}
+}
+@media(max-width:520px){
+  .arrow-bridge svg{width:220px;height:auto}
+}
+@media(max-width:380px){
+  .arrow-bridge svg{width:180px;height:auto}
 }
 
 /* ═══ ANTES E DEPOIS ═══ */
@@ -1148,7 +1213,7 @@ body::before{
     </div>
     <div class="eyebrow fade d1">Solo para quien llegó hasta acá</div>
     <h1 class="fade d2">¡Espera! Acabás de desbloquear una <em>oferta única</em> que no vas a ver en ningún otro lugar</h1>
-    <p class="sub fade d3">Por haber llegado hasta este punto, liberamos el acceso completo a <strong>El Código Hormonal</strong> con <strong>casi la mitad de descuento</strong> — y además sumamos <strong>2 bonos especiales</strong> que no están disponibles en la oferta regular.</p>
+    <p class="sub fade d3">Por haber llegado hasta este punto, liberamos el acceso completo a <strong>El Código Hormonal</strong> por <span class="highlight-green">solo US$9</span>. Además sumamos <strong>2 bonos especiales</strong> que no están disponibles en la oferta regular.</p>
   </section>
 
   <!-- ═══ PHONE MOCKUP ═══ -->
@@ -1157,6 +1222,21 @@ body::before{
       <img src="ebooks/img/mockup-celular.png" alt="El Código Hormonal en tu celular">
     </div>
     <div class="phone-caption">Acceso inmediato · lee en tu celular o computadora</div>
+
+    <!-- Seta verde em arco — guia do celular até as fotos -->
+    <div class="arrow-bridge" aria-hidden="true">
+      <svg viewBox="0 0 280 180" width="280" height="180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="arrowGradOferta" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#16A34A" stop-opacity="0.4"/>
+            <stop offset="50%" stop-color="#16A34A" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#15803D" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+        <path d="M30 20 Q 240 30 140 150" stroke="url(#arrowGradOferta)" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M122 138 L140 158 L158 138" stroke="#15803D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
   </section>
 
   <!-- ═══ ANTES E DEPOIS — Resultados verificados ═══ -->
