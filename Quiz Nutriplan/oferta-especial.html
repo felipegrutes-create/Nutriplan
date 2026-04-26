@@ -788,6 +788,120 @@ body::before{
 }
 .bullet-text strong{color:var(--ink);font-weight:600}
 
+/* ═══ COMUNIDAD — pertenencia ═══ */
+.community-section{
+  padding:42px 0 30px;
+  text-align:center;
+  position:relative;
+}
+.community-eyebrow{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:800;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  background:rgba(184,137,74,.1);
+  padding:6px 18px;
+  border-radius:50px;
+  margin-bottom:18px;
+}
+.community-section h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  line-height:1.18;
+  font-weight:700;
+  color:var(--ink);
+  letter-spacing:-.018em;
+  max-width:540px;
+  margin:0 auto 18px;
+}
+.community-section h2 em{
+  font-style:italic;
+  color:var(--gold);
+}
+.community-intro{
+  font-size:15.5px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  max-width:520px;
+  margin:0 auto 32px;
+}
+.community-intro strong{color:var(--ink);font-weight:700}
+
+.community-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-bottom:30px;
+  text-align:left;
+}
+@media(max-width:520px){
+  .community-grid{grid-template-columns:1fr;gap:12px}
+}
+
+.community-card{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px 22px 20px;
+  box-shadow:0 4px 14px rgba(43,24,16,.05);
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  position:relative;
+  overflow:hidden;
+}
+.community-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:3px;
+  height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+}
+.community-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px rgba(43,24,16,.1);
+  border-color:var(--gold);
+}
+.community-icon{
+  font-size:28px;
+  margin-bottom:10px;
+  line-height:1;
+}
+.community-title{
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  font-weight:800;
+  color:var(--ink);
+  margin-bottom:6px;
+  letter-spacing:.01em;
+}
+.community-desc{
+  font-size:13.5px;
+  line-height:1.65;
+  color:var(--ink-soft);
+}
+
+.community-final{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:600;
+  color:var(--ink);
+  letter-spacing:-.01em;
+  max-width:520px;
+  margin:0 auto;
+  line-height:1.4;
+}
+.community-final em{
+  font-style:italic;
+  color:var(--accent-sage);
+}
+@media(max-width:480px){
+  .community-section h2{font-size:27px}
+  .community-final{font-size:20px}
+  .community-intro{font-size:14.5px}
+}
+
 /* ═══ BLOCO 05: EXCLUSIVIDAD ═══ */
 .b05{
   text-align:center;
@@ -1379,6 +1493,45 @@ body::before{
     </a>
     <p class="cta-sub">Garantía de 60 días <span class="cta-sub-sep">·</span> Devolución del 100%</p>
   </div>
+
+  <!-- ═══ COMUNIDAD — espacio privado de pertenencia ═══ -->
+  <section class="community-section">
+    <div class="community-eyebrow">Tu espacio privado</div>
+    <h2>La comunidad que <em>no sabías que necesitabas</em></h2>
+    <p class="community-intro">
+      Más allá del método, entrás a un espacio privado donde mujeres como vos comparten — <strong>sin filtros, sin juzgar, sin gurúes</strong>.
+    </p>
+
+    <div class="community-grid">
+      <div class="community-card">
+        <div class="community-icon">🤝</div>
+        <div class="community-title">No estás sola</div>
+        <div class="community-desc">Mujeres en tu misma fase hormonal — premenopausia, perimenopausia, menopausia.</div>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">💬</div>
+        <div class="community-title">Dudas respondidas</div>
+        <div class="community-desc">Preguntás algo a la mañana y a la tarde tenés respuestas reales de quien ya pasó por eso.</div>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">🍳</div>
+        <div class="community-title">Recetas probadas</div>
+        <div class="community-desc">Las que TUS pares ya hicieron y aprobaron — con tips, ajustes y fotos reales del plato.</div>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">🌸</div>
+        <div class="community-title">Logros celebrados</div>
+        <div class="community-desc">Cada conquista — los kilos, la energía, el sueño que volvió — se celebra como propia.</div>
+      </div>
+    </div>
+
+    <p class="community-final">
+      Porque cambiar tu salud hormonal <em>es más fácil cuando no lo hacés sola</em>.
+    </p>
+  </section>
 
   <!-- ═══ BLOCO 05: EXCLUSIVIDAD ═══ -->
   <section class="b05">
