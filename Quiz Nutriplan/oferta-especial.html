@@ -566,6 +566,129 @@ body::before{
   border-left:2px solid var(--gold-light);
 }
 
+/* ═══ ANTES E DEPOIS ═══ */
+.aed-section{
+  padding:42px 0 28px;
+  text-align:center;
+}
+.aed-headline{margin-bottom:30px}
+.aed-eyebrow{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:800;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent-sage);
+  background:rgba(74,107,78,.1);
+  padding:6px 18px;
+  border-radius:50px;
+  margin-bottom:18px;
+}
+.aed-headline h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  line-height:1.18;
+  font-weight:700;
+  color:var(--ink);
+  letter-spacing:-.018em;
+  max-width:540px;
+  margin:0 auto 18px;
+}
+.aed-headline h2 em{
+  font-style:italic;
+  color:var(--gold);
+}
+.aed-intro{
+  font-size:15.5px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  max-width:520px;
+  margin:0 auto;
+}
+.aed-intro strong{color:var(--ink);font-weight:700}
+@media(max-width:480px){
+  .aed-headline h2{font-size:27px}
+  .aed-intro{font-size:14.5px}
+}
+
+.aed-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:30px 0 24px;
+}
+@media(max-width:600px){
+  .aed-grid{grid-template-columns:1fr;gap:18px;max-width:340px;margin-left:auto;margin-right:auto}
+}
+
+.aed-card{
+  position:relative;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(43,24,16,.08);
+  transition:transform .3s,box-shadow .3s;
+}
+.aed-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 28px rgba(43,24,16,.14);
+}
+.aed-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1/1.2;
+  object-fit:cover;
+}
+.aed-tags{
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:6px;
+  pointer-events:none;
+}
+.aed-tag{
+  font-size:9.5px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  background:rgba(43,24,16,.85);
+  color:#FFFBF2;
+  padding:5px 11px;
+  border-radius:50px;
+  backdrop-filter:blur(4px);
+}
+.aed-tag-after{
+  background:linear-gradient(135deg,#16A34A,#15803D);
+}
+
+.aed-final{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  font-weight:600;
+  color:var(--ink);
+  letter-spacing:-.015em;
+  margin:24px 0 18px;
+}
+.aed-final em{
+  font-style:italic;
+  color:var(--accent-sage);
+}
+@media(max-width:480px){.aed-final{font-size:25px}}
+
+.aed-disclaimer{
+  font-size:11px;
+  font-style:italic;
+  color:var(--ink-mute);
+  max-width:520px;
+  margin:0 auto;
+  line-height:1.55;
+  letter-spacing:.01em;
+}
+
 /* ═══ BLOCO 04: BULLETS ═══ */
 .b04{padding:20px 0}
 .bullets{display:flex;flex-direction:column;gap:10px;margin-top:14px}
@@ -1105,6 +1228,45 @@ body::before{
         <p class="testi-text">Tengo 61 años y pensé que ya era tarde. Las recetas son simples, con ingredientes que encuentro en mi mercado. Nunca es tarde para empezar a cuidar tu salud hormonal.</p>
       </div>
     </div>
+  </section>
+
+  <!-- ═══ ANTES E DEPOIS — Resultados verificados ═══ -->
+  <section class="aed-section">
+    <div class="aed-headline">
+      <div class="aed-eyebrow">Mira lo que pasó</div>
+      <h2>Lo que aconteció con quien <em>dio este paso</em></h2>
+      <p class="aed-intro">
+        Mujeres latinas como vos — exactamente donde estás ahora, a un clic de cerrar la página. Pero en lugar de rendirse, <strong>decidieron intentar</strong>.
+      </p>
+    </div>
+
+    <div class="aed-grid">
+      <div class="aed-card">
+        <img src="ebooks/img/AeD1.png" alt="Transformación 1">
+        <div class="aed-tags">
+          <span class="aed-tag">Antes</span>
+          <span class="aed-tag aed-tag-after">Después</span>
+        </div>
+      </div>
+      <div class="aed-card">
+        <img src="ebooks/img/AeD2.png" alt="Transformación 2">
+        <div class="aed-tags">
+          <span class="aed-tag">Antes</span>
+          <span class="aed-tag aed-tag-after">Después</span>
+        </div>
+      </div>
+      <div class="aed-card">
+        <img src="ebooks/img/AeD3.png" alt="Transformación 3">
+        <div class="aed-tags">
+          <span class="aed-tag">Antes</span>
+          <span class="aed-tag aed-tag-after">Después</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="aed-final">Y hoy lo <em>agradecen</em>.</p>
+
+    <p class="aed-disclaimer">*Los resultados son individuales y reflejan experiencias personales — pueden variar según constancia, alimentación y biología de cada mujer.</p>
   </section>
 
   <div class="sep"><div class="sep-dot"></div></div>
