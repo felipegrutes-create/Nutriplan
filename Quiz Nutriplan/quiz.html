@@ -1862,13 +1862,11 @@ function goToCheckout(){
     duracion: getQuizDuration(),
     etapa: 'Checkout_Clicado'
   });
-  const params = new URLSearchParams();
-  if(!userEmail) console.warn('[goToCheckout] userEmail is empty — email param will be omitted');
-  if(userEmail) params.set('email', userEmail);
-  // Append profile name for personalization on sales page
-  const profileName = resolvedProfile || '';
-  if(profileName) params.set('perfil', profileName);
-  window.location.href = 'codigo-hormonal.html' + (params.toString() ? '?' + params.toString() : '');
+  // Redirecionar direto para o checkout Hotmart (US$17, Challenger)
+  if(!userEmail) console.warn('[goToCheckout] userEmail is empty — checkoutEmail param will be omitted');
+  let checkoutUrl = 'https://pay.hotmart.com/I105301966C?checkoutMode=10';
+  if(userEmail) checkoutUrl += '&checkoutEmail=' + encodeURIComponent(userEmail);
+  window.location.href = checkoutUrl;
 }
 function toggleFaq(btn){btn.nextElementSibling.classList.toggle('show');btn.classList.toggle('open');}
 function shakeCta(){if(currentSlide===22){const e=document.getElementById('emailInput');if(e){e.style.borderColor='#E8445A';e.style.boxShadow='0 0 0 2px rgba(232,68,90,0.15)';setTimeout(()=>{e.style.borderColor='';e.style.boxShadow='';},1500);}}else{const c=document.getElementById('mainCta');c.style.borderColor='#E8445A';setTimeout(()=>{c.style.borderColor='';},800);}}
