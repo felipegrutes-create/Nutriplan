@@ -209,11 +209,13 @@ if(perfil && VALID_PERFILES.includes(perfil)) {
   document.getElementById('profileBadge').textContent = 'Tu perfil "' + perfil + '" está listo';
 }
 
-const HOTMART_9 = 'https://pay.hotmart.com/PRODUTO_9_DOLARES'; // TODO: update with real $9 Hotmart URL
+// URL do checkout — oferta US$9 (cupom PRECIO-ESPECIAL-9 embutido na chave 0i326z9k)
+const HOTMART_9 = 'https://pay.hotmart.com/I105301966C?checkoutMode=6&off=0i326z9k&offDiscount=PRECIO-ESPECIAL-9';
 
 function goToCheckout() {
   if(typeof fbq === 'function') fbq('track', 'InitiateCheckout', {value: 9, currency: 'USD'});
-  window.location.href = HOTMART_9 + (email ? '?checkoutEmail=' + encodeURIComponent(email) : '');
+  var url = HOTMART_9 + (email ? '&checkoutEmail=' + encodeURIComponent(email) : '');
+  window.location.href = url;
 }
 
 // 10-minute countdown timer (persists within session)
