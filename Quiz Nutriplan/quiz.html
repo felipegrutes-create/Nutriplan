@@ -1889,12 +1889,21 @@ function goToCheckout(){
   // Hotmart 'src' nativo: usa utm_source se existir, senão 'quiz-direct'
   var srcVal = qp.get('src') || qp.get('utm_source') || 'quiz-direct';
   checkoutUrl += '&src=' + encodeURIComponent(srcVal);
+  // Cria <a> temporário no DOM pra UTMify injetar xcod/sck (UTMify só processa anchor tags)
+  var tempLink = document.createElement('a');
+  tempLink.href = checkoutUrl;
+  tempLink.style.display = 'none';
+  document.body.appendChild(tempLink);
   // Dispara InitiateCheckout no Pixel antes de redirecionar
   if(typeof fbq === 'function'){
     fbq('track','InitiateCheckout',{value:17,currency:'USD',content_name:'El Código Hormonal',content_category:'quiz-checkout'});
   }
-  // Delay de 300ms pra garantir que o pixel envia o evento antes do redirect
-  setTimeout(function(){ window.location.href = checkoutUrl; }, 300);
+  // 400ms: tempo pra UTMify modificar tempLink.href (adicionar xcod) + pixel enviar IC antes do redirect
+  setTimeout(function(){
+    var finalUrl = tempLink.href; // UTMify já injetou xcod/sck aqui
+    document.body.removeChild(tempLink);
+    window.location.href = finalUrl;
+  }, 400);
 }
 function toggleFaq(btn){btn.nextElementSibling.classList.toggle('show');btn.classList.toggle('open');}
 function shakeCta(){if(currentSlide===22){const e=document.getElementById('emailInput');if(e){e.style.borderColor='#E8445A';e.style.boxShadow='0 0 0 2px rgba(232,68,90,0.15)';setTimeout(()=>{e.style.borderColor='';e.style.boxShadow='';},1500);}}else{const c=document.getElementById('mainCta');c.style.borderColor='#E8445A';setTimeout(()=>{c.style.borderColor='';},800);}}

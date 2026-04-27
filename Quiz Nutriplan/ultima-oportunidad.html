@@ -1632,14 +1632,16 @@ function scrollToPrice(e) {
   }
 })();
 
-// ═══ Track InitiateCheckout on CTA click (com delay para garantir envio antes do redirect) ═══
+// ═══ Track InitiateCheckout on CTA click (com delay para garantir envio antes do redirect + UTMify injetar xcod) ═══
 document.addEventListener('click', function(e){
   var btn = e.target.closest('.cta-btn[href^="https://pay.hotmart.com"]');
-  if(btn && typeof fbq === 'function'){
+  if(btn){
     e.preventDefault();
-    var url = btn.href;
-    fbq('track','InitiateCheckout',{value:9,currency:'USD',content_name:'Mi Código BKRD',content_category:'ultima-oportunidad'});
-    setTimeout(function(){ window.location.href = url; }, 300);
+    if(typeof fbq === 'function'){
+      fbq('track','InitiateCheckout',{value:9,currency:'USD',content_name:'Mi Código BKRD',content_category:'ultima-oportunidad'});
+    }
+    // 400ms: garante que UTMify já modificou btn.href (com xcod) + pixel envia IC
+    setTimeout(function(){ window.location.href = btn.href; }, 400);
   }
 });
 </script>
