@@ -1840,7 +1840,6 @@ function validateEmail(){document.getElementById('mainCta').disabled=!isValidEma
 function goToCheckout(){
   // Ensure quiz data is saved for Mi Código personalization
   try{localStorage.setItem('quiz_answers',JSON.stringify(answers));}catch(e){}
-  if(typeof fbq === 'function') fbq('track','InitiateCheckout');
   if(typeof gtag==='function') gtag('event','begin_checkout');
   sendToSheets({
     fecha: new Date().toISOString(),
