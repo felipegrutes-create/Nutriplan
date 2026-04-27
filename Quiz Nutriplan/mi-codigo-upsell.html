@@ -99,8 +99,8 @@ let navigating = false;
 function goToUpsell(){
   if(navigating) return;
   navigating = true;
-  if(typeof fbq === 'function') fbq('track','AddToCart', {value: 14.90, currency: 'USD', content_name: 'Mi Código App'});
-  setTimeout(function(){ window.location.href = HOTMART_APP; }, 350);
+  if(typeof fbq === 'function') fbq('track','InitiateCheckout', {value: 14.90, currency: 'USD', content_name: 'Mi Código App', content_category: 'mi-codigo-upsell-alt', content_ids: ['mi-codigo-app']});
+  setTimeout(function(){ window.location.href = HOTMART_APP; }, 400);
 }
 function skipUpsell(){
   window.location.href = DOWNLOAD_PAGE;

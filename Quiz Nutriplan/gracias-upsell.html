@@ -182,8 +182,24 @@ fbq('track','PageView');
   var priceParam = parseFloat(p.get('price') || p.get('transaction_value') || '');
   var fromBkrd = (p.get('off') === '0i326z9k') || /especial-9|PRECIO-ESPECIAL-9/i.test(window.location.search);
   var value = !isNaN(priceParam) && priceParam > 0 ? priceParam : (fromBkrd ? 9 : 17);
+  // Purchase: confirma a compra do El Código Hormonal
   fbq('track','Purchase',{value:value,currency:'USD',content_name:'El Código Hormonal',content_category:'el-codigo-purchase',content_ids:['el-codigo-hormonal'],content_type:'product'});
+  // ViewContent: esta página também é a sales page do upsell Mi Código (com VSL + CTA)
+  fbq('track','ViewContent',{value:9,currency:'USD',content_name:'Mi Código Upsell VSL',content_category:'mi-codigo-upsell-vsl',content_ids:['mi-codigo-app'],content_type:'product'});
 })();
+
+// ═══ Track InitiateCheckout when user clicks Mi Código upsell CTA ═══
+// (UTMify precisa de 400ms para injetar xcod no href via MutationObserver)
+document.addEventListener('click', function(e){
+  var btn = e.target.closest('a.cta-btn[href^="https://pay.hotmart.com"]');
+  if(btn){
+    e.preventDefault();
+    if(typeof fbq === 'function'){
+      fbq('track','InitiateCheckout',{value:9,currency:'USD',content_name:'Mi Código Upsell',content_category:'gracias-upsell-cta',content_ids:['mi-codigo-app']});
+    }
+    setTimeout(function(){ window.location.href = btn.href; }, 400);
+  }
+});
 </script>
 
 <!-- UTMify Pixel + UTM forwarder -->
