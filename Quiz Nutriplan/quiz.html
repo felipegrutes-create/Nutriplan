@@ -11,6 +11,20 @@
 fbq('init', '2145233352888094');
 fbq('track', 'PageView');
 </script>
+
+<!-- UTMify Pixel -->
+<script>
+  window.pixelId = "69eed517406f4f04aa9f0072";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<!-- UTMify UTM forwarder (adiciona UTMs nos botões de checkout automaticamente) -->
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XS35RZ6KBW"></script>
 <script>
@@ -1866,6 +1880,20 @@ function goToCheckout(){
   if(!userEmail) console.warn('[goToCheckout] userEmail is empty — checkoutEmail param will be omitted');
   let checkoutUrl = 'https://pay.hotmart.com/I105301966C?checkoutMode=10';
   if(userEmail) checkoutUrl += '&checkoutEmail=' + encodeURIComponent(userEmail);
+  // Anexa UTMs + fbclid + xcod para atribuição correta
+  var qp = new URLSearchParams(window.location.search);
+  var passKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','xcod'];
+  passKeys.forEach(function(k){
+    var v = qp.get(k);
+    if(v) checkoutUrl += '&' + k + '=' + encodeURIComponent(v);
+  });
+  // Hotmart 'src' nativo: usa utm_source se existir, senão 'quiz-direct'
+  var srcVal = qp.get('src') || qp.get('utm_source') || 'quiz-direct';
+  checkoutUrl += '&src=' + encodeURIComponent(srcVal);
+  // Dispara InitiateCheckout no Pixel antes de redirecionar
+  if(typeof fbq === 'function'){
+    fbq('track','InitiateCheckout',{value:17,currency:'USD',content_name:'El Código Hormonal',content_category:'quiz-checkout'});
+  }
   window.location.href = checkoutUrl;
 }
 function toggleFaq(btn){btn.nextElementSibling.classList.toggle('show');btn.classList.toggle('open');}

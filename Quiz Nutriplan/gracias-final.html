@@ -28,6 +28,31 @@ h1 em{color:#4ade80;font-style:italic}
 .support{font-size:12px;color:rgba(255,255,255,.4);margin-top:20px;line-height:1.6}
 .support a{color:rgba(255,255,255,.7);text-decoration:underline}
 </style>
+
+<!-- Facebook Pixel + Purchase event (Mi Código) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2145233352888094');
+fbq('track','PageView');
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var priceParam = parseFloat(p.get('price') || p.get('transaction_value') || '');
+  var fromBkrd = /lu4ue95d|primer-mes-9/i.test(window.location.search);
+  var value = !isNaN(priceParam) && priceParam > 0 ? priceParam : (fromBkrd ? 9 : 37);
+  fbq('track','Purchase',{value:value,currency:'USD',content_name:'Mi Código',content_category:'mi-codigo-purchase',content_ids:['mi-codigo-app'],content_type:'product'});
+})();
+</script>
+
+<!-- UTMify Pixel + UTM forwarder -->
+<script>
+  window.pixelId = "69eed517406f4f04aa9f0072";
+  var a = document.createElement("script");
+  a.setAttribute("async", ""); a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+
 </head>
 <body>
 <div class="container">

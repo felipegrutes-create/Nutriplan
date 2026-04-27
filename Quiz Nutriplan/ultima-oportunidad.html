@@ -1197,6 +1197,24 @@ body::before{
 })();
 </script>
 
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2145233352888094');
+fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'Mi Código BKRD US$9',content_category:'ultima-oportunidad',value:9,currency:'USD'});
+</script>
+
+<!-- UTMify Pixel + UTM forwarder -->
+<script>
+  window.pixelId = "69eed517406f4f04aa9f0072";
+  var a = document.createElement("script");
+  a.setAttribute("async", ""); a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+
 </head>
 <body>
 
@@ -1613,6 +1631,14 @@ function scrollToPrice(e) {
     });
   }
 })();
+
+// ═══ Track InitiateCheckout on CTA click ═══
+document.addEventListener('click', function(e){
+  var btn = e.target.closest('.cta-btn[href^="https://pay.hotmart.com"]');
+  if(btn && typeof fbq === 'function'){
+    fbq('track','InitiateCheckout',{value:9,currency:'USD',content_name:'Mi Código BKRD',content_category:'ultima-oportunidad'});
+  }
+});
 </script>
 
 </body>
