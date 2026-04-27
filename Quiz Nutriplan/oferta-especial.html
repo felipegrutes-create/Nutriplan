@@ -1815,11 +1815,14 @@ function scrollToPrice(e) {
   }
 })();
 
-// ═══ Track InitiateCheckout on CTA click ═══
+// ═══ Track InitiateCheckout on CTA click (com delay para garantir envio antes do redirect) ═══
 document.addEventListener('click', function(e){
   var btn = e.target.closest('.cta-btn[href^="https://pay.hotmart.com"]');
   if(btn && typeof fbq === 'function'){
+    e.preventDefault();
+    var url = btn.href;
     fbq('track','InitiateCheckout',{value:9,currency:'USD',content_name:'El Código Hormonal BKRD',content_category:'oferta-especial'});
+    setTimeout(function(){ window.location.href = url; }, 300);
   }
 });
 </script>
