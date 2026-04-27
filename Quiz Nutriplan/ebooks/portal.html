@@ -3283,7 +3283,8 @@ const MiCodigo = (function() {
     var input = document.getElementById('mcEmailField');
     if (btn) { btn.textContent = 'Verificando...'; btn.disabled = true; }
 
-    fetch(VERIFY_URL + '?action=verify&email=' + encodeURIComponent(email))
+    // type=premium: só libera quem comprou Mi Código (não El Código basic)
+    fetch(VERIFY_URL + '?action=verify&type=premium&email=' + encodeURIComponent(email))
       .then(function(r) { return r.json(); })
       .then(function(result) {
         if (result.authorized) {
