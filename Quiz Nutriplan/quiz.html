@@ -265,7 +265,7 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
 (() => {
   /* =============== CONFIG =============== */
   const TARGET = '/oferta-especial.html';
-  const MIN_TIME_MS = 3000; // 3s antes de ativar (evita bounce instantâneo)
+  const MIN_TIME_MS = 10000; // 10s antes de ativar — dá tempo da usuária engajar com o quiz
   /* ====================================== */
 
   // Não dispara se já estiver na oferta-especial (evita loop)
@@ -302,16 +302,16 @@ input[type="range"]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;b
       handleNav();
     });
 
-    /* 2. Exit-intent (mouse sai pelo topo) */
+    /* 2. Exit-intent (mouse sai pelo topo) — somente desktop, após MIN_TIME_MS */
     addEv(document, 'mouseout', function(e) {
       if (e.clientY <= 0 && Date.now() - loadedAt > MIN_TIME_MS) handleNav();
     });
 
-    /* 3. WebView Facebook/Instagram: dispara quando user "fecha" a view */
-    var isMetaWV = /FBAN|FB_IAB|Instagram/.test(navigator.userAgent);
-    if (isMetaWV) addEv(document, 'visibilitychange', function() {
-      if (document.visibilityState === 'hidden' && Date.now() - loadedAt > MIN_TIME_MS) handleNav();
-    });
+    /* 3. WebView Meta REMOVIDO — visibilitychange muito agressivo no mobile.
+       97% do tráfego é mobile via Meta WebView, e usuárias mudam de app
+       o tempo todo (notificação WhatsApp, ligação, banner) sem intenção real
+       de abandonar. O trigger estava redirecionando false-positives massivamente.
+       Mantemos apenas back-button (trigger 1) e exit-intent desktop (trigger 2). */
   }
 
   var fired = false;
